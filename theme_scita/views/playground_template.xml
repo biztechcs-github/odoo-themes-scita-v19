@@ -7,20 +7,24 @@
                 <!-- Tabs Navigation -->
                 <ul class="nav nav-tabs" id="playgroundTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="static-tab" data-bs-toggle="tab" href="#static" role="tab">Static</a>
+                        <a class="nav-link active" id="static-tab" data-bs-toggle="tab"
+                            href="#static" role="tab">Static</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="dynamic-tab" data-bs-toggle="tab" href="#dynamic" role="tab">Dynamic</a>
+                        <a class="nav-link" id="dynamic-tab" data-bs-toggle="tab" href="#dynamic"
+                            role="tab">Dynamic</a>
                     </li>
                 </ul>
 
                 <div class="tab-content mt-3" id="playgroundTabContent">
                     <div class="tab-pane fade show active" id="static" role="tabpanel">
                         <div class="mb-3">
-                            <label for="staticSnippets" class="form-label fw-bold">Select a Static Snippet</label>
+                            <label for="staticSnippets" class="form-label fw-bold">Select a Static
+                                Snippet</label>
                             <select id="staticSnippets" class="form-select">
                                 <optgroup label="Banner Snippets">
-                                    <option value="theme_scita.sct_banner_1" selected="selected">Banner Slider 1</option>
+                                    <option value="theme_scita.sct_banner_1" selected="selected">Banner
+                                        Slider 1</option>
                                     <option value="theme_scita.sct_banner_2">Banner Slider 2</option>
                                 </optgroup>
                                 <optgroup label="About Us Snippets">
@@ -30,42 +34,198 @@
                             </select>
                         </div>
                         <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
-                            <div id="preview-theme_scita.sct_banner_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_banner_1"/>
+                            <div id="preview-theme_scita.sct_banner_1"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_banner_1" />
                             </div>
-                            <div id="preview-theme_scita.sct_banner_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_banner_2"/>
+                            <div id="preview-theme_scita.sct_banner_2"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_banner_2" />
                             </div>
-                            <div id="preview-theme_scita.health_about_hospital" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.health_about_hospital"/>
+                            <div id="preview-theme_scita.health_about_hospital"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.health_about_hospital" />
                             </div>
-                            <div id="preview-theme_scita.about_us_v_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.about_us_v_3"/>
+                            <div id="preview-theme_scita.about_us_v_3"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.about_us_v_3" />
                             </div>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" id="dynamic" role="tabpanel">
                         <div class="mb-3">
-                            <label for="dynamicSnippets" class="form-label fw-bold">Select a Dynamic Snippet</label>
+                            <label for="dynamicSnippets" class="form-label fw-bold">Select a Dynamic
+                                Snippet</label>
                             <select id="dynamicSnippets" class="form-select">
-                                <optgroup label="Product Snippet">
-                                    <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
-                                    <option value="theme_scita.blog_2_slider_view_2" selected="selected">Blog slider 1</option>
+                                <optgroup label="blog Snippet">
+                                    <option value="theme_scita.blog_slider_view_1"
+                                        selected="selected">Blog snippet 1</option>
+                                    <option value="theme_scita.scita_blog_2_slider_view_static"
+                                        selected="selected">Blog snippet 2</option>
+                                    <option value="theme_scita.blog_5_custom_snippet_static"
+                                        selected="selected">Blog slider 1</option>
+                                    <option value="theme_scita.blog_2_custom_snippet_static"
+                                        selected="selected">Blog slider 2</option>
                                 </optgroup>
+                                <optgroup label="Brand Snippet">
+                                    <option value="theme_scita.box_brand_snippet_4_static_preview"
+                                        selected="selected">Brand slider 1</option>
+                                    <!-- <option value="theme_scita.it_prod_brands_static"
+                                        selected="selected">Brand snippet 1</option>
+                                    <option value="theme_scita.it_prod_brands_static"
+                                        selected="selected"> Brand Snippet 2</option> -->
+                                </optgroup>
+
+                                <optgroup label="Google Map Snippet">
+                                    <option value="theme_scita.google_map_v1_static_preview"
+                                        selected="selected">Google Map</option>
+                                    <option value="theme_scita.google_map_v2_static_preview"
+                                        selected="selected">Google Map With content</option>
+                                </optgroup>
+
+                                 <optgroup label="Category Snippet Snippet">
+                                    <option value="theme_scita.theme_scita_cat_slider_static_preview"
+                                        selected="selected">Category Snippet 1</option>
+                                    <option value="theme_scita.theme_scita_category_slider_3_static_preview"
+                                        selected="selected">Category Slider 1</option>
+                                         <option value="theme_scita.theme_scita_category_slider_4_static_preview"
+                                        selected="selected">Category Slider 2</option>
+                                    <option value="theme_scita.theme_scita_category_slider_gray_static_preview"
+                                        selected="selected">Category Slider 3</option>
+                                          <option value="theme_scita.custom_scita_cat_slider_static_preview"
+                                        selected="selected">Dynamic Product/Category Snippet</option>
+
+                                </optgroup>
+
+                                <optgroup label="Multi product snippet">
+                                    <option value="theme_scita.multi_category_product_slider"
+                                        selected="selected">Multi product slider 2</option>
+                                    <!-- <option value="theme_scita.google_map_v2_static_preview"
+                                        selected="selected">Google Map With content</option> -->
+                                </optgroup>
+                                <optgroup label=" Our Team snippets">
+                                    <option value="theme_scita.our_team_slider_1_static"
+                                        selected="selected"> Our Team Slider 1</option>
+                                    <option value="theme_scita.our_team_slider_3_static"
+                                        selected="selected">Our Team Slider 3 </option>
+                                    <option value="theme_scita.our_team_slider_5_static"
+                                        selected="selected">Our Team Slider 5</option>
+                                </optgroup>
+                                <optgroup label="Deal of the Day Snippet">
+                                    <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview"
+                                        selected="selected"> Deal of the Day Snippet 1</option>
+                                    <option value="theme_scita.deal_of_day_banner_3_static_preview"
+                                        selected="selected">Deal of the Day Snippet 4</option>
+                                    <option value="theme_scita.deal_of_day_banner_5_static_preview"
+                                        selected="selected">Deal of the Day Snippet  5</option>
+                                </optgroup>
+                                 <optgroup label="Client Snippet">
+                                    <option value="theme_scita.third_client_slider_snippet_static_preview"
+                                        selected="selected"> Client Snippet 1 </option>
+                                    <option value="theme_scita.theme_scita_top_dealers_snippet_static_preview"
+                                        selected="selected">Client Snippet 2</option>
+                                </optgroup>
+
                             </select>
                         </div>
                         <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
-                            <div id="preview-theme_scita.blog_slider_view_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
+                            <div id="preview-theme_scita.blog_slider_view_1"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_slider_view_1" />
                             </div>
-                            <div id="preview-theme_scita.blog_2_slider_view_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
+                            <div id="preview-theme_scita.scita_blog_2_slider_view_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.scita_blog_2_slider_view_static" />
                             </div>
+                            <div id="preview-theme_scita.blog_5_custom_snippet_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_5_custom_snippet_static" />
+                            </div>
+                            <div id="preview-theme_scita.blog_2_custom_snippet_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_2_custom_snippet_static" />
+                            </div>
+                            <div id="preview-theme_scita.box_brand_snippet_4_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.box_brand_snippet_4_static_preview" />
+                            </div>
+
+                            <div id="preview-theme_scita.google_map_v1_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.google_map_v1_static_preview" />
+                            </div>
+
+                            <div id="preview-theme_scita.google_map_v2_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.google_map_v2_static_preview" />
+                            </div>
+                            <div id="preview-theme_scita.multi_category_product_slider"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.multi_category_product_slider" />
+                            </div>
+                            <div id="preview-theme_scita.our_team_slider_1_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.our_team_slider_1_static" />
+                            </div>
+
+                             <div id="preview-theme_scita.our_team_slider_3_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.our_team_slider_3_static" />
+                            </div>
+
+                             <div id="preview-theme_scita.our_team_slider_5_static"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.our_team_slider_5_static" />
+                            </div>
+
+                             <div id="preview-theme_scita.retial_deal_of_day_banner_snippet_1_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" />
+                            </div>
+                             <div id="preview-theme_scita.deal_of_day_banner_3_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.deal_of_day_banner_3_static_preview" />
+                            </div>
+                             <div id="preview-theme_scita.deal_of_day_banner_5_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.deal_of_day_banner_5_static_preview" />
+                            </div>
+                            <div id="preview-theme_scita.third_client_slider_snippet_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.third_client_slider_snippet_static_preview" />
+                            </div>
+                            <div id="preview-theme_scita.theme_scita_top_dealers_snippet_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_top_dealers_snippet_static_preview" />
+                            </div>
+                              <div id="preview-theme_scita.theme_scita_cat_slider_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_cat_slider_static_preview" />
+                            </div>
+                              <div id="preview-theme_scita.theme_scita_category_slider_3_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_category_slider_3_static_preview" />
+                            </div>
+                              <div id="preview-theme_scita.theme_scita_category_slider_4_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_category_slider_4_static_preview" />
+                            </div>
+                              <div id="preview-theme_scita.theme_scita_category_slider_gray_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_category_slider_gray_static_preview" />
+                            </div>
+                             <div id="preview-theme_scita.custom_scita_cat_slider_static_preview"
+                                class="snippet-container d-none">
+                                <t t-snippet="theme_scita.custom_scita_cat_slider_static_preview" />
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </t>
     </template>
+
+
 </odoo>
