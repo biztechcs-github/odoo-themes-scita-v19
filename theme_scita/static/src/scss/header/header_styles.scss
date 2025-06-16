@@ -3115,6 +3115,12 @@
                                 }
                             }
                             .o_wsale_my_cart{
+                                .account_icon{
+                                    @include min992{
+                                        padding: 0 !important;
+                                        line-height: 1;
+                                    }
+                                }
                                 .my_cart_quantity{
                                 border-color: $secondary !important;
                                 top: -5px !important;

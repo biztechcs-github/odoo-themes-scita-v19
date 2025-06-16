@@ -297,14 +297,14 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 sct-top-right-side">
+                            <ul class="col-lg-6 col-md-6 sct-top-right-side">
                                 <t t-call="website.placeholder_header_search_box">
                                     <t t-set="_input_classes" t-valuef=""/>
                                     <t t-set="_submit_classes" t-valuef=""/>
                                     <t t-set="_button_classes" t-valuef=""/>
                                 </t>
                                 <t t-call="website.placeholder_header_social_links"/>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -470,7 +470,7 @@
                             </t>
                         </t>
                         <div class="head_deal">
-                            <img src="/web/image/theme_scita.sct_discount_img" alt="Today's Deal"/>
+                            <img src="/web/image/theme_scita.sct_discount_img" alt="Today's Deal" height="40" fetchpriority="high" loading="eager" />
                             <div class="deal_right">
                                 <p class="nav-link">Todays deal</p>
                                 <span>Get amazing offers</span>
