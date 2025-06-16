@@ -48,7 +48,7 @@
 				}
 				&.name-text {
 					display: none;
-					font-weight: bold;
+					font-weight: 400;
 					padding-top: 3px;
 					font-size: 12px;
 					@media (max-width: 410px){
@@ -982,7 +982,7 @@
                     span{
                         &.name-text{
                             color: $secondary;
-                            font-weight: 600;
+                            font-weight: 400;
                         }
                     }
                 }
