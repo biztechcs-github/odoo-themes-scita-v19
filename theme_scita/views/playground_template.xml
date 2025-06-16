@@ -63,9 +63,9 @@
                                         selected="selected">Blog snippet 1</option>
                                     <option value="theme_scita.scita_blog_2_slider_view_static"
                                         selected="selected">Blog snippet 2</option>
-                                    <option value="theme_scita.blog_5_custom_snippet_static"
-                                        selected="selected">Blog slider 1</option>
                                     <option value="theme_scita.blog_2_custom_snippet_static"
+                                        selected="selected">Blog slider 1</option>
+                                    <option value="theme_scita.blog_5_custom_snippet_static"
                                         selected="selected">Blog slider 2</option>
                                 </optgroup>
                                 <optgroup label="Brand Snippet">

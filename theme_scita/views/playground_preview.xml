@@ -197,20 +197,8 @@
             data-snippet="blog_5_custom_snippet" data-name="Blog Slider 2">
             <div class="container">
                 <div class="row">
-                    <div class="block-title col-lg-3">
-                        <h3 class="sct_sub_title text-uppercase">
-                            Blogs
-                        </h3>
-                        <h2 class="fancy">
-                            Blogs
-                        </h2>
-                        <p class="sct_simple_text">
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                    </div>
                     <div class="blog_slider_wrap col-lg-9">
-                        <div id="blog_5_owl_carosel" class="owl-carousel">
+                        <div id="pg_blog_2_owl_carosel" class="owl-carousel">
                             <!-- Blog 1 -->
                             <div class="sct_blog_box" title="Beyond The Eye">
                                 <a href="/blog/astronomy-2/post/beyond-the-eye-7">
@@ -241,155 +229,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <!-- Blog 2 -->
-                            <div class="sct_blog_box" title="Buying A Telescope">
-                                <a href="/blog/astronomy-2/post/buying-a-telescope-6">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">guides</p>
-                                            <p class="sct_label_blog">telescopes</p>
-                                        </div>
-                                        <h3 class="sct_title">Buying A Telescope</h3>
-                                        <p class="blog-content">
-                                            Before you make your first purchase…
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span></p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 3 -->
-                            <div class="sct_blog_box" title="What If They Let You Run The Hubble">
-                                <a
-                                    href="/blog/astronomy-2/post/what-if-they-let-you-run-the-hubble-5">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                            <p class="sct_label_blog">telescopes</p>
-                                        </div>
-                                        <h3 class="sct_title">What If They Let You Run The Hubble</h3>
-                                        <p class="blog-content">
-                                            The beauty of astronomy is that anybody can do it.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span></p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 4 -->
-                            <div class="sct_blog_box" title="How To Look Up">
-                                <a href="/blog/astronomy-2/post/how-to-look-up-4">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                        </div>
-                                        <h3 class="sct_title">How To Look Up</h3>
-                                        <p class="blog-content">
-                                            Be aware of this thing called “astronomy”
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span></p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 5 -->
-                            <div class="sct_blog_box" title="How to choose the right hotel">
-                                <a href="/blog/travel-1/post/how-to-choose-the-right-hotel-3">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">hotels</p>
-                                        </div>
-                                        <h3 class="sct_title">How to choose the right hotel</h3>
-                                        <p class="blog-content">
-                                            Facts you should bear in mind.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Marc Demo</span></p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 6 -->
-                            <div class="sct_blog_box" title="Maui helicopter tours">
-                                <a href="/blog/travel-1/post/maui-helicopter-tours-2">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">adventure</p>
-                                        </div>
-                                        <h3 class="sct_title">Maui helicopter tours</h3>
-                                        <p class="blog-content">
-                                            A great way to discover hidden places
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span></p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Add more blogs as needed -->
+                         
                         </div>
                     </div>
                 </div>
@@ -401,18 +241,7 @@
             data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog"
             data-snippet="blog_2_custom_snippet" data-name="Blog Slider 1">
             <div class="container">
-                <div class="row">
-                    <div class="block-title col-12">
-                        <h2 class="fancy mb-3">
-                            Blogs
-                        </h2>
-                        <p class="sct_simple_text">
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                    </div>
-                </div>
-                <div id="blog_2_owl_carosel" class="owl-carousel">
+                <div id="pg_blog_2_owl_carosel" class="owl-carousel">
                     <!-- Blog 1 -->
                     <div class="sct_blog_box">
                         <a class="it_blog_img" href="/blog/astronomy-2/post/beyond-the-eye-7">
@@ -437,129 +266,7 @@
                             </div>
                         </a>
                     </div>
-                    <!-- Blog 2 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img" href="/blog/astronomy-2/post/buying-a-telescope-6">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_6.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="Buying A Telescope">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>Buying A Telescope</h3>
-                                    <div class="sct_blog_content">
-                                        Before you make your first purchase…
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Blog 3 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img"
-                            href="/blog/astronomy-2/post/what-if-they-let-you-run-the-hubble-5">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_5.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="What If They Let You Run The Hubble">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>What If They Let You Run The Hubble</h3>
-                                    <div class="sct_blog_content">
-                                        The beauty of astronomy is that anybody can do it.
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Blog 4 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img" href="/blog/astronomy-2/post/how-to-look-up-4">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_4.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="How To Look Up">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>How To Look Up</h3>
-                                    <div class="sct_blog_content">
-                                        Be aware of this thing called “astronomy”
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Blog 5 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img"
-                            href="/blog/travel-1/post/how-to-choose-the-right-hotel-3">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_3.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="How to choose the right hotel">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>How to choose the right hotel</h3>
-                                    <div class="sct_blog_content">
-                                        Facts you should bear in mind.
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Marc Demo</span></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Blog 6 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img" href="/blog/travel-1/post/maui-helicopter-tours-2">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_2.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="Maui helicopter tours">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>Maui helicopter tours</h3>
-                                    <div class="sct_blog_content">
-                                        A great way to discover hidden places
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Add more blogs as needed -->
+                   
                 </div>
             </div>
         </section>
@@ -581,117 +288,21 @@
                     </div>
                     <div class="row our-brands">
                         <div class="col-sm-12">
-                            <section
-                                id="box_brands_slider_owl">
-                                <div>
-                                    <div
-                                        style="transform: translate3d(-230px, 0px, 0px); transition: 0.25s; width: 1840px;">
-                                        <!-- Brand 1 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=1">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="Asus"
-                                                            src="/web/image/product.brands/1/image/210x88?unique=a18d80f"
-                                                            title="Asus" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
+                            <section class="owl-carousel pg-sct-brand-slider-2" id="box_brands_slider_owl">
+                                    <a href="/shop/brands?brand=1">
+                                        <div class="sct_brand_box text-center">
+                                            <div class="brand-logo-box">
+                                                <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                            </div>
                                         </div>
-                                        <!-- Brand 2 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=4">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="sony"
-                                                            src="/web/image/product.brands/4/image/210x88?unique=7d9df61"
-                                                            title="sony" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
+                                    </a>
+                                    <a href="/shop/brands?brand=1">
+                                        <div class="sct_brand_box text-center">
+                                            <div class="brand-logo-box">
+                                                <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                            </div>
                                         </div>
-                                        <!-- Brand 3 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=2">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="lg"
-                                                            src="/web/image/product.brands/2/image/210x88?unique=28bbeeb"
-                                                            title="lg" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- Brand 4 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=3">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="google"
-                                                            src="/web/image/product.brands/3/image/210x88?unique=47deb29"
-                                                            title="google" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- Brand 5 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=5">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="xbox"
-                                                            src="/web/image/product.brands/5/image/210x88?unique=9ab6856"
-                                                            title="xbox" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- Brand 6 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=6">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="Apple"
-                                                            src="/web/image/product.brands/6/image/210x88?unique=b4366d1"
-                                                            title="Apple" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- Brand 7 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=7">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="Playstation"
-                                                            src="/web/image/product.brands/7/image/210x88?unique=b298e3e"
-                                                            title="Playstation" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <!-- Brand 8 -->
-                                        <div
-                                            style="width: 220px; margin-right: 10px;">
-                                            <a href="/shop/brands?brand=8">
-                                                <div class="sct_brand_box text-center">
-                                                    <div class="brand-logo-box">
-                                                        <img class="img img-fluid" alt="Xiaomi"
-                                                            src="/web/image/product.brands/8/image/210x88?unique=a028f2b"
-                                                            title="Xiaomi" loading="lazy" />
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                    </a>
                             </section>
                         </div>
                     </div>
@@ -791,233 +402,232 @@
     </template>
 
     <template id="multi_category_product_slider" name="Multi Category Product Slider">
-     <section class="fashion_multi_category_slider o_colored_level">
-  <div class="fashion_featured_product_1">
-    <div class="container">
-      <div class="lns-inner latest-news-section">
-        <div class="row">
-          <div class="lns-post">
-            <div class="psb-inner">
-              <div class="title-block">
-                <h2 class="section-title style1">
-                  Featured Products
-                </h2>
-              </div>
-              <!-- Tabs (static, no JS, just for look) -->
-              <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs mb-3">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Smartphones &amp; Tablets</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">TV, Video &amp; Audio</a>
-                </li>
-              </ul>
+        <section class="fashion_multi_category_slider o_colored_level">
+            <div class="fashion_featured_product_1">
+                <div class="container">
+                <div class="lns-inner latest-news-section">
+                    <div class="row">
+                    <div class="lns-post">
+                        <div class="psb-inner">
+                        <div class="title-block">
+                            <h2 class="section-title style1">
+                            Featured Products
+                            </h2>
+                        </div>
+                        <!-- Tabs (static, no JS, just for look) -->
+                        <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs mb-3">
+                            <li class="nav-item">
+                            <a class="nav-link active" href="#">Smartphones &amp; Tablets</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">TV, Video &amp; Audio</a>
+                            </li>
+                        </ul>
 
-              <!-- Tab Content 1: Smartphones & Tablets -->
-              <div class="tab-pane fade show active">
-                <div class="row">
-                  <!-- Product 1 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/66/image_1920/314x385?unique=dc8605d"
-                             alt="OnePlus Nord CE4 Lite 5G" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">OnePlus Nord CE4 Lite 5G</a>
-                        </h5>
-                        <div class="mb-2">
-                          <!-- Static 5-star rating (empty stars) -->
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
+                        <!-- Tab Content 1: Smartphones & Tablets -->
+                        <div class="tab-pane fade show active">
+                            <div class="row">
+                            <!-- Product 1 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/66/image_1920/314x385?unique=dc8605d"
+                                        alt="OnePlus Nord CE4 Lite 5G" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">OnePlus Nord CE4 Lite 5G</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <!-- Static 5-star rating (empty stars) -->
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 2 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/65/image_1920/314x385?unique=d5db8b5"
+                                        alt="Samsung Galaxy Z Flip6" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">Samsung Galaxy Z Flip6</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 3 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/67/image_1920/314x385?unique=09ecf7f"
+                                        alt="VIVO Y200e 5G" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">VIVO Y200e 5G</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 4 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/54/image_1920/314x385?unique=dc8605d"
+                                        alt="iPad" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">iPad</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Product 2 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/65/image_1920/314x385?unique=d5db8b5"
-                             alt="Samsung Galaxy Z Flip6" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">Samsung Galaxy Z Flip6</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                        </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Product 3 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/67/image_1920/314x385?unique=09ecf7f"
-                             alt="VIVO Y200e 5G" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">VIVO Y200e 5G</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                        </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Product 4 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/54/image_1920/314x385?unique=dc8605d"
-                             alt="iPad" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">iPad</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                        </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              <!-- Tab Content 2: TV, Video & Audio -->
-              <div class="tab-pane fade">
-                <div class="row">
-                  <!-- Product 1 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/63/image_1920/314x385?unique=dc8605d"
-                             alt="Headphones" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">Headphones</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
+                        <!-- Tab Content 2: TV, Video & Audio -->
+                        <div class="tab-pane fade">
+                            <div class="row">
+                            <!-- Product 1 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/63/image_1920/314x385?unique=dc8605d"
+                                        alt="Headphones" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">Headphones</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 2 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/52/image_1920/314x385?unique=dc8605d"
+                                        alt="Mega Speakers" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">Mega Speakers</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 3 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/56/image_1920/314x385?unique=dc8605d"
+                                        alt="PULSE headphones" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">PULSE headphones</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- Product 4 -->
+                            <div class="col-md-3 col-6 mb-4">
+                                <div class="cs-product card">
+                                <a href="#">
+                                    <img src="/web/image/product.template/68/image_1920/314x385?unique=293253f"
+                                        alt="Wireless Earbuds" class="card-img-top" loading="lazy"/>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">
+                                    <a href="#">Wireless Earbuds</a>
+                                    </h5>
+                                    <div class="mb-2">
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    <span class="fa fa-star-o"></span>
+                                    </div>
+                                    <p class="price mb-2"><b>$1.00</b></p>
+                                    <button class="btn btn-primary btn-sm w-100">Add</button>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Product 2 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/52/image_1920/314x385?unique=dc8605d"
-                             alt="Mega Speakers" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">Mega Speakers</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
+                        <!-- End of tab-content -->
                         </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
                     </div>
-                  </div>
-                  <!-- Product 3 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/56/image_1920/314x385?unique=dc8605d"
-                             alt="PULSE headphones" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">PULSE headphones</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                        </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
                     </div>
-                  </div>
-                  <!-- Product 4 -->
-                  <div class="col-md-3 col-6 mb-4">
-                    <div class="cs-product card">
-                      <a href="#">
-                        <img src="/web/image/product.template/68/image_1920/314x385?unique=293253f"
-                             alt="Wireless Earbuds" class="card-img-top" loading="lazy"/>
-                      </a>
-                      <div class="card-body">
-                        <h5 class="card-title mb-2">
-                          <a href="#">Wireless Earbuds</a>
-                        </h5>
-                        <div class="mb-2">
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                          <span class="fa fa-star-o"></span>
-                        </div>
-                        <p class="price mb-2"><b>$1.00</b></p>
-                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <!-- End of tab-content -->
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+        </section>
     </template>
 
     <template id="our_team_slider_1_static" name="Our Team Slider 1 (Static)">
@@ -1966,12 +1576,9 @@
                     </h2>
                 </div>
                 <div class="row bottom-row categories">
-                    <div id="carousel_category"
-                        class="col-md-12 category-slider owl-carousel owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(-200px, 0px, 0px); transition: 0.25s; width: 1600px;">
-                                <div class="owl-item" style="width: 170px; margin-right: 30px;">
+                    <div id="pg_carousel_category"
+                        class="col-md-12 category-slider owl-carousel">
+                           
                                     <div class="item cs-cat">
                                         <a href="/shop/category/smartphones-49">
                                             <div class="cs-img">
@@ -1985,9 +1592,6 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
                                         <a href="/shop/category/homepod-50">
                                             <div class="cs-img">
@@ -2001,9 +1605,6 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
                                         <a href="/shop/category/apple-tv-4k-51">
                                             <div class="cs-img">
@@ -2017,9 +1618,6 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
                                         <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
@@ -2033,73 +1631,72 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
-                                        <a href="/shop/category/smartwatch-53">
+                                        <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
-                                                <img alt="SmartWatch"
-                                                    src="/web/image/product.public.category/53/image_1920?unique=f7ec521"
-                                                    title="SmartWatch" loading="lazy" />
+                                                <img alt="Smart TV"
+                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
+                                                    title="Smart TV" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">SmartWatch</p>
+                                                <p class="pwpi-title">Smart TV</p>
                                                 <p class="category_count">0 Items</p>
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
-                                        <a href="/shop/category/gaming-54">
+                                        <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
-                                                <img alt="Gaming"
-                                                    src="/web/image/product.public.category/54/image_1920?unique=fcd9055"
-                                                    title="Gaming" loading="lazy" />
+                                                <img alt="Smart TV"
+                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
+                                                    title="Smart TV" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Gaming</p>
+                                                <p class="pwpi-title">Smart TV</p>
                                                 <p class="category_count">0 Items</p>
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
-                                        <a href="/shop/category/headphones-55">
+                                        <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
-                                                <img alt="Headphones"
-                                                    src="/web/image/product.public.category/55/image_1920?unique=9fd25c2"
-                                                    title="Headphones" loading="lazy" />
+                                                <img alt="Smart TV"
+                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
+                                                    title="Smart TV" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Headphones</p>
+                                                <p class="pwpi-title">Smart TV</p>
                                                 <p class="category_count">0 Items</p>
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 170px; margin-right: 30px;">
                                     <div class="item cs-cat">
-                                        <a href="/shop/category/air-tag-56">
+                                        <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
-                                                <img alt="Air Tag"
-                                                    src="/web/image/product.public.category/56/image_1920?unique=83ac578"
-                                                    title="Air Tag" loading="lazy" />
+                                                <img alt="Smart TV"
+                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
+                                                    title="Smart TV" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Air Tag</p>
+                                                <p class="pwpi-title">Smart TV</p>
                                                 <p class="category_count">0 Items</p>
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <div class="item cs-cat">
+                                        <a href="/shop/category/smart-tv-52">
+                                            <div class="cs-img">
+                                                <img alt="Smart TV"
+                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
+                                                    title="Smart TV" loading="lazy" />
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">Smart TV</p>
+                                                <p class="category_count">0 Items</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                               
                         <div class="owl-nav">
                             <button type="button" role="presentation" class="owl-prev">
                                 <span aria-label="Previous">‹</span>
@@ -2126,13 +1723,9 @@
                     </h2>
                 </div>
                 <div class="row bottom-row categories">
-                    <div id="cat_slider_4_owl"
-                        class="col-md-12 category-slider owl-carousel owl-loaded owl-drag">
-                        <div class="owl-stage-outer">
-                            <div class="owl-stage"
-                                style="transform: translate3d(0px, 0px, 0px); transition: 0.5s; width: 1880px;">
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                    <div id="pg_cat_slider_4_owl"
+                        class="col-md-12 category-slider owl-carousel">
+                              
                                     <div class="item cs-cat">
                                         <a href="/shop/category/smartphones-49">
                                             <div class="cs-img sct_img_effect4">
@@ -2148,9 +1741,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                               
                                     <div class="item cs-cat">
                                         <a href="/shop/category/homepod-50">
                                             <div class="cs-img sct_img_effect4">
@@ -2166,9 +1757,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                                
                                     <div class="item cs-cat">
                                         <a href="/shop/category/apple-tv-4k-51">
                                             <div class="cs-img sct_img_effect4">
@@ -2184,9 +1773,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                               
                                     <div class="item cs-cat">
                                         <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img sct_img_effect4">
@@ -2202,9 +1789,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                               
                                     <div class="item cs-cat">
                                         <a href="/shop/category/smartwatch-53">
                                             <div class="cs-img sct_img_effect4">
@@ -2220,9 +1805,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item active"
-                                    style="width: 195px; margin-right: 40px;">
+                                
                                     <div class="item cs-cat">
                                         <a href="/shop/category/gaming-54">
                                             <div class="cs-img sct_img_effect4">
@@ -2238,8 +1821,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 195px; margin-right: 40px;">
+                              
                                     <div class="item cs-cat">
                                         <a href="/shop/category/headphones-55">
                                             <div class="cs-img sct_img_effect4">
@@ -2255,8 +1837,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="owl-item" style="width: 195px; margin-right: 40px;">
+                               
                                     <div class="item cs-cat">
                                         <a href="/shop/category/air-tag-56">
                                             <div class="cs-img sct_img_effect4">
@@ -2272,9 +1853,6 @@
                                             </div>
                                         </a>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="owl-nav disabled">
                             <button type="button" role="presentation" class="owl-prev">
                                 <span aria-label="Previous">‹</span>
@@ -2299,12 +1877,9 @@
                 </div>
                 <div class="row white-effect">
                     <div class="col-sm-12">
-                        <div class="sct-category owl-carousel owl-loaded owl-drag"
-                            id="website_category_slider">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage">
+                        <div class="sct-category owl-carousel"
+                            id="pg_cat_slider_gray_owl">
                                     <!-- 8 Static Categories -->
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/49">
                                                 <div
@@ -2319,8 +1894,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/50">
                                                 <div
@@ -2334,8 +1907,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/51">
                                                 <div
@@ -2350,8 +1921,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/52">
                                                 <div
@@ -2366,8 +1935,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/53">
                                                 <div
@@ -2382,8 +1949,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/54">
                                                 <div
@@ -2397,8 +1962,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/55">
                                                 <div
@@ -2413,8 +1976,6 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <div class="owl-item">
                                         <div class="item">
                                             <a href="/shop/category/56">
                                                 <div
@@ -2428,19 +1989,7 @@
                                                 </div>
                                             </a>
                                         </div>
-                                    </div>
-                                    <!-- /End Static Categories -->
-                                </div>
-                            </div>
-                            <div class="owl-nav">
-                                <button type="button" role="presentation" class="owl-prev">
-                                    <span aria-label="Previous">‹</span>
-                                </button>
-                                <button type="button" role="presentation" class="owl-next">
-                                    <span aria-label="Next">›</span>
-                                </button>
-                            </div>
-                            <div class="owl-dots disabled"></div>
+                                
                         </div>
                     </div>
                 </div>
