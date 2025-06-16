@@ -4,8 +4,8 @@
 from odoo import api, fields, models, tools
 from odoo.addons.website_sale.controllers import main
 
-class ProductPublicCategory(models.Model):
 
+class ProductPublicCategory(models.Model):
     _inherit = 'product.public.category'
 
     include_in_allcategory = fields.Boolean(
@@ -18,8 +18,11 @@ class ProductPublicCategory(models.Model):
                               translate=True,
                               help="""Short description which will be 
                               visible below category slider.""")
-    attributes_ids = fields.Many2many('product.attribute','product_category_attribute_rel', 'category_id','attribute_id', string="Attributes",domain="[('visibility', '=', 'visible')]")
-    attributes_ids_values = fields.Many2many('product.attribute.value', domain="[('attribute_id', 'in', attributes_ids)]", string="Attributes Values")
+    attributes_ids = fields.Many2many('product.attribute', 'product_category_attribute_rel', 'category_id',
+                                      'attribute_id', string="Attributes", domain="[('visibility', '=', 'visible')]")
+    attributes_ids_values = fields.Many2many('product.attribute.value',
+                                             domain="[('attribute_id', 'in', attributes_ids)]",
+                                             string="Attributes Values")
 
     @api.onchange('attributes_ids')
     def onchange_website_attributes_ids(self):
@@ -57,7 +60,8 @@ class ProductStyleTags(models.Model):
     color_code = fields.Char(string='Color', required=True)
     font_color_code = fields.Char(string='Font Color', required=True)
     style = fields.Selection(
-        [('style1', 'Style 1'), ('style2', 'Style 2'), ('style3', 'Style 3'), ('style4', 'Style 4'), ('style5', 'Style 5')], string="Style", required=True)
+        [('style1', 'Style 1'), ('style2', 'Style 2'), ('style3', 'Style 3'), ('style4', 'Style 4'),
+         ('style5', 'Style 5')], string="Style", required=True)
     position = fields.Selection(
         [('left', 'Left'), ('right', 'Right')], string="Position", default='right', required=True)
     product_ids = fields.One2many(
@@ -87,7 +91,7 @@ class ProductTemplate(models.Model):
 
     def quick_publish_product(self):
         self.ensure_one()
-        self.is_published = not(self.is_published)
+        self.is_published = not (self.is_published)
 
     def action_product_publish(self):
         self.is_published = True
@@ -102,14 +106,14 @@ class ProductTemplate(models.Model):
             search_details['base_domain'].append([('product_brand_id', 'in', options.get('brandlistdomain'))])
         return search_details
 
-    def _get_product_variant(self,attrib_value):
+    def _get_product_variant(self, attrib_value):
         variant_id = []
         product_variant_id = self.env['product.product'].search([
-            ('product_tmpl_id','=',self.id),
-            ('product_template_attribute_value_ids','in',attrib_value.id)])
+            ('product_tmpl_id', '=', self.id),
+            ('product_template_attribute_value_ids', 'in', attrib_value.id)])
         if product_variant_id:
             for j in product_variant_id:
-                if j.image_512 :
+                if j.image_512:
                     variant_id.append(j.id)
         return variant_id
 
@@ -119,7 +123,7 @@ class ProductProduct(models.Model):
 
     def quick_publish_product(self):
         self.ensure_one()
-        self.is_published = not(self.is_published)
+        self.is_published = not (self.is_published)
 
     def action_product_publish(self):
         self.is_published = True
@@ -138,16 +142,16 @@ class Brands(models.Model):
     sequence = fields.Integer()
     name = fields.Char(string='Brand Name', required=True, translate=True)
     brand_description = fields.Text(string='Description', translate=True)
-    image = fields.Binary(string='Brand Logo', attachment=True,)
+    image = fields.Binary(string='Brand Logo', attachment=True, )
     image_medium = fields.Binary("Medium-sized Image", attachment=True,
                                  help="Medium-sized logo of the brand. It is automatically "
-                                 "resized as a 128x128px image, with aspect ratio preserved. "
-                                 "Use this field in form views or some kanban views.")
+                                      "resized as a 128x128px image, with aspect ratio preserved. "
+                                      "Use this field in form views or some kanban views.")
     image_small = fields.Binary("Small-sized Image", attachment=True,
                                 help="Small-sized logo of the brand. It is automatically "
-                                "resized as a 64x64px image, with aspect ratio preserved. "
-                                "Use this field anywhere a small image is required.")
-    brand_cover = fields.Binary(string='Brand Cover', attachment=True,)
+                                     "resized as a 64x64px image, with aspect ratio preserved. "
+                                     "Use this field anywhere a small image is required.")
+    brand_cover = fields.Binary(string='Brand Cover', attachment=True, )
     product_ids = fields.One2many(
         'product.template',
         'product_brand_id',
@@ -172,8 +176,8 @@ class Brands(models.Model):
 
 #     name = fields.Char(string="Name", help='Name for sorting option',
 #                        required=True)
-    # sort_type = fields.Selection(
-    #     [('asc', 'Ascending'), ('desc', 'Descending')], string="Type", default='asc')
+# sort_type = fields.Selection(
+#     [('asc', 'Ascending'), ('desc', 'Descending')], string="Type", default='asc')
 #     sort_on = fields.Many2one('ir.model.fields', string='Sort On',
 #                               help='Select field on which you want to apply sorting',
 #                               domain=[('model', '=', 'product.template'),

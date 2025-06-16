@@ -3,12 +3,13 @@
 
 from odoo import api, fields, models
 
+
 class TrendingProductsConfiguration(models.Model):
     _name = 'trending.products.configuration'
     _description = 'Trending Product Snippet Configuration'
 
-    name = fields.Char(string="Name", help="Name",required=True, translate=True)
+    name = fields.Char(string="Name", help="Name", required=True, translate=True)
     active = fields.Boolean(string="Active", default=True)
     category_ids = fields.Many2many("product.public.category", string="Category")
-    image =  fields.Binary(string="Image banner",
-                               help="""Image banner""")
+    image = fields.Binary(string="Image banner",
+                          help="""Image banner""")

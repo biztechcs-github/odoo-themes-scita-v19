@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of AppJetty. See LICENSE file for full copyright and licensing details.
 
-import re
-import math
 import json
-import os
 from datetime import datetime
-from functools import partial
 from odoo.modules.module import get_resource_path
 from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http, SUPERUSER_ID, fields, tools
@@ -20,8 +16,6 @@ from odoo.addons.website.controllers.main import Website
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL
 from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
-from collections import defaultdict
-from itertools import product as cartesian_product
 
 
 class WebsiteAutocomplate(Website):
@@ -75,7 +69,7 @@ class ScitaSliderSettings(http.Controller):
             'slider_details': slider_header.hotspot_ids,
         })
         return values
-    
+
     @http.route('/get_product_info/<int:product_id>', type='json', auth="public", website=True)
     def get_product_info(self, product_id):
         product = request.env['product.template'].sudo().browse(product_id)
@@ -1135,7 +1129,6 @@ class ScitaShop(WebsiteSale):
     @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
-        print("====================post", post)
         if post.get('slider-type'):
             slider_header = request.env['product.category.img.slider.config'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -1167,7 +1160,6 @@ class ScitaShop(WebsiteSale):
             website = request.env['website'].get_current_website()
             values.update({'slider_type': slider_header.prod_cat_type, 'website': website})
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
-            print("values================", values)
             return IrQweb._render("theme_scita.product_category_img_slider_config_view", values)
         return False
 
@@ -1599,6 +1591,7 @@ class PWASupport(http.Controller):
             website = request.env['website'].get_current_website()
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_deal_of_the_day_view", values)
+        return False
 
     # @http.route(['/playground'], type='http', auth="public", website=True)
     # def playground(self, **kw):

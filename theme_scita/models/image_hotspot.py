@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+# Part of AppJetty. See LICENSE file for full copyright and licensing details.
 from odoo import models, fields
+
 
 class ImageHotspot(models.Model):
     _name = 'image.hotspot'
