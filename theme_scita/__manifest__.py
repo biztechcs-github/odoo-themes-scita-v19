@@ -3,8 +3,7 @@
 
 {
     'name': 'Theme Scita',
-    'summary': '''Mobile-first & most versatile Odoo theme. 
-Perfect for E-Commerce, Fashion, IT, Furniture and other 35+ industries.''',
+    'summary': '''Mobile-first & versatile Odoo theme — perfect for eCommerce and all CMS-based industries.''',
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com/',
     'category': 'Theme/Ecommerce',
@@ -13,9 +12,10 @@ Perfect for E-Commerce, Fashion, IT, Furniture and other 35+ industries.''',
     'description': '''Theme Scita
 Business theme
 Furniture theme
-Hardware theme
-Hardware and tools theme
+Web To Print theme
+Grocery theme
 Single Page theme
+Electronics Theme
 Digital security theme
 Event theme
 Medical equipments theme
@@ -43,7 +43,7 @@ odoo responsive website theme
 Scita Theme
 Odoo Scita Theme
 Scita theme for Odoo
-odoo 11 theme
+odoo 18 theme
 multipurpose theme
 odoo multipurpose theme
 odoo responsive theme
@@ -62,7 +62,6 @@ theme for business
 theme for ecommerce store
 Shop by category
 publish unpublish product
-AMP Support
     ''',
     'depends': [
         'sale_management',
@@ -77,7 +76,6 @@ AMP Support
     'data': [
         'security/ir.model.access.csv',
         'data/ir_asset.xml',
-        # 'data/menu_data.xml',
         'data/theme_scita_data.xml',
         'data/extra_pages_data.xml',
         'data/scita_image_data.xml',
@@ -135,7 +133,7 @@ AMP Support
         'views/playground_preview.xml',
     ],
     'support': 'support@appjetty.com',
-    'live_test_url': 'https://theme-scita-v17.appjetty.com/',
+    'live_test_url': 'https://theme-scita-v18.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
@@ -146,7 +144,7 @@ AMP Support
         "views/**/*"
     ],
     'application': True,
-    'price': 149.00,
+    'price': 165.00,
     'currency': 'EUR',
     'installable': True,
     'assets': {
