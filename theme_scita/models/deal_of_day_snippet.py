@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 # Part of AppJetty. See LICENSE file for full copyright and licensing details.
 
-import base64
-
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import ValidationError
 from odoo.addons.web_editor.tools import get_video_embed_code, get_video_thumbnail
@@ -21,6 +19,7 @@ class BannerImage(models.Model):
     banner_image_id = fields.Many2one("biztech.deal.of.the.day.configuration", "Deal of day banner")
     page_link = fields.Char(string="Link")
     website_menu_id = fields.Many2one("website.menu", "Website Menu")
+
 
 class ProductConfiguration(models.Model):
     _name = 'biztech.deal.of.the.day.configuration'
