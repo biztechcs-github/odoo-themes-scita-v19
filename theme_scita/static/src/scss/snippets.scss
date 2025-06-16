@@ -3038,6 +3038,7 @@ body #wrapwrap{
 			.section-title{
 				margin-bottom: 40px;
 			}
+			
 			.sct_img{
 				position: relative;
 				@include min768{
@@ -6810,6 +6811,10 @@ body #wrapwrap{
 					font-size: 28px;
 					line-height: normal;
 					margin: 0 0 5px;
+					white-space: nowrap;
+					max-width: 240px;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 				.progress-value-text {
 					color: rgba($light-color, 0.6);
@@ -6864,6 +6869,7 @@ body #wrapwrap{
 			}
 			.sct_cst_btn{
 				margin-top: auto;
+				width: 100%;
 			}
 		}
 		.sct_cmp_info {
