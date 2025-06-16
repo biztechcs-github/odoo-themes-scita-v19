@@ -9,7 +9,6 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
 from odoo.addons.website.controllers.main import QueryURL
 from datetime import datetime
-import json
 
 
 class CustomAMP(WebsiteSale):
@@ -82,14 +81,13 @@ class CustomAMP(WebsiteSale):
 
             now = datetime.timestamp(datetime.now())
             pricelist = request.env['product.pricelist'].browse(request.session.get('website_sale_current_pl'))
-            if not pricelist or request.session.get('website_sale_pricelist_time', 0) < now - 60*60: # test: 1 
+            if not pricelist or request.session.get('website_sale_pricelist_time', 0) < now - 60 * 60:  # test: 1
                 current_website = request.website.get_current_website()
                 pricelist = current_website._get_current_pricelist()
                 request.session['website_sale_pricelist_time'] = now
                 request.session['website_sale_current_pl'] = pricelist.id
 
             request.update_context(pricelist=pricelist.id, partner=request.env.user.partner_id)
-
 
             url = "/shop/amp"
             if search:

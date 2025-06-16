@@ -16,4 +16,3 @@ class ThemeNew(models.AbstractModel):
         self.disable_view('website_sale_comparison.product_add_to_compare')
         self.disable_view('website_sale.search')
         self.disable_view('website_sale.ecom_show_extra_fields')
-

@@ -13,7 +13,8 @@ class BlogSlider(models.Model):
                        website like Our Blogs, Latest Blog Post and etc...""",
                        required=True, translate=True)
     active = fields.Boolean(string="Active", default=True)
-    sub_title = fields.Text(string="Slider sub title", default='Lorem ipsum is simply dummy text of the printing and typesetting industry.',
+    sub_title = fields.Text(string="Slider sub title",
+                            default='Lorem ipsum is simply dummy text of the printing and typesetting industry.',
                             help="""Slider sub title to be display""", translate=True)
     no_of_counts = fields.Selection([('1', '1'), ('2', '2'), ('3', '3')], string="Counts",
                                     default='3',
@@ -25,7 +26,7 @@ class BlogSlider(models.Model):
                                    from here and it will be in milliseconds.''')
     collections_blog_post = fields.Many2many('blog.post', 'blogpost_slider_rel', 'slider_id',
                                              'post_id',
-                                             string="Collections of blog posts", required=True, 
+                                             string="Collections of blog posts", required=True,
                                              domain="[('is_published', '=', True), ('website_id', '=', website_id)]")
 
     website_id = fields.Many2one(
@@ -34,6 +35,7 @@ class BlogSlider(models.Model):
         default=lambda self: self.env['website'].get_current_website(),
         required=True
     )
+
 
 class CategorySlider(models.Model):
     _name = 'category.slider.config'
@@ -147,7 +149,7 @@ class ProductCategorySlider(models.Model):
     img_banner = fields.Binary(string="Image banner desktop",
                                help="""Image banner""")
     img_banner_mobile = fields.Binary(string="Image banner mobile",
-                               help="""Image banner Mobile""")
+                                      help="""Image banner Mobile""")
     img_link = fields.Char(string="Image Url", default='#',
                            help="""Image Url""")
     links = fields.Text(string="Links",
@@ -170,7 +172,7 @@ class ProductSnippetConfiguration(models.Model):
     _description = "Add Multiple Product In Snippet"
 
     name = fields.Char(string='Name', default="Trending", required=True)
-    sub_title = fields.Char(string="Sub Title", default="Lorem Ipsum is simply dummy text.",)
+    sub_title = fields.Char(string="Sub Title", default="Lorem Ipsum is simply dummy text.", )
     active = fields.Boolean(
         string="Active", default=True)
     collection_of_products = fields.Many2many('product.template', 'product_configuration_rel', 'slider_id',

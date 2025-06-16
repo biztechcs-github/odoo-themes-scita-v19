@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of AppJetty. See LICENSE file for full copyright and licensing details.
 
-import math
 import werkzeug
-import base64
-import os
-import re
-import uuid
 from lxml import etree
 from odoo import models, api, fields
 from odoo.http import request
@@ -200,11 +195,12 @@ class website(models.Model):
 
     # For category megamenu
     def get_public_product_category(self, submenu):
-        categories = self.env['product.public.category'].search([('parent_id', '=', False), ("website_id", "in", (False, request.website.id)),
-                                                                 ('include_in_megamenu',
-                                                                  '!=', False),
-                                                                 ('menu_id', '=', submenu.id)],
-                                                                order="name")
+        categories = self.env['product.public.category'].search(
+            [('parent_id', '=', False), ("website_id", "in", (False, request.website.id)),
+             ('include_in_megamenu',
+              '!=', False),
+             ('menu_id', '=', submenu.id)],
+            order="name")
         return categories
 
     def get_all_public_product_category(self, submenu):
@@ -271,15 +267,17 @@ class website(models.Model):
 
     def get_all_categories(self):
         categoriess = self.env['product.public.category'].search(
-            [('include_in_allcategory',"=",True),('parent_id', '=', False),("website_id", "in", [False, request.website.id])])
+            [('include_in_allcategory', "=", True), ('parent_id', '=', False),
+             ("website_id", "in", [False, request.website.id])])
         return categoriess
 
     # For category menu in topmenu
     def get_child_all_categories(self, child_id):
         child_categories = self.env['product.public.category'].search(
-            [('include_in_allcategory',"=",True),('parent_id', '=', child_id.id),("website_id", "in", [False, request.website.id])], order="sequence asc")
+            [('include_in_allcategory', "=", True), ('parent_id', '=', child_id.id),
+             ("website_id", "in", [False, request.website.id])], order="sequence asc")
         return child_categories
-    
+
     def get_categories(self, category=None):
         cat = {}
         shop_category = request.env['product.public.category'].sudo().search(
