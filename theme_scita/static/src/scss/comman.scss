@@ -2548,6 +2548,11 @@ body #wrapwrap::-webkit-scrollbar{
 	}
 }
 
+.o-main-components-container{
+	.position-fixed.pe-none:has(.o_notification_fade.toast){
+		z-index: 9999;
+	}
+}
 .o_notification_fade{
 	&.toast{
 		z-index: 3;

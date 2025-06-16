@@ -427,6 +427,12 @@ body #wrapwrap.o_portal {
 								font-size: 13px;
 							}
 						}
+						.text-muted{
+                            width: 32px !important;
+                            height: 32px;
+                            @include flex;
+                            @include justify-align-content;
+                        }
 						.form-control{
 							border: 0;
     						background-color: transparent;
@@ -516,7 +522,7 @@ body #wrapwrap.o_portal {
 						padding: 0;
 						background: transparent;
 						border: 0;
-						color: $primary;
+						color: $primary !important;
 						position: absolute;
 						left: 0;
 						right: 0;
