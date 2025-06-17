@@ -1593,7 +1593,7 @@ class PWASupport(http.Controller):
             return IrQweb._render("theme_scita.theme_scita_deal_of_the_day_view", values)
         return False
 
-    # @http.route(['/playground'], type='http', auth="public", website=True)
-    # def playground(self, **kw):
-    #     # You can pass data if needed
-    #     return request.render("theme_scita.playground_template", {})
+    @http.route(['/playground'], type='http', auth="public", website=True)
+    def playground(self, **kw):
+        # You can pass data if needed
+        return request.render("theme_scita.playground_template", {})

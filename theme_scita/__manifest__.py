@@ -180,6 +180,7 @@ publish unpublish product
             'theme_scita/static/src/js/quick_view.js',
             'theme_scita/static/src/js/mobile_view.js',
             'theme_scita/static/src/js/snippet_preview.js',
+            'theme_scita/static/src/js/pg_slider.js',
             'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/button/button_styles.scss'),
