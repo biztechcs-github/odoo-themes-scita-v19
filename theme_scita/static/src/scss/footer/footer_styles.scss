@@ -24,10 +24,10 @@
                     li {
                         a {
                             font-size: $fot-label;
-                            color: #6b6b6b;
+                            color: $light-color;
                             font-weight: 600;
                             &:hover{
-                                color:fade-in($body-color, 0.5);
+                                color:rgba($light-color, 0.5);
                             }
                             @media (max-width: 767px){
                                 margin-right:10px;
