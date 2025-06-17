@@ -379,18 +379,21 @@
                                 <optgroup label="Multi product snippet">
                                     <option value="theme_scita.sct_product_snippet_1_static" selected="selected">Multi product snippet 1</option>
                                     <option value="theme_scita.theme_scita_trending_products_snippet_static" selected="selected">Trending product snippet 1</option>
-
+                                    <option value="theme_scita.deal_multi_product_slider_static" selected="selected">Multi Deal Product Slider 1</option>
                                 </optgroup>
+
                                 <optgroup label=" Our Team snippets">
                                     <option value="theme_scita.our_team_slider_1_static" selected="selected"> Our Team Slider 1</option>
                                     <option value="theme_scita.our_team_slider_3_static" selected="selected">Our Team Slider 3 </option>
                                     <option value="theme_scita.our_team_slider_5_static" selected="selected">Our Team Slider 5</option>
                                 </optgroup>
+
                                 <optgroup label="Deal of the Day Snippet">
                                     <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" selected="selected"> Deal of the Day Snippet 1</option>
                                     <option value="theme_scita.deal_of_day_banner_3_static_preview" selected="selected">Deal of the Day Snippet 4</option>
                                     <option value="theme_scita.deal_of_day_banner_5_static_preview" selected="selected">Deal of the Day Snippet  5</option>
                                 </optgroup>
+
                                 <optgroup label="Client Snippet">
                                     <option value="theme_scita.third_client_slider_snippet_static_preview" selected="selected"> Client Snippet 1 </option>
                                     <option value="theme_scita.theme_scita_top_dealers_snippet_static_pre" selected="selected">Client Snippet 2</option>
@@ -478,6 +481,9 @@
                             </div>
                             <div id="preview-theme_scita.fashion_static_brand_snippet_static" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.fashion_static_brand_snippet_static" />
+                            </div>
+                             <div id="preview-theme_scita.deal_multi_product_slider_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.deal_multi_product_slider_static" />
                             </div>
                         </div>
                     </div>
