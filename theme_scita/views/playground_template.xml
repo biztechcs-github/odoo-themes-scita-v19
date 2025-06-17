@@ -377,8 +377,9 @@
                                 </optgroup>
 
                                 <optgroup label="Multi product snippet">
-                                    <option value="theme_scita.multi_category_product_slider" selected="selected">Multi product slider 2</option>
-                                    <!-- <option value="theme_scita.google_map_v2_static_preview" selected="selected">Google Map With content</option> -->
+                                    <option value="theme_scita.sct_product_snippet_1_static" selected="selected">Multi product snippet 1</option>
+                                    <option value="theme_scita.theme_scita_trending_products_snippet_static" selected="selected">Trending product snippet 1</option>
+
                                 </optgroup>
                                 <optgroup label=" Our Team snippets">
                                     <option value="theme_scita.our_team_slider_1_static" selected="selected"> Our Team Slider 1</option>
@@ -421,9 +422,15 @@
                             <div id="preview-theme_scita.google_map_v2_static_preview" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.google_map_v2_static_preview" />
                             </div>
-                            <div id="preview-theme_scita.multi_category_product_slider" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.multi_category_product_slider" />
+                    
+                            <div id="preview-theme_scita.sct_product_snippet_1_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_product_snippet_1_static" />
                             </div>
+
+                           <div id="preview-theme_scita.theme_scita_trending_products_snippet_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.theme_scita_trending_products_snippet_static" />
+                            </div>
+
                             <div id="preview-theme_scita.our_team_slider_1_static" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.our_team_slider_1_static" />
                             </div>

@@ -428,234 +428,110 @@
     </template>
 
 <!-- Multi product snippet -->
-    <template id="multi_category_product_slider" name="Multi Category Product Slider">
-        <section class="fashion_multi_category_slider o_colored_level">
-            <div class="fashion_featured_product_1">
+    <template id="sct_product_snippet_1_static" name="Multi Product Snippet Configuration 1 (Static)">
+        <section class="sct_product_snippet_1">
+            <div class='sct-snippet-full'>
                 <div class="container">
-                    <div class="lns-inner latest-news-section">
-                        <div class="row">
-                            <div class="lns-post">
-                                <div class="psb-inner">
-                                    <div class="title-block">
-                                        <h2 class="section-title style1">
-                            Featured Products
-                                        </h2>
+                    <div class="row top">
+                        <div class="content col-md-12">
+                            <h2 class="section-title">Featured Products</h2>
+                        </div>
+                    </div>
+                    <div class="row bottom-row content">
+                        <!-- Product 1 -->
+                        <div class="col-md-4 col-lg-3 col-6 grid_product">
+                            <div class="cs-product" data-publish="on">
+                                <div class="pwp-img">
+                                    <a href="/shop/product/example-product-1">
+                                        <img class="front" alt="Product 1" title="Product 1"
+                                            src="/web/image/product.template/1/image_1920/314x385"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title">
+                                            <a href="/shop/product/example-product-1">Product 1</a>
+                                        </h3>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">₹1,200.00</del>
+                                                ₹1,000.00
+                                            </b>
+                                        </p>
                                     </div>
-                                    <!-- Tabs (static, no JS, just for look) -->
-                                    <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs mb-3">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Smartphones &amp; Tablets</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">TV, Video &amp; Audio</a>
-                                        </li>
-                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-                                    <!-- Tab Content 1: Smartphones & Tablets -->
-                                    <div class="tab-pane fade show active">
-                                        <div class="row">
-                                            <!-- Product 1 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/66/image_1920/314x385?unique=dc8605d" alt="OnePlus Nord CE4 Lite 5G" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">OnePlus Nord CE4 Lite 5G</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <!-- Static 5-star rating (empty stars) -->
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 2 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/65/image_1920/314x385?unique=d5db8b5" alt="Samsung Galaxy Z Flip6" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">Samsung Galaxy Z Flip6</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 3 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/67/image_1920/314x385?unique=09ecf7f" alt="VIVO Y200e 5G" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">VIVO Y200e 5G</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 4 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/54/image_1920/314x385?unique=dc8605d" alt="iPad" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">iPad</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <!-- Product 2 -->
+                        <div class="col-md-4 col-lg-3 col-6 grid_product">
+                            <div class="cs-product" data-publish="on">
+                                <div class="pwp-img">
+                                    <a href="/shop/product/example-product-2">
+                                        <img class="front" alt="Product 2" title="Product 2"
+                                            src="/web/image/product.template/2/image_1920/314x385"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title">
+                                            <a href="/shop/product/example-product-2">Product 2</a>
+                                        </h3>
+                                       
+                                        <p class="price">
+                                            <b>
+                                                ₹800.00
+                                            </b>
+                                        </p>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                    <!-- Tab Content 2: TV, Video & Audio -->
-                                    <div class="tab-pane fade">
-                                        <div class="row">
-                                            <!-- Product 1 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/63/image_1920/314x385?unique=dc8605d" alt="Headphones" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">Headphones</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 2 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/52/image_1920/314x385?unique=dc8605d" alt="Mega Speakers" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">Mega Speakers</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 3 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/56/image_1920/314x385?unique=dc8605d" alt="PULSE headphones" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">PULSE headphones</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Product 4 -->
-                                            <div class="col-md-3 col-6 mb-4">
-                                                <div class="cs-product card">
-                                                    <a href="#">
-                                                        <img src="/web/image/product.template/68/image_1920/314x385?unique=293253f" alt="Wireless Earbuds" class="card-img-top" loading="lazy"/>
-                                                    </a>
-                                                    <div class="card-body">
-                                                        <h5 class="card-title mb-2">
-                                                            <a href="#">Wireless Earbuds</a>
-                                                        </h5>
-                                                        <div class="mb-2">
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                            <span class="fa fa-star-o"></span>
-                                                        </div>
-                                                        <p class="price mb-2">
-                                                            <b>$1.00</b>
-                                                        </p>
-                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <!-- Product 3 -->
+                        <div class="col-md-4 col-lg-3 col-6 grid_product">
+                            <div class="cs-product" data-publish="on">
+                                <div class="pwp-img">
+                                    <a href="/shop/product/example-product-3">
+                                        <img class="front" alt="Product 3" title="Product 3"
+                                            src="/web/image/product.template/3/image_1920/314x385"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title">
+                                            <a href="/shop/product/example-product-3">Product 3</a>
+                                        </h3>
+                                        <p class="price">
+                                            <b>
+                                                ₹1,500.00
+                                            </b>
+                                        </p>
                                     </div>
-                                    <!-- End of tab-content -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-md-4 col-lg-3 col-6 grid_product">
+                            <div class="cs-product" data-publish="on">
+                                <div class="pwp-img">
+                                    <a href="/shop/product/example-product-4">
+                                        <img class="front" alt="Product 4" title="Product 4"
+                                            src="/web/image/product.template/4/image_1920/314x385"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title">
+                                            <a href="/shop/product/example-product-4">Product 4</a>
+                                        </h3>
+                                        <p class="price">
+                                            <b>
+                                                ₹2,000.00
+                                            </b>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -665,6 +541,146 @@
         </section>
     </template>
 
+    <template id="theme_scita_trending_products_snippet_static" name="Trending Products">
+        <section class="theme_scita_trending_products oe_trending_products_section o_colored_level">
+                <div class="container">
+                    <div class="lns-inner latest-trendy-section">
+                        <div class="row">
+                            <div class="lns-post">
+                                <div class="psb-inner">
+                                    <div class="title-block">
+                                        <h2 class="section-title style1">Trending Products</h2>
+                                    </div>
+                                    <div class="trending_prod_inner d-flex flex-wrap justify-content-between">
+                                        <ul id="trending_products_categories" class="nav nav-tabs" style="background-image: url('/web/image/theme_scita.sct_trending_product_bg');">
+                                            <li class="trend_prod_tab">
+                                                <a data-bs-toggle="tab" class="cat_tab show active" href="#multi-collection1-2-1">
+                                                    Automotive Parts
+                                                </a>
+                                            </li>
+                                            <li class="trend_prod_tab">
+                                                <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
+                                                    Electronics
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="active multi_hide tab_content_inner" id="multi-collection1-2-1" data-title="Automotive Parts">
+                                                <div class="owl-carousel owl-loaded owl-drag tab_inner_wrap" id="product_slider">
+                                                    <div class="owl-stage-outer">
+                                                        <div class="owl-stage">
+                                                            <!-- Product 1 -->
+                                                            <div class="owl-item" data-product-id="1">
+                                                                <div class="cs-product" data-publish="on">
+                                                                    <div class="pwp-img">
+                                                                        <a href="/shop/product/example-product-1">
+                                                                            <img class="front" alt="Product 1" title="Product 1"
+                                                                                src="/web/image/product.template/1/image_1920"/>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="pwd-desc">
+                                                                        <div class="pwp-info">
+                                                                            <p class="pwpi-title">Product 1</p>
+                                                                            <div class="ratings">
+                                                                                <ul class="ratings">
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star-half-o"></i></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <p class="price">
+                                                                                <b>
+                                                                                    <del class="text-danger mr8">₹1,200.00</del>
+                                                                                    ₹1,000.00
+                                                                                </b>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Product 2 -->
+                                                            <div class="owl-item" data-product-id="2">
+                                                                <div class="cs-product" data-publish="on">
+                                                                    <div class="pwp-img">
+                                                                        <a href="/shop/product/example-product-2">
+                                                                            <img class="front" alt="Product 2" title="Product 2"
+                                                                                src="/web/image/product.template/2/image_1920"/>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="pwd-desc">
+                                                                        <div class="pwp-info">
+                                                                            <p class="pwpi-title">Product 2</p>
+                                                                            <div class="ratings">
+                                                                                <ul class="ratings">
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star-half-o"></i></li>
+                                                                                    <li><i class="fa fa-star-o"></i></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <p class="price">
+                                                                                <b>₹800.00</b>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Add more products as needed -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="multi_hide tab_content_inner" id="multi-collection2-2-1" data-title="Electronics">
+                                                <div class="owl-carousel owl-loaded owl-drag tab_inner_wrap" id="product_slider">
+                                                    <div class="owl-stage-outer">
+                                                        <div class="owl-stage">
+                                                            <!-- Product 3 -->
+                                                            <div class="owl-item" data-product-id="3">
+                                                                <div class="cs-product" data-publish="on">
+                                                                    <div class="pwp-img">
+                                                                        <a href="/shop/product/example-product-3">
+                                                                            <img class="front" alt="Product 3" title="Product 3"
+                                                                                src="/web/image/product.template/3/image_1920"/>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="pwd-desc">
+                                                                        <div class="pwp-info">
+                                                                            <p class="pwpi-title">Product 3</p>
+                                                                            <div class="ratings">
+                                                                                <ul class="ratings">
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                    <li><i class="fa fa-star"></i></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <p class="price">
+                                                                                <b>₹1,500.00</b>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Add more products as needed -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </template>
+
+    
 <!-- Our Team snippet/slider -->
     <template id="our_team_slider_1_static" name="Our Team Slider 1 (Static)">
         <section class="it_our_team our_team_varient_1 o_colored_level" data-disp="our_team" data-snippet="it_our_team" data-name="Our Team Slider 1">
