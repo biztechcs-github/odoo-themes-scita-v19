@@ -1,4 +1,5 @@
 <odoo>
+<!-- Blog Snippet/Slider -->
     <template id="blog_slider_view_1" name="Static Blog Snippet">
         <div class="container">
             <div class='row sct_top_row'>
@@ -10,14 +11,12 @@
                     </div>
                 </div>
             </div>
-
             <div class='row sct_mid_row justify-content-center'>
                 <!-- Blog Post 1 -->
                 <div class='col-lg-3 col-md-6 col-12'>
                     <div class='blog-thumb' title="Beyond The Eye">
                         <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_img'>
-                            <div class="section-post-media"
-                                style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
                         </a>
                         <div class='sct_blog_desc'>
                             <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_title'>
@@ -29,10 +28,8 @@
                                     <p class="author">By Mitchell Admin</p>
                                 </div>
                                 <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/beyond-the-eye"
-                                        class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg"
-                                            class="img img-fluid" alt='Blog Link' />
+                                    <a href="/blog/example-blog/post/beyond-the-eye" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
                                     </a>
                                 </div>
                             </div>
@@ -44,12 +41,10 @@
                 <div class='col-lg-3 col-md-6 col-12'>
                     <div class='blog-thumb' title="Buying A Telescope">
                         <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_img'>
-                            <div class="section-post-media"
-                                style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
                         </a>
                         <div class='sct_blog_desc'>
-                            <a href="/blog/example-blog/post/buying-a-telescope"
-                                class='it_blog_title'>
+                            <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_title'>
                                 <h3 class='sct_blog_name'>Buying A Telescope</h3>
                             </a>
                             <div class="sct_blog_detail row align-items-center">
@@ -58,10 +53,8 @@
                                     <p class="author">By Mitchell Admin</p>
                                 </div>
                                 <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/buying-a-telescope"
-                                        class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg"
-                                            class="img img-fluid" alt='Blog Link' />
+                                    <a href="/blog/example-blog/post/buying-a-telescope" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
                                     </a>
                                 </div>
                             </div>
@@ -73,8 +66,7 @@
             <div class='row sct_btm_row'>
                 <div class='col-md-12 text-center'>
                     <div class="sct_cst_btn">
-                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text"
-                            href="/blog">
+                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
                             <span>View More</span>
                         </a>
                     </div>
@@ -83,9 +75,7 @@
         </div>
     </template>
     <template id="scita_blog_2_slider_view_static" name="Blog Snippet 2 (Static)">
-        <section id="scita_blog_2_slider_view_static" class="blog blog_4_custom o_colored_level"
-            data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog"
-            data-snippet="blog_4_custom_snippet" data-name="Blog Snippet 2">
+        <section id="scita_blog_2_slider_view_static" class="blog blog_4_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_4_custom_snippet" data-name="Blog Snippet 2">
             <div class="container">
                 <div class="row sct_top_row">
                     <div class="col-md-12">
@@ -103,10 +93,8 @@
                                 <!-- Left Big Blog -->
                                 <div class="sct_base_class col-md-6">
                                     <div class="img_blog">
-                                        <a class="it_blog_img"
-                                            href="/blog/astronomy-2/post/beyond-the-eye-7">
-                                            <div class="section-post-media"
-                                                style="background-image: url('/website_blog/static/src/img/cover_7.jpg'); background-size:cover; background-position:center; height:220px; border-radius:8px;">
+                                        <a class="it_blog_img" href="/blog/astronomy-2/post/beyond-the-eye-7">
+                                            <div class="section-post-media" style="background-image: url('/website_blog/static/src/img/cover_7.jpg'); background-size:cover; background-position:center; height:220px; border-radius:8px;">
                                             </div>
                                             <div class="sct_img_content">
                                                 <p class="date">
@@ -116,8 +104,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <a class="it_blog_content"
-                                        href="/blog/astronomy-2/post/beyond-the-eye-7">
+                                    <a class="it_blog_content" href="/blog/astronomy-2/post/beyond-the-eye-7">
                                         <div class="sct_img_content">
                                             <h3 class="sct_blog_name">Beyond The Eye</h3>
                                             <p class="blog-content">
@@ -137,8 +124,7 @@
                                             </p>
                                         </div>
                                         <div class="sct_right_side">
-                                            <a class="read_link"
-                                                href="/blog/astronomy-2/post/buying-a-telescope-6">
+                                            <a class="read_link" href="/blog/astronomy-2/post/buying-a-telescope-6">
                                                 <h3 class="sct_blog_name">Buying A Telescope</h3>
                                                 <p class="blog-content">
                                                     Before you make your first purchase…...
@@ -154,8 +140,7 @@
                                             </p>
                                         </div>
                                         <div class="sct_right_side">
-                                            <a class="read_link"
-                                                href="/blog/astronomy-2/post/what-if-they-let-you-run-the-hubble-5">
+                                            <a class="read_link" href="/blog/astronomy-2/post/what-if-they-let-you-run-the-hubble-5">
                                                 <h3 class="sct_blog_name">What If They Let You Run
                                                     The Hubble</h3>
                                                 <p class="blog-content">
@@ -173,8 +158,7 @@
                                             </p>
                                         </div>
                                         <div class="sct_right_side">
-                                            <a class="read_link"
-                                                href="/blog/astronomy-2/post/how-to-look-up-4">
+                                            <a class="read_link" href="/blog/astronomy-2/post/how-to-look-up-4">
                                                 <h3 class="sct_blog_name">How To Look Up</h3>
                                                 <p class="blog-content">
                                                     Be aware of this thing called “astronomy”...
@@ -192,9 +176,7 @@
         </section>
     </template>
     <template id="blog_5_custom_snippet_static" name="Blog Slider 2 (Static)">
-        <section id="blog_custom_5_snippet" class="blog blog_5_custom o_colored_level"
-            data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog"
-            data-snippet="blog_5_custom_snippet" data-name="Blog Slider 2">
+        <section id="blog_custom_5_snippet" class="blog blog_5_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_5_custom_snippet" data-name="Blog Slider 2">
             <div class="container">
                 <div class="row">
                     <div class="blog_slider_wrap col-lg-9">
@@ -217,19 +199,18 @@
                                             <p class="date">
                                                 June 10,2025
                                             </p>
-                                            <p class="author">By <span>Mitchell Admin</span></p>
+                                            <p class="author">By <span>Mitchell Admin</span>
+                                            </p>
                                         </div>
                                         <div class="col-4 blog_link text-end">
                                             <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
+                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
-                         
+
                         </div>
                     </div>
                 </div>
@@ -237,16 +218,13 @@
         </section>
     </template>
     <template id="blog_2_custom_snippet_static" name="Blog Slider 1 (Static)">
-        <section id="blog_custom_2_snippet" class="blog blog_2_custom o_colored_level"
-            data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog"
-            data-snippet="blog_2_custom_snippet" data-name="Blog Slider 1">
+        <section id="blog_custom_2_snippet" class="blog blog_2_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_2_custom_snippet" data-name="Blog Slider 1">
             <div class="container">
                 <div id="pg_blog_2_owl_carosel" class="owl-carousel">
                     <!-- Blog 1 -->
                     <div class="sct_blog_box">
                         <a class="it_blog_img" href="/blog/astronomy-2/post/beyond-the-eye-7">
-                            <div class="section-post-media"
-                                style="background-image: url('/website_blog/static/src/img/cover_7.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
+                            <div class="section-post-media" style="background-image: url('/website_blog/static/src/img/cover_7.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
                             </div>
                             <div class="sct_base_class" title="Beyond The Eye">
                                 <div class="sct_blog_content_wrap">
@@ -256,9 +234,9 @@
                                     </div>
                                 </div>
                                 <div class="sct_blog_detail">
-                                    <div
-                                        class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span></p>
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
                                         <p class="date">
                                             <span class="icon-calendar"></span> June 10,2025 </p>
                                     </div>
@@ -266,17 +244,15 @@
                             </div>
                         </a>
                     </div>
-                   
+
                 </div>
             </div>
         </section>
     </template>
 
-
+<!-- Brand Slider -->
     <template id="box_brand_snippet_4_static_preview" name="Brand Slider 1 (Static Preview)">
-        <section class="box_brand_slider o_colored_level" data-product-count="0" data-disp="brand"
-            data-snippet="brands_box_slider_4" data-name="Brand Slider 1" data-brand-config-type="1"
-            data-brand-config-id="1">
+        <section class="box_brand_slider o_colored_level" data-product-count="0" data-disp="brand" data-snippet="brands_box_slider_4" data-name="Brand Slider 1" data-brand-config-type="1" data-brand-config-id="1">
             <div class="box_brand_snippet_4">
                 <div class="container">
                     <div class="row">
@@ -289,20 +265,20 @@
                     <div class="row our-brands">
                         <div class="col-sm-12">
                             <section class="owl-carousel pg-sct-brand-slider-2" id="box_brands_slider_owl">
-                                    <a href="/shop/brands?brand=1">
-                                        <div class="sct_brand_box text-center">
-                                            <div class="brand-logo-box">
-                                                <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
-                                            </div>
+                                <a href="/shop/brands?brand=1">
+                                    <div class="sct_brand_box text-center">
+                                        <div class="brand-logo-box">
+                                            <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
                                         </div>
-                                    </a>
-                                    <a href="/shop/brands?brand=1">
-                                        <div class="sct_brand_box text-center">
-                                            <div class="brand-logo-box">
-                                                <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
-                                            </div>
+                                    </div>
+                                </a>
+                                <a href="/shop/brands?brand=1">
+                                    <div class="sct_brand_box text-center">
+                                        <div class="brand-logo-box">
+                                            <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
                                         </div>
-                                    </a>
+                                    </div>
+                                </a>
                             </section>
                         </div>
                     </div>
@@ -311,25 +287,89 @@
         </section>
     </template>
 
+    <template id="it_prod_brands_static" name="Brand Snippet 1">
+        <section  class="it_brand_slider" data-brand-config-type="" data-brand-config-id="" contentEditable="false"  data-disp='brand'>
+            <div class="it_brand_snippet_1">
+                <div class="container">
+                    <div class='row'>
+                        <div class="col-md-12 title-block">
+                            <h2 class="section-title">
+                                Brands
+                            </h2>
+                            <!-- If you want to display another heading conditionally, you can just keep one or remove this comment -->
+                        </div>
+                    </div>
+                    <div class="row our-brands">
+                        <!-- Repeat this block for each brand -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a href="/shop/brands?brand=1" class="it_brand_border">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a href="/shop/brands?brand=2" class="it_brand_border">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/web/image/brand/2/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Add more blocks as needed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="fashion_static_brand_snippet_static" name="Brand Snippet 2">
+        <section class="fashion_static_brand_snippet" data-disp='brand'>
+            <div class="container-fluid">
+                <div class="row s_nb_column_fixed">
+                    <div class="sct_section_title">
+                        <h2 class="section-title">Shop Brands</h2>
+                    </div>
+                </div>
+                <div class="row s_nb_column_fixed sct_brand_row">
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-1.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-1.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-2.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-2.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-3.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-3.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+
+<!-- Google Map snippet -->
     <template id="google_map_v1_static_preview" name="Google Map V1 (Static Preview)">
-        <section class="google_map_v1 o_colored_level" data-map="" data-disp="google_map_snippet"
-            data-snippet="s_appjetty_google_map" data-name="Google Map">
-            <div class="mapouter"
-                style="position:relative; text-align:right; width:500px; height:450px;">
-                <div class="gmap_canvas"
-                    style="overflow:hidden; background:none!important; width:500px; height:450px;">
-                    <iframe
-                        width="500"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+        <section class="google_map_v1 o_colored_level" data-map="" data-disp="google_map_snippet" data-snippet="s_appjetty_google_map" data-name="Google Map">
+            <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
+                <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:500px; height:450px;">
+                    <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                     </iframe>
                 </div>
-                <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank"
-                    rel="noopener noreferrer" class="gme-generated-link">
+                <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">
                     Embed Map on Website for Free
                 </a>
                 <style>
@@ -345,30 +385,17 @@
     </template>
 
     <template id="google_map_v2_static_preview" name="Google Map V2 (Static Preview)">
-        <section class="google_map_v2 s_text_image o_colored_level" data-map_section=""
-            data-disp="google_map_snippet" data-snippet="s_appjetty_google_map_content"
-            data-name="Google Map With content">
+        <section class="google_map_v2 s_text_image o_colored_level" data-map_section="" data-disp="google_map_snippet" data-snippet="s_appjetty_google_map_content" data-name="Google Map With content">
             <div class="container">
                 <div class="row top_row">
                     <div class="col-md-7 sct_map o_colored_level">
                         <div class="map_data_container">
-                            <div class="mapouter"
-                                style="position:relative; text-align:right; width:500px; height:450px;">
-                                <div class="gmap_canvas"
-                                    style="overflow:hidden; background:none!important; width:500px; height:450px;">
-                                    <iframe
-                                        width="500"
-                                        height="450"
-                                        style="border:0;"
-                                        allowfullscreen=""
-                                        loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"
-                                        src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                            <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
+                                <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:500px; height:450px;">
+                                    <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                                     </iframe>
                                 </div>
-                                <a href="https://norsumediagroup.com/embed-google-map-website-free"
-                                    target="_blank" rel="noopener noreferrer"
-                                    class="gme-generated-link">
+                                <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">
                                     Embed Map on Website for Free
                                 </a>
                                 <style>
@@ -391,8 +418,7 @@
                         <p class="o_default_snippet_text">Start with the customer – find out what
                             they want and give it to them.</p>
                         <div class="sct_cst_btn">
-                            <a href="/contactus"
-                                class="btn btn-primary scita_cstm_btn o_default_snippet_text">Contact
+                            <a href="/contactus" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Contact
                                 Us</a>
                         </div>
                     </div>
@@ -401,238 +427,247 @@
         </section>
     </template>
 
+<!-- Multi product snippet -->
     <template id="multi_category_product_slider" name="Multi Category Product Slider">
         <section class="fashion_multi_category_slider o_colored_level">
             <div class="fashion_featured_product_1">
                 <div class="container">
-                <div class="lns-inner latest-news-section">
-                    <div class="row">
-                    <div class="lns-post">
-                        <div class="psb-inner">
-                        <div class="title-block">
-                            <h2 class="section-title style1">
+                    <div class="lns-inner latest-news-section">
+                        <div class="row">
+                            <div class="lns-post">
+                                <div class="psb-inner">
+                                    <div class="title-block">
+                                        <h2 class="section-title style1">
                             Featured Products
-                            </h2>
-                        </div>
-                        <!-- Tabs (static, no JS, just for look) -->
-                        <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs mb-3">
-                            <li class="nav-item">
-                            <a class="nav-link active" href="#">Smartphones &amp; Tablets</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="nav-link" href="#">TV, Video &amp; Audio</a>
-                            </li>
-                        </ul>
+                                        </h2>
+                                    </div>
+                                    <!-- Tabs (static, no JS, just for look) -->
+                                    <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs mb-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Smartphones &amp; Tablets</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">TV, Video &amp; Audio</a>
+                                        </li>
+                                    </ul>
 
-                        <!-- Tab Content 1: Smartphones & Tablets -->
-                        <div class="tab-pane fade show active">
-                            <div class="row">
-                            <!-- Product 1 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/66/image_1920/314x385?unique=dc8605d"
-                                        alt="OnePlus Nord CE4 Lite 5G" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">OnePlus Nord CE4 Lite 5G</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <!-- Static 5-star rating (empty stars) -->
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
+                                    <!-- Tab Content 1: Smartphones & Tablets -->
+                                    <div class="tab-pane fade show active">
+                                        <div class="row">
+                                            <!-- Product 1 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/66/image_1920/314x385?unique=dc8605d" alt="OnePlus Nord CE4 Lite 5G" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">OnePlus Nord CE4 Lite 5G</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <!-- Static 5-star rating (empty stars) -->
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 2 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/65/image_1920/314x385?unique=d5db8b5" alt="Samsung Galaxy Z Flip6" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">Samsung Galaxy Z Flip6</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 3 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/67/image_1920/314x385?unique=09ecf7f" alt="VIVO Y200e 5G" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">VIVO Y200e 5G</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 4 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/54/image_1920/314x385?unique=dc8605d" alt="iPad" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">iPad</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- Product 2 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/65/image_1920/314x385?unique=d5db8b5"
-                                        alt="Samsung Galaxy Z Flip6" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">Samsung Galaxy Z Flip6</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- Product 3 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/67/image_1920/314x385?unique=09ecf7f"
-                                        alt="VIVO Y200e 5G" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">VIVO Y200e 5G</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- Product 4 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/54/image_1920/314x385?unique=dc8605d"
-                                        alt="iPad" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">iPad</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
 
-                        <!-- Tab Content 2: TV, Video & Audio -->
-                        <div class="tab-pane fade">
-                            <div class="row">
-                            <!-- Product 1 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/63/image_1920/314x385?unique=dc8605d"
-                                        alt="Headphones" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">Headphones</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
+                                    <!-- Tab Content 2: TV, Video & Audio -->
+                                    <div class="tab-pane fade">
+                                        <div class="row">
+                                            <!-- Product 1 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/63/image_1920/314x385?unique=dc8605d" alt="Headphones" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">Headphones</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 2 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/52/image_1920/314x385?unique=dc8605d" alt="Mega Speakers" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">Mega Speakers</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 3 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/56/image_1920/314x385?unique=dc8605d" alt="PULSE headphones" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">PULSE headphones</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Product 4 -->
+                                            <div class="col-md-3 col-6 mb-4">
+                                                <div class="cs-product card">
+                                                    <a href="#">
+                                                        <img src="/web/image/product.template/68/image_1920/314x385?unique=293253f" alt="Wireless Earbuds" class="card-img-top" loading="lazy"/>
+                                                    </a>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title mb-2">
+                                                            <a href="#">Wireless Earbuds</a>
+                                                        </h5>
+                                                        <div class="mb-2">
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                            <span class="fa fa-star-o"></span>
+                                                        </div>
+                                                        <p class="price mb-2">
+                                                            <b>$1.00</b>
+                                                        </p>
+                                                        <button class="btn btn-primary btn-sm w-100">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
+                                    <!-- End of tab-content -->
                                 </div>
                             </div>
-                            <!-- Product 2 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/52/image_1920/314x385?unique=dc8605d"
-                                        alt="Mega Speakers" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">Mega Speakers</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- Product 3 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/56/image_1920/314x385?unique=dc8605d"
-                                        alt="PULSE headphones" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">PULSE headphones</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            <!-- Product 4 -->
-                            <div class="col-md-3 col-6 mb-4">
-                                <div class="cs-product card">
-                                <a href="#">
-                                    <img src="/web/image/product.template/68/image_1920/314x385?unique=293253f"
-                                        alt="Wireless Earbuds" class="card-img-top" loading="lazy"/>
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-2">
-                                    <a href="#">Wireless Earbuds</a>
-                                    </h5>
-                                    <div class="mb-2">
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <p class="price mb-2"><b>$1.00</b></p>
-                                    <button class="btn btn-primary btn-sm w-100">Add</button>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <!-- End of tab-content -->
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </div>
         </section>
     </template>
 
+<!-- Our Team snippet/slider -->
     <template id="our_team_slider_1_static" name="Our Team Slider 1 (Static)">
-        <section class="it_our_team our_team_varient_1 o_colored_level" data-disp="our_team"
-            data-snippet="it_our_team" data-name="Our Team Slider 1">
+        <section class="it_our_team our_team_varient_1 o_colored_level" data-disp="our_team" data-snippet="it_our_team" data-name="Our Team Slider 1">
             <div class="container">
                 <div class="row sct_top_row">
                     <div class="col-md-12 o_colored_level">
@@ -644,117 +679,68 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid" style="padding: 0 0;">
-                <div class="team-slider-wrapper"
-                    style="overflow-x: auto; white-space: nowrap; padding: 20px 0;">
-                    <!-- Team Member 1 -->
-                    <div class="team-card d-inline-block align-top"
-                        style="width:320px; margin-right:30px; vertical-align:top;">
-                        <div class="item text-center"
-                            style="padding:24px; background:#fff; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                            <div class="image-container mb-3">
-                                <div class="only-image">
-                                    <img class="img-responsive rounded-circle"
-                                        src="/web/image/hr.employee/6/image_1920?unique=fbfa9bf"
-                                        loading="lazy"
-                                        style="width:120px; height:120px; object-fit:cover; margin:auto;" />
+            <div class='row sct_btm_row'>
+                <div class='col-md-12'>
+                    <div class="sct_team_slider">
+                        <div id="pg_myourteam" class="owl-carousel myourteam owl-theme">
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Amisha Darji</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Odoo Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="https://twitter.com/amisha_darji">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="https://facebook.com/amisha.darji">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/amisha-darji">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="name">
-                                <h3 class="sct_title mb-1 mt-2">Abigail Peterson</h3>
-                                <p class="sct_simple_text mb-2">
-                                    <span>Consultant</span>
-                                </p>
-                            </div>
-                            <div class="follow">
-                                <a href="https://twitter.com/Odoo">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="https://www.facebook.com/Odoo">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/odoo">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Team Member 2 -->
-                    <div class="team-card d-inline-block align-top"
-                        style="width:320px; margin-right:30px; vertical-align:top;">
-                        <div class="item text-center"
-                            style="padding:24px; background:#fff; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                            <div class="image-container mb-3">
-                                <div class="only-image">
-                                    <img class="img-responsive rounded-circle"
-                                        src="/web/image/hr.employee/14/image_1920?unique=c2c4594"
-                                        loading="lazy"
-                                        style="width:120px; height:120px; object-fit:cover; margin:auto;" />
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Amisha Darji</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Odoo Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="https://twitter.com/amisha_darji">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="https://facebook.com/amisha.darji">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/amisha-darji">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="name">
-                                <h3 class="sct_title mb-1 mt-2">Anita Oliver</h3>
-                                <p class="sct_simple_text mb-2">
-                                    <span>Experienced Developer</span>
-                                </p>
-                            </div>
-                            <div class="follow">
-                                <a href="https://twitter.com/Odoo">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="https://www.facebook.com/Odoo">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/odoo">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
+
                         </div>
                     </div>
-                    <!-- Team Member 3 -->
-                    <div class="team-card d-inline-block align-top"
-                        style="width:320px; margin-right:30px; vertical-align:top;">
-                        <div class="item text-center"
-                            style="padding:24px; background:#fff; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-                            <div class="image-container mb-3">
-                                <div class="only-image">
-                                    <img class="img-responsive rounded-circle"
-                                        src="/web/image/hr.employee/7/image_1920?unique=5e04b15"
-                                        loading="lazy"
-                                        style="width:120px; height:120px; object-fit:cover; margin:auto;" />
-                                </div>
-                            </div>
-                            <div class="name">
-                                <h3 class="sct_title mb-1 mt-2">Audrey Peterson</h3>
-                                <p class="sct_simple_text mb-2">
-                                    <span>Consultant</span>
-                                </p>
-                            </div>
-                            <div class="follow">
-                                <a href="https://twitter.com/Odoo">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="https://www.facebook.com/Odoo">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/company/odoo">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- More team members... -->
                 </div>
             </div>
         </section>
-
-
     </template>
 
-
-    <template id="our_team_slider_3_static" name="Our Team Slider 3 (Static)">
-        <section class="our_team_varient_3 o_colored_level" data-disp="our_team"
-            data-snippet="our_team_varient_3" data-name="Our Team Slider 3">
+    <template id="our_team_slider_3_static" name="Our Team Slider 2 (Static)">
+        <section class="our_team_varient_3 o_colored_level" data-disp="our_team" data-snippet="our_team_varient_3" data-name="Our Team Slider 3">
             <div class="container">
                 <div class="row sct_top_row">
                     <div class="col-md-12 o_colored_level">
@@ -762,44 +748,19 @@
                         <p class="sct_simple_text o_default_snippet_text">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
-                <div class="row sct_btm_row" style="margin-top:40px;">
-                    <!-- Team Member 1 -->
-                    <div class="col-md-4">
-                        <div class="item text-center"
-                            style="padding:24px; background:#f8f9fa; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                            <img class="img-responsive rounded-circle mb-3"
-                                src="https://randomuser.me/api/portraits/women/4.jpg" loading="lazy"
-                                style="width:110px; height:110px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Beth Evans</h3>
-                            <h4 class="sct_job_desig">
-                                <span>Experienced Developer</span>
-                            </h4>
-                        </div>
-                    </div>
-                    <!-- Team Member 2 -->
-                    <div class="col-md-4">
-                        <div class="item text-center"
-                            style="padding:24px; background:#f8f9fa; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                            <img class="img-responsive rounded-circle mb-3"
-                                src="https://randomuser.me/api/portraits/men/5.jpg" loading="lazy"
-                                style="width:110px; height:110px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Doris Cole</h3>
-                            <h4 class="sct_job_desig">
-                                <span>Consultant</span>
-                            </h4>
-                        </div>
-                    </div>
-                    <!-- Team Member 3 -->
-                    <div class="col-md-4">
-                        <div class="item text-center"
-                            style="padding:24px; background:#f8f9fa; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-                            <img class="img-responsive rounded-circle mb-3"
-                                src="https://randomuser.me/api/portraits/women/6.jpg" loading="lazy"
-                                style="width:110px; height:110px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Eli Lambert</h3>
-                            <h4 class="sct_job_desig">
-                                <span>Marketing and Community Manager</span>
-                            </h4>
+                <div id="pg_v_3_myourteam" class="owl-carousel myourteam owl-theme">
+                    <div class="item">
+                        <div class="v-3-image-container">
+                            <div class="only-image">
+                                <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
+                            </div>
+                            <div class="name">
+                                <h3 class="sct_title">Amisha Darji</h3>
+                                <p class="sct_simple_text">
+                                    <span>Odoo Developer</span>
+                                </p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -808,8 +769,7 @@
     </template>
 
     <template id="our_team_slider_5_static" name="Our Team Slider 5 (Static)">
-        <section class="our_team_varient_5 o_colored_level" data-disp="our_team"
-            data-snippet="our_team_varient_5" data-name="Our Team Slider 5">
+        <section class="our_team_varient_5 o_colored_level" data-disp="our_team" data-snippet="our_team_varient_5" data-name="Our Team Slider 5">
             <div class="container">
                 <div class="row sct_top_row">
                     <div class="col-md-12 o_colored_level">
@@ -818,113 +778,103 @@
                             passionate about delivering results.</p>
                     </div>
                 </div>
-                <div class="row sct_btm_row" style="margin-top:40px;">
-                    <!-- Team Member 1 -->
-                    <div class="col-md-3">
-                        <div class="item text-center"
-                            style="padding:20px; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                            <img class="img-responsive rounded-circle mb-2"
-                                src="https://randomuser.me/api/portraits/women/7.jpg" loading="lazy"
-                                style="width:100px; height:100px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Ernest Reed</h3>
-                            <p class="sct_simple_text mb-1">
-                                <span>Lead Designer</span>
-                            </p>
-                            <div class="follow">
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
+                 <div id="pg_v_5_myourteam" class="owl-carousel myourteam owl-theme">
+                      <!-- Team Member 1 -->
+                        <div class="item">
+                            <div class="v-5-image-container">
+                                <div class="only-image">
+                                    <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Amisha Darji"/>
+                                    <div class="user_content_hover_wrap">
+                                        <div class="sct_emp_desc">
+                                            <p class="sct_simple_text">Dedicated and passionate Odoo Developer with a love for clean code.</p>
+                                        </div>
+                                        <div class="sct_hover_follow">
+                                            <a href="https://twitter.com/amisha_darji"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://facebook.com/amisha.darji"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://linkedin.com/in/amisha-darji"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="name">
+                                    <h3 class="sct_title">Amisha Darji</h3>
+                                    <h4 class="sct_job_desig sct_blue_line"><span>Odoo Developer</span></h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Team Member 2 -->
-                    <div class="col-md-3">
-                        <div class="item text-center"
-                            style="padding:20px; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                            <img class="img-responsive rounded-circle mb-2"
-                                src="https://randomuser.me/api/portraits/men/8.jpg" loading="lazy"
-                                style="width:100px; height:100px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Doris Cole</h3>
-                            <p class="sct_simple_text mb-1">
-                                <span>Marketing Head</span>
-                            </p>
-                            <div class="follow">
-                                <a href="#">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
+
+                        <!-- Team Member 2 -->
+                        <div class="item">
+                            <div class="v-5-image-container">
+                                <div class="only-image">
+                                    <img class="img-responsive" src="/web/image/res.users/2/image_1920" alt="Rahul Mehta"/>
+                                    <div class="user_content_hover_wrap">
+                                        <div class="sct_emp_desc">
+                                            <p class="sct_simple_text">Experienced Project Manager with a knack for efficient delivery.</p>
+                                        </div>
+                                        <div class="sct_hover_follow">
+                                            <a href="https://twitter.com/rahulmehta"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://facebook.com/rahul.mehta"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://linkedin.com/in/rahul-mehta"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="name">
+                                    <h3 class="sct_title">Rahul Mehta</h3>
+                                    <h4 class="sct_job_desig sct_blue_line"><span>Project Manager</span></h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Team Member 3 -->
-                    <div class="col-md-3">
-                        <div class="item text-center"
-                            style="padding:20px; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                            <img class="img-responsive rounded-circle mb-2"
-                                src="https://randomuser.me/api/portraits/men/9.jpg" loading="lazy"
-                                style="width:100px; height:100px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Eli Lambert</h3>
-                            <p class="sct_simple_text mb-1">
-                                <span>Developer</span>
-                            </p>
+
+                        <!-- Team Member 3 -->
+                        <div class="item">
+                            <div class="v-5-image-container">
+                                <div class="only-image">
+                                    <img class="img-responsive" src="/web/image/res.users/3/image_1920" alt="Sneha Patel"/>
+                                    <div class="user_content_hover_wrap">
+                                        <div class="sct_emp_desc">
+                                            <p class="sct_simple_text">UI/UX Designer passionate about crafting beautiful interfaces.</p>
+                                        </div>
+                                        <div class="sct_hover_follow">
+                                            <a href="https://twitter.com/snehapatel"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://facebook.com/sneha.patel"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://linkedin.com/in/sneha-patel"><i class="fa fa-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="name">
+                                    <h3 class="sct_title">Sneha Patel</h3>
+                                    <h4 class="sct_job_desig sct_blue_line"><span>UI/UX Designer</span></h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Team Member 4 -->
-                    <div class="col-md-3">
-                        <div class="item text-center"
-                            style="padding:20px; background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-                            <img class="img-responsive rounded-circle mb-2"
-                                src="https://randomuser.me/api/portraits/women/10.jpg"
-                                loading="lazy"
-                                style="width:100px; height:100px; object-fit:cover; margin:auto;" />
-                            <h3 class="sct_title mb-1 mt-2">Beth Evans</h3>
-                            <p class="sct_simple_text mb-1">
-                                <span>Consultant</span>
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
     </template>
 
-
-    <template id="retial_deal_of_day_banner_snippet_1_static_preview"
-        name="Deal of the Day Snippet 1 (Static Preview)">
-        <section class="retial_deal_of_day_banner_snippet_1 o_colored_level"
-            data-disp="deal_days"
-            data-snippet="retial_deal_of_day_banner_snippet_1"
-            data-name="Deal of the Day Snippet 1">
+<!-- Deal of the day -->
+    <template id="retial_deal_of_day_banner_snippet_1_static_preview" name="Deal of the Day Snippet 1 (Static Preview)">
+        <section class="retial_deal_of_day_banner_snippet_1 o_colored_level" data-disp="deal_days" data-snippet="retial_deal_of_day_banner_snippet_1" data-name="Deal of the Day Snippet 1">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_row">
                     <!-- Left Image Block -->
                     <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
                             <a href="/shop">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png"
-                                    class="img img-fluid"
-                                    alt="Image"
-                                    loading="lazy"
-                                    data-mimetype="image/jpeg" />
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                 <div class="sct_img_name">
                                     <h3 class="img_title o_default_snippet_text">Man Collection</h3>
                                     <p class="sub_title o_default_snippet_text">Designed to stand
                                         the test of time</p>
                                 </div>
                                 <div class="sct_img_link">
-                                    <img src="/theme_scita/static/src/img/arrow.svg"
-                                        class="img img-fluid"
-                                        alt="Link"
-                                        loading="lazy" />
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Link" loading="lazy" />
                                 </div>
                             </a>
                         </div>
                     </div>
                     <!-- Middle Deal Info + Image -->
-                    <div
-                        class="col-12 col-lg-4 col-xl-3 sct_deal_mid_wrapper d-flex flex-column flex-md-row flex-lg-column o_colored_level">
+                    <div class="col-12 col-lg-4 col-xl-3 sct_deal_mid_wrapper d-flex flex-column flex-md-row flex-lg-column o_colored_level">
                         <div class="sct_deal_timer_wrapper col-12 col-md-6 col-lg-12">
                             <div class="sct_timer_inner">
                                 <div class="sct_deal_text o_default_snippet_text">
@@ -937,11 +887,7 @@
                         <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
                             <div class="sct_deal_img">
                                 <a href="/shop">
-                                    <img src="/theme_scita/static/src/img/scita-placeholder.png"
-                                        class="img img-fluid"
-                                        alt="Image"
-                                        loading="lazy"
-                                        data-mimetype="image/jpeg" />
+                                    <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                     <div class="sct_img_name">
                                         <h3 class="img_title o_default_snippet_text">Man Collection</h3>
                                     </div>
@@ -953,11 +899,7 @@
                     <div class="col-md-6 col-lg-4 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
                             <a href="/shop">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png"
-                                    class="img img-fluid"
-                                    alt="Image"
-                                    loading="lazy"
-                                    data-mimetype="image/jpeg" />
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                             </a>
                             <div class="sct_img_name">
                                 <a href="/shop">
@@ -977,15 +919,8 @@
         </section>
     </template>
 
-
-    <template id="deal_of_day_banner_3_static_preview"
-        name="Deal of the Day Snippet 4 (Static Preview)">
-        <section
-            class="deal_of_day_banner_3 o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box"
-            style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4') !important;"
-            data-disp="deal_days"
-            data-snippet="deal_of_day_banner_3"
-            data-name="Deal of the Day Snippet 4">
+    <template id="deal_of_day_banner_3_static_preview" name="Deal of the Day Snippet 4 (Static Preview)">
+        <section class="deal_of_day_banner_3 o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4') !important;" data-disp="deal_days" data-snippet="deal_of_day_banner_3" data-name="Deal of the Day Snippet 4">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-8 sct_text_left o_colored_level">
@@ -1003,8 +938,7 @@
                             </div>
                             <div class="timer_counter_div"></div>
                             <div class="sct_deal_btn">
-                                <a href="/shop"
-                                    class="btn btn-primary scita_cstm_btn o_default_snippet_text">Shop
+                                <a href="/shop" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -1014,21 +948,13 @@
         </section>
     </template>
 
-    <template id="deal_of_day_banner_5_static_preview"
-        name="Deal of the Day Snippet 5 (Static Preview)">
-        <section class="deal_of_day_banner_5 o_colored_level"
-            data-disp="deal_days"
-            data-snippet="deal_of_day_banner_5"
-            data-name="Deal of the Day Snippet 5">
+    <template id="deal_of_day_banner_5_static_preview" name="Deal of the Day Snippet 5 (Static Preview)">
+        <section class="deal_of_day_banner_5 o_colored_level" data-disp="deal_days" data-snippet="deal_of_day_banner_5" data-name="Deal of the Day Snippet 5">
             <div class="container">
                 <div class="row deals_day">
                     <div class="col-md-6 sct_img_box o_colored_level">
                         <a href="/shop">
-                            <img src="/web/image/theme_scita.sct_deal_snippet_3"
-                                class="img img-fluid"
-                                alt="For Men Offer"
-                                loading="lazy"
-                                data-mimetype="image/jpeg" />
+                            <img src="/web/image/theme_scita.sct_deal_snippet_3" class="img img-fluid" alt="For Men Offer" loading="lazy" data-mimetype="image/jpeg" />
                         </a>
                     </div>
                     <div class="col-md-6 sct_content_box o_colored_level">
@@ -1037,20 +963,17 @@
                         </div>
                         <div class="timer_counter_div"></div>
                         <div class="sct_button">
-                            <a href="/deals-of-the-day"
-                                class="btn btn-primary o_default_snippet_text">Shop Now</a>
+                            <a href="/deals-of-the-day" class="btn btn-primary o_default_snippet_text">Shop Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </template>
+
+<!-- client snippet/slider -->
     <template id="third_client_slider_snippet_static_preview" name="Client Snippet 1 (Static)">
-        <section id="third_custom_client_slider"
-            class="our-clients third-client-slider s_text_image o_colored_level"
-            data-disp="client_snippet"
-            data-snippet="third_client_slider_snippet"
-            data-name="Client Snippet 1">
+        <section id="third_custom_client_slider" class="our-clients third-client-slider s_text_image o_colored_level" data-disp="client_snippet" data-snippet="third_client_slider_snippet" data-name="Client Snippet 1">
             <div class="container">
                 <div class="row sct_top_row">
                     <!-- Testimonials Carousel -->
@@ -1063,26 +986,17 @@
                         <div class="row testimonial_wrap">
                             <div class="col-md-12 o_colored_level">
                                 <section class="sct_test_slider s_carousel_wrapper">
-                                    <div id="myCarousel1749732166454"
-                                        class="s_carousel carousel quotecarousel slide o_colored_level"
-                                        data-bs-interval="10000">
+                                    <div id="myCarousel1749732166454" class="s_carousel carousel quotecarousel slide o_colored_level" data-bs-interval="10000">
                                         <div class="carousel-inner">
-                                            <div class="carousel-item o_colored_level active"
-                                                style="min-height: 266.141px;">
+                                            <div class="carousel-item o_colored_level active" style="min-height: 266.141px;">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div
-                                                            class="testimonial_quote_img o_colored_level">
-                                                            <img
-                                                                src="/theme_scita/static/src/img/testimonial-quote.png"
-                                                                class="img img-fluid"
-                                                                alt="Testimonial" loading="lazy" />
+                                                        <div class="testimonial_quote_img o_colored_level">
+                                                            <img src="/theme_scita/static/src/img/testimonial-quote.png" class="img img-fluid" alt="Testimonial" loading="lazy" />
                                                         </div>
-                                                        <div
-                                                            class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
+                                                        <div class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
                                                             <div class="sct_test_content">
-                                                                <p
-                                                                    class="sct_simple_text o_default_snippet_text">
+                                                                <p class="sct_simple_text o_default_snippet_text">
                                                                     Lorem ipsum dolor amet,
                                                                     adipiscing, sed do eiusmod
                                                                     tempor incididunt ut labore
@@ -1092,64 +1006,45 @@
                                                                     labore dolore magna aliqua.
                                                                 </p>
                                                                 <div class="sct_right_side">
-                                                                    <h4
-                                                                        class="sct_pers_name o_default_snippet_text">Mary
+                                                                    <h4 class="sct_pers_name o_default_snippet_text">Mary
                                                                         Deborah</h4>
-                                                                    <p
-                                                                        class="sct_simple_text o_default_snippet_text">Lorem
+                                                                    <p class="sct_simple_text o_default_snippet_text">Lorem
                                                                         ipsum</p>
                                                                 </div>
                                                             </div>
                                                             <div class="test_img_info">
                                                                 <div class="sct_left_side">
-                                                                    <img
-                                                                        src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg"
-                                                                        class="img img-fluid"
-                                                                        alt="person img"
-                                                                        loading="lazy" />
+                                                                    <img src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg" class="img img-fluid" alt="person img" loading="lazy" />
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="carousel-item o_colored_level"
-                                                style="min-height: 266.141px;">
+                                            <div class="carousel-item o_colored_level" style="min-height: 266.141px;">
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div
-                                                            class="testimonial_quote_img o_colored_level">
-                                                            <img
-                                                                src="/theme_scita/static/src/img/testimonial-quote.png"
-                                                                class="img img-fluid"
-                                                                alt="Testimonial" loading="lazy" />
+                                                        <div class="testimonial_quote_img o_colored_level">
+                                                            <img src="/theme_scita/static/src/img/testimonial-quote.png" class="img img-fluid" alt="Testimonial" loading="lazy" />
                                                         </div>
-                                                        <div
-                                                            class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
+                                                        <div class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
                                                             <div class="sct_test_content">
-                                                                <p
-                                                                    class="sct_simple_text o_default_snippet_text">
+                                                                <p class="sct_simple_text o_default_snippet_text">
                                                                     Amazing experience! Their team
                                                                     is very professional. Highly
                                                                     recommended for anyone looking
                                                                     for quality service.
                                                                 </p>
                                                                 <div class="sct_right_side">
-                                                                    <h4
-                                                                        class="sct_pers_name o_default_snippet_text">Ravi
+                                                                    <h4 class="sct_pers_name o_default_snippet_text">Ravi
                                                                         Kumar</h4>
-                                                                    <p
-                                                                        class="sct_simple_text o_default_snippet_text">
+                                                                    <p class="sct_simple_text o_default_snippet_text">
                                                                         Customer</p>
                                                                 </div>
                                                             </div>
                                                             <div class="test_img_info">
                                                                 <div class="sct_left_side">
-                                                                    <img
-                                                                        src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg"
-                                                                        class="img img-fluid"
-                                                                        alt="person img"
-                                                                        loading="lazy" />
+                                                                    <img src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg" class="img img-fluid" alt="person img" loading="lazy" />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1158,27 +1053,19 @@
                                             </div>
                                         </div>
                                         <div class="carousel-control">
-                                            <div class="carousel-control-prev o_we_no_overlay"
-                                                data-bs-target="#myCarousel1749732166454" role="img"
-                                                aria-label="Previous" title="Previous"
-                                                data-bs-slide="prev">
+                                            <div class="carousel-control-prev o_we_no_overlay" data-bs-target="#myCarousel1749732166454" role="img" aria-label="Previous" title="Previous" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon"></span>
                                                 <span class="sr-only o_default_snippet_text">
                                                     Previous</span>
                                             </div>
-                                            <div class="carousel-control-next o_we_no_overlay"
-                                                data-bs-target="#myCarousel1749732166454" role="img"
-                                                aria-label="Next" title="Next" data-bs-slide="next">
+                                            <div class="carousel-control-next o_we_no_overlay" data-bs-target="#myCarousel1749732166454" role="img" aria-label="Next" title="Next" data-bs-slide="next">
                                                 <span class="carousel-control-next-icon"></span>
                                                 <span class="sr-only o_default_snippet_text">Next</span>
                                             </div>
                                         </div>
                                         <ol class="carousel-indicators o_hidden o_we_no_overlay">
-                                            <li data-bs-target="#myCarousel1749732166454"
-                                                class="active" data-bs-slide-to="0"
-                                                aria-current="true"></li>
-                                            <li data-bs-target="#myCarousel1749732166454"
-                                                data-bs-slide-to="1"></li>
+                                            <li data-bs-target="#myCarousel1749732166454" class="active" data-bs-slide-to="0" aria-current="true"></li>
+                                            <li data-bs-target="#myCarousel1749732166454" data-bs-slide-to="1"></li>
                                         </ol>
                                     </div>
                                 </section>
@@ -1192,8 +1079,7 @@
                                 <h2 class="sct_test_title o_default_snippet_text">Our Partners</h2>
                             </div>
                         </div>
-                        <div class="d-flex flex-wrap testimonial-client-slider"
-                            id="our_partner_testimonial">
+                        <div class="d-flex flex-wrap testimonial-client-slider" id="our_partner_testimonial">
                             <div class="col-md-12">
                                 <div class="sct_client_not">
                                     <div class="block-title">
@@ -1213,209 +1099,109 @@
             </div>
         </section>
     </template>
-    <template id="theme_scita_top_dealers_snippet_static_preview" name="Client Snippet 2 (Static)">
-        <section id="top_dealers_snippet"
-            class="our-clients four-client-snippet oe_top_dealers_section o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box"
-            data-disp="client_snippet"
-            style="background-image: url('/web/image/theme_scita.top_dealer_background_image') !important;"
-            data-snippet="theme_scita_top_dealers_snippet" data-name="Client Snippet 2">
+    <template id="theme_scita_top_dealers_snippet_static_pre" name="Client Snippet 2 (Static)">
+        <section id="top_dealers_snippet" class="our-clients four-client-snippet oe_top_dealers_section o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" data-disp="client_snippet" style="background-image: url('/web/image/theme_scita.top_dealer_background_image') !important;" data-snippet="theme_scita_top_dealers_snippet" data-name="Client Snippet 2">
             <div class="container">
-                <div
-                    class="section-title-wrapper d-flex flex-wrap justify-content-between align-items-center">
+                <div class="section-title-wrapper d-flex flex-wrap justify-content-between align-items-center">
                     <h2 class="section-title style1">Top Dealers</h2>
                 </div>
-                <div class="row dealers-block-wrapper">
+                <div class="row dealers-block-wrapper" id="scita-top-deals">
                     <!-- Dealer 1 -->
                     <div class="col-md-6 col-lg-4 dealers-block-inner">
                         <div class="dealers-block">
                             <div class="block-top">
                                 <div class="logo">
                                     <a href="#">
-                                        <img alt="Abigail Peterson"
-                                            src="/web/image/res.partner/45/image_1920?unique=038c01a"
-                                            title="Abigail Peterson" loading="lazy" />
+                                        <img src="/web/image/res.partner/1/image_1920" alt="TechWorld Inc." title="TechWorld Inc." />
                                     </a>
                                 </div>
                                 <div class="product-disc">
-                                    <h3 class="title">0 Products</h3>
+                                    <h3 class="title">58 Products</h3>
                                 </div>
                             </div>
                             <div class="block-bottom">
                                 <ul>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg"
-                                            alt="Location" title="Location" loading="lazy" />
+                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
                                         <p>
-                                            <span>123 Main St</span>
-                                            <span>New York</span>
+                                            <span>123 Silicon Street,</span>
+                                            <span>Suite 400,</span>
+                                            <span>Bangalore,</span>
+                                            <span>Karnataka,</span>
+                                            <span>India</span>
                                         </p>
                                     </li>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img"
-                                            alt="Contact" title="Contact" loading="lazy" />
-                                        <p>
-                                            <a href="#" title="123-456-7890">
-                                                <span>123-456-7890</span>
-                                            </a>
-                                        </p>
+                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
+                                        <p><a href="#" title="+91-9876543210"><span>+91-9876543210</span></a></p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <!-- Dealer 2 -->
                     <div class="col-md-6 col-lg-4 dealers-block-inner">
                         <div class="dealers-block">
                             <div class="block-top">
                                 <div class="logo">
                                     <a href="#">
-                                        <img alt="Audrey Peterson"
-                                            src="/web/image/res.partner/46/image_1920?unique=038c01a"
-                                            title="Audrey Peterson" loading="lazy" />
+                                        <img src="/web/image/res.partner/2/image_1920" alt="HomeElectro Pvt Ltd" title="HomeElectro Pvt Ltd" />
                                     </a>
                                 </div>
                                 <div class="product-disc">
-                                    <h3 class="title">0 Products</h3>
+                                    <h3 class="title">32 Products</h3>
                                 </div>
                             </div>
                             <div class="block-bottom">
                                 <ul>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg"
-                                            alt="Location" title="Location" loading="lazy" />
+                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
                                         <p>
-                                            <span>456 Maple Rd</span>
-                                            <span>California</span>
+                                            <span>456 Appliance Avenue,</span>
+                                            <span>Floor 2,</span>
+                                            <span>Mumbai,</span>
+                                            <span>Maharashtra,</span>
+                                            <span>India</span>
                                         </p>
                                     </li>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img"
-                                            alt="Contact" title="Contact" loading="lazy" />
-                                        <p>
-                                            <a href="#" title="987-654-3210">
-                                                <span>987-654-3210</span>
-                                            </a>
-                                        </p>
+                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
+                                        <p><a href="#" title="+91-9988776655"><span>+91-9988776655</span></a></p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                     <!-- Dealer 3 -->
                     <div class="col-md-6 col-lg-4 dealers-block-inner">
                         <div class="dealers-block">
                             <div class="block-top">
                                 <div class="logo">
                                     <a href="#">
-                                        <img alt="Azure Interior"
-                                            src="/web/image/res.partner/15/image_1920?unique=038c01a"
-                                            title="Azure Interior" loading="lazy" />
+                                        <img src="/web/image/res.partner/3/image_1920" alt="Digital Store Hub" title="Digital Store Hub" />
                                     </a>
                                 </div>
                                 <div class="product-disc">
-                                    <h3 class="title">3 Products</h3>
+                                    <h3 class="title">75 Products</h3>
                                 </div>
                             </div>
                             <div class="block-bottom">
                                 <ul>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg"
-                                            alt="Location" title="Location" loading="lazy" />
+                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
                                         <p>
-                                            <span>4557 De Silva St</span>
-                                            <span>Fremont</span>
-                                            <span>California</span>
-                                            <span>United States</span>
+                                            <span>789 Gadget Plaza,</span>
+                                            <span>3rd Floor,</span>
+                                            <span>Ahmedabad,</span>
+                                            <span>Gujarat,</span>
+                                            <span>India</span>
                                         </p>
                                     </li>
                                     <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img"
-                                            alt="Contact" title="Contact" loading="lazy" />
-                                        <p>
-                                            <a href="#" title="(870)-931-0505">
-                                                <span>(870)-931-0505</span>
-                                            </a>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Dealer 4 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img alt="Colleen Diaz"
-                                            src="/web/image/res.partner/34/image_1920?unique=038c01a"
-                                            title="Colleen Diaz" loading="lazy" />
-                                    </a>
-                                </div>
-                                <div class="product-disc">
-                                    <h3 class="title">0 Products</h3>
-                                </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg"
-                                            alt="Location" title="Location" loading="lazy" />
-                                        <p>
-                                            <span>4557 De Silva St</span>
-                                            <span>Fremont</span>
-                                            <span>California</span>
-                                            <span>United States</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img"
-                                            alt="Contact" title="Contact" loading="lazy" />
-                                        <p>
-                                            <a href="#" title="(255)-595-8393">
-                                                <span>(255)-595-8393</span>
-                                            </a>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Dealer 5 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img alt="Nicole Ford"
-                                            src="/web/image/res.partner/28/image_1920?unique=038c01a"
-                                            title="Nicole Ford" loading="lazy" />
-                                    </a>
-                                </div>
-                                <div class="product-disc">
-                                    <h3 class="title">0 Products</h3>
-                                </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg"
-                                            alt="Location" title="Location" loading="lazy" />
-                                        <p>
-                                            <span>4557 De Silva St</span>
-                                            <span>Fremont</span>
-                                            <span>California</span>
-                                            <span>United States</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img"
-                                            alt="Contact" title="Contact" loading="lazy" />
-                                        <p>
-                                            <a href="#" title="(946)-638-6034">
-                                                <span>(946)-638-6034</span>
-                                            </a>
-                                        </p>
+                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
+                                        <p><a href="#" title="+91-9123456780"><span>+91-9123456780</span></a></p>
                                     </li>
                                 </ul>
                             </div>
@@ -1426,11 +1212,9 @@
         </section>
     </template>
 
-
+<!-- Category slider/snippet -->
     <template id="theme_scita_cat_slider_static_preview" name="Category Snippet 1 (Static)">
-        <section id="theme_scita_custom_category_slider"
-            class="oe_cat_slider categ_slider s_theme_scita_category_slider o_colored_level"
-        >
+        <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider o_colored_level">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -1441,9 +1225,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/smartphones-49">
                                             <div class="cs-img">
-                                                <img alt="Smartphones"
-                                                    src="/web/image/product.public.category/49/image_1920?unique=6ac0280"
-                                                    title="Smartphones" loading="lazy" />
+                                                <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Smartphones</p>
@@ -1456,9 +1238,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/homepod-50">
                                             <div class="cs-img">
-                                                <img alt="HomePod"
-                                                    src="/web/image/product.public.category/50/image_1920?unique=e13dd14"
-                                                    title="HomePod" loading="lazy" />
+                                                <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">HomePod</p>
@@ -1471,9 +1251,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/apple-tv-4k-51">
                                             <div class="cs-img">
-                                                <img alt="Apple TV 4K"
-                                                    src="/web/image/product.public.category/51/image_1920?unique=0627750"
-                                                    title="Apple TV 4K" loading="lazy" />
+                                                <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Apple TV 4K</p>
@@ -1486,9 +1264,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/smart-tv-52">
                                             <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
+                                                <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Smart TV</p>
@@ -1501,9 +1277,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/smartwatch-53">
                                             <div class="cs-img">
-                                                <img alt="SmartWatch"
-                                                    src="/web/image/product.public.category/53/image_1920?unique=f7ec521"
-                                                    title="SmartWatch" loading="lazy" />
+                                                <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">SmartWatch</p>
@@ -1516,9 +1290,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/gaming-54">
                                             <div class="cs-img">
-                                                <img alt="Gaming"
-                                                    src="/web/image/product.public.category/54/image_1920?unique=fcd9055"
-                                                    title="Gaming" loading="lazy" />
+                                                <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Gaming</p>
@@ -1531,9 +1303,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/headphones-55">
                                             <div class="cs-img">
-                                                <img alt="Headphones"
-                                                    src="/web/image/product.public.category/55/image_1920?unique=9fd25c2"
-                                                    title="Headphones" loading="lazy" />
+                                                <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Headphones</p>
@@ -1546,9 +1316,7 @@
                                     <div class="cs-cat">
                                         <a href="/shop/category/air-tag-56">
                                             <div class="cs-img">
-                                                <img alt="Air Tag"
-                                                    src="/web/image/product.public.category/56/image_1920?unique=83ac578"
-                                                    title="Air Tag" loading="lazy" />
+                                                <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">Air Tag</p>
@@ -1564,11 +1332,8 @@
             </div>
         </section>
     </template>
-
-
     <template id="theme_scita_category_slider_3_static_preview" name="Category Slider 1 (Static)">
-        <section id="theme_scita_custom_category_slider_3"
-            class="cat_slider_3 categ_slider scita_category_slider_3 o_colored_level">
+        <section id="theme_scita_custom_category_slider_3" class="cat_slider_3 categ_slider scita_category_slider_3 o_colored_level">
             <div class="container">
                 <div class="row top-row title-block section-title-wrapper">
                     <h2 class="col-md-12 section-title">
@@ -1576,127 +1341,108 @@
                     </h2>
                 </div>
                 <div class="row bottom-row categories">
-                    <div id="pg_carousel_category"
-                        class="col-md-12 category-slider owl-carousel">
-                           
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smartphones-49">
-                                            <div class="cs-img">
-                                                <img alt="Smartphones"
-                                                    src="/web/image/product.public.category/49/image_1920?unique=6ac0280"
-                                                    title="Smartphones" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smartphones</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/homepod-50">
-                                            <div class="cs-img">
-                                                <img alt="HomePod"
-                                                    src="/web/image/product.public.category/50/image_1920?unique=e13dd14"
-                                                    title="HomePod" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">HomePod</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/apple-tv-4k-51">
-                                            <div class="cs-img">
-                                                <img alt="Apple TV 4K"
-                                                    src="/web/image/product.public.category/51/image_1920?unique=0627750"
-                                                    title="Apple TV 4K" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Apple TV 4K</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <p class="category_count">0 Items</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                               
+                    <div id="pg_carousel_category" class="col-md-12 category-slider owl-carousel">
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smartphones-49">
+                                <div class="cs-img">
+                                    <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smartphones</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/homepod-50">
+                                <div class="cs-img">
+                                    <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">HomePod</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/apple-tv-4k-51">
+                                <div class="cs-img">
+                                    <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Apple TV 4K</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <p class="category_count">0 Items</p>
+                                </div>
+                            </a>
+                        </div>
+
                         <div class="owl-nav">
                             <button type="button" role="presentation" class="owl-prev">
                                 <span aria-label="Previous">‹</span>
@@ -1714,8 +1460,7 @@
 
 
     <template id="theme_scita_category_slider_4_static_preview" name="Category Slider 2 (Static)">
-        <section id="theme_scita_custom_category_slider_4"
-            class="cat_slider_4 categ_slider scita_category_slider_4 o_colored_level">
+        <section id="theme_scita_custom_category_slider_4" class="cat_slider_4 categ_slider scita_category_slider_4 o_colored_level">
             <div class="container">
                 <div class="row top-row title-block">
                     <h2 class="col-md-12 section-title">
@@ -1723,136 +1468,103 @@
                     </h2>
                 </div>
                 <div class="row bottom-row categories">
-                    <div id="pg_cat_slider_4_owl"
-                        class="col-md-12 category-slider owl-carousel">
-                              
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smartphones-49">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Smartphones"
-                                                    src="/web/image/product.public.category/49/image_1920?unique=6ac0280"
-                                                    title="Smartphones" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smartphones</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                               
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/homepod-50">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="HomePod"
-                                                    src="/web/image/product.public.category/50/image_1920?unique=e13dd14"
-                                                    title="HomePod" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">HomePod</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                                
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/apple-tv-4k-51">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Apple TV 4K"
-                                                    src="/web/image/product.public.category/51/image_1920?unique=0627750"
-                                                    title="Apple TV 4K" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Apple TV 4K</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                               
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Smart TV"
-                                                    src="/web/image/product.public.category/52/image_1920?unique=9ce90db"
-                                                    title="Smart TV" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                               
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/smartwatch-53">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="SmartWatch"
-                                                    src="/web/image/product.public.category/53/image_1920?unique=f7ec521"
-                                                    title="SmartWatch" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">SmartWatch</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                                
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/gaming-54">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Gaming"
-                                                    src="/web/image/product.public.category/54/image_1920?unique=fcd9055"
-                                                    title="Gaming" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Gaming</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                              
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/headphones-55">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Headphones"
-                                                    src="/web/image/product.public.category/55/image_1920?unique=9fd25c2"
-                                                    title="Headphones" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Headphones</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
-                               
-                                    <div class="item cs-cat">
-                                        <a href="/shop/category/air-tag-56">
-                                            <div class="cs-img sct_img_effect4">
-                                                <img alt="Air Tag"
-                                                    src="/web/image/product.public.category/56/image_1920?unique=83ac578"
-                                                    title="Air Tag" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Air Tag</p>
-                                                <img src="/theme_scita/static/src/img/arrow.svg"
-                                                    class="img img-fluid" alt="Blog Link"
-                                                    loading="lazy" />
-                                            </div>
-                                        </a>
-                                    </div>
+                    <div id="pg_cat_slider_4_owl" class="col-md-12 category-slider owl-carousel">
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smartphones-49">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smartphones</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/homepod-50">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">HomePod</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/apple-tv-4k-51">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Apple TV 4K</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smart-tv-52">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Smart TV</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/smartwatch-53">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">SmartWatch</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/gaming-54">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Gaming</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/headphones-55">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Headphones</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="item cs-cat">
+                            <a href="/shop/category/air-tag-56">
+                                <div class="cs-img sct_img_effect4">
+                                    <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Air Tag</p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
                         <div class="owl-nav disabled">
                             <button type="button" role="presentation" class="owl-prev">
                                 <span aria-label="Previous">‹</span>
@@ -1877,119 +1589,89 @@
                 </div>
                 <div class="row white-effect">
                     <div class="col-sm-12">
-                        <div class="sct-category owl-carousel"
-                            id="pg_cat_slider_gray_owl">
-                                    <!-- 8 Static Categories -->
-                                        <div class="item">
-                                            <a href="/shop/category/49">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/49/image_1920/210x88?unique=6ac0280"
-                                                        title="Smartphones" alt="Smartphones"
-                                                        loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Smartphones</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/50">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/50/image_1920/210x88?unique=e13dd14"
-                                                        title="HomePod" alt="HomePod" loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">HomePod</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/51">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/51/image_1920/210x88?unique=0627750"
-                                                        title="Apple TV 4K" alt="Apple TV 4K"
-                                                        loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Apple TV 4K</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/52">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/52/image_1920/210x88?unique=9ce90db"
-                                                        title="Smart TV" alt="Smart TV"
-                                                        loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Smart TV</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/53">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/53/image_1920/210x88?unique=f7ec521"
-                                                        title="SmartWatch" alt="SmartWatch"
-                                                        loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">SmartWatch</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/54">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/54/image_1920/210x88?unique=fcd9055"
-                                                        title="Gaming" alt="Gaming" loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Gaming</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/55">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/55/image_1920/210x88?unique=9fd25c2"
-                                                        title="Headphones" alt="Headphones"
-                                                        loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Headphones</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="item">
-                                            <a href="/shop/category/56">
-                                                <div
-                                                    class="category-logo d-flex align-items-center justify-content-center">
-                                                    <img
-                                                        src="/web/image/product.public.category/56/image_1920/210x88?unique=83ac578"
-                                                        title="Air Tag" alt="Air Tag" loading="lazy" />
-                                                </div>
-                                                <div class="category-title">
-                                                    <p class="text-center">Air Tag</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                
+                        <div class="sct-category owl-carousel" id="pg_cat_slider_gray_owl">
+                            <!-- 8 Static Categories -->
+                            <div class="item">
+                                <a href="/shop/category/49">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/49/image_1920/210x88?unique=6ac0280" title="Smartphones" alt="Smartphones" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Smartphones</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/50">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/50/image_1920/210x88?unique=e13dd14" title="HomePod" alt="HomePod" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">HomePod</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/51">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/51/image_1920/210x88?unique=0627750" title="Apple TV 4K" alt="Apple TV 4K" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Apple TV 4K</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/52">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/52/image_1920/210x88?unique=9ce90db" title="Smart TV" alt="Smart TV" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Smart TV</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/53">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/53/image_1920/210x88?unique=f7ec521" title="SmartWatch" alt="SmartWatch" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">SmartWatch</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/54">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/54/image_1920/210x88?unique=fcd9055" title="Gaming" alt="Gaming" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Gaming</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/55">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/55/image_1920/210x88?unique=9fd25c2" title="Headphones" alt="Headphones" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Headphones</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="/shop/category/56">
+                                    <div class="category-logo d-flex align-items-center justify-content-center">
+                                        <img src="/web/image/product.public.category/56/image_1920/210x88?unique=83ac578" title="Air Tag" alt="Air Tag" loading="lazy" />
+                                    </div>
+                                    <div class="category-title">
+                                        <p class="text-center">Air Tag</p>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1997,12 +1679,8 @@
         </section>
     </template>
 
-
-    <template id="custom_scita_cat_slider_static_preview"
-        name="Custom Product/Category Slider (Static Preview)">
-        <section
-            class="multi_product_and_category_slider s_custom_img_category_slider o_colored_level"
-          >
+    <template id="custom_scita_cat_slider_static_preview" name="Custom Product/Category Slider (Static Preview)">
+        <section class="multi_product_and_category_slider s_custom_img_category_slider o_colored_level">
             <div class="product_category_scita">
                 <div class="container">
                     <div class="row cst_top_row">
@@ -2018,12 +1696,8 @@
                         <div class="col-md-3 cst_sct_left_side">
                             <div class="cst_sct_img">
                                 <a href="#">
-                                    <img class="sct_desktop_image" alt="Top Selling Products"
-                                        src="/web/image/product.category.img.slider.config/1/img_banner?unique=0854e24"
-                                        title="Top Selling Products" loading="lazy" />
-                                    <img class="sct_mobile_image" alt="Top Selling Products"
-                                        src="/web/image/product.category.img.slider.config/1/img_banner_mobile?unique=0854e24"
-                                        title="Top Selling Products" loading="lazy" />
+                                    <img class="sct_desktop_image" alt="Top Selling Products" src="/web/image/product.category.img.slider.config/1/img_banner?unique=0854e24" title="Top Selling Products" loading="lazy" />
+                                    <img class="sct_mobile_image" alt="Top Selling Products" src="/web/image/product.category.img.slider.config/1/img_banner_mobile?unique=0854e24" title="Top Selling Products" loading="lazy" />
                                 </a>
                             </div>
                         </div>
@@ -2034,9 +1708,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/airpods-max-46">
-                                                <img alt="Airpods Max"
-                                                    src="/web/image/product.template/46/image_1920?unique=8d9149c"
-                                                    title="Airpods Max" loading="lazy" />
+                                                <img alt="Airpods Max" src="/web/image/product.template/46/image_1920?unique=8d9149c" title="Airpods Max" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2055,9 +1727,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2067,30 +1742,18 @@
                                             <form action="/shop/cart/update" method="post">
                                                 <input type="hidden" name="csrf_token" value="..." />
                                                 <input name="product_id" type="hidden" value="59" />
-                                                <button
-                                                    class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                    data-id="46">Add</button>
+                                                <button class="button btn btn-cart a-submit cart_view_sct_btn" data-id="46">Add</button>
                                                 <div class="input-group-append dropdown-plus">
-                                                    <span
-                                                        class="btn btn-link float_left js_add_cart_json"
-                                                        title="Add">
+                                                    <span class="btn btn-link float_left js_add_cart_json" title="Add">
                                                         <i class="fa fa-plus"></i>
                                                     </span>
                                                 </div>
-                                                <div
-                                                    class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
-                                                    <a class="btn btn-link js_add_cart_json"
-                                                        aria-label="Remove one" title="Remove one"
-                                                        href="#">
+                                                <div class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                    <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" href="#">
                                                         <i class="fa fa-minus"></i>
                                                     </a>
-                                                    <input type="text"
-                                                        class="form-control quantity text-center"
-                                                        data-min="1" name="add_qty" value="1" />
-                                                    <a
-                                                        class="btn btn-link float_left js_add_cart_json"
-                                                        aria-label="Add one" title="Add one"
-                                                        href="#">
+                                                    <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" value="1" />
+                                                    <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" href="#">
                                                         <i class="fa fa-plus"></i>
                                                     </a>
                                                 </div>
@@ -2101,20 +1764,14 @@
                                                 <input type="hidden" name="csrf_token" value="..." />
                                                 <input name="product_id" type="hidden" value="59" />
                                                 <div class="qvp-btn" id="quick_view_product">
-                                                    <button type="button"
-                                                        class="btn scita_cstm_btn quick_view_sct_btn qbtn"
-                                                        title="Quick View" data-id="46">
+                                                    <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-id="46">
                                                         <span class="fa fa-eye"></span>
                                                     </button>
                                                 </div>
-                                                <a class="btn btn-default btn-xs o_add_wishlist"
-                                                    title="Add to Wishlist" data-action="o_wishlist"
-                                                    data-product-product-id="59">
+                                                <a class="btn btn-default btn-xs o_add_wishlist" title="Add to Wishlist" data-action="o_wishlist" data-product-product-id="59">
                                                     <span class="fa fa-heart-o"></span>
                                                 </a>
-                                                <a class="btn btn-xs o_add_compare" title="Compare"
-                                                    data-action="o_comparelist"
-                                                    data-product-product-id="59">
+                                                <a class="btn btn-xs o_add_compare" title="Compare" data-action="o_comparelist" data-product-product-id="59">
                                                     <span class="fa fa-exchange"></span>
                                                 </a>
                                             </form>
@@ -2124,9 +1781,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/apple-watch-se-49">
-                                                <img alt="Apple Watch SE"
-                                                    src="/web/image/product.template/49/image_1920?unique=25289cb"
-                                                    title="Apple Watch SE" loading="lazy" />
+                                                <img alt="Apple Watch SE" src="/web/image/product.template/49/image_1920?unique=25289cb" title="Apple Watch SE" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2145,9 +1800,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">10.00</span></del>
-                                                <span><span class="oe_currency_value">10.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">10.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">10.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">10.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2161,9 +1819,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/camera-59">
-                                                <img alt="Camera"
-                                                    src="/web/image/product.template/59/image_1920?unique=d5b10a9"
-                                                    title="Camera" loading="lazy" />
+                                                <img alt="Camera" src="/web/image/product.template/59/image_1920?unique=d5b10a9" title="Camera" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2182,9 +1838,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2197,9 +1856,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/mega-speakers-52">
-                                                <img alt="Mega Speakers"
-                                                    src="/web/image/product.template/52/image_1920?unique=dc8605d"
-                                                    title="Mega Speakers" loading="lazy" />
+                                                <img alt="Mega Speakers" src="/web/image/product.template/52/image_1920?unique=dc8605d" title="Mega Speakers" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2218,9 +1875,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2233,9 +1893,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/refrigerator-60">
-                                                <img alt="Refrigerator"
-                                                    src="/web/image/product.template/60/image_1920?unique=31a816d"
-                                                    title="Refrigerator" loading="lazy" />
+                                                <img alt="Refrigerator" src="/web/image/product.template/60/image_1920?unique=31a816d" title="Refrigerator" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2254,9 +1912,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2269,9 +1930,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/vr-glasses-50">
-                                                <img alt="VR Glasses"
-                                                    src="/web/image/product.template/50/image_1920?unique=dc8605d"
-                                                    title="VR Glasses" loading="lazy" />
+                                                <img alt="VR Glasses" src="/web/image/product.template/50/image_1920?unique=dc8605d" title="VR Glasses" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2290,9 +1949,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2305,9 +1967,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/ipad-54">
-                                                <img alt="iPad"
-                                                    src="/web/image/product.template/54/image_1920?unique=dc8605d"
-                                                    title="iPad" loading="lazy" />
+                                                <img alt="iPad" src="/web/image/product.template/54/image_1920?unique=dc8605d" title="iPad" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2326,9 +1986,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2341,9 +2004,7 @@
                                     <li class="cs-cat">
                                         <div class="cs-img">
                                             <a href="/shop/product/iphone-16-pro-62">
-                                                <img alt="iPhone 16 Pro"
-                                                    src="/web/image/product.template/62/image_1920?unique=e1e9d50"
-                                                    title="iPhone 16 Pro" loading="lazy" />
+                                                <img alt="iPhone 16 Pro" src="/web/image/product.template/62/image_1920?unique=e1e9d50" title="iPhone 16 Pro" loading="lazy" />
                                             </a>
                                         </div>
                                         <div class="sct_cat_content">
@@ -2362,9 +2023,12 @@
                                         </div>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8 d-none"><span
-                                                        class="oe_currency_value">1.00</span></del>
-                                                <span><span class="oe_currency_value">1.00</span></span>
+                                                <del class="text-danger mr8 d-none">
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </del>
+                                                <span>
+                                                    <span class="oe_currency_value">1.00</span>
+                                                </span>
                                                 <span itemprop="price" style="display:none;">1.0</span>
                                                 <span itemprop="priceCurrency" style="display:none;">
                                                     USD</span>
@@ -2381,5 +2045,4 @@
             </div>
         </section>
     </template>
-
 </odoo>

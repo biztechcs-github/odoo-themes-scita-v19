@@ -173,7 +173,108 @@ odoo.define('theme_scita.pg_slider',[], function(require) {
                             });
                         }
         });
+
+        publicWidget.registry.CustomCategoryCarousel5 = publicWidget.Widget.extend({
+            selector: '#pg_myourteam',
+            start: function () {
+                this.$el.owlCarousel({
+                    loop:false,
+                    margin:30,
+                    nav:false,
+                    items:4,
+                    dots:false,
+                    rewind:true,
+                    autoplay:true,
+                    autoplayTimeout:4000,
+                    autoplayHoverPause:true,
+                    autoHeight: false,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:2
+                        },
+                        992:{
+                            items:3
+                        },
+                        1200:{
+                            items:4
+                        }
+                    }
+                
+                });
+            }
+        });
         
- 
+        publicWidget.registry.CustomCategoryCarousel6 = publicWidget.Widget.extend({
+            selector: '#pg_v_3_myourteam',
+            start: function () {
+                this.$el.owlCarousel({
+                    loop:false,
+                    margin:30,
+                    nav:false,
+                    items:3,
+                    dots:false,
+                    rewind:true,
+                    autoplay:true,
+                    autoplayTimeout:4000,
+                    autoplayHoverPause:true,
+                    autoHeight: false,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        576:{
+                            items:2
+                        },
+                        992:{
+                            items:3
+                        },
+                        1400:{
+                            items:4
+                        }
+                    }
+                
+                });
+            }
+        });
+        
+        publicWidget.registry.CustomCategoryCarousel7 = publicWidget.Widget.extend({
+            selector: '#pg_v_5_myourteam',
+            start: function () {
+                this.$el.owlCarousel({
+                    loop:false,
+                    margin:30,
+                    nav:false,
+                    items:4,
+                    autoplay:false,
+                    rewind:true,
+                    autoplayTimeout:4000,
+                    autoplayHoverPause:true,
+                    dots:false,
+                    autoHeight: false,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:2
+                        },
+                        768:{
+                            items:3
+                        },
+                        992:{
+                            items:4
+                        }
+                    }
+                
+                });
+            }
+        });
 });;
+
+
+
+
 
