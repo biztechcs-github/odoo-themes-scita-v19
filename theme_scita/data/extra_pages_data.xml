@@ -76,30 +76,6 @@
                                                 </h3>
                                             </div>
                                             <div class="col-md-3 col-sm-6 sct-thumb">
-	                                            <a href="/about-us-1" title="About us page 1">
-	                                                <img src="/theme_scita/static/src/img/leading/demo-about-page-1.jpg" class="img img-fluid" alt="About us page 1"/>
-	                                            </a>
-	                                            <h3 class="sct-sub-title">
-	                                                <a href="/about-us-1">About Us 1</a>
-	                                            </h3>
-	                                        </div>
-	                                        <div class="col-md-3 col-sm-6 sct-thumb">
-	                                            <a href="/about-us-2" title="About us page 2">
-	                                                <img src="/theme_scita/static/src/img/leading/demo-about-page-2.jpg" class="img img-fluid" alt="About us 2"/>
-	                                            </a>
-	                                            <h3 class="sct-sub-title">
-	                                                <a href="/about-us-2">About Us 2</a>
-	                                            </h3>
-	                                        </div>
-	                                        <div class="col-md-3 col-sm-6 sct-thumb">
-	                                            <a href="/about-us-3" title="About us page 3">
-	                                                <img src="/theme_scita/static/src/img/leading/demo-about-page-3.jpg" class="img img-fluid" alt="About us 3"/>
-	                                            </a>
-	                                            <h3 class="sct-sub-title">
-	                                                <a href="/about-us-3">About Us 3</a>
-	                                            </h3>
-	                                        </div>
-                                            <div class="col-md-3 col-sm-6 sct-thumb">
                                                 <a href="/coming-soon-page" title="Coming Soon Page">
                                                     <img src="/theme_scita/static/src/img/leading/coming-soon-page.jpg" class="img img-fluid" alt="Coming soon Page"/>
                                                 </a>

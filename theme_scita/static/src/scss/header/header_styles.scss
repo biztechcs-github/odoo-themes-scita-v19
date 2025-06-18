@@ -2213,7 +2213,7 @@
                 @include min992{
                     max-width: 460px;
                 }
-                @include min1340{
+                @include min1440{
                     max-width: 630px;
                 }
             }
@@ -3430,7 +3430,7 @@ header{
     
                                     &:hover{
                                         border: none;
-                                        background: #202020;
+                                        background-color: #202020 !important;
                                         color: #fff !important;
                                     }
                                 }
