@@ -377,7 +377,7 @@
                                 </optgroup>
 
                                 <optgroup label="Multi product snippet">
-                                    <option value="theme_scita.sct_product_snippet_1_static">Multi product snippet 1</option>
+                                    <option value="theme_scita.sct_product_snippet_1_s">Multi product snippet 1</option>
                                     <option value="theme_scita.theme_scita_trending_products_snippet_static">Trending product snippet 1</option>
                                     <option value="theme_scita.deal_multi_product_slider_static">Multi Deal Product Slider 1</option>
                                 </optgroup>
@@ -395,8 +395,8 @@
                                 </optgroup>
 
                                 <optgroup label="Client Snippet">
-                                    <option value="theme_scita.third_client_slider_snippet_static_preview"> Client Snippet 1 </option>
                                     <option value="theme_scita.top_dealers_snippet_static">Client Snippet 2</option>
+                                    <option value="theme_scita.third_client_slider_snippet_static_preview"> Client Snippet 1 </option>
                                 </optgroup>
 
                             </select>
@@ -426,8 +426,8 @@
                                 <t t-snippet="theme_scita.google_map_v2_static_preview" />
                             </div>
                     
-                            <div id="preview-theme_scita.sct_product_snippet_1_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_product_snippet_1_static" />
+                            <div id="preview-theme_scita.sct_product_snippet_1_s" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_product_snippet_1_s" />
                             </div>
 
                            <div id="preview-theme_scita.theme_scita_trending_products_snippet_static" class="snippet-container d-none">
