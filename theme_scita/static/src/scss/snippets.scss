@@ -619,6 +619,9 @@ body #wrapwrap{
                 @media (min-width: 1024px){
                     padding: 70px 50px;
                 }
+				.row{
+					flex: 1;	
+				}
                 .slider-content{
 					order: 1;
 					margin-top: 25px;
@@ -4325,6 +4328,10 @@ body #wrapwrap{
 					width: auto;
 					margin-right: 15px;
 				}
+				.fa{
+					font-size: $title + 7;
+					margin-right: 15px;
+				}
 			}
 		}
 		.sct_title {
@@ -4459,12 +4466,16 @@ body #wrapwrap{
 	@include min992{
 		padding: 60px 0 30px;
 	}
+	.row{
+		> div{
+			margin: 0 0 30px;
+		}
+	}
 	.case_study_box {
 		background: rgba($primary, 0.1);
 		padding: 30px;
 		border-radius: 10px;
-		margin: 0 0 30px;
-
+		height: 100%;
 		.sct_above {
 			width: 60px;
 		}
@@ -4623,12 +4634,8 @@ body #wrapwrap{
 			}
 			.s_rating{
 				margin-bottom: 10px;
-				i{
+				.s_rating_inactive_icons, .s_rating_active_icons{
 					color: #F0B419;
-					font-size: $title + 2;
-					@include min1200{
-						font-size: $title + 4;
-					}
 				}
 			}
 		}
@@ -11662,6 +11669,13 @@ body #wrapwrap{
 				   .sct_left_side{
 					   flex: 0 0 60px;
 					   max-width: 60px;
+					   img{
+						width: 60px;
+						height: 60px;
+						object-fit: cover;
+						object-position: top;
+						border-radius: 50%;
+					   }
 				   }
 				   .sct_right_side{
 					   flex: 0 0 calc(100% - 60px);

@@ -27,8 +27,8 @@
                         <h2 class="section-title">Why do we use it?</h2>
                     </div>
             	</div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-12 sct_content_info oe_img_bg' style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');">
+                <section class="row s_nb_column_fixed sct_btm_row oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');">
+                    <div class='col-md-12 sct_content_info' >
                     	<div class='sct_content_box'>
 	                    	<div class='sct_desc_div'>
 		                    	<p class='sct_simple_text'>On the basis of the medical center “Brivona” can be given a thorough examination of the body and get the advice of highly qualified specialists in various fields of medicine. According to studies, our doctors will make an individual program of prevention and treatment of identified diseases, directed to a surgical treatment if necessary.On the basis of the medical center “Brivona” can be given a thorough examination of the body and get the advice of highly qualified specialists in various </p>
@@ -40,7 +40,7 @@
                     	</div>
                     	
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     </template>
