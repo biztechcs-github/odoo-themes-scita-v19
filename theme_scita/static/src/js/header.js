@@ -48,7 +48,7 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
     _bindEvents() {
         const self = this;
         // Delegated event for quantity change
-        $('body').off('change', '.js_quantity').on('change', '.js_quantity', debounce(async function(ev) {
+        $('body').off('change', '.scita_js_quantity').on('change', '.scita_js_quantity', debounce(async function(ev) {
             ev.preventDefault();
             await self._onChangeQty(ev);
         }, 200));
@@ -62,7 +62,7 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
         $('body').off('click', '.js_add_cart_json').on('click', '.js_add_cart_json', async function(ev) {
             ev.preventDefault();
             const $btn = $(this);
-            const $input = $btn.siblings('input.js_quantity');
+            const $input = $btn.siblings('input.scita_js_quantity');
             if (!$input.length) {
                 console.warn('Quantity input not found near .js_add_cart_json button');
                 return;
@@ -158,7 +158,7 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
 
     _onRemoveLine(ev) {
         const lineId = ev.currentTarget.dataset.lineId;
-        $(ev.currentTarget).closest('.input-group').find('.js_quantity').val(0).trigger("change");
+        $(ev.currentTarget).closest('.input-group').find('.scita_js_quantity').val(0).trigger("change");
         const lineEl = document.querySelector(`#scita_sidebar_line_${lineId}`);
         if (lineEl) {
             lineEl.remove();
