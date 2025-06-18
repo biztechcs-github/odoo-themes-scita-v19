@@ -758,7 +758,7 @@
                                                             </a>
                                                             <!-- Quantity input -->
                                                             <input type="text"
-                                                                class="js_quantity form-control quantity"
+                                                                class="scita_js_quantity form-control quantity"
                                                                 t-att-data-line-id="line.id"
                                                                 t-att-data-product-id="line.product_id.id"
                                                                 t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
@@ -770,7 +770,7 @@
                                                         <t t-else="">
                                                             <span class="text-muted w-100" t-out="int(line.product_uom_qty)"/>
                                                             <input type="hidden"
-                                                                class="js_quantity form-control quantity"
+                                                                class="scita_js_quantity form-control quantity"
                                                                 t-att-data-line-id="line.id"
                                                                 t-att-data-product-id="line.product_id.id"
                                                                 t-att-value="line.product_uom_qty" />
