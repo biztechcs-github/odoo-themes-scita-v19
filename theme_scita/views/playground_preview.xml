@@ -1685,126 +1685,67 @@
         </section>
     </template>
 
-    <template id="theme_scita_top_dealers_snippet_static_pre" name="Client Snippet 2 (Static)">
-        <section id="top_dealers_snippet" class="our-clients four-client-snippet oe_top_dealers_section o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" data-disp="client_snippet" style="background-image: url('/web/image/theme_scita.top_dealer_background_image') !important;" data-snippet="theme_scita_top_dealers_snippet" data-name="Client Snippet 2">
+    <template id="top_dealers_snippet_static" name="Client Snippet 2 (Static)">
+      <section id="top_dealers_snippet_static" class="our-clients four-client-snippet oe_top_dealers_section o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" data-disp="client_snippet" style="background-image: url(&quot;/web/image/theme_scita.top_dealer_background_image&quot;) !important;" data-snippet="theme_scita_top_dealers_snippet" data-name="Client Snippet 2">
             <div class="container">
-                <div class="section-title-wrapper d-flex flex-wrap justify-content-between align-items-center">
+            <div class="section-title-wrapper d-flex flex-wrap  justify-content-between align-items-center" data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]">
                     <h2 class="section-title style1">Top Dealers</h2>
                 </div>
                 <div class="row dealers-block-wrapper" id="scita-top-deals">
-                    <!-- Dealer 1 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img src="/web/image/res.partner/1/image_1920" alt="TechWorld Inc." title="TechWorld Inc." />
-                                    </a>
+                        <div class="col-md-6 col-lg-4 dealers-block-inner">
+                            <div class="dealers-block">
+                                <div class="block-top">
+                                    <div class="logo">
+                                        <a href="#">
+                                            <img data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]" alt="Abigail Peterson" src="/web/image/res.partner/45/image_1920?unique=55b2600" title="Abigail Peterson" loading="lazy"/>
+                                        </a>
+                                    </div>
+                                    <div class="product-disc">
+                                        <h3 class="title">0 Products</h3>
+                                    </div>
                                 </div>
-                                <div class="product-disc">
-                                    <h3 class="title">58 Products</h3>
+                                <div class="block-bottom">
+                                    <ul>
+                                        <li>
+                                            <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location" data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/img[1]" loading="lazy"/>
+                                        </li>
+                                        <li>
+                                            <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact" data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/img[1]" loading="lazy"/>
+                                            <p>
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
-                                        <p>
-                                            <span>123 Silicon Street,</span>
-                                            <span>Suite 400,</span>
-                                            <span>Bangalore,</span>
-                                            <span>Karnataka,</span>
-                                            <span>India</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
-                                        <p>
-                                            <a href="#" title="+91-9876543210">
-                                                <span>+91-9876543210</span>
-                                            </a>
-                                        </p>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Dealer 2 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img src="/web/image/res.partner/2/image_1920" alt="HomeElectro Pvt Ltd" title="HomeElectro Pvt Ltd" />
-                                    </a>
+                        <div class="col-md-6 col-lg-4 dealers-block-inner">
+                            <div class="dealers-block">
+                                <div class="block-top">
+                                    <div class="logo">
+                                        <a href="#">
+                                            <img data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[1]/div[1]/a[1]/img[1]" alt="Anita Oliver" src="/web/image/res.partner/53/image_1920?unique=55b2600" title="Anita Oliver" loading="lazy"/>
+                                        </a>
+                                    </div>
+                                    <div class="product-disc">
+                                        <h3 class="title">0 Products</h3>
+                                    </div>
                                 </div>
-                                <div class="product-disc">
-                                    <h3 class="title">32 Products</h3>
+                                <div class="block-bottom">
+                                    <ul>
+                                        <li>
+                                            <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location" data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[2]/ul[1]/li[1]/img[1]" loading="lazy" />
+                                        </li>
+                                        <li>
+                                            <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact" data-oe-model="ir.ui.view" data-oe-id="2870" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/t[1]/div[1]/div[1]/div[2]/ul[1]/li[2]/img[1]" loading="lazy" />
+                                            <p>
+                                                <a href="#"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
-                                        <p>
-                                            <span>456 Appliance Avenue,</span>
-                                            <span>Floor 2,</span>
-                                            <span>Mumbai,</span>
-                                            <span>Maharashtra,</span>
-                                            <span>India</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
-                                        <p>
-                                            <a href="#" title="+91-9988776655">
-                                                <span>+91-9988776655</span>
-                                            </a>
-                                        </p>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Dealer 3 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img src="/web/image/res.partner/3/image_1920" alt="Digital Store Hub" title="Digital Store Hub" />
-                                    </a>
-                                </div>
-                                <div class="product-disc">
-                                    <h3 class="title">75 Products</h3>
-                                </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_location_svg" alt="Location" title="Location"/>
-                                        <p>
-                                            <span>789 Gadget Plaza,</span>
-                                            <span>3rd Floor,</span>
-                                            <span>Ahmedabad,</span>
-                                            <span>Gujarat,</span>
-                                            <span>India</span>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="/web/image/theme_scita.top_dealer_phone_svg_img" alt="Contact" title="Contact"/>
-                                        <p>
-                                            <a href="#" title="+91-9123456780">
-                                                <span>+91-9123456780</span>
-                                            </a>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
