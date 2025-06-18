@@ -98,11 +98,11 @@
                     </setting>
                 </block>
                 <!-- AMP Settings -->
-                <!-- <block title="AMP Settings" id="amp_setting">
+                <block title="AMP Settings" id="amp_setting">
                     <setting id="website_is_amp_enable">
                         <field name="is_amp_enable"/>
                     </setting>
-                </block> -->
+                </block>
             </block>
         </field>
     </record>
