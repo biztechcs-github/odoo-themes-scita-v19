@@ -32,7 +32,7 @@
             if (staticSelect) {
                 this._onSnippetChange({ currentTarget: staticSelect });
             }
-        } else if (activeTab.id === 'dynamic') {
+        } else {
             const dynamicSelect = document.querySelector('#dynamicSnippets');
             if (dynamicSelect) {
                 this._onSnippetChange({ currentTarget: dynamicSelect });

@@ -21,7 +21,7 @@
                                 Snippet</label>
                             <select id="staticSnippets" class="form-select">
                                 <optgroup label="Banner Snippets">
-                                    <option value="theme_scita.sct_banner_1" selected="selected">Banner
+                                    <option value="theme_scita.sct_banner_1">Banner
                                         Slider 1</option>
                                     <option value="theme_scita.sct_banner_2">Banner Slider 2</option>
                                     <option value="theme_scita.retail_sct_banner_slider_1">Banner
@@ -352,51 +352,51 @@
                             <select id="dynamicSnippets" class="form-select">
                                 <optgroup label="blog Snippet">
                                     <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
-                                    <option value="theme_scita.scita_blog_2_slider_view_static" selected="selected">Blog snippet 2</option>
-                                    <option value="theme_scita.blog_2_custom_snippet_static" selected="selected">Blog slider 1</option>
-                                    <option value="theme_scita.blog_5_custom_snippet_static" selected="selected">Blog slider 2</option>
+                                    <option value="theme_scita.scita_blog_2_slider_view_static">Blog snippet 2</option>
+                                    <option value="theme_scita.blog_2_custom_snippet_static">Blog slider 1</option>
+                                    <option value="theme_scita.blog_5_custom_snippet_static">Blog slider 2</option>
                                 </optgroup>
                                 <optgroup label="Brand Snippet">
-                                    <option value="theme_scita.box_brand_snippet_4_static_preview" selected="selected">Brand slider 1</option>
-                                    <option value="theme_scita.it_prod_brands_static" selected="selected">Brand snippet 1</option>
-                                    <option value="theme_scita.fashion_static_brand_snippet_static" selected="selected"> Brand Snippet 2</option>
+                                    <option value="theme_scita.box_brand_snippet_4_static_preview">Brand slider 1</option>
+                                    <option value="theme_scita.it_prod_brands_static">Brand snippet 1</option>
+                                    <option value="theme_scita.fashion_static_brand_snippet_static"> Brand Snippet 2</option>
                                 </optgroup>
 
                                 <optgroup label="Google Map Snippet">
-                                    <option value="theme_scita.google_map_v1_static_preview" selected="selected">Google Map</option>
-                                    <option value="theme_scita.google_map_v2_static_preview" selected="selected">Google Map With content</option>
+                                    <option value="theme_scita.google_map_v1_static_preview">Google Map</option>
+                                    <option value="theme_scita.google_map_v2_static_preview">Google Map With content</option>
                                 </optgroup>
 
                                 <optgroup label="Category Snippet Snippet">
-                                    <option value="theme_scita.theme_scita_cat_slider_static_preview" selected="selected">Category Snippet 1</option>
-                                    <option value="theme_scita.theme_scita_category_slider_3_static_preview" selected="selected">Category Slider 1</option>
-                                    <option value="theme_scita.theme_scita_category_slider_4_static_preview" selected="selected">Category Slider 2</option>
-                                    <option value="theme_scita.theme_scita_category_slider_gray_static_preview" selected="selected">Category Slider 3</option>
-                                    <option value="theme_scita.custom_scita_cat_slider_static_preview" selected="selected">Dynamic Product/Category Snippet</option>
+                                    <option value="theme_scita.theme_scita_cat_slider_static_preview">Category Snippet 1</option>
+                                    <option value="theme_scita.theme_scita_category_slider_3_static_preview">Category Slider 1</option>
+                                    <option value="theme_scita.theme_scita_category_slider_4_static_preview">Category Slider 2</option>
+                                    <option value="theme_scita.theme_scita_category_slider_gray_static_preview">Category Slider 3</option>
+                                    <option value="theme_scita.custom_scita_product_category_slider_static">Dynamic Product/Category Snippet</option>
 
                                 </optgroup>
 
                                 <optgroup label="Multi product snippet">
-                                    <option value="theme_scita.sct_product_snippet_1_static" selected="selected">Multi product snippet 1</option>
-                                    <option value="theme_scita.theme_scita_trending_products_snippet_static" selected="selected">Trending product snippet 1</option>
-                                    <option value="theme_scita.deal_multi_product_slider_static" selected="selected">Multi Deal Product Slider 1</option>
+                                    <option value="theme_scita.sct_product_snippet_1_static">Multi product snippet 1</option>
+                                    <option value="theme_scita.theme_scita_trending_products_snippet_static">Trending product snippet 1</option>
+                                    <option value="theme_scita.deal_multi_product_slider_static">Multi Deal Product Slider 1</option>
                                 </optgroup>
 
                                 <optgroup label=" Our Team snippets">
-                                    <option value="theme_scita.our_team_slider_1_static" selected="selected"> Our Team Slider 1</option>
-                                    <option value="theme_scita.our_team_slider_3_static" selected="selected">Our Team Slider 3 </option>
-                                    <option value="theme_scita.our_team_slider_5_static" selected="selected">Our Team Slider 5</option>
+                                    <option value="theme_scita.our_team_slider_1_static"> Our Team Slider 1</option>
+                                    <option value="theme_scita.our_team_slider_3_static">Our Team Slider 3 </option>
+                                    <option value="theme_scita.our_team_slider_5_static">Our Team Slider 5</option>
                                 </optgroup>
 
                                 <optgroup label="Deal of the Day Snippet">
-                                    <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" selected="selected"> Deal of the Day Snippet 1</option>
-                                    <option value="theme_scita.deal_of_day_banner_3_static_preview" selected="selected">Deal of the Day Snippet 4</option>
-                                    <option value="theme_scita.deal_of_day_banner_5_static_preview" selected="selected">Deal of the Day Snippet  5</option>
+                                    <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview"> Deal of the Day Snippet 1</option>
+                                    <option value="theme_scita.deal_of_day_banner_3_static_preview">Deal of the Day Snippet 4</option>
+                                    <option value="theme_scita.deal_of_day_banner_5_static_preview">Deal of the Day Snippet  5</option>
                                 </optgroup>
 
                                 <optgroup label="Client Snippet">
-                                    <option value="theme_scita.third_client_slider_snippet_static_preview" selected="selected"> Client Snippet 1 </option>
-                                    <option value="theme_scita.theme_scita_top_dealers_snippet_static_pre" selected="selected">Client Snippet 2</option>
+                                    <option value="theme_scita.third_client_slider_snippet_static_preview"> Client Snippet 1 </option>
+                                    <option value="theme_scita.theme_scita_top_dealers_snippet_static_pre">Client Snippet 2</option>
                                 </optgroup>
 
                             </select>
@@ -473,8 +473,8 @@
                             <div id="preview-theme_scita.theme_scita_category_slider_gray_static_preview" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.theme_scita_category_slider_gray_static_preview" />
                             </div>
-                            <div id="preview-theme_scita.custom_scita_cat_slider_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.custom_scita_cat_slider_static_preview" />
+                            <div id="preview-theme_scita.custom_scita_product_category_slider_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.custom_scita_product_category_slider_static" />
                             </div>
                             <div id="preview-theme_scita.it_prod_brands_static" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.it_prod_brands_static" />

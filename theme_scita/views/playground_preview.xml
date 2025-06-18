@@ -2276,370 +2276,385 @@
         </section>
     </template>
 
-    <template id="custom_scita_cat_slider_static_preview" name="Custom Product/Category Slider (Static Preview)">
-        <section class="multi_product_and_category_slider s_custom_img_category_slider o_colored_level">
-            <div class="product_category_scita">
-                <div class="container">
-                    <div class="row cst_top_row">
-                        <div class="col-md-12 cst_flex_base">
-                            <div class="cstm-seprator"></div>
-                            <h2 class="section-title style1">
-                                Top Selling Products
-                            </h2>
-                            <div class="cstm-seprator"></div>
-                        </div>
+    <template id="custom_scita_product_category_slider_static" name="Custom Product/Category Slider (Static Preview)">
+       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
+        <div class="product_category_scita">
+            <div class="container">
+                <div class="row cst_top_row">
+                    <div class="col-md-12 cst_flex_base">
+                        <div class="cstm-seprator" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]"></div>
+                        <h2 class="section-title style1">
+                            Trend
+                        </h2>
+                        <div class="cstm-seprator" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[2]"></div>
                     </div>
-                    <div class="row cst_btm_row">
-                        <div class="col-md-3 cst_sct_left_side">
-                            <div class="cst_sct_img">
-                                <a href="#">
-                                    <img class="sct_desktop_image" alt="Top Selling Products" src="/web/image/product.category.img.slider.config/1/img_banner?unique=0854e24" title="Top Selling Products" loading="lazy" />
-                                    <img class="sct_mobile_image" alt="Top Selling Products" src="/web/image/product.category.img.slider.config/1/img_banner_mobile?unique=0854e24" title="Top Selling Products" loading="lazy" />
-                                </a>
-                            </div>
+                </div>
+                <div class="row cst_btm_row">
+                    <div class="col-md-3 cst_sct_left_side">
+                        <div class="cst_sct_img">
+                            <a href="#">
+                                <img class="sct_desktop_image" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/img[1]" alt="Trend" src="/web/image/product.category.img.slider.config/1/img_banner?unique=afac6aa" title="Trend" loading="lazy" />
+                                <img class="sct_mobile_image" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/img[2]" alt="Trend" src="/web/image/product.category.img.slider.config/1/img_banner_mobile?unique=afac6aa" title="Trend" loading="lazy" />
+                            </a>
                         </div>
-                        <div class="col-md-9 cst_sct_right_side">
-                            <div class="cst_category-slider-section">
-                                <ul class="cat_list" id="cat_list_4">
-                                    <!-- Product 1 -->
+
+                        
+                    </div>
+                    <div class="col-md-9 cst_sct_right_side">
+                        <div class="cst_category-slider-section">
+                            <ul class="cat_list" id="cat_list_3">
                                     <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/airpods-max-46">
-                                                <img alt="Airpods Max" src="/web/image/product.template/46/image_1920?unique=8d9149c" title="Airpods Max" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/airpods-max-46">
-                                                <p class="pwpi-title">Airpods Max</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <div class="cart_wrapper add_cart_div ajax_cart_template">
-                                            <form action="/shop/cart/update" method="post">
-                                                <input type="hidden" name="csrf_token" value="..." />
-                                                <input name="product_id" type="hidden" value="59" />
-                                                <button class="button btn btn-cart a-submit cart_view_sct_btn" data-id="46">Add</button>
-                                                <div class="input-group-append dropdown-plus">
-                                                    <span class="btn btn-link float_left js_add_cart_json" title="Add">
-                                                        <i class="fa fa-plus"></i>
-                                                    </span>
-                                                </div>
-                                                <div class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
-                                                    <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" href="#">
-                                                        <i class="fa fa-minus"></i>
-                                                    </a>
-                                                    <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" value="1" />
-                                                    <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" href="#">
-                                                        <i class="fa fa-plus"></i>
+                                            <div class="cs-product" data-publish="on">
+                                                <div class="cs-img position-relative">  
+                                                    <a href="/shop/product/acoustic-bloc-screens-23">
+                                                        <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[1]/a[1]/img[1]" alt="Acoustic Bloc Screens" src="/web/image/product.template/23/image_1920?unique=8332384" title="Acoustic Bloc Screens" data-default-img-src="/web/image/product.template/23/image_1920?unique=8332384" loading="lazy" />
                                                     </a>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="sct-hover-info product_price">
-                                            <form action="/shop/cart/update" method="post">
-                                                <input type="hidden" name="csrf_token" value="..." />
-                                                <input name="product_id" type="hidden" value="59" />
-                                                <div class="qvp-btn" id="quick_view_product">
-                                                    <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-id="46">
-                                                        <span class="fa fa-eye"></span>
-                                                    </button>
+
+                                                <div class="pwd-desc">
+                                                    <div class="pwp-info">
+                                                        <div class="sct_cat_content">
+                                                            <a href="/shop/product/acoustic-bloc-screens-23">
+                                                                <p class="pwpi-title">
+
+                                                                    Acoustic Bloc Screens
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="pink-box" contenteditable="false">
+                                                            <ul class="ratings">
+                                                                <div data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/div[1]"></div>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="price">
+                                                            <b>
+                                                                    <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$<span class="oe_currency_value">295.00</span></del>
+                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$<span class="oe_currency_value">295.00</span></span>
+                                                                <span itemprop="price" style="display:none;">295.0</span>
+                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                            </b>
+                                                        </p>
+                                                                <ul data-attribute_id="2" class="list-inline o_wsale_product_attribute d-none d-xl-flex" data-default-img-src="/web/image/slide.template/23/image_512">
+                                                                    <li class="list-inline-item me-1 scita_attribute_li active">
+                                                                            <label style="background-color:Wood" class="css_attribute_color" data-preview-img-src="/web/image/product.product/32/image_512">
+                                                                                <input type="radio" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[1]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-4" value="8" title="Wood" data-value_id="8" data-value_name="Wood" data-attribute_name="Color" />
+                                                                            </label>
+                                                                    </li><li class="list-inline-item me-1 scita_attribute_li">
+                                                                            <label style="background-color:#FFFFFF" class="css_attribute_color" data-preview-img-src="/web/image/product.product/31/image_512">
+                                                                                <input type="radio" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[1]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-4" value="7" title="White" data-value_id="7" data-value_name="White" data-attribute_name="Color" />
+                                                                            </label>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul data-attribute_id="2" class="list-inline o_wsale_product_attribute d-flex d-xl-none" data-default-img-src="/web/image/slide.template/23/image_512">
+                                                                    <li class="list-inline-item me-1 scita_attribute_li">
+                                                                            <label style="background-color:Wood" class="css_attribute_color" data-preview-img-src="/web/image/product.product/32/image_512">
+                                                                                <input type="radio" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[2]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-4" value="8" title="Wood" data-value_id="8" data-value_name="Wood" data-attribute_name="Color" />
+                                                                            </label>
+                                                                    </li><li class="list-inline-item me-1 scita_attribute_li">
+                                                                            <label style="background-color:#FFFFFF" class="css_attribute_color" data-preview-img-src="/web/image/product.product/31/image_512">
+                                                                                <input type="radio" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[2]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-4" value="7" title="White" data-value_id="7" data-value_name="White" data-attribute_name="Color" />
+                                                                            </label>
+                                                                    </li>
+                                                                </ul>
+                                                        <div class="sct-hover-info product_price">
+                                                            <form action="/shop/cart/update" method="post">
+                                                                <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585"/>
+                                                                <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[2]" value="31" />
+                                                                
+                                                                <button type="button" role="button" id="quick_view_product" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/button[1]" data-id="23">
+                                                                    <span class="lni lni-eye"></span>
+                                                                </button>
+                                                                
+                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[1]/a[1]" data-product-product-id="31">
+                                                                        <span class="fa fa-exchange"></span>
+                                                                    </a>
+                                                                    <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[2]/a[1]" data-product-product-id="31">
+                                                                        <span class="lni lni-heart"></span>
+                                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[2]" value="31" />
+                                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="23">
+                                                                Add
+                                                            </button>
+                                                            <div class="input-group-append dropdown-plus" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[1]">
+                                                                <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div contenteditable="false" class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                                <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[1]" href="#">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </a>
+                                                                <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/input[1]" value="1"/>
+                                                                <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[2]" href="#">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
                                                 </div>
-                                                <a class="btn btn-default btn-xs o_add_wishlist" title="Add to Wishlist" data-action="o_wishlist" data-product-product-id="59">
-                                                    <span class="fa fa-heart-o"></span>
-                                                </a>
-                                                <a class="btn btn-xs o_add_compare" title="Compare" data-action="o_comparelist" data-product-product-id="59">
-                                                    <span class="fa fa-exchange"></span>
-                                                </a>
-                                            </form>
-                                        </div>
+                                            </div>
                                     </li>
-                                    <!-- Product 2 -->
                                     <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/apple-watch-se-49">
-                                                <img alt="Apple Watch SE" src="/web/image/product.template/49/image_1920?unique=25289cb" title="Apple Watch SE" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/apple-watch-se-49">
-                                                <p class="pwpi-title">Apple Watch SE</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">10.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">10.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">10.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, only
-                                        product/product_id/data-id will change -->
-                                        <!-- ... Copy all cart/hover HTML, change ids as needed ... -->
+                                            <div class="cs-product" data-publish="on">
+                                                <div class="cs-img position-relative">  
+                                                    <a href="/shop/product/e-com11-cabinet-with-doors-15">
+                                                        <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[1]/a[1]/img[1]" alt="Cabinet with Doors" src="/web/image/product.template/15/image_1920?unique=8332384" title="Cabinet with Doors" data-default-img-src="/web/image/product.template/15/image_1920?unique=8332384" loading="lazy" />
+                                                    </a>
+                                                </div>
+
+                                                <div class="pwd-desc">
+                                                    <div class="pwp-info">
+                                                        <div class="sct_cat_content">
+                                                            <a href="/shop/product/e-com11-cabinet-with-doors-15">
+                                                                <p class="pwpi-title">
+
+                                                                    Cabinet with Doors
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="pink-box" contenteditable="false">
+                                                            <ul class="ratings">
+                                                                <div data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/div[1]"></div>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="price">
+                                                            <b>
+                                                                    <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$<span class="oe_currency_value">140.00</span></del>
+                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$<span class="oe_currency_value">140.00</span></span>
+                                                                <span itemprop="price" style="display:none;">140.0</span>
+                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                            </b>
+                                                        </p>
+                                                        <div class="sct-hover-info product_price">
+                                                            <form action="/shop/cart/update" method="post">
+                                                                <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                                <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[2]" value="21" />
+                                                                
+                                                                <button type="button" role="button" id="quick_view_product" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/button[1]" data-id="15">
+                                                                    <span class="lni lni-eye"></span>
+                                                                </button>
+                                                                
+                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[1]/a[1]" data-product-product-id="21">
+                                                                        <span class="fa fa-exchange"></span>
+                                                                    </a>
+                                                                    <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[2]/a[1]" data-product-product-id="21">
+                                                                        <span class="lni lni-heart"></span>
+                                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[2]" value="21" />
+                                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="15">
+                                                                Add
+                                                            </button>
+                                                            <div class="input-group-append dropdown-plus" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[1]">
+                                                                <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div contenteditable="false" class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                                <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[1]" href="#">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </a>
+                                                                <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/input[1]" value="1" />
+                                                                <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[2]" href="#">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                     </li>
-                                    <!-- Product 3 -->
                                     <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/camera-59">
-                                                <img alt="Camera" src="/web/image/product.template/59/image_1920?unique=d5b10a9" title="Camera" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/camera-59">
-                                                <p class="pwpi-title">Camera</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
+                                            <div class="cs-product" data-publish="on">
+                                                <div class="cs-img position-relative">  
+                                                    <a href="/shop/product/furn-5555-cable-management-box-35">
+                                                        <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[1]/a[1]/img[1]" alt="Cable Management Box" src="/web/image/product.template/35/image_1920?unique=365586c" title="Cable Management Box" data-default-img-src="/web/image/product.template/35/image_1920?unique=365586c" loading="lazy" />
+                                                    </a>
+                                                </div>
+
+                                                <div class="pwd-desc">
+                                                    <div class="pwp-info">
+                                                        <div class="sct_cat_content">
+                                                            <a href="/shop/product/furn-5555-cable-management-box-35">
+                                                                <p class="pwpi-title">
+
+                                                                    Cable Management Box
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="pink-box" contenteditable="false">
+                                                            <ul class="ratings">
+                                                                <div data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/div[1]"></div>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="price">
+                                                            <b>
+                                                                    <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$<span class="oe_currency_value">100.00</span></del>
+                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$<span class="oe_currency_value">100.00</span></span>
+                                                                <span itemprop="price" style="display:none;">100.0</span>
+                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                            </b>
+                                                        </p>
+                                                        <div class="sct-hover-info product_price">
+                                                            <form action="/shop/cart/update" method="post">
+                                                                <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                                <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[2]" value="44" />
+                                                                
+                                                                <button type="button" role="button" id="quick_view_product" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/button[1]" data-id="35">
+                                                                    <span class="lni lni-eye"></span>
+                                                                </button>
+                                                                
+                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[1]/a[1]" data-product-product-id="44">
+                                                                        <span class="fa fa-exchange"></span>
+                                                                    </a>
+                                                                    <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[2]/a[1]" data-product-product-id="44">
+                                                                        <span class="lni lni-heart"></span>
+                                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585"/>
+                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[2]" value="44"/>
+                                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="35">
+                                                                Add
+                                                            </button>
+                                                            <div class="input-group-append dropdown-plus" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[1]">
+                                                                <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div contenteditable="false" class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                                <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[1]" href="#">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </a>
+                                                                <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/input[1]" value="1" />
+                                                                <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[2]" href="#">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                     </li>
-                                    <!-- Product 4 -->
                                     <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/mega-speakers-52">
-                                                <img alt="Mega Speakers" src="/web/image/product.template/52/image_1920?unique=dc8605d" title="Mega Speakers" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/mega-speakers-52">
-                                                <p class="pwpi-title">Mega Speakers</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
+                                            <div class="cs-product" data-publish="on">
+                                                <div class="cs-img position-relative">  
+                                                    <a href="/shop/product/chair-floor-protection-46">
+                                                        <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[1]/a[1]/img[1]" alt="Chair floor protection" src="/web/image/product.template/46/image_1920?unique=8332384" title="Chair floor protection" data-default-img-src="/web/image/product.template/46/image_1920?unique=8332384" loading="lazy" />
+                                                    </a>
+                                                </div>
+
+                                                <div class="pwd-desc">
+                                                    <div class="pwp-info">
+                                                        <div class="sct_cat_content">
+                                                            <a href="/shop/product/chair-floor-protection-46">
+                                                                <p class="pwpi-title">
+
+                                                                    Chair floor protection
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="pink-box" contenteditable="false">
+                                                            <ul class="ratings">
+                                                                <div data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/div[1]"></div>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                            <i class="fa fa-star-o" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[2]/ul[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="price">
+                                                            <b>
+                                                                    <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$<span class="oe_currency_value">12.00</span></del>
+                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$<span class="oe_currency_value">12.00</span></span>
+                                                                <span itemprop="price" style="display:none;">12.0</span>
+                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                            </b>
+                                                        </p>
+                                                        <div class="sct-hover-info product_price">
+                                                            <form action="/shop/cart/update" method="post">
+                                                                <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                                <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/input[2]" value="57" />
+                                                                
+                                                                <button type="button" role="button" id="quick_view_product" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/button[1]" data-id="46">
+                                                                    <span class="lni lni-eye"></span>
+                                                                </button>
+                                                                
+                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[1]/a[1]" data-product-product-id="57">
+                                                                        <span class="fa fa-exchange"></span>
+                                                                    </a>
+                                                                    <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[1]/div[3]/form[1]/t[2]/a[1]" data-product-product-id="57">
+                                                                        <span class="lni lni-heart"></span>
+                                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[1]" value="b33261e1f24a7e116b7fafc32fc5137df7f3f920o1781770585" />
+                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/input[2]" value="57" />
+                                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="46">
+                                                                Add
+                                                            </button>
+                                                            <div class="input-group-append dropdown-plus" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[1]">
+                                                                <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div contenteditable="false" class="o_hidden css_quantity input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                                <a class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[1]" href="#">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </a>
+                                                                <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/input[1]" value="1" />
+                                                                <a class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one" data-oe-model="ir.ui.view" data-oe-id="2933" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[2]/div[1]/ul[1]/t[1]/li[1]/t[2]/div[1]/div[2]/div[2]/form[1]/div[2]/a[2]" href="#">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
                                     </li>
-                                    <!-- Product 5 -->
-                                    <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/refrigerator-60">
-                                                <img alt="Refrigerator" src="/web/image/product.template/60/image_1920?unique=31a816d" title="Refrigerator" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/refrigerator-60">
-                                                <p class="pwpi-title">Refrigerator</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
-                                    </li>
-                                    <!-- Product 6 -->
-                                    <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/vr-glasses-50">
-                                                <img alt="VR Glasses" src="/web/image/product.template/50/image_1920?unique=dc8605d" title="VR Glasses" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/vr-glasses-50">
-                                                <p class="pwpi-title">VR Glasses</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
-                                    </li>
-                                    <!-- Product 7 -->
-                                    <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/ipad-54">
-                                                <img alt="iPad" src="/web/image/product.template/54/image_1920?unique=dc8605d" title="iPad" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/ipad-54">
-                                                <p class="pwpi-title">iPad</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
-                                    </li>
-                                    <!-- Product 8 -->
-                                    <li class="cs-cat">
-                                        <div class="cs-img">
-                                            <a href="/shop/product/iphone-16-pro-62">
-                                                <img alt="iPhone 16 Pro" src="/web/image/product.template/62/image_1920?unique=e1e9d50" title="iPhone 16 Pro" loading="lazy" />
-                                            </a>
-                                        </div>
-                                        <div class="sct_cat_content">
-                                            <a href="/shop/product/iphone-16-pro-62">
-                                                <p class="pwpi-title">iPhone 16 Pro</p>
-                                            </a>
-                                        </div>
-                                        <div class="pink-box" contenteditable="false">
-                                            <ul class="ratings">
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                                <i class="fa fa-star-o"></i>
-                                            </ul>
-                                        </div>
-                                        <p class="price">
-                                            <b>
-                                                <del class="text-danger mr8 d-none">
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </del>
-                                                <span>
-                                                    <span class="oe_currency_value">1.00</span>
-                                                </span>
-                                                <span itemprop="price" style="display:none;">1.0</span>
-                                                <span itemprop="priceCurrency" style="display:none;">
-                                                    USD</span>
-                                            </b>
-                                        </p>
-                                        <!-- Same as above for cart & hover-info, change ids as
-                                        needed -->
-                                    </li>
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+     </section>
     </template>
 </odoo>
