@@ -59,5 +59,5 @@ class CustomResConfiguration(models.TransientModel):
         related="website_id.brand_display_option", readonly=False)
     is_default_code = fields.Boolean(
         string="Default code display in product page", related="website_id.is_default_code", readonly=False)
-    is_amp_enable = fields.Boolean(
-        string="Enable AMP", related="website_id.is_amp_enable", readonly=False)
+    # is_amp_enable = fields.Boolean(
+    #     string="Enable AMP", related="website_id.is_amp_enable", readonly=False)
