@@ -116,7 +116,6 @@ publish unpublish product
         'views/deal_of_the_day_config_view.xml',
         'views/snippets.xml',
         'views/product_details_template.xml',
-        'views/shop_page_amp_template.xml',
         'views/shop_by_category.xml',
         'views/deal_of_day_page.xml',
         'views/pwa_config_view.xml',

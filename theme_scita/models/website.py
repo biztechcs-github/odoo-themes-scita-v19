@@ -143,8 +143,8 @@ class website(models.Model):
         help="Select the option for brand logo  or name display.")
     is_default_code = fields.Boolean(
         string="Default code display in product page", default=False)
-    is_amp_enable = fields.Boolean(
-        string="Enable AMP", default=True)
+    # is_amp_enable = fields.Boolean(
+    #     string="Enable AMP", default=True)
 
     @api.model
     def theme_scita_payment_icons(self):

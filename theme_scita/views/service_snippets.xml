@@ -9,22 +9,16 @@
                         <div class="col-md-12">
                             <h2 class="section-title">Services Offered</h2>
                         </div>
-                        <!-- <section class='sct_img sct_bg oe_img_bg' style="background-image: url('/theme_scita/static/src/img/scita-placeholder.png');">
+                        <section class='sct_bg oe_img_bg' style="background-image: url('/theme_scita/static/src/img/scita-placeholder.png');">
 							<div class='sct_cst_btn'>
 								<a href="/shop" class="btn btn-primary scita_cstm_btn ">Read More</a>
 							</div>
-						</section> -->
-                        <div class="sct_img">
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
-                            <div class='sct_cst_btn'>
-                                <a href="/shop" class="btn btn-primary scita_cstm_btn  it_btn">Read More</a>
-                            </div>
-                        </div>
+						</section>
                     </div>
                     <div class='col-lg-6 sct_cmp_info'>
-                        <div class='sct_icon_img it-icon'>
-                            <ul>
-                                <li>
+                        <div class='row sct_icon_img it-icon'>
+                            <!-- <ul> -->
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_case_study_snippet_3" class="img img-fluid" alt="cloud db"/>
@@ -32,8 +26,8 @@
                                         <h4>Cloud databases</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_service_snippet_1_img_file" class="img img-fluid" alt="file explore"/>
@@ -41,8 +35,8 @@
                                         <h4>File backups</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_service_snippet_1_img_server" class="img img-fluid" alt="email server"/>
@@ -50,8 +44,8 @@
                                         <h4>Email servers</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_service_snippet_1_img_file" class="img img-fluid" alt="file explore"/>
@@ -59,8 +53,8 @@
                                         <h4>File storage</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_service_snippet_1_img_ecomerce" class="img img-fluid" alt="ecommerce"/>
@@ -68,8 +62,8 @@
                                         <h4>ECommerce</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                                <li>
+                                </div>
+                                <div class="col-6 sct_service_content_block">
                                     <div class="sct_img_content_block">
                                         <div class="icon-based">
                                             <img src="/web/image/theme_scita.sct_service_snippet_1_img_desktop" class="img img-fluid" alt="remote desktop"/>
@@ -77,8 +71,8 @@
                                         <h4>Remote desktop</h4>
                                         <p class="sct_simple_text">Lorem ipsum dolor amet, adipiscing, sed do   eiusmod tempor incididunt ut labore dolore magna aliqua.Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                            <!-- </ul> -->
                         </div>
                     </div>
                 </div>

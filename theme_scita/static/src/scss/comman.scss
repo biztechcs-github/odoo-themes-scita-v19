@@ -2281,16 +2281,22 @@ header{
 	
 	.o_product_feature_panel{
 		border-color: $primary !important;
+		padding: 0 !important;
 
 		.o_product_panel{
+			padding: 8px 16px;
+    		display: block;
 			.o_product_panel_header{
 				.o_product_circle{
 					padding: 0;
-					width: 15px;
-					height: 15px;
+					width: 21px;
+					height: 21px;
 					line-height: normal;
 					border-radius: 50%;
 					margin-left: 4px;
+					color: $light-color !important;
+					display: inline-flex;
+					@include justify-align-content;
 				}
 				.o_animate_blink{
 					background-color: $primary !important;
@@ -2858,5 +2864,24 @@ common search for categories and products (22/05/2025)
 	@include min1920{
 		max-width: 2100px;
 		width: 100%;
+	}
+}
+
+.comparator-popover.popover{
+	.popover-header{
+		background-color: $primary;
+		color: $light-color;
+		font-size: 20px;
+	}
+	.popover-body{
+		padding: 10px 20px;
+
+		.o_comparelist_products{
+			.o_product_row{
+				.o_remove{
+					font-size: 19px;
+				}
+			}
+		}
 	}
 }
