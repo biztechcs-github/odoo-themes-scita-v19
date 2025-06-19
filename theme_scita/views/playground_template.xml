@@ -372,7 +372,8 @@
                                     <option value="theme_scita.theme_scita_category_slider_3_static_preview">Category Slider 1</option>
                                     <option value="theme_scita.theme_scita_category_slider_4_static_preview">Category Slider 2</option>
                                     <option value="theme_scita.theme_scita_category_slider_gray_static_preview">Category Slider 3</option>
-                                    <option value="theme_scita.custom_scita_product_category_slider_static">Dynamic Product/Category Snippet</option>
+                                    <option value="theme_scita.custom_scita_category_slider_static">Dynamic Category Snippet</option>
+                                    <option value="theme_scita.custom_scita_product_slider_static">Dynamic Product Snippet</option>
 
                                 </optgroup>
 
@@ -473,8 +474,11 @@
                             <div id="preview-theme_scita.theme_scita_category_slider_gray_static_preview" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.theme_scita_category_slider_gray_static_preview" />
                             </div>
-                            <div id="preview-theme_scita.custom_scita_product_category_slider_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.custom_scita_product_category_slider_static" />
+                            <div id="preview-theme_scita.custom_scita_category_slider_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.custom_scita_category_slider_static" />
+                            </div>
+                             <div id="preview-theme_scita.custom_scita_product_slider_static" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.custom_scita_product_slider_static" />
                             </div>
                             <div id="preview-theme_scita.it_prod_brands_static" class="snippet-container d-none">
                                 <t t-snippet="theme_scita.it_prod_brands_static" />
