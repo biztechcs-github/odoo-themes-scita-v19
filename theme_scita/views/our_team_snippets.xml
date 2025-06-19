@@ -6,7 +6,7 @@
             <div class="container">
                 <div class='row sct_top_row'>
                     <div class="col-md-12">
-                        <h2 class="section-title text-center">Our Awesome Team</h2>
+                        <h2 class="section-title text-center mb-3">Our Awesome Team</h2>
                         <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                     </div>
                 </div>

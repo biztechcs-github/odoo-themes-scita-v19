@@ -2949,7 +2949,11 @@ main:has(.playground_wrapper){
 		> .tab-content{
 			border-radius: 15px;
 			background-color: lighten($light-grey-color, 2%);
-			padding: 20px 20px 20px 0;
+			padding: 20px;
+
+			@include min1600{
+				padding-left: 0;
+			}
 
 			.tab_panel_wrap{
 				&.show{
@@ -2957,16 +2961,40 @@ main:has(.playground_wrapper){
 					@include flexwrap;
 				}
 				.left_tab_wrap{
-					padding: 0 20px;
-					flex: 0 0 320px;
-					max-width: 320px;
+					padding-bottom: 20px;
+					flex: 0 0 100%;
+					max-width: 100%;
+					text-align: center;
+					
+					@include min1600{
+						text-align: left;
+						padding: 0 20px;
+						flex: 0 0 320px;
+						max-width: 320px;
+					}
+
+					.form-select{
+						border-radius: 10px;
+						max-width: 320px;
+						margin: 0 auto;
+
+						@include min1600{
+							max-width: 100%;
+							margin: 0;
+						}
+					}
 				}
 				.right_content_wrap{
 					background: $light-color;
 					padding: 20px;
 					border-radius: 15px;
-					flex: 0 0 calc(100% - 320px);
-					max-width: calc(100% - 320px);
+					flex: 0 0 100%;
+					max-width: 100%;
+					
+					@include min1600{
+						flex: 0 0 calc(100% - 320px);
+						max-width: calc(100% - 320px);
+					}
 
 					.snippet-container{
 						> div{
@@ -2984,7 +3012,7 @@ main:has(.playground_wrapper){
 							}
 						}
 
-						.content_snippets_v_10, .accordion_v_1, .accordion_v_2, .how_it_work_v_3, .how_it_work_v_4, .retial_newsletter_2, .expertise_statistics_4, .it_grids_service, .policy_trust_snippet_v_3, .timeline_snippet_1, .box_brand_slider{
+						.content_snippets_v_10, .accordion_v_1, .accordion_v_2, .how_it_work_v_3, .how_it_work_v_4, .retial_newsletter_2, .expertise_statistics_4, .it_grids_service, .policy_trust_snippet_v_3, .timeline_snippet_1, .box_brand_slider, .our_team_varient_1, .deal_of_day_banner_5, .four-client-snippet.oe_top_dealers_section{
 							padding: 30px;
 						}
 						.how_it_work_v_1{
@@ -3062,6 +3090,16 @@ main:has(.playground_wrapper){
 						}
 						.blog{
 							padding: 20px 0;
+						}
+						.scita_category_slider_3{
+							.categories{
+								.category-slider{
+									padding: 0;
+								}
+							}
+						}
+						.third-client-slider{
+							padding: 60px 10px;
 						}
 					}
 				}

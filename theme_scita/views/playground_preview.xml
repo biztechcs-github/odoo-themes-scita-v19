@@ -314,146 +314,6 @@
             </div>
         </section>
     </template>
-    <template id="blog_5_custom_snippet_static" name="Blog Slider 2 (Static)">
-        <section id="blog_custom_5_snippet" class="blog blog_5_custom">
-            <div class="container">
-                <div class="row">
-                    <div class="block-title col-lg-3">
-                        <h3 class='sct_sub_title text-uppercase'>
-                            Subtitle
-                        </h3>
-                        <h2 class="fancy">
-                            Blogs
-                        </h2>
-                        <p class="sct_simple_text">
-                            Lorem ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                    <div class="blog_slider_wrap col-lg-9">
-                        <div id="pg_blog_2_owl_carosel" class="owl-carousel">
-                            <!-- Blog 1 -->
-                            <div class="sct_blog_box" title="Beyond The Eye">
-                                <a href="#">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                        </div>
-                                        <h3 class="sct_title">Beyond The Eye</h3>
-                                        <p class="blog-content">
-                                            Becoming part of the society of devoted amateur
-                                            astronomers.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 1 -->
-                            <div class="sct_blog_box" title="Beyond The Eye">
-                                <a href="#">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                        </div>
-                                        <h3 class="sct_title">Beyond The Eye</h3>
-                                        <p class="blog-content">
-                                            Becoming part of the society of devoted amateur
-                                            astronomers.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 1 -->
-                            <div class="sct_blog_box" title="Beyond The Eye">
-                                <a href="#">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                        </div>
-                                        <h3 class="sct_title">Beyond The Eye</h3>
-                                        <p class="blog-content">
-                                            Becoming part of the society of devoted amateur
-                                            astronomers.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Blog 1 -->
-                            <div class="sct_blog_box" title="Beyond The Eye">
-                                <a href="#">
-                                    <div class="blog_top_detail">
-                                        <div class="sct_label_wrap">
-                                            <p class="sct_label_blog">discovery</p>
-                                        </div>
-                                        <h3 class="sct_title">Beyond The Eye</h3>
-                                        <p class="blog-content">
-                                            Becoming part of the society of devoted amateur
-                                            astronomers.
-                                        </p>
-                                    </div>
-                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
-                                        <div class="col-8 blog_left_content">
-                                            <p class="date">
-                                                June 10,2025
-                                            </p>
-                                            <p class="author">By <span>Mitchell Admin</span>
-                                            </p>
-                                        </div>
-                                        <div class="col-4 blog_link text-end">
-                                            <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
     
 
     <!-- Brand Slider -->
@@ -627,8 +487,8 @@
     <!-- Google Map snippet -->
     <template id="google_map_v1_static_preview" name="Google Map V1 (Static Preview)">
         <section class="google_map_v1 o_colored_level" data-map="" data-disp="google_map_snippet" data-snippet="s_appjetty_google_map" data-name="Google Map">
-            <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
-                <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:500px; height:450px;">
+            <div class="mapouter" style="position:relative; text-align:right; height:450px;">
+                <div class="gmap_canvas" style="overflow:hidden; background:none!important; height:450px;">
                     <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                     </iframe>
                 </div>
@@ -653,8 +513,8 @@
                 <div class="row top_row">
                     <div class="col-md-7 sct_map o_colored_level">
                         <div class="map_data_container">
-                            <div class="mapouter" style="position:relative; text-align:right; width:500px; height:450px;">
-                                <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:500px; height:450px;">
+                            <div class="mapouter" style="position:relative; text-align:right; height:450px;">
+                                <div class="gmap_canvas" style="overflow:hidden; background:none!important; height:450px;">
                                     <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
                                     </iframe>
                                 </div>
@@ -692,7 +552,7 @@
 
     <!-- Multi product snippet -->
      <template id="sct_product_snippet_1_static" name="Multi Product Snippet 1(Static)">
-      <section class="sct_product_snippet_1_static">
+      <section class="sct_product_snippet_1_static sct_product_snippet_1">
         <div class='sct-snippet-full'>
             <div class="container">
                 <div class="row top">
@@ -701,20 +561,18 @@
                     </div>
                 </div>
                 <div class="row bottom-row content">
-                    <!-- Static Product 1 -->
                     <div class="col-md-4 col-lg-3 col-6 grid_product">
                         <div class="cs-product" data-publish="on">
                             <div class="pwp-img">
                                 <a href="#">
-                                    <img class="front" alt="Static Product 1" title="Static Product 1"
-                                        src="/static/images/static_product_1.jpg" />
+                                    <img class="front" alt="2 Seat Sofa" title="2 Seat Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" />
                                 </a>
                             </div>
                             <div class="pwd-desc">
                                 <div class="pwp-info">
                                     <h3 class="pwpi-title">
                                         <a href="#">
-                                            <span>Static Product 1</span>
+                                            <span>2 Seat Sofa</span>
                                         </a>
                                     </h3>
                                     <div class="pink-box price-rating-wrapper">
@@ -733,38 +591,40 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="sct-hover-info product_price ajax_cart_template">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="csrf_token" value="static_csrf_token" />
-                                        <input name="product_id" type="hidden" value="1" />
-                                        <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View">
-                                            <span class="lni lni-eye"></span>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
                                         </button>
-                                        <a class="btn btn-xs o_add_compare" role="button" title="Compare">
-                                            <span class="fa fa-exchange"></span>
-                                        </a>
-                                        <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
-                                            <span class="lni lni-heart"></span>
-                                        </a>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Static Product 2 -->
                     <div class="col-md-4 col-lg-3 col-6 grid_product">
                         <div class="cs-product" data-publish="on">
                             <div class="pwp-img">
                                 <a href="#">
-                                    <img class="front" alt="Static Product 2" title="Static Product 2"
-                                        src="/static/images/static_product_2.jpg" />
+                                    <img class="front" alt="Guest Chair" title="Guest Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" />
                                 </a>
                             </div>
                             <div class="pwd-desc">
                                 <div class="pwp-info">
                                     <h3 class="pwpi-title">
                                         <a href="#">
-                                            <span>Static Product 2</span>
+                                            <span>Guest Chair</span>
                                         </a>
                                     </h3>
                                     <div class="pink-box price-rating-wrapper">
@@ -772,574 +632,147 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
+                                            <i class="fa fa-star"></i>
                                             <i class="fa fa-star-o"></i>
                                         </ul>
                                         <p class="price">
                                             <b>
-                                                <del class="text-danger mr8">$150.00</del>
-                                                <span>$120.00</span>
+                                                <del class="text-danger mr8">$50.00</del>
+                                                <span>$45.00</span>
                                             </b>
                                         </p>
                                     </div>
                                 </div>
-                                <div class="sct-hover-info product_price ajax_cart_template">
-                                    <form action="#" method="post">
-                                        <input type="hidden" name="csrf_token" value="static_csrf_token" />
-                                        <input name="product_id" type="hidden" value="2" />
-                                        <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View">
-                                            <span class="lni lni-eye"></span>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
                                         </button>
-                                        <a class="btn btn-xs o_add_compare" role="button" title="Compare">
-                                            <span class="fa fa-exchange"></span>
-                                        </a>
-                                        <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
-                                            <span class="lni lni-heart"></span>
-                                        </a>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more static products as needed -->
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="Lounge Chair" title="Lounge Chair" src="/theme_scita/static/src/img/playground_img/product_3.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>Lounge Chair</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$90.00</del>
+                                                <span>$85.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="Drawer" title="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>Drawer</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$40.00</del>
+                                                <span>$25.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
       </section>
-    </template>
-
-    <template id="theme_scita_trending_products_snippet_static" name="Trending Products">
-        <section class="theme_scita_trending_products oe_trending_products_section o_colored_level">
-            <div class="container">
-                <div class="lns-inner latest-trendy-section">
-                    <div class="row">
-                        <div class="lns-post">
-                            <div class="psb-inner">
-                                <div class="title-block ">
-                                    <h2 class="section-title style1">
-                                            Trending Products Snippet
-                                    </h2>
-                                </div>
-                                <div class="trending_prod_inner d-flex flex-wrap justify-content-between">
-                                    <ul class="nav nav-tabs" >
-                                        <li class="trend_prod_tab" data-category-id="1">
-                                            <a data-bs-toggle="tab" class="cat_tab show active" href="#multi-collection1-2-1">
-                                                <span>Desks</span>
-                                            </a>
-                                        </li>
-                                        <li class="trend_prod_tab" data-category-id="10">
-                                            <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
-                                                        Components
-                                            </a>
-                                        </li>
-                                        <li class="trend_prod_tab" data-category-id="11">
-                                            <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
-                                                        Office Desks
-                                            </a>
-                                        </li>
-                                        <li class="trend_prod_tab" data-category-id="17">
-                                            <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
-                                                        Chairs
-                                            </a>
-                                        </li>
-                                        <li class="trend_prod_tab" data-category-id="12">
-                                            <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
-                                                        Gaming Desks
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div class="active multi_hide tab_content_inner" id="multi-collection1-2-1" data-title="Automotive Parts">
-                                            <div class="owl-carousel owl-loaded owl-drag tab_inner_wrap" id="product_slider">
-                                                <div class="owl-stage-outer">
-                                                    <div class="owl-stage" style="transform: translate3d(-525px, 0px, 0px); transition: 0.25s; width: 1577px;">
-                                                        <!-- <div class="owl-item" data-product-id="18" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                        <img class="front" data-default-img-src="/web/image/product.template/18/image_1920?unique=cd12989" loading="lazy" />
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                            <span>Corner Desk Left Sit</span>
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img"></i>
-                                                                                    <i class="fa fa-star-o" role="img"></i>
-                                                                                    <i class="fa fa-star-o" role="img"></i>
-                                                                                    <i class="fa fa-star-o" role="img"></i>
-                                                                                    <i class="fa fa-star-o" role="img"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary">$ ;                                                                                    <span class="oe_currency_value">85.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary">$                                                                                    <span class="oe_currency_value">85.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">85.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form>
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div> -->
-                                                        <div class="owl-item" data-product-id="10" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                    <a href="/shop/product/e-com06-corner-desk-right-sit-10">
-                                                                        <img class="front" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[1]/a[2]/img[1]" alt="Corner Desk Right Sit" title="Corner Desk Right Sit" src="/web/image/product.template/10/image_1920?unique=cd12989" data-default-img-src="/web/image/product.template/10/image_1920?unique=cd12989" loading="lazy" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                            <span>Corner Desk Right Sit</span>
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                                    <span class="oe_currency_value">147.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                                    <span class="oe_currency_value">147.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">147.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
-                                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[1]" value="56c8183523e44b03215e7061f1c41acb6d645ce3o1781678139" />
-                                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[2]" value="16" />
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="10">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[2]/a[1]" data-product-product-id="16">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[3]/a[1]" data-product-product-id="16">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item active" data-product-id="9" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                    <a href="/shop/product/customizable-desk-9">
-                                                                        <span> Vaibhav Sathwara</span>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                                    <span class="oe_currency_value">750.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                                    <span class="oe_currency_value">750.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">750.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                        <ul data-attribute_id="2" class="list-inline o_wsale_product_attribute d-none d-xl-flex" data-default-img-src="/web/image/product.template/9/image_512">
-                                                                            <li class="list-inline-item me-1 scita_attribute_li active">
-                                                                                <label style="background-color:#FFFFFF" class="css_attribute_color" data-preview-img-src="/web/image/product.product/44/image_512">
-                                                                                    <input type="radio" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[1]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-2" value="3" title="White" data-value_id="3" data-value_name="White" data-attribute_name="Color" />
-                                                                                </label>
-                                                                            </li>
-                                                                            <li class="list-inline-item me-1 scita_attribute_li active">
-                                                                                <label style="background-color:#000000" class="css_attribute_color" data-preview-img-src="/web/image/product.product/45/image_512">
-                                                                                    <input type="radio" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[1]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-2" value="4" title="Black" data-value_id="4" data-value_name="Black" data-attribute_name="Color" />
-                                                                                </label>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul data-attribute_id="2" class="list-inline o_wsale_product_attribute d-flex d-xl-none" data-default-img-src="/web/image/product.template/9/image_512">
-                                                                            <li class="list-inline-item me-1 scita_attribute_li">
-                                                                                <label style="background-color:#FFFFFF" class="css_attribute_color" data-preview-img-src="/web/image/product.product/44/image_512">
-                                                                                    <input type="radio" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[2]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-2" value="3" title="White" data-value_id="3" data-value_name="White" data-attribute_name="Color" />
-                                                                                </label>
-                                                                            </li>
-                                                                            <li class="list-inline-item me-1 scita_attribute_li">
-                                                                                <label style="background-color:#000000" class="css_attribute_color" data-preview-img-src="/web/image/product.product/45/image_512">
-                                                                                    <input type="radio" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/t[1]/t[1]/ul[2]/li[1]/t[2]/label[1]/input[1]" class="js_variant_change  always" name="ptal-2" value="4" title="Black" data-value_id="4" data-value_name="Black" data-attribute_name="Color" />
-                                                                                </label>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
-                                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[1]" value="56c8183523e44b03215e7061f1c41acb6d645ce3o1781678139" />
-                                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[2]" value="44" />
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="9">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[2]/a[1]" data-product-product-id="44">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[3]/a[1]" data-product-product-id="44">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item active" data-product-id="25" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                    <a href="/shop/product/furn-8220-four-person-desk-25">
-                                                                        <img class="front" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[1]/a[2]/img[1]" alt="Four Person Desk" title="Four Person Desk" src="/web/image/product.template/25/image_1920?unique=cd12989" data-default-img-src="/web/image/product.template/25/image_1920?unique=cd12989" loading="lazy" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                            <span>Four Person Desk</span>
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                                    <span class="oe_currency_value">2,350.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                                    <span class="oe_currency_value">2,350.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">2350.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
-                                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[1]" value="56c8183523e44b03215e7061f1c41acb6d645ce3o1781678139" />
-                                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[2]" value="34" />
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="25">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[2]/a[1]" data-product-product-id="34">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[3]/a[1]" data-product-product-id="34">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item active" data-product-id="13" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                    <a href="/shop/product/e-com09-large-desk-13">
-                                                                        <img class="front" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[1]/a[2]/img[1]" alt="Large Desk" title="Large Desk" src="/web/image/product.template/13/image_1920?unique=cd12989" data-default-img-src="/web/image/product.template/13/image_1920?unique=cd12989" loading="lazy" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                            <span>Large Desk</span>
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                                    <span class="oe_currency_value">1,799.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                                    <span class="oe_currency_value">1,799.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">1799.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
-                                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[1]" value="56c8183523e44b03215e7061f1c41acb6d645ce3o1781678139" />
-                                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[2]" value="19" />
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="13">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[2]/a[1]" data-product-product-id="19">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[3]/a[1]" data-product-product-id="19">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item active" data-product-id="26" style="width: 232.68px; margin-right: 30px;">
-                                                            <div class="cs-product" data-publish="on">
-                                                                <div class="pwp-img">
-                                                                    <a href="/shop/product/furn-6741-large-meeting-table-26">
-                                                                        <img class="front" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[1]/a[2]/img[1]" alt="Large Meeting Table" title="Large Meeting Table" src="/web/image/product.template/26/image_1920?unique=cd12989" data-default-img-src="/web/image/product.template/26/image_1920?unique=cd12989" loading="lazy" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="pwd-desc">
-                                                                    <div class="pwp-info">
-                                                                        <p class="pwpi-title">
-                                                                            <span>Large Meeting Table</span>
-                                                                        </p>
-                                                                        <div class="ratings">
-                                                                            <div class="pink-box" contenteditable="false">
-                                                                                <div class="ratings">
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <p class="price">
-                                                                            <b>
-                                                                                <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                                    <span class="oe_currency_value">4,000.00</span>
-                                                                                </del>
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                                    <span class="oe_currency_value">4,000.00</span>
-                                                                                </span>
-                                                                                <span itemprop="price" style="display:none;">4000.0</span>
-                                                                                <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                            </b>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
-                                                                            <input type="hidden" name="csrf_token" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[1]" value="56c8183523e44b03215e7061f1c41acb6d645ce3o1781678139" />
-                                                                            <input name="product_id" type="hidden" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/input[2]" value="35" />
-                                                                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/button[1]" data-id="26">
-                                                                                <span class="lni lni-eye"></span>
-                                                                            </button>
-                                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" data-action="o_comparelist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[2]/a[1]" data-product-product-id="35">
-                                                                                <span class="fa fa-exchange"></span>
-                                                                            </a>
-                                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist" data-action="o_wishlist" data-oe-model="ir.ui.view" data-oe-id="3217" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/t[1]/div[1]/div[1]/div[2]/div[2]/form[1]/t[3]/a[1]" data-product-product-id="35">
-                                                                                <span class="lni lni-heart"></span>
-                                                                            </a>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-nav">
-                                                    <button type="button" role="presentation" class="owl-prev">
-                                                        <span aria-label="Previous">‹</span>
-                                                    </button>
-                                                    <button type="button" role="presentation" class="owl-next">
-                                                        <span aria-label="Next">›</span>
-                                                    </button>
-                                                </div>
-                                                <div class="owl-dots disabled"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <template id="deal_multi_product_slider_static" name="Trending Products">
-        <section class="deal_multi_product_slider_static o_colored_level">
-            <div class="container">
-                <div class="row deal-wrapper">
-                    <div class="col-lg-6 col-xl-7 deal-inner">
-                        <div class="section-title-wrapper d-flex flex-wrap">
-                            <h2 class="section-title style1">
-                                Bestseller
-                            </h2>
-                        </div>
-                        <div class="best-seller-row">
-                            <div class="left-side oe_img_bg" style="background-image: url('/src/img/scita-placeholder.png')">
-                                <div class="left-disc">
-                                    <h3 class="title-30">Organic Fruits &amp; Vegetables</h3>
-                                    <a alt="Shop now" title="Shop now" class="btn btn-primary solid-btn" href="/shop">
-                                        Shop Now
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="right-side">
-                                <div class="product-slider owl-carousel owl-theme">
-                                    <div class="owl-stage-outer">
-                                        <div class="owl-stage">
-                                            <!-- Static Product 1 -->
-                                            <div class="owl-item" style="width: 324.578px; margin-right: 25px;">
-                                                <div class="item">
-                                                    <a class="item-inner" href="/shop/product/static-product-1" title="Static Product 1">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" alt="Static Product 1" title="Static Product 1" src="/src/img/scita-placeholder.png" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Static Product 1</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star-o"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del class="text-danger mr8">$100.00</del>
-                                                                        <span>$85.00</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- Static Product 2 -->
-                                            <div class="owl-item" style="width: 324.578px; margin-right: 25px;">
-                                                <div class="item">
-                                                    <a class="item-inner" href="/shop/product/static-product-2" title="Static Product 2">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" alt="Static Product 2" title="Static Product 2" src="/static/images/static_product_2.jpg" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Static Product 2</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star-half-o"></i>
-                                                                    <i class="fa fa-star-o"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del class="text-danger mr8">$150.00</del>
-                                                                        <span>$120.00</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- Add more static products as needed -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-5 deal-inner right-side">
-                        <div class="section-title-wrapper d-flex flex-wrap">
-                            <h2 class="section-title">Grab now</h2>
-                        </div>
-                        <div class="deal-content-wrapper">
-                            <div class="deal-content">
-                                <div class="sct_sub_title">
-                                    <p class="sub_title_banner text-center">Hurry Up! Offer ends in</p>
-                                    <div class="counter_timer_main_div">
-                                        <div class="counter_timer_div">
-                                            <span class="col-3 text-center box_degit_wrapper">
-                                                <div class="box_degit">
-                                                    <span id="days" class="d-count">10</span>
-                                                    <span id="day_lbl" class="d-block">DAYS</span>
-                                                </div>
-                                            </span>
-                                            <span class="col-3 text-center box_degit_wrapper">
-                                                <div class="box_degit">
-                                                    <span id="hours" class="d-count">07</span>
-                                                    <span id="h_lbl" class="d-block">HOURS</span>
-                                                </div>
-                                            </span>
-                                            <span class="col-3 text-center box_degit_wrapper">
-                                                <div class="box_degit">
-                                                    <span id="minutes" class="d-count">21</span>
-                                                    <span id="m_lbl" class="d-block">MINS</span>
-                                                </div>
-                                            </span>
-                                            <span class="col-3 text-center box_degit_wrapper">
-                                                <div class="box_degit">
-                                                    <span id="seconds" class="d-count">58</span>
-                                                    <span id="s_lbl" class="d-block">SECS</span>
-                                                </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </template>
 
     <!-- Our Team snippet/slider -->
@@ -1348,11 +781,8 @@
             <div class="container">
                 <div class="row sct_top_row">
                     <div class="col-md-12 o_colored_level">
-                        <h2 class="section-title text-center o_default_snippet_text">Our Awesome
-                            Team</h2>
-                        <p class="sct_simple_text o_default_snippet_text">Lorem ipsum dolor sit
-                            amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim
-                            veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                        <h2 class="section-title text-center mb-3">Our Awesome Team</h2>
+                        <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                     </div>
                 </div>
             </div>
@@ -1363,12 +793,12 @@
                             <div class="item">
                                 <div class="image-container">
                                     <div class="only-image">
-                                        <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_1.jpg" alt="Employee Image" />
                                     </div>
                                     <div class="name">
-                                        <h3 class="sct_title">Amisha Darji</h3>
+                                        <h3 class="sct_title">Abigail Peterson</h3>
                                         <p class="sct_simple_text">
-                                            <span>Odoo Developer</span>
+                                            <span>Consultant</span>
                                         </p>
                                     </div>
                                     <div class="follow">
@@ -1387,12 +817,84 @@
                             <div class="item">
                                 <div class="image-container">
                                     <div class="only-image">
-                                        <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_2.jpg" alt="Employee Image" />
                                     </div>
                                     <div class="name">
-                                        <h3 class="sct_title">Amisha Darji</h3>
+                                        <h3 class="sct_title">Anita Oliver</h3>
                                         <p class="sct_simple_text">
-                                            <span>Odoo Developer</span>
+                                            <span>Experienced Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_3.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Ernest Reed</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Consultant</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_4.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Sharlene Rhodes</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Experienced Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_5.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Audrey Peterson</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Experienced Developer</span>
                                         </p>
                                     </div>
                                     <div class="follow">
@@ -1417,138 +919,92 @@
     </template>
 
     <template id="our_team_slider_3_static" name="Our Team Slider 2 (Static)">
-        <section class="our_team_varient_3 o_colored_level" data-disp="our_team" data-snippet="our_team_varient_3" data-name="Our Team Slider 3">
+        <section class="our_team_varient_3">
             <div class="container">
                 <div class="row sct_top_row">
-                    <div class="col-md-12 o_colored_level">
+                    <div class="col-md-12">
                         <h2 class="section-title o_default_snippet_text">Our Team</h2>
                         <p class="sct_simple_text o_default_snippet_text">Lorem ipsum dolor sit amet</p>
                     </div>
                 </div>
-                <div id="pg_v_3_myourteam" class="owl-carousel myourteam owl-theme">
-                    <div class="item">
-                        <div class="v-3-image-container">
-                            <div class="only-image">
-                                <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Employee Image" />
-                            </div>
-                            <div class="name">
-                                <h3 class="sct_title">Amisha Darji</h3>
-                                <p class="sct_simple_text">
-                                    <span>Odoo Developer</span>
-                                </p>
-                            </div>
+                <div class="row sct_btm_row">
+                    <div class="col-md-12">
+                        <div class="sct_team_slider">
+                            <div id="pg_v_3_myourteam" class="owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_1.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Abigail Peterson</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Consultant</span>
+                                            </p>
+                                        </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <template id="our_team_slider_5_static" name="Our Team Slider 5 (Static)">
-        <section class="our_team_varient_5 o_colored_level" data-disp="our_team" data-snippet="our_team_varient_5" data-name="Our Team Slider 5">
-            <div class="container">
-                <div class="row sct_top_row">
-                    <div class="col-md-12 o_colored_level">
-                        <h2 class="section-title o_default_snippet_text">Meet Our Creative Team</h2>
-                        <p class="sct_simple_text o_default_snippet_text">We’re a diverse team
-                            passionate about delivering results.</p>
-                    </div>
-                </div>
-                <div id="pg_v_5_myourteam" class="owl-carousel myourteam owl-theme">
-                    <!-- Team Member 1 -->
-                    <div class="item">
-                        <div class="v-5-image-container">
-                            <div class="only-image">
-                                <img class="img-responsive" src="/web/image/res.users/1/image_1920" alt="Amisha Darji"/>
-                                <div class="user_content_hover_wrap">
-                                    <div class="sct_emp_desc">
-                                        <p class="sct_simple_text">Dedicated and passionate Odoo Developer with a love for clean code.</p>
                                     </div>
-                                    <div class="sct_hover_follow">
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_2.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Anita Oliver</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_3.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Ernest Reed</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Consultant</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_4.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Sharlene Rhodes</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_5.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Audrey Peterson</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="name">
-                                <h3 class="sct_title">Amisha Darji</h3>
-                                <h4 class="sct_job_desig sct_blue_line">
-                                    <span>Odoo Developer</span>
-                                </h4>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Team Member 2 -->
-                    <div class="item">
-                        <div class="v-5-image-container">
-                            <div class="only-image">
-                                <img class="img-responsive" src="/web/image/res.users/2/image_1920" alt="Rahul Mehta"/>
-                                <div class="user_content_hover_wrap">
-                                    <div class="sct_emp_desc">
-                                        <p class="sct_simple_text">Experienced Project Manager with a knack for efficient delivery.</p>
-                                    </div>
-                                    <div class="sct_hover_follow">
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="name">
-                                <h3 class="sct_title">Rahul Mehta</h3>
-                                <h4 class="sct_job_desig sct_blue_line">
-                                    <span>Project Manager</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Team Member 3 -->
-                    <div class="item">
-                        <div class="v-5-image-container">
-                            <div class="only-image">
-                                <img class="img-responsive" src="/web/image/res.users/3/image_1920" alt="Sneha Patel"/>
-                                <div class="user_content_hover_wrap">
-                                    <div class="sct_emp_desc">
-                                        <p class="sct_simple_text">UI/UX Designer passionate about crafting beautiful interfaces.</p>
-                                    </div>
-                                    <div class="sct_hover_follow">
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                        <a href="#">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="name">
-                                <h3 class="sct_title">Sneha Patel</h3>
-                                <h4 class="sct_job_desig sct_blue_line">
-                                    <span>UI/UX Designer</span>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>        
             </div>
         </section>
     </template>
@@ -1562,11 +1018,10 @@
                     <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
                             <a href="#">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                                <img src="/theme_scita/static/src/img/playground_img/deal_1.jpg" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                 <div class="sct_img_name">
-                                    <h3 class="img_title o_default_snippet_text">Man Collection</h3>
-                                    <p class="sub_title o_default_snippet_text">Designed to stand
-                                        the test of time</p>
+                                    <h3 class="img_title o_default_snippet_text">Armchairs</h3>
+                                    <p class="sub_title o_default_snippet_text">Top Decor Picks</p>
                                 </div>
                                 <div class="sct_img_link">
                                     <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Link" loading="lazy" />
@@ -1579,18 +1034,47 @@
                         <div class="sct_deal_timer_wrapper col-12 col-md-6 col-lg-12">
                             <div class="sct_timer_inner">
                                 <div class="sct_deal_text o_default_snippet_text">
-                                    <span class="sct_per o_default_snippet_text">40%</span> Off </div>
+                                    <span class="sct_per o_default_snippet_text d-inline">40%</span> Off </div>
                                 <p class="sct_sub_title o_default_snippet_text">Discover the best
                                     selling products of T90 stores.</p>
-                                <div class="timer_counter_div"></div>
+                                <div class="timer_counter_div">
+                                    <div class="js_counter_timer_pg">
+                                        <div class="counter_timer_div">
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">295</span><span id="day_lbl" class="d-block">DAYS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">06</span>
+                                                    <span id="h_lbl" class="d-block">HOURS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">24</span>
+                                                    <span id="m_lbl" class=" d-block">MINS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">51</span>
+                                                    <span id="s_lbl" class="d-block">SECS</span>
+                                                </div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        <!-- </div> -->
                         <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
                             <div class="sct_deal_img">
                                 <a href="#">
-                                    <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                                    <img src="/theme_scita/static/src/img/playground_img/deal_2.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                     <div class="sct_img_name">
-                                        <h3 class="img_title o_default_snippet_text">Man Collection</h3>
+                                        <h3 class="img_title o_default_snippet_text">Candle Holder</h3>
                                     </div>
                                 </a>
                             </div>
@@ -1600,47 +1084,17 @@
                     <div class="col-md-6 col-lg-4 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
                             <a href="#">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                                <img src="/theme_scita/static/src/img/playground_img/deal_3.jpg" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                             </a>
                             <div class="sct_img_name">
                                 <a href="#">
-                                    <h3 class="img_title o_default_snippet_text">Man Collection</h3>
-                                    <span class="sub_title o_default_snippet_text">Designed to stand
-                                        the test of time</span>
+                                    <h3 class="img_title o_default_snippet_text">Coffee Table</h3>
+                                    <span class="sub_title o_default_snippet_text">Designed to stand the test of time</span>
                                 </a>
                                 <div class="sct_deal_btn">
                                     <a href="#" class="btn btn-primary o_default_snippet_text">Shop
                                         Now</a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <template id="deal_of_day_banner_3_static_preview" name="Deal of the Day Snippet 4 (Static Preview)">
-        <section class="deal_of_day_banner_3 o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4') !important;" data-disp="deal_days" data-snippet="deal_of_day_banner_3" data-name="Deal of the Day Snippet 4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-8 sct_text_left o_colored_level">
-                        <div class="sct_base_class">
-                            <div class="sct_text_content">
-                                <h2 class="sct_title">
-                                    <span class="sct_per o_default_snippet_text">40%</span>
-                                    <span class="text o_default_snippet_text">off</span>
-                                </h2>
-                                <p class="sct_simple_text o_default_snippet_text">
-                                    Discover the best selling products of T90 stores. All the
-                                    products are listed weekly in store, helping customers capture
-                                    products are best sellers.
-                                </p>
-                            </div>
-                            <div class="timer_counter_div"></div>
-                            <div class="sct_deal_btn">
-                                <a href="#" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Shop
-                                    Now</a>
                             </div>
                         </div>
                     </div>
@@ -1662,7 +1116,35 @@
                         <div class="sct_text_content">
                             <h2 class="sct_title o_default_snippet_text">Deal of the day</h2>
                         </div>
-                        <div class="timer_counter_div"></div>
+                        <div class="timer_counter_div">
+                            <div class="js_counter_timer_pg">
+                                <div class="counter_timer_div">
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">295</span><span id="day_lbl" class="d-block">DAYS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">06</span>
+                                            <span id="h_lbl" class="d-block">HOURS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">24</span>
+                                            <span id="m_lbl" class=" d-block">MINS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">51</span>
+                                            <span id="s_lbl" class="d-block">SECS</span>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="sct_button">
                             <a href="#" class="btn btn-primary o_default_snippet_text">Shop Now</a>
                         </div>
@@ -1801,72 +1283,6 @@
         </section>
     </template>
 
-   <template id="top_dealers_snippet_static" name="Client Snippet 2 (Static)">
-        <section id="top_dealers_snippet_static" class="our-clients four-client-snippet oe_top_dealers_section o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url('/theme_scita/static/src/img/top_dealer_background.jpg') !important;">
-            <div class="container">
-                <div class="section-title-wrapper d-flex flex-wrap justify-content-between align-items-center">
-                    <h2 class="section-title style1">Top Dealers</h2>
-                </div>
-                <div class="row dealers-block-wrapper" id="scita-top-deals">
-                    <!-- Dealer 1 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img alt="Dealer 1" src="/theme_scita/static/src/img/dealer1.jpg" title="Dealer 1" loading="lazy"/>
-                                    </a>
-                                </div>
-                                <div class="product-disc">
-                                    <h3 class="title">10 Products</h3>
-                                </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/theme_scita/static/src/img/location_icon.svg" alt="Location" title="Location" loading="lazy"/>
-                                        <p>New York, USA</p>
-                                    </li>
-                                    <li>
-                                        <img src="/theme_scita/static/src/img/phone_icon.svg" alt="Contact" title="Contact" loading="lazy"/>
-                                        <p><a href="tel:+1234567890">+1 234 567 890</a></p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Dealer 2 -->
-                    <div class="col-md-6 col-lg-4 dealers-block-inner">
-                        <div class="dealers-block">
-                            <div class="block-top">
-                                <div class="logo">
-                                    <a href="#">
-                                        <img alt="Dealer 2" src="/theme_scita/static/src/img/dealer2.jpg" title="Dealer 2" loading="lazy"/>
-                                    </a>
-                                </div>
-                                <div class="product-disc">
-                                    <h3 class="title">15 Products</h3>
-                                </div>
-                            </div>
-                            <div class="block-bottom">
-                                <ul>
-                                    <li>
-                                        <img src="/theme_scita/static/src/img/location_icon.svg" alt="Location" title="Location" loading="lazy"/>
-                                        <p>Los Angeles, USA</p>
-                                    </li>
-                                    <li>
-                                        <img src="/theme_scita/static/src/img/phone_icon.svg" alt="Contact" title="Contact" loading="lazy"/>
-                                        <p><a href="tel:+9876543210">+9 876 543 210</a></p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-   </template>
-
     <!-- Category slider/snippet -->
     <template id="theme_scita_cat_slider_static_preview" name="Category Snippet 1 (Static)">
         <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider o_colored_level">
@@ -1880,10 +1296,10 @@
                                     <div class="cs-cat">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
+                                                <img alt="Chair" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Chair" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smartphones</p>
+                                                <p class="pwpi-title">Chair</p>
                                             </div>
                                         </a>
                                     </div>
@@ -1893,10 +1309,10 @@
                                     <div class="cs-cat">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
+                                                <img alt="Sofaset" src="/theme_scita/static/src/img/playground_img/cat_full_2.jpg" title="Sofaset" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">HomePod</p>
+                                                <p class="pwpi-title">Sofaset</p>
                                             </div>
                                         </a>
                                     </div>
@@ -1906,10 +1322,10 @@
                                     <div class="cs-cat">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
+                                                <img alt="Drawers" src="/theme_scita/static/src/img/playground_img/cat_full_3.jpg" title="Drawers" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Apple TV 4K</p>
+                                                <p class="pwpi-title">Drawers</p>
                                             </div>
                                         </a>
                                     </div>
@@ -1919,67 +1335,14 @@
                                     <div class="cs-cat">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                                <img alt="Table" src="/theme_scita/static/src/img/playground_img/cat_full_4.jpg" title="Table" loading="lazy" />
                                             </div>
                                             <div class="sct_cat_content">
-                                                <p class="pwpi-title">Smart TV</p>
+                                                <p class="pwpi-title">Table</p>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <!-- Category 5 -->
-                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
-                                    <div class="cs-cat">
-                                        <a href="#">
-                                            <div class="cs-img">
-                                                <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">SmartWatch</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Category 6 -->
-                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
-                                    <div class="cs-cat">
-                                        <a href="#">
-                                            <div class="cs-img">
-                                                <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Gaming</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Category 7 -->
-                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
-                                    <div class="cs-cat">
-                                        <a href="#">
-                                            <div class="cs-img">
-                                                <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Headphones</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Category 8 -->
-                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
-                                    <div class="cs-cat">
-                                        <a href="#">
-                                            <div class="cs-img">
-                                                <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">Air Tag</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- End -->
                             </div>
                         </div>
                     </div>
@@ -2002,330 +1365,90 @@
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
+                                    <img alt="Vegetable" src="/theme_scita/static/src/img/playground_img/cat_img_1.webp" title="Vegetable" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smartphones</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Vegetable</p>
+                                    <p class="category_count">1 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
+                                    <img alt="Bakery and Bread" src="/theme_scita/static/src/img/playground_img/cat_img_2.webp" title="Bakery and Bread" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">HomePod</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Bakery and Bread</p>
+                                    <p class="category_count">4 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
+                                    <img alt="Dairy Product" src="/theme_scita/static/src/img/playground_img/cat_img_3.webp" title="Dairy Product" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Apple TV 4K</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Dairy Product</p>
+                                    <p class="category_count">1 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                    <img alt="Soap and Detergents" src="/theme_scita/static/src/img/playground_img/cat_img_4.webp" title="Soap and Detergents" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Soap and Detergents</p>
+                                    <p class="category_count">1 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                    <img alt="Spices" src="/theme_scita/static/src/img/playground_img/cat_img_5.webp" title="Spices" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Spices</p>
+                                    <p class="category_count">6 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                    <img alt="Fruits" src="/theme_scita/static/src/img/playground_img/cat_img_6.webp" title="Fruits" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Fruits</p>
+                                    <p class="category_count">9 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                    <img alt="Juice and Drinks" src="/theme_scita/static/src/img/playground_img/cat_img_7.webp" title="Juice and Drinks" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Juice and Drinks</p>
+                                    <p class="category_count">1 Items</p>
                                 </div>
                             </a>
                         </div>
                         <div class="item cs-cat">
                             <a href="#">
                                 <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
+                                    <img alt="Snacks" src="/theme_scita/static/src/img/playground_img/cat_img_8.webp" title="Snacks" loading="lazy" />
                                 </div>
                                 <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
+                                    <p class="pwpi-title">Snacks</p>
+                                    <p class="category_count">2 Items</p>
                                 </div>
                             </a>
-                        </div>
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <p class="category_count">0 Items</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="owl-nav">
-                            <button type="button" role="presentation" class="owl-prev">
-                                <span aria-label="Previous">‹</span>
-                            </button>
-                            <button type="button" role="presentation" class="owl-next">
-                                <span aria-label="Next">›</span>
-                            </button>
-                        </div>
-                        <div class="owl-dots disabled"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <template id="theme_scita_category_slider_4_static_preview" name="Category Slider 2 (Static)">
-        <section id="theme_scita_custom_category_slider_4" class="cat_slider_4 categ_slider scita_category_slider_4 o_colored_level">
-            <div class="container">
-                <div class="row top-row title-block">
-                    <h2 class="col-md-12 section-title">
-                        For your Home and Office
-                    </h2>
-                </div>
-                <div class="row bottom-row categories">
-                    <div id="pg_cat_slider_4_owl" class="col-md-12 category-slider owl-carousel">
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smartphones</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">HomePod</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Apple TV 4K</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Smart TV</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">SmartWatch</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Gaming</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Headphones</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="item cs-cat">
-                            <a href="#">
-                                <div class="cs-img sct_img_effect4">
-                                    <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
-                                </div>
-                                <div class="sct_cat_content">
-                                    <p class="pwpi-title">Air Tag</p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
-                                </div>
-                            </a>
-                        </div>
-                        <div class="owl-nav disabled">
-                            <button type="button" role="presentation" class="owl-prev">
-                                <span aria-label="Previous">‹</span>
-                            </button>
-                            <button type="button" role="presentation" class="owl-next">
-                                <span aria-label="Next">›</span>
-                            </button>
-                        </div>
-                        <div class="owl-dots disabled"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
-    <template id="theme_scita_category_slider_gray_static_preview" name="Category Slider 3 (Static)">
-        <section class="oe_category_slider o_colored_level">
-            <div class="container">
-                <div class="custom-title-block">
-                    <h2 class="section-title style1">For your Home and Office</h2>
-                </div>
-                <div class="row white-effect">
-                    <div class="col-sm-12">
-                        <div class="sct-category owl-carousel" id="pg_cat_slider_gray_owl">
-                            <!-- 8 Static Categories -->
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/49/image_1920/210x88?unique=6ac0280" title="Smartphones" alt="Smartphones" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Smartphones</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/50/image_1920/210x88?unique=e13dd14" title="HomePod" alt="HomePod" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">HomePod</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/51/image_1920/210x88?unique=0627750" title="Apple TV 4K" alt="Apple TV 4K" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Apple TV 4K</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/52/image_1920/210x88?unique=9ce90db" title="Smart TV" alt="Smart TV" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Smart TV</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/53/image_1920/210x88?unique=f7ec521" title="SmartWatch" alt="SmartWatch" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">SmartWatch</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/54/image_1920/210x88?unique=fcd9055" title="Gaming" alt="Gaming" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Gaming</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/55/image_1920/210x88?unique=9fd25c2" title="Headphones" alt="Headphones" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Headphones</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="category-logo d-flex align-items-center justify-content-center">
-                                        <img src="/web/image/product.public.category/56/image_1920/210x88?unique=83ac578" title="Air Tag" alt="Air Tag" loading="lazy" />
-                                    </div>
-                                    <div class="category-title">
-                                        <p class="text-center">Air Tag</p>
-                                    </div>
-                                </a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -2334,7 +1457,7 @@
     </template>
 
     <template id="custom_scita_category_slider_static" name="Custom Category Slider (Static Preview)">
-       <section class="custom_scita_category_slider_static s_custom_img_category_slider o_colored_level">
+       <section class="multi_product_and_category_slider custom_scita_category_slider_static s_custom_img_category_slider o_colored_level">
         <div class="product_category_scita">
             <div class="container">
                 <div class="row cst_top_row">
@@ -2350,26 +1473,25 @@
                     <div class="col-md-3 cst_sct_left_side">
                         <div class="cst_sct_img">
                             <a href="#">
-                                <img class="sct_desktop_image" alt="Static Trend Image" src="/static/images/static_trend_image.jpg" title="Static Trend" loading="lazy" />
-                                <img class="sct_mobile_image" alt="Static Trend Mobile Image" src="/static/images/static_trend_mobile_image.jpg" title="Static Trend Mobile" loading="lazy" />
+                                <img class="sct_desktop_image" alt="Static Trend Image" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Static Trend" loading="lazy" />
                             </a>
                         </div>
                     </div>
                     <div class="col-md-9 cst_sct_right_side">
                         <div class="cst_category-slider-section">
-                            <ul class="cat_list" id="cat_list_3">
+                            <ul class="cat_list" id="cat_list_4">
                                     <li class="cs-cat">
                                         <div class="cs-product">
                                             <div class="cs-img position-relative">
                                                 <a href="#">
-                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Static Product Image" src="/static/images/static_product_image.jpg" title="Static Product" loading="lazy" />
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="2 Seat Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" title="2 Seat Sofa" loading="lazy" />
                                                 </a>
                                             </div>
                                             <div class="pwd-desc">
                                                 <div class="pwp-info">
                                                     <div class="sct_cat_content">
                                                         <a href="#">
-                                                            <p class="pwpi-title">Static Product Title</p>
+                                                            <p class="pwpi-title">2 Seat Sofa</p>
                                                         </a>
                                                     </div>
                                                     <div class="pink-box">
@@ -2383,9 +1505,34 @@
                                                     </div>
                                                     <p class="price">
                                                         <b>
-                                                            <span>$99.99</span>
+                                                            <span>$109.99</span>
                                                         </b>
                                                     </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -2394,14 +1541,14 @@
                                         <div class="cs-product">
                                             <div class="cs-img position-relative">
                                                 <a href="#">
-                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Static Product Image" src="/static/images/static_product_image.jpg" title="Static Product" loading="lazy" />
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Guest Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" title="Guest Chair" loading="lazy" />
                                                 </a>
                                             </div>
                                             <div class="pwd-desc">
                                                 <div class="pwp-info">
                                                     <div class="sct_cat_content">
                                                         <a href="#">
-                                                            <p class="pwpi-title">Static Product Title</p>
+                                                            <p class="pwpi-title">Guest Chair</p>
                                                         </a>
                                                     </div>
                                                     <div class="pink-box">
@@ -2415,9 +1562,34 @@
                                                     </div>
                                                     <p class="price">
                                                         <b>
-                                                            <span>$99.99</span>
+                                                            <span>$39.99</span>
                                                         </b>
                                                     </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -2426,14 +1598,14 @@
                                         <div class="cs-product">
                                             <div class="cs-img position-relative">
                                                 <a href="#">
-                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Static Product Image" src="/static/images/static_product_image.jpg" title="Static Product" loading="lazy" />
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Lounge Chair" src="/theme_scita/static/src/img/playground_img/product_3.png" title="Lounge Chair" loading="lazy" />
                                                 </a>
                                             </div>
                                             <div class="pwd-desc">
                                                 <div class="pwp-info">
                                                     <div class="sct_cat_content">
                                                         <a href="#">
-                                                            <p class="pwpi-title">Static Product Title</p>
+                                                            <p class="pwpi-title">Lounge Chair</p>
                                                         </a>
                                                     </div>
                                                     <div class="pink-box">
@@ -2447,9 +1619,91 @@
                                                     </div>
                                                     <p class="price">
                                                         <b>
-                                                            <span>$99.99</span>
+                                                            <span>$76.99</span>
                                                         </b>
                                                     </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cs-cat">
+                                        <div class="cs-product">
+                                            <div class="cs-img position-relative">
+                                                <a href="#">
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" title="Drawer" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="pwd-desc">
+                                                <div class="pwp-info">
+                                                    <div class="sct_cat_content">
+                                                        <a href="#">
+                                                            <p class="pwpi-title">Drawer</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pink-box">
+                                                        <ul class="ratings">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="price">
+                                                        <b>
+                                                            <span>$76.99</span>
+                                                        </b>
+                                                    </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -2480,22 +1734,21 @@
                         <div class="col-md-3 cst_sct_left_side">
                             <div class="cst_sct_img">
                                 <a href="#">
-                                    <img class="sct_desktop_image" alt="Static Trend Image" src="/static/images/static_trend_image.jpg" title="Static Trend" loading="lazy" />
-                                    <img class="sct_mobile_image" alt="Static Trend Mobile Image" src="/static/images/static_trend_mobile_image.jpg" title="Static Trend Mobile" loading="lazy" />
+                                    <img class="sct_desktop_image" alt="Static Trend Image" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Static Trend" loading="lazy" />
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-9 cst_sct_right_side">
                             <div class="cst_category-slider-section">
-                                <ul class="cat_list" id="cat_list_3">
+                                <ul class="cat_list" id="cat_list_4">
                                     <li class="cs-cat sct_cat_style">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                                <img alt="Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" title="Sofa" loading="lazy"/>
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">
-                                                    Desks
+                                                    Sofa
                                                 </p>
                                             </div>
                                         </a>    
@@ -2503,11 +1756,11 @@
                                     <li class="cs-cat sct_cat_style">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                                <img alt="Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" title="Chair" loading="lazy"/>
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">
-                                                    Desks
+                                                    Chair
                                                 </p>
                                             </div>
                                         </a>    
@@ -2515,11 +1768,11 @@
                                     <li class="cs-cat sct_cat_style">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                                <img alt="Dining Table" src="/theme_scita/static/src/img/playground_img/product_5.png" title="Dining Table" loading="lazy"/>
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">
-                                                    Desks
+                                                    Dining Table
                                                 </p>
                                             </div>
                                         </a>    
@@ -2527,23 +1780,11 @@
                                     <li class="cs-cat sct_cat_style">
                                         <a href="#">
                                             <div class="cs-img">
-                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                                <img alt="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" title="Drawer" loading="lazy"/>
                                             </div>
                                             <div class="sct_cat_content">
                                                 <p class="pwpi-title">
-                                                    Desks
-                                                </p>
-                                            </div>
-                                        </a>    
-                                    </li>
-                                    <li class="cs-cat sct_cat_style">
-                                        <a href="#">
-                                            <div class="cs-img">
-                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
-                                            </div>
-                                            <div class="sct_cat_content">
-                                                <p class="pwpi-title">
-                                                    Desks
+                                                    Drawer
                                                 </p>
                                             </div>
                                         </a>    

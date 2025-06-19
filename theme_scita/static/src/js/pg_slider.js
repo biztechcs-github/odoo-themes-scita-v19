@@ -8,30 +8,30 @@ odoo.define('theme_scita.pg_slider',[], function(require) {
             start: function () {
                 this.$el.owlCarousel({
                     loop:false,
-                            margin:30,
-                            nav:true,
-                            autoplay:true,
-                            rewind:true,
-                            dots:false,
-                            autoplayTimeout:2500,
-                            autoplayHoverPause:true,
-                            responsive:{
-                                0:{
-                                    items:2
-                                },
-                                767:{
-                                    items:4
-                                },
-                                992:{
-                                    items:5
-                                },
-                                1200:{
-                                    items:6
-                                },
-                                1400:{
-                                    items:7
-                                }
-                            }
+                    margin:30,
+                    nav:true,
+                    autoplay:true,
+                    rewind:true,
+                    dots:false,
+                    autoplayTimeout:2500,
+                    autoplayHoverPause:true,
+                    responsive:{
+                        0:{
+                            items:2
+                        },
+                        767:{
+                            items:4
+                        },
+                        992:{
+                            items:5
+                        },
+                        1200:{
+                            items:6
+                        },
+                        1400:{
+                            items:7
+                        }
+                    }
                 });
             }
         });
