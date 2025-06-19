@@ -2885,3 +2885,187 @@ common search for categories and products (22/05/2025)
 		}
 	}
 }
+
+
+// playground design
+main:has(.playground_wrapper){
+	position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $light-color;
+    z-index: 9999;
+	overflow: auto;
+}
+.playground_wrapper{
+	> .container-fluid{
+		@include min1024{
+			padding: 0 70px;
+		}
+	}
+	.playground_inner_wrap{
+		.playground_title{
+			margin-bottom: 30px;
+		}
+		.playground_tab_wrap{			
+			.nav-tabs {
+				@include justify-align-content;
+				@include flex;
+				border-bottom: none;
+				margin: 15px auto;
+				background: $light-grey-color;
+				padding: 8px;
+				border-radius: 50px;
+				max-width: fit-content;
+
+				.nav-item{
+					+ .nav-item{
+						margin-left: 10px;
+					}
+				}
+				.nav-link {
+					font-weight: bold;
+					color: $dark-color;
+					border: none;
+					border-radius: 30px;
+					font-size: $title - 1;
+					padding: 10px 15px;
+					width: 130px;
+					text-align: center;
+
+					&.active, &:hover{
+						color: $black;
+						border: none;
+						background: $light-color;
+					}
+					@media (max-width: 1023px){
+						padding: 10px 30px;
+						width: auto;
+					}
+				}
+			}
+		}
+		> .tab-content{
+			border-radius: 15px;
+			background-color: lighten($light-grey-color, 2%);
+			padding: 20px 20px 20px 0;
+
+			.tab_panel_wrap{
+				&.show{
+					@include flex;
+					@include flexwrap;
+				}
+				.left_tab_wrap{
+					padding: 0 20px;
+					flex: 0 0 320px;
+					max-width: 320px;
+				}
+				.right_content_wrap{
+					background: $light-color;
+					padding: 20px;
+					border-radius: 15px;
+					flex: 0 0 calc(100% - 320px);
+					max-width: calc(100% - 320px);
+
+					.snippet-container{
+						> div{
+							> section{
+								padding: 10px;
+							}
+						}
+						.sct_banner_1, .sct_banner_2, .retail_sct_banner_1{
+							height: 570px;
+						}
+						
+						.sct_banner_1{
+							.content{
+								min-height: 100%;
+							}
+						}
+
+						.content_snippets_v_10, .accordion_v_1, .accordion_v_2, .how_it_work_v_3, .how_it_work_v_4, .retial_newsletter_2, .expertise_statistics_4, .it_grids_service, .policy_trust_snippet_v_3, .timeline_snippet_1, .box_brand_slider{
+							padding: 30px;
+						}
+						.how_it_work_v_1{
+							overflow: auto;
+							height: 590px;
+
+							.sct_img_div{
+								.sct_sticky_top{
+									top: 10px;
+
+									img{
+										max-height: 380px;
+									}
+								}
+							}
+							.sct_content_div{
+								.sct_base_class{
+									$max-items: 10;
+									$offset: 10px;
+									$step: 30px;
+									@for $i from 1 through $max-items {
+										.sct_work_box:nth-child(#{$i}){
+											position: sticky;
+											top: $offset + ($i - 1) * $step;
+											z-index: (10 + $i);
+										}
+									}
+								}
+							}
+						}
+						.how_it_work_v_3{
+							.sct_btm_row{
+								.sct_content_div{
+									.sct_work_box{
+										.sct_work_icon{
+											height: auto;
+										}
+									}
+								}
+							}
+						}
+						.portfolio_snippet_1, .portfolio_snippet_2{
+							.sct_timeline_img{
+								.sct_img_box{
+									height: 370px;
+								}
+							}
+						}
+						.scita_adv_banner_3{
+							padding: 65px 20px 30px;
+						}
+						.expertise_statistics_4{
+							.prog_statics{
+								margin: 0;
+							}
+						}
+						.it_grids_service{
+							height: 590px;
+							overflow: auto;
+
+							.sct_cmp_img{
+								top: 0;
+							}
+						}
+						.service_varient_11{
+							padding: 30px 20px 5px;
+						}
+						.fashion_trust_snippet_1, .policy_trust_snippet_v_3{
+							.sct_thumb{
+								margin: 0;
+							}
+						}
+						.testinomial_varient_3{
+							padding: 30px 30px 0;
+						}
+						.blog{
+							padding: 20px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

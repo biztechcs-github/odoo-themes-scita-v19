@@ -1,81 +1,131 @@
 <odoo>
     <!-- Blog Snippet/Slider -->
     <template id="blog_slider_view_1" name="Static Blog Snippet">
-        <div class="container">
-            <div class='row sct_top_row'>
-                <div class='col-md-12'>
-                    <div class="block-title">
-                        <h2 class="section-title text-center">Blogs</h2>
-                        <p class="text-center">Lorem ipsum is simply dummy text of the printing and
-                            typesetting industry.</p>
+        <section class="blog scita_blog_slider">
+            <div class="container">
+                <div class='row sct_top_row'>
+                    <div class='col-md-12'>
+                        <div class="block-title">
+                            <h2 class="section-title text-center">Blogs</h2>
+                            <p class="text-center">Lorem ipsum is simply dummy text of the printing and
+                                typesetting industry.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class='row sct_mid_row justify-content-center'>
-                <!-- Blog Post 1 -->
-                <div class='col-lg-3 col-md-6 col-12'>
-                    <div class='blog-thumb' title="Beyond The Eye">
-                        <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_img'>
-                            <div class="section-post-media" style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
-                        </a>
-                        <div class='sct_blog_desc'>
-                            <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_title'>
-                                <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                <div class='row sct_mid_row justify-content-center'>
+                    <!-- Blog Post 1 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="Beyond The Eye">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
                             </a>
-                            <div class="sct_blog_detail row align-items-center">
-                                <div class="col-8 blog_left_content">
-                                    <p class="date">June 09, 2025</p>
-                                    <p class="author">By Mitchell Admin</p>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 09, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/beyond-the-eye" class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
-                                    </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="Buying A Telescope">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 09, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="How To Look Up">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>How To Look Up</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 16, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Post 4 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="How to choose the right hotel">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_3.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>How to choose the right hotel</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 30, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 2 -->
-                <div class='col-lg-3 col-md-6 col-12'>
-                    <div class='blog-thumb' title="Buying A Telescope">
-                        <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_img'>
-                            <div class="section-post-media" style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
-                        </a>
-                        <div class='sct_blog_desc'>
-                            <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_title'>
-                                <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                <div class='row sct_btm_row'>
+                    <div class='col-md-12 text-center'>
+                        <div class="sct_cst_btn">
+                            <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
+                                <span>View More</span>
                             </a>
-                            <div class="sct_blog_detail row align-items-center">
-                                <div class="col-8 blog_left_content">
-                                    <p class="date">June 09, 2025</p>
-                                    <p class="author">By Mitchell Admin</p>
-                                </div>
-                                <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/buying-a-telescope" class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class='row sct_btm_row'>
-                <div class='col-md-12 text-center'>
-                    <div class="sct_cst_btn">
-                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
-                            <span>View More</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </template>
     <template id="scita_blog_2_slider_view_static" name="Blog Snippet 2 (Static)">
-       <section id="blog_custom_4_snippet" class="blog blog_4_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_4_custom_snippet" data-name="Blog Snippet 2">
+       <section id="blog_custom_4_snippet" class="blog blog_4_custom o_colored_level">
         <div class="container">
             <div class="row sct_top_row">
                 <div class="col-md-12">
@@ -90,64 +140,73 @@
                 <div class="col-md-12">
                     <div class="news_4_blogs" id="3-1">
                         <div class="row">
-
-                                <div class="sct_base_class col-md-6">
-                                    <div class="img_blog">
-                                        <a class="it_blog_img" href="/blog/astronomy-2/post/beyond-the-eye-7">
-                                            <div class="section-post-media" data-oe-model="ir.ui.view" data-oe-id="2961" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[2]/div[1]/div[1]/div[1]/t[2]/div[1]/div[1]/a[1]/div[1]" style="background-image: url('/website_blog/static/src/img/cover_7.jpg')">
-                                            </div>
-                                            <div class="sct_img_content">
-                                                <p class="date">
-                                                    <span class="day">11</span>
-                                                    <span class="month">Jun</span>
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <a class="it_blog_content" href="/blog/astronomy-2/post/beyond-the-eye-7">
+                            <div class="sct_base_class col-md-6">
+                                <div class="img_blog">
+                                    <a class="it_blog_img" href="#">
+                                        <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg')">
+                                        </div>
                                         <div class="sct_img_content">
-                                            <h3 class="sct_blog_name">Beyond The Eye</h3>
-                                            <p class="blog-content">
-                                                    Becoming part of the society of devoted amateur astronomers....
+                                            <p class="date">
+                                                <span class="day">11</span>
+                                                <span class="month">Jun</span>
                                             </p>
                                         </div>
                                     </a>
                                 </div>
+                                <a class="it_blog_content" href="#">
+                                    <div class="sct_img_content">
+                                        <h3 class="sct_blog_name">Beyond The Eye</h3>
+                                        <p class="blog-content">Becoming part of the society of devoted amateur astronomers....</p>
+                                    </div>
+                                </a>
+                            </div>
                             <div class="sct_info_class col-md-6">
-                                    <div class="sct_blog_desc">
-                                        <div class="sct_left_side">
-                                            <p class="date">
-                                                <span class="day">11</span>
-                                                <span class="month">Jun</span>
-                                            </p>
-                                        </div>
-                                        <div class="sct_right_side">
-                                            <a class="read_link" href="/blog/astronomy-2/post/buying-a-telescope-6">
-                                                <h3 class="sct_blog_name">Buying A Telescope</h3>
-                                                <p class="blog-content">
-                                                    Before you make your first purchase…...
-                                                </p>
-                                            </a>
-
-                                        </div>
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">10</span>
+                                            <span class="month">Jun</span>
+                                        </p>
                                     </div>
-                                    <div class="sct_blog_desc">
-                                        <div class="sct_left_side">
-                                            <p class="date">
-                                                <span class="day">11</span>
-                                                <span class="month">Jun</span>
-                                            </p>
-                                        </div>
-                                        <div class="sct_right_side">
-                                            <a class="read_link" href="/blog/astronomy-2/post/what-if-they-let-you-run-the-hubble-5">
-                                                <h3 class="sct_blog_name">What If They Let You Run The Hubble</h3>
-                                                <p class="blog-content">
-                                                    The beauty of astronomy is that anybody can do it....
-                                                </p>
-                                            </a>
-
-                                        </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">How to choose the right hotel</h3>
+                                            <p class="blog-content">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </a>
                                     </div>
+                                </div>
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">30</span>
+                                            <span class="month">Jun</span>
+                                        </p>
+                                    </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">Buying A Telescope</h3>
+                                            <p class="blog-content">
+                                                Before you make your first purchase…...
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">19</span>
+                                            <span class="month">Jun</span>
+                                        </p>
+                                    </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">What If They Let You Run The Hubble</h3>
+                                            <p class="blog-content">
+                                                The beauty of astronomy is that anybody can do it....
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -155,15 +214,213 @@
             </div>
         </div></section>
     </template>
+    <template id="blog_2_custom_snippet_static" name="Blog Slider 1 (Static)">
+        <section id="blog_custom_2_snippet" class="blog blog_2_custom o_colored_level">
+            <div class="container">
+                <div id="pg_blog_2_owl_carosel" class="owl-carousel">
+                    <!-- Blog 1 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_1.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="Buying A Telescope">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>Buying A Telescope</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Blog 2 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_2.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="How To Look Up">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>How To Look Up</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Blog 3 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_3.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="How to choose the right hotel">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>How to choose the right hotel</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Blog 3 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="Beyond the eye">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>Beyond the eye</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
     <template id="blog_5_custom_snippet_static" name="Blog Slider 2 (Static)">
-        <section id="blog_custom_5_snippet" class="blog blog_5_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_5_custom_snippet" data-name="Blog Slider 2">
+        <section id="blog_custom_5_snippet" class="blog blog_5_custom">
             <div class="container">
                 <div class="row">
+                    <div class="block-title col-lg-3">
+                        <h3 class='sct_sub_title text-uppercase'>
+                            Subtitle
+                        </h3>
+                        <h2 class="fancy">
+                            Blogs
+                        </h2>
+                        <p class="sct_simple_text">
+                            Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                        </p>
+                    </div>
                     <div class="blog_slider_wrap col-lg-9">
                         <div id="pg_blog_2_owl_carosel" class="owl-carousel">
                             <!-- Blog 1 -->
                             <div class="sct_blog_box" title="Beyond The Eye">
-                                <a href="/blog/astronomy-2/post/beyond-the-eye-7">
+                                <a href="#">
+                                    <div class="blog_top_detail">
+                                        <div class="sct_label_wrap">
+                                            <p class="sct_label_blog">discovery</p>
+                                        </div>
+                                        <h3 class="sct_title">Beyond The Eye</h3>
+                                        <p class="blog-content">
+                                            Becoming part of the society of devoted amateur
+                                            astronomers.
+                                        </p>
+                                    </div>
+                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
+                                        <div class="col-8 blog_left_content">
+                                            <p class="date">
+                                                June 10,2025
+                                            </p>
+                                            <p class="author">By <span>Mitchell Admin</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-4 blog_link text-end">
+                                            <div class="arrow_link">
+                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Blog 1 -->
+                            <div class="sct_blog_box" title="Beyond The Eye">
+                                <a href="#">
+                                    <div class="blog_top_detail">
+                                        <div class="sct_label_wrap">
+                                            <p class="sct_label_blog">discovery</p>
+                                        </div>
+                                        <h3 class="sct_title">Beyond The Eye</h3>
+                                        <p class="blog-content">
+                                            Becoming part of the society of devoted amateur
+                                            astronomers.
+                                        </p>
+                                    </div>
+                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
+                                        <div class="col-8 blog_left_content">
+                                            <p class="date">
+                                                June 10,2025
+                                            </p>
+                                            <p class="author">By <span>Mitchell Admin</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-4 blog_link text-end">
+                                            <div class="arrow_link">
+                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Blog 1 -->
+                            <div class="sct_blog_box" title="Beyond The Eye">
+                                <a href="#">
+                                    <div class="blog_top_detail">
+                                        <div class="sct_label_wrap">
+                                            <p class="sct_label_blog">discovery</p>
+                                        </div>
+                                        <h3 class="sct_title">Beyond The Eye</h3>
+                                        <p class="blog-content">
+                                            Becoming part of the society of devoted amateur
+                                            astronomers.
+                                        </p>
+                                    </div>
+                                    <div class="sct_blog_detail d-flex flex-wrap align-items-center">
+                                        <div class="col-8 blog_left_content">
+                                            <p class="date">
+                                                June 10,2025
+                                            </p>
+                                            <p class="author">By <span>Mitchell Admin</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-4 blog_link text-end">
+                                            <div class="arrow_link">
+                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Blog Link" loading="lazy" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Blog 1 -->
+                            <div class="sct_blog_box" title="Beyond The Eye">
+                                <a href="#">
                                     <div class="blog_top_detail">
                                         <div class="sct_label_wrap">
                                             <p class="sct_label_blog">discovery</p>
@@ -197,38 +454,7 @@
             </div>
         </section>
     </template>
-    <template id="blog_2_custom_snippet_static" name="Blog Slider 1 (Static)">
-        <section id="blog_custom_2_snippet" class="blog blog_2_custom o_colored_level" data-blog-slider-id="blog-myowl1" data-blog-slider-type="1" data-disp="blog" data-snippet="blog_2_custom_snippet" data-name="Blog Slider 1">
-            <div class="container">
-                <div id="pg_blog_2_owl_carosel" class="owl-carousel">
-                    <!-- Blog 1 -->
-                    <div class="sct_blog_box">
-                        <a class="it_blog_img" href="/blog/astronomy-2/post/beyond-the-eye-7">
-                            <div class="section-post-media" style="background-image: url('/website_blog/static/src/img/cover_7.jpg'); height:220px; border-radius:8px; background-size:cover; background-position:center;">
-                            </div>
-                            <div class="sct_base_class" title="Beyond The Eye">
-                                <div class="sct_blog_content_wrap">
-                                    <h3>Beyond The Eye</h3>
-                                    <div class="sct_blog_content">
-                                        Becoming part of the society of devoted amateur astronomers.
-                                    </div>
-                                </div>
-                                <div class="sct_blog_detail">
-                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span>Mitchell Admin</span>
-                                        </p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span> June 10,2025 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </template>
+    
 
     <!-- Brand Slider -->
     <template id="box_brand_snippet_4_static_preview" name="Brand Slider 1 (Static Preview)">
@@ -244,35 +470,53 @@
                     </div>
                     <div class="row our-brands">
                         <div class="col-sm-12">
-                            <section class="owl-carousel pg-sct-brand-slider-2" id="box_brands_slider_owl">
+                            <section class="owl-carousel pg-sct-brand-slider-2 sct-brand-slider-2" id="box_brands_slider_owl">
                                 <!-- Static Brand 1 -->
                                 <div class="sct_brand_box text-center">
                                     <div class="brand-logo-box">
-                                        <img alt="Brand 1" src="/theme_scita/static/src/img/brand1.png" class="img img-fluid" title="Brand 1"/>
+                                        <img alt="Brand 1" src="/theme_scita/static/src/img/playground_img/brand_1.png" class="img img-fluid" title="Brand 1"/>
                                     </div>
                                 </div>
                                 <!-- Static Brand 2 -->
                                 <div class="sct_brand_box text-center">
                                     <div class="brand-logo-box">
-                                        <img alt="Brand 2" src="/theme_scita/static/src/img/brand2.png" class="img img-fluid" title="Brand 2"/>
+                                        <img alt="Brand 2" src="/theme_scita/static/src/img/playground_img/brand_2.png" class="img img-fluid" title="Brand 2"/>
                                     </div>
                                 </div>
                                 <!-- Static Brand 3 -->
                                 <div class="sct_brand_box text-center">
                                     <div class="brand-logo-box">
-                                        <img alt="Brand 3" src="/theme_scita/static/src/img/brand3.png" class="img img-fluid" title="Brand 3"/>
+                                        <img alt="Brand 3" src="/theme_scita/static/src/img/playground_img/brand_3.png" class="img img-fluid" title="Brand 3"/>
                                     </div>
                                 </div>
                                 <!-- Static Brand 4 -->
                                 <div class="sct_brand_box text-center">
                                     <div class="brand-logo-box">
-                                        <img alt="Brand 4" src="/theme_scita/static/src/img/brand4.png" class="img img-fluid" title="Brand 4"/>
+                                        <img alt="Brand 4" src="/theme_scita/static/src/img/playground_img/brand_4.png" class="img img-fluid" title="Brand 4"/>
                                     </div>
                                 </div>
                                 <!-- Static Brand 5 -->
                                 <div class="sct_brand_box text-center">
                                     <div class="brand-logo-box">
-                                        <img alt="Brand 5" src="/theme_scita/static/src/img/brand5.png" class="img img-fluid" title="Brand 5"/>
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_5.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 6 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_6.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 7 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_7.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 8 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_8.png" class="img img-fluid" title="Brand 5"/>
                                     </div>
                                 </div>
                             </section>
@@ -294,18 +538,48 @@
                         </div>
                     </div>
                     <div class="row our-brands">
-                        <!-- Repeat this block for each brand -->
                         <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
                                 <div class="brand-logo text-center">
-                                    <img alt="Brand Name" src="/web/image/brand/1/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_1.png" class="img img-fluid" title="Brand Name"/>
                                 </div>
+                            </a>
                         </div>
                         <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
                                 <div class="brand-logo text-center">
-                                    <img alt="Brand Name" src="/web/image/brand/2/image/210x88" class="img img-fluid" title="Brand Name"/>
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_2.png" class="img img-fluid" title="Brand Name"/>
                                 </div>
+                            </a>
                         </div>
-                        <!-- Add more blocks as needed -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_3.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_4.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_5.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_6.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -417,8 +691,8 @@
     </template>
 
     <!-- Multi product snippet -->
-     <template id="sct_product_snippet_1_s" name="Multi Product Snippet 1(Static)">
-      <section class="sct_product_snippet_1_s">
+     <template id="sct_product_snippet_1_static" name="Multi Product Snippet 1(Static)">
+      <section class="sct_product_snippet_1_static">
         <div class='sct-snippet-full'>
             <div class="container">
                 <div class="row top">

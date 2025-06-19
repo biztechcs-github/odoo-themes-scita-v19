@@ -1,489 +1,497 @@
 <odoo>
     <template id="playground_template" name="Playground Page">
         <t t-call="website.layout">
-            <div class="container mt-5">
-                <h2 class="text-center mb-4">Playground</h2>
-
-                <!-- Tabs Navigation -->
-                <ul class="nav nav-tabs" id="playgroundTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="static-tab" data-bs-toggle="tab" href="#static" role="tab">Static</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="dynamic-tab" data-bs-toggle="tab" href="#dynamic" role="tab">Dynamic</a>
-                    </li>
-                </ul>
-
-                <div class="tab-content mt-3" id="playgroundTabContent">
-                    <div class="tab-pane fade show active" id="static" role="tabpanel">
-                        <div class="mb-3">
-                            <label for="staticSnippets" class="form-label fw-bold">Select a Static
-                                Snippet</label>
-                            <select id="staticSnippets" class="form-select">
-                                <optgroup label="Banner Snippets">
-                                    <option value="theme_scita.sct_banner_1">Banner
-                                        Slider 1</option>
-                                    <option value="theme_scita.sct_banner_2">Banner Slider 2</option>
-                                    <option value="theme_scita.retail_sct_banner_slider_1">Banner
-                                        Slider 3</option>
-                                    <option value="theme_scita.it_main_banner">Banner Snippet 1</option>
-                                    <option value="theme_scita.banner_snippet_2">Hero Image Snippet</option>
-                                </optgroup>
-                                <optgroup label="About Us Snippets">
-                                    <option value="theme_scita.health_about_hospital">About Us 1</option>
-                                    <option value="theme_scita.about_us_v_3">About Us 2</option>
-                                    <option value="theme_scita.about_us_v_4">About Us 3</option>
-                                    <option value="theme_scita.about_us_v_5">About Us 4</option>
-                                    <option value="theme_scita.content_snippets_v_4">About Us 5</option>
-                                    <option value="theme_scita.content_snippets_v_6">About Us 6</option>
-                                    <option value="theme_scita.content_snippets_v_10">About Us 7</option>
-                                    <option value="theme_scita.content_snippets_v_11">About Us 8</option>
-
-                                </optgroup>
-                                <optgroup label="Accordion Snippets">
-                                    <option value="theme_scita.accordion_v_1">Accordion Snippet 1</option>
-                                    <option value="theme_scita.accordion_v_2">Accordion Snippet 2</option>
-                                </optgroup>
-                                <optgroup label="Case study Snippets">
-                                    <option value="theme_scita.health_cash_study_snippet">Case study
-                                        Snippet 1</option>
-                                    <option value="theme_scita.case_study_varient_2">Case study
-                                        Snippet 2</option>
-                                </optgroup>
-
-                                <optgroup label="Contact Us Snippets">
-                                    <option value="theme_scita.contact_us_v_1">Contact Us Snippet 1</option>
-                                    <option value="theme_scita.it_letstalk">Contact Us Snippet 2</option>
-                                    <option value="theme_scita.contact_us_v_3">Contact Us Snippet 3</option>
-                                    <option value="theme_scita.health_location_snippet">Contact Us
-                                        Snippet 4</option>
-                                </optgroup>
-                                <optgroup label="How It Works Snippets">
-                                    <option value="theme_scita.how_it_work_v_1">How it Works Snippet
-                                        1</option>
-                                    <option value="theme_scita.how_it_work_v_5">How it Works Snippet
-                                        2</option>
-                                    <option value="theme_scita.how_it_work_v_3">How it Works Snippet
-                                        3</option>
-                                    <option value="theme_scita.how_it_work_v_4">How it Works Snippet
-                                        4</option>
-                                </optgroup>
-                                <optgroup label="Newsletter Snippets">
-                                    <option value="theme_scita.it_sign_up_newsletter">Newsletter
-                                        Snippet 1</option>
-                                    <option value="theme_scita.newsletter_varient_5">Newsletter
-                                        Snippet 2</option>
-                                    <option value="theme_scita.retail_sign_up_newsletter">Newsletter
-                                        Snippet 3</option>
-
-                                </optgroup>
-                                <optgroup label="Portfolio Snippets">
-                                    <option value="theme_scita.portfolio_snippet_1">Portfolio
-                                        Snippet 1</option>
-                                    <option value="theme_scita.portfolio_snippet_2">Portfolio
-                                        Snippet 2</option>
-                                    <option value="theme_scita.it_portfolio_tabs_snippets">Portfolio
-                                        Snippet 3</option>
-                                </optgroup>
-                                <optgroup label="Promotion Snippets">
-                                    <option value="theme_scita.retial_promo_banner_snippet_1">Promotion
-                                        Snippet 1</option>
-                                    <option value="theme_scita.promo_banner_snippet_3">Promotion
-                                        Snippet 2</option>
-                                    <option value="theme_scita.retial_advertisement_banner_1">Advertisment
-                                        Snippet 1</option>
-                                    <option value="theme_scita.fashion_advertisement_banner_1">Advertisment
-                                        Snippet 2</option>
-                                    <option value="theme_scita.health_advertisement_banner">Advertisment
-                                        Snippet 3</option>
-                                </optgroup>
-                                <optgroup label="Pricing Snippets">
-                                    <option value="theme_scita.s_theme_scita_pricing_table_1_4column_v4">Pricing
-                                        Snippet 1
-                                    </option>
-                                    <option value="theme_scita.s_theme_scita_pricing_table_1_4column_v2">Pricing
-                                        Snippet 2</option>
-                                    <option value="theme_scita.s_theme_scita_pricing_table_1_3column_v5">Pricing
-                                        Snippet 3</option>
-                                </optgroup>
-                                <optgroup label="Statistics Snippets">
-                                    <option value="theme_scita.expertise_statistics_4">Statistics
-                                        Snippet 1
-                                    </option>
-                                    <option value="theme_scita.expertise_statistics_8">Statistics
-                                        Snippet 2</option>
-                                    <option value="theme_scita.expertise_statistics_11">Statistics
-                                        Snippet 3</option>
-
-                                </optgroup>
-                                <optgroup label="Service Snippets">
-                                    <option value="theme_scita.it_grids_service">Service
-                                        Snippet 1
-                                    </option>
-                                    <option value="theme_scita.service_varient_7">Service
-                                        Snippet 2</option>
-                                    <option value="theme_scita.service_varient_11">Service
-                                        Snippet 3</option>
-                                    <option value="theme_scita.service_varient_14">Service
-                                        Snippet 4</option>
-
-                                </optgroup>
-                                <optgroup label="Trust Icon Snippets">
-                                    <option value="theme_scita.retial_trust_snippet_1">Trust Icon
-                                        Snippet 1
-                                    </option>
-                                    <option value="theme_scita.fashion_trust_snippet_1">Trust Icon
-                                        Snippet 2</option>
-                                    <option value="theme_scita.policy_trust_snippet_v_3">Trust Icon
-                                        Snippet 3</option>
-                                </optgroup>
-
-
-                                <optgroup label="Testimonial Snippets">
-                                    <option value="theme_scita.fashion_testimonials_slider_1">Testimonial
-                                        Slider 1
-                                    </option>
-                                    <option value="theme_scita.testinomial_varient_2">Testimonial
-                                        Slider 2</option>
-                                    <option value="theme_scita.testinomial_varient_5">Testimonial
-                                        Snippet 3</option>
-                                    <option value="theme_scita.testinomial_varient_3">Testimonial
-                                        Snippet 4</option>
-                                </optgroup>
-                                <optgroup label="Timeline Snippets">
-                                    <option value="theme_scita.timeline_snippet_1">Timeline
-                                        Snippet 1
-                                    </option>
-                                    <option value="theme_scita.timeline_snippet_3">Timeline Snippet 2</option>
-
-                                </optgroup>
-                            </select>
+            <div class="playground_wrapper my-5">
+                <div class="container-fluid">
+                    <div class="playground_inner_wrap">
+                        <div class="playground_title text-center">
+                            <h2 class="mb-2">Snippet Studio</h2>
+                            <p class="sct_simple_text">Preview, test, and refine your static or dynamic components</p>
                         </div>
-                        <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
-                            <div id="preview-theme_scita.sct_banner_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_banner_1" />
-                            </div>
-                            <div id="preview-theme_scita.sct_banner_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_banner_2" />
-                            </div>
-                            <div id="preview-theme_scita.retail_sct_banner_slider_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retail_sct_banner_slider_1" />
-                            </div>
-                            <div id="preview-theme_scita.it_main_banner" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_main_banner" />
-                            </div>
-                            <div id="preview-theme_scita.banner_snippet_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.banner_snippet_2" />
-                            </div>
-                            <div id="preview-theme_scita.health_about_hospital" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.health_about_hospital" />
-                            </div>
-                            <div id="preview-theme_scita.about_us_v_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.about_us_v_3" />
-                            </div>
 
-                            <div id="preview-theme_scita.about_us_v_4" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.about_us_v_4" />
-                            </div>
-                            <div id="preview-theme_scita.about_us_v_5" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.about_us_v_5" />
-                            </div>
-
-                            <div id="preview-theme_scita.content_snippets_v_4" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.content_snippets_v_4" />
-                            </div>
-                            <div id="preview-theme_scita.content_snippets_v_6" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.content_snippets_v_6" />
-                            </div>
-                            <div id="preview-theme_scita.content_snippets_v_10" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.content_snippets_v_10" />
-                            </div>
-                            <div id="preview-theme_scita.content_snippets_v_11" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.content_snippets_v_11" />
-                            </div>
-                            <div id="preview-theme_scita.accordion_v_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.accordion_v_1" />
-                            </div>
-                            <div id="preview-theme_scita.accordion_v_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.accordion_v_2" />
-                            </div>
-                            <div id="preview-theme_scita.health_cash_study_snippet" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.health_cash_study_snippet" />
-                            </div>
-                            <div id="preview-theme_scita.case_study_varient_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.case_study_varient_2" />
-                            </div>
-
-                            <div id="preview-theme_scita.contact_us_v_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.contact_us_v_1" />
-                            </div>
-                            <div id="preview-theme_scita.it_letstalk" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_letstalk" />
-                            </div>
-                            <div id="preview-theme_scita.contact_us_v_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.contact_us_v_3" />
-                            </div>
-                            <div id="preview-theme_scita.health_location_snippet" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.health_location_snippet" />
-                            </div>
-
-                            <div id="preview-theme_scita.how_it_work_v_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.how_it_work_v_1" />
-                            </div>
-                            <div id="preview-theme_scita.how_it_work_v_5" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.how_it_work_v_5" />
-                            </div>
-                            <div id="preview-theme_scita.how_it_work_v_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.how_it_work_v_3" />
-                            </div>
-                            <div id="preview-theme_scita.how_it_work_v_4" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.how_it_work_v_4" />
-                            </div>
-
-
-                            <div id="preview-theme_scita.it_sign_up_newsletter" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_sign_up_newsletter" />
-                            </div>
-                            <div id="preview-theme_scita.newsletter_varient_5" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.newsletter_varient_5" />
-                            </div>
-                            <div id="preview-theme_scita.retail_sign_up_newsletter" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retail_sign_up_newsletter" />
-                            </div>
-
-                            <div id="preview-theme_scita.portfolio_snippet_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.portfolio_snippet_1" />
-                            </div>
-                            <div id="preview-theme_scita.portfolio_snippet_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.portfolio_snippet_2" />
-                            </div>
-                            <div id="preview-theme_scita.it_portfolio_tabs_snippets" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_portfolio_tabs_snippets" />
-                            </div>
-
-
-                            <div id="preview-theme_scita.retial_promo_banner_snippet_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retial_promo_banner_snippet_1" />
-                            </div>
-                            <div id="preview-theme_scita.promo_banner_snippet_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.promo_banner_snippet_3" />
-                            </div>
-                            <div id="preview-theme_scita.retial_advertisement_banner_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retial_advertisement_banner_1" />
-                            </div>
-                            <div id="preview-theme_scita.fashion_advertisement_banner_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.fashion_advertisement_banner_1" />
-                            </div>
-                            <div id="preview-theme_scita.health_advertisement_banner" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.health_advertisement_banner" />
-                            </div>
-
-
-                            <div id="preview-theme_scita.s_theme_scita_pricing_table_1_4column_v4" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_4column_v4" />
-                            </div>
-                            <div id="preview-theme_scita.s_theme_scita_pricing_table_1_4column_v2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_4column_v2" />
-                            </div>
-                            <div id="preview-theme_scita.s_theme_scita_pricing_table_1_3column_v5" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_3column_v5" />
-                            </div>
-
-                            <div id="preview-theme_scita.expertise_statistics_4" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.expertise_statistics_4" />
-                            </div>
-                            <div id="preview-theme_scita.expertise_statistics_8" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.expertise_statistics_8" />
-                            </div>
-                            <div id="preview-theme_scita.expertise_statistics_11" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.expertise_statistics_11" />
-                            </div>
-
-                            <div id="preview-theme_scita.it_grids_service" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_grids_service" />
-                            </div>
-                            <div id="preview-theme_scita.service_varient_7" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.service_varient_7" />
-                            </div>
-                            <div id="preview-theme_scita.service_varient_11" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.service_varient_11" />
-                            </div>
-                            <div id="preview-theme_scita.service_varient_14" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.service_varient_14" />
-                            </div>
-
-                            <div id="preview-theme_scita.retial_trust_snippet_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retial_trust_snippet_1" />
-                            </div>
-                            <div id="preview-theme_scita.fashion_trust_snippet_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.fashion_trust_snippet_1" />
-                            </div>
-                            <div id="preview-theme_scita.policy_trust_snippet_v_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.policy_trust_snippet_v_3" />
-                            </div>
-
-
-                            <div id="preview-theme_scita.fashion_testimonials_slider_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.fashion_testimonials_slider_1" />
-                            </div>
-                            <div id="preview-theme_scita.testinomial_varient_2" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.testinomial_varient_2" />
-                            </div>
-                            <div id="preview-theme_scita.testinomial_varient_5" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.testinomial_varient_5" />
-                            </div>
-                            <div id="preview-theme_scita.testinomial_varient_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.testinomial_varient_3" />
-                            </div>
-
-                            <div id="preview-theme_scita.timeline_snippet_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.timeline_snippet_1" />
-                            </div>
-                            <div id="preview-theme_scita.timeline_snippet_3" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.timeline_snippet_3" />
-                            </div>
+                        <!-- Tabs Navigation -->
+                        <div class="playground_tab_wrap">                            <ul class="nav nav-tabs" id="playgroundTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="static-tab" data-bs-toggle="tab" href="#static" role="tab">Static</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="dynamic-tab" data-bs-toggle="tab" href="#dynamic" role="tab">Dynamic</a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="tab-pane fade" id="dynamic" role="tabpanel">
-                        <div class="mb-3">
-                            <label for="dynamicSnippets" class="form-label fw-bold">Select a Dynamic
-                                Snippet</label>
-                            <select id="dynamicSnippets" class="form-select">
-                                <optgroup label="blog Snippet">
-                                    <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
-                                    <option value="theme_scita.scita_blog_2_slider_view_static">Blog snippet 2</option>
-                                    <option value="theme_scita.blog_2_custom_snippet_static">Blog slider 1</option>
-                                    <option value="theme_scita.blog_5_custom_snippet_static">Blog slider 2</option>
-                                </optgroup>
-                                <optgroup label="Brand Snippet">
-                                    <option value="theme_scita.box_brand_snippet_4_static_preview">Brand slider 1</option>
-                                    <option value="theme_scita.it_prod_brands_static">Brand snippet 1</option>
-                                    <option value="theme_scita.fashion_static_brand_snippet_static"> Brand Snippet 2</option>
-                                </optgroup>
+                        <div class="tab-content mt-4" id="playgroundTabContent">
+                            <div class="tab-pane fade show active tab_panel_wrap" id="static" role="tabpanel">
+                                <div class="left_tab_wrap">
+                                    <label for="staticSnippets" class="form-label fw-bold">Select a Static
+                                        Snippet</label>
+                                    <select id="staticSnippets" class="form-select">
+                                        <optgroup label="Banner Snippets">
+                                            <option value="theme_scita.sct_banner_1">Banner
+                                                Slider 1</option>
+                                            <option value="theme_scita.sct_banner_2">Banner Slider 2</option>
+                                            <option value="theme_scita.retail_sct_banner_slider_1">Banner
+                                                Slider 3</option>
+                                            <option value="theme_scita.it_main_banner">Banner Snippet 1</option>
+                                            <option value="theme_scita.banner_snippet_2">Hero Image Snippet</option>
+                                        </optgroup>
+                                        <optgroup label="About Us Snippets">
+                                            <option value="theme_scita.health_about_hospital">About Us 1</option>
+                                            <option value="theme_scita.about_us_v_3">About Us 2</option>
+                                            <option value="theme_scita.about_us_v_4">About Us 3</option>
+                                            <option value="theme_scita.about_us_v_5">About Us 4</option>
+                                            <option value="theme_scita.content_snippets_v_4">About Us 5</option>
+                                            <option value="theme_scita.content_snippets_v_6">About Us 6</option>
+                                            <option value="theme_scita.content_snippets_v_10">About Us 7</option>
+                                            <option value="theme_scita.content_snippets_v_11">About Us 8</option>
 
-                                <optgroup label="Google Map Snippet">
-                                    <option value="theme_scita.google_map_v1_static_preview">Google Map</option>
-                                    <option value="theme_scita.google_map_v2_static_preview">Google Map With content</option>
-                                </optgroup>
+                                        </optgroup>
+                                        <optgroup label="Accordion Snippets">
+                                            <option value="theme_scita.accordion_v_1">Accordion Snippet 1</option>
+                                            <option value="theme_scita.accordion_v_2">Accordion Snippet 2</option>
+                                        </optgroup>
+                                        <optgroup label="Case study Snippets">
+                                            <option value="theme_scita.health_cash_study_snippet">Case study
+                                                Snippet 1</option>
+                                            <option value="theme_scita.case_study_varient_2">Case study
+                                                Snippet 2</option>
+                                        </optgroup>
 
-                                <optgroup label="Category Snippet Snippet">
-                                    <option value="theme_scita.theme_scita_cat_slider_static_preview">Category Snippet 1</option>
-                                    <option value="theme_scita.theme_scita_category_slider_3_static_preview">Category Slider 1</option>
-                                    <option value="theme_scita.theme_scita_category_slider_4_static_preview">Category Slider 2</option>
-                                    <option value="theme_scita.theme_scita_category_slider_gray_static_preview">Category Slider 3</option>
-                                    <option value="theme_scita.custom_scita_product_category_slider_static">Dynamic Product/Category Snippet</option>
+                                        <optgroup label="Contact Us Snippets">
+                                            <option value="theme_scita.contact_us_v_1">Contact Us Snippet 1</option>
+                                            <option value="theme_scita.it_letstalk">Contact Us Snippet 2</option>
+                                            <option value="theme_scita.contact_us_v_3">Contact Us Snippet 3</option>
+                                            <option value="theme_scita.health_location_snippet">Contact Us
+                                                Snippet 4</option>
+                                        </optgroup>
+                                        <optgroup label="How It Works Snippets">
+                                            <option value="theme_scita.how_it_work_v_1">How it Works Snippet
+                                                1</option>
+                                            <option value="theme_scita.how_it_work_v_5">How it Works Snippet
+                                                2</option>
+                                            <option value="theme_scita.how_it_work_v_3">How it Works Snippet
+                                                3</option>
+                                            <option value="theme_scita.how_it_work_v_4">How it Works Snippet
+                                                4</option>
+                                        </optgroup>
+                                        <optgroup label="Newsletter Snippets">
+                                            <option value="theme_scita.it_sign_up_newsletter">Newsletter
+                                                Snippet 1</option>
+                                            <option value="theme_scita.newsletter_varient_5">Newsletter
+                                                Snippet 2</option>
+                                            <option value="theme_scita.retail_sign_up_newsletter">Newsletter
+                                                Snippet 3</option>
 
-                                </optgroup>
+                                        </optgroup>
+                                        <optgroup label="Portfolio Snippets">
+                                            <option value="theme_scita.portfolio_snippet_1">Portfolio
+                                                Snippet 1</option>
+                                            <option value="theme_scita.portfolio_snippet_2">Portfolio
+                                                Snippet 2</option>
+                                            <option value="theme_scita.it_portfolio_tabs_snippets">Portfolio
+                                                Snippet 3</option>
+                                        </optgroup>
+                                        <optgroup label="Promotion Snippets">
+                                            <option value="theme_scita.retial_promo_banner_snippet_1">Promotion
+                                                Snippet 1</option>
+                                            <option value="theme_scita.promo_banner_snippet_3">Promotion
+                                                Snippet 2</option>
+                                            <option value="theme_scita.retial_advertisement_banner_1">Advertisment
+                                                Snippet 1</option>
+                                            <option value="theme_scita.fashion_advertisement_banner_1">Advertisment
+                                                Snippet 2</option>
+                                            <option value="theme_scita.health_advertisement_banner">Advertisment
+                                                Snippet 3</option>
+                                        </optgroup>
+                                        <optgroup label="Pricing Snippets">
+                                            <option value="theme_scita.s_theme_scita_pricing_table_1_4column_v4">Pricing
+                                                Snippet 1
+                                            </option>
+                                            <option value="theme_scita.s_theme_scita_pricing_table_1_4column_v2">Pricing
+                                                Snippet 2</option>
+                                            <option value="theme_scita.s_theme_scita_pricing_table_1_3column_v5">Pricing
+                                                Snippet 3</option>
+                                        </optgroup>
+                                        <optgroup label="Statistics Snippets">
+                                            <option value="theme_scita.expertise_statistics_4">Statistics
+                                                Snippet 1
+                                            </option>
+                                            <option value="theme_scita.expertise_statistics_8">Statistics
+                                                Snippet 2</option>
+                                            <option value="theme_scita.expertise_statistics_11">Statistics
+                                                Snippet 3</option>
 
-                                <optgroup label="Multi product snippet">
-                                    <option value="theme_scita.sct_product_snippet_1_s">Multi product snippet 1</option>
-                                    <option value="theme_scita.theme_scita_trending_products_snippet_static">Trending product snippet 1</option>
-                                    <option value="theme_scita.deal_multi_product_slider_static">Multi Deal Product Slider 1</option>
-                                </optgroup>
+                                        </optgroup>
+                                        <optgroup label="Service Snippets">
+                                            <option value="theme_scita.it_grids_service">Service
+                                                Snippet 1
+                                            </option>
+                                            <option value="theme_scita.service_varient_7">Service
+                                                Snippet 2</option>
+                                            <option value="theme_scita.service_varient_11">Service
+                                                Snippet 3</option>
+                                            <option value="theme_scita.service_varient_14">Service
+                                                Snippet 4</option>
 
-                                <optgroup label=" Our Team snippets">
-                                    <option value="theme_scita.our_team_slider_1_static"> Our Team Slider 1</option>
-                                    <option value="theme_scita.our_team_slider_3_static">Our Team Slider 3 </option>
-                                    <option value="theme_scita.our_team_slider_5_static">Our Team Slider 5</option>
-                                </optgroup>
+                                        </optgroup>
+                                        <optgroup label="Trust Icon Snippets">
+                                            <option value="theme_scita.retial_trust_snippet_1">Trust Icon
+                                                Snippet 1
+                                            </option>
+                                            <option value="theme_scita.fashion_trust_snippet_1">Trust Icon
+                                                Snippet 2</option>
+                                            <option value="theme_scita.policy_trust_snippet_v_3">Trust Icon
+                                                Snippet 3</option>
+                                        </optgroup>
 
-                                <optgroup label="Deal of the Day Snippet">
-                                    <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview"> Deal of the Day Snippet 1</option>
-                                    <option value="theme_scita.deal_of_day_banner_3_static_preview">Deal of the Day Snippet 4</option>
-                                    <option value="theme_scita.deal_of_day_banner_5_static_preview">Deal of the Day Snippet  5</option>
-                                </optgroup>
 
-                                <optgroup label="Client Snippet">
-                                    <option value="theme_scita.top_dealers_snippet_static">Client Snippet 2</option>
-                                    <option value="theme_scita.third_client_slider_snippet_static_preview"> Client Snippet 1 </option>
-                                </optgroup>
+                                        <optgroup label="Testimonial Snippets">
+                                            <option value="theme_scita.fashion_testimonials_slider_1">Testimonial
+                                                Slider 1
+                                            </option>
+                                            <option value="theme_scita.testinomial_varient_2">Testimonial
+                                                Slider 2</option>
+                                            <option value="theme_scita.testinomial_varient_5">Testimonial
+                                                Snippet 3</option>
+                                            <option value="theme_scita.testinomial_varient_3">Testimonial
+                                                Snippet 4</option>
+                                        </optgroup>
+                                        <optgroup label="Timeline Snippets">
+                                            <option value="theme_scita.timeline_snippet_1">Timeline
+                                                Snippet 1
+                                            </option>
+                                            <option value="theme_scita.timeline_snippet_3">Timeline Snippet 2</option>
 
-                            </select>
-                        </div>
-                        <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
-                            <div id="preview-theme_scita.blog_slider_view_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_slider_view_1" />
-                            </div>
-                            <div id="preview-theme_scita.scita_blog_2_slider_view_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.scita_blog_2_slider_view_static" />
-                            </div>
-                            <div id="preview-theme_scita.blog_5_custom_snippet_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_5_custom_snippet_static" />
-                            </div>
-                            <div id="preview-theme_scita.blog_2_custom_snippet_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_2_custom_snippet_static" />
-                            </div>
-                            <div id="preview-theme_scita.box_brand_snippet_4_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.box_brand_snippet_4_static_preview" />
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div id="snippetPreview" class="right_content_wrap">
+                                    <div id="preview-theme_scita.sct_banner_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.sct_banner_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.sct_banner_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.sct_banner_2" />
+                                    </div>
+                                    <div id="preview-theme_scita.retail_sct_banner_slider_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retail_sct_banner_slider_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.it_main_banner" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_main_banner" />
+                                    </div>
+                                    <div id="preview-theme_scita.banner_snippet_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.banner_snippet_2" />
+                                    </div>
+                                    <div id="preview-theme_scita.health_about_hospital" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.health_about_hospital" />
+                                    </div>
+                                    <div id="preview-theme_scita.about_us_v_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.about_us_v_3" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.about_us_v_4" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.about_us_v_4" />
+                                    </div>
+                                    <div id="preview-theme_scita.about_us_v_5" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.about_us_v_5" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.content_snippets_v_4" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.content_snippets_v_4" />
+                                    </div>
+                                    <div id="preview-theme_scita.content_snippets_v_6" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.content_snippets_v_6" />
+                                    </div>
+                                    <div id="preview-theme_scita.content_snippets_v_10" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.content_snippets_v_10" />
+                                    </div>
+                                    <div id="preview-theme_scita.content_snippets_v_11" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.content_snippets_v_11" />
+                                    </div>
+                                    <div id="preview-theme_scita.accordion_v_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.accordion_v_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.accordion_v_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.accordion_v_2" />
+                                    </div>
+                                    <div id="preview-theme_scita.health_cash_study_snippet" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.health_cash_study_snippet" />
+                                    </div>
+                                    <div id="preview-theme_scita.case_study_varient_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.case_study_varient_2" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.contact_us_v_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.contact_us_v_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.it_letstalk" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_letstalk" />
+                                    </div>
+                                    <div id="preview-theme_scita.contact_us_v_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.contact_us_v_3" />
+                                    </div>
+                                    <div id="preview-theme_scita.health_location_snippet" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.health_location_snippet" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.how_it_work_v_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.how_it_work_v_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.how_it_work_v_5" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.how_it_work_v_5" />
+                                    </div>
+                                    <div id="preview-theme_scita.how_it_work_v_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.how_it_work_v_3" />
+                                    </div>
+                                    <div id="preview-theme_scita.how_it_work_v_4" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.how_it_work_v_4" />
+                                    </div>
+
+
+                                    <div id="preview-theme_scita.it_sign_up_newsletter" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_sign_up_newsletter" />
+                                    </div>
+                                    <div id="preview-theme_scita.newsletter_varient_5" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.newsletter_varient_5" />
+                                    </div>
+                                    <div id="preview-theme_scita.retail_sign_up_newsletter" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retail_sign_up_newsletter" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.portfolio_snippet_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.portfolio_snippet_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.portfolio_snippet_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.portfolio_snippet_2" />
+                                    </div>
+                                    <div id="preview-theme_scita.it_portfolio_tabs_snippets" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_portfolio_tabs_snippets" />
+                                    </div>
+
+
+                                    <div id="preview-theme_scita.retial_promo_banner_snippet_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retial_promo_banner_snippet_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.promo_banner_snippet_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.promo_banner_snippet_3" />
+                                    </div>
+                                    <div id="preview-theme_scita.retial_advertisement_banner_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retial_advertisement_banner_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.fashion_advertisement_banner_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.fashion_advertisement_banner_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.health_advertisement_banner" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.health_advertisement_banner" />
+                                    </div>
+
+
+                                    <div id="preview-theme_scita.s_theme_scita_pricing_table_1_4column_v4" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_4column_v4" />
+                                    </div>
+                                    <div id="preview-theme_scita.s_theme_scita_pricing_table_1_4column_v2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_4column_v2" />
+                                    </div>
+                                    <div id="preview-theme_scita.s_theme_scita_pricing_table_1_3column_v5" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.s_theme_scita_pricing_table_1_3column_v5" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.expertise_statistics_4" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.expertise_statistics_4" />
+                                    </div>
+                                    <div id="preview-theme_scita.expertise_statistics_8" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.expertise_statistics_8" />
+                                    </div>
+                                    <div id="preview-theme_scita.expertise_statistics_11" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.expertise_statistics_11" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.it_grids_service" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_grids_service" />
+                                    </div>
+                                    <div id="preview-theme_scita.service_varient_7" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.service_varient_7" />
+                                    </div>
+                                    <div id="preview-theme_scita.service_varient_11" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.service_varient_11" />
+                                    </div>
+                                    <div id="preview-theme_scita.service_varient_14" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.service_varient_14" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.retial_trust_snippet_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retial_trust_snippet_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.fashion_trust_snippet_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.fashion_trust_snippet_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.policy_trust_snippet_v_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.policy_trust_snippet_v_3" />
+                                    </div>
+
+
+                                    <div id="preview-theme_scita.fashion_testimonials_slider_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.fashion_testimonials_slider_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.testinomial_varient_2" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.testinomial_varient_2" />
+                                    </div>
+                                    <div id="preview-theme_scita.testinomial_varient_5" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.testinomial_varient_5" />
+                                    </div>
+                                    <div id="preview-theme_scita.testinomial_varient_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.testinomial_varient_3" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.timeline_snippet_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.timeline_snippet_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.timeline_snippet_3" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.timeline_snippet_3" />
+                                    </div>
+                                </div>
                             </div>
 
-                            <div id="preview-theme_scita.google_map_v1_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.google_map_v1_static_preview" />
-                            </div>
+                            <div class="tab-pane fade tab_panel_wrap" id="dynamic" role="tabpanel">
+                                <div class="left_tab_wrap">
+                                    <label for="dynamicSnippets" class="form-label fw-bold">Select a Dynamic
+                                        Snippet</label>
+                                    <select id="dynamicSnippets" class="form-select">
+                                        <optgroup label="blog Snippet">
+                                            <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
+                                            <option value="theme_scita.scita_blog_2_slider_view_static">Blog snippet 2</option>
+                                            <option value="theme_scita.blog_2_custom_snippet_static">Blog slider 1</option>
+                                            <option value="theme_scita.blog_5_custom_snippet_static">Blog slider 2</option>
+                                        </optgroup>
+                                        <optgroup label="Brand Snippet">
+                                            <option value="theme_scita.box_brand_snippet_4_static_preview">Brand slider 1</option>
+                                            <option value="theme_scita.it_prod_brands_static">Brand snippet 1</option>
+                                            <option value="theme_scita.fashion_static_brand_snippet_static"> Brand Snippet 2</option>
+                                        </optgroup>
 
-                            <div id="preview-theme_scita.google_map_v2_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.google_map_v2_static_preview" />
-                            </div>
-                    
-                            <div id="preview-theme_scita.sct_product_snippet_1_s" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.sct_product_snippet_1_s" />
-                            </div>
+                                        <optgroup label="Google Map Snippet">
+                                            <option value="theme_scita.google_map_v1_static_preview">Google Map</option>
+                                            <option value="theme_scita.google_map_v2_static_preview">Google Map With content</option>
+                                        </optgroup>
 
-                           <div id="preview-theme_scita.theme_scita_trending_products_snippet_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.theme_scita_trending_products_snippet_static" />
-                            </div>
+                                        <optgroup label="Category Snippet Snippet">
+                                            <option value="theme_scita.theme_scita_cat_slider_static_preview">Category Snippet 1</option>
+                                            <option value="theme_scita.theme_scita_category_slider_3_static_preview">Category Slider 1</option>
+                                            <option value="theme_scita.theme_scita_category_slider_4_static_preview">Category Slider 2</option>
+                                            <option value="theme_scita.theme_scita_category_slider_gray_static_preview">Category Slider 3</option>
+                                            <option value="theme_scita.custom_scita_product_category_slider_static">Dynamic Product/Category Snippet</option>
 
-                            <div id="preview-theme_scita.our_team_slider_1_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.our_team_slider_1_static" />
-                            </div>
+                                        </optgroup>
 
-                            <div id="preview-theme_scita.our_team_slider_3_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.our_team_slider_3_static" />
-                            </div>
+                                        <optgroup label="Multi product snippet">
+                                            <option value="theme_scita.sct_product_snippet_1_static">Multi product snippet 1</option>
+                                            <option value="theme_scita.theme_scita_trending_products_snippet_static">Trending product snippet 1</option>
+                                            <option value="theme_scita.deal_multi_product_slider_static">Multi Deal Product Slider 1</option>
+                                        </optgroup>
 
-                            <div id="preview-theme_scita.our_team_slider_5_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.our_team_slider_5_static" />
-                            </div>
+                                        <optgroup label=" Our Team snippets">
+                                            <option value="theme_scita.our_team_slider_1_static"> Our Team Slider 1</option>
+                                            <option value="theme_scita.our_team_slider_3_static">Our Team Slider 3 </option>
+                                            <option value="theme_scita.our_team_slider_5_static">Our Team Slider 5</option>
+                                        </optgroup>
 
-                            <div id="preview-theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.deal_of_day_banner_3_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.deal_of_day_banner_3_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.deal_of_day_banner_5_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.deal_of_day_banner_5_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.third_client_slider_snippet_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.third_client_slider_snippet_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.top_dealers_snippet_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.top_dealers_snippet_static" />
-                            </div>
-                            <div id="preview-theme_scita.theme_scita_cat_slider_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.theme_scita_cat_slider_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.theme_scita_category_slider_3_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.theme_scita_category_slider_3_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.theme_scita_category_slider_4_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.theme_scita_category_slider_4_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.theme_scita_category_slider_gray_static_preview" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.theme_scita_category_slider_gray_static_preview" />
-                            </div>
-                            <div id="preview-theme_scita.custom_scita_product_category_slider_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.custom_scita_product_category_slider_static" />
-                            </div>
-                            <div id="preview-theme_scita.it_prod_brands_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.it_prod_brands_static" />
-                            </div>
-                            <div id="preview-theme_scita.fashion_static_brand_snippet_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.fashion_static_brand_snippet_static" />
-                            </div>
-                             <div id="preview-theme_scita.deal_multi_product_slider_static" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.deal_multi_product_slider_static" />
+                                        <optgroup label="Deal of the Day Snippet">
+                                            <option value="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview"> Deal of the Day Snippet 1</option>
+                                            <option value="theme_scita.deal_of_day_banner_3_static_preview">Deal of the Day Snippet 4</option>
+                                            <option value="theme_scita.deal_of_day_banner_5_static_preview">Deal of the Day Snippet  5</option>
+                                        </optgroup>
+
+                                        <optgroup label="Client Snippet">
+                                            <option value="theme_scita.third_client_slider_snippet_static_preview"> Client Snippet 1 </option>
+                                            <option value="theme_scita.top_dealers_snippet_static">Client Snippet 2</option>
+                                        </optgroup>
+
+                                    </select>
+                                </div>
+                                <div id="snippetPreview" class="right_content_wrap">
+                                    <div id="preview-theme_scita.blog_slider_view_1" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.blog_slider_view_1" />
+                                    </div>
+                                    <div id="preview-theme_scita.scita_blog_2_slider_view_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.scita_blog_2_slider_view_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.blog_5_custom_snippet_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.blog_5_custom_snippet_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.blog_2_custom_snippet_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.blog_2_custom_snippet_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.box_brand_snippet_4_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.box_brand_snippet_4_static_preview" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.google_map_v1_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.google_map_v1_static_preview" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.google_map_v2_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.google_map_v2_static_preview" />
+                                    </div>
+                            
+                                    <div id="preview-theme_scita.sct_product_snippet_1_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.sct_product_snippet_1_static" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.theme_scita_trending_products_snippet_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.theme_scita_trending_products_snippet_static" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.our_team_slider_1_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.our_team_slider_1_static" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.our_team_slider_3_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.our_team_slider_3_static" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.our_team_slider_5_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.our_team_slider_5_static" />
+                                    </div>
+
+                                    <div id="preview-theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.deal_of_day_banner_3_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.deal_of_day_banner_3_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.deal_of_day_banner_5_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.deal_of_day_banner_5_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.third_client_slider_snippet_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.third_client_slider_snippet_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.top_dealers_snippet_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.top_dealers_snippet_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.theme_scita_cat_slider_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.theme_scita_cat_slider_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.theme_scita_category_slider_3_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.theme_scita_category_slider_3_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.theme_scita_category_slider_4_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.theme_scita_category_slider_4_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.theme_scita_category_slider_gray_static_preview" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.theme_scita_category_slider_gray_static_preview" />
+                                    </div>
+                                    <div id="preview-theme_scita.custom_scita_product_category_slider_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.custom_scita_product_category_slider_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.it_prod_brands_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.it_prod_brands_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.fashion_static_brand_snippet_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.fashion_static_brand_snippet_static" />
+                                    </div>
+                                    <div id="preview-theme_scita.deal_multi_product_slider_static" class="snippet-container d-none">
+                                        <t t-snippet="theme_scita.deal_multi_product_slider_static" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

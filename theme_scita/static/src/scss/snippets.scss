@@ -3574,10 +3574,6 @@ body #wrapwrap{
 	}
 	
 	.sct_btm_row {
-		margin-top: 20px;
-		@media (max-width: 1439px){
-			margin-top: 10px;
-		}
 		.btm_seprator{
 			padding-bottom: 0;
 
@@ -6135,10 +6131,7 @@ body #wrapwrap{
 	}	
 	.sct_top_row {
 		text-align: center;
-		margin-bottom: 40px;
-		@media (max-width: 1199px){
-			margin-bottom: 30px;
-		}
+
 		.section-title {
 			.red_text {
 				color: $primary;
@@ -6781,6 +6774,18 @@ body #wrapwrap{
 					font-weight: bold;
 					margin-right: 15px;
 					color: fade-out($dark-color, 0.5);
+				}
+				> a.btn {
+					border-radius: 50%;
+					background-color: $primary;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					color: $light-color;
+					padding: 0;
+					text-align: center;
+					@include inline-flex;
+					@include justify-align-content;
 				}
 			}
 		}
@@ -10600,8 +10605,6 @@ body #wrapwrap{
 		padding: 60px 0;
    	}
     .section-title-wrapper{
-		text-align: center;
-
         .section-title{
 			flex:  initial;
 			max-width: 100%;
