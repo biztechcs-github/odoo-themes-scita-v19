@@ -2502,8 +2502,8 @@
         </section>
     </template>
 
-    <template id="custom_scita_product_category_slider_static" name="Custom Product/Category Slider (Static Preview)">
-       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
+    <template id="custom_scita_category_slider_static" name="Custom Category Slider (Static Preview)">
+       <section class="custom_scita_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
         <div class="product_category_scita">
             <div class="container">
                 <div class="row cst_top_row">
@@ -2630,5 +2630,99 @@
             </div>
         </div>
      </section>
+    </template>
+
+     <template id="custom_scita_product_slider_static" name="Custom Product Slider (Static Preview)">
+       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
+            <div class="product_category_scita">
+                <div class="container">
+                    <div class="row cst_top_row">
+                        <div class="col-md-12 cst_flex_base">
+                            <div class="cstm-seprator"></div>
+                            <h2 class="section-title style1">
+                                Trend
+                            </h2>
+                            <div class="cstm-seprator"></div>
+                        </div>
+                    </div>
+                    <div class="row cst_btm_row">
+                        <div class="col-md-3 cst_sct_left_side">
+                            <div class="cst_sct_img">
+                                <a href="#">
+                                    <img class="sct_desktop_image" alt="Static Trend Image" src="/static/images/static_trend_image.jpg" title="Static Trend" loading="lazy" />
+                                    <img class="sct_mobile_image" alt="Static Trend Mobile Image" src="/static/images/static_trend_mobile_image.jpg" title="Static Trend Mobile" loading="lazy" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 cst_sct_right_side">
+                            <div class="cst_category-slider-section">
+                                <ul class="cat_list" id="cat_list_3">
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="/shop/category/desks-1">
+                                            <div class="cs-img">
+                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Desks
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="/shop/category/desks-1">
+                                            <div class="cs-img">
+                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Desks
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="/shop/category/desks-1">
+                                            <div class="cs-img">
+                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Desks
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="/shop/category/desks-1">
+                                            <div class="cs-img">
+                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Desks
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="/shop/category/desks-1">
+                                            <div class="cs-img">
+                                                <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Desks
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </template>
 </odoo>
