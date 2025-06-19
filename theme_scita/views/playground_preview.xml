@@ -705,7 +705,7 @@
                     <div class="col-md-4 col-lg-3 col-6 grid_product">
                         <div class="cs-product" data-publish="on">
                             <div class="pwp-img">
-                                <a href="/shop/product/static-product-1">
+                                <a href="#">
                                     <img class="front" alt="Static Product 1" title="Static Product 1"
                                         src="/static/images/static_product_1.jpg" />
                                 </a>
@@ -713,7 +713,7 @@
                             <div class="pwd-desc">
                                 <div class="pwp-info">
                                     <h3 class="pwpi-title">
-                                        <a href="/shop/product/static-product-1">
+                                        <a href="#">
                                             <span>Static Product 1</span>
                                         </a>
                                     </h3>
@@ -734,7 +734,7 @@
                                     </div>
                                 </div>
                                 <div class="sct-hover-info product_price ajax_cart_template">
-                                    <form action="/shop/cart/update" method="post">
+                                    <form action="#" method="post">
                                         <input type="hidden" name="csrf_token" value="static_csrf_token" />
                                         <input name="product_id" type="hidden" value="1" />
                                         <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View">
@@ -755,7 +755,7 @@
                     <div class="col-md-4 col-lg-3 col-6 grid_product">
                         <div class="cs-product" data-publish="on">
                             <div class="pwp-img">
-                                <a href="/shop/product/static-product-2">
+                                <a href="#">
                                     <img class="front" alt="Static Product 2" title="Static Product 2"
                                         src="/static/images/static_product_2.jpg" />
                                 </a>
@@ -763,7 +763,7 @@
                             <div class="pwd-desc">
                                 <div class="pwp-info">
                                     <h3 class="pwpi-title">
-                                        <a href="/shop/product/static-product-2">
+                                        <a href="#">
                                             <span>Static Product 2</span>
                                         </a>
                                     </h3>
@@ -784,7 +784,7 @@
                                     </div>
                                 </div>
                                 <div class="sct-hover-info product_price ajax_cart_template">
-                                    <form action="/shop/cart/update" method="post">
+                                    <form action="#" method="post">
                                         <input type="hidden" name="csrf_token" value="static_csrf_token" />
                                         <input name="product_id" type="hidden" value="2" />
                                         <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View">
@@ -1208,7 +1208,7 @@
     </template>
 
     <template id="deal_multi_product_slider_static" name="Trending Products">
-        <section class="deal_multi_product_slider o_colored_level" data-multi-cat-slider-type="" data-multi-deal-of-day-type="1" data-disp="multi_product" data-disp1="deal_days" data-snippet="deal_seller_multi_product_custom_snippet" data-name="Multi Deal Product Slider 1" data-date="Jun 28,2025 0:0:0" data-msg="Sale is expired" data-multi-cat-dealer-id="multi-cat-myowl1">
+        <section class="deal_multi_product_slider_static o_colored_level">
             <div class="container">
                 <div class="row deal-wrapper">
                     <div class="col-lg-6 col-xl-7 deal-inner">
@@ -1218,142 +1218,41 @@
                             </h2>
                         </div>
                         <div class="best-seller-row">
-                            <div class="left-side oe_img_bg" style="background-image: url(/web/image/biztech.deal.of.the.day.configuration/1/img_banner?unique=ad9f9d5)">
+                            <div class="left-side oe_img_bg" style="background-image: url('/src/img/scita-placeholder.png')">
                                 <div class="left-disc">
                                     <h3 class="title-30">Organic Fruits &amp; Vegetables</h3>
-                                    <a alt-="Shop now" title="Shop now" class="btn btn-primary solid-btn" href="/shop">
+                                    <a alt="Shop now" title="Shop now" class="btn btn-primary solid-btn" href="/shop">
                                         Shop Now
-                                        <span class="arrow" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/a[1]/span[1]"></span>
                                     </a>
                                 </div>
                             </div>
                             <div class="right-side">
-                                <div class="product-slider owl-carousel owl-theme owl-loaded owl-drag">
+                                <div class="product-slider owl-carousel owl-theme">
                                     <div class="owl-stage-outer">
-                                        <div class="owl-stage" style="transform: translate3d(-349px, 0px, 0px); transition: 0.25s; width: 700px;">
+                                        <div class="owl-stage">
+                                            <!-- Static Product 1 -->
                                             <div class="owl-item" style="width: 324.578px; margin-right: 25px;">
                                                 <div class="item">
-                                                    <a class="item-inner" href="/shop/product/acoustic-bloc-screens-23" title="Acoustic Bloc Screens">
+                                                    <a class="item-inner" href="/shop/product/static-product-1" title="Static Product 1">
                                                         <div class="product">
                                                             <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Acoustic Bloc Screens" title="Acoustic Bloc Screens" src="/web/image/product.template/23/image_1920/85x85?unique=b3faa98" loading="lazy" />
+                                                                <img class="img img-fluid" alt="Static Product 1" title="Static Product 1" src="/src/img/scita-placeholder.png" loading="lazy" />
                                                             </div>
                                                             <div class="disc">
                                                                 <p>
-                                                                    <span>Acoustic Bloc Screens</span>
+                                                                    <span>Static Product 1</span>
                                                                 </p>
                                                                 <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star-o"></i>
                                                                 </div>
                                                                 <p class="price">
                                                                     <b>
-                                                                        <del class="text-danger mr8 oe_compare_list_price">
-                                                                            <bdi dir="inherit">
-                                                                                <span data-oe-type="monetary" data-oe-expression="combination_info['compare_list_price']">$                                                                                    <span class="oe_currency_value">9,990.00</span>
-                                                                                </span>
-                                                                            </bdi>
-                                                                        </del>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">295.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">295.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">295.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <a class="item-inner" href="/shop/product/e-com11-cabinet-with-doors-15" title="Cabinet with Doors">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Cabinet with Doors" title="Cabinet with Doors" src="/web/image/product.template/15/image_1920/85x85?unique=cd12989" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Cabinet with Doors</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">140.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">140.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">140.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <a class="item-inner" href="/shop/product/furn-5555-cable-management-box-40" title="Cable Management Box">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Cable Management Box" title="Cable Management Box" src="/web/image/product.template/40/image_1920/85x85?unique=dc4071b" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Cable Management Box</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">100.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">100.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">100.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <a class="item-inner" href="/shop/product/chair-floor-protection-36" title="Chair floor protection">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Chair floor protection" title="Chair floor protection" src="/web/image/product.template/36/image_1920/85x85?unique=cd12989" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Chair floor protection</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">12.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">12.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">12.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                                        <del class="text-danger mr8">$100.00</del>
+                                                                        <span>$85.00</span>
                                                                     </b>
                                                                 </p>
                                                             </div>
@@ -1361,63 +1260,29 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="owl-item active" style="width: 324.578px; margin-right: 25px;">
+                                            <!-- Static Product 2 -->
+                                            <div class="owl-item" style="width: 324.578px; margin-right: 25px;">
                                                 <div class="item">
-                                                    <a class="item-inner" href="/shop/product/conference-chair-16" title="Conference Chair">
+                                                    <a class="item-inner" href="/shop/product/static-product-2" title="Static Product 2">
                                                         <div class="product">
                                                             <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Conference Chair" title="Conference Chair" src="/web/image/product.template/16/image_1920/85x85?unique=cd12989" loading="lazy" />
+                                                                <img class="img img-fluid" alt="Static Product 2" title="Static Product 2" src="/static/images/static_product_2.jpg" loading="lazy" />
                                                             </div>
                                                             <div class="disc">
                                                                 <p>
-                                                                    <span>Conference Chair</span>
+                                                                    <span>Static Product 2</span>
                                                                 </p>
                                                                 <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star-half-o"></i>
+                                                                    <i class="fa fa-star-o"></i>
                                                                 </div>
                                                                 <p class="price">
                                                                     <b>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">33.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">33.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">33.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
-                                                                    </b>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                    <a class="item-inner" href="/shop/product/furn-1118-corner-desk-left-sit-18" title="Corner Desk Left Sit">
-                                                        <div class="product">
-                                                            <div class="image">
-                                                                <img class="img img-fluid" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[1]/img[1]" alt="Corner Desk Left Sit" title="Corner Desk Left Sit" src="/web/image/product.template/18/image_1920/85x85?unique=cd12989" loading="lazy" />
-                                                            </div>
-                                                            <div class="disc">
-                                                                <p>
-                                                                    <span>Corner Desk Left Sit</span>
-                                                                </p>
-                                                                <div class="ratings">
-                                                                    <div data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/div[1]"></div>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                    <i class="fa fa-star-o" role="img" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/t[1]/div[1]/t[1]/a[1]/div[1]/div[2]/div[1]/t[3]/t[3]/t[2]/i[1]"></i>
-                                                                </div>
-                                                                <p class="price">
-                                                                    <b>
-                                                                        <del style="white-space: nowrap;" class="text-danger mr8 d-none" data-oe-type="monetary" data-oe-expression="combination_info['list_price']">$                                                                            <span class="oe_currency_value">85.00</span>
-                                                                        </del>
-                                                                        <span data-oe-type="monetary" data-oe-expression="combination_info['price']">$                                                                            <span class="oe_currency_value">85.00</span>
-                                                                        </span>
-                                                                        <span itemprop="price" style="display:none;">85.0</span>
-                                                                        <span itemprop="priceCurrency" style="display:none;">USD</span>
+                                                                        <del class="text-danger mr8">$150.00</del>
+                                                                        <span>$120.00</span>
                                                                     </b>
                                                                 </p>
                                                             </div>
@@ -1425,23 +1290,8 @@
                                                     </a>
                                                 </div>
                                             </div>
+                                            <!-- Add more static products as needed -->
                                         </div>
-                                    </div>
-                                    <div class="owl-nav">
-                                        <button type="button" role="presentation" class="owl-prev">
-                                            <span aria-label="Previous">‹</span>
-                                        </button>
-                                        <button type="button" role="presentation" class="owl-next">
-                                            <span aria-label="Next">›</span>
-                                        </button>
-                                    </div>
-                                    <div class="owl-dots">
-                                        <button role="button" class="owl-dot">
-                                            <span></span>
-                                        </button>
-                                        <button role="button" class="owl-dot active">
-                                            <span></span>
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -1451,52 +1301,33 @@
                         <div class="section-title-wrapper d-flex flex-wrap">
                             <h2 class="section-title">Grab now</h2>
                         </div>
-
-                        <div class="deal-top-slider">
-                            <div class="deal-slider owl-carousel owl-theme owl-loaded owl-drag">
-                                <div class="owl-stage-outer">
-                                    <div class="owl-stage"></div>
-                                </div>
-                                <div class="owl-nav disabled">
-                                    <button type="button" role="presentation" class="owl-prev">
-                                        <span aria-label="Previous">‹</span>
-                                    </button>
-                                    <button type="button" role="presentation" class="owl-next">
-                                        <span aria-label="Next">›</span>
-                                    </button>
-                                </div>
-                                <div class="owl-dots disabled"></div>
-                            </div>
-                        </div>
-                        <div class="deal-content-wrapper" data-oe-model="ir.ui.view" data-oe-id="3082" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/div[1]/div[2]/div[3]">
+                        <div class="deal-content-wrapper">
                             <div class="deal-content">
                                 <div class="sct_sub_title">
-                                    <p class="sub_title_banner o_default_snippet_text text-center">Hurry Up! Offer end in
-                                    </p>
+                                    <p class="sub_title_banner text-center">Hurry Up! Offer ends in</p>
                                     <div class="counter_timer_main_div">
-
                                         <div class="counter_timer_div">
                                             <span class="col-3 text-center box_degit_wrapper">
                                                 <div class="box_degit">
-                                                    <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">10</span>
+                                                    <span id="days" class="d-count">10</span>
                                                     <span id="day_lbl" class="d-block">DAYS</span>
                                                 </div>
                                             </span>
                                             <span class="col-3 text-center box_degit_wrapper">
                                                 <div class="box_degit">
-                                                    <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">07</span>
+                                                    <span id="hours" class="d-count">07</span>
                                                     <span id="h_lbl" class="d-block">HOURS</span>
                                                 </div>
                                             </span>
                                             <span class="col-3 text-center box_degit_wrapper">
                                                 <div class="box_degit">
-                                                    <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">21</span>
-                                                    <span id="m_lbl" class=" d-block">MINS</span>
+                                                    <span id="minutes" class="d-count">21</span>
+                                                    <span id="m_lbl" class="d-block">MINS</span>
                                                 </div>
                                             </span>
                                             <span class="col-3 text-center box_degit_wrapper">
                                                 <div class="box_degit">
-                                                    <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">58</span>
+                                                    <span id="seconds" class="d-count">58</span>
                                                     <span id="s_lbl" class="d-block">SECS</span>
                                                 </div>
                                             </span>
@@ -1541,13 +1372,13 @@
                                         </p>
                                     </div>
                                     <div class="follow">
-                                        <a href="https://twitter.com/amisha_darji">
+                                        <a href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="https://facebook.com/amisha.darji">
+                                        <a href="#">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="https://linkedin.com/in/amisha-darji">
+                                        <a href="#">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -1565,13 +1396,13 @@
                                         </p>
                                     </div>
                                     <div class="follow">
-                                        <a href="https://twitter.com/amisha_darji">
+                                        <a href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="https://facebook.com/amisha.darji">
+                                        <a href="#">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="https://linkedin.com/in/amisha-darji">
+                                        <a href="#">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -1635,13 +1466,13 @@
                                         <p class="sct_simple_text">Dedicated and passionate Odoo Developer with a love for clean code.</p>
                                     </div>
                                     <div class="sct_hover_follow">
-                                        <a href="https://twitter.com/amisha_darji">
+                                        <a href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="https://facebook.com/amisha.darji">
+                                        <a href="#">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="https://linkedin.com/in/amisha-darji">
+                                        <a href="#">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -1666,13 +1497,13 @@
                                         <p class="sct_simple_text">Experienced Project Manager with a knack for efficient delivery.</p>
                                     </div>
                                     <div class="sct_hover_follow">
-                                        <a href="https://twitter.com/rahulmehta">
+                                        <a href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="https://facebook.com/rahul.mehta">
+                                        <a href="#">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="https://linkedin.com/in/rahul-mehta">
+                                        <a href="#">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -1697,13 +1528,13 @@
                                         <p class="sct_simple_text">UI/UX Designer passionate about crafting beautiful interfaces.</p>
                                     </div>
                                     <div class="sct_hover_follow">
-                                        <a href="https://twitter.com/snehapatel">
+                                        <a href="#">
                                             <i class="fa fa-twitter"></i>
                                         </a>
-                                        <a href="https://facebook.com/sneha.patel">
+                                        <a href="#">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                        <a href="https://linkedin.com/in/sneha-patel">
+                                        <a href="#">
                                             <i class="fa fa-linkedin"></i>
                                         </a>
                                     </div>
@@ -1724,13 +1555,13 @@
 
     <!-- Deal of the day -->
     <template id="retial_deal_of_day_banner_snippet_1_static_preview" name="Deal of the Day Snippet 1 (Static Preview)">
-        <section class="retial_deal_of_day_banner_snippet_1 o_colored_level" data-disp="deal_days" data-snippet="retial_deal_of_day_banner_snippet_1" data-name="Deal of the Day Snippet 1">
+        <section class="retial_deal_of_day_banner_snippet_1 o_colored_level">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_row">
                     <!-- Left Image Block -->
                     <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
-                            <a href="/shop">
+                            <a href="#">
                                 <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                 <div class="sct_img_name">
                                     <h3 class="img_title o_default_snippet_text">Man Collection</h3>
@@ -1756,7 +1587,7 @@
                         </div>
                         <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
                             <div class="sct_deal_img">
-                                <a href="/shop">
+                                <a href="#">
                                     <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                                     <div class="sct_img_name">
                                         <h3 class="img_title o_default_snippet_text">Man Collection</h3>
@@ -1768,17 +1599,17 @@
                     <!-- Right Image Block + CTA -->
                     <div class="col-md-6 col-lg-4 sct_deal_img_wrapper o_colored_level">
                         <div class="sct_deal_img">
-                            <a href="/shop">
+                            <a href="#">
                                 <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
                             </a>
                             <div class="sct_img_name">
-                                <a href="/shop">
+                                <a href="#">
                                     <h3 class="img_title o_default_snippet_text">Man Collection</h3>
                                     <span class="sub_title o_default_snippet_text">Designed to stand
                                         the test of time</span>
                                 </a>
                                 <div class="sct_deal_btn">
-                                    <a href="/shop" class="btn btn-primary o_default_snippet_text">Shop
+                                    <a href="#" class="btn btn-primary o_default_snippet_text">Shop
                                         Now</a>
                                 </div>
                             </div>
@@ -1808,7 +1639,7 @@
                             </div>
                             <div class="timer_counter_div"></div>
                             <div class="sct_deal_btn">
-                                <a href="/shop" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Shop
+                                <a href="#" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Shop
                                     Now</a>
                             </div>
                         </div>
@@ -1823,7 +1654,7 @@
             <div class="container">
                 <div class="row deals_day">
                     <div class="col-md-6 sct_img_box o_colored_level">
-                        <a href="/shop">
+                        <a href="#">
                             <img src="/web/image/theme_scita.sct_deal_snippet_3" class="img img-fluid" alt="For Men Offer" loading="lazy" data-mimetype="image/jpeg" />
                         </a>
                     </div>
@@ -1833,7 +1664,7 @@
                         </div>
                         <div class="timer_counter_div"></div>
                         <div class="sct_button">
-                            <a href="/deals-of-the-day" class="btn btn-primary o_default_snippet_text">Shop Now</a>
+                            <a href="#" class="btn btn-primary o_default_snippet_text">Shop Now</a>
                         </div>
                     </div>
                 </div>
@@ -2047,7 +1878,7 @@
                                 <!-- Category 1 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/smartphones-49">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
                                             </div>
@@ -2060,7 +1891,7 @@
                                 <!-- Category 2 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/homepod-50">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
                                             </div>
@@ -2073,7 +1904,7 @@
                                 <!-- Category 3 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/apple-tv-4k-51">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
                                             </div>
@@ -2086,7 +1917,7 @@
                                 <!-- Category 4 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/smart-tv-52">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                             </div>
@@ -2099,7 +1930,7 @@
                                 <!-- Category 5 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/smartwatch-53">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
                                             </div>
@@ -2112,7 +1943,7 @@
                                 <!-- Category 6 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/gaming-54">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
                                             </div>
@@ -2125,7 +1956,7 @@
                                 <!-- Category 7 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/headphones-55">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
                                             </div>
@@ -2138,7 +1969,7 @@
                                 <!-- Category 8 -->
                                 <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
                                     <div class="cs-cat">
-                                        <a href="/shop/category/air-tag-56">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
                                             </div>
@@ -2169,7 +2000,7 @@
                     <div id="pg_carousel_category" class="col-md-12 category-slider owl-carousel">
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/smartphones-49">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
                                 </div>
@@ -2180,7 +2011,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/homepod-50">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
                                 </div>
@@ -2191,7 +2022,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/apple-tv-4k-51">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
                                 </div>
@@ -2202,7 +2033,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2213,7 +2044,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2224,7 +2055,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2235,7 +2066,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2246,7 +2077,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2257,7 +2088,7 @@
                             </a>
                         </div>
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2295,7 +2126,7 @@
                     <div id="pg_cat_slider_4_owl" class="col-md-12 category-slider owl-carousel">
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/smartphones-49">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Smartphones" src="/web/image/product.public.category/49/image_1920?unique=6ac0280" title="Smartphones" loading="lazy" />
                                 </div>
@@ -2307,7 +2138,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/homepod-50">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="HomePod" src="/web/image/product.public.category/50/image_1920?unique=e13dd14" title="HomePod" loading="lazy" />
                                 </div>
@@ -2319,7 +2150,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/apple-tv-4k-51">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Apple TV 4K" src="/web/image/product.public.category/51/image_1920?unique=0627750" title="Apple TV 4K" loading="lazy" />
                                 </div>
@@ -2331,7 +2162,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/smart-tv-52">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Smart TV" src="/web/image/product.public.category/52/image_1920?unique=9ce90db" title="Smart TV" loading="lazy" />
                                 </div>
@@ -2343,7 +2174,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/smartwatch-53">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="SmartWatch" src="/web/image/product.public.category/53/image_1920?unique=f7ec521" title="SmartWatch" loading="lazy" />
                                 </div>
@@ -2355,7 +2186,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/gaming-54">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Gaming" src="/web/image/product.public.category/54/image_1920?unique=fcd9055" title="Gaming" loading="lazy" />
                                 </div>
@@ -2367,7 +2198,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/headphones-55">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Headphones" src="/web/image/product.public.category/55/image_1920?unique=9fd25c2" title="Headphones" loading="lazy" />
                                 </div>
@@ -2379,7 +2210,7 @@
                         </div>
 
                         <div class="item cs-cat">
-                            <a href="/shop/category/air-tag-56">
+                            <a href="#">
                                 <div class="cs-img sct_img_effect4">
                                     <img alt="Air Tag" src="/web/image/product.public.category/56/image_1920?unique=83ac578" title="Air Tag" loading="lazy" />
                                 </div>
@@ -2415,7 +2246,7 @@
                         <div class="sct-category owl-carousel" id="pg_cat_slider_gray_owl">
                             <!-- 8 Static Categories -->
                             <div class="item">
-                                <a href="/shop/category/49">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/49/image_1920/210x88?unique=6ac0280" title="Smartphones" alt="Smartphones" loading="lazy" />
                                     </div>
@@ -2425,7 +2256,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/50">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/50/image_1920/210x88?unique=e13dd14" title="HomePod" alt="HomePod" loading="lazy" />
                                     </div>
@@ -2435,7 +2266,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/51">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/51/image_1920/210x88?unique=0627750" title="Apple TV 4K" alt="Apple TV 4K" loading="lazy" />
                                     </div>
@@ -2445,7 +2276,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/52">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/52/image_1920/210x88?unique=9ce90db" title="Smart TV" alt="Smart TV" loading="lazy" />
                                     </div>
@@ -2455,7 +2286,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/53">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/53/image_1920/210x88?unique=f7ec521" title="SmartWatch" alt="SmartWatch" loading="lazy" />
                                     </div>
@@ -2465,7 +2296,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/54">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/54/image_1920/210x88?unique=fcd9055" title="Gaming" alt="Gaming" loading="lazy" />
                                     </div>
@@ -2475,7 +2306,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/55">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/55/image_1920/210x88?unique=9fd25c2" title="Headphones" alt="Headphones" loading="lazy" />
                                     </div>
@@ -2485,7 +2316,7 @@
                                 </a>
                             </div>
                             <div class="item">
-                                <a href="/shop/category/56">
+                                <a href="#">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
                                         <img src="/web/image/product.public.category/56/image_1920/210x88?unique=83ac578" title="Air Tag" alt="Air Tag" loading="lazy" />
                                     </div>
@@ -2503,7 +2334,7 @@
     </template>
 
     <template id="custom_scita_category_slider_static" name="Custom Category Slider (Static Preview)">
-       <section class="custom_scita_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
+       <section class="custom_scita_category_slider_static s_custom_img_category_slider o_colored_level">
         <div class="product_category_scita">
             <div class="container">
                 <div class="row cst_top_row">
@@ -2633,7 +2464,7 @@
     </template>
 
      <template id="custom_scita_product_slider_static" name="Custom Product Slider (Static Preview)">
-       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level" data-multi-cat-slider-type="1" data-disp="category_snippet" data-disp1="multi_product" data-snippet="product_category_img_slider_config" data-name="Dynamic Product/Category Snippet" data-multi-cat-slider-id="multi-cat-myowl1">
+       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level">
             <div class="product_category_scita">
                 <div class="container">
                     <div class="row cst_top_row">
@@ -2658,7 +2489,7 @@
                             <div class="cst_category-slider-section">
                                 <ul class="cat_list" id="cat_list_3">
                                     <li class="cs-cat sct_cat_style">
-                                        <a href="/shop/category/desks-1">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
                                             </div>
@@ -2670,7 +2501,7 @@
                                         </a>    
                                     </li>
                                     <li class="cs-cat sct_cat_style">
-                                        <a href="/shop/category/desks-1">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
                                             </div>
@@ -2682,7 +2513,7 @@
                                         </a>    
                                     </li>
                                     <li class="cs-cat sct_cat_style">
-                                        <a href="/shop/category/desks-1">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
                                             </div>
@@ -2694,7 +2525,7 @@
                                         </a>    
                                     </li>
                                     <li class="cs-cat sct_cat_style">
-                                        <a href="/shop/category/desks-1">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
                                             </div>
@@ -2706,7 +2537,7 @@
                                         </a>    
                                     </li>
                                     <li class="cs-cat sct_cat_style">
-                                        <a href="/shop/category/desks-1">
+                                        <a href="#">
                                             <div class="cs-img">
                                                 <img alt="Desks" src="/static/images/desks.jpg" title="Desks" loading="lazy"/>
                                             </div>
