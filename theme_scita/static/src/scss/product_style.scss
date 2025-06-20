@@ -2596,6 +2596,8 @@
 						display: flex;
 						flex-wrap: wrap;
 						align-items: center;
+						flex: 0 0 100px;
+    					max-width: 100px;
 
 						.sct-btn-wrap{
 							margin: 0 5px;
@@ -2624,6 +2626,7 @@
 									@media (min-width: 768px){
 										width: 8px;
 										height: 8px;
+										top: 7px;
 									}
 								}
 
