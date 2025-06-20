@@ -1169,7 +1169,7 @@ body #wrapwrap{
 					font-size: $font-size-base-scita + 1;
 				}
 				.timer_counter_div{
-					.js_counter_timer{
+					.js_counter_timer, .js_counter_timer_pg{
 						.time_over_msg{
 							p{
 								font-size: $font-size-base-scita;
@@ -3215,7 +3215,6 @@ body #wrapwrap{
 			margin-left: auto;
 			margin-right: auto;
 			font-size: $font-body + 1;
-			margin-top: 30px;
 			text-align: center;
 			margin-bottom: 0;
 			@media (max-width: 1439px){
@@ -3574,10 +3573,6 @@ body #wrapwrap{
 	}
 	
 	.sct_btm_row {
-		margin-top: 20px;
-		@media (max-width: 1439px){
-			margin-top: 10px;
-		}
 		.btm_seprator{
 			padding-bottom: 0;
 
@@ -5539,6 +5534,11 @@ body #wrapwrap{
 		    border-radius: 50%;
 			filter: grayscale(1);
 			margin: 0 auto;
+			transition: all 0.3s ease-in;
+
+			&:hover{
+				filter: none;
+			}
 		}
 		.name {
 			padding: 10px;
@@ -6135,10 +6135,7 @@ body #wrapwrap{
 	}	
 	.sct_top_row {
 		text-align: center;
-		margin-bottom: 40px;
-		@media (max-width: 1199px){
-			margin-bottom: 30px;
-		}
+
 		.section-title {
 			.red_text {
 				color: $primary;
@@ -6781,6 +6778,18 @@ body #wrapwrap{
 					font-weight: bold;
 					margin-right: 15px;
 					color: fade-out($dark-color, 0.5);
+				}
+				> a.btn {
+					border-radius: 50%;
+					background-color: $primary;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					color: $light-color;
+					padding: 0;
+					text-align: center;
+					@include inline-flex;
+					@include justify-align-content;
 				}
 			}
 		}
@@ -10600,8 +10609,6 @@ body #wrapwrap{
 		padding: 60px 0;
    	}
     .section-title-wrapper{
-		text-align: center;
-
         .section-title{
 			flex:  initial;
 			max-width: 100%;

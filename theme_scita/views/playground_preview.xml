@@ -1,121 +1,1800 @@
-    <odoo>
+<odoo>
+    <!-- Blog Snippet/Slider -->
     <template id="blog_slider_view_1" name="Static Blog Snippet">
-        <div class="container">
-            <div class='row sct_top_row'>
-                <div class='col-md-12'>
-                    <div class="block-title">
-                        <h2 class="section-title text-center">Blogs</h2>
-                        <p class="text-center">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <section class="blog scita_blog_slider">
+            <div class="container">
+                <div class='row sct_top_row'>
+                    <div class='col-md-12'>
+                        <div class="block-title">
+                            <h2 class="section-title text-center">Blogs</h2>
+                            <p class="text-center">Lorem ipsum is simply dummy text of the printing and
+                                typesetting industry.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class='row sct_mid_row justify-content-center'>
-                <!-- Blog Post 1 -->
-                <div class='col-lg-3 col-md-6 col-12'>
-                    <div class='blog-thumb' title="Beyond The Eye">
-                        <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_img'>
-                            <div class="section-post-media" style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
-                        </a>
-                        <div class='sct_blog_desc'>
-                            <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_title'>
-                                <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                <div class='row sct_mid_row justify-content-center'>
+                    <!-- Blog Post 1 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="Beyond The Eye">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
                             </a>
-                            <div class="sct_blog_detail row align-items-center">
-                                <div class="col-8 blog_left_content">
-                                    <p class="date">June 09, 2025</p>
-                                    <p class="author">By Mitchell Admin</p>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 09, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/beyond-the-eye" class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
-                                    </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="Buying A Telescope">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 09, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="How To Look Up">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>How To Look Up</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 16, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Post 4 -->
+                    <div class='col-lg-3 col-md-6 col-12'>
+                        <div class='blog-thumb' title="How to choose the right hotel">
+                            <a href="#" class='it_blog_img'>
+                                <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_3.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                            </a>
+                            <div class='sct_blog_desc'>
+                                <a href="#" class='it_blog_title'>
+                                    <h3 class='sct_blog_name'>How to choose the right hotel</h3>
+                                </a>
+                                <div class="sct_blog_detail row align-items-center">
+                                    <div class="col-8 blog_left_content">
+                                        <p class="date">June 30, 2025</p>
+                                        <p class="author">By Mitchell Admin</p>
+                                    </div>
+                                    <div class="col-4 blog_link text-end">
+                                        <a href="#" class="read_link arrow_link">
+                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link' />
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Blog Post 2 -->
-                <div class='col-lg-3 col-md-6 col-12'>
-                    <div class='blog-thumb' title="Buying A Telescope">
-                        <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_img'>
-                            <div class="section-post-media" style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
-                        </a>
-                        <div class='sct_blog_desc'>
-                            <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_title'>
-                                <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                <div class='row sct_btm_row'>
+                    <div class='col-md-12 text-center'>
+                        <div class="sct_cst_btn">
+                            <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
+                                <span>View More</span>
                             </a>
-                            <div class="sct_blog_detail row align-items-center">
-                                <div class="col-8 blog_left_content">
-                                    <p class="date">June 09, 2025</p>
-                                    <p class="author">By Mitchell Admin</p>
-                                </div>
-                                <div class="col-4 blog_link text-end">
-                                    <a href="/blog/example-blog/post/buying-a-telescope" class="read_link arrow_link">
-                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class='row sct_btm_row'>
-                <div class='col-md-12 text-center'>
-                    <div class="sct_cst_btn">
-                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
-                            <span>View More</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </template>
-    <template id="blog_2_slider_view_2" name="Blog Snippet 2">
+    <template id="scita_blog_2_slider_view_static" name="Blog Snippet 2 (Static)">
+       <section id="blog_custom_4_snippet" class="blog blog_4_custom o_colored_level">
         <div class="container">
-            <div class="row">
-                <div class="block-title col-12">
-                    <h2 class="fancy mb-3" t-if="not slider_header">Blog post slider</h2>
-                    <h2 class="fancy mb-3" t-if="slider_header">
-                        <t t-out="slider_header.name"/>
-                    </h2>
-                    <p class="sct_simple_text">
-                        <t t-out='slider_header.sub_title'/>
-                    </p>
+            <div class="row sct_top_row">
+                <div class="col-md-12">
+                    <div class="block-title">
+                        <h2 class="section-title">
+                            Blogs
+                        </h2>
+                    </div>
                 </div>
             </div>
-            <div id='blog_2_owl_carosel' class="owl-carousel" t-if="blog_slider_details">
-                <t t-as="slide" t-foreach="blog_slider_details">
-                    <div class="sct_blog_box">
-                        <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img' t-if="slide.cover_properties">
-                            <t t-set="cover_property" t-value="json.loads(slide.cover_properties)"/>
-                            <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
+            <div class="row sct_mid_row">
+                <div class="col-md-12">
+                    <div class="news_4_blogs" id="3-1">
+                        <div class="row">
+                            <div class="sct_base_class col-md-6">
+                                <div class="img_blog">
+                                    <a class="it_blog_img" href="#">
+                                        <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg')">
+                                        </div>
+                                        <div class="sct_img_content">
+                                            <p class="date">
+                                                <span class="day">11</span>
+                                                <span class="month">Jun</span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a class="it_blog_content" href="#">
+                                    <div class="sct_img_content">
+                                        <h3 class="sct_blog_name">Beyond The Eye</h3>
+                                        <p class="blog-content">Becoming part of the society of devoted amateur astronomers....</p>
+                                    </div>
+                                </a>
                             </div>
-                            <div class='sct_base_class' t-att-title="slide.name">
+                            <div class="sct_info_class col-md-6">
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">10</span>
+                                            <span class="month">Jun</span>
+                                        </p>
+                                    </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">How to choose the right hotel</h3>
+                                            <p class="blog-content">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">30</span>
+                                            <span class="month">Jun</span>
+                                        </p>
+                                    </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">Buying A Telescope</h3>
+                                            <p class="blog-content">
+                                                Before you make your first purchase…...
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="sct_blog_desc">
+                                    <div class="sct_left_side">
+                                        <p class="date">
+                                            <span class="day">19</span>
+                                            <span class="month">Jun</span>
+                                        </p>
+                                    </div>
+                                    <div class="sct_right_side">
+                                        <a class="read_link" href="#">
+                                            <h3 class="sct_blog_name">What If They Let You Run The Hubble</h3>
+                                            <p class="blog-content">
+                                                The beauty of astronomy is that anybody can do it....
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></section>
+    </template>
+    <template id="blog_2_custom_snippet_static" name="Blog Slider 1 (Static)">
+        <section id="blog_custom_2_snippet" class="blog blog_2_custom o_colored_level">
+            <div class="container">
+                <div id="pg_blog_2_owl_carosel" class="owl-carousel">
+                    <!-- Blog 1 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_1.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="Buying A Telescope">
                                 <div class="sct_blog_content_wrap">
-                                    <h3 t-field="slide.name"/>
+                                    <h3>Buying A Telescope</h3>
                                     <div class="sct_blog_content">
-                                        <t t-out="slide.subtitle"/>
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
                                     </div>
                                 </div>
                                 <div class="sct_blog_detail">
                                     <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
-                                        <p class="author">By <span t-out="slide.author_id.name"/></p>
-                                        <p class="date">
-                                            <span class="icon-calendar"></span>
-                                            <t t-out="datetime.date.strftime(slide.create_date, '%B %d,%Y')"/>
+                                        <p class="author">By <span>Mitchell Admin</span>
                                         </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
                                     </div>
-                                </div>  
+                                </div>
                             </div>
                         </a>
                     </div>
-                </t>
+                    <!-- Blog 2 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_2.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="How To Look Up">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>How To Look Up</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Blog 3 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/playground_img/cover_3.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="How to choose the right hotel">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>How to choose the right hotel</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Blog 3 -->
+                    <div class="sct_blog_box">
+                        <a class="it_blog_img" href="#">
+                            <div class="section-post-media" style="background-image: url('/theme_scita/static/src/img/case_study_2.jpg');">
+                            </div>
+                            <div class="sct_base_class" title="Beyond the eye">
+                                <div class="sct_blog_content_wrap">
+                                    <h3>Beyond the eye</h3>
+                                    <div class="sct_blog_content">
+                                        Lorem ipsum is simply dummy text of the printing and typesetting industry.
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span>Mitchell Admin</span>
+                                        </p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span> June 10,2025 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </template>
     
-</odoo>
 
+    <!-- Brand Slider -->
+    <template id="box_brand_snippet_4_static_preview" name="Brand Slider 1 (Static Preview)">
+        <section class="box_brand_slider o_colored_level" data-product-count="0" data-disp="brand" data-snippet="brands_box_slider_4" data-name="Brand Slider 1">
+            <div class="box_brand_snippet_4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 title-block">
+                            <h2 class="section-title">
+                                Pick Your Brand
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row our-brands">
+                        <div class="col-sm-12">
+                            <section class="owl-carousel pg-sct-brand-slider-2 sct-brand-slider-2" id="box_brands_slider_owl">
+                                <!-- Static Brand 1 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 1" src="/theme_scita/static/src/img/playground_img/brand_1.png" class="img img-fluid" title="Brand 1"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 2 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 2" src="/theme_scita/static/src/img/playground_img/brand_2.png" class="img img-fluid" title="Brand 2"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 3 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 3" src="/theme_scita/static/src/img/playground_img/brand_3.png" class="img img-fluid" title="Brand 3"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 4 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 4" src="/theme_scita/static/src/img/playground_img/brand_4.png" class="img img-fluid" title="Brand 4"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 5 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_5.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 6 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_6.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 7 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_7.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                                <!-- Static Brand 8 -->
+                                <div class="sct_brand_box text-center">
+                                    <div class="brand-logo-box">
+                                        <img alt="Brand 5" src="/theme_scita/static/src/img/playground_img/brand_8.png" class="img img-fluid" title="Brand 5"/>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="it_prod_brands_static" name="Brand Snippet 1">
+        <section class="it_brand_slider" data-brand-config-type="" data-brand-config-id="" contentEditable="false" data-disp='brand'>
+            <div class="it_brand_snippet_1">
+                <div class="container">
+                    <div class='row'>
+                        <div class="col-md-12 title-block">
+                            <h2 class="section-title">
+                                Brands
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row our-brands">
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_1.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_2.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_3.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_4.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_5.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <a class="it_brand_border" href="#">
+                                <div class="brand-logo text-center">
+                                    <img alt="Brand Name" src="/theme_scita/static/src/img/playground_img/brand_6.png" class="img img-fluid" title="Brand Name"/>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="fashion_static_brand_snippet_static" name="Brand Snippet 2">
+        <section class="fashion_static_brand_snippet" data-disp='brand'>
+            <div class="container-fluid">
+                <div class="row s_nb_column_fixed">
+                    <div class="sct_section_title">
+                        <h2 class="section-title">Shop Brands</h2>
+                    </div>
+                </div>
+                <div class="row s_nb_column_fixed sct_brand_row">
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-1.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-1.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-2.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-2.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 sct_brand_box">
+                        <div class="sct_back_img">
+                            <img src="/theme_scita/static/src/img/fashion/brand-3.jpg" class="img img-fluid" alt='Background image'/>
+                            <div class="sct_middle_img">
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-3.png" class="img img-fluid" alt='Offer Banner'/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Google Map snippet -->
+    <template id="google_map_v1_static_preview" name="Google Map V1 (Static Preview)">
+        <section class="google_map_v1 o_colored_level" data-map="" data-disp="google_map_snippet" data-snippet="s_appjetty_google_map" data-name="Google Map">
+            <div class="mapouter" style="position:relative; text-align:right; height:450px;">
+                <div class="gmap_canvas" style="overflow:hidden; background:none!important; height:450px;">
+                    <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                    </iframe>
+                </div>
+                <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">
+                    Embed Map on Website for Free
+                </a>
+                <style>
+                    .mapouter{position:relative;text-align:right;}
+                    .gmap_canvas{overflow:hidden;background:none!important;}
+                    .gmap_canvas iframe{width:100%;height:100%;}
+                    .mapouter a{display:block;font-size:0.85em;text-align:center;padding:5px
+                    0;color:#6c757d;text-decoration:none;}
+                    .gme-generated-link{display:none!important;}
+                </style>
+            </div>
+        </section>
+    </template>
+
+    <template id="google_map_v2_static_preview" name="Google Map V2 (Static Preview)">
+        <section class="google_map_v2 s_text_image o_colored_level" data-map_section="" data-disp="google_map_snippet" data-snippet="s_appjetty_google_map_content" data-name="Google Map With content">
+            <div class="container">
+                <div class="row top_row">
+                    <div class="col-md-7 sct_map o_colored_level">
+                        <div class="map_data_container">
+                            <div class="mapouter" style="position:relative; text-align:right; height:450px;">
+                                <div class="gmap_canvas" style="overflow:hidden; background:none!important; height:450px;">
+                                    <iframe width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=Ahmedabad&amp;key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+                                    </iframe>
+                                </div>
+                                <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">
+                                    Embed Map on Website for Free
+                                </a>
+                                <style>
+                                    .mapouter{position:relative;text-align:right;}
+                                    .gmap_canvas{overflow:hidden;background:none!important;}
+                                    .gmap_canvas iframe{width:100%;height:100%;}
+                                    .mapouter
+                                    a{display:block;font-size:0.85em;text-align:center;padding:5px
+                                    0;color:#6c757d;text-decoration:none;}
+                                    .gme-generated-link{display:none!important;}
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 sct_map_info o_colored_level">
+                        <h2 class="section-title o_default_snippet_text">A Section Subtitle</h2>
+                        <p class="o_default_snippet_text">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the 1500s.</p>
+                        <p class="o_default_snippet_text">Start with the customer – find out what
+                            they want and give it to them.</p>
+                        <div class="sct_cst_btn">
+                            <a href="/contactus" class="btn btn-primary scita_cstm_btn o_default_snippet_text">Contact
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Multi product snippet -->
+     <template id="sct_product_snippet_1_static" name="Multi Product Snippet 1(Static)">
+      <section class="sct_product_snippet_1_static sct_product_snippet_1">
+        <div class='sct-snippet-full'>
+            <div class="container">
+                <div class="row top">
+                    <div class="content col-md-12">
+                        <h2 class="section-title">Featured Products</h2>
+                    </div>
+                </div>
+                <div class="row bottom-row content">
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="2 Seat Sofa" title="2 Seat Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>2 Seat Sofa</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$100.00</del>
+                                                <span>$85.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="Guest Chair" title="Guest Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>Guest Chair</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$50.00</del>
+                                                <span>$45.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="Lounge Chair" title="Lounge Chair" src="/theme_scita/static/src/img/playground_img/product_3.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>Lounge Chair</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$90.00</del>
+                                                <span>$85.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-6 grid_product">
+                        <div class="cs-product" data-publish="on">
+                            <div class="pwp-img">
+                                <a href="#">
+                                    <img class="front" alt="Drawer" title="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" />
+                                </a>
+                            </div>
+                            <div class="pwd-desc">
+                                <div class="pwp-info">
+                                    <h3 class="pwpi-title">
+                                        <a href="#">
+                                            <span>Drawer</span>
+                                        </a>
+                                    </h3>
+                                    <div class="pink-box price-rating-wrapper">
+                                        <ul class='ratings'>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </ul>
+                                        <p class="price">
+                                            <b>
+                                                <del class="text-danger mr8">$40.00</del>
+                                                <span>$25.00</span>
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="sct-hover-info product_price">
+                                    <form action="/shop/cart/update" method="post">
+                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                            <span class="lni lni-cart-1 cart_icon"></span>
+                                            <span class="add_to_cart_text">Add to cart</span>
+                                        </button>
+                                        <div class="sct-feature-wrap">
+                                            <button type="button" class="btn scita_cstm_btn" role="button" title="Quick View">
+                                                <span class="lni lni-eye"></span>
+                                            </button>
+                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                <span class="fa fa fa-exchange"></span>
+                                            </a>
+                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                <span class="lni lni-heart"></span>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </template>
+
+    <!-- Our Team snippet/slider -->
+    <template id="our_team_slider_1_static" name="Our Team Slider 1 (Static)">
+        <section class="it_our_team our_team_varient_1 o_colored_level" data-disp="our_team" data-snippet="it_our_team" data-name="Our Team Slider 1">
+            <div class="container">
+                <div class="row sct_top_row">
+                    <div class="col-md-12 o_colored_level">
+                        <h2 class="section-title text-center mb-3">Our Awesome Team</h2>
+                        <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                    </div>
+                </div>
+            </div>
+            <div class='row sct_btm_row'>
+                <div class='col-md-12'>
+                    <div class="sct_team_slider">
+                        <div id="pg_myourteam" class="owl-carousel myourteam owl-theme">
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_1.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Abigail Peterson</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Consultant</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_2.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Anita Oliver</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Experienced Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_3.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Ernest Reed</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Consultant</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_4.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Sharlene Rhodes</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Experienced Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="image-container">
+                                    <div class="only-image">
+                                        <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_5.jpg" alt="Employee Image" />
+                                    </div>
+                                    <div class="name">
+                                        <h3 class="sct_title">Audrey Peterson</h3>
+                                        <p class="sct_simple_text">
+                                            <span>Experienced Developer</span>
+                                        </p>
+                                    </div>
+                                    <div class="follow">
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="our_team_slider_3_static" name="Our Team Slider 2 (Static)">
+        <section class="our_team_varient_3">
+            <div class="container">
+                <div class="row sct_top_row">
+                    <div class="col-md-12">
+                        <h2 class="section-title o_default_snippet_text">Our Team</h2>
+                        <p class="sct_simple_text o_default_snippet_text">Lorem ipsum dolor sit amet</p>
+                    </div>
+                </div>
+                <div class="row sct_btm_row">
+                    <div class="col-md-12">
+                        <div class="sct_team_slider">
+                            <div id="pg_v_3_myourteam" class="owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_1.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Abigail Peterson</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Consultant</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_2.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Anita Oliver</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_3.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Ernest Reed</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Consultant</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_4.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Sharlene Rhodes</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="v-3-image-container">
+                                        <div class="only-image">
+                                            <img class="img-responsive" src="/theme_scita/static/src/img/playground_img/team_5.jpg" alt="Employee Image" />
+                                        </div>
+                                        <div class="name">
+                                            <h3 class="sct_title">Audrey Peterson</h3>
+                                            <p class="sct_simple_text">
+                                                <span>Experienced Developer</span>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+    </template>
+
+    <!-- Deal of the day -->
+    <template id="retial_deal_of_day_banner_snippet_1_static_preview" name="Deal of the Day Snippet 1 (Static Preview)">
+        <section class="retial_deal_of_day_banner_snippet_1 o_colored_level">
+            <div class="container">
+                <div class="row s_nb_column_fixed sct_row">
+                    <!-- Left Image Block -->
+                    <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper o_colored_level">
+                        <div class="sct_deal_img">
+                            <a href="#">
+                                <img src="/theme_scita/static/src/img/playground_img/deal_1.jpg" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                                <div class="sct_img_name">
+                                    <h3 class="img_title o_default_snippet_text">Armchairs</h3>
+                                    <p class="sub_title o_default_snippet_text">Top Decor Picks</p>
+                                </div>
+                                <div class="sct_img_link">
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt="Link" loading="lazy" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Middle Deal Info + Image -->
+                    <div class="col-12 col-lg-4 col-xl-3 sct_deal_mid_wrapper d-flex flex-column flex-md-row flex-lg-column o_colored_level">
+                        <div class="sct_deal_timer_wrapper col-12 col-md-6 col-lg-12">
+                            <div class="sct_timer_inner">
+                                <div class="sct_deal_text o_default_snippet_text">
+                                    <span class="sct_per o_default_snippet_text d-inline">40%</span> Off </div>
+                                <p class="sct_sub_title o_default_snippet_text">Discover the best
+                                    selling products of T90 stores.</p>
+                                <div class="timer_counter_div">
+                                    <div class="js_counter_timer_pg">
+                                        <div class="counter_timer_div">
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">295</span><span id="day_lbl" class="d-block">DAYS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">06</span>
+                                                    <span id="h_lbl" class="d-block">HOURS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">24</span>
+                                                    <span id="m_lbl" class=" d-block">MINS</span>
+                                                </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                                <div class="box_degit">
+                                                    <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">51</span>
+                                                    <span id="s_lbl" class="d-block">SECS</span>
+                                                </div>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </div> -->
+                        <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
+                            <div class="sct_deal_img">
+                                <a href="#">
+                                    <img src="/theme_scita/static/src/img/playground_img/deal_2.png" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                                    <div class="sct_img_name">
+                                        <h3 class="img_title o_default_snippet_text">Candle Holder</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Image Block + CTA -->
+                    <div class="col-md-6 col-lg-4 sct_deal_img_wrapper o_colored_level">
+                        <div class="sct_deal_img">
+                            <a href="#">
+                                <img src="/theme_scita/static/src/img/playground_img/deal_3.jpg" class="img img-fluid" alt="Image" loading="lazy" data-mimetype="image/jpeg" />
+                            </a>
+                            <div class="sct_img_name">
+                                <a href="#">
+                                    <h3 class="img_title o_default_snippet_text">Coffee Table</h3>
+                                    <span class="sub_title o_default_snippet_text">Designed to stand the test of time</span>
+                                </a>
+                                <div class="sct_deal_btn">
+                                    <a href="#" class="btn btn-primary o_default_snippet_text">Shop
+                                        Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="deal_of_day_banner_5_static_preview" name="Deal of the Day Snippet 5 (Static Preview)">
+        <section class="deal_of_day_banner_5 o_colored_level" data-disp="deal_days" data-snippet="deal_of_day_banner_5" data-name="Deal of the Day Snippet 5">
+            <div class="container">
+                <div class="row deals_day">
+                    <div class="col-md-6 sct_img_box o_colored_level">
+                        <a href="#">
+                            <img src="/theme_scita/static/src/img/playground_img/deal_4.png" class="img img-fluid" alt="For Men Offer" loading="lazy" data-mimetype="image/jpeg" />
+                        </a>
+                    </div>
+                    <div class="col-md-6 sct_content_box o_colored_level">
+                        <div class="sct_text_content">
+                            <h2 class="sct_title o_default_snippet_text">Deal of the day</h2>
+                        </div>
+                        <div class="timer_counter_div">
+                            <div class="js_counter_timer_pg">
+                                <div class="counter_timer_div">
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">295</span><span id="day_lbl" class="d-block">DAYS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">06</span>
+                                            <span id="h_lbl" class="d-block">HOURS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">24</span>
+                                            <span id="m_lbl" class=" d-block">MINS</span>
+                                        </div>
+                                    </span>
+                                    <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center timer_col">
+                                        <div class="box_degit">
+                                            <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">51</span>
+                                            <span id="s_lbl" class="d-block">SECS</span>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sct_button">
+                            <a href="#" class="btn btn-primary o_default_snippet_text">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- client snippet/slider -->
+    <template id="third_client_slider_snippet_static_preview" name="Client Snippet 1 (Static)">
+        <section id="third_custom_client_slider" class="our-clients third-client-slider s_text_image o_colored_level" data-disp="client_snippet" data-snippet="third_client_slider_snippet" data-name="Client Snippet 1">
+            <div class="container">
+                <div class="row sct_top_row">
+                    <!-- Testimonials Carousel -->
+                    <div class="col-lg-6 mb-5 mb-lg-0 o_colored_level">
+                        <div class="row testimonial_wrap">
+                            <div class="col-md-12 o_colored_level">
+                                <h2 class="sct_test_title o_default_snippet_text">Testimonials</h2>
+                            </div>
+                        </div>
+                        <div class="row testimonial_wrap">
+                            <div class="col-md-12 o_colored_level">
+                                <section class="sct_test_slider s_carousel_wrapper">
+                                    <div id="myCarousel1749732166454" class="s_carousel carousel quotecarousel slide o_colored_level" data-bs-interval="10000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item o_colored_level active" style="min-height: 266.141px;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="testimonial_quote_img o_colored_level">
+                                                            <img src="/theme_scita/static/src/img/testimonial-quote.png" class="img img-fluid" alt="Testimonial" loading="lazy" />
+                                                        </div>
+                                                        <div class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
+                                                            <div class="sct_test_content">
+                                                                <p class="sct_simple_text o_default_snippet_text">
+                                                                    Lorem ipsum dolor amet,
+                                                                    adipiscing, sed do eiusmod
+                                                                    tempor incididunt ut labore
+                                                                    dolore magna aliqua. Lorem ipsum
+                                                                    dolor amet, adipiscing, sed do
+                                                                    eiusmod tempor incididunt ut
+                                                                    labore dolore magna aliqua.
+                                                                </p>
+                                                                <div class="sct_right_side">
+                                                                    <h4 class="sct_pers_name o_default_snippet_text">Mary
+                                                                        Deborah</h4>
+                                                                    <p class="sct_simple_text o_default_snippet_text">Lorem
+                                                                        ipsum</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="test_img_info">
+                                                                <div class="sct_left_side">
+                                                                    <img src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg" class="img img-fluid" alt="person img" loading="lazy" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item o_colored_level" style="min-height: 266.141px;">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="testimonial_quote_img o_colored_level">
+                                                            <img src="/theme_scita/static/src/img/testimonial-quote.png" class="img img-fluid" alt="Testimonial" loading="lazy" />
+                                                        </div>
+                                                        <div class="col-md-12 sct_base_class d-flex align-items-center flex-wrap flex-md-nowrap o_colored_level">
+                                                            <div class="sct_test_content">
+                                                                <p class="sct_simple_text o_default_snippet_text">
+                                                                    Amazing experience! Their team
+                                                                    is very professional. Highly
+                                                                    recommended for anyone looking
+                                                                    for quality service.
+                                                                </p>
+                                                                <div class="sct_right_side">
+                                                                    <h4 class="sct_pers_name o_default_snippet_text">Ravi
+                                                                        Kumar</h4>
+                                                                    <p class="sct_simple_text o_default_snippet_text">
+                                                                        Customer</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="test_img_info">
+                                                                <div class="sct_left_side">
+                                                                    <img src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg" class="img img-fluid" alt="person img" loading="lazy" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-control">
+                                            <div class="carousel-control-prev o_we_no_overlay" data-bs-target="#myCarousel1749732166454" role="img" aria-label="Previous" title="Previous" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                                <span class="sr-only o_default_snippet_text">
+                                                    Previous</span>
+                                            </div>
+                                            <div class="carousel-control-next o_we_no_overlay" data-bs-target="#myCarousel1749732166454" role="img" aria-label="Next" title="Next" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                                <span class="sr-only o_default_snippet_text">Next</span>
+                                            </div>
+                                        </div>
+                                        <ol class="carousel-indicators o_hidden o_we_no_overlay">
+                                            <li data-bs-target="#myCarousel1749732166454" class="active" data-bs-slide-to="0" aria-current="true"></li>
+                                            <li data-bs-target="#myCarousel1749732166454" data-bs-slide-to="1"></li>
+                                        </ol>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Our Partners (Empty State) -->
+                    <div class="col-lg-6 mt-3 mt-lg-0 o_colored_level">
+                        <div class="row">
+                            <div class="col-md-12 o_colored_level">
+                                <h2 class="sct_test_title o_default_snippet_text">Our Partners</h2>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap testimonial-client-slider" id="our_partner_testimonial">
+                            <div class="col-md-12">
+                                <div class="sct_client_not">
+                                    <div class="block-title">
+                                        <p class="sct_simple_class">
+                                            No clients added . For configuring, please goto admin
+                                            section Sales menu than goto Customers and select the
+                                            customer/client open that specific record and you will
+                                            see a checkbox 'Add to client slider' enable that option
+                                            and that record will be visible.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Category slider/snippet -->
+    <template id="theme_scita_cat_slider_static_preview" name="Category Snippet 1 (Static)">
+        <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider o_colored_level">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="category-slider-section">
+                            <div class="row">
+                                <!-- Category 1 -->
+                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
+                                    <div class="cs-cat">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Chair" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Chair" loading="lazy" />
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">Chair</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Category 2 -->
+                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
+                                    <div class="cs-cat">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Sofaset" src="/theme_scita/static/src/img/playground_img/cat_full_2.jpg" title="Sofaset" loading="lazy" />
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">Sofaset</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Category 3 -->
+                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
+                                    <div class="cs-cat">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Drawers" src="/theme_scita/static/src/img/playground_img/cat_full_3.jpg" title="Drawers" loading="lazy" />
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">Drawers</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Category 4 -->
+                                <div class="col-md-4 col-6 col-lg-3 sct-cs-box">
+                                    <div class="cs-cat">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Table" src="/theme_scita/static/src/img/playground_img/cat_full_4.jpg" title="Table" loading="lazy" />
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">Table</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="theme_scita_category_slider_3_static_preview" name="Category Slider 1 (Static)">
+        <section id="theme_scita_custom_category_slider_3" class="cat_slider_3 categ_slider scita_category_slider_3 o_colored_level">
+            <div class="container">
+                <div class="row top-row title-block section-title-wrapper">
+                    <h2 class="col-md-12 section-title">
+                        For your Home and Office
+                    </h2>
+                </div>
+                <div class="row bottom-row categories">
+                    <div id="pg_carousel_category" class="col-md-12 category-slider owl-carousel">
+
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Vegetable" src="/theme_scita/static/src/img/playground_img/cat_img_1.webp" title="Vegetable" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Vegetable</p>
+                                    <p class="category_count">1 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Bakery and Bread" src="/theme_scita/static/src/img/playground_img/cat_img_2.webp" title="Bakery and Bread" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Bakery and Bread</p>
+                                    <p class="category_count">4 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Dairy Product" src="/theme_scita/static/src/img/playground_img/cat_img_3.webp" title="Dairy Product" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Dairy Product</p>
+                                    <p class="category_count">1 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Soap and Detergents" src="/theme_scita/static/src/img/playground_img/cat_img_4.webp" title="Soap and Detergents" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Soap and Detergents</p>
+                                    <p class="category_count">1 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Spices" src="/theme_scita/static/src/img/playground_img/cat_img_5.webp" title="Spices" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Spices</p>
+                                    <p class="category_count">6 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Fruits" src="/theme_scita/static/src/img/playground_img/cat_img_6.webp" title="Fruits" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Fruits</p>
+                                    <p class="category_count">9 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Juice and Drinks" src="/theme_scita/static/src/img/playground_img/cat_img_7.webp" title="Juice and Drinks" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Juice and Drinks</p>
+                                    <p class="category_count">1 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item cs-cat">
+                            <a href="#">
+                                <div class="cs-img">
+                                    <img alt="Snacks" src="/theme_scita/static/src/img/playground_img/cat_img_8.webp" title="Snacks" loading="lazy" />
+                                </div>
+                                <div class="sct_cat_content">
+                                    <p class="pwpi-title">Snacks</p>
+                                    <p class="category_count">2 Items</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="custom_scita_category_slider_static" name="Custom Category Slider (Static Preview)">
+       <section class="multi_product_and_category_slider custom_scita_category_slider_static s_custom_img_category_slider o_colored_level">
+        <div class="product_category_scita">
+            <div class="container">
+                <div class="row cst_top_row">
+                    <div class="col-md-12 cst_flex_base">
+                        <div class="cstm-seprator"></div>
+                        <h2 class="section-title style1">
+                            Trend
+                        </h2>
+                        <div class="cstm-seprator"></div>
+                    </div>
+                </div>
+                <div class="row cst_btm_row">
+                    <div class="col-md-3 cst_sct_left_side">
+                        <div class="cst_sct_img">
+                            <a href="#">
+                                <img class="sct_desktop_image" alt="Static Trend Image" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Static Trend" loading="lazy" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 cst_sct_right_side">
+                        <div class="cst_category-slider-section">
+                            <ul class="cat_list" id="cat_list_4">
+                                    <li class="cs-cat">
+                                        <div class="cs-product">
+                                            <div class="cs-img position-relative">
+                                                <a href="#">
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="2 Seat Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" title="2 Seat Sofa" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="pwd-desc">
+                                                <div class="pwp-info">
+                                                    <div class="sct_cat_content">
+                                                        <a href="#">
+                                                            <p class="pwpi-title">2 Seat Sofa</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pink-box">
+                                                        <ul class="ratings">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="price">
+                                                        <b>
+                                                            <span>$109.99</span>
+                                                        </b>
+                                                    </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cs-cat">
+                                        <div class="cs-product">
+                                            <div class="cs-img position-relative">
+                                                <a href="#">
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Guest Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" title="Guest Chair" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="pwd-desc">
+                                                <div class="pwp-info">
+                                                    <div class="sct_cat_content">
+                                                        <a href="#">
+                                                            <p class="pwpi-title">Guest Chair</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pink-box">
+                                                        <ul class="ratings">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="price">
+                                                        <b>
+                                                            <span>$39.99</span>
+                                                        </b>
+                                                    </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cs-cat">
+                                        <div class="cs-product">
+                                            <div class="cs-img position-relative">
+                                                <a href="#">
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Lounge Chair" src="/theme_scita/static/src/img/playground_img/product_3.png" title="Lounge Chair" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="pwd-desc">
+                                                <div class="pwp-info">
+                                                    <div class="sct_cat_content">
+                                                        <a href="#">
+                                                            <p class="pwpi-title">Lounge Chair</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pink-box">
+                                                        <ul class="ratings">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="price">
+                                                        <b>
+                                                            <span>$76.99</span>
+                                                        </b>
+                                                    </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="cs-cat">
+                                        <div class="cs-product">
+                                            <div class="cs-img position-relative">
+                                                <a href="#">
+                                                    <img class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0" alt="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" title="Drawer" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="pwd-desc">
+                                                <div class="pwp-info">
+                                                    <div class="sct_cat_content">
+                                                        <a href="#">
+                                                            <p class="pwpi-title">Drawer</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="pink-box">
+                                                        <ul class="ratings">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-o"></i>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="price">
+                                                        <b>
+                                                            <span>$76.99</span>
+                                                        </b>
+                                                    </p>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <button type="button" role="button" class="btn scita_cstm_btn" title="Quick View">
+                                                                <span class="lni lni-eye"></span>
+                                                            </button>
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare">
+                                                                <span class="fa fa-exchange"></span>
+                                                            </a>
+                                                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" title="Add to Wishlist">
+                                                                <span class="lni lni-heart"></span>
+                                                            </a>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="cart_wrapper add_cart_div">
+                                                    <form action="/shop/cart/update" method="post">
+                                                        <button class="button btn btn-cart a-submit cart_view_sct_btn">
+                                                            Add
+                                                        </button>
+                                                        <div class="input-group-append dropdown-plus">
+                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                <i class="fa fa-plus"></i>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    </template>
+
+     <template id="custom_scita_product_slider_static" name="Custom Product Slider (Static Preview)">
+       <section class="custom_scita_product_category_slider_static s_custom_img_category_slider o_colored_level">
+            <div class="product_category_scita">
+                <div class="container">
+                    <div class="row cst_top_row">
+                        <div class="col-md-12 cst_flex_base">
+                            <div class="cstm-seprator"></div>
+                            <h2 class="section-title style1">
+                                Trend
+                            </h2>
+                            <div class="cstm-seprator"></div>
+                        </div>
+                    </div>
+                    <div class="row cst_btm_row">
+                        <div class="col-md-3 cst_sct_left_side">
+                            <div class="cst_sct_img">
+                                <a href="#">
+                                    <img class="sct_desktop_image" alt="Static Trend Image" src="/theme_scita/static/src/img/playground_img/cat_full_1.jpg" title="Static Trend" loading="lazy" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-9 cst_sct_right_side">
+                            <div class="cst_category-slider-section">
+                                <ul class="cat_list" id="cat_list_4">
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Sofa" src="/theme_scita/static/src/img/playground_img/product_1.png" title="Sofa" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Sofa
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Chair" src="/theme_scita/static/src/img/playground_img/product_2.png" title="Chair" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Chair
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Dining Table" src="/theme_scita/static/src/img/playground_img/product_5.png" title="Dining Table" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Dining Table
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                    <li class="cs-cat sct_cat_style">
+                                        <a href="#">
+                                            <div class="cs-img">
+                                                <img alt="Drawer" src="/theme_scita/static/src/img/playground_img/product_4.png" title="Drawer" loading="lazy"/>
+                                            </div>
+                                            <div class="sct_cat_content">
+                                                <p class="pwpi-title">
+                                                    Drawer
+                                                </p>
+                                            </div>
+                                        </a>    
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

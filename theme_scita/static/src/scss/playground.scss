@@ -1,0 +1,254 @@
+// playground design
+main:has(.playground_wrapper){
+	position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $light-color;
+    z-index: 9999;
+	overflow: auto;
+}
+.playground_wrapper{
+	> .container-fluid{
+		@include min1024{
+			padding: 0 70px;
+		}
+	}
+	.playground_inner_wrap{
+		.playground_title{
+			margin-bottom: 30px;
+
+            .sct_simple_text{
+                font-style: italic;
+
+                span{
+                    color: $secondary;
+                    display: block;
+                    text-transform: uppercase;
+                    margin-bottom: 3px;
+                    font-weight: 500;
+                    font-style: normal;
+                }
+            }
+		}
+		.playground_tab_wrap{			
+			.nav-tabs {
+				@include justify-align-content;
+				@include flex;
+				border-bottom: none;
+				margin: 15px auto;
+				background: $primary;
+				padding: 8px;
+				border-radius: 50px;
+				max-width: fit-content;
+                transition: all 0.3s ease-in;
+                
+				.nav-item{
+                    + .nav-item{
+                        margin-left: 10px;
+					}
+				}
+				.nav-link {
+                    transition: all 0.3s ease-in;
+					font-weight: bold;
+					color: $light-color;
+					border: none;
+					border-radius: 30px;
+					font-size: $title - 1;
+					padding: 10px 15px;
+					width: 130px;
+					text-align: center;
+
+					&.active, &:hover{
+						color: $black;
+						border: none;
+						background: $light-color;
+					}
+					@media (max-width: 1023px){
+						padding: 10px 30px;
+						width: auto;
+					}
+				}
+			}
+		}
+		> .tab-content{
+			border-radius: 15px;
+			background-color: $primary;
+			padding: 20px;
+
+			@include min1600{
+				padding-left: 0;
+			}
+
+			.tab_panel_wrap{
+				&.show{
+					@include flex;
+					@include flexwrap;
+				}
+				.left_tab_wrap{
+					padding-bottom: 20px;
+					flex: 0 0 100%;
+					max-width: 100%;
+					text-align: center;
+					
+					@include min1600{
+						text-align: left;
+						padding: 0 20px;
+						flex: 0 0 320px;
+						max-width: 320px;
+					}
+
+                    .form-label{
+                        color: $light-color;
+                    }
+
+					.form-select{
+						border-radius: 10px;
+						max-width: 320px;
+						margin: 0 auto;
+
+						@include min1600{
+							max-width: 100%;
+							margin: 0;
+						}
+					}
+				}
+				.right_content_wrap{
+					background: $light-color;
+					padding: 20px;
+					border-radius: 15px;
+					flex: 0 0 100%;
+					max-width: 100%;
+					
+					@include min1600{
+						flex: 0 0 calc(100% - 320px);
+						max-width: calc(100% - 320px);
+					}
+
+					.snippet-container{
+						> div{
+							> section{
+								padding: 10px;
+							}
+						}
+						.sct_banner_1, .sct_banner_2, .retail_sct_banner_1{
+							height: 570px;
+						}
+						
+						.sct_banner_1{
+							.content{
+								min-height: 100%;
+							}
+						}
+
+						.content_snippets_v_10, .accordion_v_1, .accordion_v_2, .how_it_work_v_3, .how_it_work_v_4, .retial_newsletter_2, .expertise_statistics_4, .it_grids_service, .policy_trust_snippet_v_3, .timeline_snippet_1, .box_brand_slider, .our_team_varient_1, .deal_of_day_banner_5, .four-client-snippet.oe_top_dealers_section, .about_us_v_4, .it_letstalk{
+							padding: 30px;
+						}
+                        .health_cash_study_snippet, .case_study_varient_2, .health_location_snippet, .pricing_table_v2, .pricing_table_v4{
+                            padding: 30px 10px 10px;
+                        }
+						.how_it_work_v_1{
+							overflow: auto;
+							height: 590px;
+
+							.sct_img_div{
+								.sct_sticky_top{
+									top: 10px;
+
+									img{
+										max-height: 380px;
+									}
+								}
+							}
+							.sct_content_div{
+								.sct_base_class{
+									$max-items: 10;
+									$offset: 10px;
+									$step: 30px;
+									@for $i from 1 through $max-items {
+										.sct_work_box:nth-child(#{$i}){
+											position: sticky;
+											top: $offset + ($i - 1) * $step;
+											z-index: (10 + $i);
+										}
+									}
+								}
+							}
+						}
+						.how_it_work_v_3{
+							.sct_btm_row{
+								.sct_content_div{
+									.sct_work_box{
+										.sct_work_icon{
+											height: auto;
+										}
+									}
+								}
+							}
+						}
+						.portfolio_snippet_1, .portfolio_snippet_2{
+							.sct_timeline_img{
+								.sct_img_box{
+									height: 370px;
+								}
+							}
+						}
+						.scita_adv_banner_3{
+							padding: 65px 20px 30px;
+						}
+						.expertise_statistics_4, .contact_us_v_1{
+							.prog_statics, .sct_base_class{
+								margin: 0;
+							}
+						}
+						.it_grids_service{
+							height: 590px;
+							overflow: auto;
+
+							.sct_cmp_img{
+								top: 0;
+							}
+						}
+						.service_varient_11{
+							padding: 30px 20px 5px;
+						}
+						.fashion_trust_snippet_1, .policy_trust_snippet_v_3, .newsletter_varient_5{
+							.sct_thumb, .sct_btm_row{
+								margin: 0;
+							}
+						}
+						.testinomial_varient_3{
+							padding: 30px 30px 0;
+						}
+						.blog{
+							padding: 20px 0;
+						}
+						.scita_category_slider_3{
+							.categories{
+								.category-slider{
+									padding: 0;
+								}
+							}
+						}
+						.third-client-slider{
+							padding: 60px 10px;
+						}
+                        
+                        .health_cash_study_snippet{
+                            .sct_base_class{
+                                .sct_left_side{
+                                    img{
+                                        height: 230px;
+                                        width: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                            }
+                        }
+					}
+				}
+			}
+		}
+	}
+}
