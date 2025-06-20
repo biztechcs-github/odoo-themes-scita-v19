@@ -5,8 +5,8 @@
                 <div class="container-fluid">
                     <div class="playground_inner_wrap">
                         <div class="playground_title text-center">
-                            <h2 class="mb-2">Snippet Studio</h2>
-                            <p class="sct_simple_text">Preview, test, and refine your static or dynamic components</p>
+                            <h2 class="mb-3">Snippet Studio</h2>
+                            <p class="sct_simple_text"><span>Experience live previews and explore a few handpicked design samples.</span>Unlock the full collection with a theme purchase.</p>
                         </div>
 
                         <!-- Tabs Navigation -->
@@ -309,7 +309,7 @@
                                             <option value="theme_scita.fashion_static_brand_snippet_static"> Style 2</option>
                                             <option value="theme_scita.box_brand_snippet_4_static_preview">Style 3</option>
                                         </optgroup>
-                                        
+
                                         <optgroup label="Client Snippet">
                                             <option value="theme_scita.third_client_slider_snippet_static_preview">Style 1</option>
                                         </optgroup>

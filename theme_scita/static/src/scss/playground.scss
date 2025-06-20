@@ -18,6 +18,19 @@ main:has(.playground_wrapper){
 	.playground_inner_wrap{
 		.playground_title{
 			margin-bottom: 30px;
+
+            .sct_simple_text{
+                font-style: italic;
+
+                span{
+                    color: $secondary;
+                    display: block;
+                    text-transform: uppercase;
+                    margin-bottom: 3px;
+                    font-weight: 500;
+                    font-style: normal;
+                }
+            }
 		}
 		.playground_tab_wrap{			
 			.nav-tabs {
@@ -25,19 +38,21 @@ main:has(.playground_wrapper){
 				@include flex;
 				border-bottom: none;
 				margin: 15px auto;
-				background: $light-grey-color;
+				background: $primary;
 				padding: 8px;
 				border-radius: 50px;
 				max-width: fit-content;
-
+                transition: all 0.3s ease-in;
+                
 				.nav-item{
-					+ .nav-item{
-						margin-left: 10px;
+                    + .nav-item{
+                        margin-left: 10px;
 					}
 				}
 				.nav-link {
+                    transition: all 0.3s ease-in;
 					font-weight: bold;
-					color: $dark-color;
+					color: $light-color;
 					border: none;
 					border-radius: 30px;
 					font-size: $title - 1;
@@ -59,7 +74,7 @@ main:has(.playground_wrapper){
 		}
 		> .tab-content{
 			border-radius: 15px;
-			background-color: lighten($light-grey-color, 2%);
+			background-color: $primary;
 			padding: 20px;
 
 			@include min1600{
@@ -83,6 +98,10 @@ main:has(.playground_wrapper){
 						flex: 0 0 320px;
 						max-width: 320px;
 					}
+
+                    .form-label{
+                        color: $light-color;
+                    }
 
 					.form-select{
 						border-radius: 10px;
