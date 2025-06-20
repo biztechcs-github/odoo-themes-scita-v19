@@ -188,8 +188,9 @@
                 <field name="product_style_tag_id"/>
                 <field name="deal_product"/>
             </field>
-            <field name="website_ribbon_id" position="replace">
-            </field>
+            <!-- Code for removing default ribbon selector in product backend config -->
+            <!-- <field name="website_ribbon_id" position="replace">
+            </field> -->
         </field>
     </record>
     <!-- for brand slider -->

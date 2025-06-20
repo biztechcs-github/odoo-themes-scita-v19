@@ -154,6 +154,7 @@ publish unpublish product
             'theme_scita/static/src/scss/variable.scss',
             'theme_scita/static/src/scss/mixins.scss',
             'theme_scita/static/src/scss/comman.scss',
+            'theme_scita/static/src/scss/playground.scss',
             'theme_scita/static/src/scss/snippets.scss',
             'theme_scita/static/src/scss/megamenu_style.scss',
             'theme_scita/static/src/scss/product_style.scss',
