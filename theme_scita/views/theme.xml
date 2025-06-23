@@ -77,7 +77,7 @@
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath> -->
     </template>
-    <template id="biztech_website_product_brands_color" inherit_id="website_sale.o_wsale_offcanvas_color_attribute">
+    <template id="biztech_website_product_brands_color" inherit_id="website_sale.filter_color_attributes">
         <xpath expr="//t[@t-foreach='a.value_ids']" position="attributes">
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath>

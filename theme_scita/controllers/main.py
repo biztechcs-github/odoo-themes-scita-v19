@@ -3,7 +3,7 @@
 
 import json
 from datetime import datetime
-from odoo.modules.module import get_resource_path
+from odoo.modules.module import get_resource_from_path
 from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http, SUPERUSER_ID, fields, tools
 from odoo.http import request
