@@ -431,16 +431,16 @@
         </xpath>
     </template>
     <template id="scita_snippet_options" inherit_id="website_sale.snippet_options" name="Scita Product Details Editor Options">
-        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@data-name='o_wsale_buy_now_opt']//we-button[hasclass('o_we_buy_now_btn')]" position="attributes">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@data-name='o_wsale_cart_opt']//we-button[hasclass('o_we_buy_now_btn')]" position="attributes">      
             <attribute name='data-customize-website-views'>theme_scita.scita_product_buy_now</attribute>
         </xpath>
-         <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-button[@data-customize-website-views='website_sale.product_comment']" position="replace">
+         <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-checkbox[@data-customize-website-views='website_sale.product_comment']" position="replace">
             <we-button string="Rating"
                 data-customize-website-views="theme_scita.theme_scita_rating"
                 data-no-preview="true"
                 data-reload="/"/>
         </xpath>
-        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-checkbox[@data-customize-website-views='website_sale.product_quantity']" position="replace">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-button[@data-customize-website-views='website_sale.product_quantity']" position="replace">
              <we-checkbox string="Select Quantity"
                 data-customize-website-views="theme_scita.theme_scita_product_quantity"
                 data-no-preview="true"
