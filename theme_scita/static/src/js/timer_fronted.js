@@ -1,9 +1,11 @@
 /** @odoo-module **/
 
-import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
+import publicWidget from "@web/legacy/js/public/public_widget";
   
-  animation.registry.js_counter_timer = animation.Class.extend({
+//   animation.registry.js_counter_timer = animation.Class.extend({
+	publicWidget.registry.js_counter_timer = publicWidget.Widget.extend({
+
     selector : ".js_counter_timer",
     disabledInEditableMode: true,
     start: function(){

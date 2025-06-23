@@ -1,11 +1,13 @@
 /** @odoo-module **/
 
-import animation from "@website/js/content/snippets.animation";
+import publicWidget from "@web/legacy/js/public/public_widget";
 import { _t } from "@web/core/l10n/translation";
 import { rpc, RPCError } from '@web/core/network/rpc';
 
 
-animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.extend({
+// animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.extend({
+publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Widget.extend({
+
         selector: ".deal_multi_product_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -182,7 +184,9 @@ animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.ex
                    }      
         }
     });
-animation.registry.oe_category_slider = animation.Class.extend({
+// animation.registry.oe_category_slider = animation.Class.extend({
+publicWidget.registry.oe_category_slider = publicWidget.Widget.extend({
+
     selector: ".oe_category_slider",
     disabledInEditableMode: false,
     start: function() {
@@ -251,7 +255,8 @@ animation.registry.oe_category_slider = animation.Class.extend({
         }
     }
 });
-animation.registry.oe_deal_of_the_day = animation.Class.extend({
+// animation.registry.oe_deal_of_the_day = animation.Class.extend({
+publicWidget.registry.oe_deal_of_the_day = publicWidget.Widget.extend({
     selector: ".oe_deal_of_the_day",
     disabledInEditableMode: false,
     events: {
