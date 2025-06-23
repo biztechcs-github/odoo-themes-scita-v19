@@ -996,7 +996,7 @@
         </xpath>
     </template>
     <template id="flag_lazy_load_off" inherit_id="website.lang_flag" name="Flag Lazyload Off">
-        <xpath expr="//img[hasclass('o_lang_flag')]" position="attributes">
+        <xpath expr="//img" position="attributes">
             <attribute name="loading">""</attribute>
         </xpath>
     </template>
