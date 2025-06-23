@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import animation from "@website/js/content/snippets.animation";
+// import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
 import publicWidget from "@web/legacy/js/public/public_widget";
 import { rpc, RPCError } from '@web/core/network/rpc';
@@ -18,7 +18,9 @@ $(document).ready(function(){
     });
    
 });
-    animation.registry.oe_cat_slider = animation.Class.extend({
+    // animation.registry.oe_cat_slider = animation.Class.extend({
+    publicWidget.registry.oe_cat_slider = publicWidget.Widget.extend({
+
         selector: ".oe_cat_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -51,7 +53,9 @@ $(document).ready(function(){
     });
 
     // Image Hotspot start
-    animation.registry.oe_img_hotspot = animation.Class.extend({
+    // animation.registry.oe_img_hotspot = animation.Class.extend({
+    publicWidget.registry.oe_img_hotspot = publicWidget.Widget.extend({
+
         selector: ".oe_img_hotspot",
         disabledInEditableMode: false,
         start: function() {
@@ -85,7 +89,8 @@ $(document).ready(function(){
     });
 
     //end
-    animation.registry.theme_scita_product_slider = animation.Class.extend({
+    // animation.registry.theme_scita_product_slider = animation.Class.extend({
+    publicWidget.registry.theme_scita_product_slider = publicWidget.Widget.extend({ 
         selector: ".oe_prod_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -153,7 +158,9 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.fashion_multi_cat_custom_snippet = animation.Class.extend({
+    // animation.registry.fashion_multi_cat_custom_snippet = animation.Class.extend({
+    publicWidget.registry.fashion_multi_cat_custom_snippet = publicWidget.Widget.extend({ 
+
         selector: ".fashion_multi_category_slider",
         disabledInEditableMode: false,
         events: {
@@ -276,7 +283,8 @@ $(document).ready(function(){
         }
     });
     // // for box brand slider 
-    animation.registry.brands_box_slider_4 = animation.Class.extend({
+    // animation.registry.brands_box_slider_4 = animation.Class.extend({
+    publicWidget.registry.brands_box_slider_4 = publicWidget.Widget.extend({ 
         selector: ".box_brand_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -341,7 +349,8 @@ $(document).ready(function(){
         }
     });
     // // for brand slider 
-    animation.registry.it_prod_brands = animation.Class.extend({
+    // animation.registry.it_prod_brands = animation.Class.extend({
+    publicWidget.registry.it_prod_brands = publicWidget.Widget.extend({ 
         selector: ".it_brand_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -369,7 +378,8 @@ $(document).ready(function(){
         }
     });
     // for blog snippets/sliders
-    animation.registry.theme_scita_blog_custom_snippet = animation.Class.extend({
+    // animation.registry.theme_scita_blog_custom_snippet = animation.Class.extend({
+    publicWidget.registry.theme_scita_blog_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".scita_blog_slider",
         disabledInEditableMode: false,
         start: function() {
@@ -402,7 +412,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.blog_2_custom_snippet = animation.Class.extend({
+    // animation.registry.blog_2_custom_snippet = animation.Class.extend({
+    publicWidget.registry.blog_2_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_2_custom",
         disabledInEditableMode: false,
         start: function() {
@@ -466,7 +477,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.blog_4_custom_snippet = animation.Class.extend({
+    // animation.registry.blog_4_custom_snippet = animation.Class.extend({
+    publicWidget.registry.blog_4_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_4_custom",
         disabledInEditableMode: false,
         start: function() {
@@ -496,7 +508,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.blog_5_custom_snippet = animation.Class.extend({
+    // animation.registry.blog_5_custom_snippet = animation.Class.extend({
+    publicWidget.registry.blog_5_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_5_custom",
         disabledInEditableMode: false,
         start: function() {
@@ -562,7 +575,8 @@ $(document).ready(function(){
     });
     
     // Client sliders 2
-    animation.registry.third_client_slider_snippet = animation.Class.extend({
+    // animation.registry.third_client_slider_snippet = animation.Class.extend({
+    publicWidget.registry.third_client_slider_snippet = publicWidget.Widget.extend({ 
         selector: ".testimonial-client-slider",
         disabledInEditableMode: false,
         start: function() {
@@ -586,7 +600,8 @@ $(document).ready(function(){
     });
     
     // Our Team
-    animation.registry.it_our_team = animation.Class.extend({
+    // animation.registry.it_our_team = animation.Class.extend({
+    publicWidget.registry.it_our_team = publicWidget.Widget.extend({ 
         selector: ".our_team_1",
         disabledInEditableMode: false,
         start: function() {
@@ -636,7 +651,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.our_team_varient_3 = animation.Class.extend({
+    // animation.registry.our_team_varient_3 = animation.Class.extend({
+    publicWidget.registry.our_team_varient_3 = publicWidget.Widget.extend({ 
         selector: ".our_team_3",
         disabledInEditableMode: false,
         start: function() {
@@ -688,7 +704,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.our_team_varient_5 = animation.Class.extend({
+    // animation.registry.our_team_varient_5 = animation.Class.extend({
+    publicWidget.registry.our_team_varient_5 = publicWidget.Widget.extend({ 
         selector: ".our_team_5",
         disabledInEditableMode: false,
         start: function() {
@@ -741,7 +758,8 @@ $(document).ready(function(){
         }
     });
 
-    animation.registry.cat_slider_3 = animation.Class.extend({
+    // animation.registry.cat_slider_3 = animation.Class.extend({
+    publicWidget.registry.cat_slider_3 = publicWidget.Widget.extend({ 
         selector: ".cat_slider_3",
         disabledInEditableMode: false,
         start: function() {
@@ -805,7 +823,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.cat_slider_4 = animation.Class.extend({
+    // animation.registry.cat_slider_4 = animation.Class.extend({
+    publicWidget.registry.cat_slider_4 = publicWidget.Widget.extend({ 
         selector: ".cat_slider_4",
         disabledInEditableMode: false,
         start: function() {
@@ -869,7 +888,8 @@ $(document).ready(function(){
         }
     });
     // // brand and product/category snippet end
-    animation.registry.product_category_img_slider_config = animation.Class.extend({
+    // animation.registry.product_category_img_slider_config = animation.Class.extend({
+    publicWidget.registry.product_category_img_slider_config = publicWidget.Widget.extend({ 
         selector: ".multi_product_and_category_slider",
         disabledInEditableMode: false,
         events: {
@@ -944,7 +964,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.sct_product_snippet_1 = animation.Class.extend({
+    // animation.registry.sct_product_snippet_1 = animation.Class.extend({
+    publicWidget.registry.sct_product_snippet_1 = publicWidget.Widget.extend({ 
         selector: ".sct_product_snippet_1",
         disabledInEditableMode: false,
         events: {
@@ -1017,7 +1038,8 @@ $(document).ready(function(){
     });
     
     // // Dynamic Video banner js start
-    animation.registry.dynamic_video_banner = animation.Class.extend({
+    // animation.registry.dynamic_video_banner = animation.Class.extend({
+    publicWidget.registry.dynamic_video_banner = publicWidget.Widget.extend({ 
         selector: ".dynamic_video_banner",
         disabledInEditableMode: false,
         start: function() {
@@ -1050,7 +1072,8 @@ $(document).ready(function(){
     });
 //     Dynamic Video banner js End
         // Dynamic Top Dealers Snippet Start
-        animation.registry.dynamic_top_dealers = animation.Class.extend({
+        // animation.registry.dynamic_top_dealers = animation.Class.extend({
+        publicWidget.registry.dynamic_top_dealers = publicWidget.Widget.extend({ 
             selector: ".oe_top_dealers_section",
             disabledInEditableMode: false,
             start: function(){
@@ -1075,7 +1098,8 @@ $(document).ready(function(){
         });
     // Dynamic Top Dealers Snippet End
         // Dynamic Trending Products Snippet Start
-    animation.registry.dynamic_trending_products = animation.Class.extend({
+    // animation.registry.dynamic_trending_products = animation.Class.extend({
+    publicWidget.registry.dynamic_trending_products = publicWidget.Widget.extend({ 
         selector: ".oe_trending_products_section",
         disabledInEditableMode: false,
         events: {
