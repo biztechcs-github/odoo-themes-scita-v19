@@ -9,6 +9,7 @@ class ResPartnerInherit(models.Model):
 
     add_to_slider = fields.Boolean(string="Add to client slider")
     product_count = fields.Integer("Product Count")
+    is_seo_optimized = fields.Boolean(string="SEO Optimized")
 
     @api.onchange('add_to_slider')
     def _on_change_add_to_slider(self):

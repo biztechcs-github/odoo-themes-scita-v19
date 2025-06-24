@@ -425,7 +425,7 @@
             </a>
         </xpath>
     </template>
-    <template id="scita_product_custom_text" inherit_id="website_sale.product_custom_text" name="Scita Accept Terms &amp; Conditions">
+    <template id="scita_product_custom_text" inherit_id="website_sale.product_terms_and_conditions" name="Scita Accept Terms &amp; Conditions">
         <xpath expr="//p[hasclass('text-muted','mb-0')]" position="attributes">
             <attribute name='class' add='sct_term_condition' remove='text-muted' separator=" "/>
         </xpath>
