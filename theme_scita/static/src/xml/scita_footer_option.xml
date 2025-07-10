@@ -1,0 +1,48 @@
+<templates xml:space="preserve">
+    <t t-inherit="website.FooterTemplateOption" t-inherit-mode="extension">
+        <xpath expr="//BuilderRow[1]/BuilderSelect" position="inside">
+            <BuilderSelectItem title="'Footer-1'"
+               actionParam="{ 
+                    view: 'theme_scita.option_footer_1', 
+                    vars: { 'footer-template': 'Footer-1' } 
+                }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_scita/static/src/img/snippet_icon/Footer-1.png'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title="'Footer-2'"
+                actionParam="{ 
+                    view: 'theme_scita.option_footer_2', 
+                    vars: { 'footer-template': 'Footer-2' } 
+                }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_scita/static/src/img/snippet_icon/Footer-2.png'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title="'Footer-3'"
+                actionParam="{ 
+                    view: 'theme_scita.option_footer_3', 
+                    vars: { 'footer-template': 'Footer-3' } 
+                }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_scita/static/src/img/snippet_icon/Footer-2.png'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem title="'Footer-4'"
+                actionParam="{ 
+                    view: 'theme_scita.option_footer_6', 
+                    vars: { 'footer-template': 'Footer-6' } 
+                }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_scita/static/src/img/snippet_icon/Footer-6.png'"/>
+            </BuilderSelectItem>
+             <BuilderSelectItem title="'Footer-5'"
+                actionParam="{ 
+                    view: 'theme_scita.option_footer_27', 
+                    vars: { 'footer-template': 'Footer-27' } 
+                }"
+            >
+                <Img attrs="{ style: 'width: 100%;' }" src="'/theme_scita/static/src/img/snippet_icon/grocery-footer.png'"/>
+            </BuilderSelectItem>
+        </xpath>
+    </t>
+</templates>
+
+

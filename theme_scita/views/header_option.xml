@@ -707,7 +707,7 @@
                             <span id="mycart_collapse" data-target="#show-cart">
                                 My Cart
                                 <span class="theme_scita_cart_quantity my_cart_quantity"
-                                    t-esc="website.sale_get_order() and website.sale_get_order().cart_quantity or 0"/>
+    t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                             </span>
                         </div>
                         <span id="close_cstm_nav_toggle">
@@ -717,10 +717,10 @@
                     <!-- Cart Toggle with Quantity -->
                     <!-- Cart Detail (Collapsible) -->
                     <div id="show-cart" class="cart-content oe_website_sale">
-                        <div class="cart-list-wrap" t-if="website.sale_get_order() and website.sale_get_order().website_order_line">
+                        <div class="cart-list-wrap" t-if="website_sale_order and website_sale_order.website_order_line">
                             <div class="cart-item-list">
                                 <!-- Cart Lines -->
-                                <t t-foreach="website.sale_get_order() and website.sale_get_order().website_order_line" t-as="line">
+                             <t t-foreach="website_sale_order.website_order_line" t-as="line">
                                     <div class="cart-item" t-att-id="'scita_sidebar_line_'+ str(line.id)">
                                         <div class="scita_cart_lines oe_website_sale_cart">
                                         <!-- Product Image -->
@@ -799,7 +799,7 @@
                                 <div class="cart_total_div">
                                     <div class="cart-count-wrap">
                                         <p class="total-text">Subtotal</p>
-                                        <span t-field="website.sale_get_order().amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                        <span t-field="website_sale_order.amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
                                     </div>
                                     <div class="cart-count-wrap">
                                         <p class="total-text">Taxes</p>

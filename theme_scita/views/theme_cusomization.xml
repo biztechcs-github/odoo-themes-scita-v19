@@ -49,7 +49,7 @@
                 </we-button>
             </we-select>
         </xpath>
-        <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>
+        <!-- <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>
             <we-button title="Scita Header 1"
                        data-name="scita_header_1"
                        data-customize-website-views="theme_scita.option_header_1,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
@@ -75,9 +75,9 @@
                        data-customize-website-views="theme_scita.option_header_5,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_5'"
                        data-img="/theme_scita/static/src/img/snippet_icon/header_5.svg"/>
-        </xpath>
+        </xpath> -->
 
-        <xpath expr='//div[@data-selector="#wrapwrap > footer"]//we-select[@data-variable="footer-template"]' position='inside'>
+        <!-- <xpath expr='//div[@data-selector="#wrapwrap > footer"]//we-select[@data-variable="footer-template"]' position='inside'>
             <we-button title="Footer-1"
                    data-customize-website-views="theme_scita.option_footer_1,scita_footer_copyright_with_payment"
                    data-customize-website-variable="'Footer-1'"
@@ -95,6 +95,6 @@
                    data-customize-website-variable="'Footer-6'"
                    data-img="/theme_scita/static/src/img/snippet_icon/Footer-6.png"/>
             <we-button title="Footer-5" data-customize-website-views="theme_scita.option_footer_27, theme_scita.scita_footer_copyright_with_payment" data-customize-website-variable="'Footer-27'" data-img="/theme_scita/static/src/img/snippet_icon/grocery-footer.png"/>
-        </xpath>
+        </xpath> -->
     </template>
 </odoo>

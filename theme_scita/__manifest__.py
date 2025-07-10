@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# Part of AppJetty. See LICENSE file for full copyright and licensing details.
-
 {
     'name': 'Theme Scita',
     'summary': '''Mobile-first & versatile Odoo theme — perfect for eCommerce and all CMS-based industries.''',
@@ -195,5 +193,11 @@ publish unpublish product
             'theme_scita/static/src/js/google_map_editor.js',
             '/theme_scita/static/src/xml/**/*',
         ],
+        'website.assets_editor': [
+          'theme_scita/static/src/xml/scita_header_option.xml',
+          'theme_scita/static/src/xml/scita_footer_option.xml',
+      ],
+
+       
     }
 }

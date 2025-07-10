@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-# Part of AppJetty. See LICENSE file for full copyright and licensing details.
-
 import json
 from datetime import datetime
 from odoo.modules.module import get_resource_from_path
@@ -711,7 +708,7 @@ class ScitaSliderSettings(http.Controller):
 class ScitaShop(WebsiteSale):
 
     def _prepare_product_values(self, product, category, search, **kwargs):
-        res = super(ScitaShop, self)._prepare_product_values(product, category, search, **kwargs)
+        res = super(ScitaShop, self)._prepare_product_values(product, category, **kwargs)
         request_args = request.httprequest.args
         attrib_list = request_args.getlist('attribute_value')
         attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
@@ -847,29 +844,29 @@ class ScitaShop(WebsiteSale):
 
             # pricelist_context, pricelist = self._get_pricelist_context()
             now = datetime.timestamp(datetime.now())
-            pricelist = website.pricelist_id
+            # pricelist = website.pricelist_id
             if 'website_sale_pricelist_time' in request.session:
                 # Check if we need to refresh the cached pricelist
                 pricelist_save_time = request.session['website_sale_pricelist_time']
                 if pricelist_save_time < now - 60 * 60:
                     request.session.pop('website_sale_current_pl', None)
                     website.invalidate_recordset(['pricelist_id'])
-                    pricelist = website.pricelist_id
+                    # pricelist = website.pricelist_id
                     request.session['website_sale_pricelist_time'] = now
-                    request.session['website_sale_current_pl'] = pricelist.id
+                    # request.session['website_sale_current_pl'] = pricelist.id
             else:
                 request.session['website_sale_pricelist_time'] = now
-                request.session['website_sale_current_pl'] = pricelist.id
+                # request.session['website_sale_current_pl'] = pricelist.id
 
             brand_list = request.httprequest.args.getlist('brand')
             brand_set = set([int(v) for v in brand_list])
-            request.update_context(pricelist=pricelist.id, partner=request.env.user.partner_id)
+            request.update_context(partner=request.env.user.partner_id)
 
             filter_by_price_enabled = website.is_view_active('website_sale.filter_products_price')
             if filter_by_price_enabled:
                 company_currency = website.company_id.currency_id
                 conversion_rate = request.env['res.currency']._get_conversion_rate(
-                    company_currency, pricelist.currency_id, request.website.company_id, fields.Date.today())
+                    company_currency, website.currency_id, request.website.company_id, fields.Date.today())
             else:
                 conversion_rate = 1
 
@@ -892,11 +889,11 @@ class ScitaShop(WebsiteSale):
                 'min_price': min_price / conversion_rate,
                 'max_price': max_price / conversion_rate,
                 'attrib_values': attrib_values,
-                'display_currency': pricelist.currency_id,
+                'display_currency': website.currency_id,
                 'brandlistdomain': brandlistdomain,
             }
             # No limit because attributes are obtained from complete product list
-            fuzzy_search_term, product_count, search_product = self._shop_lookup_products(attrib_set, options, post,
+            fuzzy_search_term, product_count, search_product = self._shop_lookup_products( options, post,
                                                                                           search, website)
             # search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
 
@@ -936,7 +933,7 @@ class ScitaShop(WebsiteSale):
             if filter_by_tags_enabled and search_product:
                 all_tags = ProductTag.search(
                     expression.AND([
-                        [('product_ids.is_published', '=', True), ('visible_on_ecommerce', '=', True)],
+                        [('product_ids.is_published', '=', True)],
                         website_domain
                     ])
                 )
@@ -978,7 +975,7 @@ class ScitaShop(WebsiteSale):
                     layout_mode = 'grid'
                 request.session['website_sale_shop_layout_mode'] = layout_mode
 
-            fiscal_position_sudo = website.fiscal_position_id.sudo()
+            # fiscal_position_sudo = website.fiscal_position_id.sudo()
             products_prices = lazy(lambda: products._get_sales_prices(website))
 
             prod_available = {}
@@ -1005,8 +1002,9 @@ class ScitaShop(WebsiteSale):
                 'attrib_set': attrib_set,
                 'pager': pager,
                 'products': products,
-                'pricelist': pricelist,
-                'fiscal_position': fiscal_position_sudo,
+                # 'pricelist': pricelist,
+                # 'fiscal_pos
+                # ition': fiscal_position_sudo,
                 'add_qty': add_qty,
                 # 'search_product': search_product, ??
                 'search_count': product_count,  # common for all searchbox
@@ -1392,7 +1390,7 @@ class ScitaShop(WebsiteSale):
         if filter_by_tags_enabled and search_product:
             all_tags = ProductTag.search(
                 expression.AND([
-                    [('product_ids.is_published', '=', True), ('visible_on_ecommerce', '=', True)],
+                    [('product_ids.is_published', '=', True)],
                     website_domain
                 ])
             )
