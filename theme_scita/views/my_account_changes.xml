@@ -19,14 +19,14 @@
             <attribute name='class'>offcanvas offcanvas-start d-lg-none account-detail</attribute>
         </xpath>
     </template>
-    <template id="my_account_user_details_page" inherit_id="portal.portal_my_details" name='My Account User Details Page'>
+    <!-- <template id="my_account_user_details_page" inherit_id="portal.portal_my_details" name='My Account User Details Page'>
         <xpath expr="//div[hasclass('clearfix', 'text-end', 'mb-5')]" position="attributes">
             <attribute name='class'>clearfix mb-5 mt-3</attribute>
         </xpath>
         <xpath expr="//button[hasclass('btn', 'btn-primary', 'float-end')]" position="attributes">
             <attribute name='class'>btn btn-primary</attribute>
         </xpath>
-    </template>
+    </template> -->
     <template id="my_security_details_page" inherit_id="portal.portal_my_security" name='My Security Details Page'>
         <xpath expr="//div[hasclass('o_portal_security_body','w-md-75','w-lg-50','pb-5')]" position="attributes">
             <attribute name='class'>o_portal_security_body w-md-75 pb-5</attribute>

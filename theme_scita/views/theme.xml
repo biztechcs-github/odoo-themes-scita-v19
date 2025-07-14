@@ -33,17 +33,17 @@
             <attribute name='class'>accordion-item nav-item border-0 mb-4</attribute>
         </xpath>
     </template>
-    <template id="biztech_website_product_brands" name="Product Brands" inherit_id="website_sale.products_attributes" customize_show='True'>
-        <xpath expr="//form//h6" position="attributes">
+    <template id="biztech_website_product_brands" name="Product Brands" inherit_id="website_sale.product_attribute_filters_form" customize_show='True'>
+        <xpath expr="//form[contains(@t-attf-class, 'js_attributes')]" position="attributes">
             <attribute name='class' add="sct_filter_title" separator=" "/>
         </xpath>
-        <xpath expr="//form[hasclass('js_attributes')]" position="attributes">
+        <xpath expr="//form[contains(@t-attf-class, 'js_attributes')]" position="attributes">
             <attribute name='class' remove="mb-2" separator=" "/>
         </xpath>
         <!-- <xpath expr="//div[hasclass('accordion-item', 'nav-item', 'mb-1', 'border-0')]" position="attributes">
             <attribute name='class' remove="mb-1" add="mb-4" separator=" "/>
         </xpath> -->
-        <xpath expr="//form[hasclass('js_attributes')]" position="after">
+        <xpath expr="//form[contains(@t-attf-class, 'js_attributes')]" position="after">
             <t t-set="brands" t-value="website.get_product_brands(category)"/>
             <form t-if="brands" class="js_attributes position-relative" method="get">
                 <div class="product-brand">
@@ -65,11 +65,7 @@
                 </div>
             </form>
         </xpath>
-        <xpath expr="//div[@id='wsale_products_attributes_collapse']" position="before">
-            <t t-if="category">
-                <t t-set="attributes" t-value="category.attributes_ids"/>
-            </t>
-        </xpath>
+      
         <xpath expr="//t[contains(@t-if, 'select')]//t[@t-foreach='a.value_ids']" position="attributes">
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath>
@@ -77,13 +73,22 @@
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath> -->
     </template>
+
+    <template id="biztech_website_product_brands" inherit_id="website_sale.products_attributes">
+    <xpath expr="//div[@id='wsale_products_attributes_collapse']" position="before">
+        <t t-if="category">
+                <t t-set="attributes" t-value="category.attributes_ids"/>
+            </t>
+        </xpath>
+    </template>
+
     <template id="biztech_website_product_brands_color" inherit_id="website_sale.filter_color_attributes">
         <xpath expr="//t[@t-foreach='a.value_ids']" position="attributes">
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath>
     </template>
     <template id="brand_o_wsale_offcanvas" inherit_id="website_sale.o_wsale_offcanvas" name="Offcanvas">
-        <xpath expr="//div[@id='o_wsale_offcanvas_content']/form/t[@t-foreach='attributes']" position="after">
+        <xpath expr="//div[@id='o_wsale_offcanvas_content']/t[@t-call='website_sale.product_attribute_filters_form']" position="after">
             <div class="accordion-item">
                 <t t-set="brands" t-value="website.get_product_brands(category)"/>
                 <t t-if="brands">
@@ -114,7 +119,7 @@
                 </t>
             </div>
         </xpath>
-        <xpath expr="//form[@t-if='opt_wsale_attributes or opt_wsale_attributes_top']" position="before">
+        <xpath expr="//t[@t-call='website_sale.product_attribute_filters_form']" position="before">
             <t t-if="category">
                 <t t-set="attributes" t-value="category.attributes_ids"/>
             </t>
@@ -1155,10 +1160,10 @@
         <xpath expr="//div[@id='products_grid']//t[@t-if='td_product']//div" position="attributes">
             <attribute name="t-attf-class">{{'out_of_order_product oe_product' if td_product['product'].show_availability and prod_available[td_product['product'].id]['free_qty'] &lt;= 0 else 'oe_product'}}</attribute>
         </xpath>
-        <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
+        <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
             <t t-set="_classes" t-valuef="d-none d-lg-inline-block me-3"/>
-        </xpath>
-        <xpath expr="//div[hasclass('container','oe_website_sale')]/div[hasclass('row','o_wsale_products_main_row')]" position="attributes">
+        </xpath> -->
+        <xpath expr="//div[@id='o_wsale_container']/div[hasclass('row','o_wsale_products_main_row')]" position="attributes">
             <attribute name="class">row o_wsale_products_main_row sct_shop_box</attribute>
         </xpath>
         <xpath expr="//div[@id='wrap']//div[hasclass('oe_structure')]" position="before">
@@ -1194,7 +1199,7 @@
                 </div>
             </section>
         </xpath>
-        <xpath expr="//div[@id='products_grid']/t[@t-call='website_sale.products_breadcrumb']" position="replace">
+        <xpath expr="//div[@id='products_grid']//header[@id='o_wsale_products_header']//t[@t-call='website_sale.products_breadcrumb']" position="replace">
         </xpath>
         <xpath expr="//aside[@id='products_grid_before']//t[@t-call='website_sale.filter_products_price']" position="replace">
             <t t-if="opt_wsale_filter_price and opt_wsale_attributes" t-call="website_sale.filter_products_price">
@@ -1215,7 +1220,9 @@
             </t>
         </xpath>
         <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="replace"/>
-        <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.add_grid_or_list_option']" position="replace">
+        <!-- Not Find this in odoo 19 website_sale.add_grid_or_list_option -->
+        
+        <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.add_grid_or_list_option']" position="replace">
             <div class='sct-filter-grid-wrap d-flex flex-wrap me-3'>
                 <t t-if="is_view_active('website_sale.add_grid_or_list_option')" t-call="website_sale.add_grid_or_list_option">
                     <t t-set="_classes" t-valuef="d-flex"/>
@@ -1228,7 +1235,7 @@
                     <span t-if="isFilteringByPrice or attrib_set or tags" t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{navClass}} rounded-circle bg-danger p-1"><span class="visually-hidden">filters active</span></span>
                 </button>
             </div>
-        </xpath>
+        </xpath> -->
     </template>
     
     <template id="products_rating" inherit_id="website_sale.products_item">
@@ -1239,7 +1246,7 @@
         <xpath expr="//form//h6" position="attributes">
             <attribute name='class' remove="mb-2" separator=" "></attribute>
         </xpath>
-        <xpath expr="//div[hasclass('o_wsale_product_sub', 'd-flex', 'justify-content-between', 'align-items-end', 'gap-2')]" position="attributes">
+        <xpath expr="//div[hasclass('o_wsale_product_sub', 'd-flex', 'align-items-center', 'justify-content-between','flex-nowrap', 'gap-3')]" position="attributes">
             <attribute name='class' add="justify-content-center" remove="justify-content-between" separator=" "/> 
         </xpath>
         <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
@@ -1248,7 +1255,7 @@
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
         </xpath>
-        <xpath expr="//div[hasclass('o_wsale_product_information', 'position-relative','d-flex','flex-column','flex-grow-1', 'flex-shrink-1')]" position="attributes">
+        <xpath expr="//div[hasclass('o_wsale_product_information', 'position-relative','d-flex','flex-grow-1', 'flex-shrink-1')]" position="attributes">
             <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
             <attribute name='id'>sct_add_to_cart_hover</attribute>
         </xpath>
@@ -1513,7 +1520,7 @@
     </template>
 
     <template id="inherit_add_to_compare" inherit_id="website_sale_comparison.add_to_compare">
-        <xpath expr="//button[contains(@class, 'd-none d-md-inline-block btn btn-light o_add_compare')]" position="attributes">
+        <xpath expr="//button[contains(@class, 'btn btn-light o_add_compare')]" position="attributes">
             <attribute name="class">btn btn-xs o_add_compare</attribute>
         </xpath>
     </template>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="product_bulk_price_btn" inherit_id="website_sale.product">
+    <template id="product_bulk_price_btn" inherit_id="website_sale.cta_wrapper">
         <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
             <p class="promo_code mt-3"><i class="lni lni-badge-decagram-percent"></i>Apply the code <span class="discount_code">'GET15OFF'</span> to receive your discount.</p>
         </xpath>
