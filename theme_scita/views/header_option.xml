@@ -751,7 +751,7 @@
                                                 <!-- Quantity Controls -->
                                                 <div class="input-group dropdown-plus-out">
                                                     <div class="css_quantity input-group input-group-sm">
-                                                        <t t-if="not line._is_not_sellable_line()">
+                                                        <t t-if="not line._is_sellable()">
                                                             <!-- Minus -->
                                                             <a href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
                                                                 <i class="fa fa-minus"/>
@@ -799,18 +799,18 @@
                                 <div class="cart_total_div">
                                     <div class="cart-count-wrap">
                                         <p class="total-text">Subtotal</p>
-                                        <span t-field="website_sale_order.amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                        <span t-field="website_sale_order.amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
                                     </div>
                                     <div class="cart-count-wrap">
                                         <p class="total-text">Taxes</p>
-                                        <span t-field="website.sale_get_order().amount_tax" class="sc-cart-tax monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                        <span t-field="website_sale_order.amount_tax" class="sc-cart-tax monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
                                     </div>
                                     <div class="total-wrap">
                                                 <p class="total-text">Total</p>
-                                                <p t-field="website.sale_get_order().amount_total"
+                                                <p t-field="website_sale_order.amount_total"
                                                     class="sc-cart-total monetary_field mb-0 fw-bold"
                                                     style="white-space: nowrap;"
-                                                    t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                                    t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
                                             </div>
                                     <div class="button-box">
                                         <a class="view-all btn btn-primary" href="/shop/cart">View all</a>
@@ -954,7 +954,7 @@
                             <div class="row" id="order_total">
                                 <label>Subtotal:</label>
                                 <span>
-                                    <span style="white-space: nowrap;" t-esc="website.sale_get_order().amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    <span style="white-space: nowrap;" t-esc="website_sale_order.amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                 </span>
                             </div>
                         </div>
@@ -1002,3 +1002,4 @@
     </template>
 
 </odoo>
+

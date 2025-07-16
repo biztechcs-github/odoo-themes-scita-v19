@@ -90,8 +90,8 @@
                </div>
             </div>
          </section>
-         <div class='sct-main-name-rating'>
          <h1 class='sct-prod-name' itemprop="name" t-field="product.name">Product Name</h1>
+         <!-- <div class='sct-main-name-rating'>
          <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
             <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                <t t-set="prod_curr_rate" t-value="0"/>
@@ -112,7 +112,7 @@
                   </t>
                </t>
          </ul>
-         </div>
+         </div> -->
          <div class='sct-sku-display-div' t-if='product.default_code and website.is_default_code'>
             <p class='sct-sku-display'>SKU: <span class='sct-default-code' t-esc='product.default_code'/></p>
          </div>
@@ -228,9 +228,9 @@
             </t>
          </div>
       </xpath>
-      <xpath expr="//div[hasclass('sct-sku-display-div')]" position="after">
+      <!-- <xpath expr="//div[hasclass('sct-sku-display-div')]" position="after">
          <t t-call="website_sale.product_price" />
-      </xpath>
+      </xpath> -->
    </template>
    <template id="scita_ecom_show_extra_fields" inherit_id="theme_scita.theme_scita_product_details" active="False" customize_show="True" name="Show Extra Fields">
       <xpath expr="//div[@id='website_description']/div/ul" position="inside">
