@@ -17,7 +17,7 @@ from odoo.tools import clean_context, float_round, groupby, lazy, single_email_r
 
 class WebsiteAutocomplate(Website):
 
-    @http.route('/website/snippet/autocomplete', type='json', auth='public', website=True, readonly=True)
+    @http.route('/website/snippet/autocomplete', type='jsonrpc', auth='public', website=True, readonly=True)
     def autocomplete(self, search_type=None, term=None, order=None, limit=5, max_nb_chars=999, options=None):
         res = super().autocomplete(search_type='products_only', term=term, order=order, limit=limit,
                                    max_nb_chars=max_nb_chars, options=options)
@@ -67,7 +67,7 @@ class ScitaSliderSettings(http.Controller):
         })
         return values
 
-    @http.route('/get_product_info/<int:product_id>', type='json', auth="public", website=True)
+    @http.route('/get_product_info/<int:product_id>', type='jsonrpc', auth="public", website=True)
     def get_product_info(self, product_id):
         product = request.env['product.template'].sudo().browse(product_id)
         if not product.exists():
@@ -95,9 +95,9 @@ class ScitaSliderSettings(http.Controller):
         }
         return values
 
-    @http.route('/shop/cart/sidebar', type='json', auth='public', website=True)
+    @http.route('/shop/cart/sidebar', type='jsonrpc', auth='public', website=True)
     def custom_cart_sidebar(self):
-        order = request.website.sale_get_order()
+        order = request.cart
         values = {
             'website_sale_order': order,
             'res_company': request.env.company,
@@ -117,7 +117,7 @@ class ScitaSliderSettings(http.Controller):
 
     #  Top Dealers Snippet Controller End
 
-    @http.route(['/theme_scita/blog_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/blog_get_options'], type='jsonrpc', auth="public", website=True)
     def scita_get_slider_options(self):
         slider_options = []
         option = request.env['blog.slider.config'].search(
@@ -127,7 +127,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def scita_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -135,7 +135,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_blog_slider_view", values)
 
-    @http.route(['/theme_scita/health_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/health_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def health_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -143,7 +143,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.health_blog_slider_view", values)
 
-    @http.route(['/theme_scita/second_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/second_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def second_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -151,7 +151,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_blog_2_slider_view", values)
 
-    @http.route(['/theme_scita/third_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/third_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def third_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -159,7 +159,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_blog_3_slider_view", values)
 
-    @http.route(['/theme_scita/six_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/six_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def six_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -167,7 +167,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_blog_6_slider_view", values)
 
-    @http.route(['/theme_scita/forth_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/forth_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def forth_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -175,7 +175,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_blog_4_slider_view", values)
 
-    @http.route(['/theme_scita/fifth_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/fifth_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def fifth_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -189,7 +189,7 @@ class ScitaSliderSettings(http.Controller):
             values = self.get_blog_data(post.get('slider-type'))
             return request.render("theme_scita.scita_blog_7_slider_view", values)
 
-    @http.route(['/theme_scita/eight_blog_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/eight_blog_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def eight_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
@@ -197,7 +197,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_blog_8_slider_view", values)
 
-    @http.route(['/theme_scita/blog_image_effect_config'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/blog_image_effect_config'], type='jsonrpc', auth='public', website=True)
     def scita_product_image_dynamic_slider(self, **post):
         slider_data = request.env['blog.slider.config'].search(
             [('id', '=', int(post.get('slider_type')))])
@@ -210,21 +210,21 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # for Client slider
-    @http.route(['/theme_scita/get_clients_dynamically_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/get_clients_dynamically_slider'], type='jsonrpc', auth='public', website=True)
     def get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.theme_scita_client_slider_view", values)
 
-    @http.route(['/theme_scita/second_get_clients_dynamically_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/second_get_clients_dynamically_slider'], type='jsonrpc', auth='public', website=True)
     def second_get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.second_client_slider_view", values)
 
-    @http.route(['/theme_scita/third_get_clients_dynamically_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/third_get_clients_dynamically_slider'], type='jsonrpc', auth='public', website=True)
     def third_get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
         website = request.env['website'].get_current_website()
@@ -233,49 +233,49 @@ class ScitaSliderSettings(http.Controller):
 
     # our team
 
-    @http.route(['/biztech_emp_data_one/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_one/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_one_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.it_our_team_view", values)
 
-    @http.route(['/biztech_emp_data_two/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_two/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_two_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.our_team_varient_2_view", values)
 
-    @http.route(['/biztech_emp_data_three/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_three/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_three_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.our_team_varient_3_view", values)
 
-    @http.route(['/biztech_emp_data_four/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_four/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_four_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.our_team_varient_4_view", values)
 
-    @http.route(['/biztech_emp_data_five/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_five/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_five_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.our_team_varient_5_view", values)
 
-    @http.route(['/biztech_emp_data_six/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_six/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_six_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.our_team_varient_6_view", values)
 
-    @http.route(['/biztech_emp_data_seven/employee_data'], type='json', auth='public', website=True)
+    @http.route(['/biztech_emp_data_seven/employee_data'], type='jsonrpc', auth='public', website=True)
     def get_team_seven_dynamically_slider(self, **post):
         values = self.get_teams_data()
         website = request.env['website'].get_current_website()
@@ -284,7 +284,7 @@ class ScitaSliderSettings(http.Controller):
 
     # For Category slider
 
-    @http.route(['/theme_scita/category_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/category_get_options'], type='jsonrpc', auth="public", website=True)
     def category_get_slider_options(self):
         slider_options = []
         option = request.env['category.slider.config'].search(
@@ -294,7 +294,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/category_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/category_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def category_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
@@ -303,7 +303,7 @@ class ScitaSliderSettings(http.Controller):
             return IrQweb._render("theme_scita.theme_scita_cat_slider_view", values)
 
     # Image Hotspot
-    @http.route(['/theme_scita/get_image_hotspot'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/get_image_hotspot'], type='jsonrpc', auth='public', website=True)
     def get_image_hotspot(self, **post):
         if post.get('slider-id'):
             values = self.get_image_hotspot_data(post.get('slider-id'))
@@ -311,7 +311,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_image_hotspot_view", values)
 
-    @http.route(['/theme_scita/second_get_dynamic_cat_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/second_get_dynamic_cat_slider'], type='jsonrpc', auth='public', website=True)
     def second_get_dynamic_cat_slider(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
@@ -319,7 +319,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.second_cat_slider_view", values)
 
-    @http.route(['/theme_scita/dynamic_color_category_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/dynamic_color_category_slider'], type='jsonrpc', auth='public', website=True)
     def third_get_dynamic_cat_slider(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
@@ -328,7 +328,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_category_slider_gray_view", values)
 
-    @http.route(['/theme_scita/category_slider_3'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/category_slider_3'], type='jsonrpc', auth='public', website=True)
     def category_slider_value(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
@@ -341,7 +341,7 @@ class ScitaSliderSettings(http.Controller):
 
             return IrQweb._render("theme_scita.theme_scita_category_slider_3_view", values)
 
-    @http.route(['/theme_scita/category_slider_4'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/category_slider_4'], type='jsonrpc', auth='public', website=True)
     def category_slider_four(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
@@ -349,7 +349,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_category_slider_4_view", values)
 
-    @http.route(['/theme_scita/scita_image_effect_config'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/scita_image_effect_config'], type='jsonrpc', auth='public', website=True)
     def category_image_dynamic_slider(self, **post):
         slider_data = request.env['category.slider.config'].search(
             [('id', '=', int(post.get('slider_id')))])
@@ -362,7 +362,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # For Product slider
-    @http.route(['/theme_scita/product_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/product_get_options'], type='jsonrpc', auth="public", website=True)
     def product_get_slider_options(self):
         slider_options = []
         option = request.env['product.slider.config'].search(
@@ -372,7 +372,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/product_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/product_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def product_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             slider_header = request.env['product.slider.config'].sudo().search(
@@ -387,7 +387,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_product_slider_view", values)
 
-    @http.route(['/theme_scita/product_image_effect_config'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/product_image_effect_config'], type='jsonrpc', auth='public', website=True)
     def product_image_dynamic_slider(self, **post):
         slider_data = request.env['product.slider.config'].search(
             [('id', '=', int(post.get('slider_id')))])
@@ -400,7 +400,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # For multi product slider
-    @http.route(['/theme_scita/product_multi_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/product_multi_get_options'], type='jsonrpc', auth="public", website=True)
     def product_multi_get_slider_options(self):
         slider_options = []
         option = request.env['multi.slider.config'].sudo().search(
@@ -410,7 +410,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/deal_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/deal_get_options'], type='jsonrpc', auth="public", website=True)
     def product_x_deal_get_options(self):
         slider_options = []
         deals = request.env['biztech.deal.of.the.day.configuration'].sudo().search(
@@ -420,7 +420,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/deal/product_multi_get_dynamic_seller'], type='json', auth='public', website=True)
+    @http.route(['/deal/product_multi_get_dynamic_seller'], type='jsonrpc', auth='public', website=True)
     def product_multi_get_dynamic_seller(self, **post):
         if post.get('slider-deal'):
             slider_header = request.env['biztech.deal.of.the.day.configuration'].sudo().search(
@@ -445,7 +445,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.multi_deal_seller_slider_view", values)
 
-    @http.route(['/theme_scita/product_multi_deal_seller_config'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/product_multi_deal_seller_config'], type='jsonrpc', auth='public', website=True)
     def product_multi_deal_seller_image_slider(self, **post):
         deal_data = request.env['biztech.deal.of.the.day.configuration'].sudo().search(
             [('id', '=', int(post.get('slider_deals')))])
@@ -455,7 +455,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # **********************   snippets new added end  ***************
-    @http.route(['/retial/product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/retial/product_multi_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def retail_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -488,7 +488,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.scita_multi_cat_slider_view", values)
 
-    @http.route(['/fashion/fashion_product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/fashion/fashion_product_multi_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def fashion_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -521,7 +521,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.fashion_multi_cat_slider_view", values)
 
-    @http.route(['/theme_scita/product_multi_image_effect_config'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/product_multi_image_effect_config'], type='jsonrpc', auth='public', website=True)
     def product_multi_product_image_dynamic_slider(self, **post):
         slider_data = request.env['multi.slider.config'].sudo().search(
             [('id', '=', int(post.get('slider_type')))])
@@ -535,7 +535,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # Multi image gallery
-    @http.route(['/theme_scita/scita_multi_image_thumbnail_config'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/scita_multi_image_thumbnail_config'], type='jsonrpc', auth="public", website=True)
     def get_multi_image_effect_config(self):
 
         cur_website = request.website
@@ -553,7 +553,7 @@ class ScitaSliderSettings(http.Controller):
 
     # For new brand snippet and product and category snippet
 
-    @http.route(['/theme_scita/brand_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/brand_get_options'], type='jsonrpc', auth="public", website=True)
     def custom_brand_get_options(self):
         slider_options = []
         option = request.env['brand.snippet.config'].sudo().search(
@@ -563,7 +563,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/custom_pro_get_dynamic_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/custom_pro_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def custom_pro_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['product.category.img.slider.config'].sudo().search(
@@ -582,7 +582,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.custom_scita_cat_slider_view", values)
 
-    @http.route(['/theme_scita/custom_get_brand_slider'], type='json', auth='public', website=True)
+    @http.route(['/theme_scita/custom_get_brand_slider'], type='jsonrpc', auth='public', website=True)
     def custom_get_brand_slider(self, **post):
         keep = QueryURL('/theme_scita/custom_get_brand_slider', brand_id=[])
         if post.get('slider-type'):
@@ -596,7 +596,7 @@ class ScitaSliderSettings(http.Controller):
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.custom_scita_brand_slider_view", values)
 
-    @http.route(['/theme_scita/pro_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/pro_get_options'], type='jsonrpc', auth="public", website=True)
     def get_slider_options(self):
         slider_options = []
         option = request.env['product.category.img.slider.config'].sudo().search(
@@ -607,7 +607,7 @@ class ScitaSliderSettings(http.Controller):
         return slider_options
 
     # Zipcode delivery status
-    @http.route(['/shop/zipcode'], type='json', auth="public", website=True)
+    @http.route(['/shop/zipcode'], type='jsonrpc', auth="public", website=True)
     def scita_get_delivery_zipcode(self, zip_code, **post):
         if zip_code:
             zip_obj = request.env['delivery.zipcode'].search(
@@ -619,7 +619,7 @@ class ScitaSliderSettings(http.Controller):
         else:
             return {'zip': 'notavailable'}
 
-    @http.route(['/product_column_five'], type='json', auth='public', website=True)
+    @http.route(['/product_column_five'], type='jsonrpc', auth='public', website=True)
     def get_product_column_five(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -653,7 +653,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.sct_product_snippet_1_view", values)
 
-    @http.route(['/product/product_snippet_data_two'], type='json', auth='public', website=True)
+    @http.route(['/product/product_snippet_data_two'], type='jsonrpc', auth='public', website=True)
     def product_snippet_data_two(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -687,7 +687,7 @@ class ScitaSliderSettings(http.Controller):
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.sct_product_snippet_2_view", values)
 
-    @http.route(['/theme_scita/product_configuration'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/product_configuration'], type='jsonrpc', auth="public", website=True)
     def snippet_get_product_configuration(self):
         slider_options = []
         option = request.env['product.snippet.configuration'].sudo().search(
@@ -727,7 +727,7 @@ class ScitaShop(WebsiteSale):
     #     main.PPG = pl_id.name
     #     return request.redirect(request.httprequest.referrer or '/shop')
 
-    @http.route('/shop/products/recently_viewed', type='json', auth='public', website=True)
+    @http.route('/shop/products/recently_viewed', type='jsonrpc', auth='public', website=True)
     def products_recently_viewed(self, **kwargs):
         if request.env['website'].sudo().get_current_website().theme_id.name == 'theme_scita':
             return self._get_scita_products_recently_viewed()
@@ -1074,7 +1074,7 @@ class ScitaShop(WebsiteSale):
         return value
 
     @http.route(['/shop/get_brand_slider'],
-                type='json', auth='public', website=True)
+                type='jsonrpc', auth='public', website=True)
     def get_brand_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -1089,7 +1089,7 @@ class ScitaShop(WebsiteSale):
         return False
 
     @http.route(['/shop/get_box_brand_slider'],
-                type='json', auth='public', website=True)
+                type='jsonrpc', auth='public', website=True)
     def get_box_brand_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -1104,7 +1104,7 @@ class ScitaShop(WebsiteSale):
         return False
 
     @http.route(['/shop/get_it_brand'],
-                type='json', auth='public', website=True)
+                type='jsonrpc', auth='public', website=True)
     def get_it_brand(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -1124,7 +1124,7 @@ class ScitaShop(WebsiteSale):
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
 
-    @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
+    @http.route(['/product_category_img_slider'], type='jsonrpc', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -1161,7 +1161,7 @@ class ScitaShop(WebsiteSale):
             return IrQweb._render("theme_scita.product_category_img_slider_config_view", values)
         return False
 
-    @http.route(['/theme_scita/product_category_slider'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/product_category_slider'], type='jsonrpc', auth="public", website=True)
     def get_product_category(self):
         slider_options = []
         option = request.env['product.category.img.slider.config'].sudo().search(
@@ -1171,7 +1171,7 @@ class ScitaShop(WebsiteSale):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/get_current_wishlist'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/get_current_wishlist'], type='jsonrpc', auth="public", website=True)
     def get_current_wishlist(self):
         values = request.env['product.wishlist'].with_context(display_default_code=False).current()
         return request.env['ir.ui.view']._render_template("theme_scita.wishlist_products", dict(wishes=values))
@@ -1189,7 +1189,7 @@ class ScitaShop(WebsiteSale):
 
     # Dynamic video banner url get End
 
-    @http.route(['/shop/cart/update_custom'], type='json', auth="public", methods=['GET', 'POST'], website=True,
+    @http.route(['/shop/cart/update_custom'], type='jsonrpc', auth="public", methods=['GET', 'POST'], website=True,
                 csrf=False)
     def cart_update_custom(self, product_id, add_qty=1, set_qty=0, **kw):
         """This route is called when adding a product to cart (no options)."""
@@ -1222,7 +1222,7 @@ class ScitaShop(WebsiteSale):
         }
         return request.render("theme_scita.hover_total", values, headers={'Cache-Control': 'no-cache'})
 
-    @http.route("/shop/variant_change", auth="public", website=True, type='json', methods=['POST'])
+    @http.route("/shop/variant_change", auth="public", website=True, type='jsonrpc', methods=['POST'])
     def on_variant_change(self, pro_id):
         product = request.env['product.product'].sudo().search(
             [('id', '=', int(pro_id))])
@@ -1256,7 +1256,7 @@ class ScitaShop(WebsiteSale):
         }
         return request.render("theme_scita.theme_scita_trending_products_view", values)
 
-    @http.route(['/theme_scita/trending_category_get_options'], type='json', auth="public", website=True)
+    @http.route(['/theme_scita/trending_category_get_options'], type='jsonrpc', auth="public", website=True)
     def trending_category_get_options(self):
         slider_options = []
         option = request.env['trending.products.configuration'].search(
@@ -1266,7 +1266,7 @@ class ScitaShop(WebsiteSale):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/lazy/load'], type='json', auth="public", methods=['POST'], website=True)
+    @http.route(['/lazy/load'], type='jsonrpc', auth="public", methods=['POST'], website=True)
     def lazy_load(self, category=None, search='', min_price=0.0, max_price=0.0, ppg=False, **post):
         if post.get('category_selected'):
             category = post.get('category_selected')
@@ -1567,18 +1567,18 @@ class PWASupport(http.Controller):
         values = {}
         return request.render("theme_scita.pwa_offline_template", values)
 
-    @http.route("/theme_scita/shop/quick_view", type="json", auth="public", website=True)
+    @http.route("/theme_scita/shop/quick_view", type="jsonrpc", auth="public", website=True)
     def scita_quick_view_data(self, product_id=None):
         product = request.env['product.template'].browse(int(product_id))
 
         return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product': product})
 
-    @http.route("/theme_scita/shop/cart_view", type="json", auth="public", website=True)
+    @http.route("/theme_scita/shop/cart_view", type="jsonrpc", auth="public", website=True)
     def scita_cart_view_data(self, product_id=None):
         product = request.env['product.template'].browse(int(product_id))
         return request.env['ir.ui.view']._render_template("theme_scita.shop_cart_view_modal", {'product': product})
 
-    @http.route(['/deal/deal_of_the_day_new'], type='json', auth='public', website=True)
+    @http.route(['/deal/deal_of_the_day_new'], type='jsonrpc', auth='public', website=True)
     def deal_of_the_day_new(self, **post):
         if post.get('slider-deal'):
             deal_header = request.env['biztech.deal.of.the.day.configuration'].sudo().search(
