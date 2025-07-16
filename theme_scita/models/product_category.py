@@ -82,7 +82,7 @@ class ProductTemplate(models.Model):
     # tag_ids = fields.Many2many('biztech.product.tags', string="Product Tags")
     product_style_tag_id = fields.Many2one(
         'biztech.product.style.tag',
-        string='Tags',
+        string='Style Tags',
         help='Select a tag for this product'
     )
     biz_images = fields.One2many('scita.product.images', 'biz_product_tmpl_id',
@@ -164,7 +164,7 @@ class Brands(models.Model):
 
     _sql_constraints = [('unique_tag_name', 'unique(name)',
                          'Brands name should be unique..!'), ]
-
+    
     @api.depends('product_ids')
     def _get_products_count(self):
         self.products_count = len(self.product_ids)
