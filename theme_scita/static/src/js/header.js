@@ -127,11 +127,11 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
         const params = {
             product_id: $target.data("productId"),
             line_id: $target.data("lineId"),
-            set_qty: qty,
+            quantity: qty,
         };
 
         try {
-            const data = await rpc("/shop/cart/update_json", params);
+            const data = await rpc("/shop/cart/update", params);
             this._refreshCart(data);
             this._reloadCartSidebar();
             if (data.cart_quantity === 0) {
@@ -163,7 +163,7 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
         if (lineEl) {
             lineEl.remove();
         }
-        this._reloadCartSidebar();
+        // this._reloadCartSidebar();
     },
 
     async _refreshCart(data) {
