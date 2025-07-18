@@ -1272,16 +1272,36 @@
         <xpath expr='//div[hasclass("flex-grow-1")]' position='attributes'>
             <attribute name='class' add="sct-content-wrap" separator=" "></attribute>
         </xpath>
-        <xpath expr="//div[hasclass(&quot;flex-grow-1&quot;)]/div" position="attributes">
-            <attribute name="class">o_hidden</attribute>
+        <xpath expr="//div[contains(@t-attf-class, 'd-none d-md-flex align-items-center gap-2')]" position="attributes">
+            <attribute name='t-attf-class'>o_hidden</attribute>
         </xpath>
-        <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='attributes'>
+        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='attributes'>
+            <attribute name='class' add="sct-price-wrap" separator=" "></attribute>
+        </xpath> -->
+        <!-- <xpath expr='//t[@t-set="show_qty"]' position='replace'>
+            <t t-set="show_qty" t-value="is_view_active('theme_scita.theme_scita_product_quantity')"/>
+        </xpath> -->
+        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='after'>
+            <div class='sct_remove_wrap'>
+                <a href='#'
+                   class="js_delete_product d-none d-md-inline-block small"
+                   aria-label="Remove from cart"
+                   title="Remove from cart">Remove</a>
+                <button class="js_delete_product btn btn-light d-inline-block d-md-none"
+                        title="remove">
+                    <i class="fa fa-trash-o"/>
+                </button>
+            </div>
+        </xpath> -->
+    </template>
+    <template  id="scita_19_cart_lines" inherit_id="website_sale.cart_lines_quantity" name='show quantity selector'>
+        <xpath expr="//div[contains(@t-attf-class, 'css_quantity input-group justify-content-end h-100')]" position="attributes">
             <attribute name='class' add="sct-price-wrap" separator=" "></attribute>
         </xpath>
-        <xpath expr='//t[@t-set="show_qty"]' position='replace'>
-            <t t-set="show_qty" t-value="is_view_active('theme_scita.theme_scita_product_quantity')"/>
+        <xpath expr='//t[@t-set="should_show_quantity_selector"]' position='replace'>
+            <t t-set="should_show_quantity_selector" t-value="is_view_active('theme_scita.theme_scita_product_quantity')"/>
         </xpath>
-        <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='after'>
+        <xpath expr="//div[contains(@t-attf-class, 'css_quantity input-group justify-content-end h-100')]" position='after'>
             <div class='sct_remove_wrap'>
                 <a href='#'
                    class="js_delete_product d-none d-md-inline-block small"
@@ -1296,14 +1316,14 @@
     </template>
     <!--  <attribute name='class' add="hub-fot-belt-text" remove="text-sm-start" separator=" "/> -->
     <template id="scita_cart_page_checkout_layout" inherit_id="website_sale.checkout_layout" name='Checkout Layout Class'>
-        <xpath expr='//div[@id="o_cart_summary"]' position='attributes'>
-             <attribute name='class'  remove="offset-xl-1" separator=" "/>
+        <xpath expr='//div[hasclass("offset-xxl-1", "col-lg-5", "col-xxl-4")]' position='attributes'>
+             <attribute name='class'  remove="offset-xxl-1" separator=" "/>
         </xpath>
-        <xpath expr='//div[@t-attf-class="oe_cart col-12 col-lg-7"]' position='attributes'>
-             <attribute name='t-attf-class'>oe_cart col-12 col-lg-7 col-xl-8</attribute>
-        </xpath>
-        <xpath expr='//div[@id="o_wsale_total_accordion_item"]/div' position='attributes'>
-             <attribute name='t-att-class'>len(website_sale_order.website_order_line) &gt; 4 and 'o_wsale_scrollable_table mt-n4 me-n4 pt-4 pe-4 custom_scroller'</attribute>
+        <!-- <xpath expr="//div[hasclass('oe_clear_stucture')]" position="attributes">
+             <attribute name='class' add="oe_cart col-12 col-lg-7 col-xl-8" separator=" "></attribute>
+        </xpath> -->
+        <xpath expr="//div[hasclass('card-body', 'p-lg-4', 'pt-lg-3')]/div" position="attributes">
+             <attribute name='class' add="len(website_sale_order.website_order_line) &gt; 4 and 'o_wsale_scrollable_table mt-n4 me-n4 pt-4 pe-4 custom_scroller'" separator=" "></attribute>
         </xpath>
     </template>
     <!-- <template id="scita_payment_delivery_methods" inherit_id="website_sale.payment_delivery_methodsery_methods" name='Scita Payment Delivery Method'>

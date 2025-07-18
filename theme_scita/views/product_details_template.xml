@@ -175,11 +175,11 @@
       <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
          <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
             <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
-            <i class="fa fa-minus"></i>
+            <i class="oi oi-minus"></i>
             </a>
             <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
             <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
-            <i class="fa fa-plus"></i>
+            <i class="oi oi-plus"></i>
             </a>
          </div>
       </xpath>
@@ -317,7 +317,7 @@
       
    </template>
    <template id="scita_cart" inherit_id="website_sale.cart" name="Shopping Cart">
-      <xpath expr="//div[hasclass('col')]/t[@t-call='website_sale.cart_lines']" position="replace">
+      <xpath expr="//div[@id='shop_cart']/t[@t-call='website_sale.cart_lines']" position="replace">
          <div class="sct-shop-cart custom_scroller">
             <t t-call="website_sale.cart_lines"/>
          </div>

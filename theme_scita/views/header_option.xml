@@ -751,7 +751,7 @@
                                                 <!-- Quantity Controls -->
                                                 <div class="input-group dropdown-plus-out">
                                                     <div class="css_quantity input-group input-group-sm">
-                                                        <t t-if="not line._is_sellable()">
+                                                        <t t-if="line._is_sellable()">
                                                             <!-- Minus -->
                                                             <a href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
                                                                 <i class="fa fa-minus"/>

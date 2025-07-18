@@ -37,8 +37,7 @@
                     <t t-name="card">
                         <div class="card oe_kanban_global_click p-0">
                             <div class="o_squared_image">
-                                <img class="card-img-top" t-att-src="kanban_image('banner.image', 'image_1920', record.id.raw_value)" t-att-alt="record.name.value"/>
-                            </div>
+                                <img class="card-img-top" t-att-src="'/web/image/banner.image/' + record.id.raw_value + '/image_1920'" t-att-alt="record.name.value"/>                            </div>
                             <div class="card-body p-0">
                                 <h4 class="card-title p-2 m-0 bg-200">
                                     <small><field name="name"/></small>
