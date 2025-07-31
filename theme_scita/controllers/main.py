@@ -1,4 +1,5 @@
 import json
+import itertools
 from datetime import datetime
 from odoo.modules.module import get_resource_from_path
 from werkzeug.exceptions import Forbidden, NotFound
@@ -13,7 +14,6 @@ from odoo.addons.website.controllers.main import Website
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL
 from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
-
 
 class WebsiteAutocomplate(Website):
 
@@ -821,25 +821,28 @@ class ScitaShop(WebsiteSale):
 
             gap = website.shop_gap or "16px"
 
-            request_args = request.httprequest.args
             tags = {}
-            attrib_list = request_args.getlist('attribute_value')
-            attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
-            attributes_ids = {v[0] for v in attrib_values}
-            attrib_set = {v[1] for v in attrib_values}
+            request_args = request.httprequest.args
+            attribute_values = request_args.getlist('attribute_values')
+            attribute_value_dict = self._get_attribute_value_dict(attribute_values)
+            attribute_ids = set(attribute_value_dict.keys())
+            attribute_value_ids = set(itertools.chain.from_iterable(attribute_value_dict.values()))
+            if attribute_values:
+                request.session['attribute_values'] = attribute_values
+            else:
+                request.session.pop('attribute_values', None)
+
             filter_by_tags_enabled = website.is_view_active('website_sale.filter_products_tags')
             if filter_by_tags_enabled:
-                tags = request_args.getlist('tags')
-                # Allow only numeric tag values to avoid internal error.
-                if tags and all(tag.isnumeric() for tag in tags):
+                if tags:
                     post['tags'] = tags
-                    tags = {int(tag) for tag in tags}
+                    tags = {self.env['ir.http']._unslug(tag)[1] for tag in tags.split(',')}
                 else:
                     post['tags'] = None
                     tags = {}
             keep = QueryURL('/shop',
                             **self._shop_get_query_url_kwargs(category=category and int(category), search=search,
-                                                              attrib=attrib_list, min_price=min_price,
+                                                               min_price=min_price,
                                                               max_price=max_price, order=post.get('order')))
 
             # pricelist_context, pricelist = self._get_pricelist_context()
@@ -873,8 +876,8 @@ class ScitaShop(WebsiteSale):
             url = "/shop"
             if search:
                 post["search"] = search
-            if attrib_list:
-                post['attrib'] = attrib_list
+            # if attrib_list:
+            #     post['attrib'] = attrib_list
 
             brandlistdomain = list(map(int, brand_list))
             options = {
@@ -888,7 +891,7 @@ class ScitaShop(WebsiteSale):
                 'category': str(category.id) if category else None,
                 'min_price': min_price / conversion_rate,
                 'max_price': max_price / conversion_rate,
-                'attrib_values': attrib_values,
+                'attribute_value_dict': attribute_value_dict,
                 'display_currency': website.currency_id,
                 'brandlistdomain': brandlistdomain,
             }
@@ -901,12 +904,12 @@ class ScitaShop(WebsiteSale):
             if filter_by_price_enabled:
                 # TODO Find an alternative way to obtain the domain through the search metadata.
                 Product = request.env['product.template'].with_context(bin_size=True)
-                domain = self._get_shop_domain(search, category, attrib_values)
+                domain = self._get_shop_domain(search, category, attribute_value_dict)
                 # domain = self._get_search_domain(search, category, attrib_values)
 
                 # This is ~4 times more efficient than a search for the cheapest and most expensive products
 
-                query = Product._where_calc(domain)
+                query = Product._search(domain)
                 Product._apply_ir_rules(query, 'read')
                 sql = query.select(
                     SQL(
@@ -965,7 +968,7 @@ class ScitaShop(WebsiteSale):
                     ('visibility', '=', 'visible'),
                 ]))
             else:
-                attributes = lazy(lambda: ProductAttribute.browse(attributes_ids))
+                attributes = lazy(lambda: ProductAttribute.browse(attribute_ids))
 
             layout_mode = request.session.get('website_sale_shop_layout_mode')
             if not layout_mode:
@@ -998,8 +1001,8 @@ class ScitaShop(WebsiteSale):
                 'original_search': fuzzy_search_term and search,
                 'order': post.get('order', ''),
                 'category': category,
-                'attrib_values': attrib_values,
-                'attrib_set': attrib_set,
+                'attrib_values': attribute_value_dict,
+                'attrib_set': attribute_value_ids,
                 'pager': pager,
                 'products': products,
                 # 'pricelist': pricelist,
@@ -1368,7 +1371,7 @@ class ScitaShop(WebsiteSale):
             Product = request.env['product.template'].with_context(bin_size=True)
             domain = self._get_shop_domain(search, category, attrib_values)
 
-            query = Product._where_calc(domain)
+            query = Product._search(domain)
             Product._apply_ir_rules(query, 'read')
             sql = query.select(
                 SQL(
@@ -1595,3 +1598,62 @@ class PWASupport(http.Controller):
     def playground(self, **kw):
         # You can pass data if needed
         return request.render("theme_scita.playground_template", {})
+    
+    # For display brands
+    @http.route('/brands', type='http', auth='public', website=True)
+    def show_brands(self):
+    # Find the 'Brand' attribute
+        brand_attr = request.env['product.attribute'].sudo().search([('name', '=', 'Brand')], limit=1)
+        brands = []
+        product_count = []
+        available_letters = set()
+
+        if brand_attr:
+            brand_values = request.env['product.attribute.value'].sudo().search([
+                ('attribute_id', '=', brand_attr.id)
+            ], order="name asc")
+
+            for brand in brand_values:
+                # Count products with this brand
+                count = request.env['product.template.attribute.line'].sudo().search_count([
+                    ('attribute_id', '=', brand_attr.id),
+                    ('value_ids', 'in', [brand.id])
+                ])
+
+                # Only proceed if products are available
+                if count > 0:
+                    # Add first letter if alphabetic
+                    if brand.name:
+                        first_char = brand.name[0].lower()
+                        if first_char.isalpha():
+                            available_letters.add(first_char)
+
+                    # Add brand info
+                    brands.append({
+                        'id': brand.id,
+                        'name': brand.name,
+                        'website_url': f"/shop?attribute_value={brand_attr.id}-{brand.id}",
+                        'image_url': f"/web/image/product.attribute.value/{brand.id}/image"
+                    })
+
+                    # Add product count info
+                    product_count.append({
+                        'brand_id': brand.id,
+                        'count': count
+                    })
+
+        return request.render('theme_scita.brand_template', {
+            'brands': brands,
+            'available_letters': sorted(available_letters),
+            'product_count': product_count,
+            'brand_attr_id': brand_attr.id if brand_attr else None,
+        })
+
+    # Request For Quote
+    @http.route(['/quote_request/submit'], type='http', csrf=False,
+                auth="public", website=True, methods=['POST'])
+    def quote_request(self, **post):
+        """Function for store the quote requests to backend"""
+        record = request.env['quote.request'].sudo().create(post)
+        if record:
+            return request.render("website.contactus_thanks")

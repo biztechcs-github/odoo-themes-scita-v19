@@ -162,7 +162,7 @@
            t-nocache-_text_class="_text_class"
            t-nocache-_item_class="_item_class"
            t-nocache-_link_class="_link_class">
-            <t t-set="website_sale_cart_quantity" t-value="request.session['website_sale_cart_quantity'] if 'website_sale_cart_quantity' in request.session else website.sale_get_order().cart_quantity or 0"/>
+            <t t-set="website_sale_cart_quantity" t-value="request.session['website_sale_cart_quantity'] if 'website_sale_cart_quantity' in request.session else request.cart.cart_quantity or 0"/>
             <t t-set="show_cart" t-value="website.has_ecommerce_access()"/>
             <t t-if="website.is_view_active('website_sale.header_hide_empty_cart_link')">
                 <t t-set="show_cart" t-value="website_sale_cart_quantity" />

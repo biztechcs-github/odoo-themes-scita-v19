@@ -878,4 +878,8 @@ body #wrapwrap.o_portal {
 	height: 80px;
 	background: #25c462;
   }
-  
+#brand_filter button.active,
+#brand_filter button:hover {
+	background-color: #212529;
+	color: white;
+}

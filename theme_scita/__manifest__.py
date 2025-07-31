@@ -125,10 +125,14 @@ publish unpublish product
         'views/shop_page_attribute.xml',
         'views/theme_cusomization.xml',
         'views/bulk_buy_product_discount.xml',
-        'views/snippets/snippets.xml',
+        'views/snippets/snippets.xml',  
+        'views/snippets/test_snippet.xml',
         'views/image_hotspot_views.xml',
         'views/playground_template.xml',
+        'views/brand_template.xml',
         'views/playground_preview.xml',
+        'views/request_quote_custom_templates.xml',
+        'views/request_for_quote_views.xml',
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'https://theme-scita-v18.appjetty.com/',
@@ -179,6 +183,7 @@ publish unpublish product
             'theme_scita/static/src/js/quick_view.js',
             'theme_scita/static/src/js/mobile_view.js',
             'theme_scita/static/src/js/snippet_preview.js',
+            'theme_scita/static/src/js/feather_init.js',
             'theme_scita/static/src/js/pg_slider.js',
             'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss',
@@ -197,7 +202,5 @@ publish unpublish product
           'theme_scita/static/src/xml/scita_header_option.xml',
           'theme_scita/static/src/xml/scita_footer_option.xml',
       ],
-
-       
     }
 }

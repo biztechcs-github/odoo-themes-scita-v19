@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- <template id="theme_scita_training_id" name="Brand  Data">
+        <section class="your_custom_snippet_class">
+            <div class="container">
+                <h2 class="section-title">Hello from New Snippet</h2>
+            </div>
+        </section>
+    </template> -->
+
+
+    <template id="theme_scita" inherit_id="website.snippets" name="Custom Snippet Group">
+        <xpath expr="//snippets[@id='snippet_content']" position='inside'>
+            <!-- <t t-snippet="theme_scita.theme_scita_training_id" string="New Snippet" t-thumbnail=" "/> -->
+     <t t-snippet="theme_scita.sct_banner_1"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_slider_1.svg"/>
+                <t t-snippet="theme_scita.sct_banner_2"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-banner.png"/>
+                <t t-snippet="theme_scita.retail_sct_banner_slider_1"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-banner.png"/>
+                <t t-snippet="theme_scita.it_main_banner"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Banner_snippet_1.svg"/>
+            <!-- Google Map Snippet -->
+            <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet"
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
+
+        </xpath>
+    </template>
+</odoo>
+

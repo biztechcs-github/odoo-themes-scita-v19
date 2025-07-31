@@ -116,6 +116,43 @@ class ProductTemplate(models.Model):
                 if j.image_512:
                     variant_id.append(j.id)
         return variant_id
+    
+    quote_request = fields.Boolean(string="Request Quote",
+                                    help="Hides the price and 'Add to Cart' button, so customers must request a quote by contacting the seller.")
+
+    def _get_combination_info(
+        self,
+        combination=False,
+        product_id=False,
+        add_qty=1.0,
+        only_template=False,
+        **kwargs
+    ):
+        """Extend combination info to include quote_request."""
+        combination_info = super()._get_combination_info(
+            combination=combination,
+            product_id=product_id,
+            add_qty=add_qty,
+            only_template=only_template,
+            **kwargs
+        )
+        combination_info['quote_request'] = self.quote_request
+        return combination_info
+
+    def _website_show_quick_add(self):
+        """Hide the quick add to cart option on website if quote_request is enabled."""
+        if self.quote_request:
+            return False
+        return super()._website_show_quick_add()
+
+    def _search_render_results_prices(self, mapping, combination_info):
+        """Modify displayed price in search results if quote_request is enabled."""
+        price, list_price = super()._search_render_results_prices(mapping, combination_info)
+
+        if combination_info.get('quote_request'):
+            price = 'Not Available For Sale'
+
+        return price, list_price
 
 
 class ProductProduct(models.Model):

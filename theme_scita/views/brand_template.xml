@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="brand_template" name="Brand Listing Page">
+    <t t-call="website.layout">
+      <div class="container py-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+        <h2 class="mb-0">Our Brands</h2>
+        <!-- Search Box -->
+        <input type="text" class="form-control w-50" placeholder="Search Brand" id="brandSearch" />
+      </div>
+
+      <!-- Filter Buttons -->
+        <div class="d-flex flex-wrap gap-2 mb-3" id="brand_filter">
+          <button class="btn btn-outline-secondary active" data-letter="all">ALL</button>
+          <t t-foreach="('ABCDEFGHIJKLMNOPQRSTUVWXYZ')" t-as="letter">
+              <t t-set="is_active" t-value="letter.lower() in available_letters"/>
+              <button class="btn"
+                      t-attf-class="btn btn-outline-#{'primary' if is_active else 'secondary'}"
+                      t-att-disabled="not is_active and 'disabled' or False"
+                      t-att-data-letter="letter.lower()">
+                  <span t-esc="letter" class="fw-bold"/>
+              </button>
+          </t>
+        </div>
+
+        <!-- Brand Cards -->
+        <div class="row" id="brandGrid">
+          <t t-foreach="brands" t-as="brand">
+            <div class="col-md-2 mb-4 brand-card"
+                t-att-data-letter="brand['name'][0].lower() if brand['name'] else ''"
+                t-att-data-name="brand['name'].lower() if brand['name'] else ''"
+                t-att-data-id="brand['id']">
+                <a t-att-href="brand['website_url']">
+                    <div class="card text-center h-100">
+                        <img t-att-src="brand['image_url']" alt="" width="40"/>
+                        <div class="card-body">
+                            <strong><t t-esc="brand['name']"/></strong><br/>
+                            <t t-foreach="product_count" t-as="item">
+                                <t t-if="item['brand_id'] == brand['id']">
+                                    <t t-esc="item['count']"/> products
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </t>
+        </div>
+      </div>
+    </t>
+  </template>
+</odoo>
