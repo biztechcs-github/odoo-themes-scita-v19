@@ -1,11 +1,14 @@
+# -*- coding: utf-8 -*-
+# Part of AppJetty. See LICENSE file for full copyright and licensing details.
+
 import json
 import itertools
 from datetime import datetime
-from odoo.modules.module import get_resource_from_path
+# from odoo.modules.module import get_resource_path
 from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http, SUPERUSER_ID, fields, tools
 from odoo.http import request
-from odoo.osv import expression
+from odoo import fields
 from odoo.addons.website.controllers.main import QueryURL
 from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale
@@ -13,23 +16,94 @@ from odoo.addons.website_sale.controllers.main import TableCompute
 from odoo.addons.website.controllers.main import Website
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL
-from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
+# from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
 
 class WebsiteAutocomplate(Website):
 
     @http.route('/website/snippet/autocomplete', type='jsonrpc', auth='public', website=True, readonly=True)
     def autocomplete(self, search_type=None, term=None, order=None, limit=5, max_nb_chars=999, options=None):
+        term = term.strip() if term else ""
+        
         res = super().autocomplete(search_type='products_only', term=term, order=order, limit=limit,
-                                   max_nb_chars=max_nb_chars, options=options)
+                                max_nb_chars=max_nb_chars, options=options)
         for rslt in res.get('results'):
             rslt.update({'category': False})
-        categories_result = super().autocomplete(search_type='product_categories_only', term=term, order=order,
-                                                 limit=limit, max_nb_chars=max_nb_chars, options=options)
-        for rslt in categories_result.get('results'):
-            rslt.update({'category': True})
-            if term in str(rslt.get('name')) or term.title() in str(rslt.get('name')) or term.upper() in str(
-                    rslt.get('name')):
-                res.get('results').append(rslt)
+
+       # 1. Search for matching categories first
+        categories = request.env['product.public.category'].sudo().search([
+            ('name', 'ilike', term)
+        ], limit=limit)
+
+        category_matches = []
+        for cat in categories:
+            category_matches.append({
+                'id': cat.id,
+                'name': cat.name,
+                'category': True,
+                'image': f"/web/image/product.public.category/{cat.id}/image_1920",
+                'website_url': f"/shop/category/{cat.id}"
+            })
+
+        if category_matches:
+            res['results'].extend(category_matches)
+
+        else:
+            brand_attr = request.env['product.attribute'].sudo().search([('name', '=', 'Brand')], limit=1)
+            if brand_attr:
+                possible_brands = request.env['product.attribute.value'].sudo().search([
+                    ('attribute_id', '=', brand_attr.id),
+                    ('name', 'ilike', term)
+                ], limit=limit)
+                matching_brands = possible_brands.filtered(lambda b: b.name.lower().startswith(term.lower()))
+                for brand in matching_brands:
+                    image_url = f"/web/image/product.attribute.value/{brand.id}/image"
+
+                    res['results'].append({
+                        'name': brand.name,
+                        'brand': True,
+                        'image': image_url,
+                        'website_url': f"/shop?attribute_value={brand_attr.id}-{brand.id}",
+                    })  
+
+
+        # 3. Category + Brand combinations
+        Product = request.env['product.template'].sudo()
+        matching_products = Product.search([
+            '|',
+            ('name', 'ilike', term),
+            ('public_categ_ids.name', 'ilike', term),
+        ], limit=100)
+
+        combo_set = set()
+        search_words = term.upper().split()
+        for product in matching_products:
+            brand = False
+            brand_id = False
+            brand_attr_id = False
+            for attr_line in product.attribute_line_ids:
+                if attr_line.attribute_id.name.lower() == 'brand':
+                    if attr_line.value_ids:
+                        brand = attr_line.value_ids[0].name
+                        brand_id = attr_line.value_ids[0].id
+                        brand_attr_id = attr_line.attribute_id.id
+                    break
+            for categ in product.public_categ_ids:
+                if brand and brand_id and brand_attr_id:
+                    combo = f"{categ.name} {brand}"
+                    combo_upper = combo.upper()
+                    if all(word in combo_upper for word in search_words):
+                        url = f"/shop?category={categ.id}&attribute_value={brand_attr_id}-{brand_id}"
+                        combo_set.add((combo, url))
+
+
+        for combo, url in sorted(combo_set):
+            res['results'].insert(0, {
+                'name': combo,
+                'is_combo': True,
+                'website_url': url,
+            })
+        
+
         return res
 
 
@@ -852,14 +926,14 @@ class ScitaShop(WebsiteSale):
                 # Check if we need to refresh the cached pricelist
                 pricelist_save_time = request.session['website_sale_pricelist_time']
                 if pricelist_save_time < now - 60 * 60:
-                    request.session.pop('website_sale_current_pl', None)
-                    website.invalidate_recordset(['pricelist_id'])
+                    request.session.pop('PRICELIST_SESSION_CACHE_KEY', None)
+                    # website.invalidate_recordset(['pricelist_ids'])
                     # pricelist = website.pricelist_id
                     request.session['website_sale_pricelist_time'] = now
                     # request.session['website_sale_current_pl'] = pricelist.id
-            else:
-                request.session['website_sale_pricelist_time'] = now
-                # request.session['website_sale_current_pl'] = pricelist.id
+            # else:
+            #     request.session['website_sale_pricelist_time'] = now
+            #     request.session['website_sale_current_pl'] = pricelist.id
 
             brand_list = request.httprequest.args.getlist('brand')
             brand_set = set([int(v) for v in brand_list])
@@ -876,8 +950,8 @@ class ScitaShop(WebsiteSale):
             url = "/shop"
             if search:
                 post["search"] = search
-            # if attrib_list:
-            #     post['attrib'] = attrib_list
+            if attribute_values:
+                post['attrib'] = attribute_values
 
             brandlistdomain = list(map(int, brand_list))
             options = {
@@ -891,12 +965,12 @@ class ScitaShop(WebsiteSale):
                 'category': str(category.id) if category else None,
                 'min_price': min_price / conversion_rate,
                 'max_price': max_price / conversion_rate,
-                'attribute_value_dict': attribute_value_dict,
+                'attrib_values': attribute_value_dict,
                 'display_currency': website.currency_id,
                 'brandlistdomain': brandlistdomain,
             }
             # No limit because attributes are obtained from complete product list
-            fuzzy_search_term, product_count, search_product = self._shop_lookup_products( options, post,
+            fuzzy_search_term, product_count, search_product = self._shop_lookup_products(options, post,
                                                                                           search, website)
             # search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
 
@@ -935,8 +1009,8 @@ class ScitaShop(WebsiteSale):
             ProductTag = request.env['product.tag']
             if filter_by_tags_enabled and search_product:
                 all_tags = ProductTag.search(
-                    expression.AND([
-                        [('product_ids.is_published', '=', True)],
+                    fields.Domain.AND([
+                        [('product_ids.is_published', '=', True), ('visible_to_customers', '=', True)],
                         website_domain
                     ])
                 )
@@ -978,7 +1052,7 @@ class ScitaShop(WebsiteSale):
                     layout_mode = 'grid'
                 request.session['website_sale_shop_layout_mode'] = layout_mode
 
-            # fiscal_position_sudo = website.fiscal_position_id.sudo()
+            fiscal_position_sudo = request.fiscal_position
             products_prices = lazy(lambda: products._get_sales_prices(website))
 
             prod_available = {}
@@ -1006,8 +1080,7 @@ class ScitaShop(WebsiteSale):
                 'pager': pager,
                 'products': products,
                 # 'pricelist': pricelist,
-                # 'fiscal_pos
-                # ition': fiscal_position_sudo,
+                'fiscal_position': fiscal_position_sudo,
                 'add_qty': add_qty,
                 # 'search_product': search_product, ??
                 'search_count': product_count,  # common for all searchbox
@@ -1392,8 +1465,8 @@ class ScitaShop(WebsiteSale):
         ProductTag = request.env['product.tag']
         if filter_by_tags_enabled and search_product:
             all_tags = ProductTag.search(
-                expression.AND([
-                    [('product_ids.is_published', '=', True)],
+                fields.Domain.AND([
+                    [('product_ids.is_published', '=', True), ('visible_to_customers', '=', True)],
                     website_domain
                 ])
             )
