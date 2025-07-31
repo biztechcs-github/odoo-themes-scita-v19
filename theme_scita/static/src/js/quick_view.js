@@ -8,7 +8,7 @@ import publicWidget from "@web/legacy/js/public/public_widget";
 import VariantMixin from "@website_sale/js/sale_variant_mixin";
 import { cartHandlerMixin } from '@website_sale/js/website_sale_utils';
 // import {extraMenuUpdateCallbacks} from "@website/js/content/menu";
-import '@website_sale_wishlist/js/website_sale_wishlist';
+// import '@website_sale_wishlist/js/website_sale_wishlist';
 
 odoo.define('theme_scita.quick_view',[], function(require) {
     'use strict';
