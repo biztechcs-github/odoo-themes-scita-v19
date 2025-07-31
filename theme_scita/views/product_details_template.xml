@@ -61,7 +61,7 @@
          <attribute name='t-attf-class'>col-lg-#{image_cols[1]}</attribute>
       </xpath>
       <!-- <xpath expr="//div[@id='product_details']/t[2]" position="replace"/> -->
-      <xpath expr="//div[@id='product_details']//h1[contains(@class, 'h3')]" position="replace">
+         <xpath expr="//div[@id='product_details']//h1[hasclass('h3')]" position="replace">
          <section class="page-title">
             <div class="container mx-auto">
                <div>
@@ -171,7 +171,7 @@
          <div class='sct-other-desciption'></div>
       </xpath>
    </template>
-   <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
+   <!-- <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
       <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
          <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
             <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
@@ -183,7 +183,7 @@
             </a>
          </div>
       </xpath>
-   </template>
+   </template> -->
    <!-- Discussion inherited to display in tabs -->
    <template id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details">
       <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
