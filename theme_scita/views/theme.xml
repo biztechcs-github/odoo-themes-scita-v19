@@ -1540,7 +1540,7 @@
     </template>
 
     <template id="inherit_add_to_compare" inherit_id="website_sale_comparison.add_to_compare">
-        <xpath expr="//button[contains(@class, 'btn btn-light o_add_compare')]" position="attributes">
+        <xpath expr="//button[hasclass('btn', 'btn-light', 'o_add_compare')]" position="attributes">
             <attribute name="class">btn btn-xs o_add_compare</attribute>
         </xpath>
     </template>
