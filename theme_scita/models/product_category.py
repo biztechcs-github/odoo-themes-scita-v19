@@ -199,9 +199,10 @@ class Brands(models.Model):
         compute='_get_products_count',
     )
 
-    _sql_constraints = [('unique_tag_name', 'unique(name)',
-                         'Brands name should be unique..!'), ]
-    
+    _unique_tag_name = models.UniqueIndex(
+        "(name)",
+        "Brands name should be unique..!",
+    )
     @api.depends('product_ids')
     def _get_products_count(self):
         self.products_count = len(self.product_ids)
