@@ -9,14 +9,11 @@ from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http, SUPERUSER_ID, fields, tools
 from odoo.http import request
 from odoo import fields
-from odoo.addons.website.controllers.main import QueryURL
+from odoo.addons.website.controllers.main import QueryURL,Website
 from odoo.addons.website_sale.controllers import main
-from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale.controllers.main import TableCompute
-from odoo.addons.website.controllers.main import Website
+from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.tools import lazy, SQL
-# from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
+from odoo.tools import lazy, SQL, float_round, groupby
 
 class WebsiteAutocomplate(Website):
 
@@ -25,7 +22,7 @@ class WebsiteAutocomplate(Website):
         term = term.strip() if term else ""
         
         res = super().autocomplete(search_type='products_only', term=term, order=order, limit=limit,
-                                max_nb_chars=max_nb_chars, options=options)
+                                max_nb_chars=max_nb_chars,  options={**(options or {}), 'allowFuzzy': False})
         for rslt in res.get('results'):
             rslt.update({'category': False})
 
