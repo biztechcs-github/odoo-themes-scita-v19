@@ -89,6 +89,14 @@ class ProductTemplate(models.Model):
                                  string='Product Images')
     deal_product = fields.Boolean(string='Available for deal of the day')
 
+    similar_product_ids = fields.Many2many(
+        'product.template',
+        'product_template_similar_rel',
+        'product_id',
+        'similar_product_id',
+        string='Similar Products'
+    )
+    
     def quick_publish_product(self):
         self.ensure_one()
         self.is_published = not (self.is_published)

@@ -4702,3 +4702,136 @@ header{
         }
     }
 }
+/* === Sidebar Container === */
+.similar-side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 500px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Active Sidebar === */
+.similar-side-menu.active {
+    right: 0;
+}
+
+/* === Sticky Header === */
+.similar-sidebar-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.similar-sidebar-header h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* === Close Button === */
+#close-similar-sidebar {
+    background: #f2f2f2;
+    border: none;
+    border-radius: 0.4rem;
+    width: 44px;
+    height: 34px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#close-similar-sidebar:hover {
+    background: #ddd;
+    color: #000;
+}
+
+/* === Product Card === */
+.similar-product {
+    display: flex;
+    gap: 15px;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.similar-product img {
+    width: 90px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.similar-product .details {
+    flex-grow: 1;
+    font-size: 0.9rem;
+}
+
+.similar-product .details a {
+    font-weight: 600;
+    color: #222;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+.similar-product .details a:hover {
+    text-decoration: none;
+}
+
+.similar-product .details .rating {
+    font-size: 0.8rem;
+    color: #f4b400; /* yellow star */
+    margin-right: 5px;
+}
+
+.similar-product .details .brand,
+.similar-product .details .sku {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.similar-product .details .price {
+    font-size: 1rem;
+    color: #000;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+body.sidebar-open::before {
+    content: '';
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1032;
+    left: 0;
+    top: 0;
+}
+
+
+/* === Mobile Responsive === */
+@media (max-width: 576px) {
+    .similar-side-menu {
+        width: 100%;
+    }
+}
+

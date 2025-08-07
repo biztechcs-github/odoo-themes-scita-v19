@@ -133,6 +133,7 @@ publish unpublish product
         'views/playground_preview.xml',
         'views/request_quote_custom_templates.xml',
         'views/request_for_quote_views.xml',
+        'views/similar_products.xml'
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'https://theme-scita-v18.appjetty.com/',
@@ -185,6 +186,7 @@ publish unpublish product
             'theme_scita/static/src/js/snippet_preview.js',
             'theme_scita/static/src/js/feather_init.js',
             'theme_scita/static/src/js/pg_slider.js',
+            'theme_scita/static/src/js/similar_products_sidebar.js',
             'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/button/button_styles.scss'),

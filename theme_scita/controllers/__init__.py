@@ -4,3 +4,4 @@
 from . import main
 from . import image_hotspot_controller
 from . import bulk_buy_product_discount
+from . import similar_product_controller
