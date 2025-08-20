@@ -203,6 +203,10 @@ publish unpublish product
         'website.assets_editor': [
           'theme_scita/static/src/xml/scita_header_option.xml',
           'theme_scita/static/src/xml/scita_footer_option.xml',
-      ],
+        ],
+        'website.website_builder_assets': [
+            'theme_scita/static/src/js/fashion_plugin.js',
+            'theme_scita/static/src/xml/theme_scita.xml',
+        ],
     }
 }
