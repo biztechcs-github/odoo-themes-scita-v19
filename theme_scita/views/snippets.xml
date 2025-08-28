@@ -159,12 +159,14 @@
                     </div>
                     <p class="price">
                         <b>
-                            <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                 class="text-danger mr8 oe_compare_list_price">
+                            <del
+                                name="product_price_strikethrough"
+                                t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                class="text-muted ms-1 h5 oe_compare_list_price"
+                            >
                                 <bdi dir="inherit">
-                                    <span t-esc="combination_info['compare_list_price']"
-                                          groups="website_sale.group_product_price_comparison"
-                                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                <span t-out="combination_info['compare_list_price']"
+                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                 </bdi>
                             </del>
                             <t t-if="True">
@@ -284,7 +286,7 @@
                     <form action="/shop/cart/update" method="post">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id"  t-att-data-template-id="product.id">
                             ADD
                         </button>
                         <div class="input-group-append dropdown-plus">
@@ -326,7 +328,7 @@
             </div>
         </section>
     </template>
-    <template id="sct_product_snippet_1_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="sct_product_snippet_1_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="sct_product_snippet_1"
                  data-selector=".sct_product_snippet_1"
@@ -336,7 +338,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="sct_product_snippet_1_view" name="Multi Product Snippet Configuration 1">
         <div class='sct-snippet-full'>
             <div class="container">
@@ -441,12 +443,14 @@
                                             </ul>
                                             <p class="price">
                                                 <b>
-                                                    <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                         class="text-danger mr8 oe_compare_list_price">
+                                                    <del
+                                                        name="product_price_strikethrough"
+                                                        t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                        class="text-muted ms-1 h5 oe_compare_list_price"
+                                                    >
                                                         <bdi dir="inherit">
-                                                            <span t-esc="combination_info['compare_list_price']"
-                                                                  groups="website_sale.group_product_price_comparison"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                        <span t-out="combination_info['compare_list_price']"
+                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                         </bdi>
                                                     </del>
                                                     <t t-if="True">
@@ -548,7 +552,7 @@
                                                 t-att-value="product.product_variant_id.id"
                                                 type="hidden"/>
                                             <button class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                    t-att-data-id="product.id">
+                                                    t-att-data-id="product.id" t-att-data-template-id="product.id">
                                                 <span class="lni lni-cart-1 cart_icon"/>
                                                 <span class="add_to_cart_text">Add to cart</span>
                                             </button>
@@ -760,12 +764,14 @@
                                                         </div>
                                                         <p class="price">
                                                             <b>
-                                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                                     class="text-danger mr8 oe_compare_list_price">
+                                                                <del
+                                                                    name="product_price_strikethrough"
+                                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                                    class="text-muted ms-1 h5 oe_compare_list_price"
+                                                                >
                                                                     <bdi dir="inherit">
-                                                                        <span t-esc="combination_info['compare_list_price']"
-                                                                              groups="website_sale.group_product_price_comparison"
-                                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                    <span t-out="combination_info['compare_list_price']"
+                                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                                     </bdi>
                                                                 </del>
                                                                 <t t-if="True">
@@ -903,7 +909,7 @@
                                                                    t-att-value="slide.product_variant_id.id"
                                                                    type="hidden"/>
                                                             <button class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                                    t-att-data-id="slide.id">
+                                                                    t-att-data-id="slide.id" t-att-data-template-id="slide.id" >
                                                                 Add
                                                             </button>
                                                             <div class="input-group-append dropdown-plus">
@@ -1107,7 +1113,7 @@
             </div>
         </section>
     </template>
-    <template id="fashion_multi_cat_slider_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="fashion_multi_cat_slider_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="fashion_multi_cat_custom_snippet"
                  data-selector=".fashion_multi_category_slider"
@@ -1117,7 +1123,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="fashion_multi_cat_slider_view" name="Fashion Multi Product Tabs Snippet">
         <div class='fashion_featured_product_1'>
             <div class="container">
@@ -1794,7 +1800,35 @@
                     <we-button data-select-class="none_effect">Remove Effect</we-button>
                     <we-button data-select-class="sct_img_effect1">Effect 1</we-button>
                     <we-button data-select-class="sct_img_effect2">Effect 2</we-button>
-                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>
+                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>  <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                    <t t-snippet="theme_scita.it_sign_up_newsletter"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+                </t>
+                <t t-else=''>
+                    <t t-install="mass_mailing" string="Newsletter Snippet 1"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+                </t>
+
+                <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                    <t t-snippet="theme_scita.retail_sign_up_newsletter"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+                </t>
+                <t t-else=''>
+                    <t t-install="mass_mailing" string="Newsletter Snippet 3"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+                </t>
+
+                <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                    <t t-snippet="theme_scita.newsletter_varient_5"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+                </t>
+                <t t-else=''>
+                    <t t-install="mass_mailing" string="Newsletter Snippet 5"
+                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+                </t>
                     <we-button data-select-class="sct_img_effect4">Effect 4</we-button>
                     <we-button data-select-class="sct_img_effect5">Effect 5</we-button>
                 </we-select>

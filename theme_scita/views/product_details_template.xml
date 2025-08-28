@@ -273,8 +273,8 @@
          <attribute name='t-attf-class'>variant_attribute #{'d-none' if len(ptal.product_template_value_ids._only_active()) == 1 and not ptal.product_template_value_ids._only_active()[0].is_custom else ''} #{'sct-'+ ptal.attribute_id.display_type}</attribute>
       </xpath>
    </template>
-   <template id="scita_products_add_to_cart" inherit_id="website_sale.products_add_to_cart">
-      <xpath expr="//a[@t-if='product._website_show_quick_add()']" position="attributes">
+   <template id="scita_products_add_to_cart" inherit_id="website_sale.shop_product_buttons">
+      <xpath expr="//t[@t-if='product._website_show_quick_add()']" position="attributes">
          <attribute name="class">btn a-submit</attribute>
          <attribute name="class">btn a-submit</attribute>
          <attribute name="t-if">not request.env.user._is_public() and website.add_to_cart or not website.add_to_cart</attribute>

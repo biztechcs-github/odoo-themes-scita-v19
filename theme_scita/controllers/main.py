@@ -568,7 +568,7 @@ class ScitaSliderSettings(http.Controller):
 
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
@@ -699,7 +699,7 @@ class ScitaSliderSettings(http.Controller):
             if not context.get('pricelist'):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
@@ -1206,7 +1206,7 @@ class ScitaShop(WebsiteSale):
             if not context.get('pricelist'):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(

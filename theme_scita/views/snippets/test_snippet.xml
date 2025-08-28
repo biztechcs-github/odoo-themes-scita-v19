@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <odoo>
-    <!-- <template id="theme_scita_training_id" name="Brand  Data">
-        <section class="your_custom_snippet_class">
-            <div class="container">
-                <h2 class="section-title">Hello from New Snippet</h2>
-            </div>
-        </section>
-    </template> -->
-
-
     <template id="theme_scita" inherit_id="website.snippets" name="Custom Snippet Group">
         <xpath expr="//snippets[@id='snippet_content']" position='inside'>
-            <!-- <t t-snippet="theme_scita.theme_scita_training_id" string="New Snippet" t-thumbnail=" "/> -->
-     <t t-snippet="theme_scita.sct_banner_1"
-                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_slider_1.svg"/>
-                <t t-snippet="theme_scita.sct_banner_2"
-                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-banner.png"/>
-                <t t-snippet="theme_scita.retail_sct_banner_slider_1"
-                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-banner.png"/>
-                <t t-snippet="theme_scita.it_main_banner"
-                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Banner_snippet_1.svg"/>
+
+            <!-- banner snippets -->
+            <t t-snippet="theme_scita.dynamic_video_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/video-banner.png"/>
+
+
+            <!-- Multi product tab slidres -->
+            <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
+            <t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-bd-dealofday.png"/>
+            <t t-snippet="theme_scita.deal_of_day_banner_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-deal-of-day.png"/>
+
+            <!-- brand snippets -->
+            <t t-snippet="theme_scita.brands_box_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Trending-brand.svg"/>
+            <t t-snippet="theme_scita.it_prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Trending-brand-1.svg"/>
+
+            <!-- Product Snippet -->
+            <t t-snippet="theme_scita.sct_product_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-feature-products.png"/>
+            <t t-snippet="theme_scita.theme_scita_trending_products_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-trending-slider.png"/>
+
             <!-- Google Map Snippet -->
-            <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet"
-                t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
+            <t t-snippet="theme_scita.s_appjetty_google_map" t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-1.png"/>
+            <t t-snippet="theme_scita.s_appjetty_google_map_content" t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-2.png"/>
+
+            <!-- Blog snippets  -->
+            <t t-snippet="theme_scita.theme_scita_blog_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Blogs.svg"/>
+            <t t-snippet="theme_scita.blog_4_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Blogs-1.svg"/>
+            <t t-snippet="theme_scita.blog_2_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/blog-4.svg"/>
+            <t t-snippet="theme_scita.blog_5_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/blog-3.svg"/>
+
+            <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                <t t-snippet="theme_scita.it_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+            </t>
+            <t t-else=''>
+                <t t-install="mass_mailing" string="Newsletter Snippet 1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+            </t>
+
+            <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                <t t-snippet="theme_scita.retail_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+            </t>
+            <t t-else=''>
+                <t t-install="mass_mailing" string="Newsletter Snippet 3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+            </t>
+
+            <t t-if="request.env['ir.module.module'].sudo().search([
+				('name', '=', 'mass_mailing'),('state','=','installed')])">
+                <t t-snippet="theme_scita.newsletter_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+            </t>
+            <t t-else=''>
+                <t t-install="mass_mailing" string="Newsletter Snippet 5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+            </t>
 
         </xpath>
     </template>

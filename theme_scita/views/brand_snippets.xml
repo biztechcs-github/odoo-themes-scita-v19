@@ -14,13 +14,13 @@
             </div>
         </section>
     </template>
-    <template id="it_brand_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="it_brand_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="it_prod_brands" data-selector=".it_brand_slider" data-snippet-option-id="it_prod_brands">
                 <we-button class="dropdown-item it_brand_slider" tabindex="-1" href="#" data-brand_it_slider="">Modify</we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="it_brand_snippet_1" name="Brand Snippet">
         <div class="it_brand_snippet_1">
             <div class="container">
@@ -102,13 +102,13 @@
             </div>
         </section>
     </template>
-    <template id="brands_box_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="brands_box_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="brands_box_slider_4" data-selector=".box_brand_slider" data-snippet-option-id="brands_box_slider_4">
                 <we-button class="dropdown-item box_brand_slider" tabindex="-1" href="#" data-box_brand_slider="">Modify</we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="box_brand_snippet_4" name="Brand Snippet">
         <div class="box_brand_snippet_4">
             <div class="container">

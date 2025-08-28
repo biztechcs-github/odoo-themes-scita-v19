@@ -30,7 +30,7 @@
         </section>
     </template>
 
-    <template id="s_google_map_option" inherit_id="website.snippet_options">
+    <!-- <template id="s_google_map_option" inherit_id="website.snippet_options">
         <xpath expr="." position="inside">
             <div data-js="s_google_map" data-selector="section.google_map_v1">
                 <we-button data-map="" data-no-preview="true">
@@ -43,5 +43,5 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
 </odoo>

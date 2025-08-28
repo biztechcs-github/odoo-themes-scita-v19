@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-inherit="website.headerTemplateOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect" position="inside">
@@ -119,6 +120,241 @@
         </BuilderSelectItem>
         </xpath>
     </t>
+
+<!-- 1. Define your new builder option template -->
+<t t-name="fashion_multi_cat_custom_snippet">
+    <div data-js="fashion_multi_cat_custom_snippet">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'fashion_modifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="dynamic_video_banner">
+    <div data-js="dynamic_video_banner">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'videoBannerModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="deal_seller_multi_product_custom_snippet">
+    <div data-js="deal_seller_multi_product_custom_snippet" data-selector=".deal_multi_product_slider">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'dealSellerMultiProductModify'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="theme_scita_deal_of_the_day_option">
+    <div data-js="oe_deal_of_the_day" data-selector=".oe_deal_of_the_day">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'dealOfTheDayModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+    <!-- <template id="brands_box_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="brands_box_slider_4" data-selector=".box_brand_slider" data-snippet-option-id="brands_box_slider_4">
+                <we-button class="dropdown-item box_brand_slider" tabindex="-1" href="#" data-box_brand_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+
+<t t-name="brands_box_option">
+    <div data-js="brands_box_slider_4" data-selector=".brands_box_slider_4">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'brandSliderModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="it_brand_option">
+    <div data-js="it_prod_brands" data-selector=".it_prod_brands">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'itBrandModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="sct_product_snippet_1_option">
+    <div data-js="sct_product_snippet_1" data-selector=".sct_product_snippet_1">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'sctProductModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="theme_scita_trending_products_option">
+    <div data-js="theme_scita_trending_products" data-selector=".theme_scita_trending_products">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'trending_products_modifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="s_google_map_option">
+    <div data-js="s_google_map" data-selector=".google_map_v1">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'googleMapModifyBtn'" 
+                title.translate="Map Options" 
+                icon="'fa fa-edit'" 
+                data-map=""
+                actionParam="'open'">
+                Map Options
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+<t t-name="s_google_map_option_c">
+    <div data-js="s_google_map_content" data-selector=".google_map_v2">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'googleMapContentModifyBtn'" 
+                title.translate="Map Options" 
+                data-map_section=""
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Map Options
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+    <!-- <template id="theme_scita_blog_slider_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="theme_scita_blog_custom_snippet" data-selector=".scita_blog_slider" data-snippet-option-id="theme_scita_blog_custom_snippet">
+                <we-button class="dropdown-item scita_blog_slider" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+
+<t t-name="theme_scita_blog_slider_option">
+    <div data-js="theme_scita_blog_custom_snippet" data-selector=".scita_blog_slider">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'blogSliderModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+  <!-- <template id="blog_4_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_4_custom_snippet" data-selector=".blog_4_custom" data-snippet-option-id="blog_4_custom_snippet">
+                <we-button class="dropdown-item blog_4_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+<t t-name="blog_4_custom_snippet_option">
+    <div data-js="blog_4_custom_snippet" data-selector=".blog_4_custom">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'blog4CustomModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+
+    <!-- <template id="blog_2_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_2_custom_snippet" data-selector=".blog_2_custom" data-snippet-option-id="blog_2_custom_snippet">
+                <we-button class="dropdown-item blog_2_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+
+<t t-name="blog_2_custom_snippet_option">
+    <div data-js="blog_2_custom_snippet" data-selector=".blog_2_custom">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'blog4CustomModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+    <!-- <template id="blog_5_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom" data-snippet-option-id="blog_5_custom_snippet">
+                <we-button class="dropdown-item blog_5_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+<t t-name="blog_5_custom_snippet_option">
+    <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'blog5CustomModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
 </templates>
 
 

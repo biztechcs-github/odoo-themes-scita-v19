@@ -122,6 +122,7 @@ odoo.define('theme_scita.ajax_cart',[], function(require) {
             VariantMixin._onChangeCombinationProd.apply(this, arguments);
         },
         async _onClickSubmit(ev, forceSubmit) {
+            const $target = $(ev.currentTarget);
             if ($(ev.currentTarget).is('#add_to_cart,.o_wsale_product_btn .a-submit') && !forceSubmit) {
                 return;
             }
@@ -139,11 +140,11 @@ odoo.define('theme_scita.ajax_cart',[], function(require) {
                     var quantity = frm.find('.quantity').val();
                     if(!quantity) {
                        quantity = 1;
-                    }
-                    const data = await rpc("/shop/cart/update_json", {
+                    }         
+                    const data = await rpc("/shop/cart/add", {
+                        product_template_id: $target.data("template-id"),
                         product_id: parseInt(product_product),
-                        add_qty: quantity || 1,
-                        display: false,
+                        quantity: quantity || 1,
                     });
                     wSaleUtils.updateCartNavBar(data);
                 } else {

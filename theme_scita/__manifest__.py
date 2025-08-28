@@ -133,7 +133,7 @@ publish unpublish product
         'views/playground_preview.xml',
         'views/request_quote_custom_templates.xml',
         'views/request_for_quote_views.xml',
-        'views/similar_products.xml'
+        'views/similar_products.xml',
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'https://theme-scita-v18.appjetty.com/',
@@ -197,7 +197,6 @@ publish unpublish product
             'theme_scita/static/src/js/scita_editor.js',
             'theme_scita/static/src/js/new_scita_editor.js',
             'theme_scita/static/src/js/timer_editor.js',
-            'theme_scita/static/src/js/google_map_editor.js',
             '/theme_scita/static/src/xml/**/*',
         ],
         'website.assets_editor': [
@@ -205,8 +204,17 @@ publish unpublish product
           'theme_scita/static/src/xml/scita_footer_option.xml',
         ],
         'website.website_builder_assets': [
-            'theme_scita/static/src/js/fashion_plugin.js',
+            'theme_scita/static/src/js/snippet/fashionMultiCatSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/dynamicVideoSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/dealSellerMultiProductSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/dealOfTheDaySnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/brandsSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/sctProductSnippet1Plugin.js',
+            'theme_scita/static/src/js/snippet/trendingProductsModifyPlugin.js',
+            'theme_scita/static/src/js/snippet/googleMapSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/blogSnippetPlugin.js',
             'theme_scita/static/src/xml/theme_scita.xml',
+            'theme_scita/static/src/xml/s_google_snippet_modal.xml',
         ],
     }
 }

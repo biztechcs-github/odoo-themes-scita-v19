@@ -33,27 +33,27 @@ odoo.define('theme_scita.quick_view',[], function(require) {
                     $("#shop_quick_view_modal").html(data);
                     $("#shop_quick_view_modal").modal('show');
                     var WebsiteSale = new publicWidget.registry.WebsiteSale();
-                    var ProductWishlist = new publicWidget.registry.ProductWishlist();
+                    // var ProductWishlist = new publicWidget.registry.ProductWishlist();
                     WebsiteSale.init();
-                    ProductWishlist.init();
+                    // ProductWishlist.init();
                     var combination = [];
                     $(".quick_cover").css("display", "block");
                     $("[data-attribute_exclusions]").on("change", function(ev) {
                         WebsiteSale.onChangeVariant(ev);
                     });
                     $("a.js_add_cart_json").on("click", function(ev) {
-                        WebsiteSale._onClickAddCartJSON(ev);
+                        WebsiteSale._onChangeQuantity(ev);
                     });
-                    $("a#add_to_cart").on("click", function(ev) {
+                    $("#add_to_cart").on("click", function(ev) {
                         $(this).closest('form').submit();
                     });
 
 
-                    $("button.o_add_wishlist_dyn").on("click",function(ev){
-                        this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
-                        ProductWishlist._onClickAddWish(ev);
-                        ProductWishlist._onChangeVariant(ev);
-                    });
+                    // $("button.o_add_wishlist_dyn").on("click",function(ev){
+                    //     this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
+                    //     ProductWishlist._onClickAddWish(ev);
+                    //     ProductWishlist._onChangeVariant(ev);
+                    // });
 
 
                     $(document).on('change', 'input[name="add_qty"]', function(ev){
