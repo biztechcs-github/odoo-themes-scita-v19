@@ -760,12 +760,14 @@
                                                         </div>
                                                         <p class="price">
                                                             <b>
-                                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                                     class="text-danger mr8 oe_compare_list_price">
+                                                                <del
+                                                                    name="product_price_strikethrough"
+                                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] > combination_info['price'])"
+                                                                    class="text-muted ms-1 h5 oe_compare_list_price"
+                                                                >
                                                                     <bdi dir="inherit">
-                                                                        <span t-esc="combination_info['compare_list_price']"
-                                                                              groups="website_sale.group_product_price_comparison"
-                                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                    <span t-out="combination_info['compare_list_price']"
+                                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                                     </bdi>
                                                                 </del>
                                                                 <t t-if="True">
@@ -903,31 +905,32 @@
                                                                    t-att-value="slide.product_variant_id.id"
                                                                    type="hidden"/>
                                                             <button class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                                    t-att-data-id="slide.id">
+                                                                    t-att-data-id="slide.id"  t-att-data-template-id="slide.id">
                                                                 Add
                                                             </button>
                                                             <div class="input-group-append dropdown-plus">
                                                                 <span class="btn btn-link float_left js_add_cart_json"
                                                                       title="Add">
-                                                                    <i class="fa fa-plus"/>
+                                                                    <i class="oi oi-plus"/>
                                                                 </span>
                                                             </div>
-                                                            <div t-attf-class="o_hidden css_quantity input-group dropdown-plus-out {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle"
-                                                                 contenteditable="false">
+                                                            <div t-attf-class="css_quantity input-group dropdown-plus-out {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle"
+                                                                contenteditable="false">
                                                                 <a t-attf-href="#" class="btn btn-link js_add_cart_json"
-                                                                   aria-label="Remove one" title="Remove one">
-                                                                    <i class="fa fa-minus"/>
+                                                                aria-label="Remove one" title="Remove one">
+                                                                    <i class="oi oi-minus"/>
                                                                 </a>
                                                                 <input type="text"
-                                                                       class="form-control quantity text-center"
-                                                                       data-min="1" name="add_qty"
-                                                                       t-att-value="add_qty or 1"/>
+                                                                    class="form-control quantity text-center"
+                                                                    data-min="1" name="add_qty"
+                                                                    t-att-value="add_qty or 1"/>
                                                                 <a t-attf-href="#"
-                                                                   class="btn btn-link float_left js_add_cart_json"
-                                                                   aria-label="Add one" title="Add one">
-                                                                    <i class="fa fa-plus"/>
+                                                                class="btn btn-link float_left js_add_cart_json"
+                                                                aria-label="Add one" title="Add one">
+                                                                    <i class="oi oi-plus"/>
                                                                 </a>
                                                             </div>
+
                                                         </form>
                                                     </div>
 

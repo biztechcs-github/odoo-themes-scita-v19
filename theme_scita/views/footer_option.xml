@@ -628,7 +628,7 @@
                                             <h4 class="links_title title-20">Newsletter</h4>
                                             <p>If you are unable to load any pages, check your comput.</p>
                                         </div>
-                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe_wrap js_subscribe"  data-list-id="0" data-name="Newsletter Form">
+                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe_wrap js_subscribe"  data-list-id="1" data-name="Newsletter Form">
                                             <div class="input-group js_subscribe_wrap">
                                                 <input type="email" name="email" class="js_subscribe_value form-control" placeholder="your email..."/>
                                                 <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_submit">Subscribe</a>

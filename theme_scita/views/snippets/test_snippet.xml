@@ -24,7 +24,61 @@
             <!-- Google Map Snippet -->
             <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet"
                 t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
+            <!-- portfolio_snippet_1 -->
+            <t t-snippet="theme_scita.portfolio_snippet_1"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Portfolio_2.png"/>
+                <t t-snippet="theme_scita.portfolio_snippet_2"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/portfolio_snippet_2.svg"/>
+                <t t-snippet="theme_scita.it_portfolio_tabs_snippets"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/prot1.png"/>
+             <!-- Timeline snippets  -->
+             <t t-snippet="theme_scita.timeline_snippet_1"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
+                <t t-snippet="theme_scita.timeline_snippet_3"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_2.svg"/>
+             <!-- product and category snippet -->
+                <t t-snippet="theme_scita.product_category_img_slider_config"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-2.svg"/>
+            <!-- category sliders -->
 
+                <t t-snippet="theme_scita.theme_scita_category_slider_3"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-4.svg"/>
+                <t t-snippet="theme_scita.theme_scita_category_slider_4"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-5.svg"/>
+                <t t-snippet="theme_scita.theme_scita_category_slider_gray"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-3.svg"/>
+                <t t-snippet="theme_scita.s_theme_scita_category_slider"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-1.svg"/>
+            <!--NewsLetter Snippets-->
+               <t t-if="request.env['ir.module.module'].sudo().search([
+               ('name', '=', 'mass_mailing'),('state','=','installed')])">
+                     <t t-snippet="theme_scita.it_sign_up_newsletter"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+                  </t>
+                  <t t-else=''>
+                     <t t-install="mass_mailing" string="Newsletter Snippet 1"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
+                  </t>
+
+                  <t t-if="request.env['ir.module.module'].sudo().search([
+               ('name', '=', 'mass_mailing'),('state','=','installed')])">
+                     <t t-snippet="theme_scita.retail_sign_up_newsletter"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+                  </t>
+                  <t t-else=''>
+                     <t t-install="mass_mailing" string="Newsletter Snippet 3"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
+                  </t>
+
+                  <t t-if="request.env['ir.module.module'].sudo().search([
+               ('name', '=', 'mass_mailing'),('state','=','installed')])">
+                     <t t-snippet="theme_scita.newsletter_varient_5"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+                  </t>
+                  <t t-else=''>
+                     <t t-install="mass_mailing" string="Newsletter Snippet 5"
+                        t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
+                  </t>
         </xpath>
     </template>
 </odoo>

@@ -1197,7 +1197,7 @@ class ScitaShop(WebsiteSale):
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
 
-    @http.route(['/product_category_img_slider'], type='jsonrpc', auth='public', website=True)
+    @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -1206,7 +1206,7 @@ class ScitaShop(WebsiteSale):
             if not context.get('pricelist'):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
@@ -1643,7 +1643,6 @@ class PWASupport(http.Controller):
     @http.route("/theme_scita/shop/quick_view", type="jsonrpc", auth="public", website=True)
     def scita_quick_view_data(self, product_id=None):
         product = request.env['product.template'].browse(int(product_id))
-
         return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product': product})
 
     @http.route("/theme_scita/shop/cart_view", type="jsonrpc", auth="public", website=True)

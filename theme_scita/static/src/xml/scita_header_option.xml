@@ -119,6 +119,71 @@
         </BuilderSelectItem>
         </xpath>
     </t>
+    <t t-name="product_category_img_slider_config_option">
+        <div data-js="multi_product_and_category_slider" data-selector=".multi_product_and_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'product_category_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_3_option">
+        <div data-js="cat_slider_3" data-selector=".cat_slider_3">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider1_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_4_option">
+        <div data-js="cat_slider_4" data-selector=".cat_slider_4">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider2_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="product_category_option">
+        <div data-js="oe_category_slider" data-selector=".oe_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider3_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_option">
+        <div data-js="oe_category_slider" data-selector=".oe_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'category_snippet_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
 </templates>
 
 

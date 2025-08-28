@@ -273,7 +273,7 @@
          <attribute name='t-attf-class'>variant_attribute #{'d-none' if len(ptal.product_template_value_ids._only_active()) == 1 and not ptal.product_template_value_ids._only_active()[0].is_custom else ''} #{'sct-'+ ptal.attribute_id.display_type}</attribute>
       </xpath>
    </template>
-   <template id="scita_products_add_to_cart" inherit_id="website_sale.products_add_to_cart">
+   <!-- <template id="scita_products_add_to_cart" inherit_id="website_sale.products_add_to_cart">
       <xpath expr="//a[@t-if='product._website_show_quick_add()']" position="attributes">
          <attribute name="class">btn a-submit</attribute>
          <attribute name="class">btn a-submit</attribute>
@@ -285,7 +285,7 @@
       <xpath expr="//span[hasclass('fa','fa-shopping-cart')]" position="attributes">
          <attribute name='class'>lni lni-cart-1</attribute>
       </xpath>
-   </template>
+   </template> -->
    <template id="product_add_to_compare" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Add to comparison in product page">
       <xpath expr="//div[hasclass('sct-add-to-cart-mob')]" position="after">
          <t t-set="product_variant" t-value="product_variant or product._create_first_product_variant()"/>

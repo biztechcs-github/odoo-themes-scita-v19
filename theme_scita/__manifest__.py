@@ -206,6 +206,11 @@ publish unpublish product
         ],
         'website.website_builder_assets': [
             'theme_scita/static/src/js/fashion_plugin.js',
+            'theme_scita/static/src/js/product_category.js',
+            'theme_scita/static/src/js/category_slider.js',
+            'theme_scita/static/src/js/category_slider2.js',
+            'theme_scita/static/src/js/category_slider3.js',
+            'theme_scita/static/src/js/category_snippet.js',
             'theme_scita/static/src/xml/theme_scita.xml',
         ],
     }
