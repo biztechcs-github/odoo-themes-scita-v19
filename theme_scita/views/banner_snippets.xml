@@ -310,13 +310,13 @@
             </div>
         </section>
     </template>
-    <template id="dynamic_video_option" inherit_id="website.snippet_options" name="Video Modify Options">
+    <!-- <template id="dynamic_video_option" inherit_id="website.snippet_options" name="Video Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="dynamic_video_banner" data-selector=".dynamic_video_banner" data-snippet-option-id="dynamic_video_banner">
                 <we-button class="dropdown-item dynamic_video_banner" tabindex="-1" href="#" data-dynamic_video_banner="">Modify</we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="banner_snippet_2" name="Hero Image Snippet">
         <section class="sct_banner_snippet" data-disp='banner'>
             <div class='container-fluid'>
@@ -352,13 +352,13 @@
             </div>
         </section>
     </template>
-    <template id="theme_scita_image_hotspot_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="theme_scita_image_hotspot_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="oe_img_hotspot" data-selector=".oe_img_hotspot">
                <we-button class="dropdown-item oe_img_hotspot" data-img_hotspot="">Modify</we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="theme_scita_image_hotspot_view" name="Image Hotspot">
             <div class="container">
                 <div class="row top-row title-block section-title-wrapper">

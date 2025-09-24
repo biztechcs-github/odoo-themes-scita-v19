@@ -568,7 +568,7 @@ class ScitaSliderSettings(http.Controller):
 
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
@@ -699,7 +699,7 @@ class ScitaSliderSettings(http.Controller):
             if not context.get('pricelist'):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+                pricelist = current_website.get_pricelist_available()
                 context = dict(request.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
@@ -981,7 +981,7 @@ class ScitaShop(WebsiteSale):
                 # This is ~4 times more efficient than a search for the cheapest and most expensive products
 
                 query = Product._search(domain)
-                Product._apply_ir_rules(query, 'read')
+                # Product._apply_ir_rules(query, 'read')
                 sql = query.select(
                     SQL(
                         "COALESCE(MIN(list_price), 0) * %(conversion_rate)s, COALESCE(MAX(list_price), 0) * %(conversion_rate)s",
@@ -1442,7 +1442,7 @@ class ScitaShop(WebsiteSale):
             domain = self._get_shop_domain(search, category, attrib_values)
 
             query = Product._search(domain)
-            Product._apply_ir_rules(query, 'read')
+            # Product._apply_ir_rules(query, 'read')
             sql = query.select(
                 SQL(
                     "COALESCE(MIN(list_price), 0) * %(conversion_rate)s, COALESCE(MAX(list_price), 0) * %(conversion_rate)s",

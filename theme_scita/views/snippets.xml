@@ -17,19 +17,6 @@
             </div>
         </section>
     </template>
-    <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options"
-              name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="custom_scita_product_category_slider"
-                 data-selector=".custom_oe_pro_cat_slider"
-                 data-snippet-option-id="custom_scita_product_category_slider">
-                <we-button data-no-preview="true" class="dropdown-item custom_oe_pro_cat_slider" tabindex="-1" href="#"
-                           data-custom_pro_cat_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template>
-
     <template id="custom_scita_cat_slider_view" name="Custom Product/Category Slider">
         <div class='container'>
             <div class="custom-title-block">
@@ -159,12 +146,14 @@
                     </div>
                     <p class="price">
                         <b>
-                            <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                 class="text-danger mr8 oe_compare_list_price">
+                            <del
+                                name="product_price_strikethrough"
+                                t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                class="text-muted ms-1 h5 oe_compare_list_price"
+                            >
                                 <bdi dir="inherit">
-                                    <span t-esc="combination_info['compare_list_price']"
-                                          groups="website_sale.group_product_price_comparison"
-                                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                <span t-out="combination_info['compare_list_price']"
+                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                 </bdi>
                             </del>
                             <t t-if="True">
@@ -284,7 +273,7 @@
                     <form action="/shop/cart/update" method="post">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id"  t-att-data-template-id="product.id">
                             ADD
                         </button>
                         <div class="input-group-append dropdown-plus">
@@ -325,17 +314,6 @@
                 </div>
             </div>
         </section>
-    </template>
-    <template id="sct_product_snippet_1_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="sct_product_snippet_1"
-                 data-selector=".sct_product_snippet_1"
-                 data-snippet-option-id="sct_product_snippet_1">
-                <we-button class="dropdown-item sct_product_snippet_1" tabindex="-1" href="#"
-                           data-multi_category_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
     </template>
     <template id="sct_product_snippet_1_view" name="Multi Product Snippet Configuration 1">
         <div class='sct-snippet-full'>
@@ -441,12 +419,14 @@
                                             </ul>
                                             <p class="price">
                                                 <b>
-                                                    <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                         class="text-danger mr8 oe_compare_list_price">
+                                                    <del
+                                                        name="product_price_strikethrough"
+                                                        t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                        class="text-muted ms-1 h5 oe_compare_list_price"
+                                                    >
                                                         <bdi dir="inherit">
-                                                            <span t-esc="combination_info['compare_list_price']"
-                                                                  groups="website_sale.group_product_price_comparison"
-                                                                  t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                        <span t-out="combination_info['compare_list_price']"
+                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                         </bdi>
                                                     </del>
                                                     <t t-if="True">
@@ -548,7 +528,7 @@
                                                 t-att-value="product.product_variant_id.id"
                                                 type="hidden"/>
                                             <button class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                    t-att-data-id="product.id">
+                                                    t-att-data-id="product.id" t-att-data-template-id="product.id">
                                                 <span class="lni lni-cart-1 cart_icon"/>
                                                 <span class="add_to_cart_text">Add to cart</span>
                                             </button>
@@ -601,17 +581,6 @@
                 </div>
             </div>
         </section>
-    </template>
-    <template id="product_category_img_slider_config_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="product_category_img_slider_config"
-                 data-selector=".multi_product_and_category_slider"
-                 data-snippet-option-id="product_category_img_slider_config">
-                <we-button data-no-preview="true" class="dropdown-item multi_product_and_category_slider" tabindex="-1"
-                           href="#" data-multi_category_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
     </template>
     <template id="product_category_img_slider_config_view" name="Product And category Slider">
         <div class='product_category_scita'>
@@ -762,7 +731,7 @@
                                                             <b>
                                                                 <del
                                                                     name="product_price_strikethrough"
-                                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] > combination_info['price'])"
+                                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
                                                                     class="text-muted ms-1 h5 oe_compare_list_price"
                                                                 >
                                                                     <bdi dir="inherit">
@@ -905,7 +874,7 @@
                                                                    t-att-value="slide.product_variant_id.id"
                                                                    type="hidden"/>
                                                             <button class="button btn btn-cart a-submit cart_view_sct_btn"
-                                                                    t-att-data-id="slide.id"  t-att-data-template-id="slide.id">
+                                                                    t-att-data-id="slide.id" t-att-data-template-id="slide.id" >
                                                                 Add
                                                             </button>
                                                             <div class="input-group-append dropdown-plus">
@@ -949,18 +918,6 @@
 
     <template id="timer_snippet_body" name="Timer">
         <div class="js_counter_timer" data-date="nan" data-msg='nun' data-mins-1="" data-disp="deal_days"/>
-    </template>
-
-    <template id="timer_snippet_snippet_options" inherit_id="website.snippet_options">
-        <xpath expr="." position="inside">
-            <div data-js='js_counter_timer' data-selector=".js_counter_timer" data-drop-in=".timer_counter_div">
-                <we-button tabindex="-1" href="#" class="dropdown-item"
-                           data-choose-image="true" data-no-preview="true" data-date_configure="">
-                    <i class="fa fa-clock-o"/>
-                    Modify Time
-                </we-button>
-            </div>
-        </xpath>
     </template>
 
     <template id='retail_multi_slider_products'>
@@ -1109,17 +1066,6 @@
                 </div>
             </div>
         </section>
-    </template>
-    <template id="fashion_multi_cat_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="fashion_multi_cat_custom_snippet"
-                 data-selector=".fashion_multi_category_slider"
-                 data-snippet-option-id="fashion_multi_cat_custom_snippet">
-                <we-button data-no-preview="true" class="dropdown-item fashion_multi_category_slider" tabindex="-1"
-                           href="#" data-multi_category_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
     </template>
     <template id="fashion_multi_cat_slider_view" name="Fashion Multi Product Tabs Snippet">
         <div class='fashion_featured_product_1'>
@@ -1417,19 +1363,6 @@
             </div>
         </section>
     </template>
-    <template id="html_builder_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="html_builder_snippet"
-                 data-selector=".html_builder_new"
-                 data-snippet-option-id="html_builder_snippet">
-                <we-button class="dropdown-item html_builder_new" tabindex="-1" href="#" data-html_content_builder="">
-                    Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template>
-
-
     <!-- IT industry End -->
 
     <template id="health_location_snippet" name="Contact Us Snippet 4">
@@ -1789,7 +1722,7 @@
             </snippets>
         </xpath>
     </template>
-    <template id="scita_snippets_animation_effect_option" name="Animaion Effect Option"
+    <!-- <template id="scita_snippets_animation_effect_option" name="Animaion Effect Option"
               inherit_id="website.snippet_options">
         <xpath expr="." position="inside">
             <div id="main_snippets_animation_effect" data-selector="img" data-js="animaion_effect">
@@ -1797,14 +1730,14 @@
                     <we-button data-select-class="none_effect">Remove Effect</we-button>
                     <we-button data-select-class="sct_img_effect1">Effect 1</we-button>
                     <we-button data-select-class="sct_img_effect2">Effect 2</we-button>
-                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>
+                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>  
                     <we-button data-select-class="sct_img_effect4">Effect 4</we-button>
                     <we-button data-select-class="sct_img_effect5">Effect 5</we-button>
                 </we-select>
             </div>
         </xpath>
-    </template>
-    <template id="snippet_options" inherit_id="website.snippet_options"
+    </template> -->
+    <!-- <template id="snippet_options" inherit_id="website.snippet_options"
               name="scroll snippet options">
         <xpath expr="." position="inside">
             <div data-js="SaleLazyLoad" data-page-options="true"
@@ -1821,5 +1754,5 @@
                 </we-select>
             </div>
         </xpath>
-    </template>
+    </template> -->
 </odoo>

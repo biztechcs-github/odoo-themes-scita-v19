@@ -1107,7 +1107,7 @@
     </template>
 
     <template active="True" customize_show="False" id="theme_scita_products_item" inherit_id="website_sale.products_item" name="Scita Product item">
-        <xpath expr="//form/div[hasclass('oe_product_image')]" position="inside">
+            <xpath expr="//form/div[contains(@t-attf-class,'oe_product_image')]" position="inside">
             <div class="pwp-img">
                 <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
                     <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
@@ -1163,10 +1163,10 @@
         <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
             <t t-set="_classes" t-valuef="d-none d-lg-inline-block me-3"/>
         </xpath> -->
-        <xpath expr="//div[@id='o_wsale_container']/div[hasclass('row','o_wsale_products_main_row')]" position="attributes">
+        <xpath expr="//div[@id='o_wsale_container']/div[contains(@class, 'o_wsale_products_main_row')]" position="attributes">
             <attribute name="class">row o_wsale_products_main_row sct_shop_box</attribute>
         </xpath>
-        <xpath expr="//div[@id='wrap']//div[hasclass('oe_structure')]" position="before">
+        <xpath expr="//div[@id='wrap']//div[contains(@class, 'oe_structure')]" position="before">
             <section class="page-title">
                 <div class="container">
                     <h1 class='brandcum_title'>
@@ -1243,10 +1243,10 @@
         <!-- <xpath expr="//form//div[hasclass('o_wsale_product_information_text','flex-grow-1')]" position="attributes">
             <attribute name='class' remove="flex-grow-1" separator=" "></attribute>
         </xpath> -->
-        <xpath expr="//form//h6" position="attributes">
+        <!-- <xpath expr="//form//h6" position="attributes">
             <attribute name='class' remove="mb-2" separator=" "></attribute>
-        </xpath>
-        <xpath expr="//div[hasclass('o_wsale_product_sub', 'd-flex', 'align-items-center', 'justify-content-between','flex-nowrap', 'gap-3')]" position="attributes">
+        </xpath> -->
+        <xpath expr="//div[hasclass('o_wsale_product_sub','justify-content-between', 'gap-2')]" position="attributes">            
             <attribute name='class' add="justify-content-center" remove="justify-content-between" separator=" "/> 
         </xpath>
         <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
@@ -1255,12 +1255,12 @@
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
         </xpath>
-        <xpath expr="//div[hasclass('o_wsale_product_information', 'position-relative','d-flex','flex-grow-1', 'flex-shrink-1')]" position="attributes">
+         <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
             <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
             <attribute name='id'>sct_add_to_cart_hover</attribute>
         </xpath>
     </template>
-    <template id="scita_address_row" inherit_id="website_sale.address_row" name='Scita Row Address'>
+    <template id="scita_address_row" inherit_id="website_sale.address_list" name='Scita Row Address'>
         <xpath expr="//div" position="attributes">
             <attribute name='t-attf-class'>{{'all_billing' if is_invoice else 'all_shipping'}} row row-cols-md-2 row-cols-xl-3 g-3 flex-nowrap flex-md-wrap mb32</attribute>
         </xpath>
@@ -1530,7 +1530,7 @@
             <div class="timer_counter_div"></div>
         </xpath>
     </template>
-    <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.add_to_wishlist">
+    <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist">
         <xpath expr="//span[hasclass('fa','fa-heart')]" position="attributes">
             <attribute name='class'> lni lni-heart</attribute>
         </xpath>
@@ -1540,7 +1540,7 @@
     </template>
 
     <template id="inherit_add_to_compare" inherit_id="website_sale_comparison.add_to_compare">
-        <xpath expr="//button[hasclass('btn', 'btn-light', 'o_add_compare')]" position="attributes">
+        <xpath expr="//button[hasclass('btn', 'o_add_compare')]" position="attributes">
             <attribute name="class">btn btn-xs o_add_compare</attribute>
         </xpath>
     </template>
@@ -1617,14 +1617,10 @@
             <attribute name='class' remove="sct_not_add_to_cart" separator=" "/>
         </xpath>
     </template>
-    <template id="scita_shop_snippet_options" inherit_id="website_sale.snippet_options" name="Scita Shop Editor Options">
+    <!-- <template id="scita_shop_snippet_options" inherit_id="website_sale.snippet_options" name="Scita Shop Editor Options">
         <xpath expr="//we-button[@data-customize-website-views='website_sale.products_add_to_cart']" position="replace">
             <we-button title="Add to Cart" class="fa fa-fw fa-shopping-cart o_we_add_to_cart_btn" data-customize-website-views="website_sale.products_add_to_cart,theme_scita.scita_products_item_enable_add_cart" data-no-preview="true" data-reload="/"/>
        </xpath>
-    </template>
-    <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
-        <xpath expr="//a" position="after">
-        <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
-        </xpath>
-    </template>
+    </template> -->
+
 </odoo>

@@ -18,7 +18,7 @@
             </div>
         </section>
     </template>
-    <template id="deal_seller_slider_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="deal_seller_slider_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="deal_seller_multi_product_custom_snippet" data-selector=".deal_multi_product_slider"
                  data-snippet-option-id="deal_seller_multi_product_custom_snippet" data-drop-in=".timer_counter_div">
@@ -27,7 +27,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
 
     <template id="multi_deal_seller_slider_view" name="Deal Seller Product Snippet">
         <div class="container">
@@ -97,12 +97,14 @@
                                                         </div>
                                                         <p class="price">
                                                             <b>
-                                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                                     class="text-danger mr8 oe_compare_list_price">
+                                                                <del
+                                                                    name="product_price_strikethrough"
+                                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                                    class="text-muted ms-1 h5 oe_compare_list_price"
+                                                                >
                                                                     <bdi dir="inherit">
-                                                                        <span t-esc="combination_info['compare_list_price']"
-                                                                              groups="website_sale.group_product_price_comparison"
-                                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                    <span t-out="combination_info['compare_list_price']"
+                                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                                     </bdi>
                                                                 </del>
                                                                 <t t-if="True">
@@ -173,7 +175,7 @@
             </div>
         </section>
     </template>
-    <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="oe_deal_of_the_day" data-selector=".oe_deal_of_the_day">
                 <we-button class="dropdown-item oe_deal_of_the_day" tabindex="-1" href="#"
@@ -181,7 +183,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="theme_scita_deal_of_the_day_view" name="Deal of the day 6">
         <div class="container">
             <div class="deal_day_wrap">
@@ -215,8 +217,8 @@
                                     <a t-att-href="deal_product.website_url">
                                         <img class="img img-fluid" t-att-alt="deal_product.name"
                                              t-att-title="deal_product.name"
-                                             t-att-src="image_data_uri(deal_product.image_1920)"
-                                             t-att-data-default-img-src="image_data_uri(deal_product.image_1920)"/>
+                                             t-att-src="'/web/image/product.template/%s/image_1920' % deal_product.id"
+                                            />
                                     </a>
                                 </div>
                                 <div class="pwd-desc">
@@ -250,12 +252,14 @@
                                         </p>
                                         <p class="price">
                                             <b>
-                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                     class="text-danger mr8 oe_compare_list_price">
+                                                <del
+                                                    name="product_price_strikethrough"
+                                                    t-if="combination_info.get('compare_list_price') and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                    class="text-muted ms-1 h5 oe_compare_list_price"
+                                                >
                                                     <bdi dir="inherit">
-                                                        <span t-esc="combination_info['compare_list_price']"
-                                                              groups="website_sale.group_product_price_comparison"
-                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    <span t-out="combination_info['compare_list_price']"
+                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                     </bdi>
                                                 </del>
                                                 <t t-if="True">
@@ -354,7 +358,7 @@
                                             <input name="product_id" t-att-value="deal_product.product_variant_id.id"
                                                    type="hidden"/>
                                             <button class="button btn btn-cart a-submit cart_view_sct_btn s_add_to_cart_btn"
-                                                    t-att-data-id="deal_product.id">
+                                                    t-att-data-id="deal_product.id" t-att-data-template-id="deal_product.id">
                                                 <span class="lni lni-cart-1 cart_icon"></span>
                                                 <span class="add_to_cart_text">Add to cart</span>
                                             </button>
