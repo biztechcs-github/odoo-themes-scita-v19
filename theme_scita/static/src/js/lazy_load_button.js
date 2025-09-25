@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
-import { WebsiteSale } from '@website_sale/js/website_sale';
+import { WebsiteSale } from '@website_sale/interactions/website_sale';
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 
@@ -20,14 +20,12 @@ publicWidget.registry.LazyLoadButton = WebsiteSale.extend({
         this.ppg = parseInt(this.product_grid?.getAttribute('data-ppg'));
         this.product_count = this.product_grid?.querySelectorAll('.oe_product').length;
         this.offset = 0;
-        return this._super.apply(this, arguments);
     },
 
     start: function () {
         if (this.ppg === this.product_count) {
             document.querySelector('.s_ajax_load_btn').classList.remove('d-none');
         }
-        return this._super.apply(this, arguments);
     },
 
     _onClickLazyLoad: function (ev) {
