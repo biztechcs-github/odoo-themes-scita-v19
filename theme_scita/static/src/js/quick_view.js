@@ -2,10 +2,10 @@
 
 import animation from "@website/js/content/snippets.animation";
 import { rpc, RPCError } from '@web/core/network/rpc';
-import { WebsiteSale } from "@website_sale/js/website_sale";
+import { WebsiteSale } from '@website_sale/interactions/website_sale';
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 import publicWidget from "@web/legacy/js/public/public_widget";
-import VariantMixin from "@website_sale/js/sale_variant_mixin";
+import VariantMixin from '@website_sale/js/variant_mixin';
 import { cartHandlerMixin } from '@website_sale/js/website_sale_utils';
 // import {extraMenuUpdateCallbacks} from "@website/js/content/menu";
 // import '@website_sale_wishlist/js/website_sale_wishlist';

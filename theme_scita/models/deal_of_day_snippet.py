@@ -3,8 +3,6 @@
 
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import ValidationError
-from odoo.addons.web_editor.tools import get_video_embed_code, get_video_thumbnail
-
 
 class BannerImage(models.Model):
     _name = 'banner.image'

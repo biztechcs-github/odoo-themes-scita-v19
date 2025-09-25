@@ -230,7 +230,7 @@
         </xpath>
 
         <!--        hide price tag from wishlist page-->
-        <xpath expr="//table[@id='o_comparelist_table']//tr/td[3]" position="replace">
+        <!-- <xpath expr="//table[@id='o_comparelist_table']//tr/td[3]" position="replace">
 
             <td class="align-middle" t-if="combination_info['quote_request']">
                 <span>Not Available For Sale</span>
@@ -238,7 +238,7 @@
             <td class="align-middle" t-elif="combination_info['prevent_zero_price_sale']">
                 <span t-field="website.prevent_zero_price_sale_text"/>
             </td>
-        </xpath>
+        </xpath> -->
         <!--        now adding the Request Quote button in the comparison page based on the existing conditions-->
         <xpath expr="//a[hasclass('btn_cta')]" position="replace">
             <a t-if="combination_info['quote_request']" role="button" id="request_for_quote_button" data-bs-toggle="modal"

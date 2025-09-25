@@ -17,7 +17,7 @@
             </div>
         </section>
     </template>
-    <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options"
+    <!-- <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options"
               name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="custom_scita_product_category_slider"
@@ -28,7 +28,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
 
     <template id="custom_scita_cat_slider_view" name="Custom Product/Category Slider">
         <div class='container'>
@@ -606,7 +606,7 @@
             </div>
         </section>
     </template>
-    <template id="product_category_img_slider_config_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="product_category_img_slider_config_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="product_category_img_slider_config"
                  data-selector=".multi_product_and_category_slider"
@@ -616,7 +616,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="product_category_img_slider_config_view" name="Product And category Slider">
         <div class='product_category_scita'>
             <div class="container">
@@ -953,7 +953,7 @@
     <template id="timer_snippet_body" name="Timer">
         <div class="js_counter_timer" data-date="nan" data-msg='nun' data-mins-1="" data-disp="deal_days"/>
     </template>
-
+<!-- 
     <template id="timer_snippet_snippet_options" inherit_id="website.snippet_options">
         <xpath expr="." position="inside">
             <div data-js='js_counter_timer' data-selector=".js_counter_timer" data-drop-in=".timer_counter_div">
@@ -964,7 +964,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
 
     <template id='retail_multi_slider_products'>
         <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
@@ -1420,7 +1420,7 @@
             </div>
         </section>
     </template>
-    <template id="html_builder_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="html_builder_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="html_builder_snippet"
                  data-selector=".html_builder_new"
@@ -1430,7 +1430,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
 
 
     <!-- IT industry End -->
@@ -1792,7 +1792,7 @@
             </snippets>
         </xpath>
     </template>
-    <template id="scita_snippets_animation_effect_option" name="Animaion Effect Option"
+    <!-- <template id="scita_snippets_animation_effect_option" name="Animaion Effect Option"
               inherit_id="website.snippet_options">
         <xpath expr="." position="inside">
             <div id="main_snippets_animation_effect" data-selector="img" data-js="animaion_effect">
@@ -1800,42 +1800,14 @@
                     <we-button data-select-class="none_effect">Remove Effect</we-button>
                     <we-button data-select-class="sct_img_effect1">Effect 1</we-button>
                     <we-button data-select-class="sct_img_effect2">Effect 2</we-button>
-                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>  <t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-                    <t t-snippet="theme_scita.it_sign_up_newsletter"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
-                </t>
-                <t t-else=''>
-                    <t t-install="mass_mailing" string="Newsletter Snippet 1"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
-                </t>
-
-                <t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-                    <t t-snippet="theme_scita.retail_sign_up_newsletter"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
-                </t>
-                <t t-else=''>
-                    <t t-install="mass_mailing" string="Newsletter Snippet 3"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
-                </t>
-
-                <t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-                    <t t-snippet="theme_scita.newsletter_varient_5"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
-                </t>
-                <t t-else=''>
-                    <t t-install="mass_mailing" string="Newsletter Snippet 5"
-                       t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
-                </t>
+                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>  
                     <we-button data-select-class="sct_img_effect4">Effect 4</we-button>
                     <we-button data-select-class="sct_img_effect5">Effect 5</we-button>
                 </we-select>
             </div>
         </xpath>
-    </template>
-    <template id="snippet_options" inherit_id="website.snippet_options"
+    </template> -->
+    <!-- <template id="snippet_options" inherit_id="website.snippet_options"
               name="scroll snippet options">
         <xpath expr="." position="inside">
             <div data-js="SaleLazyLoad" data-page-options="true"
@@ -1852,5 +1824,5 @@
                 </we-select>
             </div>
         </xpath>
-    </template>
+    </template> -->
 </odoo>

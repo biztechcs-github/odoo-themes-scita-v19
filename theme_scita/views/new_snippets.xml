@@ -175,7 +175,7 @@
             </div>
         </section>
     </template>
-    <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
+    <!-- <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="oe_deal_of_the_day" data-selector=".oe_deal_of_the_day">
                 <we-button class="dropdown-item oe_deal_of_the_day" tabindex="-1" href="#"
@@ -183,7 +183,7 @@
                 </we-button>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <template id="theme_scita_deal_of_the_day_view" name="Deal of the day 6">
         <div class="container">
             <div class="deal_day_wrap">

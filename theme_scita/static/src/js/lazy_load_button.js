@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
 import publicWidget from "@web/legacy/js/public/public_widget";
-import { WebsiteSale } from '@website_sale/js/website_sale';
+import { WebsiteSale } from '@website_sale/interactions/website_sale';
 import { _t } from "@web/core/l10n/translation";
 import { rpc } from "@web/core/network/rpc";
 

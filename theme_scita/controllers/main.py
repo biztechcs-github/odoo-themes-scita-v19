@@ -981,7 +981,7 @@ class ScitaShop(WebsiteSale):
                 # This is ~4 times more efficient than a search for the cheapest and most expensive products
 
                 query = Product._search(domain)
-                Product._apply_ir_rules(query, 'read')
+                # Product._apply_ir_rules(query, 'read')
                 sql = query.select(
                     SQL(
                         "COALESCE(MIN(list_price), 0) * %(conversion_rate)s, COALESCE(MAX(list_price), 0) * %(conversion_rate)s",
@@ -1442,7 +1442,7 @@ class ScitaShop(WebsiteSale):
             domain = self._get_shop_domain(search, category, attrib_values)
 
             query = Product._search(domain)
-            Product._apply_ir_rules(query, 'read')
+            # Product._apply_ir_rules(query, 'read')
             sql = query.select(
                 SQL(
                     "COALESCE(MIN(list_price), 0) * %(conversion_rate)s, COALESCE(MAX(list_price), 0) * %(conversion_rate)s",

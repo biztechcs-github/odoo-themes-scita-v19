@@ -5,7 +5,7 @@
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com/',
     'category': 'Theme/Ecommerce',
-    'version': '1.0',
+    'version': '19.0.0.0',
     'license': 'OPL-1',
     'description': '''Theme Scita
 Business theme
@@ -123,7 +123,7 @@ publish unpublish product
         'views/my_account_changes.xml',
         'views/new_snippets.xml',
         'views/shop_page_attribute.xml',
-        'views/theme_cusomization.xml',
+        # 'views/theme_cusomization.xml',
         'views/bulk_buy_product_discount.xml',
         'views/snippets/snippets.xml',  
         'views/snippets/test_snippet.xml',
@@ -131,8 +131,8 @@ publish unpublish product
         'views/playground_template.xml',
         'views/brand_template.xml',
         'views/playground_preview.xml',
-        'views/request_quote_custom_templates.xml',
-        'views/request_for_quote_views.xml',
+        # 'views/request_quote_custom_templates.xml',
+        # 'views/request_for_quote_views.xml',
         'views/similar_products.xml',
     ],
     'support': 'support@appjetty.com',
@@ -199,10 +199,10 @@ publish unpublish product
             'theme_scita/static/src/js/timer_editor.js',
             '/theme_scita/static/src/xml/**/*',
         ],
-        'website.assets_editor': [
-          'theme_scita/static/src/xml/scita_header_option.xml',
-          'theme_scita/static/src/xml/scita_footer_option.xml',
-        ],
+        # 'website.assets_editor': [
+        #   'theme_scita/static/src/xml/scita_header_option.xml',
+        #   'theme_scita/static/src/xml/scita_footer_option.xml',
+        # ],
         'website.website_builder_assets': [
             'theme_scita/static/src/js/snippet/fashionMultiCatSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dynamicVideoSnippetPlugin.js',
@@ -213,8 +213,11 @@ publish unpublish product
             'theme_scita/static/src/js/snippet/trendingProductsModifyPlugin.js',
             'theme_scita/static/src/js/snippet/googleMapSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/blogSnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/JsCounterTimerPlugin.js',
             'theme_scita/static/src/xml/theme_scita.xml',
             'theme_scita/static/src/xml/s_google_snippet_modal.xml',
+            'theme_scita/static/src/xml/scita_header_option.xml',
+            'theme_scita/static/src/xml/scita_footer_option.xml',
         ],
     }
 }

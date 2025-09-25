@@ -5,8 +5,14 @@
         <xpath expr="//snippets[@id='snippet_content']" position='inside'>
 
             <!-- banner snippets -->
+            <t t-snippet="theme_scita.timer_snippet_body" t-thumbnail="/theme_scita/static/src/img/snippet_icon/timer.png" name="Style 2" priority="2"/>
+            <t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_1.svg"/>
+                <t t-snippet="theme_scita.deal_of_day_banner_3"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_3.png"/>
+                <t t-snippet="theme_scita.deal_of_day_banner_5"
+                   t-thumbnail="/theme_scita/static/src/img/snippet_icon/deal-of-the-day-5.png"/>
             <t t-snippet="theme_scita.dynamic_video_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/video-banner.png"/>
-
 
             <!-- Multi product tab slidres -->
             <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>

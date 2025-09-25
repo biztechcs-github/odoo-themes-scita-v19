@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
+    <!-- <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-end')]" position="attributes">
             <attribute name='class' add="o_hidden" separator=" "/>
         </xpath>
-    </template>
+    </template> -->
     <template active="False" id="option_footer_1" inherit_id="website.layout" name='Scita footer 1'>
         <xpath expr="//div[@id='footer']" position="replace">
             <div id="footer" class="oe_structure oe_structure_solo" t-if="not no_footer">
@@ -675,21 +675,20 @@
         </xpath>
     </template>
     <!-- Copyright Footer -->
-     <!-- Copyright Footer -->
-    
+        
     <template active='False' id="footer_copyright_structure_display_none" inherit_id="portal.frontend_layout" name="Footer Copyright Display Off">
         <xpath expr="//div[hasclass('o_footer_copyright')]" position="attributes">
             <attribute name='class'>o_hidden</attribute>
         </xpath>
     </template>
-    <template active='False' id="footer_copyright_option_display_none" inherit_id="website.snippet_options" name="Footer Copyright editor opt Off">
+    <!-- <template active='False' id="footer_copyright_option_display_none" inherit_id="website.snippet_options" name="Footer Copyright editor opt Off">
         <xpath expr="//div[@data-selector='#wrapwrap > footer']//we-checkbox[@data-name='footer_copyright_opt']" position="attributes">
             <attribute name='class'>o_hidden</attribute>
         </xpath>
         <xpath expr="//div[@data-selector='#wrapwrap > footer']//we-checkbox[@data-dependencies='!footer_copyright_opt']" position="attributes">
             <attribute name='class'>o_hidden</attribute>
         </xpath>
-    </template>
+    </template> -->
     <template id="custom_template_footer_default" inherit_id="website.footer_custom" name='Custom Custom Footer'>
         <xpath expr="//footer[@id='bottom']" position="attributes">
             <attribute name="t-attf-class" add="cst_default_footer_1 cst_default_footer" separator=" "/>
