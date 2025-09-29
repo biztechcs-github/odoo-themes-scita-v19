@@ -1530,14 +1530,14 @@
             <div class="timer_counter_div"></div>
         </xpath>
     </template>
-    <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist">
+    <!-- <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist">
         <xpath expr="//span[hasclass('fa','fa-heart')]" position="attributes">
             <attribute name='class'> lni lni-heart</attribute>
         </xpath>
         <xpath expr="//button[hasclass('btn', 'btn-light', 'o_add_wishlist')]" position="attributes"> 
             <attribute name="class">btn btn-xs o_add_wishlist</attribute>
         </xpath>
-    </template>
+    </template> -->
 
     <template id="inherit_add_to_compare" inherit_id="website_sale_comparison.add_to_compare">
         <xpath expr="//button[hasclass('btn', 'o_add_compare')]" position="attributes">
