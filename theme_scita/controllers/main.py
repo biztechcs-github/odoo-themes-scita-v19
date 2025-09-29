@@ -1051,7 +1051,7 @@ class ScitaShop(WebsiteSale):
 
             fiscal_position_sudo = request.fiscal_position
             products_prices = lazy(lambda: products._get_sales_prices(website))
-
+            product_query_params = self._get_product_query_params(**post)
             prod_available = {}
             for prod in products:
                 variants_available = {
@@ -1095,8 +1095,11 @@ class ScitaShop(WebsiteSale):
                 'get_product_prices': lambda product: lazy(lambda: products_prices[product.id]),
                 'float_round': tools.float_round,
                 'brand_set': brand_set,
+                'product_query_params': product_query_params,
                 'prod_available': prod_available,
-                'result': result
+                'result': result,
+                 'previewed_attribute_values': lazy(
+                lambda: products._get_previewed_attribute_values(category, product_query_params),),
             }
             if filter_by_price_enabled:
                 values['min_price'] = min_price or available_min_price
