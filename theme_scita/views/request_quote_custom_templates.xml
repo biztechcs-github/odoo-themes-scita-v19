@@ -197,7 +197,7 @@
             <t t-call="theme_scita.request_for_quote_modal"/>
         </xpath>
         <!--        hide price tag from comparison page-->
-        <xpath expr="//*[hasclass('o_comparison_price')]" position="replace">
+        <xpath expr="//span[@t-if=&quot;not combination_info['prevent_zero_price_sale']&quot;]" position="replace">
             <span class="o_comparison_price" t-if="combination_info['quote_request']">
                 <strong>Not Available For Sale</strong>
             </span>
@@ -206,7 +206,7 @@
             </span>
         </xpath>
         <!--        now adding the Request Quote button in the comparison page based on the existing conditions-->
-        <xpath expr="//div[hasclass('text-center')]//a" position="replace">
+        <xpath expr="//div[hasclass('mt-auto')]" position="replace">
             <a t-if="combination_info['quote_request']" role="button" id="request_for_quote_button" data-bs-toggle="modal"
                data-bs-target="#cfp_pop_up"
                href="#" class="btn btn-primary btn_cta">

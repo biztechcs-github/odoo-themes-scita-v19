@@ -218,6 +218,7 @@ publish unpublish product
             'theme_scita/static/src/xml/s_google_snippet_modal.xml',
             'theme_scita/static/src/xml/scita_header_option.xml',
             'theme_scita/static/src/xml/scita_footer_option.xml',
+            'theme_scita/static/src/xml/aaa.xml',
         ],
     }
 }

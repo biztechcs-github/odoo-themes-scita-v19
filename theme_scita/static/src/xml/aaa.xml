@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension">
+        <xpath expr="//h6/small" position="replace">
+            <span class="" t-if="combination_info['quote_request']">
+                <strong>Not Available For Sale</strong>
+            </span>
+        </xpath>
+    </t>
+</templates>
