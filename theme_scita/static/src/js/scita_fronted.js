@@ -198,8 +198,8 @@ $(document).ready(function(){
                         if ($('#wrapwrap').hasClass('o_rtl')) {
                             sct_rtl = true;
                         }
-                        var WebsiteSale = new publicWidget.registry.WebsiteSale();
-                        WebsiteSale.init();
+                        // var WebsiteSale = new publicWidget.registry.WebsiteSale();
+                        // WebsiteSale.init();
                         rpc('/theme_scita/product_multi_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {

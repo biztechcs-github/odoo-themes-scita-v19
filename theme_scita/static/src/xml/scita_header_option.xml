@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-inherit="website.headerTemplateOption" t-inherit-mode="extension">
+    <t t-inherit="website.HeaderTemplateOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect" position="inside">
         <BuilderSelectItem
             title.translate="Scita Header 1"

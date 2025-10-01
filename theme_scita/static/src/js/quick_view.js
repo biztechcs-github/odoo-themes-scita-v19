@@ -28,13 +28,13 @@ publicWidget.registry.quickView = publicWidget.Widget.extend({
         var product_id = $(element).attr('data-id');
         this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
         rpc('/theme_scita/shop/quick_view',{'product_id':product_id}).then(function(data) {
-            var sale = new publicWidget.registry.WebsiteSale();
+            var WebsiteSale = publicWidget.registry.WebsiteSale;
 
                     $("#shop_quick_view_modal").html(data);
                     $("#shop_quick_view_modal").modal('show');
-                    var WebsiteSale = new publicWidget.registry.WebsiteSale();
+                    // var WebsiteSale =  publicWidget.registry.WebsiteSale;
                     // var ProductWishlist = new publicWidget.registry.ProductWishlist();
-                    WebsiteSale.init();
+                    // WebsiteSale.init();
                     // ProductWishlist.init();
                     var combination = [];
                     $(".quick_cover").css("display", "block");
@@ -42,6 +42,7 @@ publicWidget.registry.quickView = publicWidget.Widget.extend({
                         WebsiteSale.onChangeVariant(ev);
                     });
                     $("a.js_add_cart_json").on("click", function(ev) {
+                        console.log('aaaaaaaa')
                         WebsiteSale._onChangeQuantity(ev);
                     });
                     $("#add_to_cart").on("click", function(ev) {
@@ -49,15 +50,15 @@ publicWidget.registry.quickView = publicWidget.Widget.extend({
                     });
 
 
-                    // $("button.o_add_wishlist_dyn").on("click",function(ev){
-                    //     this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
-                    //     ProductWishlist._onClickAddWish(ev);
-                    //     ProductWishlist._onChangeVariant(ev);
-                    // });
+                    $("button.o_add_wishlist_dyn").on("click",function(ev){
+                        this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
+                        ProductWishlist._onClickAddWish(ev);
+                        ProductWishlist._onChangeVariant(ev);
+                    });
 
 
                 $(document).on('change', 'input[name="add_qty"]', function(ev){
-                    WebsiteSale._onChangeAddQuantity(ev);
+                    websiteSaleInstance._onChangeAddQuantity(ev);
                 });
                 $( ".list-inline-item .css_attribute_color" ).change(function(ev) {
                     var $parent = $(ev.target).closest('.js_product');

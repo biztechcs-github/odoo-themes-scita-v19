@@ -136,7 +136,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <p class="price">
+                                                                        <!-- <p class="price">
                                                                             <b>
                                                                                 <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
                                                                                     class="text-danger mr8 oe_compare_list_price">
@@ -153,7 +153,7 @@
                                                                                 <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
                                                                                 <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                                                                             </b>
-                                                                        </p>
+                                                                        </p> -->
                                                                         <t t-foreach="product.valid_product_template_attribute_line_ids" t-as="ptal">
                                                                             <t t-if="ptal.attribute_id.display_type == 'color'">
                                                                                 <ul t-att-data-attribute_id="ptal.attribute_id.id" t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-none d-xl-flex"
@@ -216,7 +216,6 @@
                                                                         </t> 
                                                                     </div>
                                                                     <div class="sct-hover-info product_price ajax_cart_template">
-                                                                        <form action="/shop/cart/update" method="post">
                                                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                                                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
                                                                             <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids">
@@ -239,7 +238,6 @@
                                                                                     <span class="lni lni-heart"></span>
                                                                                 </a>
                                                                             </t>
-                                                                        </form>
                                                                     </div>
                                                                 </div>
                                                             </div>

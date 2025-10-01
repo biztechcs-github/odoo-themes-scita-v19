@@ -293,7 +293,9 @@
                                             <a t-attf-href="/blog/#{slug(other_blog_slide.blog_id)}/post/#{slug(other_blog_slide)}" class="read_link">
                                                 <h3 class='sct_blog_name' t-out="other_blog_slide.name"/>
                                                 <p class="blog-content">
-                                                    <t t-out="other_blog_slide.subtitle[:65]+'...'"/>
+                                                     <t t-if="first_blog_slide.subtitle">
+                                                        <t t-out="first_blog_slide.subtitle[:150] + '...'"/>
+                                                    </t>
                                                 </p>
                                             </a>
 
