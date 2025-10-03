@@ -230,7 +230,7 @@
         </xpath>
 
         <!--        hide price tag from wishlist page-->
-        <xpath expr="//table[@id='o_comparelist_table']//tr/td[3]" position="replace">
+        <xpath expr="//div[@id='o_comparelist_table']//article//br" position="replace">
 
             <td class="align-middle" t-if="combination_info['quote_request']">
                 <span>Not Available For Sale</span>

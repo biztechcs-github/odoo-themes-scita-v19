@@ -159,7 +159,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     def get_teams_data(self):
-        employee = request.env['hr.employee'].sudo().search(
+        employee = request.env['res.partner'].sudo().search(
             [('include_inourteam', '=', 'True')])
         values = {
             'employee': employee,

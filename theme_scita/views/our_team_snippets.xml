@@ -29,7 +29,7 @@
                                     <div class="name">
                                         <h3 class='sct_title' t-esc="cust_employees.name"/>
                                         <p class='sct_simple_text'>
-                                            <span t-esc="cust_employees.job_id.name"/>
+                                            <span t-esc="cust_employees.function"/>
                                         </p>
                                     </div>
                                     <div class="follow">
@@ -80,7 +80,7 @@
                         <div class="name">
                             <h3 class='sct_title' t-esc="cust_employees.name"/>
                             <h4 class='sct_job_desig'>
-                                <span t-esc="cust_employees.job_id.name"/>
+                                <span t-esc="cust_employees.function"/>
                             </h4>
                         </div>
                     </div>     
@@ -133,7 +133,7 @@
                         <div class="name">
                             <h3 class='sct_title' t-esc="cust_employees.name"/>
                             <h4 class='sct_job_desig sct_blue_line'>
-                                <span t-esc="cust_employees.job_id.name"/>
+                                <span t-esc="cust_employees.function"/>
                             </h4>
                         </div>
                     </div>     

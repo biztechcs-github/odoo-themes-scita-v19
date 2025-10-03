@@ -830,12 +830,12 @@
                                                                        t-att-value="slide.product_variant_id.id"
                                                                        type="hidden"/>
                                                                 <!-- <div class="qvp-btn" id="quick_view_product"> -->
-                                                                <button type="button" role="button"
+                                                                <!-- <button type="button" role="button"
                                                                         id="quick_view_product"
                                                                         class="btn scita_cstm_btn quick_view_sct_btn qbtn"
                                                                         title="Quick View" t-att-data-id="slide.id">
                                                                     <span class="lni lni-eye"/>
-                                                                </button>
+                                                                </button> -->
                                                                 <!-- </div> -->
                                                                 <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and slide.product_variant_ids">
                                                                     <a class="btn btn-xs o_add_compare" role="button"

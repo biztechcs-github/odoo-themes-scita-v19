@@ -353,8 +353,6 @@
                                         </t>
                                     </div>
                                     <div class="sct-hover-info product_price ajax_cart_template">
-                                        <form action="/shop/cart/update" method="post">
-                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                             <input name="product_id" t-att-value="deal_product.product_variant_id.id"
                                                    type="hidden"/>
                                             <button class="button btn btn-cart a-submit cart_view_sct_btn s_add_to_cart_btn"
@@ -385,7 +383,6 @@
                                                 </a>
                                             </t>
 
-                                        </form>
                                     </div>
                                 </div>
                             </div>
