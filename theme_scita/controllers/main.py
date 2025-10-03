@@ -1261,7 +1261,42 @@ class ScitaShop(WebsiteSale):
             "theme_scita.sct_dynamic_banner_video_1", values)
 
     # Dynamic video banner url get End
+    @http.route('/shop/compare/get_product_data', type='json', auth='public', website=True)
+    def get_product_data(self, product_ids):
+        # Call the original method if needed
+        # products_data = super().get_product_data(product_ids)  # Only if original is in a class you can inherit
+        # For safety, let's rewrite and extend
 
+        products = request.env['product.product'].search([('id', 'in', product_ids)])
+        product_data = []
+
+        for product in products:
+            combination_info = product._get_combination_info_variant()
+            product_data_item = {
+                'id': product.id,
+                'display_name': combination_info['display_name'],
+                'website_url': product.website_url,
+                'image_url': product._get_image_1024_url(),
+                'price': combination_info['price'],
+                'prevent_zero_price_sale': combination_info['prevent_zero_price_sale'],
+                'currency_id': combination_info['currency'].id,
+                # ✅ New field for quote request
+                'quote_request': bool(product.quote_request),  # assuming you have a boolean field in product
+            }
+
+            if combination_info['has_discounted_price']:
+                product_data_item['strikethrough_price'] = combination_info['list_price']
+            elif (
+                combination_info.get('compare_list_price')
+                and combination_info['compare_list_price'] > combination_info['price']
+            ):
+                product_data_item['strikethrough_price'] = combination_info['compare_list_price']
+
+            product_data.append(product_data_item)
+
+        return product_data
+
+        
     @http.route(['/shop/cart/update_custom'], type='jsonrpc', auth="public", methods=['GET', 'POST'], website=True,
                 csrf=False)
     def cart_update_custom(self, product_id, add_qty=1, set_qty=0, **kw):

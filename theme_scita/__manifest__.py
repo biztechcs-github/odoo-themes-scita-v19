@@ -192,6 +192,9 @@ publish unpublish product
              'theme_scita/static/src/scss/button/button_styles.scss'),
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/product_hover_effect.scss'),
+            'theme_scita/static/src/xml/aaa.xml',
+            # 'theme_scita/static/src/js/test.js',
+
         ],
         'website.assets_wysiwyg': [
             'theme_scita/static/src/js/scita_editor.js',
@@ -218,7 +221,6 @@ publish unpublish product
             'theme_scita/static/src/xml/s_google_snippet_modal.xml',
             'theme_scita/static/src/xml/scita_header_option.xml',
             'theme_scita/static/src/xml/scita_footer_option.xml',
-            'theme_scita/static/src/xml/aaa.xml',
         ],
     }
 }

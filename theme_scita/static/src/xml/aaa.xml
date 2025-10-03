@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension">
-        <xpath expr="//h6/small" position="replace">
-            <span class="" t-if="combination_info['quote_request']">
-                <strong>Not Available For Sale</strong>
-            </span>
+        <xpath expr="//small" position="replace">
+            <t t-log="props"/>
+            <small t-if="props.quote_request" class="mb-0 text-body text-danger">
+        Not Available for Sale
+            </small>
+
+            <!-- Else show price if sale is allowed -->
+            <small t-elif="!props.prevent_zero_price_sale" class="mb-0 text-body">
+                <span t-out="formattedPrice" class="me-1 text-nowrap"/>
+                <del t-if="props.strikethrough_price" t-out="formattedStrikethroughPrice" class="text-nowrap text-muted" />
+            </small>
         </xpath>
     </t>
 </templates>

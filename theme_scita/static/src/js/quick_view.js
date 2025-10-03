@@ -502,188 +502,325 @@
 
 // registry.category("public.interactions").add("theme_scita.quick_view", QuickView);
 /** @odoo-module **/
+/** @odoo-module **/
 
-import { Interaction } from '@web/public/interaction';
-import { registry } from '@web/core/registry';
 import { rpc } from '@web/core/network/rpc';
-import wSaleUtils from '@website_sale/js/website_sale_utils';
-import VariantMixin from '@website_sale/js/variant_mixin';
+import wSaleUtils from "@website_sale/js/website_sale_utils";
+import publicWidget from '@web/legacy/js/public/public_widget';
+import wishlistUtils from '@website_sale_wishlist/js/website_sale_wishlist_utils';
 
-export class QuickView extends Interaction {
-    static selector = "#wrapwrap";
+odoo.define('theme_scita.quick_view', [], function(require) {
+    'use strict';
 
-    dynamicContent = {
-        ".quick_view_sct_btn": { "t-on-click": this.quickViewData },
-        ".cart_view_sct_btn": { "t-on-click": this.cartViewData },
-        ".css_attribute_color": { "t-on-click": this.onClickSwatch },
-        "a.js_add_cart_json": { "t-on-click": this.onClickAdd },
-        ".o_add_qty, .o_remove_qty": { "t-on-click": this.onChangeQuantity },
-        "input[name='add_qty']": { "t-on-change": this.onChangeAddQuantity },
-    };
+    publicWidget.registry.quickView = publicWidget.Widget.extend({
+        selector: "#wrapwrap",
+        events: {
+            'click .quick_view_sct_btn': 'quickViewData',
+            'click .cart_view_sct_btn': 'cartViewData',
+            "click .css_attribute_color": "_onMouseEnterSwatch",
+        },
 
-    setup() {
-        super.setup();
-        this.cart = this.env.services.cart; // Odoo 19 cart service
-    }
+        //----------------------------------------------------------------------
+        // Quick View Modal
+        //----------------------------------------------------------------------
+        quickViewData: function(ev) {
+            const element = ev.currentTarget;
+            const product_id = $(element).attr('data-id');
 
-    // ------------------------------
-    // Add to cart
-    // ------------------------------
-    async onClickAdd(ev) {
-        const el = ev.currentTarget;
-        const form = this._getClosestProductForm(el);
-        debugger;
-        if (form?.querySelector(".js_add_cart_variants")?.children?.length) {
-            await this.waitFor(this._getCombinationInfo(ev));
-            if (!ev.target.closest(".js_product")?.classList.contains("css_not_available")) {
-                return this._addToCart(el);
+            rpc('/theme_scita/shop/quick_view', { product_id }).then((data) => {
+                $("#shop_quick_view_modal").html(data).modal("show");
+
+                $(".quick_cover").css("display", "block");
+
+                //------------------------------------------------------------------
+                // Add to Cart (Ajax, no refresh)
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
+                    .on("click", "a.js_add_cart_json, #add_to_cart", async function(ev) {
+                        ev.preventDefault();
+                        const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
+
+                        // Collect values
+                        const params = {
+                            product_id: parseInt(form.querySelector("input[name=product_id]").value),
+                            quantity: parseFloat(form.querySelector("input[name=add_qty]")?.value || 1),
+                            line_id: false
+                        };
+
+                        // Call Odoo ajax cart route
+                        await rpc("/shop/cart/update", params);
+
+                        // Update cart navbar icon
+                        await wSaleUtils.updateCartNavBar();
+                    });
+
+                //------------------------------------------------------------------
+                // Wishlist Button
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").off("click", "button.o_add_wishlist_dyn")
+                    .on("click", "button.o_add_wishlist_dyn", async function(ev) {
+                        ev.preventDefault();
+                        const el = ev.currentTarget;
+                        const form = wSaleUtils.getClosestProductForm(el);
+                        let productId = parseInt(el.dataset.productProductId);
+
+                        if (!productId) {
+                            productId = await rpc('/sale/create_product_variant', {
+                                product_template_id: parseInt(el.dataset.productTemplateId),
+                                product_template_attribute_value_ids: wSaleUtils.getSelectedAttributeValues(form),
+                            });
+                        }
+
+                        if (!productId || wishlistUtils.getWishlistProductIds().includes(productId)) return;
+
+                        await rpc('/shop/wishlist/add', { product_id: productId });
+                        wishlistUtils.addWishlistProduct(productId);
+                        wishlistUtils.updateWishlistNavBar();
+                        wishlistUtils.updateDisabled(el, true);
+
+                        wSaleUtils.animateClone(
+                            $(document.querySelector('.o_wsale_my_wish')),
+                            $(document.querySelector('#product_detail_main') ?? el.closest('.o_cart_product') ?? form),
+                            25,
+                            40
+                        );
+                    });
+
+                //------------------------------------------------------------------
+                // Quantity Change
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").on("change", ".js_main_product input[name='add_qty']", function(ev) {
+                    // Just trigger change, WebsiteSale listens inside page,
+                    // but here we can refresh price explicitly if needed
+                    $(ev.currentTarget).closest("form").trigger("change");
+                });
+
+                //------------------------------------------------------------------
+                // Variant Change
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").on("change", "[data-attribute_exclusions]", function(ev) {
+                    $(ev.currentTarget).closest("form").trigger("change");
+                });
+
+                // Highlight active swatch
+                $("#shop_quick_view_modal").on("change", ".list-inline-item .css_attribute_color", function(ev) {
+                    const $parent = $(ev.target).closest('.js_product');
+                    $parent.find('.css_attribute_color').removeClass("active");
+                    $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
+                });
+            });
+        },
+
+        //----------------------------------------------------------------------
+        // Color Swatch Preview
+        //----------------------------------------------------------------------
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('#product_detail');
+            const $img = $product.find('img').first();
+            this.defaultSrc = $img.attr('data-default-img-src');
+            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            if (previewSrc) {
+                $img.attr('src', previewSrc);
+                $swatch.addClass("active");
             }
-        } else {
-            return this._addToCart(el);
-        }
-    }
+        },
 
-    async _addToCart(el) {
-        const form = this._getClosestProductForm(el);
+        //----------------------------------------------------------------------
+        // Cart View Modal
+        //----------------------------------------------------------------------
+        cartViewData: function(ev) {
+            const element = ev.currentTarget;
+            const product_id = $(element).attr('data-id');
+            rpc('/theme_scita/shop/cart_view', { product_id }).then(function(data) {
+                $("#shop_cart_view_modal").html(data).modal("show");
+            });
+        },
+    });
+});
 
-        // fallback if form is missing (e.g., quick view modal)
-        if (!form && !el.dataset.productId) {
-            console.warn("No product form or data-product-id found for add to cart button", el);
-            return;
-        }
 
-        const isBuyNow = el.classList.contains("o_we_buy_now");
-        const isConfigured = el.parentElement?.id === "add_to_cart_wrap";
-        const showQuantity = Boolean(el.dataset.showQuantity);
+// import { Interaction } from '@web/public/interaction';
+// import { registry } from '@web/core/registry';
+// import { rpc } from '@web/core/network/rpc';
+// import wSaleUtils from '@website_sale/js/website_sale_utils';
+// import VariantMixin from '@website_sale/js/variant_mixin';
 
-        // Use _updateRootProduct to prepare the rootProduct object
-        if (form) {
-            this._updateRootProduct(form);
-        } else {
-            // fallback if form is missing, build minimal product object
-            this.rootProduct = {
-                productId: parseInt(el.dataset.productId, 10),
-                quantity: parseFloat(el.dataset.quantity || 1),
-            };
-        }
+// export class QuickView extends Interaction {
+//     static selector = "#wrapwrap";
 
-        return this.cart.add(this.rootProduct, {
-            isBuyNow,
-            isConfigured,
-            showQuantity,
-        });
-    }
+//     dynamicContent = {
+//         ".quick_view_sct_btn": { "t-on-click": this.quickViewData },
+//         ".cart_view_sct_btn": { "t-on-click": this.cartViewData },
+//         ".css_attribute_color": { "t-on-click": this.onClickSwatch },
+//         "a.js_add_cart_json": { "t-on-click": this.onClickAdd },
+//         ".o_add_qty, .o_remove_qty": { "t-on-click": this.onChangeQuantity },
+//         "input[name='add_qty']": { "t-on-change": this.onChangeAddQuantity },
+//     };
 
-    // ------------------------------
-    // Helpers
-    // ------------------------------
-    _getClosestProductForm(el) {
-        return el.closest("form.js_product");
-    }
+//     setup() {
+//         super.setup();
+//         this.cart = this.env.services.cart; // Odoo 19 cart service
+//     }
 
-    _updateRootProduct(form) {
-        // Follows Odoo 19 WebsiteSale pattern
-        const productId = parseInt(form.querySelector('input[name="product_id"]')?.value);
-        const quantity = parseFloat(form.querySelector('input[name="add_qty"]')?.value || 1);
-        const productTemplateId = parseInt(form.querySelector('input[name="product_template_id"]')?.value);
-        const uomId = form.querySelector('input[name="product_uom_id"]')?.value;
+//     // ------------------------------
+//     // Add to cart
+//     // ------------------------------
+//     async onClickAdd(ev) {
+//         const el = ev.currentTarget;
+//         const form = this._getClosestProductForm(el);
+//         debugger;
+//         if (form?.querySelector(".js_add_cart_variants")?.children?.length) {
+//             await this.waitFor(this._getCombinationInfo(ev));
+//             if (!ev.target.closest(".js_product")?.classList.contains("css_not_available")) {
+//                 return this._addToCart(el);
+//             }
+//         } else {
+//             return this._addToCart(el);
+//         }
+//     }
 
-        const isCombo = form.querySelector('input[name="product_type"]')?.value === 'combo';
-        this.rootProduct = {
-            ...(productId ? { productId } : {}),
-            ...(productTemplateId ? { productTemplateId } : {}),
-            ...(quantity ? { quantity } : {}),
-            ...(uomId ? { uomId } : {}),
-            ptavs: this._getSelectedPTAV(form),
-            productCustomAttributeValues: this._getCustomPTAVValues(form),
-            noVariantAttributeValues: this._getSelectedNoVariantPTAV(form),
-            ...(isCombo ? { isCombo } : {}),
-        };
-    }
+//     async _addToCart(el) {
+//         const form = this._getClosestProductForm(el);
 
-    _getSelectedPTAV(form) {
-        const selected = form.querySelectorAll('input.js_variant_change:not(.no_variant):checked, select.js_variant_change:not(.no_variant)');
-        return Array.from(selected).map(el => parseInt(el.value));
-    }
+//         // fallback if form is missing (e.g., quick view modal)
+//         if (!form && !el.dataset.productId) {
+//             console.warn("No product form or data-product-id found for add to cart button", el);
+//             return;
+//         }
 
-    _getCustomPTAVValues(form) {
-        const customEls = form.querySelectorAll('.variant_custom_value');
-        return Array.from(customEls).map(el => ({
-            custom_product_template_attribute_value_id: parseInt(el.dataset.customProductTemplateAttributeValueId),
-            custom_value: el.value,
-        }));
-    }
+//         const isBuyNow = el.classList.contains("o_we_buy_now");
+//         const isConfigured = el.parentElement?.id === "add_to_cart_wrap";
+//         const showQuantity = Boolean(el.dataset.showQuantity);
 
-    _getSelectedNoVariantPTAV(form) {
-        const selected = form.querySelectorAll('input.no_variant.js_variant_change:checked, select.no_variant.js_variant_change');
-        return Array.from(selected).map(el => parseInt(el.value));
-    }
+//         // Use _updateRootProduct to prepare the rootProduct object
+//         if (form) {
+//             this._updateRootProduct(form);
+//         } else {
+//             // fallback if form is missing, build minimal product object
+//             this.rootProduct = {
+//                 productId: parseInt(el.dataset.productId, 10),
+//                 quantity: parseFloat(el.dataset.quantity || 1),
+//             };
+//         }
 
-    // ------------------------------
-    // Quantity change
-    // ------------------------------
-    onChangeQuantity(ev) {
-        const input = ev.currentTarget.closest('.input-group').querySelector('input');
-        const min = parseFloat(input.dataset.min || 0);
-        const max = parseFloat(input.dataset.max || Infinity);
-        const previousQty = parseFloat(input.value || 0);
-        const quantity = (ev.currentTarget.name === "remove_one" ? -1 : 1) + previousQty;
-        const newQty = Math.min(Math.max(quantity, min), max);
+//         return this.cart.add(this.rootProduct, {
+//             isBuyNow,
+//             isConfigured,
+//             showQuantity,
+//         });
+//     }
 
-        if (newQty !== previousQty) {
-            input.value = newQty;
-            input.dispatchEvent(new Event("change", { bubbles: true }));
-        }
-    }
+//     // ------------------------------
+//     // Helpers
+//     // ------------------------------
+//     _getClosestProductForm(el) {
+//         return el.closest("form.js_product");
+//     }
 
-    onChangeAddQuantity(ev) {
-        const form = this._getClosestProductForm(ev.currentTarget);
-        if (form) {
-            const productId = form.querySelector('input[name="product_id"]')?.value;
-            const qty = parseFloat(ev.currentTarget.value || 1);
-            if (qty > 0) this.cart.update(productId, { quantity: qty });
-        }
-    }
+//     _updateRootProduct(form) {
+//         // Follows Odoo 19 WebsiteSale pattern
+//         const productId = parseInt(form.querySelector('input[name="product_id"]')?.value);
+//         const quantity = parseFloat(form.querySelector('input[name="add_qty"]')?.value || 1);
+//         const productTemplateId = parseInt(form.querySelector('input[name="product_template_id"]')?.value);
+//         const uomId = form.querySelector('input[name="product_uom_id"]')?.value;
 
-    // ------------------------------
-    // Quick View Modal
-    // ------------------------------
-    async quickViewData(ev) {
-        const productId = ev.currentTarget.dataset.id;
-        const data = await rpc("/theme_scita/shop/quick_view", { product_id: productId });
+//         const isCombo = form.querySelector('input[name="product_type"]')?.value === 'combo';
+//         this.rootProduct = {
+//             ...(productId ? { productId } : {}),
+//             ...(productTemplateId ? { productTemplateId } : {}),
+//             ...(quantity ? { quantity } : {}),
+//             ...(uomId ? { uomId } : {}),
+//             ptavs: this._getSelectedPTAV(form),
+//             productCustomAttributeValues: this._getCustomPTAVValues(form),
+//             noVariantAttributeValues: this._getSelectedNoVariantPTAV(form),
+//             ...(isCombo ? { isCombo } : {}),
+//         };
+//     }
 
-        const modal = document.querySelector("#shop_quick_view_modal");
-        modal.innerHTML = data;
-        const myModal = new Modal(modal);
-        myModal.show();
-    }
+//     _getSelectedPTAV(form) {
+//         const selected = form.querySelectorAll('input.js_variant_change:not(.no_variant):checked, select.js_variant_change:not(.no_variant)');
+//         return Array.from(selected).map(el => parseInt(el.value));
+//     }
 
-    async cartViewData(ev) {
-        const productId = ev.currentTarget.dataset.id;
-        const data = await rpc("/theme_scita/shop/cart_view", { product_id: productId });
+//     _getCustomPTAVValues(form) {
+//         const customEls = form.querySelectorAll('.variant_custom_value');
+//         return Array.from(customEls).map(el => ({
+//             custom_product_template_attribute_value_id: parseInt(el.dataset.customProductTemplateAttributeValueId),
+//             custom_value: el.value,
+//         }));
+//     }
 
-        const modal = document.querySelector("#shop_cart_view_modal");
-        modal.innerHTML = data;
-        const myModal = new Modal(modal);
-        myModal.show();
-    }
+//     _getSelectedNoVariantPTAV(form) {
+//         const selected = form.querySelectorAll('input.no_variant.js_variant_change:checked, select.no_variant.js_variant_change');
+//         return Array.from(selected).map(el => parseInt(el.value));
+//     }
 
-    onClickSwatch(ev) {
-        const swatch = ev.currentTarget;
-        const product = swatch.closest("#product_detail");
-        const img = product.querySelector("img");
-        const previewSrc = swatch.querySelector("label")?.dataset.previewImgSrc;
+//     // ------------------------------
+//     // Quantity change
+//     // ------------------------------
+//     onChangeQuantity(ev) {
+//         const input = ev.currentTarget.closest('.input-group').querySelector('input');
+//         const min = parseFloat(input.dataset.min || 0);
+//         const max = parseFloat(input.dataset.max || Infinity);
+//         const previousQty = parseFloat(input.value || 0);
+//         const quantity = (ev.currentTarget.name === "remove_one" ? -1 : 1) + previousQty;
+//         const newQty = Math.min(Math.max(quantity, min), max);
 
-        if (img && previewSrc) {
-            img.src = previewSrc;
-            product.querySelectorAll(".css_attribute_color").forEach(el => el.classList.remove("active"));
-            swatch.classList.add("active");
-        }
-    }
-}
+//         if (newQty !== previousQty) {
+//             input.value = newQty;
+//             input.dispatchEvent(new Event("change", { bubbles: true }));
+//         }
+//     }
 
-// Apply VariantMixin if needed
-Object.assign(QuickView.prototype, VariantMixin);
+//     onChangeAddQuantity(ev) {
+//         const form = this._getClosestProductForm(ev.currentTarget);
+//         if (form) {
+//             const productId = form.querySelector('input[name="product_id"]')?.value;
+//             const qty = parseFloat(ev.currentTarget.value || 1);
+//             if (qty > 0) this.cart.update(productId, { quantity: qty });
+//         }
+//     }
 
-registry.category("public.interactions").add("theme_scita.quick_view", QuickView);
+//     // ------------------------------
+//     // Quick View Modal
+//     // ------------------------------
+//     async quickViewData(ev) {
+//         const productId = ev.currentTarget.dataset.id;
+//         const data = await rpc("/theme_scita/shop/quick_view", { product_id: productId });
+
+//         const modal = document.querySelector("#shop_quick_view_modal");
+//         modal.innerHTML = data;
+//         const myModal = new Modal(modal);
+//         myModal.show();
+//     }
+
+//     async cartViewData(ev) {
+//         const productId = ev.currentTarget.dataset.id;
+//         const data = await rpc("/theme_scita/shop/cart_view", { product_id: productId });
+
+//         const modal = document.querySelector("#shop_cart_view_modal");
+//         modal.innerHTML = data;
+//         const myModal = new Modal(modal);
+//         myModal.show();
+//     }
+
+//     onClickSwatch(ev) {
+//         const swatch = ev.currentTarget;
+//         const product = swatch.closest("#product_detail");
+//         const img = product.querySelector("img");
+//         const previewSrc = swatch.querySelector("label")?.dataset.previewImgSrc;
+
+//         if (img && previewSrc) {
+//             img.src = previewSrc;
+//             product.querySelectorAll(".css_attribute_color").forEach(el => el.classList.remove("active"));
+//             swatch.classList.add("active");
+//         }
+//     }
+// }
+
+// // Apply VariantMixin if needed
+// Object.assign(QuickView.prototype, VariantMixin);
+
+// registry.category("public.interactions").add("theme_scita.quick_view", QuickView);
 

@@ -482,30 +482,7 @@
                 </BuilderSelect>
             </BuilderRow>
         </xpath>
-        
-    </t>
-  <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension">
-        <xpath expr="//h6/small" position="after">
-            <span class="" t-if="combination_info['quote_request']">
-                <strong>Not Available For Sale</strong>
-            </span>
-        </xpath>
-    </t>
- 
- <!-- <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension"> -->
-    <!-- Dummy element to allow styling this specific option container with .o_wsale_products_list_page_options -->
-        <!-- <xpath expr="//small[t-if=&quot;!props.prevent_zero_price_sale&quot;]" position="replace"> -->
-        <!-- <xpath expr="//small[hasclass('text-body')]" position="replace">
-            <span class="" t-if="combination_info['quote_request']">
-                <strong>Not Available For Sale</strong>
-            </span>
-        </xpath> -->
-        <!-- <xpath expr="//small[t-if=&quot;!props.prevent_zero_price_sale&quot;]" position="replace">
-            <span class="" t-if="combination_info['quote_request']">
-                <strong>Not Available For Sale</strong>
-            </span>
-        </xpath> -->
-    <!-- </t> -->
+</t>
 </templates>
 
 
