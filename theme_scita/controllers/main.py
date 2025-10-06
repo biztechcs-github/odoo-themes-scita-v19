@@ -14,7 +14,9 @@ from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL, float_round, groupby
+import logging
 
+_logger = logging.getLogger(__name__)
 class WebsiteAutocomplate(Website):
 
     @http.route('/website/snippet/autocomplete', type='jsonrpc', auth='public', website=True, readonly=True)
@@ -1296,7 +1298,176 @@ class ScitaShop(WebsiteSale):
 
         return product_data
 
+    # @http.route('/custom/cart/add_or_update', type='json', auth='public', methods=['POST'], website=True)
+    # def add_or_update_cart(self, product_id, quantity=1):
+    #     """
+    #     Adds or updates a product in the cart (Odoo 19 compatible)
+    #     Returns line_id and full cart
+    #     """
+    #     try:
+    #         product_id = int(product_id)
+    #         quantity = float(quantity)
+    #         website = request.env['website'].get_current_website()
+
+    #         # Step 1: Get or create current draft sale order (cart)
+    #         SaleOrder = request.env['sale.order'].sudo()
+    #         sale_order = SaleOrder.search([
+    #             ('website_id', '=', website.id),
+    #             ('state', '=', 'draft'),
+    #             ('partner_id', '=', request.env.user.partner_id.id),
+    #         ], limit=1)
+
+    #         if not sale_order:
+    #             sale_order = SaleOrder.create({
+    #                 'partner_id': request.env.user.partner_id.id,
+    #                 'website_id': website.id,
+    #             })
+
+    #         # Step 2: Check if product already in cart
+    #         line = next(
+    #             (l for l in sale_order.order_line if l.product_id.id == product_id),
+    #             None
+    #         )
+
+    #         if line:
+    #             # Update quantity
+    #             line.sudo().write({'product_uom_qty': line.product_uom_qty + quantity})
+    #             line_id = line.id
+    #         else:
+    #             # Add new line
+    #             product = request.env['product.product'].sudo().browse(product_id)
+    #             if not product.exists():
+    #                 return {'error': 'Product not found'}
+
+    #             # Create a new sale order line
+    #             line = request.env['sale.order.line'].sudo().create({
+    #                 'order_id': sale_order.id,
+    #                 'product_id': product.id,
+    #                 'product_uom_qty': quantity,
+    #                 'price_unit': product.lst_price,
+    #             })
+    #             line_id = line.id
+
+    #         # Step 3: Return cart lines (simplified)
+    #         cart_json = [{
+    #             'line_id': l.id,
+    #             'product_id': l.product_id.id,
+    #             'name': l.product_id.display_name,
+    #             'quantity': l.product_uom_qty,
+    #             'price_unit': l.price_unit,
+    #             'subtotal': l.price_subtotal,
+    #         } for l in sale_order.order_line]
+
+    #         return {'success': True, 'line_id': line_id, 'cart': cart_json}
+
+    #     except Exception as e:
+    #         _logger.exception("Error in add_or_update_cart")
+    #         return {'error': str(e)}
         
+    @http.route('/custom/cart/add_or_update', type='json', auth='public', methods=['POST'], website=True)
+    def add_or_update_cart(self, product_id, quantity=1):
+        """
+        Adds or updates a product in the cart (Odoo 19 compatible)
+        Supports incremental quantity (+/-) and returns full cart values for navbar update
+        """
+        try:
+            product_id = int(product_id)
+            quantity = float(quantity)
+            website = request.env['website'].get_current_website()
+            partner_id = request.env.user.partner_id.id
+
+            # Step 1: Get or create current draft sale order (cart)
+            SaleOrder = request.env['sale.order'].sudo()
+            sale_order = SaleOrder.search([
+                ('website_id', '=', website.id),
+                ('state', '=', 'draft'),
+                ('partner_id', '=', partner_id),
+            ], limit=1)
+
+            if not sale_order:
+                sale_order = SaleOrder.create({
+                    'partner_id': partner_id,
+                    'website_id': website.id,
+                })
+
+            # Step 2: Check if product already in cart
+            line = next((l for l in sale_order.order_line if l.product_id.id == product_id), None)
+
+            if line:
+                print("line found", line.product_uom_qty, quantity)
+                # Increment or decrement quantity
+                new_qty = line.product_uom_qty + quantity
+                print("new_qty", new_qty)
+                if new_qty <= 0:
+                    # Remove line if quantity <= 0
+                    line.sudo().unlink()
+                    line_id = None
+                else:
+                    line.sudo().write({'product_uom_qty': new_qty})
+                    line_id = line.id
+            else:
+                if quantity <= 0:
+                    # Do not add product if quantity <= 0
+                    return {'error': 'Cannot add zero or negative quantity.'}
+
+                # Add new line
+                product = request.env['product.product'].sudo().browse(product_id)
+                if not product.exists():
+                    return {'error': 'Product not found'}
+                print("product/*****/*/********/*/*/*/*/*/**/*/*/**/*/*/*/*/*/*/*/**/***/*/**/", quantity)
+                line = request.env['sale.order.line'].sudo().create({
+                    'order_id': sale_order.id,
+                    'product_id': product.id,
+                    'product_uom_qty': quantity,
+                    'price_unit': product.lst_price,
+                })
+                line_id = line.id
+
+            # Step 3: Prepare full /shop/cart/update compatible response
+            order_sudo = sale_order.sudo()
+            IrUiView = request.env['ir.ui.view']
+
+            # Use existing _cart_update_line_quantity to get proper values
+            if line_id:
+                cart_values = order_sudo._cart_update_line_quantity(
+                    line_id,
+                    order_sudo.order_line.filtered(lambda l: l.id == line_id)[0].product_uom_qty
+                )
+            else:
+                cart_values = {}
+
+            cart_values.update({
+                'line_id': line_id,
+                'cart_quantity': order_sudo.cart_quantity,
+                'cart_ready': order_sudo._is_cart_ready(),
+                'amount': order_sudo.amount_total,
+                'minor_amount': int(order_sudo.currency_id.round(order_sudo.amount_total) * 100),
+                'website_sale.cart_lines': IrUiView._render_template(
+                    'website_sale.cart_lines', {
+                        'website_sale_order': order_sudo,
+                        'date': fields.Date.today(),
+                        'suggested_products': order_sudo._cart_accessories()
+                    }
+                ),
+                'website_sale.total': IrUiView._render_template(
+                    'website_sale.total', {
+                        'website_sale_order': order_sudo,
+                    }
+                ),
+                'website_sale.quick_reorder_history': IrUiView._render_template(
+                    'website_sale.quick_reorder_history', {
+                        'website_sale_order': order_sudo,
+                    }
+                )
+            })
+            print("cart_values****************", cart_values)
+            return cart_values
+
+        except Exception as e:
+            _logger.exception("Error in add_or_update_cart")
+            return {'error': str(e)}
+
+
     @http.route(['/shop/cart/update_custom'], type='jsonrpc', auth="public", methods=['GET', 'POST'], website=True,
                 csrf=False)
     def cart_update_custom(self, product_id, add_qty=1, set_qty=0, **kw):

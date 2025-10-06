@@ -131,7 +131,7 @@
 // // // //             'click .cart_view_sct_btn': 'cartViewData',
 // // // //             "click .css_attribute_color": "_onMouseEnterSwatch",
 // // // //             // "click .css_attribute_color": "_onMouseLeave",
-            
+
 // // // //         },
 // // // //         quickViewData: function(ev) {
 // // // //             var element = ev.currentTarget;
@@ -183,10 +183,10 @@
 // // // //             const $img = $product.find('img').first();      
 // // // //             console.log("Swatch mouse enter event triggered", $swatch, $img);
 // // // //             console.log($product,"<<<<<<<<<<<<<<<<<<< Product", );
-            
-                  
+
+
 // // // //             // this.image= $img;
-        
+
 // // // //             this.defaultSrc = $img.attr('data-default-img-src');      
 // // // //             console.log("Default image source:", this.defaultSrc);
 // // // //             const previewSrc = $swatch.find('label').data('previewImgSrc');
@@ -197,11 +197,11 @@
 // // // //             //     $swatch.addClass("active");
 // // // //             // }
 // // // //         },
-        
+
 // // // //         // _onMouseLeave: function () {
 // // // //         //      this._updateImgSrc(this.defaultSrc,this.image);
 // // // //         // },
-        
+
 // // // //         // _updateImgSrc: function (src, $img) {        
 // // // //         //     if ($img && src) {
 // // // //         //         $img.attr('src', src);
@@ -508,8 +508,9 @@ import { rpc } from '@web/core/network/rpc';
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 import publicWidget from '@web/legacy/js/public/public_widget';
 import wishlistUtils from '@website_sale_wishlist/js/website_sale_wishlist_utils';
+import { redirect } from '@web/core/utils/urls';
 
-odoo.define('theme_scita.quick_view', [], function(require) {
+odoo.define('theme_scita.quick_view', [], function (require) {
     'use strict';
 
     publicWidget.registry.quickView = publicWidget.Widget.extend({
@@ -520,96 +521,252 @@ odoo.define('theme_scita.quick_view', [], function(require) {
             "click .css_attribute_color": "_onMouseEnterSwatch",
         },
 
+
         //----------------------------------------------------------------------
         // Quick View Modal
         //----------------------------------------------------------------------
-        quickViewData: function(ev) {
+        quickViewData: function (ev) {
             const element = ev.currentTarget;
             const product_id = $(element).attr('data-id');
+            async function updateCartNavBar(data) {
+                sessionStorage.setItem('website_sale_cart_quantity', data.cart_quantity);
 
-            rpc('/theme_scita/shop/quick_view', { product_id }).then((data) => {
-                $("#shop_quick_view_modal").html(data).modal("show");
-
-                $(".quick_cover").css("display", "block");
-
-                //------------------------------------------------------------------
-                // Add to Cart (Ajax, no refresh)
-                //------------------------------------------------------------------
-                $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
-                    .on("click", "a.js_add_cart_json, #add_to_cart", async function(ev) {
-                        ev.preventDefault();
-                        const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
-
-                        // Collect values
-                        const params = {
-                            product_id: parseInt(form.querySelector("input[name=product_id]").value),
-                            quantity: parseFloat(form.querySelector("input[name=add_qty]")?.value || 1),
-                            line_id: false
-                        };
-
-                        // Call Odoo ajax cart route
-                        await rpc("/shop/cart/update", params);
-
-                        // Update cart navbar icon
-                        await wSaleUtils.updateCartNavBar();
-                    });
-
-                //------------------------------------------------------------------
-                // Wishlist Button
-                //------------------------------------------------------------------
-                $("#shop_quick_view_modal").off("click", "button.o_add_wishlist_dyn")
-                    .on("click", "button.o_add_wishlist_dyn", async function(ev) {
-                        ev.preventDefault();
-                        const el = ev.currentTarget;
-                        const form = wSaleUtils.getClosestProductForm(el);
-                        let productId = parseInt(el.dataset.productProductId);
-
-                        if (!productId) {
-                            productId = await rpc('/sale/create_product_variant', {
-                                product_template_id: parseInt(el.dataset.productTemplateId),
-                                product_template_attribute_value_ids: wSaleUtils.getSelectedAttributeValues(form),
-                            });
+                // Update navbar quantity
+                const cartQuantityElements = document.querySelectorAll('.my_cart_quantity');
+                for (const cartQuantityElement of cartQuantityElements) {
+                    if (data.cart_quantity === 0) {
+                        cartQuantityElement.classList.add('d-none');
+                    } else {
+                        const cartIconElement = document.querySelector('li.o_wsale_my_cart');
+                        if (cartIconElement) {
+                            cartIconElement.classList.remove('d-none');
                         }
+                        cartQuantityElement.classList.remove('d-none');
+                        cartQuantityElement.classList.add('o_mycart_zoom_animation');
+                        setTimeout(() => {
+                            cartQuantityElement.textContent = data.cart_quantity;
+                            cartQuantityElement.classList.remove('o_mycart_zoom_animation');
+                        }, 300);
+                    }
+                }
 
-                        if (!productId || wishlistUtils.getWishlistProductIds().includes(productId)) return;
+                // Update cart lines if exists
+                const cartLinesContainer = document.querySelector(".js_cart_lines");
+                if (cartLinesContainer) {
+                    $(cartLinesContainer).first().before(data['website_sale.cart_lines']).end().remove();
+                }
 
-                        await rpc('/shop/wishlist/add', { product_id: productId });
-                        wishlistUtils.addWishlistProduct(productId);
-                        wishlistUtils.updateWishlistNavBar();
-                        wishlistUtils.updateDisabled(el, true);
+                // Update total
+                const cartTotal = document.querySelector("#cart_total");
+                if (cartTotal) {
+                    $(cartTotal).replaceWith(data['website_sale.total']);
+                }
 
-                        wSaleUtils.animateClone(
-                            $(document.querySelector('.o_wsale_my_wish')),
-                            $(document.querySelector('#product_detail_main') ?? el.closest('.o_cart_product') ?? form),
-                            25,
-                            40
-                        );
+                // Adjust cart column if present
+                const cartContainer = document.querySelector('.oe_cart');
+                if (cartContainer) {
+                    cartContainer.classList.toggle('col-lg-7', !!data.cart_quantity);
+                }
+
+                // Enable/disable main checkout button
+                const mainButton = document.querySelector("a[name='website_sale_main_button']");
+                if (mainButton) {
+                    if (data.cart_ready) {
+                        mainButton.classList.remove('disabled');
+                    } else {
+                        mainButton.classList.add('disabled');
+                    }
+                }
+            }
+            // Update cart lines if exists
+            const cartLinesContainer = document.querySelector(".js_cart_lines");
+            if (cartLinesContainer) {
+                $(cartLinesContainer).first().before(data['website_sale.cart_lines']).end().remove();
+            }
+
+            // Update total
+            const cartTotal = document.querySelector("#cart_total");
+            if (cartTotal) {
+                $(cartTotal).replaceWith(data['website_sale.total']);
+            }
+
+            // Adjust cart column if present
+            const cartContainer = document.querySelector('.oe_cart');
+            if (cartContainer) {
+                cartContainer.classList.toggle('col-lg-7', !!data.cart_quantity);
+            }
+
+            // Enable/disable main checkout button
+            const mainButton = document.querySelector("a[name='website_sale_main_button']");
+            if (mainButton) {
+                if (data.cart_ready) {
+                    mainButton.classList.remove('disabled');
+                } else {
+                    mainButton.classList.add('disabled');
+                }
+            }
+
+            
+            rpc('/theme_scita/shop/quick_view', { product_id }).then((data) => {
+            $("#shop_quick_view_modal").html(data).modal("show");
+
+            $(".quick_cover").css("display", "block");
+
+            //------------------------------------------------------------------
+            // Add to Cart (Ajax, no refresh)
+            //------------------------------------------------------------------
+            // $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
+            //     .on("click", "a.js_add_cart_json, #add_to_cart", async function(ev) {
+            //         ev.preventDefault();
+
+            //         const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
+            //         const product_id = parseInt(form.querySelector("input[name=product_id]").value);
+            //         const quantity = parseFloat(form.querySelector("input[name=add_qty]")?.value || 1);
+
+            //         try {
+            //             const response = await rpc("/custom/cart/add_or_update", {
+            //                 product_id: product_id,
+            //                 quantity: quantity
+            //             });
+
+            //             if (response.error) {
+            //                 console.error("❌ Cart error:", response.error);
+            //                 return;
+            //             }
+
+            //             console.log("✅ Cart line_id:", response.line_id);
+            //             console.log("🛒 Updated cart:", response.cart);
+
+            //             const params = {
+            //                 product_id,
+            //                 quantity,
+            //                 line_id: response.line_id,
+            //             };
+            //             console.log("🔍 Updating cart with params:", params);
+
+            //             const data =  await rpc("/shop/cart/update", params);
+            //             console.log(data);
+
+            //             // Update cart navbar
+            //             await wSaleUtils.updateCartNavBar(data);  
+            //         } catch (err) {
+            //             console.error("❌ RPC call failed:", err);
+            //         }
+            //     });
+            $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
+            .on("click", "#add_to_cart", async function (ev) {
+                ev.preventDefault();
+
+                const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
+                const product_id = parseInt(form.querySelector("input[name=product_id]").value);
+                // const quantityInput = form.querySelector("input[name=add_qty]");
+                // const quantity = parseFloat(quantityInput?.value || 1);
+
+                let quantity = parseFloat(form.querySelector("input[name=add_qty]")?.value || 1);
+                    if (ev.currentTarget.classList.contains('fa-plus') || ev.currentTarget.id === 'add_to_cart') {
+                        quantity = 1;  // increment
+                    } else if (ev.currentTarget.classList.contains('fa-minus')) {
+                        quantity = -1; // decrement
+                    }
+                try {
+                    // Step 1: Add or update cart line via custom controller
+                    const response = await rpc("/custom/cart/add_or_update", {
+                        product_id: product_id,
+                        quantity: quantity
                     });
 
-                //------------------------------------------------------------------
-                // Quantity Change
-                //------------------------------------------------------------------
-                $("#shop_quick_view_modal").on("change", ".js_main_product input[name='add_qty']", function(ev) {
-                    // Just trigger change, WebsiteSale listens inside page,
-                    // but here we can refresh price explicitly if needed
-                    $(ev.currentTarget).closest("form").trigger("change");
-                });
+                    if (response.error) {
+                        console.error("❌ Cart error:", response.error);
+                        return;
+                    }
 
-                //------------------------------------------------------------------
-                // Variant Change
-                //------------------------------------------------------------------
-                $("#shop_quick_view_modal").on("change", "[data-attribute_exclusions]", function(ev) {
-                    $(ev.currentTarget).closest("form").trigger("change");
-                });
+                    const line_id = response.line_id;
+                    const qty = response.quantity;
+                    console.log("✅ Cart line_id:", line_id);
 
-                // Highlight active swatch
-                $("#shop_quick_view_modal").on("change", ".list-inline-item .css_attribute_color", function(ev) {
-                    const $parent = $(ev.target).closest('.js_product');
-                    $parent.find('.css_attribute_color').removeClass("active");
-                    $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
-                });
+                    // Step 2: Update cart via official Odoo 19 cart update
+                    const params = {
+                        product_id: product_id,
+                        quantity: qty,
+                        line_id: line_id
+                    };
+
+                    const data = await rpc("/shop/cart/update", params);
+
+                    // Step 3: Update cart navbar safely
+                    // await updateCartNavBar(data);
+
+                    // Optional: Update quantity input in modal
+                    if (quantityInput) {
+                        quantityInput.value = quantity;
+                    }
+
+                    // redirect('/shop/cart');
+                     window.location.href = "/shop/cart";
+
+                    console.log("✅ Product added to cart:", data);
+
+                } catch (err) {
+                    console.error("❌ RPC call failed:", err);
+                }
             });
-        },
+
+            //------------------------------------------------------------------
+            // Wishlist Button
+            //------------------------------------------------------------------
+            $("#shop_quick_view_modal").off("click", "button.o_add_wishlist_dyn")
+                .on("click", "button.o_add_wishlist_dyn", async function (ev) {
+                    ev.preventDefault();
+                    const el = ev.currentTarget;
+                    const form = wSaleUtils.getClosestProductForm(el);
+                    let productId = parseInt(el.dataset.productProductId);
+
+                    if (!productId) {
+                        productId = await rpc('/sale/create_product_variant', {
+                            product_template_id: parseInt(el.dataset.productTemplateId),
+                            product_template_attribute_value_ids: wSaleUtils.getSelectedAttributeValues(form),
+                        });
+                    }
+
+                    if (!productId || wishlistUtils.getWishlistProductIds().includes(productId)) return;
+
+                    await rpc('/shop/wishlist/add', { product_id: productId });
+                    wishlistUtils.addWishlistProduct(productId);
+                    wishlistUtils.updateWishlistNavBar();
+                    wishlistUtils.updateDisabled(el, true);
+
+                    wSaleUtils.animateClone(
+                        $(document.querySelector('.o_wsale_my_wish')),
+                        $(document.querySelector('#product_detail_main') ?? el.closest('.o_cart_product') ?? form),
+                        25,
+                        40
+                    );
+                });
+
+            //------------------------------------------------------------------
+            // Quantity Change
+            //------------------------------------------------------------------
+            $("#shop_quick_view_modal").on("change", ".js_main_product input[name='add_qty']", function (ev) {
+                // Just trigger change, WebsiteSale listens inside page,
+                // but here we can refresh price explicitly if needed
+                $(ev.currentTarget).closest("form").trigger("change");
+            });
+
+            //------------------------------------------------------------------
+            // Variant Change
+            //------------------------------------------------------------------
+            $("#shop_quick_view_modal").on("change", "[data-attribute_exclusions]", function (ev) {
+                $(ev.currentTarget).closest("form").trigger("change");
+            });
+
+            // Highlight active swatch
+            $("#shop_quick_view_modal").on("change", ".list-inline-item .css_attribute_color", function (ev) {
+                const $parent = $(ev.target).closest('.js_product');
+                $parent.find('.css_attribute_color').removeClass("active");
+                $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
+            });
+        });
+    },
 
         //----------------------------------------------------------------------
         // Color Swatch Preview
@@ -629,10 +786,10 @@ odoo.define('theme_scita.quick_view', [], function(require) {
         //----------------------------------------------------------------------
         // Cart View Modal
         //----------------------------------------------------------------------
-        cartViewData: function(ev) {
+        cartViewData: function (ev) {
             const element = ev.currentTarget;
             const product_id = $(element).attr('data-id');
-            rpc('/theme_scita/shop/cart_view', { product_id }).then(function(data) {
+            rpc('/theme_scita/shop/cart_view', { product_id }).then(function (data) {
                 $("#shop_cart_view_modal").html(data).modal("show");
             });
         },

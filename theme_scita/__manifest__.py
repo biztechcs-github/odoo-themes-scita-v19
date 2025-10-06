@@ -193,8 +193,6 @@ publish unpublish product
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/product_hover_effect.scss'),
             'theme_scita/static/src/xml/aaa.xml',
-            # 'theme_scita/static/src/js/test.js',
-
         ],
         'website.assets_wysiwyg': [
             'theme_scita/static/src/js/scita_editor.js',

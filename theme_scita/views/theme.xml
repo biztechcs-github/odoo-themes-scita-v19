@@ -1319,9 +1319,9 @@
         <xpath expr='//div[hasclass("offset-xxl-1", "col-lg-5", "col-xxl-4")]' position='attributes'>
              <attribute name='class'  remove="offset-xxl-1" separator=" "/>
         </xpath>
-        <!-- <xpath expr="//div[hasclass('oe_clear_stucture')]" position="attributes">
+        <xpath expr="//div[contains(@t-attf-class,'oe_clear_stucture')]" position="attributes">
              <attribute name='class' add="oe_cart col-12 col-lg-7 col-xl-8" separator=" "></attribute>
-        </xpath> -->
+        </xpath>
         <xpath expr="//div[hasclass('card-body', 'p-lg-4', 'pt-lg-3')]/div" position="attributes">
              <attribute name='class' add="len(website_sale_order.website_order_line) &gt; 4 and 'o_wsale_scrollable_table mt-n4 me-n4 pt-4 pe-4 custom_scroller'" separator=" "></attribute>
         </xpath>
