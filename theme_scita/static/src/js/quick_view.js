@@ -102,127 +102,141 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                 }
             }
 
-            
+
             rpc('/theme_scita/shop/quick_view', { product_id }).then((data) => {
-            $("#shop_quick_view_modal").html(data).modal("show");
+                $("#shop_quick_view_modal").html(data).modal("show");
 
-            $(".quick_cover").css("display", "block");
+                $(".quick_cover").css("display", "block");
 
-          
-            $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
-            .on("click", "#add_to_cart", async function (ev) {
-                ev.preventDefault();
+                //------------------------------------------------------------------
+                // Quantity + / - Buttons in Quick View Modal
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").off("click", ".js_quantity_plus, .js_quantity_minus")
+                    .on("click", ".js_quantity_plus, .js_quantity_minus", function (ev) {
+                        ev.preventDefault();
+                        const $btn = $(ev.currentTarget);
+                        const $input = $btn.closest('.js_main_product').find('input[name=\"add_qty\"]');
+                        let currentQty = parseFloat($input.val()) || 1;
 
-                const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
-                const product_id = parseInt(form.querySelector("input[name=product_id]").value);
-                const quantityInput = form.querySelector("input[name=add_qty]");
-                const quantity = parseFloat(quantityInput?.value || 1);
+                        if ($btn.hasClass('js_quantity_plus')) {
+                            currentQty += 1;
+                        } else if ($btn.hasClass('js_quantity_minus') && currentQty > 1) {
+                            currentQty -= 1;
+                        }
 
-                // let quantity = parseFloat(form.querySelector("input[name=add_qty]")?.value || 1);
-                //     if (ev.currentTarget.classList.contains('fa-plus') || ev.currentTarget.id === 'add_to_cart') {
-                //         quantity = 1;  // increment
-                //     } else if (ev.currentTarget.classList.contains('fa-minus')) {
-                //         quantity = -1; // decrement
-                //     }
-                try {
-                    // Step 1: Add or update cart line via custom controller
-                    const response = await rpc("/custom/cart/add_or_update", {
-                        product_id: product_id,
-                        quantity: quantity
+                        $input.val(currentQty).trigger('change');
                     });
 
-                    if (response.error) {
-                        console.error("❌ Cart error:", response.error);
-                        return;
-                    }
 
-                    const line_id = response.line_id;
-                    const qty = response.quantity;
-                    console.log("✅ Cart line_id:", line_id);
 
-                    // Step 2: Update cart via official Odoo 19 cart update
-                    const params = {
-                        product_id: product_id,
-                        quantity: qty,
-                        line_id: line_id
-                    };
+                $("#shop_quick_view_modal").off("click", "a.js_add_cart_json, #add_to_cart")
+                    .on("click", "#add_to_cart", async function (ev) {
+                        ev.preventDefault();
 
-                    const data = await rpc("/shop/cart/update", params);
+                        const form = wSaleUtils.getClosestProductForm(ev.currentTarget);
+                        const product_id = parseInt(form.querySelector("input[name=product_id]").value);
+                        const quantityInput = form.querySelector("input[name=add_qty]");
+                        const quantity = parseFloat(quantityInput?.value || 1);
 
-                    // Step 3: Update cart navbar safely
-                    await updateCartNavBar(data);
+                        try {
+                            // Step 1: Add or update cart line via custom controller
+                            const response = await rpc("/custom/cart/add_or_update", {
+                                product_id: product_id,
+                                quantity: quantity
+                            });
 
-                    // Optional: Update quantity input in modal
-                    if (quantityInput) {
-                        quantityInput.value = quantity;
-                    }
+                            if (response.error) {
+                                console.error("❌ Cart error:", response.error);
+                                return;
+                            }
 
-                    // redirect('/shop/cart');
-                     window.location.href = "/shop/cart";
+                            const line_id = response.line_id;
+                            const qty = response.quantity;
+                            console.log("✅ Cart line_id:", line_id);
 
-                    console.log("✅ Product added to cart:", data);
+                            // Step 2: Update cart via official Odoo 19 cart update
+                            const params = {
+                                product_id: product_id,
+                                quantity: qty,
+                                line_id: line_id
+                            };
 
-                } catch (err) {
-                    console.error("❌ RPC call failed:", err);
-                }
-            });
+                            const data = await rpc("/shop/cart/update", params);
 
-            //------------------------------------------------------------------
-            // Wishlist Button
-            //------------------------------------------------------------------
-            $("#shop_quick_view_modal").off("click", "button.o_add_wishlist_dyn")
-                .on("click", "button.o_add_wishlist_dyn", async function (ev) {
-                    ev.preventDefault();
-                    const el = ev.currentTarget;
-                    const form = wSaleUtils.getClosestProductForm(el);
-                    let productId = parseInt(el.dataset.productProductId);
+                            // Step 3: Update cart navbar safely
+                            // await updateCartNavBar(data);
 
-                    if (!productId) {
-                        productId = await rpc('/sale/create_product_variant', {
-                            product_template_id: parseInt(el.dataset.productTemplateId),
-                            product_template_attribute_value_ids: wSaleUtils.getSelectedAttributeValues(form),
-                        });
-                    }
+                            // Optional: Update quantity input in modal
+                            if (quantityInput) {
+                                quantityInput.value = quantity;
+                            }
 
-                    if (!productId || wishlistUtils.getWishlistProductIds().includes(productId)) return;
+                            // redirect('/shop/cart');
+                            window.location.href = "/shop/cart";
 
-                    await rpc('/shop/wishlist/add', { product_id: productId });
-                    wishlistUtils.addWishlistProduct(productId);
-                    wishlistUtils.updateWishlistNavBar();
-                    wishlistUtils.updateDisabled(el, true);
+                            console.log("✅ Product added to cart:", data);
 
-                    wSaleUtils.animateClone(
-                        $(document.querySelector('.o_wsale_my_wish')),
-                        $(document.querySelector('#product_detail_main') ?? el.closest('.o_cart_product') ?? form),
-                        25,
-                        40
-                    );
+                        } catch (err) {
+                            console.error("❌ RPC call failed:", err);
+                        }
+                    });
+
+                //------------------------------------------------------------------
+                // Wishlist Button
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").off("click", "button.o_add_wishlist_dyn")
+                    .on("click", "button.o_add_wishlist_dyn", async function (ev) {
+                        ev.preventDefault();
+                        const el = ev.currentTarget;
+                        const form = wSaleUtils.getClosestProductForm(el);
+                        let productId = parseInt(el.dataset.productProductId);
+
+                        if (!productId) {
+                            productId = await rpc('/sale/create_product_variant', {
+                                product_template_id: parseInt(el.dataset.productTemplateId),
+                                product_template_attribute_value_ids: wSaleUtils.getSelectedAttributeValues(form),
+                            });
+                        }
+
+                        if (!productId || wishlistUtils.getWishlistProductIds().includes(productId)) return;
+
+                        await rpc('/shop/wishlist/add', { product_id: productId });
+                        wishlistUtils.addWishlistProduct(productId);
+                        wishlistUtils.updateWishlistNavBar();
+                        wishlistUtils.updateDisabled(el, true);
+
+                        wSaleUtils.animateClone(
+                            $(document.querySelector('.o_wsale_my_wish')),
+                            $(document.querySelector('#product_detail_main') ?? el.closest('.o_cart_product') ?? form),
+                            25,
+                            40
+                        );
+                    });
+
+                //------------------------------------------------------------------
+                // Quantity Change
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").on("change", ".js_main_product input[name='add_qty']", function (ev) {
+                    // Just trigger change, WebsiteSale listens inside page,
+                    // but here we can refresh price explicitly if needed
+                    $(ev.currentTarget).closest("form").trigger("change");
                 });
 
-            //------------------------------------------------------------------
-            // Quantity Change
-            //------------------------------------------------------------------
-            $("#shop_quick_view_modal").on("change", ".js_main_product input[name='add_qty']", function (ev) {
-                // Just trigger change, WebsiteSale listens inside page,
-                // but here we can refresh price explicitly if needed
-                $(ev.currentTarget).closest("form").trigger("change");
-            });
+                //------------------------------------------------------------------
+                // Variant Change
+                //------------------------------------------------------------------
+                $("#shop_quick_view_modal").on("change", "[data-attribute_exclusions]", function (ev) {
+                    $(ev.currentTarget).closest("form").trigger("change");
+                });
 
-            //------------------------------------------------------------------
-            // Variant Change
-            //------------------------------------------------------------------
-            $("#shop_quick_view_modal").on("change", "[data-attribute_exclusions]", function (ev) {
-                $(ev.currentTarget).closest("form").trigger("change");
+                // Highlight active swatch
+                $("#shop_quick_view_modal").on("change", ".list-inline-item .css_attribute_color", function (ev) {
+                    const $parent = $(ev.target).closest('.js_product');
+                    $parent.find('.css_attribute_color').removeClass("active");
+                    $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
+                });
             });
-
-            // Highlight active swatch
-            $("#shop_quick_view_modal").on("change", ".list-inline-item .css_attribute_color", function (ev) {
-                const $parent = $(ev.target).closest('.js_product');
-                $parent.find('.css_attribute_color').removeClass("active");
-                $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
-            });
-        });
-    },
+        },
 
         //----------------------------------------------------------------------
         // Color Swatch Preview
