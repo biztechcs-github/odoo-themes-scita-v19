@@ -49,13 +49,6 @@
         <xpath expr="//div[@itemscope='itemscope']" position="replace"/>
     </template>
     <template id="theme_scita_product_details" inherit_id="website_sale.product" name="Product Details">
-        <!-- <xpath expr="//div[@itemscope='itemscope']" positin="replace"/> -->
-        <!-- <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="replace"/> -->
-        <!-- <xpath expr="//div[@id='product_details']//p[hasclass('css_not_available_msg','alert','alert-warning')]" position="replace"/> -->
-        <!-- <xpath expr="//div[@id='product_details']" position="attributes">
-<attribute name='t-attf-class'>position-relative position-lg-sticky o_wsale_sticky_object col</attribute>
-</xpath> -->
-        <!-- <xpath expr="//div[@id='product_details']/t[2]" position="replace"/> -->
         <xpath expr="//div[@id='product_full_description']" position="replace">
             <section class='sct-description-tab'>
                 <div class="container" id="website_description">
@@ -415,24 +408,24 @@ Wishlist
             <h1 class='sct-prod-name' itemprop="name" t-field="product.name">Product Name</h1>
                         <div class='sct-main-name-rating'>
             <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-            <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
-            <t t-set="prod_curr_rate" t-value="0"/>
-            <t t-set="is_half_star" t-value="0"/>
-            <t t-foreach="range(0, 5)" t-as="every_prod_rate">
-            <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
-            <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
-            <i class="fa fa-star"/>
-            </t>
-            <t t-else="">
-            <t t-if="rating_val % 1 &gt; 0.01 and rating_val % 1 &lt; 0.99 and is_half_star == 0">
-            <i class="fa fa-star-half-o"/>
-            <t t-set="is_half_star" t-value="1"/>
-            </t>
-            <t t-else="">
-            <i class="fa fa-star-o"/>
-            </t>
-            </t>
-            </t>
+                <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
+                <t t-set="prod_curr_rate" t-value="0"/>
+                <t t-set="is_half_star" t-value="0"/>
+                <t t-foreach="range(0, 5)" t-as="every_prod_rate">
+                <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
+                <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
+                    <i class="fa fa-star"/>
+                </t>
+                <t t-else="">
+                <t t-if="rating_val % 1 &gt; 0.01 and rating_val % 1 &lt; 0.99 and is_half_star == 0">
+                <i class="fa fa-star-half-o"/>
+                <t t-set="is_half_star" t-value="1"/>
+                </t>
+                <t t-else="">
+                <i class="fa fa-star-o"/>
+                </t>
+                </t>
+                </t>
             </ul>
             </div>
             <div class='sct-sku-display-div'>

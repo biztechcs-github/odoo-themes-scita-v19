@@ -1239,22 +1239,15 @@
     </template>
     
     <template id="products_rating" inherit_id="website_sale.products_item">
-         <!-- this xpath does not need in odov18  in base  already remove class-->
-        <!-- <xpath expr="//form//div[hasclass('o_wsale_product_information_text','flex-grow-1')]" position="attributes">
-            <attribute name='class' remove="flex-grow-1" separator=" "></attribute>
-        </xpath> -->
-        <!-- <xpath expr="//form//h6" position="attributes">
-            <attribute name='class' remove="mb-2" separator=" "></attribute>
-        </xpath> -->
         <xpath expr="//div[hasclass('o_wsale_product_sub','justify-content-between', 'gap-2')]" position="attributes">            
             <attribute name='class' add="justify-content-center" remove="justify-content-between" separator=" "/> 
         </xpath>
-        <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
+        <!-- <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
             <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
                 <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
-        </xpath>
+        </xpath> -->
          <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
             <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
             <attribute name='id'>sct_add_to_cart_hover</attribute>
@@ -1275,24 +1268,6 @@
         <xpath expr="//div[contains(@t-attf-class, 'd-none d-md-flex align-items-center gap-2')]" position="attributes">
             <attribute name='t-attf-class'>o_hidden</attribute>
         </xpath>
-        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='attributes'>
-            <attribute name='class' add="sct-price-wrap" separator=" "></attribute>
-        </xpath> -->
-        <!-- <xpath expr='//t[@t-set="show_qty"]' position='replace'>
-            <t t-set="show_qty" t-value="is_view_active('theme_scita.theme_scita_product_quantity')"/>
-        </xpath> -->
-        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='after'>
-            <div class='sct_remove_wrap'>
-                <a href='#'
-                   class="js_delete_product d-none d-md-inline-block small"
-                   aria-label="Remove from cart"
-                   title="Remove from cart">Remove</a>
-                <button class="js_delete_product btn btn-light d-inline-block d-md-none"
-                        title="remove">
-                    <i class="fa fa-trash-o"/>
-                </button>
-            </div>
-        </xpath> -->
     </template>
     <template  id="scita_19_cart_lines" inherit_id="website_sale.cart_lines_quantity" name='show quantity selector'>
         <xpath expr="//div[contains(@t-attf-class, 'css_quantity input-group justify-content-end h-100')]" position="attributes">
