@@ -396,9 +396,9 @@
 
    <!-- for hr employee -->
     <record id="theme_scita_inherited_employee_view" model="ir.ui.view">
-        <field name="name">hr employee</field>
-        <field name="model">hr.employee</field>
-        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="name">res partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//notebook[last()]" position="inside">
                 <page name="sliderinformation" string="Slider Configuration">

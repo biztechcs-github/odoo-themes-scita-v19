@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <!-- <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
+    <!-- <template id="footer_copyright_add_class" inherit_id="web.frontend_layout" name="Footer copyright add class">
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-end')]" position="attributes">
             <attribute name='class' add="o_hidden" separator=" "/>
         </xpath>
@@ -85,7 +85,7 @@
             </div>
         </xpath>
     </template>
-    <template active="False" id="scita_footer_copyright_with_payment" inherit_id="portal.frontend_layout" name='footer Copyright With Payment'>
+    <template active="False" id="scita_footer_copyright_with_payment" inherit_id="web.frontend_layout" name='footer Copyright With Payment'>
         <xpath expr="//div[hasclass('o_footer_copyright')]" position='attributes'>
             <attribute name='class' add="sct_ftr_copyright_main" separator=" "/>
         </xpath>
@@ -628,7 +628,7 @@
                                             <h4 class="links_title title-20">Newsletter</h4>
                                             <p>If you are unable to load any pages, check your comput.</p>
                                         </div>
-                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe_wrap js_subscribe"  data-list-id="0" data-name="Newsletter Form">
+                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe_wrap js_subscribe"  data-list-id="1" data-name="Newsletter Form">
                                             <div class="input-group js_subscribe_wrap">
                                                 <input type="email" name="email" class="js_subscribe_value form-control" placeholder="your email..."/>
                                                 <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_submit">Subscribe</a>

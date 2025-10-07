@@ -1,38 +1,42 @@
 /** @odoo-module **/
 
-import publicWidget from "@web/legacy/js/public/public_widget";
-import { WebsiteSale } from '@website_sale/interactions/website_sale';
-import VariantMixin from '@website_sale/js/variant_mixin';
+import { patch } from "@web/core/utils/patch";
+import { WebsiteSale } from "@website_sale/interactions/website_sale";
 
-    WebsiteSale.include({
-        events: Object.assign({}, WebsiteSale.prototype.events || {}, {
-        'click .o_bulk_price_btn': '_onBulkPriceClick',
-    }),
+patch(WebsiteSale.prototype, {
+    setup() {
+        super.setup();
+    },
 
-    _onBulkPriceClick: function (ev) {
+    events: {
+        ...WebsiteSale.prototype.events,
+        "click .o_bulk_price_btn": "_onBulkPriceClick",
+    },
+
+    _onBulkPriceClick(ev) {
         ev.preventDefault();
         $(".o_bulk_price_btn").removeClass("active");
         const $btn = $(ev.currentTarget).addClass("active");
-        const qty = parseInt($btn.attr('qty')) || 1;
-        const $parent = $btn.closest('.js_product');
+        const qty = parseInt($btn.attr("qty")) || 1;
+        const $parent = $btn.closest(".js_product");
         const $qtyInput = $parent.find('input[name="add_qty"]');
-        $qtyInput.val(qty).trigger('change');
+        $qtyInput.val(qty).trigger("change");
         this._getCombinationInfo(ev);
     },
 
-    _onChangeAddQuantity: function (ev) {
+    _onChangeAddQuantity(ev) {
         const $input = $(ev.currentTarget);
         const newQty = parseFloat($input.val() || 0, 10);
-        const $parent = $input.closest('.js_product');
-        $parent.find('.o_bulk_price_btn').removeClass('active');
-        $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass('active');
-        return this._super.apply(this, arguments);
+        const $parent = $input.closest(".js_product");
+        $parent.find(".o_bulk_price_btn").removeClass("active");
+        $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass("active");
+        return WebsiteSale.prototype._onChangeAddQuantity.call(this, ev);
     },
 
-    onClickAddCartJSON: function (ev) {
+    onClickAddCartJSON(ev) {
         ev.preventDefault();
         const $link = $(ev.currentTarget);
-        const $input = $link.closest('.input-group').find("input");
+        const $input = $link.closest(".input-group").find("input");
         const min = parseFloat($input.data("min") || 0);
         const max = parseFloat($input.data("max") || Infinity);
         const previousQty = parseFloat($input.val() || 0, 10);
@@ -40,10 +44,10 @@ import VariantMixin from '@website_sale/js/variant_mixin';
         const newQty = quantity > min ? (quantity < max ? quantity : max) : min;
 
         if (newQty !== previousQty) {
-            $input.val(newQty).trigger('change');
-            const $parent = $input.closest('.js_product');
-            $parent.find('.o_bulk_price_btn').removeClass('active');
-            $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass('active');
+            $input.val(newQty).trigger("change");
+            const $parent = $input.closest(".js_product");
+            $parent.find(".o_bulk_price_btn").removeClass("active");
+            $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass("active");
         }
         return false;
     },

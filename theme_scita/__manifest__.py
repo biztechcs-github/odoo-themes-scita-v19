@@ -69,7 +69,9 @@ publish unpublish product
         'website_sale_wishlist',
         'hr',
         'website_blog',
-        'website_sale_loyalty'
+        'website_sale_loyalty',
+        'html_editor',
+        'html_builder',
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -114,7 +116,6 @@ publish unpublish product
         'views/deal_of_the_day_config_view.xml',
         'views/snippets.xml',
         'views/product_details_template.xml',
-        # 'views/shop_page_amp_template.xml',
         'views/shop_by_category.xml',
         'views/deal_of_day_page.xml',
         'views/pwa_config_view.xml',
@@ -200,12 +201,19 @@ publish unpublish product
             'theme_scita/static/src/js/timer_editor.js',
             '/theme_scita/static/src/xml/**/*',
         ],
-        # 'website.assets_editor': [
-        #   'theme_scita/static/src/xml/scita_header_option.xml',
-        #   'theme_scita/static/src/xml/scita_footer_option.xml',
-        # ],
+        'website.assets_editor': [
+        ],
         'website.website_builder_assets': [
-            'theme_scita/static/src/js/snippet/fashionMultiCatSnippetPlugin.js',
+          'theme_scita/static/src/xml/scita_header_option.xml',
+          'theme_scita/static/src/xml/scita_footer_option.xml',
+        #   'theme_scita/static/src/xml/scita_editor_option.xml',
+            'theme_scita/static/src/js/fashion_plugin.js',
+            'theme_scita/static/src/js/product_category.js',
+            'theme_scita/static/src/js/category_slider.js',
+            'theme_scita/static/src/js/category_slider2.js',
+            'theme_scita/static/src/js/category_slider3.js',
+            'theme_scita/static/src/js/category_snippet.js',
+            # 'theme_scita/static/src/js/snippet/fashionMultiCatSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dynamicVideoSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dealSellerMultiProductSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dealOfTheDaySnippetPlugin.js',
@@ -214,11 +222,8 @@ publish unpublish product
             'theme_scita/static/src/js/snippet/trendingProductsModifyPlugin.js',
             'theme_scita/static/src/js/snippet/googleMapSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/blogSnippetPlugin.js',
-            'theme_scita/static/src/js/snippet/JsCounterTimerPlugin.js',
             'theme_scita/static/src/xml/theme_scita.xml',
             'theme_scita/static/src/xml/s_google_snippet_modal.xml',
-            'theme_scita/static/src/xml/scita_header_option.xml',
-            'theme_scita/static/src/xml/scita_footer_option.xml',
         ],
     }
 }

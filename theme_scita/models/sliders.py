@@ -114,7 +114,7 @@ class MultiSlider(models.Model):
 
 
 class HrEmployee(models.Model):
-    _inherit = "hr.employee"
+    _inherit = "res.partner"
 
     include_inourteam = fields.Boolean(
         string="Enable to make the employee visible in snippet")

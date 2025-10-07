@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-inherit="website.headerTemplateOption" t-inherit-mode="extension">
+    <t t-inherit="website.HeaderTemplateOption" t-inherit-mode="extension">
         <xpath expr="//BuilderSelect" position="inside">
         <BuilderSelectItem
             title.translate="Scita Header 1"
@@ -120,6 +120,71 @@
         </BuilderSelectItem>
         </xpath>
     </t>
+    <t t-name="product_category_img_slider_config_option">
+        <div data-js="multi_product_and_category_slider" data-selector=".multi_product_and_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'product_category_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_3_option">
+        <div data-js="cat_slider_3" data-selector=".cat_slider_3">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider1_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_4_option">
+        <div data-js="cat_slider_4" data-selector=".cat_slider_4">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider2_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="product_category_option">
+        <div data-js="oe_category_slider" data-selector=".oe_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'cat_slider3_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
+    <t t-name="theme_scita_category_slider_option">
+        <div data-js="oe_category_slider" data-selector=".oe_category_slider">
+            <BuilderButtonGroup>
+                <BuilderButton 
+                    action="'category_snippet_modifyBtn'" 
+                    title.translate="Modify" 
+                    icon="'fa fa-edit'" 
+                    actionParam="'open'">
+                    Modify
+                </BuilderButton>
+            </BuilderButtonGroup>
+        </div>
+    </t>
 
 <!-- 1. Define your new builder option template -->
 <t t-name="fashion_multi_cat_custom_snippet">
@@ -177,6 +242,14 @@
         </BuilderButtonGroup>
     </div>
 </t>
+
+    <!-- <template id="brands_box_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="brands_box_slider_4" data-selector=".box_brand_slider" data-snippet-option-id="brands_box_slider_4">
+                <we-button class="dropdown-item box_brand_slider" tabindex="-1" href="#" data-box_brand_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
 
 <t t-name="brands_box_option">
     <div data-js="brands_box_slider_4" data-selector=".brands_box_slider_4">
@@ -263,6 +336,14 @@
     </div>
 </t>
 
+    <!-- <template id="theme_scita_blog_slider_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="theme_scita_blog_custom_snippet" data-selector=".scita_blog_slider" data-snippet-option-id="theme_scita_blog_custom_snippet">
+                <we-button class="dropdown-item scita_blog_slider" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+
 <t t-name="theme_scita_blog_slider_option">
     <div data-js="theme_scita_blog_custom_snippet" data-selector=".scita_blog_slider">
         <BuilderButtonGroup>
@@ -276,7 +357,13 @@
         </BuilderButtonGroup>
     </div>
 </t>
-
+  <!-- <template id="blog_4_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_4_custom_snippet" data-selector=".blog_4_custom" data-snippet-option-id="blog_4_custom_snippet">
+                <we-button class="dropdown-item blog_4_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
 <t t-name="blog_4_custom_snippet_option">
     <div data-js="blog_4_custom_snippet" data-selector=".blog_4_custom">
         <BuilderButtonGroup>
@@ -291,6 +378,15 @@
     </div>
 </t>
 
+
+    <!-- <template id="blog_2_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_2_custom_snippet" data-selector=".blog_2_custom" data-snippet-option-id="blog_2_custom_snippet">
+                <we-button class="dropdown-item blog_2_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
+
 <t t-name="blog_2_custom_snippet_option">
     <div data-js="blog_2_custom_snippet" data-selector=".blog_2_custom">
         <BuilderButtonGroup>
@@ -304,7 +400,13 @@
         </BuilderButtonGroup>
     </div>
 </t>
-
+    <!-- <template id="blog_5_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom" data-snippet-option-id="blog_5_custom_snippet">
+                <we-button class="dropdown-item blog_5_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template> -->
 <t t-name="blog_5_custom_snippet_option">
     <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom">
         <BuilderButtonGroup>
@@ -317,171 +419,6 @@
             </BuilderButton>
         </BuilderButtonGroup>
     </div>
-</t>
-
-
-<!-- 
-    <template id="timer_snippet_snippet_options" inherit_id="website.snippet_options">
-        <xpath expr="." position="inside">
-            <div data-js='js_counter_timer' data-selector=".js_counter_timer" data-drop-in=".timer_counter_div">
-                <we-button tabindex="-1" href="#" class="dropdown-item"
-                           data-choose-image="true" data-no-preview="true" data-date_configure="">
-                    <i class="fa fa-clock-o"/>
-                    Modify Time
-                </we-button>
-            </div>
-        </xpath>
-    </template> 
--->
-
-
-<t t-name="timer_snippet_snippet_options">
-    <div data-js="js_counter_timer" data-selector=".js_counter_timer" data-drop-in=".timer_counter_div">
-        <BuilderButtonGroup>
-            <BuilderButton
-                action="'date_configure'"
-                title.translate="Modify Time"
-                icon="'fa fa-clock-o'"
-                data-choose-image="true" data-no-preview="true" data-date_configure=""
-                
-                actionParam="'open'">
-                Modify Time
-            </BuilderButton>
-        </BuilderButtonGroup>
-    </div>
-</t>
-
-
- <t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
-    <!-- Dummy element to allow styling this specific option container with .o_wsale_products_list_page_options -->
-    <div class="d-none o_wsale_products_list_page_options"/>
-        <xpath expr="//BuilderRow[last()]" position="after">
-            <BuilderRow label.translate="Scita Add to Cart">
-                <BuilderButton
-                    title.translate="Enable Add to Cart"
-                    id="'scita_add_to_cart_opt'"
-                    action="'templatePreviewableWebsiteConfig'"
-                    actionParam="{
-                        views: ['theme_scita.scita_products_item_enable_add_cart'],
-                        previewClass: 'o_scita_preview_add_cart',
-                        templateId: 'theme_scita.scita_products_item_enable_add_cart',
-                        placeAfter: '.o_wsale_products_item',
-                    }"
-                />
-            </BuilderRow>
-            <BuilderRow label.translate="Image Transition Effect" applyTo="'img'">
-                <BuilderSelect action="'selectClass'" actionParam="{selector: 'img'}">
-                    <BuilderSelectItem actionValue="'none_effect'">Remove Effect</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'sct_img_effect1'">Effect 1</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'sct_img_effect2'">Effect 2</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'sct_img_effect3'">Effect 3</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'sct_img_effect4'">Effect 4</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'sct_img_effect5'">Effect 5</BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
-              <BuilderRow label.translate="Product Loader Options"
-                        applyTo="'main:has(.o_wsale_products_page)'"
-                        data-no-check="true">
-                <BuilderSelect action="'customizeWebsiteViews'" actionParam="{}" data-no-preview="true">
-                    <BuilderSelectItem actionValue="'theme_scita.default_pager'">
-                        Default
-                    </BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'theme_scita.lazy_load_button'">
-                        Button
-                    </BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
-              <!-- 🔹 Buy Now Button Option -->
-            <BuilderRow label.translate="Buy Now Button">
-                <BuilderButton
-                    title.translate="Enable Buy Now"
-                    action="'customizeWebsiteViews'"
-                    actionValue="'theme_scita.scita_product_buy_now'"
-                />
-            </BuilderRow>
-
-            <!-- 🔹 Rating Option -->
-            <BuilderRow label.translate="Product Rating">
-                <BuilderButton
-                    title.translate="Enable Rating"
-                    action="'customizeWebsiteViews'"
-                    actionValue="'theme_scita.theme_scita_rating'"
-                    data-no-preview="true"
-                    data-reload="/"
-                />
-            </BuilderRow>
-
-            <!-- 🔹 Quantity Selector Option -->
-            <BuilderRow label.translate="Quantity Selector">
-                <BuilderCheckbox
-                    title.translate="Enable Quantity Selector"
-                    action="'customizeWebsiteViews'"
-                    actionValue="'theme_scita.theme_scita_product_quantity'"
-                    data-no-preview="true"
-                    data-reload="/"
-                />
-            </BuilderRow>
-            <BuilderButton
-                        title.translate="Wishlist"
-                        action="'customizeWebsiteViews'"
-                        actionValue="'theme_scita.scita_product_add_to_wishlist'"
-                        data-no-preview="true"
-                        data-reload="/">
-                        <i class="fa fa-fw fa-heart"/>
-                        Wishlist
-            </BuilderButton>
-             <BuilderButton
-                title.translate="Compare"
-                action="'customizeWebsiteViews'"
-                actionValue="'theme_scita.product_add_to_compare'"
-                data-no-preview="true"
-                data-reload="/">
-                <i class="fa fa-fw fa-exchange"/>
-                Compare
-            </BuilderButton>
-
-            <!-- 🔹 Compare - Inside Tab Option -->
-            <BuilderButton
-                title.translate="Inside Tab"
-                action="'customizeWebsiteViews'"
-                actionValue="'theme_scita.scita_product_description_table'"/>
-                  <!-- 🔹 Buttons Style -->
-            <BuilderRow label.translate="Buttons Style" applyTo="'.btn'">
-                <BuilderSelect action="'customizeWebsiteVariable'" 
-                               actionParam="{}" 
-                               data-variable="btn-style-template" 
-                               data-reload="/" 
-                               data-attribute-default-value="btn_style_1">
-                    <BuilderSelectItem actionValue="'btn_style_1'" data-img="/theme_scita/static/src/img/snippet_icon/Button-style1.svg">
-                        Buttons Style 1
-                    </BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'btn_style_2'" data-img="/theme_scita/static/src/img/snippet_icon/Button-style2.svg">
-                        Buttons Style 2
-                    </BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'btn_style_3'" data-img="/theme_scita/static/src/img/snippet_icon/Button-style3.svg">
-                        Buttons Style 3
-                    </BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'btn_style_4'" data-img="/theme_scita/static/src/img/snippet_icon/Button-style4.svg">
-                        Buttons Style 4
-                    </BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
-
-            <!-- 🔹 Product Hover Style -->
-            <BuilderRow label.translate="Product Hover Style" applyTo="'.o_wsale_products_item'">
-                <BuilderSelect action="'customizeWebsiteVariable'" 
-                               actionParam="{}" 
-                               data-variable="prod-hover-style" 
-                               data-reload="/" 
-                               data-attribute-default-value="prod_hover_style_1">
-                    <BuilderSelectItem actionValue="'prod_hover_style_1'">Effect Style 1</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'prod_hover_style_2'">Effect Style 2</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'prod_hover_style_3'">Effect Style 3</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'prod_hover_style_4'">Effect Style 4</BuilderSelectItem>
-                    <BuilderSelectItem actionValue="'prod_hover_style_5'">Effect Style 5</BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
-        </xpath>
 </t>
 </templates>
 

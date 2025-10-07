@@ -161,7 +161,7 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     def get_teams_data(self):
-        employee = request.env['hr.employee'].sudo().search(
+        employee = request.env['res.partner'].sudo().search(
             [('include_inourteam', '=', 'True')])
         values = {
             'employee': employee,
@@ -563,7 +563,7 @@ class ScitaSliderSettings(http.Controller):
 
     @http.route(['/fashion/fashion_product_multi_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def fashion_multi_get_dynamic_slider(self, **post):
-        context, pool = dict(request.context), request.env
+        context, pool = request.env.context, request.env
         if post.get('slider-type'):
             slider_header = request.env['multi.slider.config'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -571,7 +571,7 @@ class ScitaSliderSettings(http.Controller):
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
                 pricelist = current_website.get_pricelist_available()
-                context = dict(request.context, pricelist=int(pricelist))
+                context = dict(request.env.context, pricelist=int(pricelist))
             else:
                 pricelist = pool.get('product.pricelist').browse(
                     context['pricelist'])
@@ -1053,7 +1053,7 @@ class ScitaShop(WebsiteSale):
 
             fiscal_position_sudo = request.fiscal_position
             products_prices = lazy(lambda: products._get_sales_prices(website))
-
+            product_query_params = self._get_product_query_params(**post)
             prod_available = {}
             for prod in products:
                 variants_available = {
@@ -1097,8 +1097,11 @@ class ScitaShop(WebsiteSale):
                 'get_product_prices': lambda product: lazy(lambda: products_prices[product.id]),
                 'float_round': tools.float_round,
                 'brand_set': brand_set,
+                'product_query_params': product_query_params,
                 'prod_available': prod_available,
-                'result': result
+                'result': result,
+                 'previewed_attribute_values': lazy(
+                lambda: products._get_previewed_attribute_values(category, product_query_params),),
             }
             if filter_by_price_enabled:
                 values['min_price'] = min_price or available_min_price
@@ -1199,7 +1202,7 @@ class ScitaShop(WebsiteSale):
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
 
-    @http.route(['/product_category_img_slider'], type='jsonrpc', auth='public', website=True)
+    @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -1849,7 +1852,6 @@ class PWASupport(http.Controller):
     @http.route("/theme_scita/shop/quick_view", type="jsonrpc", auth="public", website=True)
     def scita_quick_view_data(self, product_id=None):
         product = request.env['product.template'].browse(int(product_id))
-
         return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product': product})
 
     @http.route("/theme_scita/shop/cart_view", type="jsonrpc", auth="public", website=True)
