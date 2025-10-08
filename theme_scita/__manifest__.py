@@ -188,6 +188,7 @@ publish unpublish product
             'theme_scita/static/src/js/feather_init.js',
             'theme_scita/static/src/js/pg_slider.js',
             'theme_scita/static/src/js/theme_wishlist_fix.js',
+            'theme_scita/static/src/js/product_comparison_extend.js',
             'theme_scita/static/src/js/similar_products_sidebar.js',
             'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss',
