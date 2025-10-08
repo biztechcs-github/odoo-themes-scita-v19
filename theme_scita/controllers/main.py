@@ -14,7 +14,7 @@ from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL, float_round, groupby
-
+from odoo.addons.website_sale.const import SHOP_PATH
 class WebsiteAutocomplate(Website):
 
     @http.route('/website/snippet/autocomplete', type='jsonrpc', auth='public', website=True, readonly=True)
@@ -1097,6 +1097,7 @@ class ScitaShop(WebsiteSale):
                 'brand_set': brand_set,
                 'product_query_params': product_query_params,
                 'prod_available': prod_available,
+                'shop_path': SHOP_PATH,
                 'result': result,
                  'previewed_attribute_values': lazy(
                 lambda: products._get_previewed_attribute_values(category, product_query_params),),
