@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hide Add To Cart Button and quantity selector if not website_show_price -->    
+    <template id="product_details" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="//div[hasclass('container', 'oe_website_sale')]//div[hasclass('align-middle', 'o_wish_price')]" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not wish.product_id.website_hide_price
+            </attribute>
+        </xpath>
+         <xpath expr="//button[hasclass('o_wish_add')]" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not wish.product_id.website_hide_price
+            </attribute>
+        </xpath>        
+    </template>
+
+    <!-- <template id="product_compare" inherit_id="website_sale_comparison.product_product">
+        <xpath expr="//div[@class='col-8 ps-2']/h6/div" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template> -->
+
+    <template id="product_compare_detail" inherit_id="website_sale_comparison.product_compare">
+        <xpath expr="//span[@t-out=&quot;combination_info['price']&quot;]" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+        <!-- <xpath expr="//div[@class='product_summary']//span[@class='o_comparison_price' and @t-else='']" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath> -->
+        <xpath expr="//button[@name='comparison_add_to_cart']" position="attributes">
+            <attribute name="t-if">
+                website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+    <template id="default_add_to_cart_hide_website_sale" inherit_id="website_sale.shop_product_buttons">
+        <xpath expr="//button[hasclass('o_wsale_product_btn_primary')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+    <!-- Hide add to cart btn in Quick view -->
+    <template id="add_to_card_hide_price_quick_view" inherit_id="theme_scita.shop_quick_view_modal">
+        <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('js_main_product')]//div" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+
+    
+     <template id="product_category_snippet_price" inherit_id="theme_scita.product_category_img_slider_config_view">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not slide.website_hide_price
+            </attribute>
+        </xpath>
+         <xpath expr="//div[hasclass('ajax_cart_template')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not slide.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="fashion_multi_cat_slider_snippet_price" inherit_id="theme_scita.fashion_multi_slider_products">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+         <xpath expr="//div[hasclass('ajax_cart_template')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+    
+    <template id="multi_deal_seller_snippet_price" inherit_id="theme_scita.multi_deal_seller_slider_view">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="deal_of_the_day_snippet_price" inherit_id="theme_scita.theme_scita_deal_of_the_day_view">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not deal_product.website_hide_price
+            </attribute>
+        </xpath>
+        <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not deal_product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+     <template id="sct_product_snippet_1_price" inherit_id="theme_scita.sct_product_snippet_1_view">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+         <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+
+    <template id="trending_products_view_snippet" inherit_id="theme_scita.theme_scita_trending_products_view">
+        <xpath expr="//p[hasclass('price')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+         <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

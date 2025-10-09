@@ -27,3 +27,13 @@ class ResConfigSettings(models.TransientModel):
     pwa_app_theme_color = fields.Char(related='website_id.pwa_app_theme_color', readonly=False)
     pwa_app_start_url = fields.Char(related='website_id.pwa_app_start_url', readonly=False)
     pwa_app_icon_512 = fields.Binary(related='website_id.pwa_app_icon_512', readonly=False)
+
+    website_hide_price = fields.Boolean(
+        string="Hide prices on website",
+        related="website_id.website_hide_price",
+        readonly=False,
+    )
+    website_hide_price_default_message = fields.Char(
+        related="website_id.website_hide_price_default_message",
+        readonly=False,
+    )

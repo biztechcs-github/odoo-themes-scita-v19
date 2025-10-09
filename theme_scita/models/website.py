@@ -284,3 +284,23 @@ class website(models.Model):
             [('parent_id', '=', None)], order='name asc')
         cat.update({'categ': shop_category})
         return cat
+
+    website_hide_price = fields.Boolean(
+        string="Hide prices on website",
+        copy=False,
+        help="Hide price at website level",
+    )
+    website_show_price = fields.Boolean(compute="_compute_website_show_price")
+    website_hide_price_default_message = fields.Char(
+        string="Default Hidden price message",
+        help="When the price is hidden on the website we can give the customer"
+        "some tips on how to find it out.",
+        translate=True,
+    )
+
+    def _compute_website_show_price(self):
+        for rec in self:
+            rec.website_show_price = (
+                not rec.website_hide_price
+                and request.env.user.partner_id.website_show_price
+            )

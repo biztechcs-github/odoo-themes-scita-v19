@@ -1133,14 +1133,14 @@ $(document).ready(function(){
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
                 $.get("/theme_scita/trending_products_categories", {
-                    'slider-id': self.$target.attr('data-cat-slider-id') || '',
+                    'slider-id': slider_id || '',
                 }).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     const categoryId = $(".trend_prod_tab")[0].getAttribute('data-category-id');
                      $.get("/theme_scita/get_trending_prducts", {
                         'category': categoryId,
-                        'slider-id': self.$target.attr('data-cat-slider-id') || '',
+                        'slider-id': slider_id || '',
                     }).then(function(data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -1184,8 +1184,11 @@ $(document).ready(function(){
                                 ele.classList.remove("active");
                                 ele.classList.remove("show");
                             }
-                            if(ele.parentElement.getAttribute('data-category-id') == ev.currentTarget.getAttribute('data-category-id')){
-                                ele.classList.add("show","active")
+                            // if(ele.parentElement.getAttribute('data-category-id') == ev.currentTarget.getAttribute('data-category-id')){
+                            //     ele.classList.add("show","active")
+                            // }
+                            if (ele.parentElement.getAttribute('data-category-id') == $(ev.currentTarget).attr('data-category-id')) {
+                                ele.classList.add("show", "active");
                             }
                         }
                         $('div#product_slider').owlCarousel({

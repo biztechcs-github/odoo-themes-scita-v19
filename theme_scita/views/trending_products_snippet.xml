@@ -136,7 +136,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <!-- <p class="price">
+                                                                        <p class="price">
                                                                             <b>
                                                                                 <del
                                                                                     name="product_price_strikethrough"
@@ -155,7 +155,7 @@
                                                                                 <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
                                                                                 <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                                                                             </b>
-                                                                        </p> -->
+                                                                        </p>
                                                                         <t t-foreach="product.valid_product_template_attribute_line_ids" t-as="ptal">
                                                                             <t t-if="ptal.attribute_id.display_type == 'color'">
                                                                                 <ul t-att-data-attribute_id="ptal.attribute_id.id" t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-none d-xl-flex"
@@ -220,12 +220,12 @@
                                                                     <div class="sct-hover-info product_price ajax_cart_template">
                                                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                                                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                                                                            <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids">
+                                                                            <!-- <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids"> -->
                                                                                 <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id" t-att-data-template-id="product.id">
                                                                                     <span class="lni lni-cart-1 cart_icon"></span>
                                                                                     <span class="add_to_cart_text">Add to cart</span>
                                                                                 </button>
-                                                                            </t>
+                                                                            <!-- </t> -->
                                                                             <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                                                 <span class="lni lni-eye"/>
                                                                             </button>

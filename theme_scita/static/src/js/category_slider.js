@@ -11,7 +11,6 @@ import { BuilderAction } from "@html_builder/core/builder_action";
 // Shared Modal Logic for Category Slider
 // ------------------------------------------------------
 async function openCategorySliderModal(snippetEl) {
-    debugger;
     // Render modal template
     const modalEl = renderToElement("theme_scita.scita_dynamic_category_slider");
     document.body.appendChild(modalEl);
