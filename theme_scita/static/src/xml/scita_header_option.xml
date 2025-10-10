@@ -423,22 +423,22 @@
 <!-- Lazy Loading -->
     <t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
         <xpath expr="//BuilderRow[@label.translate='Toolbar']" position="after">
-            <BuilderRow label.translate="Product Loader">
-                <BuilderSelect action="'templatePreviewableWebsiteConfig'">
-                    <BuilderSelectItem
-                            title.translate="Default"
-                            id="'attributes_dft'"
-                    >Default</BuilderSelectItem>
-                    <BuilderSelectItem
-                            title.translate="Lazy Loading"
-                            id="'attributes_lzy'"
-                           
-                    >Button</BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
+          <BuilderRow label.translate="Product Loader">
+        <BuilderButtonGroup action="'websiteConfig'">
+            <!-- Default Loader -->
+            <BuilderButton
+                title.translate="Default"
+                actionParam="{views: ['theme_scita.default_pager']}"
+                actionValue="'default'"
+            />
+            <!-- Button Loader -->
+            <BuilderButton
+                title.translate="Button"
+                actionParam="{views: ['theme_scita.lazy_load_button']}"
+                actionValue="'button'"
+            />
+        </BuilderButtonGroup>
+    </BuilderRow>
         </xpath>
     </t>
 </templates>
-
-
-
