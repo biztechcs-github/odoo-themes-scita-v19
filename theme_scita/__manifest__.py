@@ -194,8 +194,8 @@ publish unpublish product
             'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/button/button_styles.scss'),
-            ('before', '/theme_scita/static/src/scss/comman.scss',
-             'theme_scita/static/src/scss/product_hover_effect.scss'),
+            # ('before', '/theme_scita/static/src/scss/comman.scss',
+            #  'theme_scita/static/src/scss/product_hover_effect.scss'),
             'theme_scita/static/src/xml/aaa.xml',
         ],
         'website.assets_wysiwyg': [
@@ -206,10 +206,13 @@ publish unpublish product
         ],
         'website.assets_editor': [
         ],
+        'html_builder.assets': [
+            'theme_scita/static/src/js/scita_block_tab_patch.js',
+        ],
         'website.website_builder_assets': [
           'theme_scita/static/src/xml/scita_header_option.xml',
           'theme_scita/static/src/xml/scita_footer_option.xml',
-        #   'theme_scita/static/src/xml/scita_editor_option.xml',
+            # 'theme_scita/static/src/xml/scita_editor_option.xml',
             # 'theme_scita/static/src/js/fashion_plugin.js',
             'theme_scita/static/src/js/product_category.js',
             'theme_scita/static/src/js/category_slider.js',

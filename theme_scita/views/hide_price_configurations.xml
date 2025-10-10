@@ -14,15 +14,30 @@
         </xpath>        
     </template>
 
-    <!-- <template id="product_compare" inherit_id="website_sale_comparison.product_product">
-        <xpath expr="//div[@class='col-8 ps-2']/h6/div" position="attributes">
+    <template id="shop_hide_product_price" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price and not product.website_hide_price
             </attribute>
         </xpath>
-    </template> -->
+    </template>
 
+    <!-- Product compare detail start -->
     <template id="product_compare_detail" inherit_id="website_sale_comparison.product_compare">
+        <!-- request quote start -->
+        <xpath expr="//span[@t-out=&quot;combination_info['price']&quot;]" position="before">
+            <t t-if="website and (not website.website_show_price or product.website_hide_price)">
+                <a role="button"
+                id="request_for_quote_button"
+                data-bs-toggle="modal"
+                data-bs-target="#cfp_pop_up"
+                href="#"
+                class="btn btn-primary btn_cta mt-2">
+                    Request Quote
+                </a>
+            </t>
+        </xpath>
+        <!-- request quote end -->
         <xpath expr="//span[@t-out=&quot;combination_info['price']&quot;]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price and not product.website_hide_price
@@ -39,6 +54,8 @@
             </attribute>
         </xpath>
     </template>
+    <!-- Product compare detail end -->
+
     <template id="default_add_to_cart_hide_website_sale" inherit_id="website_sale.shop_product_buttons">
         <xpath expr="//button[hasclass('o_wsale_product_btn_primary')]" position="attributes">
             <attribute name="t-if">
@@ -137,4 +154,44 @@
             </attribute>
         </xpath>
     </template>
+
+    <!-- hide price for PDP price -->
+    <template id="hide_PDP_price_template" inherit_id="website_sale.product_price">
+        <xpath expr="//div[@name='product_price']" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+      <template id="hide_PDP_buy_now_btn_template" inherit_id="website_sale.product_buy_now">
+        <xpath expr="//a[contains(@t-attf-class, 'o_we_buy_now')]" position="attributes">
+            <attribute name="t-if">
+                    website and website.website_show_price and not product.website_hide_price
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="theme_scita_product_details_terms_and_share" inherit_id="website_sale.product_terms_and_conditions">
+            <!--        adding the modal pop up-->
+        <xpath expr="//small[hasclass('text-muted','mb-0')]" position="before">
+            <t t-call="theme_scita.request_for_quote_modal"/>
+        </xpath>
+        
+   </template>
+
+    <template id="display_request_quote_in_pdp_template" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" >
+        <xpath expr="//div[hasclass('sct-other-desciption')]" position="inside">
+            <t t-if="website and (not website.website_show_price or product.website_hide_price)">
+                <a role="button"
+                id="request_for_quote_button"
+                data-bs-toggle="modal"
+                data-bs-target="#cfp_pop_up"
+                href="#"
+                class="btn btn-primary btn_cta mt-2">
+                    Request Quote
+                </a>
+            </t>
+        </xpath>
+   </template>
+
 </odoo>
