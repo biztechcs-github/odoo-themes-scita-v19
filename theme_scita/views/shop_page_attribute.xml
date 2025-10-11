@@ -9,7 +9,7 @@
                 <t>OUT OF STOCK</t>
             </div>
         </xpath>
-        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="before">
+        <!-- <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="before">
             <t t-foreach="product.valid_product_template_attribute_line_ids" t-as="ptal">
                 <t t-if="ptal.attribute_id.display_type == 'color'">
                     <ul t-att-data-attribute_id="ptal.attribute_id.id" t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-none d-xl-flex"
@@ -70,6 +70,6 @@
                     </ul>
                 </t>
             </t>
-        </xpath>
+        </xpath> -->
     </template>
 </odoo>
