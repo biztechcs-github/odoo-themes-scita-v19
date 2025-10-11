@@ -445,8 +445,8 @@ Wishlist
                 </t>
             </div>
         </xpath>
-        <!-- <xpath expr="//div[hasclass('sct-sku-display-div')]" position="after">
-<t t-call="website_sale.product_price" />
-</xpath>
+        <xpath expr="//div[hasclass('sct-sku-display-div')]" position="after">
+            <t t-call="website_sale.product_price" />
+        </xpath>
     </template>
 </odoo>

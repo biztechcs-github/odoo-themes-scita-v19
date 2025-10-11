@@ -856,7 +856,7 @@ class ScitaShop(WebsiteSale):
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>''',
         '''/shop/brands'''
     ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop, csrf=False, save_session=False)
-    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', brands=None ,**post):
+    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', ppg=False, brands=None ,**post):
         if request.env['website'].sudo().get_current_website().theme_id.name == 'theme_scita':
             add_qty = int(post.get('add_qty', 1))
 
@@ -879,7 +879,7 @@ class ScitaShop(WebsiteSale):
             max_price = float(max_price)
         except ValueError:
             max_price = 0
-
+        
         website = request.env['website'].get_current_website()
         website_domain = website.website_domain()
         if brands:
@@ -922,6 +922,9 @@ class ScitaShop(WebsiteSale):
                 request.session.pop(PRICELIST_SESSION_CACHE_KEY, None)
                 # restart the counter
                 request.session['website_sale_pricelist_time'] = now
+
+        brand_list = request.httprequest.args.getlist('brand')
+        brand_set = set([int(v) for v in brand_list])
 
         filter_by_price_enabled = website.is_view_active('website_sale.filter_products_price')
         if filter_by_price_enabled:
@@ -1121,8 +1124,8 @@ class ScitaShop(WebsiteSale):
             values.update(self._get_additional_shop_values(values, **post))
             return request.render("website_sale.products", values)
         else:
-            return super(ScitaShop, self).shop(page=page, category=category, search=search, min_price=min_price,
-                                               max_price=max_price, ppg=ppg, **post)
+            return super(ScitaShop, self).shop(page=page, category=category, search=search,
+                                               ppg=ppg, **post)
         
     @http.route(['''/allcategories''',
                  '''/allcategories/category/<model("product.public.category"):category>'''
