@@ -2,6 +2,8 @@
 <templates xml:space="preserve">
     <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension">
         <xpath expr="//small" position="replace">
+            <t t-out="props.website_hide_price" />
+            <!-- <t t-out="props.website_show_price" /> -->
             <small t-if="props.quote_request" class="mb-0 text-body text-danger">
                 Not Available for Sale
             </small>
