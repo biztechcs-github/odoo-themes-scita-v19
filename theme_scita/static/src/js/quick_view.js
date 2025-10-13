@@ -338,17 +338,35 @@ odoo.define('theme_scita.quick_view', [], function(require) {
             return document.querySelector("#product_detail_main")?.dataset.image_layout;
         },
 
-        _onMouseEnterSwatch: function (ev) {
+        //----------------------------------------------------------------------
+        // Color Swatch Preview
+        //----------------------------------------------------------------------
+        _onMouseEnterSwatch: async function (ev) {
             const $swatch = $(ev.currentTarget);
-            const $product = $swatch.closest('#product_detail');
-            const $img = $product.find('img').first();      
-            this.defaultSrc = $img.attr('data-default-img-src');      
-            const previewSrc = $swatch.find('label').data('previewImgSrc');
-            if (previewSrc) {
-                $img.attr('src', previewSrc);
-                $swatch.addClass("active");
+            const $product = $swatch.closest('.js_main_product, #product_detail');
+
+            $product.find('.css_attribute_color').removeClass("active");
+            $swatch.addClass("active");
+            const combination = wSaleUtils.getSelectedAttributeValues($product[0]);
+            // Fetch variant info from Odoo
+            const combinationInfo = await rpc('/website_sale/get_combination_info', {
+                product_template_id: parseInt($product.find('input[name="product_template_id"]').val()),
+                product_id: parseInt($product.find('input[name="product_id"]').val()),
+                combination: combination,
+                add_qty: parseInt($product.find('input[name="add_qty"]').val()) || 1,
+            });
+            if (combinationInfo.product_id) {
+                $product.find('input[name="product_id"]').val(combinationInfo.product_id);
+                
             }
-        },
+         
+            if (combinationInfo.display_name) {
+                $product.find('.product_detail_name').text(combinationInfo.display_name);
+            }
+            if (combinationInfo.price) {
+                $product.find('.oe_price .oe_currency_value').text(combinationInfo.price);
+            }
+    },
 
         cartViewData: function(ev) {
             const element = ev.currentTarget;

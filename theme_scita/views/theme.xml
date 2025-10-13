@@ -1157,6 +1157,10 @@
     <!-- Products page -->
 
     <template id="theme_scita_sale_products" inherit_id="website_sale.products" name="Theme Scita Products">
+        <xpath expr="//div[@id='products_grid']//t[@t-if='td_product']//div" position="attributes">
+            <attribute name="t-attf-class">oe_product</attribute>
+        </xpath>
+
         <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
             <t t-set="_classes" t-valuef="d-none d-lg-inline-block me-3"/>
         </xpath> -->
@@ -1334,9 +1338,8 @@
                                     </div>
                                     <div class="col-12 col-md-7 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
-                                        <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1>
+                                        <!-- <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1> -->
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
-                                        <span itemprop="image" style="display:none;" t-esc="base_url + website.image_url(product, 'image_1920')" />
                                         <t t-if="is_view_active('theme_scita.theme_scita_rating')">
                                             <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
                                                 <t t-call="portal_rating.rating_widget_stars_static">
