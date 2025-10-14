@@ -2,8 +2,15 @@
 <templates xml:space="preserve">
     <t t-inherit="website_sale_comparison.ProductRow" t-inherit-mode="extension">
         <xpath expr="//small" position="replace">
-            <small t-if="props.quote_request" class="mb-0 text-body text-danger">
-                Not Available for Sale
+            <!-- <t t-out="props.website_hide_price" />
+            <t t-out="props.website_show_price" /> -->
+            <!-- <t t-out="props.website_show_price and (!props.website_hide_price)" /> -->
+              <!-- website and website.website_show_price and not product.website_hide_price -->
+            <!-- <small t-if="props and !props.website_show_price and props.website_hide_price" class="mb-0 text-body text-danger"> -->
+            <small t-if="props.website_show_price and (props.website_hide_price)" class="mb-0 text-body text-danger">
+                <!-- <span t-if="props.website_hide_price"> -->
+                     Not Available for Sale
+                <!-- </span> -->
             </small>
 
             <!-- Else show price if sale is allowed -->

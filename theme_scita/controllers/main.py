@@ -697,16 +697,25 @@ class ScitaSliderSettings(http.Controller):
     def get_product_column_five(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
-            slider_header = request.env['product.snippet.configuration'].sudo().search(
-                [('id', '=', int(post.get('slider-type')))])
+            slider_header = request.env['product.snippet.configuration'].sudo().search([
+                ('id', '=', int(post.get('slider-type')))
+            ])
+
             if not context.get('pricelist'):
-                # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
-                pricelist = current_website.get_pricelist_available()
-                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
+                pricelists = current_website.get_pricelist_available()
+                # Ensure singleton
+                pricelist = pricelists[0] if pricelists else request.website.get_current_pricelist()
+                context = dict(request.context, pricelist=pricelist.id if pricelist else 1)
             else:
-                pricelist = pool.get('product.pricelist').browse(
-                    context['pricelist'])
+                pricelist_ids = context['pricelist']
+                if isinstance(pricelist_ids, list):
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids[0])
+                else:
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids)
+
+            # Ensure singleton here as well
+            pricelist = pricelist[0] if pricelist and len(pricelist) > 1 else pricelist
 
             context.update({'pricelist': pricelist.id})
             from_currency = pool['res.users'].sudo().browse(
@@ -1294,8 +1303,8 @@ class ScitaShop(WebsiteSale):
                 'price': combination_info['price'],
                 'prevent_zero_price_sale': combination_info['prevent_zero_price_sale'],
                 'currency_id': combination_info['currency'].id,
-                # ✅ New field for quote request
-                'quote_request': bool(product.quote_request),  # assuming you have a boolean field in product
+                # ✅ New field for hide price
+                'website_hide_price': bool(product.website_hide_price),  # assuming you have a boolean field in product
             }
 
             if combination_info['has_discounted_price']:

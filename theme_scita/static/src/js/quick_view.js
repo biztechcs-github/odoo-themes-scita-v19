@@ -4,7 +4,6 @@ import { rpc } from '@web/core/network/rpc';
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 import publicWidget from '@web/legacy/js/public/public_widget';
 import wishlistUtils from '@website_sale_wishlist/js/website_sale_wishlist_utils';
-import { redirect } from '@web/core/utils/urls';
 
 odoo.define('theme_scita.quick_view', [], function (require) {
     'use strict';
@@ -277,6 +276,22 @@ odoo.define('theme_scita.quick_view', [], function (require) {
             rpc('/theme_scita/shop/cart_view', { product_id }).then(function (data) {
                 $("#shop_cart_view_modal").html(data).modal("show");
             });
+        },
+    });
+
+     publicWidget.registry.RequestQuoteCompare = publicWidget.Widget.extend({
+         selector: '#request_for_quote_button',
+         events: {
+             'click': '_onRequestQuoteClick',
+            },
+            
+        _onRequestQuoteClick(ev) {
+            ev.preventDefault();
+            const $btn = $(ev.currentTarget);
+            const productId = $btn.data('product_id');
+            // Set this ID in the modal before it opens
+            const $modal = $('#cfp_pop_up');
+            $modal.find('#product_id').val(productId);
         },
     });
 });
