@@ -49,7 +49,6 @@
         <xpath expr="//div[@itemscope='itemscope']" position="replace"/>
     </template>
     <template id="theme_scita_product_details" inherit_id="website_sale.product" name="Product Details">
-<<<<<<< HEAD
         <!-- <xpath expr="//div[@itemscope='itemscope']" positin="replace"/> -->
         <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="replace"/>
         <!-- <xpath expr="//div[@id='product_details']//p[hasclass('css_not_available_msg','alert','alert-warning')]" position="replace"/> -->
@@ -57,8 +56,6 @@
 <attribute name='t-attf-class'>position-relative position-lg-sticky o_wsale_sticky_object col</attribute>
 </xpath> -->
         <!-- <xpath expr="//div[@id='product_details']/t[2]" position="replace"/> -->
-=======
->>>>>>> c73516529306d3954c002e9c55a907461f42105d
         <xpath expr="//div[@id='product_full_description']" position="replace">
             <section class='sct-description-tab'>
                 <div class="container" id="website_description">
