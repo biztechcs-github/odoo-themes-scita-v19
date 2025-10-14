@@ -91,7 +91,7 @@
         <xpath expr="//div[@id='o_wsale_offcanvas_content']/t[@t-call='website_sale.product_attribute_filters_form']" position="after">
             <div class="accordion-item">
                 <t t-set="brands" t-value="website.get_product_brands(category)"/>
-                <t t-if="brands">
+                <!-- <t t-if="brands">
                     <h2 id="o_wsale_offcanvas_brand_header" class="accordion-header mb-0">
                         <button class="o_wsale_offcanvas_title accordion-button border-top rounded-0 collapsed"
                                 type="button"
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </div>
-                </t>
+                </t> -->
             </div>
         </xpath>
         <xpath expr="//t[@t-call='website_sale.product_attribute_filters_form']" position="before">
@@ -1158,8 +1158,9 @@
 
     <template id="theme_scita_sale_products" inherit_id="website_sale.products" name="Theme Scita Products">
         <xpath expr="//div[@id='products_grid']//t[@t-if='td_product']//div" position="attributes">
-            <attribute name="t-attf-class">{{'out_of_order_product oe_product' if td_product['product'].show_availability and prod_available[td_product['product'].id]['free_qty'] &lt;= 0 else 'oe_product'}}</attribute>
+            <attribute name="t-attf-class">oe_product</attribute>
         </xpath>
+
         <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
             <t t-set="_classes" t-valuef="d-none d-lg-inline-block me-3"/>
         </xpath> -->
@@ -1239,22 +1240,15 @@
     </template>
     
     <template id="products_rating" inherit_id="website_sale.products_item">
-         <!-- this xpath does not need in odov18  in base  already remove class-->
-        <!-- <xpath expr="//form//div[hasclass('o_wsale_product_information_text','flex-grow-1')]" position="attributes">
-            <attribute name='class' remove="flex-grow-1" separator=" "></attribute>
-        </xpath> -->
-        <!-- <xpath expr="//form//h6" position="attributes">
-            <attribute name='class' remove="mb-2" separator=" "></attribute>
-        </xpath> -->
         <xpath expr="//div[hasclass('o_wsale_product_sub','justify-content-between', 'gap-2')]" position="attributes">            
             <attribute name='class' add="justify-content-center" remove="justify-content-between" separator=" "/> 
         </xpath>
-        <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
+        <!-- <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
             <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
                 <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
-        </xpath>
+        </xpath> -->
          <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
             <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
             <attribute name='id'>sct_add_to_cart_hover</attribute>
@@ -1275,24 +1269,6 @@
         <xpath expr="//div[contains(@t-attf-class, 'd-none d-md-flex align-items-center gap-2')]" position="attributes">
             <attribute name='t-attf-class'>o_hidden</attribute>
         </xpath>
-        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='attributes'>
-            <attribute name='class' add="sct-price-wrap" separator=" "></attribute>
-        </xpath> -->
-        <!-- <xpath expr='//t[@t-set="show_qty"]' position='replace'>
-            <t t-set="show_qty" t-value="is_view_active('theme_scita.theme_scita_product_quantity')"/>
-        </xpath> -->
-        <!-- <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='after'>
-            <div class='sct_remove_wrap'>
-                <a href='#'
-                   class="js_delete_product d-none d-md-inline-block small"
-                   aria-label="Remove from cart"
-                   title="Remove from cart">Remove</a>
-                <button class="js_delete_product btn btn-light d-inline-block d-md-none"
-                        title="remove">
-                    <i class="fa fa-trash-o"/>
-                </button>
-            </div>
-        </xpath> -->
     </template>
     <template  id="scita_19_cart_lines" inherit_id="website_sale.cart_lines_quantity" name='show quantity selector'>
         <xpath expr="//div[contains(@t-attf-class, 'css_quantity input-group justify-content-end h-100')]" position="attributes">
@@ -1362,9 +1338,8 @@
                                     </div>
                                     <div class="col-12 col-md-7 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
-                                        <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1>
+                                        <!-- <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1> -->
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
-                                        <span itemprop="image" style="display:none;" t-esc="base_url + website.image_url(product, 'image_1920')" />
                                         <t t-if="is_view_active('theme_scita.theme_scita_rating')">
                                             <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
                                                 <t t-call="portal_rating.rating_widget_stars_static">
@@ -1421,27 +1396,7 @@
                                                 <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
                                                 <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto">
                                                 <!-- Quantity update start-->
-                                                    <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
-                                                        <button type="button" class="btn btn-link js_quantity_minus" aria-label="Remove one" title="Remove one">
-                                                            <i class="oi oi-minus"></i>
-                                                        </button>
-
-                                                        <input type="text"
-                                                            class="js_quantity form-control quantity text-center"
-                                                            name="add_qty"
-                                                            data-min="1"
-                                                            value="1"/>
-
-                                                        <button type="button" class="btn btn-link js_quantity_plus" aria-label="Add one" title="Add one">
-                                                            <i class="oi oi-plus"></i>
-                                                        </button>
-                                                    </div>
-                                                <!-- **Quantity update end** -->
-                                                        <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
-                                                            <i class="icon-basket me-2"/> 
-                                                            Add to cart
-                                                        </a>  
-                                                           <!-- <div class="input-group quantity js_main_product">
+                                                   <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
                                                     <button type="button" class="btn btn-link js_quantity_minus" aria-label="Remove one" title="Remove one">
                                                         <i class="oi oi-minus"></i>
                                                     </button>
@@ -1455,8 +1410,13 @@
                                                     <button type="button" class="btn btn-link js_quantity_plus" aria-label="Add one" title="Add one">
                                                         <i class="oi oi-plus"></i>
                                                     </button>
-                                                </div>                         -->
-                                                    </div>
+                                                </div>
+                                            <!-- **Quantity update end** -->
+                                                    <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
+                                                        <i class="icon-basket me-2"/> 
+                                                        Add to cart
+                                                    </a>  
+                                                </div>
                                                 <div id="o_wsale_cta_wrapper" class="d-flex flex-wrap align-items-center">
                                                     <t t-set="hasQuantities" t-value="false"/>
                                                     <t t-set="hasBuyNow" t-value="false"/>
@@ -1584,7 +1544,7 @@
     </template>
 
     <!-- QuickView Enable Disable option -->
-    <template id="quick_view_option" inherit_id="website_sale.products_item" active="True" customize_show="True" name="Quick View" priority="22">
+   <template id="quick_view_option" inherit_id="website_sale.products_item" active="True" customize_show="True" name="Quick View" priority="22">
         <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
             <t t-if="product.product_variant_ids">
                 <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
@@ -1593,6 +1553,9 @@
             </t>
         </xpath>
     </template>
+
+
+
     <!-- Cart page btn class adeed -->
 
     <template id="scita_auth_signup" inherit_id="auth_signup.fields" name="Auth Signup/ResetPassword form fields">
@@ -1665,5 +1628,13 @@
         <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
         </xpath>
     </template>
+   <template id="custom_products_item_rating" inherit_id="website_sale.products_item">
+        <xpath expr="//t[@t-call='portal_rating.rating_widget_stars_static']" position="replace">
+            <ul class='ratings'>
+                <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
+                <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
+            </ul>
 
+        </xpath>
+    </template>
 </odoo>

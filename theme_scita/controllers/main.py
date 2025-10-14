@@ -14,11 +14,10 @@ from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL, float_round, groupby
-import logging
-from odoo.fields import  Domain
 from odoo.addons.website_sale.const import SHOP_PATH
+from odoo.http import request, route
+from odoo.fields import  Domain
 
-_logger = logging.getLogger(__name__)
 class WebsiteAutocomplate(Website):
 
     @http.route('/website/snippet/autocomplete', type='jsonrpc', auth='public', website=True, readonly=True)
@@ -849,7 +848,7 @@ class ScitaShop(WebsiteSale):
 
                 return res
         return {}
-
+    
     @http.route([
         '''/shop''',
         '''/shop/page/<int:page>''',
@@ -857,9 +856,9 @@ class ScitaShop(WebsiteSale):
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>''',
         '''/shop/brands'''
     ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop, csrf=False, save_session=False)
-    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', **post):
-        if not request.website.has_ecommerce_access():
-            return request.redirect('/web/login')
+    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', ppg=False, brands=None ,**post):
+        if request.env['website'].sudo().get_current_website().theme_id.name == 'theme_scita':
+            add_qty = int(post.get('add_qty', 1))
 
         is_category_in_query = category and isinstance(category, str)
         category = self._validate_and_get_category(category)
@@ -880,10 +879,13 @@ class ScitaShop(WebsiteSale):
             max_price = float(max_price)
         except ValueError:
             max_price = 0
-
+        
         website = request.env['website'].get_current_website()
         website_domain = website.website_domain()
-
+        if brands:
+                req_ctx = request.context.copy()
+                req_ctx.setdefault('brand_id', int(brands))
+                request.context = req_ctx
         ppg = website.shop_ppg or 21
         ppr = website.shop_ppr or 4
         gap = website.shop_gap or "16px"
@@ -921,6 +923,9 @@ class ScitaShop(WebsiteSale):
                 # restart the counter
                 request.session['website_sale_pricelist_time'] = now
 
+        brand_list = request.httprequest.args.getlist('brand')
+        brand_set = set([int(v) for v in brand_list])
+
         filter_by_price_enabled = website.is_view_active('website_sale.filter_products_price')
         if filter_by_price_enabled:
             company_currency = website.company_id.sudo().currency_id
@@ -931,7 +936,7 @@ class ScitaShop(WebsiteSale):
 
         if search:
             post['search'] = search
-
+        brandlistdomain = list(map(int, brand_list))
         options = self._get_search_options(
             category=category,
             attribute_value_dict=attribute_value_dict,
@@ -939,6 +944,7 @@ class ScitaShop(WebsiteSale):
             max_price=max_price,
             conversion_rate=conversion_rate,
             display_currency=website.currency_id,
+            brandlistdomain=brandlistdomain,
             **post
         )
         fuzzy_search_term, product_count, search_product = self._shop_lookup_products(
@@ -1051,6 +1057,22 @@ class ScitaShop(WebsiteSale):
         products_prices = products._get_sales_prices(website)
         product_query_params = self._get_product_query_params(**post)
 
+        prod_available = {}
+        for prod in products:
+                variants_available = {
+                    p['id']: p for p in prod.product_variant_ids.sudo().read(['free_qty'])
+                }
+                free_qty = 0
+                for p in prod.product_variant_ids:
+                    free_qty += variants_available[p.id]['free_qty']
+                prod_available[prod.id] = {
+                    'free_qty': int(free_qty),
+                }
+        result = {}
+        for cat in Category.search(website_domain):
+                result[cat.id] = request.env['product.template'].search_count(
+                    [('public_categ_ids', 'child_of', cat.id)])
+
         grouped_attributes_values = request.env['product.attribute.value'].browse(
             attribute_value_ids
         ).sorted().grouped('attribute_id')
@@ -1076,12 +1098,15 @@ class ScitaShop(WebsiteSale):
             'category_entries': category_entries,
             'attributes': attributes,
             'keep': keep,
+            'add_qty': add_qty,
             'search_categories_ids': search_categories.ids,
             'layout_mode': layout_mode,
             'get_product_prices': lambda product: products_prices[product.id],
             'float_round': float_round,
             'shop_path': SHOP_PATH,
+            'brand_set': brand_set,
             'product_query_params': product_query_params,
+            'prod_available': prod_available,
             'grouped_attributes_values': grouped_attributes_values,
             'previewed_attribute_values': lazy(
                 lambda: products._get_previewed_attribute_values(category, product_query_params),
@@ -1096,12 +1121,12 @@ class ScitaShop(WebsiteSale):
             values.update({'all_tags': all_tags, 'tags': tags})
         if category:
             values['main_object'] = category
-        values.update(self._get_additional_shop_values(values, **post))
-        return request.render("website_sale.products", values)
-    @http.route(['''/allcategories''',
-                 '''/allcategories/category/<model("product.public.category"):category>'''
-                 ], type='http', auth="public", website=True)
-    
+            values.update(self._get_additional_shop_values(values, **post))
+            return request.render("website_sale.products", values)
+        else:
+            return super(ScitaShop, self).shop(page=page, category=category, search=search,
+                                               ppg=ppg, **post)
+        
     @http.route(['''/allcategories''',
                  '''/allcategories/category/<model("product.public.category"):category>'''
                  ], type='http', auth="public", website=True)
