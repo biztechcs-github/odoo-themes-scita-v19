@@ -704,10 +704,8 @@ class ScitaSliderSettings(http.Controller):
 
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
-                pricelists = current_website.get_pricelist_available()
-                # Ensure singleton
-                pricelist = pricelists[0] if pricelists else request.website.get_current_pricelist()
-                context = dict(request.context, pricelist=pricelist.id if pricelist else 1)
+                pricelist = current_website.get_pricelist_available()
+                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
             else:
                 pricelist_ids = context['pricelist']
                 if isinstance(pricelist_ids, list):
@@ -1063,7 +1061,10 @@ class ScitaShop(WebsiteSale):
         grouped_attributes_values = request.env['product.attribute.value'].browse(
             attribute_value_ids
         ).sorted().grouped('attribute_id')
-
+        result = {}
+        for cat in Category.search(website_domain):
+            result[cat.id] = request.env['product.template'].search_count(
+                [('public_categ_ids', 'child_of', cat.id)])
         values = {
             'auto_assign_ribbons': self.env['product.ribbon'].sudo().search([('assign', '!=', 'manual')]),
             'search': fuzzy_search_term or search,
@@ -1095,6 +1096,7 @@ class ScitaShop(WebsiteSale):
             'previewed_attribute_values': lazy(
                 lambda: products._get_previewed_attribute_values(category, product_query_params),
             ),
+            'result' : result,
         }
         if filter_by_price_enabled:
             values['min_price'] = min_price or available_min_price
@@ -1107,6 +1109,7 @@ class ScitaShop(WebsiteSale):
             values['main_object'] = category
         values.update(self._get_additional_shop_values(values, **post))
         return request.render("website_sale.products", values)
+
     @http.route(['''/allcategories''',
                  '''/allcategories/category/<model("product.public.category"):category>'''
                  ], type='http', auth="public", website=True)
@@ -1268,6 +1271,10 @@ class ScitaShop(WebsiteSale):
         products = request.env['product.product'].search([('id', 'in', product_ids)])
         product_data = []
 
+        website_show_price = (
+            self.env["website"].get_current_website().website_show_price
+        )
+
         for product in products:
             combination_info = product._get_combination_info_variant()
             product_data_item = {
@@ -1279,7 +1286,8 @@ class ScitaShop(WebsiteSale):
                 'prevent_zero_price_sale': combination_info['prevent_zero_price_sale'],
                 'currency_id': combination_info['currency'].id,
                 # ✅ New field for hide price
-                'website_hide_price': bool(product.website_hide_price),  # assuming you have a boolean field in product
+                'website_hide_price': product.website_hide_price,
+                'website_show_price': website_show_price,
             }
 
             if combination_info['has_discounted_price']:

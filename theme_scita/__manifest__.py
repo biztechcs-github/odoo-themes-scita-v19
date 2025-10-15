@@ -195,7 +195,8 @@ publish unpublish product
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/button/button_styles.scss'),
             # ('before', '/theme_scita/static/src/scss/comman.scss',
-            #  'theme_scita/static/src/scss/product_hover_effect.scss'),
+            #  'theme_scita/static/src/scss/product_hover_effect.scss'), 
+            'https://unpkg.com/feather-icons/dist/feather.min.js',              
             'theme_scita/static/src/xml/aaa.xml',
             # 'theme_scita/static/src/js/carousel_product_card_override.js'
         ],
