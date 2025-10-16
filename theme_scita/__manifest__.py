@@ -179,7 +179,7 @@ publish unpublish product
             'theme_scita/static/src/js/product_details.js',
             'theme_scita/static/src/js/see_more_brand.js',
             'theme_scita/static/src/js/header.js',
-            # 'theme_scita/static/src/js/bulk_price_btn.js',
+            'theme_scita/static/src/js/bulk_price_btn.js',
             'theme_scita/static/src/scss/pwa_design.scss',
             'theme_scita/static/src/js/lazy_load_button.js',
             'theme_scita/static/src/js/pwa_implementation.js',
@@ -195,8 +195,10 @@ publish unpublish product
             ('before', '/theme_scita/static/src/scss/comman.scss',
              'theme_scita/static/src/scss/button/button_styles.scss'),
             # ('before', '/theme_scita/static/src/scss/comman.scss',
-            #  'theme_scita/static/src/scss/product_hover_effect.scss'),
-            'theme_scita/static/src/xml/aaa.xml',
+            #  'theme_scita/static/src/scss/product_hover_effect.scss'), 
+            'https://unpkg.com/feather-icons/dist/feather.min.js',              
+            'theme_scita/static/src/xml/hide_product_comparison_sticky.xml',
+            # 'theme_scita/static/src/js/carousel_product_card_override.js'
         ],
         'website.assets_wysiwyg': [
             'theme_scita/static/src/js/scita_editor.js',

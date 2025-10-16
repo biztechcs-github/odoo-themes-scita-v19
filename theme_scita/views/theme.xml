@@ -1541,26 +1541,6 @@
             </t>
         </xpath>
     </template>
-
-
-
-    <!-- Cart page btn class adeed -->
-
-    <template id="scita_auth_signup" inherit_id="auth_signup.fields" name="Auth Signup/ResetPassword form fields">
-        <xpath expr="//div[hasclass('mb-3', 'field-login')]/input" position="attributes">
-            <attribute name="class">form-control</attribute>
-        </xpath>
-        <xpath expr="//div[hasclass('mb-3', 'field-name')]/input" position="attributes">
-            <attribute name="class">form-control</attribute>
-        </xpath>
-        <xpath expr="//div[hasclass('mb-3', 'field-password', 'pt-2')]/input" position="attributes">
-            <attribute name="class">form-control</attribute>
-        </xpath>
-        <xpath expr="//div[hasclass('mb-3', 'field-confirm_password')]/input" position="attributes">
-            <attribute name="class">form-control</attribute>
-        </xpath>
-    </template>
-
     <template id="scita_report_invoice_document" inherit_id="account.report_invoice_document">
         <xpath expr="//div[@id='informations']/div[@name='invoice_date']" position="attributes">
             <attribute name="class">col-3 mw-100 mb-2</attribute>

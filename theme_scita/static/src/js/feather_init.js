@@ -2,19 +2,28 @@
 
  import publicWidget from "@web/legacy/js/public/public_widget";
 
- publicWidget.registry.featherIcon = publicWidget.Widget.extend({
-     selector: '#wrapwrap',
 
-     start: function () {
+publicWidget.registry.FeatherIcon = publicWidget.Widget.extend({
+    selector: '#wrapwrap',
+
+    start() {
         this._super(...arguments);
-    
+        this._applyFeatherIcons();
+        this._observeDomChanges();
+        return Promise.resolve();
+    },
+
+    _applyFeatherIcons() {
         if (window.feather) {
             feather.replace();
         }
-
-        return Promise.resolve();
     },
- });
+
+    _observeDomChanges() {
+        const observer = new MutationObserver(() => this._applyFeatherIcons());
+        observer.observe(document.body, { childList: true, subtree: true });
+    },
+});
 
 //Brands filter 
 publicWidget.registry.brandFilterWidget = publicWidget.Widget.extend({

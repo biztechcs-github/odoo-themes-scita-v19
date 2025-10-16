@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Hide Add To Cart Button and quantity selector if not website_show_price -->    
-    <template id="product_details" inherit_id="website_sale_wishlist.product_wishlist">
+    <!-- <template id="product_details" inherit_id="website_sale_wishlist.product_wishlist">
         <xpath expr="//div[hasclass('container', 'oe_website_sale')]//div[hasclass('align-middle', 'o_wish_price')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price and not wish.product_id.website_hide_price
@@ -11,10 +11,30 @@
             <attribute name="t-if">
                 website and website.website_show_price and not wish.product_id.website_hide_price
             </attribute>
-        </xpath>        
-    </template>
+        </xpath>  
+    </template> -->
+
+    <!-- <template id="product_details" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="" position="attributes">
+        
+        </xpath>
+    </template> -->
+           
 
     <template id="shop_hide_product_price" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="after">
+            <t t-if="website and (not website.website_show_price or product.website_hide_price)">
+                <a role="button"
+                id="request_for_quote_button"
+                data-bs-toggle="modal"
+                data-bs-target="#cfp_pop_up"
+                t-att-data-product_id="product.id"
+                href="#"
+                class="btn btn-primary btn_cta mt-2">
+                    Request Quote
+                </a>
+            </t>
+        </xpath>
         <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price and not product.website_hide_price
@@ -32,6 +52,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#cfp_pop_up"
                 href="#"
+                t-att-data-product_id="product.id"
                 class="btn btn-primary btn_cta mt-2">
                     Request Quote
                 </a>
@@ -186,6 +207,7 @@
                 id="request_for_quote_button"
                 data-bs-toggle="modal"
                 data-bs-target="#cfp_pop_up"
+                t-att-data-product_id="product.id"
                 href="#"
                 class="btn btn-primary btn_cta mt-2">
                     Request Quote
