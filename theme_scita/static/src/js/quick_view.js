@@ -161,8 +161,6 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                             const data = await rpc("/shop/cart/update", params);
 
                             // Step 3: Update cart navbar safely
-                            // await updateCartNavBar(data);
-
                             // Optional: Update quantity input in modal
                             if (quantityInput) {
                                 quantityInput.value = quantity;

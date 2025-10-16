@@ -8,8 +8,6 @@ publicWidget.registry.BulkPriceButtonWidget = publicWidget.Widget.extend({
 
     events: {
         'click .o_bulk_price_btn': '_onBulkPriceClick',
-        // 'change input[name="add_qty"]': '_onChangeAddQuantity',
-        // 'click .js_qty_control': 'onClickAddCartJSON', // Assuming your + / - buttons have this class
     },
 
     /**
