@@ -124,9 +124,6 @@
                 <t t-set="attributes" t-value="category.attributes_ids"/>
             </t>
         </xpath>
-        <!-- <xpath expr="//div[contains(@t-if, 'radio')]//div[@t-foreach='a.value_ids']" position="attributes">
-            <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
-        </xpath> -->
     </template>
     <!-- layout top move arrow -->
     <template active="False" customize_show="True" id="layout_top_move" inherit_id="website.layout" name='Scroll To Top'>
@@ -1149,17 +1146,15 @@
             <t t-set="_input_classes" t-valuef=""/>
         </xpath>
     </template>
-    <!-- <template id="scita_filmstrip_categories" inherit_id="website_sale.filmstrip_categories" name="Scita Categories Filmstrip">
-        <xpath expr="//ul[hasclass('o_wsale_filmstip')]//li[@t-foreach='entries']/div" position="attributes">
-            <attribute name="t-attf-class"> btn btn-{{navClass}} d-flex align-items-center {{'ps-2 pe-3' if c.image_128 else 'px-4'}} fw-normal {{ 'border-primary' if c.id == category.id else '' }}</attribute>
-        </xpath>
-    </template> -->
     <!-- Products page -->
 
     <template id="theme_scita_sale_products" inherit_id="website_sale.products" name="Theme Scita Products">
-        <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.sort']//t[@t-set='_classes']" position="replace">
-            <t t-set="_classes" t-valuef="d-none d-lg-inline-block me-3"/>
-        </xpath> -->
+        <xpath expr="//div[@id='products_grid']//t[@t-if='td_product']//div" position="attributes">
+            <attribute name="t-attf-class">oe_product</attribute>
+        </xpath>
+        <xpath expr="//div[@id='products_grid']//t[@t-if='td_product']//div" position="attributes">
+            <attribute name="t-attf-class">oe_product</attribute>
+        </xpath>
         <xpath expr="//div[@id='o_wsale_container']/div[contains(@class, 'o_wsale_products_main_row')]" position="attributes">
             <attribute name="class">row o_wsale_products_main_row sct_shop_box</attribute>
         </xpath>
@@ -1297,13 +1292,7 @@
         <xpath expr="//div[hasclass('card-body', 'p-lg-4', 'pt-lg-3')]/div" position="attributes">
              <attribute name='class' add="len(website_sale_order.website_order_line) &gt; 4 and 'o_wsale_scrollable_table mt-n4 me-n4 pt-4 pe-4 custom_scroller'" separator=" "></attribute>
         </xpath>
-    </template>
-    <!-- <template id="scita_payment_delivery_methods" inherit_id="website_sale.payment_delivery_methodsery_methods" name='Scita Payment Delivery Method'>
-        <xpath expr='//input[hasclass("pe-none")]' position='attributes'>
-             <attribute name='class' add="form-check-input" separator=" "/>
-        </xpath>
-    </template> -->
-    
+    </template>    
 <!--  Quick view  popup start-->
     <template id="quickview_popup" inherit_id="web.frontend_layout">
         <xpath expr="//div[@id='wrapwrap']/main" position="inside">
@@ -1334,13 +1323,12 @@
                                     </div>
                                     <div class="col-12 col-md-7 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
-                                        <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1>
+                                        <!-- <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1> -->
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
-                                        <span itemprop="image" style="display:none;" t-esc="base_url + website.image_url(product, 'image_1920')" />
                                         <t t-if="is_view_active('theme_scita.theme_scita_rating')">
                                             <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
                                                 <t t-call="portal_rating.rating_widget_stars_static">
-                                                    <t t-set="rating_avg" t-value="product.rating_avg"/>
+                                                    <t t-set="rating_avg" t-value="product.sudo().rating_avg"/>
                                                     <t t-set="trans_text_plural">%s reviews</t>
                                                     <t t-set="trans_text_singular">%s review</t>
                                                     <t t-set="rating_count" t-value="(trans_text_plural if product.rating_count > 1 else trans_text_singular) % product.rating_count"/>
@@ -1353,6 +1341,9 @@
                                         <form t-if="product._is_add_to_cart_possible()">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
                                             <div class="js_product js_main_product mb-3">
+                                               <h5 class="product_detail_name">
+                                                    <t t-esc="product_variant.display_name"/>
+                                                </h5>
                                                 <div>
                                                     <t t-call="website_sale.product_price"/>
                                                     <small t-if="combination_info['base_unit_price']"
@@ -1615,23 +1606,17 @@
             <attribute name='class' remove="sct_not_add_to_cart" separator=" "/>
         </xpath>
     </template>
-    <!-- <template id="scita_shop_snippet_options" inherit_id="website_sale.snippet_options" name="Scita Shop Editor Options">
-        <xpath expr="//we-button[@data-customize-website-views='website_sale.products_add_to_cart']" position="replace">
-            <we-button title="Add to Cart" class="fa fa-fw fa-shopping-cart o_we_add_to_cart_btn" data-customize-website-views="website_sale.products_add_to_cart,theme_scita.scita_products_item_enable_add_cart" data-no-preview="true" data-reload="/"/>
-       </xpath>
-    </template> -->
     <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
         <xpath expr="//a" position="after">
         <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
         </xpath>
     </template>
-   <template id="custom_products_item_rating" inherit_id="website_sale.products_item">
+    <template id="custom_products_item_rating" inherit_id="website_sale.products_item">
         <xpath expr="//t[@t-call='portal_rating.rating_widget_stars_static']" position="replace">
             <ul class='ratings'>
                 <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
-
         </xpath>
     </template>
 </odoo>

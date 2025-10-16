@@ -15,7 +15,6 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale, TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL, float_round, groupby
 from odoo.addons.website_sale.const import SHOP_PATH
-from odoo.http import request, route
 from odoo.fields import  Domain
 
 class WebsiteAutocomplate(Website):
@@ -856,7 +855,7 @@ class ScitaShop(WebsiteSale):
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>''',
         '''/shop/brands'''
     ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop, csrf=False, save_session=False)
-    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', ppg=False, brands=None ,**post):
+    def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, tags='', **post):
         if request.env['website'].sudo().get_current_website().theme_id.name == 'theme_scita':
             add_qty = int(post.get('add_qty', 1))
 
@@ -1054,6 +1053,10 @@ class ScitaShop(WebsiteSale):
         products_prices = products._get_sales_prices(website)
         product_query_params = self._get_product_query_params(**post)
 
+        grouped_attributes_values = request.env['product.attribute.value'].browse(
+            attribute_value_ids
+        ).sorted().grouped('attribute_id')
+        
         prod_available = {}
         for prod in products:
                 variants_available = {
@@ -1067,13 +1070,8 @@ class ScitaShop(WebsiteSale):
                 }
         result = {}
         for cat in Category.search(website_domain):
-                result[cat.id] = request.env['product.template'].search_count(
-                    [('public_categ_ids', 'child_of', cat.id)])
-
-        grouped_attributes_values = request.env['product.attribute.value'].browse(
-            attribute_value_ids
-        ).sorted().grouped('attribute_id')
-
+            result[cat.id] = request.env['product.template'].search_count(
+                [('public_categ_ids', 'child_of', cat.id)])
         values = {
             'auto_assign_ribbons': self.env['product.ribbon'].sudo().search([('assign', '!=', 'manual')]),
             'search': fuzzy_search_term or search,
@@ -1103,11 +1101,12 @@ class ScitaShop(WebsiteSale):
             'shop_path': SHOP_PATH,
             'brand_set': brand_set,
             'product_query_params': product_query_params,
-            'prod_available': prod_available,
             'grouped_attributes_values': grouped_attributes_values,
+            'prod_available': prod_available,
             'previewed_attribute_values': lazy(
                 lambda: products._get_previewed_attribute_values(category, product_query_params),
             ),
+            'result' : result,
         }
         if filter_by_price_enabled:
             values['min_price'] = min_price or available_min_price
@@ -1118,11 +1117,9 @@ class ScitaShop(WebsiteSale):
             values.update({'all_tags': all_tags, 'tags': tags})
         if category:
             values['main_object'] = category
-            values.update(self._get_additional_shop_values(values, **post))
-            return request.render("website_sale.products", values)
-        else:
-            return super(ScitaShop, self).shop(page=page, category=category, search=search,
-                                               ppg=ppg, **post)
+        values.update(self._get_additional_shop_values(values, **post))
+        return request.render("website_sale.products", values)
+
         
     @http.route(['''/allcategories''',
                  '''/allcategories/category/<model("product.public.category"):category>'''
@@ -1307,72 +1304,6 @@ class ScitaShop(WebsiteSale):
 
         return product_data
 
-    # @http.route('/custom/cart/add_or_update', type='json', auth='public', methods=['POST'], website=True)
-    # def add_or_update_cart(self, product_id, quantity=1):
-    #     """
-    #     Adds or updates a product in the cart (Odoo 19 compatible)
-    #     Returns line_id and full cart
-    #     """
-    #     try:
-    #         product_id = int(product_id)
-    #         quantity = float(quantity)
-    #         website = request.env['website'].get_current_website()
-
-    #         # Step 1: Get or create current draft sale order (cart)
-    #         SaleOrder = request.env['sale.order'].sudo()
-    #         sale_order = SaleOrder.search([
-    #             ('website_id', '=', website.id),
-    #             ('state', '=', 'draft'),
-    #             ('partner_id', '=', request.env.user.partner_id.id),
-    #         ], limit=1)
-
-    #         if not sale_order:
-    #             sale_order = SaleOrder.create({
-    #                 'partner_id': request.env.user.partner_id.id,
-    #                 'website_id': website.id,
-    #             })
-
-    #         # Step 2: Check if product already in cart
-    #         line = next(
-    #             (l for l in sale_order.order_line if l.product_id.id == product_id),
-    #             None
-    #         )
-
-    #         if line:
-    #             # Update quantity
-    #             line.sudo().write({'product_uom_qty': line.product_uom_qty + quantity})
-    #             line_id = line.id
-    #         else:
-    #             # Add new line
-    #             product = request.env['product.product'].sudo().browse(product_id)
-    #             if not product.exists():
-    #                 return {'error': 'Product not found'}
-
-    #             # Create a new sale order line
-    #             line = request.env['sale.order.line'].sudo().create({
-    #                 'order_id': sale_order.id,
-    #                 'product_id': product.id,
-    #                 'product_uom_qty': quantity,
-    #                 'price_unit': product.lst_price,
-    #             })
-    #             line_id = line.id
-
-    #         # Step 3: Return cart lines (simplified)
-    #         cart_json = [{
-    #             'line_id': l.id,
-    #             'product_id': l.product_id.id,
-    #             'name': l.product_id.display_name,
-    #             'quantity': l.product_uom_qty,
-    #             'price_unit': l.price_unit,
-    #             'subtotal': l.price_subtotal,
-    #         } for l in sale_order.order_line]
-
-    #         return {'success': True, 'line_id': line_id, 'cart': cart_json}
-
-    #     except Exception as e:
-    #         _logger.exception("Error in add_or_update_cart")
-    #         return {'error': str(e)}
-        
     @http.route('/custom/cart/add_or_update', type='json', auth='public', methods=['POST'], website=True)
     def add_or_update_cart(self, product_id, quantity=1):
         """
@@ -1403,10 +1334,8 @@ class ScitaShop(WebsiteSale):
             line = next((l for l in sale_order.order_line if l.product_id.id == product_id), None)
 
             if line:
-                print("line found", line.product_uom_qty, quantity)
                 # Increment or decrement quantity
                 new_qty = line.product_uom_qty + quantity
-                print("new_qty", new_qty)
                 if new_qty <= 0:
                     # Remove line if quantity <= 0
                     line.sudo().unlink()
@@ -1423,7 +1352,6 @@ class ScitaShop(WebsiteSale):
                 product = request.env['product.product'].sudo().browse(product_id)
                 if not product.exists():
                     return {'error': 'Product not found'}
-                print("product/*****/*/********/*/*/*/*/*/**/*/*/**/*/*/*/*/*/*/*/**/***/*/**/", quantity)
                 line = request.env['sale.order.line'].sudo().create({
                     'order_id': sale_order.id,
                     'product_id': product.id,
@@ -1469,11 +1397,9 @@ class ScitaShop(WebsiteSale):
                     }
                 )
             })
-            print("cart_values****************", cart_values)
             return cart_values
 
         except Exception as e:
-            _logger.exception("Error in add_or_update_cart")
             return {'error': str(e)}
 
 
