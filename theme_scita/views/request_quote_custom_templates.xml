@@ -22,6 +22,9 @@
                     <t t-if="product">
                         <t t-set="product_v" t-value="product.id"/>
                     </t>
+                    <!-- <t t-else="">
+                        <t t-set="product_v" t-value="wish.product_id.id"/>
+                    </t> -->
                     <input type="hidden" name="product_id" id="product_id"
                            t-att-value="product_v"/>
                     <hr/>
