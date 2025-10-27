@@ -90,7 +90,7 @@
                   <keywords>banner, hero, header, promotion</keywords>
             </t>
             <t t-snippet="theme_scita.dynamic_video_banner" string="Video Banner" group="scita_banner">
-                <keywords>banner, video, hero, header, promotion</keywords>
+                <keywords>banner, hero, header, promotion</keywords>
             </t>
             
             <!-- Blog Snippets -->
@@ -227,14 +227,14 @@
             </t>
             
             <!-- Deal Days Snippets -->
-            <t t-snippet="theme_scita.deal_of_day_banner_6" string="Deal of Day Banner" group="scita_deal_days">
+            <t t-snippet="theme_scita.deal_of_day_banner_5" string="Deal of Day Banner" group="scita_deal_days">
                 <keywords>deal, discount, offer, day, banner</keywords>
             </t>
-            <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" string="Multi Category" group="scita_deal_days">
-                <keywords>deal, multi, category, fashion</keywords>
+            <t t-snippet="theme_scita.deal_of_day_banner_3" string="Deal of Day Banner" group="scita_deal_days">
+                <keywords>deal, discount, offer, day, banner</keywords>
             </t>
-            <t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" string="Deal Seller Multi Product" group="scita_deal_days">
-                <keywords>deal, seller, multi, product</keywords>
+            <t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" string="Deal of Day Banner" group="scita_deal_days">
+                <keywords>deal, discount, offer, day, banner</keywords>
             </t>
             
             <!-- Google Map Snippets -->
@@ -260,13 +260,19 @@
             </t>
             
             <!-- Multi Product Snippets -->
-            <t t-snippet="theme_scita.custom_scita_product_slider_static" string="Product Slider" group="scita_multi_product">
-                <keywords>product, multi, slider, carousel</keywords>
-            </t>
             <t t-snippet="theme_scita.sct_product_snippet_1" string="Product Snippet 1" group="scita_multi_product">
                 <keywords>product, snippet, showcase</keywords>
             </t>
-            <t t-snippet="theme_scita.theme_scita_trending_products_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-trending-slider.png">
+            <t t-snippet="theme_scita.deal_of_day_banner_6" string="Deal of Day Banner" group="scita_multi_product">
+                <keywords>deal, discount, offer, day, banner</keywords>
+            </t>
+            <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" string="Multi Category" group="scita_multi_product">
+                <keywords>deal, multi, category, fashion</keywords>
+            </t>
+            <t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" string="Deal Seller Multi Product" group="scita_multi_product">
+                <keywords>deal, seller, multi, product</keywords>
+            </t>
+            <t t-snippet="theme_scita.theme_scita_trending_products_snippet" string="Trending Products" group="scita_multi_product">
                 <keywords>product, snippet, trending</keywords>
             </t>
             

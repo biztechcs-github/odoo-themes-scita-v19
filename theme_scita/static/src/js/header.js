@@ -166,10 +166,14 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
         // this._reloadCartSidebar();
     },
 
-    async _refreshCart(data) {
+   async _refreshCart(data) {
         data["cart_quantity"] = data.cart_quantity || 0;
-        wSaleUtils.updateCartNavBar(data);
-    },
+        try {
+            wSaleUtils.updateCartNavBar(data);
+        } catch (err) {
+            // console.warn("updateCartNavBar skipped because element not found:", err);
+        }
+    }
 });
 
 $(document).ready(function() {

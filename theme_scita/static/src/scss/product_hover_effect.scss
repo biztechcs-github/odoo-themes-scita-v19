@@ -3800,356 +3800,356 @@
 //             }
 //         }
 //     }
-//     .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
-//         .product_category_scita, .fashion_featured_product_1{
-//             .cst_btm_row, .lns-inner{
-//                 .cst_sct_right_side, .psb-inner{
-//                     .cst_category-slider-section, .tab-content{
-//                         .cat_list, .owl-item{
-//                             .cs-product{
-//                                 .pwd-desc{
-//                                     .pwp-info{
-//                                         text-align: center;
-//                                     }
-//                                 }
-//                                 .sct-hover-info{
-//                                     padding: 10px 0 5px;
-//                                     position: static;
-//                                     opacity: 1;
-//                                     transform: none;
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cst_btm_row, .lns-inner{
+                .cst_sct_right_side, .psb-inner{
+                    .cst_category-slider-section, .tab-content{
+                        .cat_list, .owl-item{
+                            .cs-product{
+                                .pwd-desc{
+                                    .pwp-info{
+                                        text-align: center;
+                                    }
+                                }
+                                .sct-hover-info{
+                                    padding: 10px 0 5px;
+                                    position: static;
+                                    opacity: 1;
+                                    transform: none;
             
-//                                     @include min992{
-//                                         padding: 0;
-//                                     }
+                                    @include min992{
+                                        padding: 0;
+                                    }
             
-//                                     form{
-//                                         @include flex;
-//                                         @include flexwrap;
-//                                         @include content-cn;
+                                    form{
+                                        @include flex;
+                                        @include flexwrap;
+                                        @include content-cn;
             
-//                                         @include min992{
-//                                             display: block;
-//                                             opacity: 0;
-//                                             @include transition(all, 0.3s, ease-in);
-//                                         }
-//                                     }
-//                                     .btn{
-//                                         background: $light-color;
-//                                         box-shadow: rgba($black, 0.2) 0px 0px 4px;
-//                                         padding: 6px;
-//                                         line-height: 1;
-//                                         display: flex;
-//                                         align-items: center;
-//                                         justify-content: center;
-//                                         font-size: 16px;
-//                                         border: 0;
-//                                         margin: 0 3px;
-//                                         width: auto;
-//                                         border-radius: 6px;
-//                                         @include transition(all, 0.3s, ease-in);
+                                        @include min992{
+                                            display: block;
+                                            opacity: 0;
+                                            @include transition(all, 0.3s, ease-in);
+                                        }
+                                    }
+                                    .btn{
+                                        background: $light-color;
+                                        box-shadow: rgba($black, 0.2) 0px 0px 4px;
+                                        padding: 6px;
+                                        line-height: 1;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-size: 16px;
+                                        border: 0;
+                                        margin: 0 3px;
+                                        width: auto;
+                                        border-radius: 6px;
+                                        @include transition(all, 0.3s, ease-in);
                                         
-//                                         @include min992{
-//                                             position: absolute;
-//                                             top: 11px;
-//                                             right: 18px;
-//                                             z-index: 1;
-//                                             margin: 0;
-//                                             transform: translate(20px, 10px);
-//                                         }
+                                        @include min992{
+                                            position: absolute;
+                                            top: 11px;
+                                            right: 18px;
+                                            z-index: 1;
+                                            margin: 0;
+                                            transform: translate(20px, 10px);
+                                        }
                                         
-//                                         @include min1200{
-//                                             font-size: 18px;
-//                                         }
+                                        @include min1200{
+                                            font-size: 18px;
+                                        }
             
-//                                         &:hover{
-//                                             background: $primary;
-//                                             color: $light-color;
-//                                         }
+                                        &:hover{
+                                            background: $primary;
+                                            color: $light-color;
+                                        }
             
-//                                         &.o_add_compare{
-//                                             display: none;
+                                        &.o_add_compare{
+                                            display: none;
             
-//                                             @include min768{
-//                                                 display: flex;
-//                                             }
-//                                         }
-//                                     }
-//                                     .btn[role="button"]{
-//                                         + .btn[role="button"]{
-//                                             @include min992{
-//                                                 top: 45px;
-//                                             }
+                                            @include min768{
+                                                display: flex;
+                                            }
+                                        }
+                                    }
+                                    .btn[role="button"]{
+                                        + .btn[role="button"]{
+                                            @include min992{
+                                                top: 45px;
+                                            }
             
-//                                             @media (min-width: 1200px) {
-//                                                 top: 48px;
-//                                             }
+                                            @media (min-width: 1200px) {
+                                                top: 48px;
+                                            }
             
-//                                             + .btn[role="button"]{
-//                                                 @include min992{
-//                                                     top: 80px;
-//                                                 }
-//                                                 @include min1200{
-//                                                     top: 85px;
-//                                                 }
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                                 &:hover{
-//                                     .sct-hover-info{
-//                                         transform: none !important;
-//                                         form{
-//                                             opacity: 1;
-//                                         }
-//                                         .btn{
-//                                             @include min992{
-//                                                 transform: translate(0px, 0px);
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .sct_product_snippet_1{
-//         .content{
-//             .grid_product{
-//                 .cs-product{
-//                     .pwd-desc{
-//                         .pwp-info{
-//                             text-align: center;
-//                         }
-//                         .pink-box{
-//                             justify-content: center;
-//                             flex-direction: column;
+                                            + .btn[role="button"]{
+                                                @include min992{
+                                                    top: 80px;
+                                                }
+                                                @include min1200{
+                                                    top: 85px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &:hover{
+                                    .sct-hover-info{
+                                        transform: none !important;
+                                        form{
+                                            opacity: 1;
+                                        }
+                                        .btn{
+                                            @include min992{
+                                                transform: translate(0px, 0px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sct_product_snippet_1{
+        .content{
+            .grid_product{
+                .cs-product{
+                    .pwd-desc{
+                        .pwp-info{
+                            text-align: center;
+                        }
+                        .pink-box{
+                            justify-content: center;
+                            flex-direction: column;
 
-//                             .price{
-//                                 padding-bottom: 10px;
-//                             }
-//                         }
-//                         .sct-hover-info{
-//                             .sct-feature-wrap{
-//                                 display: flex;
-//                                 @include min992{
-//                                     display: block;
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .cs-product{
-//         .pwd-desc{
-//             .pwp-info{
-//                 .o_wsale_product_attribute{
-//                     margin-right: -0.25rem;
-//                     justify-content: center;
+                            .price{
+                                padding-bottom: 10px;
+                            }
+                        }
+                        .sct-hover-info{
+                            .sct-feature-wrap{
+                                display: flex;
+                                @include min992{
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .cs-product{
+        .pwd-desc{
+            .pwp-info{
+                .o_wsale_product_attribute{
+                    margin-right: -0.25rem;
+                    justify-content: center;
 
-//                     .scita_attribute_li{
-//                         .css_attribute_color{
-//                             width: 20px;
-//                             height: 20px;
-//                             margin: 2px;
-//                             font-size: 0;
-//                             position: relative;
-//                             cursor: pointer;
-//                             line-height: 12px;
-//                             border-radius: 6px;
-//                             border: 1px solid #e9e9e9;
+                    .scita_attribute_li{
+                        .css_attribute_color{
+                            width: 20px;
+                            height: 20px;
+                            margin: 2px;
+                            font-size: 0;
+                            position: relative;
+                            cursor: pointer;
+                            line-height: 12px;
+                            border-radius: 6px;
+                            border: 1px solid #e9e9e9;
                             
-//                             @include min1200{
-//                                 width: 24px;
-//                                 height: 24px;
-//                             }
+                            @include min1200{
+                                width: 24px;
+                                height: 24px;
+                            }
 
-//                             &::before{
-//                                 position: absolute;
-//                                 top: -3px;
-//                                 width: calc(100% + 6px);
-//                                 height: calc(100% + 6px);
-//                                 left: -3px;
-//                                 border: 1px solid #868686;
-//                                 border-radius: 6px;
-//                                 box-shadow: none;
-//                             }
+                            &::before{
+                                position: absolute;
+                                top: -3px;
+                                width: calc(100% + 6px);
+                                height: calc(100% + 6px);
+                                left: -3px;
+                                border: 1px solid #868686;
+                                border-radius: 6px;
+                                box-shadow: none;
+                            }
 
-//                             input{
-//                                 margin: 0;
-//                                 height: 0;
-//                                 width: 0;
-//                                 position: absolute;
-//                                 top: 0;
-//                                 bottom: 0;
-//                                 left: 0;
-//                                 right: 0;
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-//     .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
-//         .deal_day_wrap, .tab_content_inner, .content{
-//             .deal_day_bottom_inner, .owl-item, .grid_product{
-//                 .cs-product{
-//                     position: relative;
+                            input{
+                                margin: 0;
+                                height: 0;
+                                width: 0;
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
+        .deal_day_wrap, .tab_content_inner, .content{
+            .deal_day_bottom_inner, .owl-item, .grid_product{
+                .cs-product{
+                    position: relative;
 
-//                     .pwd-desc{
-//                         overflow: visible;
-//                         position: static;
+                    .pwd-desc{
+                        overflow: visible;
+                        position: static;
                         
-//                         .pwp-info{
-//                             background: $light-color;
-//                             @include transition(all, 0.3s, ease-in);
-//                         }
+                        .pwp-info{
+                            background: $light-color;
+                            @include transition(all, 0.3s, ease-in);
+                        }
 
-//                         .sct-hover-info{
-//                             padding-bottom: 5px;
+                        .sct-hover-info{
+                            padding-bottom: 5px;
 
-//                             @include min992{
-//                                 padding-bottom: 0;
-//                             }
+                            @include min992{
+                                padding-bottom: 0;
+                            }
 
-//                             form{
-//                                 @include flex;
-//                                 @include flexwrap;
-//                                 @include content-cn;
+                            form{
+                                @include flex;
+                                @include flexwrap;
+                                @include content-cn;
 
-//                                 @include min992{
-//                                     display: block;
-//                                     opacity: 0;
-//                                     @include transition(all, 0.3s, ease-in);
-//                                 }
-//                             }
-//                             .btn{
-//                                 background: $light-color;
-//                                 box-shadow: rgba($black, 0.2) 0px 0px 4px;
-//                                 padding: 6px;
-//                                 line-height: 1;
-//                                 display: flex;
-//                                 align-items: center;
-//                                 justify-content: center;
-//                                 font-size: 16px;
-//                                 border: 0;
-//                                 margin: 0 3px;
-//                                 width: auto;
-//                                 border-radius: 6px;
-//                                 @include transition(all, 0.3s, ease-in);
+                                @include min992{
+                                    display: block;
+                                    opacity: 0;
+                                    @include transition(all, 0.3s, ease-in);
+                                }
+                            }
+                            .btn{
+                                background: $light-color;
+                                box-shadow: rgba($black, 0.2) 0px 0px 4px;
+                                padding: 6px;
+                                line-height: 1;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 16px;
+                                border: 0;
+                                margin: 0 3px;
+                                width: auto;
+                                border-radius: 6px;
+                                @include transition(all, 0.3s, ease-in);
                                 
-//                                 @include min992{
-//                                     position: absolute;
-//                                     top: 11px;
-//                                     right: 18px;
-//                                     z-index: 1;
-//                                     margin: 0;
-//                                     transform: translate(30px, 10px);
-//                                 }
+                                @include min992{
+                                    position: absolute;
+                                    top: 11px;
+                                    right: 18px;
+                                    z-index: 1;
+                                    margin: 0;
+                                    transform: translate(30px, 10px);
+                                }
                                 
-//                                 @include min1200{
-//                                     font-size: 18px;
-//                                 }
+                                @include min1200{
+                                    font-size: 18px;
+                                }
 
-//                                 &:hover{
-//                                     background: $primary;
-//                                     color: $light-color;
-//                                 }
+                                &:hover{
+                                    background: $primary;
+                                    color: $light-color;
+                                }
 
-//                                 &.cart_view_sct_btn{
-//                                     @include min992{
-//                                         margin: 0 auto;
-//                                         box-shadow: none;
-//                                         background: $primary;
-//                                         padding: 5px 10px;
-//                                         font-size: 14px;
-//                                         min-width: 90px;
-//                                         color: $light-color;
-//                                         border: 1px solid $primary;
-//                                         bottom: 0;
-//                                         top: auto;
-//                                         right: 50%;
-//                                         transform: translate(50%, 10px);
+                                &.cart_view_sct_btn{
+                                    @include min992{
+                                        margin: 0 auto;
+                                        box-shadow: none;
+                                        background: $primary;
+                                        padding: 5px 10px;
+                                        font-size: 14px;
+                                        min-width: 90px;
+                                        color: $light-color;
+                                        border: 1px solid $primary;
+                                        bottom: 0;
+                                        top: auto;
+                                        right: 50%;
+                                        transform: translate(50%, 10px);
 
-//                                         &:hover{
-//                                             background: $light-color;
-//                                             color: $primary;
-//                                         }
-//                                     }
+                                        &:hover{
+                                            background: $light-color;
+                                            color: $primary;
+                                        }
+                                    }
 
-//                                     .add_to_cart_text{
-//                                         display: none;
+                                    .add_to_cart_text{
+                                        display: none;
 
-//                                         @include min768{
-//                                             display: block;
-//                                         }
-//                                     }
-//                                     .cart_icon{
-//                                         @include min768{
-//                                             display: none;
-//                                         }
-//                                     }
-//                                 }
+                                        @include min768{
+                                            display: block;
+                                        }
+                                    }
+                                    .cart_icon{
+                                        @include min768{
+                                            display: none;
+                                        }
+                                    }
+                                }
 
-//                                 &.o_add_compare{
-//                                     display: none;
+                                &.o_add_compare{
+                                    display: none;
 
-//                                     @include min768{
-//                                         display: flex;
-//                                     }
-//                                 }
-//                             }
-//                             .btn[role="button"]{
-//                                 + .btn[role="button"]{
-//                                     @include min992{
-//                                         top: 45px;
-//                                     }
+                                    @include min768{
+                                        display: flex;
+                                    }
+                                }
+                            }
+                            .btn[role="button"]{
+                                + .btn[role="button"]{
+                                    @include min992{
+                                        top: 45px;
+                                    }
 
-//                                     @media (min-width: 1200px) {
-//                                         top: 48px;
-//                                     }
+                                    @media (min-width: 1200px) {
+                                        top: 48px;
+                                    }
 
-//                                     + .btn[role="button"]{
-//                                         @include min992{
-//                                             top: 80px;
-//                                         }
-//                                         @include min1200{
-//                                             top: 85px;
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
+                                    + .btn[role="button"]{
+                                        @include min992{
+                                            top: 80px;
+                                        }
+                                        @include min1200{
+                                            top: 85px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
 
-//                     &:hover{
-//                         .pwd-desc{
-//                             .pwp-info{
-//                                 transform: translateY(-35px);
-//                             }
-//                             .sct-hover-info{
-//                                 form{
-//                                     opacity: 1;
-//                                 }
-//                                 .btn{
-//                                     @include min992{
-//                                         transform: translate(0px, 0px);
+                    &:hover{
+                        .pwd-desc{
+                            .pwp-info{
+                                transform: translateY(-35px);
+                            }
+                            .sct-hover-info{
+                                form{
+                                    opacity: 1;
+                                }
+                                .btn{
+                                    @include min992{
+                                        transform: translate(0px, 0px);
                                         
-//                                         &.cart_view_sct_btn{
-//                                             transform: translate(50%, 0px);
-//                                         }
-//                                     }
-//                                 }
-//                             }
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
+                                        &.cart_view_sct_btn{
+                                            transform: translate(50%, 0px);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 // }

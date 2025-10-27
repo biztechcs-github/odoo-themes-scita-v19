@@ -145,13 +145,11 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                             });
 
                             if (response.error) {
-                                console.error("❌ Cart error:", response.error);
                                 return;
                             }
 
                             const line_id = response.line_id;
                             const qty = response.quantity;
-                            console.log("✅ Cart line_id:", line_id);
 
                             // Step 2: Update cart via official Odoo 19 cart update
                             const params = {
@@ -163,8 +161,6 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                             const data = await rpc("/shop/cart/update", params);
 
                             // Step 3: Update cart navbar safely
-                            // await updateCartNavBar(data);
-
                             // Optional: Update quantity input in modal
                             if (quantityInput) {
                                 quantityInput.value = quantity;
@@ -172,8 +168,6 @@ odoo.define('theme_scita.quick_view', [], function (require) {
 
                             // redirect('/shop/cart');
                             window.location.href = "/shop/cart";
-
-                            console.log("✅ Product added to cart:", data);
 
                         } catch (err) {
                             console.error("❌ RPC call failed:", err);
@@ -234,13 +228,16 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                     $parent.find('.css_attribute_color').removeClass("active");
                     $parent.find('.css_attribute_color').filter(':has(input:checked)').addClass("active");
                 });
+                $('#shop_quick_view_modal').find('span.attribute_value').each(function () {
+                    const $span = $(this);
+                    if ($span.closest('li[name="variant_attribute"]').length) {
+                        $span.hide();
+                    }
+                });
             });
         },
 
-        //----------------------------------------------------------------------
-        // Color Swatch Preview
-        //----------------------------------------------------------------------
-        _onMouseEnterSwatch: async function (ev) {
+           _onMouseEnterSwatch: async function (ev) {
             const $swatch = $(ev.currentTarget);
             const $product = $swatch.closest('.js_main_product, #product_detail');
 
@@ -266,6 +263,9 @@ odoo.define('theme_scita.quick_view', [], function (require) {
                 $product.find('.oe_price .oe_currency_value').text(combinationInfo.price);
             }
     },
+
+
+
 
         //----------------------------------------------------------------------
         // Cart View Modal

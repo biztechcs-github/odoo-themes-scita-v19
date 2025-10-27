@@ -23,15 +23,15 @@ class ProductPublicCategory(models.Model):
     attributes_ids_values = fields.Many2many('product.attribute.value',
                                              domain="[('attribute_id', 'in', attributes_ids)]",
                                              string="Attributes Values")
-    align_category_content = fields.Selection(
-        [
-            ("left", "Left"),
-            ("center", "Center"),
-            ("right", "Right"),
-        ],
-        string="Align Category Content",
-        default="center",
-    )
+    # align_category_content = fields.Selection(
+    #     [
+    #         ("left", "Left"),
+    #         ("center", "Center"),
+    #         ("right", "Right"),  
+    #     ],
+    #     string="Align Category Content",
+    #     default="center",
+    # )
 
     @api.onchange('attributes_ids')
     def onchange_website_attributes_ids(self):
@@ -39,26 +39,6 @@ class ProductPublicCategory(models.Model):
             for child in self.child_id:
                 child._origin.attributes_ids = self.attributes_ids
                 child._origin.onchange_website_attributes_ids()
-
-
-# class ProductTags(models.Model):
-#     _name = 'biztech.product.tags'
-#     _order = "sequence"
-#     _description = 'Product tags'
-
-#     name = fields.Char(string="Tag Name", help="Tag Name",
-#                        required=True, translate=True)
-#     active = fields.Boolean(
-#         string="Active", help="Enable or Disable tag from website", default=True)
-#     sequence = fields.Integer(
-#         string="Sequence", help="You can define sequence of tags you want to show tags")
-#     product_ids = fields.Many2many(
-#         'product.template', string='Products', required=True)
-
-#     _sql_constraints = [('unique_tag_name', 'unique(name)',
-#                          'Tag name should be unique..!'), ]
-
-
 class ProductStyleTags(models.Model):
     _name = 'biztech.product.style.tag'
     _description = 'Product Style Tags'
@@ -280,75 +260,6 @@ class Brands(models.Model):
     @api.depends('product_ids')
     def _get_products_count(self):
         self.products_count = len(self.product_ids)
-
-
-# class ProductSortBy(models.Model):
-#     _name = 'biztech.product.sortby'
-#     _description = 'Custom Product Sorting'
-
-#     name = fields.Char(string="Name", help='Name for sorting option',
-#                        required=True)
-# sort_type = fields.Selection(
-#     [('asc', 'Ascending'), ('desc', 'Descending')], string="Type", default='asc')
-#     sort_on = fields.Many2one('ir.model.fields', string='Sort On',
-#                               help='Select field on which you want to apply sorting',
-#                               domain=[('model', '=', 'product.template'),
-#                                       ('ttype', 'in',
-#                                        ('char', 'float', 'integer', 'datetime', 'date'))])
-
-
-# class ProductPerPageNo(models.Model):
-#     _name = "product.per.page.no"
-#     _order = 'name asc'
-#     _description = "Add page no"
-
-#     name = fields.Integer(string='Product per page')
-#     set_default_check = fields.Boolean(string="Set default")
-#     prod_page_id = fields.Many2one('product.per.page')
-
-#     @api.model
-#     def create(self, vals):
-#         res = super(ProductPerPageNo, self).create(vals)
-#         if vals.get('name') == 0:
-#             raise Warning(
-#                 _("Warning! You cannot set 'zero' for product page."))
-#         if vals.get('set_default_check'):
-#             true_records = self.search(
-#                 [('set_default_check', '=', True), ('id', '!=', res.id)])
-#             true_records.write({'set_default_check': False})
-#         return res
-
-#     def write(self, vals):
-#         res = super(ProductPerPageNo, self).write(vals)
-#         if vals.get('name') == 0:
-#             raise Warning(
-#                 _("Warning! You cannot set 'zero' for product page."))
-#         if vals.get('set_default_check'):
-#             true_records = self.search(
-#                 [('set_default_check', '=', True), ('id', '!=', self.id)])
-#             true_records.write({'set_default_check': False})
-#         return res
-
-
-# class ProductPerPage(models.Model):
-#     _name = "product.per.page"
-#     _description = "Add no of product display in one page"
-
-#     name = fields.Char(string="Label Name", translate=True)
-#     no_ids = fields.One2many(
-#         'product.per.page.no', 'prod_page_id', string="No of product to display")
-
-#     def write(self, vals):
-#         res = super(ProductPerPage, self).write(vals)
-#         default_pg = self.env['product.per.page.no'].search(
-#             [('set_default_check', '=', True)])
-#         if default_pg.name:
-#             main.PPG = int(default_pg.name)
-#         else:
-#             raise Warning(
-#                 _("Warning! You have to set atleast one default value."))
-#         return res
-
 
 class ScitaMultiProductImages(models.Model):
     _name = 'scita.product.images'
