@@ -245,6 +245,12 @@
         <field name="arch" type="xml">
             <block id="website_payment_block" position="inside">
                 <setting
+                    id="website_login_see_price"
+                    help="Login to see prices"
+                >
+                    <field name="login_see_price" />
+                </setting>
+                <setting
                     id="website_sale_hide_price"
                     help="Hide prices at website level"
                 >
