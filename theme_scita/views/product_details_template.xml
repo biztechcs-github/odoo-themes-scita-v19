@@ -97,7 +97,7 @@
             <attribute name="class">btn btn-lg js_check_product a-submit</attribute>
         </xpath>
         <xpath expr="//a[@id='add_to_cart']" position="replace">
-            <div class='sct-main-price-description'  t-if="not (product.website_hide_price or website.website_hide_price)">
+            <div class='sct-main-price-description'>
                 <div class='sct-price-option' t-if="not request.env.user._is_public() and website.add_to_cart or not website.add_to_cart">
                     <div class="sct-add-to-cart-mob">
                         <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#">
@@ -110,7 +110,7 @@
     </template>
     <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
         <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
-            <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false"  t-if="not (product.website_hide_price or website.website_hide_price)">
+            <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
                 <a
                     t-attf-href="#"
                     class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0"
