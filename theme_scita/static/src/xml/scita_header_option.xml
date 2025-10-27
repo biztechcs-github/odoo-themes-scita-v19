@@ -421,7 +421,7 @@
     </div>
 </t>
 <!-- Lazy Loading -->
-<t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
+<!-- <t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
     <xpath expr="//BuilderRow[@label.translate='Toolbar']" position="after">
         <div
             data-js="SaleLazyLoad"
@@ -450,6 +450,47 @@
             </BuilderRow>
         </div>
     </xpath>
-</t>
+</t> -->
+ <t t-inherit="website.ThemeButtonOption" t-inherit-mode="extension" name="Add Custom Button and Hover Options">
+        <xpath expr="//BuilderContext" position="inside">
 
+            <!-- Button Style Option -->
+            <BuilderRow label.translate="Buttons Style">
+                <BuilderSelect action="'customizeWebsiteVariable'" actionParam="'btn-style-template'">
+                    <BuilderSelectItem actionValue="'btn_style_1'">
+                        <img src="/theme_scita/static/src/img/snippet_icon/Button-style1.svg"
+                             alt="Button Style 1" width="40" height="40"/>
+                        Style 1
+                    </BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'btn_style_2'">
+                        <img src="/theme_scita/static/src/img/snippet_icon/Button-style2.svg"
+                             alt="Button Style 2" width="40" height="40"/>
+                        Style 2
+                    </BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'btn_style_3'">
+                        <img src="/theme_scita/static/src/img/snippet_icon/Button-style3.svg"
+                             alt="Button Style 3" width="40" height="40"/>
+                        Style 3
+                    </BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'btn_style_4'">
+                        <img src="/theme_scita/static/src/img/snippet_icon/Button-style4.svg"
+                             alt="Button Style 4" width="40" height="40"/>
+                        Style 4
+                    </BuilderSelectItem>
+                </BuilderSelect>
+            </BuilderRow>
+
+            <!-- Product Hover Style Option -->
+            <BuilderRow label.translate="Product Hover Style">
+                <BuilderSelect action="'customizeWebsiteVariable'" actionParam="'prod-hover-style'">
+                    <BuilderSelectItem actionValue="'prod_hover_style_1'">Effect Style 1</BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'prod_hover_style_2'">Effect Style 2</BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'prod_hover_style_3'">Effect Style 3</BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'prod_hover_style_4'">Effect Style 4</BuilderSelectItem>
+                    <BuilderSelectItem actionValue="'prod_hover_style_5'">Effect Style 5</BuilderSelectItem>
+                </BuilderSelect>
+            </BuilderRow>
+
+        </xpath>
+    </t>
 </templates>
