@@ -23,15 +23,15 @@ class ProductPublicCategory(models.Model):
     attributes_ids_values = fields.Many2many('product.attribute.value',
                                              domain="[('attribute_id', 'in', attributes_ids)]",
                                              string="Attributes Values")
-    # align_category_content = fields.Selection(
-    #     [
-    #         ("left", "Left"),
-    #         ("center", "Center"),
-    #         ("right", "Right"),  
-    #     ],
-    #     string="Align Category Content",
-    #     default="center",
-    # )
+    align_category_content = fields.Selection(
+        [
+            ("left", "Left"),
+            ("center", "Center"),
+            ("right", "Right"),  
+        ],
+        string="Align Category Content",
+        default="center",
+    )
 
     @api.onchange('attributes_ids')
     def onchange_website_attributes_ids(self):
