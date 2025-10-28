@@ -262,7 +262,12 @@ odoo.define('theme_scita.quick_view', [], function (require) {
             if (combinationInfo.price) {
                 $product.find('.oe_price .oe_currency_value').text(combinationInfo.price);
             }
-    },
+            if (combinationInfo.product_id) {
+                const newImageUrl = `/web/image/product.product/${combinationInfo.product_id}/image_1920`;
+                const $modal = $('.modal.show');
+                $modal.find('.product_detail_img').attr('src', newImageUrl);
+            }
+        },
 
 
 

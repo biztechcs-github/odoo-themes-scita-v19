@@ -1348,7 +1348,7 @@
                                                     <t t-call="website_sale.product_price"/>
                                                     <small t-if="combination_info['base_unit_price']"
                                                            class="ms-1 text-muted o_base_unit_price_wrapper d-none" groups="website_sale.group_show_uom_price">
-                                                        <t t-call='website_sale.base_unit_price'/>
+                                                        <!-- <t t-call='website_sale.base_unit_price'/> -->
                                                     </small>
                                                 </div>
                                                 <t t-placeholder="select">
