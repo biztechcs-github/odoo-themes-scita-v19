@@ -443,81 +443,84 @@
                                                             t-out="website.currency_id.name"/>
                                                     </b>
                                                 </p>
-                                                <t t-foreach="product.valid_product_template_attribute_line_ids"
-                                                t-as="ptal">
-                                                    <t t-if="ptal.attribute_id.display_type == 'color'">
-                                                        <ul t-att-data-attribute_id="ptal.attribute_id.id"
-                                                            t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-none d-xl-flex"
-                                                            t-attf-data-default-img-src="/web/image/product.template/#{product.id}/image_512"
-                                                        >
-                                                            <t t-set="product_attr_values"
-                                                            t-value="ptal.product_template_value_ids._only_active()"/>
-                                                            <li t-foreach="product_attr_values[:4]" t-as="ptav"
-                                                                class="list-inline-item me-1 scita_attribute_li">
-                                                                <t t-set="product_product"
-                                                                t-value="product._get_product_variant(ptav)"/>
-                                                                <t t-if="product_product">
-                                                                    <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
-                                                                        t-attf-class="css_attribute_color"
-                                                                        t-att-data-preview-img-src="'/web/image/product.product/%s/%s' % (product_product[0],'image_512')"
-                                                                    >
-                                                                        <input type="radio"
-                                                                            t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
-                                                                            t-att-name="'ptal-%s' % ptal.id"
-                                                                            t-att-value="ptav.id"
-                                                                            t-att-title="ptav.name"
-                                                                            t-att-data-value_id="ptav.id"
-                                                                            t-att-data-value_name="ptav.name"
-                                                                            t-att-data-attribute_name="ptav.attribute_id.name"
-                                                                            t-att-data-is_custom="ptav.is_custom"
-                                                                        />
-                                                                    </label>
-                                                                </t>
-                                                            </li>
-                                                            <li t-if="len(product_attr_values) > 4">
-                                                                <a class="link-dark d-flex align-items-center h-100 w-100"
-                                                                t-att-href="product.website_url">+
-                                                                    <t t-out="len(product_attr_values) - 4"/>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <ul t-att-data-attribute_id="ptal.attribute_id.id"
-                                                            t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-flex d-xl-none"
-                                                            t-attf-data-default-img-src="/web/image/product.template/#{product.id}/image_512"
-                                                        >
-                                                            <t t-set="product_attr_values"
-                                                            t-value="ptal.product_template_value_ids._only_active()"/>
-                                                            <li t-foreach="product_attr_values[:2]" t-as="ptav"
-                                                                class="list-inline-item me-1 scita_attribute_li">
-                                                                <t t-set="product_product"
-                                                                t-value="product._get_product_variant(ptav)"/>
-                                                                <t t-if="product_product">
-                                                                    <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
-                                                                        t-attf-class="css_attribute_color"
-                                                                        t-att-data-preview-img-src="'/web/image/product.product/%s/%s' % (product_product[0],'image_512')"
-                                                                    >
-                                                                        <input type="radio"
-                                                                            t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
-                                                                            t-att-name="'ptal-%s' % ptal.id"
-                                                                            t-att-value="ptav.id"
-                                                                            t-att-title="ptav.name"
-                                                                            t-att-data-value_id="ptav.id"
-                                                                            t-att-data-value_name="ptav.name"
-                                                                            t-att-data-attribute_name="ptav.attribute_id.name"
-                                                                            t-att-data-is_custom="ptav.is_custom"
-                                                                        />
-                                                                    </label>
-                                                                </t>
-                                                            </li>
-                                                            <li t-if="len(product_attr_values) > 2">
-                                                                <a class="link-dark d-flex align-items-center h-100 w-100"
-                                                                t-att-href="product.website_url">+
-                                                                    <t t-out="len(product_attr_values) - 2"/>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
+                                                <div class="js_main_product">
+                                                <input type="hidden" name="product_template_id" t-att-value="product.id"/>
+                                                    <t t-foreach="product.valid_product_template_attribute_line_ids"
+                                                    t-as="ptal">
+                                                        <t t-if="ptal.attribute_id.display_type == 'color'">
+                                                            <ul t-att-data-attribute_id="ptal.attribute_id.id"
+                                                                t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-none d-xl-flex"
+                                                                t-attf-data-default-img-src="/web/image/product.template/#{product.id}/image_512"
+                                                            >
+                                                                <t t-set="product_attr_values"
+                                                                t-value="ptal.product_template_value_ids._only_active()"/>
+                                                                <li t-foreach="product_attr_values[:4]" t-as="ptav"
+                                                                    class="list-inline-item me-1 scita_attribute_li">
+                                                                    <t t-set="product_product"
+                                                                    t-value="product._get_product_variant(ptav)"/>
+                                                                    <t t-if="product_product">
+                                                                        <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
+                                                                            t-attf-class="css_attribute_color"
+                                                                            t-att-data-preview-img-src="'/web/image/product.product/%s/%s' % (product_product[0],'image_512')"
+                                                                        >
+                                                                            <input type="radio"
+                                                                                t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
+                                                                                t-att-name="'ptal-%s' % ptal.id"
+                                                                                t-att-value="ptav.id"
+                                                                                t-att-title="ptav.name"
+                                                                                t-att-data-value_id="ptav.id"
+                                                                                t-att-data-value_name="ptav.name"
+                                                                                t-att-data-attribute_name="ptav.attribute_id.name"
+                                                                                t-att-data-is_custom="ptav.is_custom"
+                                                                            />
+                                                                        </label>
+                                                                    </t>
+                                                                </li>
+                                                                <li t-if="len(product_attr_values) > 4">
+                                                                    <a class="link-dark d-flex align-items-center h-100 w-100"
+                                                                    t-att-href="product.website_url">+
+                                                                        <t t-out="len(product_attr_values) - 4"/>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                            <ul t-att-data-attribute_id="ptal.attribute_id.id"
+                                                                t-attf-class="list-inline o_wsale_product_attribute scita_attribute_select d-flex d-xl-none"
+                                                                t-attf-data-default-img-src="/web/image/product.template/#{product.id}/image_512"
+                                                            >
+                                                                <t t-set="product_attr_values"
+                                                                t-value="ptal.product_template_value_ids._only_active()"/>
+                                                                <li t-foreach="product_attr_values[:2]" t-as="ptav"
+                                                                    class="list-inline-item me-1 scita_attribute_li">
+                                                                    <t t-set="product_product"
+                                                                    t-value="product._get_product_variant(ptav)"/>
+                                                                    <t t-if="product_product">
+                                                                        <label t-attf-style="background-color:#{ptav.html_color or ptav.product_attribute_value_id.name if not ptav.is_custom else ''}"
+                                                                            t-attf-class="css_attribute_color"
+                                                                            t-att-data-preview-img-src="'/web/image/product.product/%s/%s' % (product_product[0],'image_512')"
+                                                                        >
+                                                                            <input type="radio"
+                                                                                t-attf-class="js_variant_change  #{ptal.attribute_id.create_variant}"
+                                                                                t-att-name="'ptal-%s' % ptal.id"
+                                                                                t-att-value="ptav.id"
+                                                                                t-att-title="ptav.name"
+                                                                                t-att-data-value_id="ptav.id"
+                                                                                t-att-data-value_name="ptav.name"
+                                                                                t-att-data-attribute_name="ptav.attribute_id.name"
+                                                                                t-att-data-is_custom="ptav.is_custom"
+                                                                            />
+                                                                        </label>
+                                                                    </t>
+                                                                </li>
+                                                                <li t-if="len(product_attr_values) > 2">
+                                                                    <a class="link-dark d-flex align-items-center h-100 w-100"
+                                                                    t-att-href="product.website_url">+
+                                                                        <t t-out="len(product_attr_values) - 2"/>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </t>
                                                     </t>
-                                                </t>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="sct-hover-info product_price ajax_cart_template">
@@ -525,7 +528,7 @@
                                                 <input name="product_id"
                                                     t-att-value="product.product_variant_id.id"
                                                     type="hidden"/>
-                                                <button class="button btn btn-cart cart_view_sct_btn"
+                                                <button class="button btn btn-cart js_add_cart cart_view_sct_btn"
                                                         t-att-data-id="product.product_variant_id.id"
                                                         t-att-data-template-id="product.id">
                                                     <span class="lni lni-cart-1 cart_icon"/>
@@ -755,7 +758,8 @@
                                                                             t-out="website.currency_id.name"/>
                                                                     </b>
                                                                 </p>
-                                                                <div id="product_detail" class="js_main_product">
+                                                                <div class="js_main_product">
+                                                                    <input type="hidden" name="product_template_id" t-att-value="slide.id"/>
                                                                     <t t-foreach="slide.valid_product_template_attribute_line_ids"
                                                                     t-as="ptal">
                                                                         <t t-if="ptal.attribute_id.display_type == 'color'">
@@ -866,7 +870,7 @@
                                                                         </t>                                                                                                        
                                                                 </div>
                                                             </div>
-                                                            <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                            <!-- <div class="cart_wrapper add_cart_div ajax_cart_template">
                                                                     <input type="hidden" name="csrf_token"
                                                                         t-att-value="request.csrf_token()"/>
                                                                     <input name="product_id"
@@ -898,9 +902,33 @@
                                                                             <i class="oi oi-plus"/>
                                                                         </a>
                                                                     </div>
+                                                            </div> -->
+                                                            <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                            <input name="product_id" t-att-value="slide.product_variant_id.id" type="hidden"/>
+                                                            <button class="button btn btn-cart a-submit js_add_cart cart_view_sct_btn"
+                                                                    t-att-data-id="slide.id"
+                                                                    t-att-data-template-id="slide.id">
+                                                                Add
+                                                            </button>
+                                                        <div t-attf-class="css_quantity input-group dropdown-plus-out {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle"
+                                                                contenteditable="false">
+                                                                <a t-attf-href="#" class="btn btn-link js_add_cart_json"
+                                                                aria-label="Remove one" title="Remove one">
+                                                                    <i class="oi oi-minus"/>
+                                                                </a>
+                                                                <input type="text"
+                                                                    class="form-control quantity text-center"
+                                                                    data-min="1" name="add_qty"
+                                                                    t-att-value="add_qty or 1"/>
+                                                                <a t-attf-href="#"
+                                                                class="btn btn-link float_left js_add_cart_json"
+                                                                aria-label="Add one" title="Add one">
+                                                                    <i class="oi oi-plus"/>
+                                                                </a>
                                                             </div>
-
-                                                        </div>
+                                                        </div> 
+                                                    </div>
                                                     </div>
                                                 </form>
                                             </t>

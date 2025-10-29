@@ -1100,7 +1100,7 @@ class ScitaShop(WebsiteSale):
             'category_entries': category_entries,
             'attributes': attributes,
             'keep': keep,
-            'add_qty': add_qty,
+            # 'add_qty': add_qty,
             'search_categories_ids': search_categories.ids,
             'layout_mode': layout_mode,
             'get_product_prices': lambda product: products_prices[product.id],
@@ -1879,3 +1879,24 @@ class PWASupport(http.Controller):
         record = request.env['quote.request'].sudo().create(post)
         if record:
             return request.render("website.contactus_thanks")
+    
+    @http.route('/shop/cart/get_lines', type='jsonrpc', auth='public', website=True)
+    def get_cart_lines(self, product_id=None):
+        """Get cart lines data, optionally filtered by product_id"""
+        order = request.cart
+        if not order:
+            return []
+        
+        lines_data = []
+        for line in order.order_line:
+            if product_id is None or line.product_id.id == product_id:
+                lines_data.append({
+                    'line_id': line.id,
+                    'product_id': line.product_id.id,
+                    'product_name': line.product_id.name,
+                    'quantity': line.product_uom_qty,
+                    'price_unit': line.price_unit,
+                    'price_total': line.price_total,
+                })
+        
+        return lines_data

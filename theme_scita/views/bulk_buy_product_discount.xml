@@ -5,6 +5,8 @@
             <p class="promo_code mt-3"><i class="lni lni-badge-decagram-percent"></i>Apply the code <span class="discount_code">'GET15OFF'</span> to receive your discount.</p>
         </xpath>
         <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
+        <t t-if="website_sale_order">
+
             <t t-set="pricelist" t-value="website_sale_order.pricelist_id"/>
             <t t-set="rules" t-value="pricelist.item_ids.filtered(lambda r: r.product_tmpl_id.id == product.id)"/>
 
@@ -22,6 +24,7 @@
                     </t>
                 </div>
             </t>
+        </t>
         </xpath>
     </template>
 </odoo>
