@@ -297,6 +297,11 @@ class website(models.Model):
         "some tips on how to find it out.",
         translate=True,
     )
+    login_see_price = fields.Boolean(
+        string="Login to see price",
+        help="Require users to log in to view prices on this website",
+        readonly=False,
+    )
 
     def _compute_website_show_price(self):
         for rec in self:

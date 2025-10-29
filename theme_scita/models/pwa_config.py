@@ -37,3 +37,21 @@ class ResConfigSettings(models.TransientModel):
         related="website_id.website_hide_price_default_message",
         readonly=False,
     )
+    login_see_price = fields.Boolean(
+        string="Login to see price",
+        related="website_id.login_see_price",
+        readonly=False,
+    )
+
+    @api.onchange('login_see_price')
+    def _onchange_login_see_price(self):
+        if self.login_see_price and self.website_hide_price:
+            return {
+                'warning': {
+                    'title': "Conflict Detected",
+                    'message': (
+                        "‘Hide prices on website (Request Quote)’ is already active.\n"
+                        "you only displayed request quote button on the website.\n"
+                    ),
+                }
+            }
