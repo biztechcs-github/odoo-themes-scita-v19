@@ -6,56 +6,11 @@
             <attribute name="class" remove="position-sticky" separator=" "></attribute>
         </xpath>
     </template>
-    <template id="theme_scita_multiple_image_product_slider" inherit_id="website_sale.product" name="Product Multi Image OwlCarousel Safe">
-        <xpath expr="//section[@id='product_detail']" position="attributes">
-            <attribute name="t-attf-class">container oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}</attribute>
-        </xpath>
-        <xpath expr="//section[@id='product_detail']//div[@id='product_detail_main']//div[1]" position="replace">
-            <div class="col-md-6 sct_product_side o_wsale_product_images">
-                <!-- Fallback if no multiple images -->
-                <t t-if="not website.get_multiple_images(product_variant.id)">
-                    <t t-if="website.product_page_image_width != 'none'">
-                        <t t-call="website_sale.shop_product_images"/>
-                    </t>
-                </t>
-                <!-- OwlCarousel Gallery -->
-                <t t-if="website.get_multiple_images(product_variant.id)">
-                    <span itemprop="image">
-                        <div id="gallery" class="owl-carousel owl-theme" data-slider-id="product-gallery">
-                            <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
-                                <t t-if="im.attach_type == 'image'">
-                                    <div class="item">
-                                        <img t-att-src="website.image_url(im, 'image')" class="img-fluid" t-att-alt="im.alt or im.name" t-att-title="im.name or product_variant.name" />
-                                    </div>
-                                </t>
-                            </t>
-                        </div>
-                    </span>
-                    <!-- Thumbnails -->
-                    <div class="owl-thumbs text-center mt-2" data-slider-id="product-gallery">
-                        <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
-                            <t t-if="im.attach_type == 'image'">
-                                <div class="owl-thumb-item" t-att-title="im.name">
-                                    <img t-att-src="website.image_url(im, 'image_128')" t-att-alt="im.name or 'Product thumbnail'" t-att-title="im.name or 'Thumbnail image'" />
-                                </div>
-                            </t>
-                        </t>
-                    </div>
-                </t>
-            </div>
-        </xpath>
-    </template>
     <template id="theme_scita_product_details" inherit_id="base.contact" name="Product Details">
         <xpath expr="//div[@itemscope='itemscope']" position="replace"/>
     </template>
     <template id="theme_scita_product_details" inherit_id="website_sale.product" name="Product Details">
-        <!-- <xpath expr="//div[@itemscope='itemscope']" positin="replace"/> -->
         <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="replace"/>
-        <!-- <xpath expr="//div[@id='product_details']//p[hasclass('css_not_available_msg','alert','alert-warning')]" position="replace"/> -->
-        <!-- <xpath expr="//div[@id='product_details']" position="attributes">
-<attribute name='t-attf-class'>position-relative position-lg-sticky o_wsale_sticky_object col</attribute>
-</xpath> -->
-        <!-- <xpath expr="//div[@id='product_details']/t[2]" position="replace"/> -->
         <xpath expr="//div[@id='product_full_description']" position="replace">
             <section class='sct-description-tab'>
                 <div class="container" id="website_description">
@@ -108,7 +63,7 @@
             <div class='sct-other-desciption'></div>
         </xpath>
     </template>
-    <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
+    <!-- <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
         <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
             <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
                 <a
@@ -137,7 +92,7 @@
                 </a>
             </div>
         </xpath>
-    </template>
+    </template> -->
     <!-- Discussion inherited to display in tabs -->
     <template id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
@@ -454,4 +409,17 @@ Wishlist
             <t t-call="website_sale.product_price" />
         </xpath>
     </template>
+    <template id="hide_product_breadcrumb"
+              inherit_id="website_sale.product"
+              name="Hide Breadcrumb on Product Page">
+        <xpath expr="//ol[@class='o_wsale_breadcrumb breadcrumb m-0 p-0']" position="attributes">
+            <attribute name="t-attf-style">display:none;</attribute>
+        </xpath>
+    </template>
+    <template id="product_detail_custom_class" inherit_id="website_sale.product" priority="20">
+        <xpath expr="//section[@id='product_detail']" position="attributes">
+            <attribute name='class' add="container" separator=" "/>
+        </xpath>
+    </template>
+
 </odoo>

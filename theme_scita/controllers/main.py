@@ -566,33 +566,40 @@ class ScitaSliderSettings(http.Controller):
         context, pool = request.env.context, request.env
         if post.get('slider-type'):
             slider_header = request.env['multi.slider.config'].sudo().search(
-                [('id', '=', int(post.get('slider-type')))])
+                [('id', '=', int(post.get('slider-type')))]
+            )
 
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
-                pricelist = current_website.get_pricelist_available()
-                context = dict(request.env.context, pricelist=int(pricelist))
+                pricelists = current_website.get_pricelist_available()
+                pricelist = pricelists[:1] or request.env['product.pricelist'].search([], limit=1)
             else:
-                pricelist = pool.get('product.pricelist').browse(
-                    context['pricelist'])
+                pricelist = pool['product.pricelist'].browse(context['pricelist'])
+                pricelist = pricelist[:1] if pricelist else request.env['product.pricelist'].search([], limit=1)
 
-            context.update({'pricelist': pricelist.id})
-            from_currency = pool['res.users'].sudo().browse(
-                SUPERUSER_ID).company_id.currency_id
+            # ✅ FIX: Create a new dict, don’t update frozendict
+            context = dict(context, pricelist=pricelist.id)
+
+            from_currency = pool['res.users'].sudo().browse(SUPERUSER_ID).company_id.currency_id
             to_currency = pricelist.currency_id
 
             def compute_currency(price):
                 return pool['res.currency']._convert(
-                    price, from_currency, to_currency, fields.Date.today())
+                    price, from_currency, to_currency, fields.Date.today()
+                )
 
             values = {
                 'slider_details': slider_header,
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
             }
+
             website = request.env['website'].get_current_website()
-            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
+            IrQweb = request.env['ir.qweb'].with_context(
+                website_id=website.id, lang=website.default_lang_id.code
+            )
             return IrQweb._render("theme_scita.fashion_multi_cat_slider_view", values)
+
 
     @http.route(['/theme_scita/product_multi_image_effect_config'], type='jsonrpc', auth='public', website=True)
     def product_multi_product_image_dynamic_slider(self, **post):
