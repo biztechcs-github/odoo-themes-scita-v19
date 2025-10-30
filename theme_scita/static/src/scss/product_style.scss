@@ -2931,16 +2931,20 @@
 								}
 								.btn{
 									border-radius: 50px;
-									padding: 6px 0px !important;
+									padding: 7px !important;
 									background-color: $light-color;
 									color: $secondary;
 									border: 0;
+									font-size: 13px;
+									display: flex;
+									align-items: center;
+									justify-content: center;
 									
 									@include min768{
-										padding: 6px 8px !important;
+										padding: 8px !important;
 									}
 									@include min992{
-										padding: 6px 12px !important;
+										padding: 12px !important;
 									}
 
 									&:hover {
@@ -3129,11 +3133,35 @@
 								font-weight: normal !important;
 								font-size: 13px;
 								margin: 10px 0 0 !important;
+								align-items: flex-start !important;
 
 								&:has(#out_of_stock_message:empty){
 									display: none;
 								}
 								
+								.o_add_wishlist_dyn {
+									padding-left: 0;
+									border: 0;
+
+									@media (max-width: 1600px){
+										font-size: 16px !important;
+									}
+									@media (max-width: 1439px){
+										margin-bottom: 10px;
+									}
+									.lni{
+										&::before{
+											font-size: 23px;
+										}
+									}
+									&.disabled{
+										.lni{
+											&::before{
+												content: "\eb13";
+											}
+										}
+									}
+								}
 								#out_of_stock_message{
 									color: $secondary !important;
 									background: rgba($secondary, 0.1);
