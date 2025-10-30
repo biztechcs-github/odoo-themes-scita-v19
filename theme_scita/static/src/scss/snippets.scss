@@ -4525,7 +4525,7 @@ body #wrapwrap{
 			}
 			i{
 				color: rgba($black, 0.5);
-				font-size: $title + 4;
+				// font-size: $title + 4;
 				margin-bottom: 5px;
 				display: block;
 			}
@@ -4599,6 +4599,7 @@ body #wrapwrap{
 		
 	}
 	.sct_btm_row {
+		padding: 0 15px;
 		@include min768{
 			column-count: 2;
 			column-gap: 30px;
@@ -4609,9 +4610,12 @@ body #wrapwrap{
 		}
 		.testimonial_thumb{
 			margin-bottom: 30px;
+			padding: 20px;
+			border: 1px solid rgba($primary, 0.3);
+
 			@include min768{
-				border: 1px solid rgba($primary, 0.3);
-				padding: 20px;
+				// border: 1px solid rgba($primary, 0.3);
+				// padding: 20px;
 				width: 100%;
 				break-inside: avoid;
 			}
@@ -4620,13 +4624,13 @@ body #wrapwrap{
 			}
 		}
 		.sct_test_box{
-			padding: 20px;
-			border: 1px solid rgba($primary, 0.3);
+			// padding: 20px;
+			// border: 1px solid rgba($primary, 0.3);
 
-			@include min768{
-				padding: 0;
-				border: 0;
-			}
+			// @include min768{
+			// 	padding: 0;
+			// 	border: 0;
+			// }
 			.s_rating{
 				margin-bottom: 10px;
 				.s_rating_inactive_icons, .s_rating_active_icons{
@@ -4669,7 +4673,7 @@ body #wrapwrap{
 /*service snippet 7*/
 .service_varient_11 {
 	padding: 50px 0 25px;
-	background: $dark-color;
+	background-color: $dark-color;
 
 	@include min992{
 		padding: 60px 0 35px;
@@ -6361,10 +6365,12 @@ body #wrapwrap{
 				margin-top: 30px;
 			}
 			.row {
-				&:last-child{
-					.sct_work_info {
-						&:after{
-							display:none;
+				.sct_work_wrap_box{
+					&:last-child{
+						.sct_work_info {
+							&:after{
+								display:none;
+							}
 						}
 					}
 				}
@@ -7190,31 +7196,17 @@ body #wrapwrap{
 					color: $primary !important;
 					font-size: $font-body;
 					background-color: transparent;
-					&:before{
-						position:absolute;
-						right: 30px;
-						margin: 0;
-						font-size: 20px;
-						color: $primary;
-						top: 0;
-						bottom: 0;
-						@include flex;
-						@include align-content;
-						content: '\f106';
-						font-family: 'FontAwesome';
-					}
+
 					&:after{
-						display: none;
+					    background-image: none;
+						font-weight: normal;
+						font-size: 16px;
+						margin-top: 4px;
 					}
 					@include min1200{
 						padding: 15px 30px;
 						padding-right: 45px;
 						font-size: $font-body + 1;
-					}
-					&.collapsed{
-						&:before{
-							content: '\f107';
-						}
 					}
 					
 				}
@@ -7291,6 +7283,7 @@ body #wrapwrap{
 						background-image: none;
 						font-weight: normal;
 						font-size: 16px;
+						margin-top: 4px;
 					}
 				}
 				.accordion-collapse{
@@ -7327,27 +7320,44 @@ body #wrapwrap{
 					@media (min-width: 768px) {
 						font-size: $title + 1;
 					}
-
 					&::after{
-						content: '';
-						background-image: url(../img/plus_icon.svg);
-						width: 26px;
-						height: 26px;
-						background-repeat: no-repeat;
-						transform: rotate(135deg);
+						background-image: none;
+						font-weight: normal;
+						font-size: 16px;
+						margin-top: 4px;
 					}
+					// &::after{
+					// 	content: '';
+					// 	background-image: url(../img/plus_icon.svg);
+					// 	width: 26px;
+					// 	height: 26px;
+					// 	background-repeat: no-repeat;
+					// 	transform: rotate(135deg);
+					// }
 
-					&.collapsed{
-						&::after{
-							transform: rotate(0);
-						}
-					}
+					// &.collapsed{
+					// 	&::after{
+					// 		transform: rotate(0);
+					// 	}
+					// }
 				}
 			}
 		}
 	}
 }
 /*accordian snippet 2 end*/
+
+.s_accordion{
+	.accordion{
+		.accordion-item{
+			.accordion-header{
+				.o_custom_icons_wrap{
+					margin-top: 4px;
+				}
+			}
+		}
+	}
+}
 /*timeline snippet 1*/
 .timeline_snippet_1 {
 	padding: 50px 0 20px;
@@ -10654,16 +10664,9 @@ body #wrapwrap{
                     padding: 33px 36px;
                 }
                 .s_rating_icons {
-                    .s_rating_active_icons {
-                        .fa{
-                            color: #F0B419; 
-                        }
-                    }
-                    .s_rating_inactive_icons{
-                        .fa{
-                            color: #F0B419; 
-                        }
-                    }
+                    .s_rating_inactive_icons, .s_rating_active_icons{
+						color: #F0B419;
+					}
                 }
                 .sct_left_side {
                     text-align: center;

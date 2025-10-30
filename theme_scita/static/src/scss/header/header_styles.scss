@@ -101,6 +101,9 @@
             }
         }
         .navbar {
+            .s_text_block{
+                justify-content: center;
+            }
             > .container{
                 display: block;
             }
@@ -131,7 +134,7 @@
     }
     .homepage {
         header {
-            background: transparent;
+            background: $white;
 
             .navbar {
                 background: transparent !important;
@@ -272,6 +275,14 @@
                                 display: none;
                             }
                         }
+                    }
+                }
+            }
+
+            .nav-pills{
+                .nav-item{
+                    .nav-link{
+                        padding: 10px 15px;
                     }
                 }
             }
@@ -910,7 +921,7 @@
                 #top_menu {
                     > .nav-item {
                         > .nav-link {
-                            padding: 25px 0;
+                            padding: 25px 10px;
                             color: $black;
                             &.active {
                                 color: $theme;
@@ -1829,6 +1840,18 @@
                 .navbar-nav{
                     .nav-link{
                         color: $black;
+                    }
+                    &.nav-pills{
+                        .nav-item{
+                            @include min992{
+                                padding: 0;
+                                margin: 0 5px;
+    
+                                .nav-link{
+                                    padding: 0 11px;
+                                }
+                            }
+                        }
                     }
                 }
                 .dropdown{
@@ -2864,6 +2887,21 @@
                     .nav-link{
                         color: $black;
                     }
+                    &.nav-pills{
+                        .nav-item{
+                            @include min992{
+                                padding: 0;
+    
+                                .nav-link{
+                                    padding: 10px 11px;
+    
+                                    &.active{
+                                        color: $white;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 .dropdown{
                     .dropdown-toggle{
@@ -3038,6 +3076,7 @@
 }
 @if o-website-value('header-template') == 'scita_header_5' {
     header {
+        background: $white;
         nav {
             &.navbar {
                 @include min992 {
@@ -3142,11 +3181,25 @@
                                 padding: 0;
                                 > .nav-link {
                                     color: $white;
-                                    padding: 15px 0;
-                                    margin: 0 20px;
+                                    padding: 15px 15px;
+                                    margin: 0 5px;
                                     border-bottom: 4px solid transparent;
                                     &.active {
                                         border-bottom: 4px solid $secondary;
+                                    }
+                                }
+                            }
+
+                            &.nav-pills{
+                                > .nav-item {
+                                    > .nav-link {
+                                        &.active{
+                                            @include min992{
+                                                background-color: $secondary;
+                                                border-bottom: 0;
+                                                margin-top: 2px;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -3664,6 +3717,8 @@ header{
 header{
     .scita_top_menu {
         .o_extra_menu_items{
+            position: relative;
+
             .dropdown-menu{
                 li{
                     .dropdown-item{
@@ -4835,3 +4890,22 @@ body.sidebar-open::before {
     }
 }
 
+header{
+    .navbar{
+        .o_navbar_mobile{
+            .navbar-nav{
+                .top_menu{
+                    .nav-item{
+                        &.dropdown{
+                            border-top: 1px solid #dededf;
+
+                            .nav-link.dropdown-toggle{
+                                padding: 1rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

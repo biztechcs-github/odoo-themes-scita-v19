@@ -83,15 +83,11 @@
     <template id="service_varient_7" name="Service Snippet 2">
         <section class="service_varient_7 oe_img_bg" data-disp="service">
             <div class="container">
-                <div class="row s_nb_column_fixed sct_top_row">
-                    <div class='col-md-12'>
-                        <div class="sct_section_title text-center">
-                            <h2 class="section-title">What Industries We Serve? </h2>
-                        </div>
-                    </div>
+                <div class="sct_section_title text-center">
+                    <h2 class="section-title">What Industries We Serve? </h2>
                 </div>
                 <div class="row s_nb_column_fixed sct_mid_row">
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -102,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -113,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -124,7 +120,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -135,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -146,7 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -157,7 +153,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -168,7 +164,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-12 col-md-6 col-lg-4 col-xl-3 sct_thumb'>
+                    <div class='col-12 col-md-6 col-lg-3 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
                                 <span class="fa fa-pencil-square-o"/>
@@ -282,12 +278,8 @@
     <template id="service_varient_14" name="Service Snippet 4">
         <section class="service_varient_14" data-disp="service">
             <div class="container">
-                <div class="row s_nb_column_fixed sct_top_row">
-                    <div class='col-md-12'>
-                        <div class="sct_section_title">
-                            <h2 class="section-title sct_blue_line">Our Services</h2>
-                        </div>
-                    </div>
+                <div class="sct_section_title">
+                    <h2 class="section-title sct_blue_line">Our Services</h2>
                 </div>
                 <div class="row s_nb_column_fixed sct_mid_row">
                     <div class='col-md-4 sct_thumb'>
@@ -323,8 +315,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
                     <div class='col-md-4 sct_thumb'>
                         <div class='sct_sers_box'>
                             <div class='service_icon'>
