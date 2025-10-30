@@ -6,45 +6,6 @@
             <attribute name="class" remove="position-sticky" separator=" "></attribute>
         </xpath>
     </template>
-    <template id="theme_scita_multiple_image_product_slider" inherit_id="website_sale.product" name="Product Multi Image OwlCarousel Safe">
-        <xpath expr="//section[@id='product_detail']" position="attributes">
-            <attribute name="t-attf-class">container oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}</attribute>
-        </xpath>
-        <xpath expr="//section[@id='product_detail']//div[@id='product_detail_main']//div[1]" position="replace">
-            <div class="col-md-6 sct_product_side o_wsale_product_images">
-                <!-- Fallback if no multiple images -->
-                <t t-if="not website.get_multiple_images(product_variant.id)">
-                    <t t-if="website.product_page_image_width != 'none'">
-                        <t t-call="website_sale.shop_product_images"/>
-                    </t>
-                </t>
-                <!-- OwlCarousel Gallery -->
-                <t t-if="website.get_multiple_images(product_variant.id)">
-                    <span itemprop="image">
-                        <div id="gallery" class="owl-carousel owl-theme" data-slider-id="product-gallery">
-                            <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
-                                <t t-if="im.attach_type == 'image'">
-                                    <div class="item">
-                                        <img t-att-src="website.image_url(im, 'image')" class="img-fluid" t-att-alt="im.alt or im.name" t-att-title="im.name or product_variant.name" />
-                                    </div>
-                                </t>
-                            </t>
-                        </div>
-                    </span>
-                    <!-- Thumbnails -->
-                    <div class="owl-thumbs text-center mt-2" data-slider-id="product-gallery">
-                        <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
-                            <t t-if="im.attach_type == 'image'">
-                                <div class="owl-thumb-item" t-att-title="im.name">
-                                    <img t-att-src="website.image_url(im, 'image_128')" t-att-alt="im.name or 'Product thumbnail'" t-att-title="im.name or 'Thumbnail image'" />
-                                </div>
-                            </t>
-                        </t>
-                    </div>
-                </t>
-            </div>
-        </xpath>
-    </template>
     <template id="theme_scita_product_details" inherit_id="base.contact" name="Product Details">
         <xpath expr="//div[@itemscope='itemscope']" position="replace"/>
     </template>
