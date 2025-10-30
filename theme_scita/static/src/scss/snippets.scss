@@ -9304,6 +9304,15 @@ body #wrapwrap{
 			}
 		}
 	}
+	.sct_product_detail#product_details{
+		flex: 0 0 100%;
+		max-width: 100%;
+
+		@media (min-width: 768px) {
+			flex: 0 0 auto;
+        	width: 58.33333333%;
+		}
+	}
 	.right-row, .sct_product_detail {
 		.js_add_cart_variants {
 			padding: 10px 0 2px;
