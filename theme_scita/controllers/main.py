@@ -16,6 +16,7 @@ from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL, float_round, groupby
 from odoo.addons.website_sale.const import SHOP_PATH
 from odoo.fields import  Domain
+PRICELIST_SESSION_CACHE_KEY = 'website_sale_current_pl'
 
 class WebsiteAutocomplate(Website):
 
