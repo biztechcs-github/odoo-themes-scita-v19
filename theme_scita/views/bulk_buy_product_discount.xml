@@ -14,7 +14,7 @@
                 <h5 class="mt-3 mb-2">Big savings with bulk buys</h5>
                 <div class="d-flex flex-wrap gap-2 o_bulk_price_wrapper"  t-if="not (product.website_hide_price or website.website_hide_price)">
                     <t t-foreach="rules.sorted(key=lambda r: r.min_quantity)" t-as="rule">
-                        <a class="btn btn-outline-primary o_bulk_price_btn" t-att-qty="int(rule.min_quantity)">
+                        <a class="btn btn-outline-primary o_bulk_price_btn" t-att-qty="int(rule.min_quantity)" t-att-price="rule.fixed_price">
                             <span class="buy-tag">Buy
                             <t t-out="int(rule.min_quantity)"/></span>
                             at $
