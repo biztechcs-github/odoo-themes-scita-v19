@@ -18,10 +18,14 @@ publicWidget.registry.BulkPriceButtonWidget = publicWidget.Widget.extend({
         $(".o_bulk_price_btn").removeClass("active");
         const $btn = $(ev.currentTarget).addClass("active");
         const qty = parseInt($btn.attr('qty')) || 1;
+        const price = parseInt($btn.attr('price')) || 1;        
         const $parent = $btn.closest('.js_product');
         const $qtyInput = $parent.find('input[name="add_qty"]');
         $qtyInput.val(qty).trigger('change');
-        // this._getCombinationInfo(ev);
+        const $priceEl = $parent.find('.oe_currency_value');
+            if ($priceEl.length) {
+                $priceEl.text(price.toFixed(2));
+            }  
     },
 
     /**

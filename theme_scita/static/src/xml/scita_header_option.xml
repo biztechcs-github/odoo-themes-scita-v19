@@ -472,22 +472,22 @@
                 <BuilderSelect action="'customizeWebsiteVariable'" actionParam="'btn-style-template'">
                     <BuilderSelectItem actionValue="'btn_style_1'">
                         <img src="/theme_scita/static/src/img/snippet_icon/Button-style1.svg"
-                             alt="Button Style 1" width="40" height="40"/>
+                             alt="Button Style 1"/>
                         Style 1
                     </BuilderSelectItem>
                     <BuilderSelectItem actionValue="'btn_style_2'">
                         <img src="/theme_scita/static/src/img/snippet_icon/Button-style2.svg"
-                             alt="Button Style 2" width="40" height="40"/>
+                             alt="Button Style 2"/>
                         Style 2
                     </BuilderSelectItem>
                     <BuilderSelectItem actionValue="'btn_style_3'">
                         <img src="/theme_scita/static/src/img/snippet_icon/Button-style3.svg"
-                             alt="Button Style 3" width="40" height="40"/>
+                             alt="Button Style 3"/>
                         Style 3
                     </BuilderSelectItem>
                     <BuilderSelectItem actionValue="'btn_style_4'">
                         <img src="/theme_scita/static/src/img/snippet_icon/Button-style4.svg"
-                             alt="Button Style 4" width="40" height="40"/>
+                             alt="Button Style 4"/>
                         Style 4
                     </BuilderSelectItem>
                 </BuilderSelect>

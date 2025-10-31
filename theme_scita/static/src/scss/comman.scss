@@ -2651,10 +2651,12 @@ body #wrapwrap::-webkit-scrollbar{
 										ul{
 											display: flex;
 											flex-wrap: wrap;
-											margin: 0 -5px !important;
+											margin: 0 !important;
+											gap: 7px;
 
 											li{
-												padding: 0 5px;
+												padding: 0;
+												margin: 0;
 
 												.form-check{
 													@include flex;
@@ -2813,6 +2815,99 @@ body #wrapwrap::-webkit-scrollbar{
 						}
 					}
 				}
+				.product_name_description{
+					.h6{
+						font-size: 20px;
+					}
+				}
+				.o_sale_product_configurator_qty{
+					.css_quantity{
+						background-color: lighten($light-grey-color, 2%);
+						padding: 4px;
+						border-radius: 50px !important;
+
+						@media (min-width: 1024px) and (max-width: 1199px) {
+							margin-bottom: 10px !important;
+						}
+
+						@media (max-width: 767px) {
+							flex: 0 0 33.33%;
+							max-width: 33.33%;
+							margin: 0 10px 0 0 !important;
+
+						}
+						.btn{
+							border-radius: 50px !important;
+							padding: 7px !important;
+							background-color: $light-color;
+							color: $secondary;
+							border: 0;
+							font-size: 13px;
+							display: flex !important;
+							align-items: center;
+							justify-content: center;
+							
+							@include min768{
+								padding: 8px !important;
+							}
+							@include min992{
+								padding: 12px !important;
+							}
+
+							&:hover {
+								background-color: $secondary;
+								color: $light-color;
+							}
+
+							@media (max-width: 768px) {
+								line-height: 1 !important;													
+							}
+						}
+						input{
+							padding: 0 3px;
+							border: 0;
+							background: transparent;
+							width: 100%;
+							max-width: 60px;
+						}
+					}
+				}
+
+				@media (max-width: 767px) {
+					.o_sale_product_configurator_table{
+						display: block;
+						width: 100%;
+						padding-top: 20px;
+
+						tbody{
+							width: 100%;
+							display: block;
+
+							tr{
+								display: block;
+
+								td{
+									display: block;
+									width: 100%;
+									padding-right: 0 !important;
+									padding-left: 0 !important;
+
+									&.o_sale_product_configurator_img{
+										max-width: 200px;
+									}
+									&.product_name_description{
+										min-width: 100% !important;
+									}
+									&.o_sale_product_configurator_qty{
+										display: flex !important;
+										flex-direction: column;
+										align-items: flex-start;
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 			.modal-footer{
 				padding: 10px 16px;
@@ -2822,6 +2917,14 @@ body #wrapwrap::-webkit-scrollbar{
 				.btn{
 					margin: 0 6px;
 					width: auto;
+				}
+
+				.o_configurator_price_total{
+					font-weight: bold;
+
+					@media (max-width: 767px){
+						text-align: left !important;
+					}
 				}
 			}
 		}
