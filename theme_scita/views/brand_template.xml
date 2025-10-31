@@ -10,7 +10,7 @@
       </div>
 
       <!-- Filter Buttons -->
-        <div class="d-flex flex-wrap gap-2 mb-3" id="brand_filter">
+        <div class="d-flex flex-wrap gap-1 mb-3 sct_brand_filter" id="brand_filter">
           <button class="btn btn-outline-secondary active" data-letter="all">ALL</button>
           <t t-foreach="('ABCDEFGHIJKLMNOPQRSTUVWXYZ')" t-as="letter">
               <t t-set="is_active" t-value="letter.lower() in available_letters"/>

@@ -211,7 +211,10 @@ body #wrapwrap.o_portal {
 		}
 	}
 	.account-detail{
-		.o_portal_contact_img{
+		> div{
+			width: 100%;
+		}
+		.o_portal_contact_img, img{
 			width: 50px;
 		}
 		.btn.btn-link{
@@ -231,6 +234,7 @@ body #wrapwrap.o_portal {
 				a{
 					background-color: rgba($primary, 0.25);
 					border-color: rgba($primary, 0.25);
+					align-items: center;
 				}
 			}
 		}

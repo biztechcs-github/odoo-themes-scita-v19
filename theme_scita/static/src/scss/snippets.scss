@@ -3732,6 +3732,7 @@ body #wrapwrap{
 				margin-top: 30px;
 			}
 			.section-title {
+				margin-bottom: 0;
 				.left_right_seprator{
 					padding-left: 0;
 					&:before, &::after{
@@ -3740,7 +3741,7 @@ body #wrapwrap{
 				}
 			}
 			.sct_simple_text {
-				margin: 25px 0 35px;
+				margin: 18px 0 35px;
 				height: 120px;
 			    overflow: hidden;
 			    display: inline-block;
@@ -9312,18 +9313,25 @@ body #wrapwrap{
 			flex: 0 0 auto;
         	width: 58.33333333%;
 		}
+
+		.product_price{
+			> div[name="product_price_container"]{
+				justify-content: flex-start !important;
+			}
+		}
 	}
 	.right-row, .sct_product_detail {
 		.js_add_cart_variants {
-			padding: 10px 0 2px;
-			border-top: 1px solid $light-grey-color;
-			border-bottom: 1px solid $light-grey-color;
+			padding: 10px 0;
+			margin: 15px 0;
+			border-top: 1px solid $light-grey-color !important;
+			border-bottom: 1px solid $light-grey-color !important;
 
 			.js_attribute_value{
 				padding: 0;
 				line-height: 1;
 				background: transparent;
-				margin: 0 5px 5px !important;
+				margin: 0 1px 2px !important;
 				display: inline-block;
 				
 				.form-check{
@@ -9403,8 +9411,18 @@ body #wrapwrap{
 				vertical-align: top;
 				flex: 0 0 49%;
 				max-width: 49%;
+
 				.col-form-label {
 					padding-top: 0;
+				}
+				.attribute_name{
+					display: flex;
+					align-items: center;
+					font-size: 0.9rem;
+					text-transform: uppercase;
+					padding-bottom: 0.5rem;
+					font-weight: 600;
+					color: rgba($black, 0.6);
 				}
 				.css_attribute_color {
 					width: 30px;
@@ -9412,6 +9430,8 @@ body #wrapwrap{
 					margin: 0 5px;
 					border-radius: 50%;
 					border-width: 2px;
+					background-position: center;
+
 					input {
 						margin: 0;
 						width: auto;
@@ -9438,6 +9458,9 @@ body #wrapwrap{
 				}
 				ul {
 					margin-left: 0;
+				}
+				.o_variant_pills{
+					padding: 0 !important;
 				}
 			}
 		}
