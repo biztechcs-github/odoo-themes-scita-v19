@@ -6,9 +6,9 @@
             <attribute name="class" remove="position-sticky" separator=" "></attribute>
         </xpath>
     </template>
-    <template id="theme_scita_product_details" inherit_id="base.contact" name="Product Details">
+    <!-- <template id="theme_scita_product_details" inherit_id="base.contact" name="Product Details">
         <xpath expr="//div[@itemscope='itemscope']" position="replace"/>
-    </template>
+    </template> -->
     <template id="theme_scita_product_details" inherit_id="website_sale.product" name="Product Details">
         <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="replace"/>
         <xpath expr="//div[@id='product_full_description']" position="replace">
@@ -29,12 +29,13 @@
                 </div>
             </section>
         </xpath>
+
         <!-- <xpath expr="//a[@id='add_to_cart']" position="attributes">
 <attribute name="class">btn btn-lg js_check_product a-submit</attribute>
 </xpath> -->
-        <xpath expr="//div[@id='product_details']" position="attributes">
+        <!-- <xpath expr="//div[@id='product_details']" position="attributes">
             <attribute name="class">col-md-7</attribute>
-        </xpath>
+        </xpath> -->
     </template>
     <template id="theme_scita_product_details_terms_and_share" inherit_id="website_sale.product_terms_and_conditions" name="Product Details Terms and Share">
         <xpath expr="//small[hasclass('text-muted','mb-0')]" position="before">
@@ -63,36 +64,24 @@
             <div class='sct-other-desciption'></div>
         </xpath>
     </template>
-    <!-- <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
+    <template id="theme_scita_price" inherit_id="website_sale.cta_wrapper" name="Product Details Add to Cart">
+         <xpath expr="//div[hasclass('sct-price-option')]" position="before">
+            <t t-call="website_sale.product_price" />
+         </xpath>
+    </template>
+    <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
         <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
             <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
-                <a
-                    t-attf-href="#"
-                    class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0"
-                    aria-label="Remove one"
-                    title="Remove one"
-                    name="remove_one"
-                >
+                <a t-attf-href="#" class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0" aria-label="Remove one" title="Remove one" name="remove_one">
                     <i class="oi oi-minus text-600"/>
                 </a>
-                <input
-                    type="text"
-                    t-attf-class="form-control quantity text-center border-0"
-                    data-min="1"
-                    name="add_qty"
-                    t-att-value="1"
-                />
-                <a
-                    t-attf-href="#"
-                    class="css_quantity_plus btn btn-link ps-2 js_add_cart_json border-0"
-                    aria-label="Add one"
-                    title="Add one"
-                >
+                <input type="text" t-attf-class="form-control quantity text-center border-0" data-min="1" name="add_qty" t-att-value="1" />
+                <a t-attf-href="#" class="css_quantity_plus btn btn-link ps-2 js_add_cart_json border-0" aria-label="Add one" title="Add one">
                     <i class="oi oi-plus text-600"/>
                 </a>
             </div>
         </xpath>
-    </template> -->
+    </template>
     <!-- Discussion inherited to display in tabs -->
     <template id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
@@ -166,7 +155,7 @@
     </template>
     <template id="theme_scita_fix_variant_attribute_class" inherit_id="website_sale.variants" name="Fix Variant Display for Theme Scita">
         <xpath expr="//li[@name='variant_attribute']" position="attributes">
-           <attribute name="t-attf-class">
+            <attribute name="t-attf-class">
                 variant_attribute #{'d-none' if len(ptal.product_template_value_ids._only_active()) == 1
                 and not ptal.product_template_value_ids._only_active()[0].is_custom else ''} sct-#{ptal.attribute_id.display_type}
             </attribute>
@@ -391,9 +380,9 @@ Wishlist
                 <p class='sct-sku-display'>SKU: <span class='sct-default-code' t-esc='product.default_code'/>
                 </p>
             </div>
-            <div class='sct-main-description-div' t-if="product.description_sale">
+            <!-- <div class='sct-main-description-div' t-if="product.description_sale">
                 <p t-field="product.description_sale" class="text-muted" placeholder="A short description that will also appear on documents." />
-            </div>
+            </div> -->
         </xpath>
     </template>
     <template id="product_details_sku_change_as_per_variant" inherit_id="theme_scita.custom_product_tags_inline_display" name="Product Info">
@@ -405,13 +394,8 @@ Wishlist
                 </t>
             </div>
         </xpath>
-        <xpath expr="//div[hasclass('sct-sku-display-div')]" position="after">
-            <t t-call="website_sale.product_price" />
-        </xpath>
     </template>
-    <template id="hide_product_breadcrumb"
-              inherit_id="website_sale.product"
-              name="Hide Breadcrumb on Product Page">
+    <template id="hide_product_breadcrumb" inherit_id="website_sale.product" name="Hide Breadcrumb on Product Page">
         <xpath expr="//ol[@class='o_wsale_breadcrumb breadcrumb m-0 p-0']" position="attributes">
             <attribute name="t-attf-style">display:none;</attribute>
         </xpath>
@@ -422,4 +406,50 @@ Wishlist
         </xpath>
     </template>
 
+    <!-- STEP 1: remove base Odoo 19 collapsible “Customer Reviews” block -->
+    <template id="hide_base_review_section" inherit_id="website_sale.product" name="Hide Base Review Section (Scita Compatible)">
+        <!-- target by section id instead of class -->
+    </template>
+    <template id="theme_scita_rating_19" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings (Odoo 19)" active="False" customize_show="False" priority="15">
+        <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
+            <li role="presentation">
+                <a aria-controls="reviews" data-bs-toggle="tab" href="#reviews" role="tab">
+                    Reviews
+                    <t t-if="len(product.website_message_ids)">
+                        <span class="review_label">
+                            (                            <t t-esc="len(product.website_message_ids)"/>
+)
+                        </span>
+                    </t>
+                </a>
+            </li>
+        </xpath>
+        <xpath expr="//div[@id='website_description']//div[@id='description']" position="after">
+            <div class="tab-pane" id="reviews" role="tabpanel">
+                <section class="container pt48 pb48">
+                    <div class="o_shop_discussion_rating border-top">
+                        <t t-call="portal.message_thread">
+                            <t t-set="object" t-value="product"/>
+                            <t t-set="display_rating" t-value="True"/>
+                            <t t-set="message_per_page" t-value="5"/>
+                            <t t-set="two_columns" t-value="true"/>
+                        </t>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="scita_description" inherit_id="portal_rating.rating_widget_stars_static">
+        <xpath expr="//div[hasclass('o_website_rating_static')]" position="after">
+          <div class='sct-main-description-div' t-if="product.description_sale">
+                <p t-field="product.description_sale" class="text-muted" placeholder="A short description that will also appear on documents." />
+           </div>
+           </xpath>
+    </template>
+    <template id="add_container_class_to_product_detail" inherit_id="website_sale.product" name="Add Container Class to Product Detail Section">
+        <xpath expr="//section[@id='product_detail']" position="attributes">
+            <attribute name="class" remove="container-lg" separator=" "/>
+        </xpath>
+    </template>
 </odoo>

@@ -1240,10 +1240,10 @@
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
         </xpath> -->
-         <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
+         <!-- <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
             <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
             <attribute name='id'>sct_add_to_cart_hover</attribute>
-        </xpath>
+        </xpath> -->
     </template>
     <template id="scita_address_row" inherit_id="website_sale.address_list" name='Scita Row Address'>
         <xpath expr="//div" position="attributes">
@@ -1325,25 +1325,25 @@
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
                                         <!-- <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1> -->
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
-                                        <t t-if="is_view_active('theme_scita.theme_scita_rating')">
-                                            <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
-                                                <t t-call="portal_rating.rating_widget_stars_static">
-                                                    <t t-set="rating_avg" t-value="product.sudo().rating_avg"/>
-                                                    <t t-set="trans_text_plural">%s reviews</t>
-                                                    <t t-set="trans_text_singular">%s review</t>
-                                                    <t t-set="rating_count" t-value="(trans_text_plural if product.rating_count > 1 else trans_text_singular) % product.rating_count"/>
-                                                </t>
-                                            </a>
-                                        </t>
-                                        <p t-field="product.description_sale" class="text-muted my-2 sct_desc" placeholder="A short description that will also appear on documents." />
+                                       
                                         <div t-field="product.description_ecommerce" class="oe_structure"
                                 placeholder="A detailed, formatted description to promote your product on this page. Use '/' to discover more features."/>
                                         <form t-if="product._is_add_to_cart_possible()">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
                                             <div class="js_product js_main_product mb-3">
-                                               <h5 class="product_detail_name">
+                                               <h1 class="product_detail_name">
                                                     <t t-esc="product_variant.display_name"/>
-                                                </h5>
+                                                </h1>
+                                                 <t t-if="is_view_active('theme_scita.theme_scita_rating')">
+                                                    <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
+                                                        <t t-call="portal_rating.rating_widget_stars_static">
+                                                            <t t-set="rating_avg" t-value="product.sudo().rating_avg"/>
+                                                            <t t-set="trans_text_plural">%s reviews</t>
+                                                            <t t-set="trans_text_singular">%s review</t>
+                                                            <t t-set="rating_count" t-value="(trans_text_plural if product.rating_count > 1 else trans_text_singular) % product.rating_count"/>
+                                                        </t>
+                                                    </a>
+                                                </t>
                                                 <div>
                                                     <t t-call="website_sale.product_price"/>
                                                     <small t-if="combination_info['base_unit_price']"
@@ -1436,21 +1436,6 @@
                                         </form>
                                         <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
                                         <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
-                                        <div id="product_attributes_simple">
-                                            <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
-                                            <table t-attf-class="table table-sm text-muted {{'' if single_value_attributes else 'd-none'}}">
-                                                <t t-foreach="single_value_attributes" t-as="attribute">
-                                                    <tr>
-                                                        <td>
-                                                            <span t-field="attribute.name"/>:
-                                                            <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
-                                                                <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
-                                                            </t>
-                                                        </td>
-                                                    </tr>
-                                                </t>
-                                            </table>
-                                        </div>
                                         <t t-set="product_documents" t-value="product.sudo().product_document_ids.filtered(lambda doc: doc.shown_on_product_page)"/>
                                         <div id="product_documents" t-if="product_documents" class="row">
                                             <u class="h5">Documents</u>
@@ -1581,11 +1566,11 @@
             <attribute name="t-attf-class" add="def_mega_menu" separator=" "/>
         </xpath>
     </template>
-    <template id="scita_products_item_enable_add_cart" inherit_id="website_sale.products_item" name="Scita Add To Cart Enable" active='False'>
+    <!-- <template id="scita_products_item_enable_add_cart" inherit_id="website_sale.products_item" name="Scita Add To Cart Enable" active='False'>
         <xpath expr="//div[@id='sct_add_to_cart_hover']" position="attributes">
             <attribute name='class' remove="sct_not_add_to_cart" separator=" "/>
         </xpath>
-    </template>
+    </template> -->
     <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
         <xpath expr="//a" position="after">
         <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
