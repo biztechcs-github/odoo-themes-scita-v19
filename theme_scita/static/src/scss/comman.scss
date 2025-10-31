@@ -2101,7 +2101,7 @@ body header .navbar-expand-lg .navbar-collapse {
 				background-color: rgba($light-grey-color, 0.3);
 			}
 			&:hover{
-				background-color: rgba($primary, 0.09);
+				background-color: rgba($primary, 0.1);
 				color: $dark-color !important;
 				
 				.o_search_result_item{
@@ -2166,7 +2166,7 @@ body header .navbar-expand-lg .navbar-collapse {
 				border-bottom: 0;
 			}
 			&:active{
-				background-color: $light-grey-color;
+				background-color: $primary;
 				color: $dark-color;
 			}
 			.o_search_result_item{
@@ -2193,7 +2193,7 @@ body header .navbar-expand-lg .navbar-collapse {
 				}
 			}
 			&:hover{
-				background-color: rgba($primary, 0.09);
+				background-color: rgba($primary, 0.1);
 				color: $dark-color !important;
 				
 				.o_search_result_item{

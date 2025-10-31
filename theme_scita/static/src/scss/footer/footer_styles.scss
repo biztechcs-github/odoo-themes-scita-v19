@@ -62,6 +62,29 @@
                 }
             }
         }
+        .sct-scocial-icon-footer {
+            .btn-link {
+                background: $black;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+        .row.s_hr.text-left {
+            hr {
+                display: none !important;
+            }
+        }
+        .sct-fot-address {
+            ul {
+                li {
+                    color: $white;
+                    .fa {
+                          color: $white;
+                    }
+                }
+            }
+        }
         .sct-foot-logo {
             a {
                 max-width: 250px;
@@ -96,7 +119,7 @@
         }
     }
     .o_footer_copyright{
-        background:$light-color;
+        // background:$light-color;
         .sct-fot-belt {
             padding: 10px 0;
             @include align-content;
@@ -175,6 +198,11 @@
         @media (max-width: 767px){
             padding-top: 35px;
         }
+        .sct-fot-about {
+            p {
+                color: $white;
+            }
+        }
         .col-lg-3{
             padding-bottom: 60px;
             @media (max-width: 1440px){
@@ -192,7 +220,7 @@
         ul{
             li{
                 a {
-                    color: #d3d3d3 !important;
+                    color: $white !important;
                     display: inline-block;
                     font-weight: 400;
                     &:hover {
@@ -226,7 +254,7 @@
                         margin-bottom: 5px;
                     }
                     span {
-                        color: #d3d3d3;
+                        color: $white;
                     }
                      + li{
                         h4 {
@@ -259,10 +287,14 @@
         }
     }
     .o_footer_copyright {
-        background: #424242;
-        color: #d3d3d3;
+        // background: #424242;
+        color: $white;
         text-align: center;
         padding: 10px 0;
+        // border-top: 1px solid;
+         .o_footer_copyright_name {
+            color: $white;
+        }
         p {
             margin-bottom: 0;
         }
@@ -331,6 +363,8 @@
                 li {
                     a {
                         display: inline-block;
+                        color: $white;
+                        font-weight: 400;
                     }
                     + li {
                         a {
@@ -380,8 +414,9 @@
         }
         .sct-fot-about {
             p {
-                font-weight: 600;
+                font-weight: 400;
                 margin-bottom: 0;
+                color: $white;
             }
         }
         .sct-fot-about, .sct-service-link {
@@ -400,10 +435,12 @@
         }
         h4 {
             margin-bottom: 25px;
+            color: $white;
         }
     }
     .o_footer_copyright{
-        background:$light-color;
+        // background:$light-color;
+        // border-top: 1px solid rgba(255, 255, 255, 0.5);
         .sct-fot-belt {
             padding: 30px 0px;
             @media (max-width:991px){
@@ -468,7 +505,9 @@
         }
 
     }
+
 }
+
 @if o-website-value('footer-template') == 'Footer-6' {
     footer {
         background-color: darken($primary, 30%);
@@ -497,12 +536,12 @@
                         width:30px;
                         height: 30px;
                         font-size: 16px;
-                        background: $light-color;
-                        color: darken($primary, 30%);
+                        background: $light-color !important;
+                        color: darken($primary, 30%) !important;
 
                         &:hover{
-                            background-color: $black;
-                            color: $light-color;
+                            background-color: $black !important;
+                            color: $light-color !important;
                         }
                         @media (max-width: 575px){
                             width: 25px;
@@ -556,10 +595,15 @@
             }
 
         }
+        .o_footer_copyright{
+            .o_footer_copyright_name {
+                    color: #212529;
+            }
+        }
     }
 
     .o_footer_copyright{
-        background:$dark-color;
+        // background:$dark-color;
         
         .sct-fot-belt {
                 padding:30px 0;
@@ -1025,6 +1069,12 @@ footer{
     }
 }
 .o_footer_copyright {
+    .container {
+        border-top: 1px solid #f0f0f0;
+    }
+    .o_footer_copyright_name {
+        color:rgba($light-color, 0.6);
+    }
     .sct-copyright-text {
         .o_footer_copyright_name {
             margin-right: 8px;
