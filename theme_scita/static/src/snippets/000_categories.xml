@@ -3,14 +3,14 @@
 
     <t t-inherit="website.s_searchbar.autocomplete" t-inherit-mode="extension">
         <xpath expr="//a[@t-foreach='results']" position="replace">
-            <div class="d-flex">
+            <div class="d-flex flex-wrap">
                     <t t-if="results and results.filter(r => r['is_combo']).length">
-                <div class="p-3 border-end" style="width: 250px;">
-                    <h6 class="fw-bold mb-3 text-success">• Your search:</h6>
+                <div class="p-3 border-end searchbar_cat_left">
+                    <h6 class="fw-bold mb-3"><i class="fa fa-dot-circle-o text-purple me-1"></i> Your search:</h6>
                     <div class="d-flex flex-column gap-2">
                         <t t-foreach="results or []" t-as="result" t-key="result['name']">
                             <t t-if="result['is_combo']">
-                                <a t-att-href="result['website_url']" class="badge bg-light text-dark px-3 py-2 text-decoration-none d-block mb-2">
+                                <a t-att-href="result['website_url']" class="badge bg-light text-dark px-3 py-2 search_chip text-decoration-none d-block">
                                     <i class="fa fa-search me-2" aria-hidden="true"></i>
                                     <t t-out="result['name']"/>
                                 </a>
@@ -19,20 +19,20 @@
                     </div>
                 </div>
             </t>
-                <div class="w-100">
+                <div class="w-100 searchbar_cat_right">
                    <div class="p-3">
                         <!-- Categories Section -->
                         <t t-if="results.filter(r => r['category']).length">
                             <div class="mb-2 fw-bold text-purple">
                                 <i class="fa fa-dot-circle-o text-purple me-1"></i> Categories:
                             </div>
-                            <div class="d-flex flex-wrap gap-2 mb-3">
+                            <div class="d-flex flex-wrap gap-2">
                                 <t t-foreach="results" t-as="result" t-key="result['name'] + '_cat'">
                                     <t t-if="result['category']">
                                         <a t-att-href="result['website_url']" class="chip-link text-decoration-none" t-if="result['category']">
                                             <span class="chip">
                                             <t t-if="result['image']">
-                                                <img t-att-src="result['image']" class="me-2" style="height:24px;" />
+                                                <img t-att-src="result['image']" class=""/>
                                             </t>
                                                 <div class="d-flex align-items-center flex-wrap o_search_result_item">
                                                     <div class="o_search_result_item_detail px-3">
@@ -42,9 +42,9 @@
                                                         <div t-attf-class="h6 fw-bold #{description ? '' : 'mb-0'}" t-out="result['name']"/>
                                                         <button t-if="extra_link" class="extra_link btn btn-link btn-sm" t-att-data-target="result['extra_link_url']" t-out="extra_link"/>
                                                     </div>
-                                                    <div t-if="parts['detail'] and widget.displayDetail" class="flex-shrink-0 ms-auto">
+                                                    <div t-if="parts['detail'] and widget.displayDetail" class="flex-shrink-0 ms-auto pro_price">
                                                         <t t-if="result['detail_strike']">
-                                                            <span class="text-muted text-nowrap" style="text-decoration: line-through;">
+                                                            <span class="text-muted text-nowrap">
                                                                 <t t-out="result['detail_strike']"/>
                                                             </span>
                                                             <br/>
@@ -76,7 +76,7 @@
                                             <span class="chip">
                                                 <div class="d-flex align-items-center flex-wrap o_search_result_item">
                                                     <t t-if="result['image']">
-                                                        <img t-att-src="result['image']" class="me-2" style="height:24px;"/>
+                                                        <img t-att-src="result['image']" class="me-2"/>
                                                     </t>
                                                     <div class="o_search_result_item_detail px-3">
                                                         <div class="h6 fw-bold text-primary" t-out="result['name']"/>
@@ -107,7 +107,7 @@
                                             <p t-if="description" class="mb-0" t-out="description"/>
                                             <button t-if="extra_link" class="extra_link btn btn-link btn-sm" t-att-data-target="result['extra_link_url']" t-out="extra_link"/>
                                         </div>
-                                        <div t-if="parts['detail'] and widget.displayDetail" class="flex-shrink-0 ms-auto">
+                                        <div t-if="parts['detail'] and widget.displayDetail" class="flex-shrink-0 ms-auto pro_price">
                                             <t t-if="result['detail_strike']">
                                                 <span class="text-muted text-nowrap" style="text-decoration: line-through;">
                                                     <t t-out="result['detail_strike']"/>

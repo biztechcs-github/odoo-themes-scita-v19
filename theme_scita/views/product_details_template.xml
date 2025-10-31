@@ -43,6 +43,10 @@
                 <img class="brand_img" style="max-height: 50px;" t-att-src="website.image_url(product.product_brand_id, 'image')"/>
             </t>
         </xpath>
+        <!-- Add id attribute to small tag -->
+        <xpath expr="//small[hasclass('text-muted','mb-0')]" position="attributes">
+            <attribute name="id">o_product_terms_and_share</attribute>
+        </xpath>
 
         <!-- <xpath expr="//div[@id='o_product_terms_and_share']" position='attributes'>
 <attribute name='class'>d-flex justify-content-between flex-column flex-md-row mb-3</attribute>
@@ -330,22 +334,8 @@ Wishlist
         </xpath>
     </template>
     <template id="custom_product_tags_inline_display" inherit_id="website_sale.product_title">
-        <xpath expr="//t[@t-call='website_sale.product_tags']" position="replace">
-            <t t-if="is_view_active('website_sale.product_tags')">
-                <t t-if="product_variant.all_product_tag_ids">
-                    <p class="mt-2">
-                        <strong>Tags:</strong>
-                        <t t-set="tag_len" t-value="len(product_variant.all_product_tag_ids)"/>
-                        <t t-foreach="enumerate(product_variant.all_product_tag_ids)" t-as="tag_item">
-                            <t t-set="i" t-value="tag_item[0]"/>
-                            <t t-set="tag" t-value="tag_item[1]"/>
-                            <t t-esc="tag.name"/>
-                            <t t-if="i + 1 &lt; tag_len">, </t>
-                        </t>
-                    </p>
-                </t>
-            </t>
-        </xpath>
+        <xpath expr="//t[@t-call='website_sale.product_tags']" position="replace"/>
+            
         <xpath expr="//h1" position="replace">
             <section class="page-title">
                 <div class="container mx-auto">
@@ -406,13 +396,15 @@ Wishlist
         </xpath>
     </template>
 
-    <!-- STEP 1: remove base Odoo 19 collapsible “Customer Reviews” block -->
-    <template id="hide_base_review_section" inherit_id="website_sale.product" name="Hide Base Review Section (Scita Compatible)">
-        <!-- target by section id instead of class -->
+    <!-- STEP 1: remove base Odoo 19 collapsible "Customer Reviews" block -->
+    <template id="hide_base_review_section" inherit_id="website_sale.product" name="Hide Base Review Section (Scita Compatible)" priority="20">
+        <!-- Remove the entire base review section div that contains o_product_page_reviews -->
+        <!-- This will also make the review link (if any) point to a non-existent section, effectively hiding it -->
+        <xpath expr="//div[@class='o_shop_discussion_rating border-top' and .//section[@id='o_product_page_reviews']]" position="replace"/>
     </template>
-    <template id="theme_scita_rating_19" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings (Odoo 19)" active="False" customize_show="False" priority="15">
+    <template id="theme_scita_rating_19" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings (Odoo 19)" active="True" customize_show="True" priority="15">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
-            <li role="presentation">
+            <li role="presentation" t-if="is_view_active('website_sale.product_comment')">
                 <a aria-controls="reviews" data-bs-toggle="tab" href="#reviews" role="tab">
                     Reviews
                     <t t-if="len(product.website_message_ids)">
@@ -425,7 +417,7 @@ Wishlist
             </li>
         </xpath>
         <xpath expr="//div[@id='website_description']//div[@id='description']" position="after">
-            <div class="tab-pane" id="reviews" role="tabpanel">
+            <div class="tab-pane" id="reviews" role="tabpanel" t-if="is_view_active('website_sale.product_comment')">
                 <section class="container pt48 pb48">
                     <div class="o_shop_discussion_rating border-top">
                         <t t-call="portal.message_thread">
@@ -450,6 +442,39 @@ Wishlist
     <template id="add_container_class_to_product_detail" inherit_id="website_sale.product" name="Add Container Class to Product Detail Section">
         <xpath expr="//section[@id='product_detail']" position="attributes">
             <attribute name="class" remove="container-lg" separator=" "/>
+        </xpath>
+    </template>
+        <template id="scita_tag"
+            inherit_id="website_sale.product_terms_and_conditions"
+            name="Add Product Tags After Terms  Conditions">
+
+        <!-- Target the <small> inside your terms template -->
+        <xpath expr="//small" position="before">
+            <t t-if="is_view_active('website_sale.product_tags')">
+                <t t-if="product_variant.all_product_tag_ids">
+                    <p class="mt-2">
+                        <strong>Tags:</strong>
+                        <t t-set="tag_len" t-value="len(product_variant.all_product_tag_ids)"/>
+                        <t t-foreach="enumerate(product_variant.all_product_tag_ids)" t-as="tag_item">
+                            <t t-set="i" t-value="tag_item[0]"/>
+                            <t t-set="tag" t-value="tag_item[1]"/>
+                            <t t-esc="tag.name"/>
+                            <t t-if="i + 1 &lt; tag_len">, </t>
+                        </t>
+                    </p>
+                </t>
+            </t>
+        </xpath>
+    </template>
+    <template id="remove_empty_price_section"
+            inherit_id="website_sale.product"
+            name="Remove Empty Price Section in Product Page">
+
+    <xpath expr="//div[contains(@class, 'o_wsale_product_details_content_section_price')]" position="replace"/>
+    </template>
+    <template id="remove_empty_price_section" inherit_id="website_sale.product_terms_and_conditions">
+        <xpath expr="//small[hasclass('text-muted','mb-0')]" position="attributes">
+            <attribute name="id">o_product_terms_and_share</attribute>
         </xpath>
     </template>
 </odoo>
