@@ -421,36 +421,49 @@
     </div>
 </t>
 <!-- Lazy Loading -->
-<!-- <t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
+<t t-inherit="website_sale.ProductsListPageOption" t-inherit-mode="extension">
     <xpath expr="//BuilderRow[@label.translate='Toolbar']" position="after">
-        <div
-            data-js="SaleLazyLoad"
-            data-page-options="true"
-            groups="website.group_website_designer"
-            data-selector="main:has(.o_wsale_products_page)"
-            data-no-check="true"
-            data-target="#products_grid .o_wsale_products_grid_table_wrapper"
-        >
-            <BuilderRow label.translate="Product Loader">
-                <BuilderSelect action="'templatePreviewableWebsiteConfig'">
-                    <BuilderSelectItem
-                        title.translate="Default"
-                        id="'theme_scita.default_pager'"
-                        actionParam="{}"
-                    >
-                        Default
-                    </BuilderSelectItem>
-                    <BuilderSelectItem
-                        title.translate="Button"
-                        id="'theme_scita.lazy_load_button'"
-                    >
-                        Button
-                    </BuilderSelectItem>
-                </BuilderSelect>
-            </BuilderRow>
-        </div>
+
+        <!-- Product Loader Option -->
+        <BuilderRow label.translate="Product Loader">
+            <BuilderSelect action="'templatePreviewableWebsiteConfig'">
+
+                <!-- Default Pager -->
+                <BuilderSelectItem
+                    title.translate="Default Pager"
+                    id="'theme_scita.default_pager'"
+                    actionParam="{
+                        views: ['theme_scita.default_pager'],
+                        previewClass: 'o_wsale_previewing_default_pager',
+                        templateId: 'theme_scita.default_pager',
+                        placeBefore: '#products_grid .o_wsale_products_grid_table_wrapper',
+                        placeExcludeRootClosest: '#o_wsale_container',
+                    }"
+                >
+                    Default
+                </BuilderSelectItem>
+
+                <!-- Lazy Load Button -->
+                <BuilderSelectItem
+                    title.translate="Lazy Load Button"
+                    id="'theme_scita.lazy_load_button'"
+                    actionParam="{
+                        views: ['theme_scita.lazy_load_button'],
+                        previewClass: 'o_wsale_previewing_lazy_button',
+                        templateId: 'theme_scita.lazy_load_button',
+                        placeBefore: '#products_grid .o_wsale_products_grid_table_wrapper',
+                        placeExcludeRootClosest: '#o_wsale_container',
+                    }"
+                >
+                    Button
+                </BuilderSelectItem>
+
+            </BuilderSelect>
+        </BuilderRow>
+
     </xpath>
-</t> -->
+</t>
+
  <t t-inherit="website.ThemeButtonOption" t-inherit-mode="extension" name="Add Custom Button and Hover Options">
         <xpath expr="//BuilderContext" position="inside">
 
