@@ -1211,22 +1211,13 @@
                 <t t-set="_classes" t-valuef="mb-4"/>
             </t>
         </xpath>
-        <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="replace"/>
-        <!-- Not Find this in odoo 19 website_sale.add_grid_or_list_option -->
-        
-        <!-- <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.add_grid_or_list_option']" position="replace">
-            <div class='sct-filter-grid-wrap d-flex flex-wrap me-3'>
-                <t t-if="is_view_active('website_sale.add_grid_or_list_option')" t-call="website_sale.add_grid_or_list_option">
-                    <t t-set="_classes" t-valuef="d-flex"/>
-                </t>
-                <button t-if="is_view_active('website_sale.sort') or opt_wsale_categories or opt_wsale_attributes or opt_wsale_attributes_top"
-                        t-attf-class="btn btn-{{navClass}} ms-2 position-relative {{not opt_wsale_attributes_top and 'd-lg-none'}}"
-                        data-bs-toggle="offcanvas"
-                        data-bs-target="#o_wsale_offcanvas">
-                    <i class="fa fa-sliders"/>
-                    <span t-if="isFilteringByPrice or attrib_set or tags" t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{navClass}} rounded-circle bg-danger p-1"><span class="visually-hidden">filters active</span></span>
-                </button>
-            </div>
+        <!-- Keep Odoo 19 filter button with native icon - just add spacing -->
+        <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="attributes">
+            <attribute name="class" add="ms-2" separator=" "/>
+        </xpath>
+        <!-- Option: Replace Odoo 19 icon with FontAwesome icon (uncomment if needed) -->
+        <!-- <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']/i[@class='oi oi-settings-adjust']" position="attributes">
+            <attribute name="class" separator=" " add="fa fa-sliders" remove="oi oi-settings-adjust"/>
         </xpath> -->
     </template>
     

@@ -13,8 +13,11 @@ publicWidget.registry.ScitaProductPreviewAttribute = publicWidget.Widget.extend(
         return this._super.apply(this, arguments);
     },
     _onMouseEnterSwatch: function (ev) {
-        this._updateImgSrc(ev.currentTarget.querySelector('label').dataset.previewImgSrc);
-        ev.currentTarget.classList.add("active");
+        const element = ev.currentTarget.querySelector('label, a.css_attribute_color');
+        if (element && element.dataset.previewImgSrc) {
+            this._updateImgSrc(element.dataset.previewImgSrc);
+            ev.currentTarget.classList.add("active");
+        }
     },
     _onMouseLeave: function () {
         this._updateImgSrc();

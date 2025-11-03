@@ -795,6 +795,29 @@ class ScitaSliderSettings(http.Controller):
 
 class ScitaShop(WebsiteSale):
 
+    @staticmethod
+    def _get_attribute_value_dict(attribute_values):
+        """ Parses a list of attribute value query params, and returns a dict grouping attribute
+        value ids by attribute id.
+
+        :param list(str) attribute_values: The list of attribute value query parameters to parse.
+        :return: A dict grouping attribute value ids by attribute id.
+        :rtype: dict(int, list(int))
+        """
+        if not attribute_values:
+            return {}
+        attribute_value_pairs = [value.split('-') for value in attribute_values if value]
+        result = {}
+        for pair in attribute_value_pairs:
+            if len(pair) >= 2:
+                attr_id = int(pair[0])
+                value_ids = [int(value_id) for value_id in pair[1].split(',') if value_id]
+                if attr_id in result:
+                    result[attr_id].extend(value_ids)
+                else:
+                    result[attr_id] = value_ids
+        return result
+
     def _prepare_product_values(self, product, category, search, **kwargs):
         res = super(ScitaShop, self)._prepare_product_values(product, category, **kwargs)
         request_args = request.httprequest.args
@@ -1087,13 +1110,26 @@ class ScitaShop(WebsiteSale):
         for cat in Category.search(website_domain):
             result[cat.id] = request.env['product.template'].search_count(
                 [('public_categ_ids', 'child_of', cat.id)])
+        
+        # Convert attribute_value_dict to list format for template
+        # Template expects: [[attr_id, val_id], [attr_id, val_id], ...] or False
+        attrib_values_list = []
+        if attribute_value_dict and isinstance(attribute_value_dict, dict):
+            for attr_id, val_ids in attribute_value_dict.items():
+                if isinstance(val_ids, list):
+                    for val_id in val_ids:
+                        attrib_values_list.append([int(attr_id), int(val_id)])
+                else:
+                    attrib_values_list.append([int(attr_id), int(val_ids)])
+        attrib_values = attrib_values_list if attrib_values_list else False
+        
         values = {
             'auto_assign_ribbons': self.env['product.ribbon'].sudo().search([('assign', '!=', 'manual')]),
             'search': fuzzy_search_term or search,
             'original_search': fuzzy_search_term and search,
             'order': post.get('order', ''),
             'category': category,
-            'attrib_values': attribute_value_dict,
+            'attrib_values': attrib_values,
             'attrib_set': attribute_value_ids,
             'pager': pager,
             'products': products,
@@ -1122,6 +1158,7 @@ class ScitaShop(WebsiteSale):
                 lambda: products._get_previewed_attribute_values(category, product_query_params),
             ),
             'result' : result,
+            'is_show_more_button': True if product_count > ppr else False
         }
         if filter_by_price_enabled:
             values['min_price'] = min_price or available_min_price
@@ -1617,8 +1654,11 @@ class ScitaShop(WebsiteSale):
             available_min_price = available_max_price = 0
 
         # Pagination (offset from frontend)
+        try:
+            offset = int(post.get('offset', 0))
+        except (ValueError, TypeError):
+            offset = 0
         pager = website.pager(url=url, total=product_count, page=1, step=ppg, scope=5, url_args=post)
-        offset = pager['offset']
 
         # Load products
         products = search_product[offset:offset + ppg]
@@ -1654,6 +1694,20 @@ class ScitaShop(WebsiteSale):
         products_prices = products._get_sales_prices(website)
         product_query_params = self._get_product_query_params(**post)
 
+        # Convert attribute_value_dict back to list format for template
+        # Template expects: [[attr_id, val_id], [attr_id, val_id], ...] or False
+        attrib_values_list = []
+        if attribute_value_dict and isinstance(attribute_value_dict, dict):
+            for attr_id, val_ids in attribute_value_dict.items():
+                if isinstance(val_ids, list):
+                    for val_id in val_ids:
+                        attrib_values_list.append([int(attr_id), int(val_id)])
+                else:
+                    attrib_values_list.append([int(attr_id), int(val_ids)])
+        
+        # If no attributes, set to False (not empty list) for template compatibility
+        attrib_values = attrib_values_list if attrib_values_list else False
+
         # Values to render partial grid
         values = {
             'search': fuzzy_search_term or search,
@@ -1661,7 +1715,7 @@ class ScitaShop(WebsiteSale):
             'original_search': fuzzy_search_term and search,
             'order': post.get('order', ''),
             'category': category,
-            'attrib_values': attribute_value_dict,
+            'attrib_values': attrib_values,
             'attrib_set': attribute_value_ids,
             'pager': pager,
             'products': products,
@@ -1707,7 +1761,10 @@ class ScitaShop(WebsiteSale):
         data_grid = request.env['ir.ui.view']._render_template("theme_scita.lazy_product_item", values)
         return {
             'count': len(products),
+            'total_count': product_count,
+            'offset': offset,
             'data_grid': data_grid,
+            'is_show_more_button': True if len(products) > ppr else False
         }
 
 

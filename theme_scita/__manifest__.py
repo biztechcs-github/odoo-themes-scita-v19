@@ -123,7 +123,7 @@ publish unpublish product
         'views/header_option_extended.xml',
         'views/my_account_changes.xml',
         'views/new_snippets.xml',
-        # 'views/shop_page_attribute.xml',
+        'views/shop_page_attribute.xml',
         # 'views/theme_cusomization.xml',
         'views/bulk_buy_product_discount.xml',
         'views/snippets/snippets.xml',  

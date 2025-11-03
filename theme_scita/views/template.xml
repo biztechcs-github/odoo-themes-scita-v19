@@ -55,22 +55,28 @@
     <template id="lazy_load_button" inherit_id="website_sale.products" active="False"
               name="Lazy Load Button">
        <xpath expr="//div[@id='o_wsale_pager']" position="replace">
-            <div class="products_pager d-flex justify-content-center pt-4 pb-4">
-                <button type="button" class="s_ajax_load_btn btn btn-primary">Load more</button>
+            <div class="products_pager d-flex justify-content-center pt-4 pb-4" t-if="is_show_more_button">
+                <button type="button" class="s_ajax_load_btn btn btn-primary d-none" >Load more</button>
             </div>
         </xpath>
+
+        <!-- <xpath expr="//section[@id='o_wsale_products_grid']" position="attributes">
+            <attribute name="data-search-count" t-att-value="search_count"/>
+        </xpath> -->
 
         <xpath expr="//aside[@id='products_grid_before']" position="inside">
             <div class="selected_filters d-none">
                 <t t-if="category">
                     <div class="selected_category" t-att-data-index="category.id"></div>
                 </t>
-                <t t-if="attrib_values">
+                <t t-if="attrib_values and isinstance(attrib_values, list)">
                     <div class="attributes">
                         <div class="attrib_list" t-att-data-list="attrib_values"></div>
                         <t t-foreach="attrib_values" t-as="attribute_list_ids">
-                            <div class="attribute" t-att-data-attribute="attribute_list_ids[0]"
-                                 t-att-data-attribute-value="attribute_list_ids[1]"></div>
+                            <t t-if="isinstance(attribute_list_ids, (list, tuple)) and len(attribute_list_ids) >= 2">
+                                <div class="attribute" t-att-data-attribute="attribute_list_ids[0]"
+                                     t-att-data-attribute-value="attribute_list_ids[1]"></div>
+                            </t>
                         </t>
                     </div>
                 </t>

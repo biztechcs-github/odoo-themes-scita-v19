@@ -393,7 +393,8 @@ $(document).ready(function(){
             this.image= $img;
         
             this.defaultSrc = $img.attr('data-default-img-src');
-            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            const $element = $swatch.find('label, a.css_attribute_color').first();
+            const previewSrc = $element.data('previewImgSrc');
             
             if (previewSrc) {
                 this._updateImgSrc(previewSrc, $img);

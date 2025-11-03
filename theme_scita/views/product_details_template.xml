@@ -73,19 +73,7 @@
             <t t-call="website_sale.product_price" />
          </xpath>
     </template>
-    <template id="theme_scita_product_quantity" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Scita Select Quantity">
-        <xpath expr="//div[hasclass('sct-add-to-cart-mob')]//a[@id='add_to_cart']" position="before">
-            <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
-                <a t-attf-href="#" class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0" aria-label="Remove one" title="Remove one" name="remove_one">
-                    <i class="oi oi-minus text-600"/>
-                </a>
-                <input type="text" t-attf-class="form-control quantity text-center border-0" data-min="1" name="add_qty" t-att-value="1" />
-                <a t-attf-href="#" class="css_quantity_plus btn btn-link ps-2 js_add_cart_json border-0" aria-label="Add one" title="Add one">
-                    <i class="oi oi-plus text-600"/>
-                </a>
-            </div>
-        </xpath>
-    </template>
+
     <!-- Discussion inherited to display in tabs -->
     <template id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
@@ -396,39 +384,42 @@ Wishlist
         </xpath>
     </template>
 
-    <!-- STEP 1: remove base Odoo 19 collapsible "Customer Reviews" block -->
-    <template id="hide_base_review_section" inherit_id="website_sale.product" name="Hide Base Review Section (Scita Compatible)" priority="20">
-        <!-- Remove the entire base review section div that contains o_product_page_reviews -->
-        <!-- This will also make the review link (if any) point to a non-existent section, effectively hiding it -->
-        <xpath expr="//div[@class='o_shop_discussion_rating border-top' and .//section[@id='o_product_page_reviews']]" position="replace"/>
+    <!-- Hide base Odoo 19 Customer Reviews section -->
+    <template id="hide_base_review_section" inherit_id="website_sale.product_comment" name="Hide Base Review Section (Scita)" priority="99">
+        <!-- Remove the entire base Customer Reviews section -->
+        <xpath expr="//div[@class='o_shop_discussion_rating border-top']" position="replace"/>
     </template>
-    <template id="theme_scita_rating_19" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings (Odoo 19)" active="True" customize_show="True" priority="15">
+
+    <!-- Add custom Reviews tab after Description tab -->
+    <template id="theme_scita_rating_19" inherit_id="theme_scita.theme_scita_product_details" name="Scita Reviews Tab (Odoo 19)" active="True" customize_show="True" priority="15">
+        <!-- Add Reviews tab -->
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
             <li role="presentation" t-if="is_view_active('website_sale.product_comment')">
                 <a aria-controls="reviews" data-bs-toggle="tab" href="#reviews" role="tab">
                     Reviews
-                    <t t-if="len(product.website_message_ids)">
+                    <t t-if="product.website_message_ids">
                         <span class="review_label">
-                            (                            <t t-esc="len(product.website_message_ids)"/>
-)
+                            (<t t-esc="len(product.website_message_ids)"/>)
                         </span>
                     </t>
                 </a>
             </li>
         </xpath>
+        <!-- Add Reviews tab content -->
         <xpath expr="//div[@id='website_description']//div[@id='description']" position="after">
-            <div class="tab-pane" id="reviews" role="tabpanel" t-if="is_view_active('website_sale.product_comment')">
-                <section class="container pt48 pb48">
-                    <div class="o_shop_discussion_rating border-top">
+            <t t-if="is_view_active('website_sale.product_comment')">
+                <div class="tab-pane" id="reviews" role="tabpanel">
+                    <div class="container">
+                        <!-- <h3 class="mb-3">Customer Reviews</h3> -->
                         <t t-call="portal.message_thread">
                             <t t-set="object" t-value="product"/>
                             <t t-set="display_rating" t-value="True"/>
                             <t t-set="message_per_page" t-value="5"/>
-                            <t t-set="two_columns" t-value="true"/>
+                            <t t-set="two_columns" t-value="True"/>
                         </t>
                     </div>
-                </section>
-            </div>
+                </div>
+            </t>
         </xpath>
     </template>
 

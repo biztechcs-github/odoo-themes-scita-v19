@@ -16,13 +16,65 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
         this.ppg = parseInt(this.product_grid?.getAttribute('data-ppg'));
         this.product_count = this.product_grid?.querySelectorAll('.oe_product').length;
         this.offset = 0;
+        this.loaded_product_ids = new Set();
+        this.total_count = null; // Will be set from first API response
+        // Track already loaded product IDs to prevent duplicates
+        this.product_grid?.querySelectorAll('.oe_product').forEach((productEl) => {
+            const productId = this._extractProductId(productEl);
+            if (productId) {
+                this.loaded_product_ids.add(productId);
+            }
+        });
     },
 
     start: function () {
         this._super.apply(this, arguments);
-        if (this.ppg >= this.product_count) {
-            document.querySelector('.s_ajax_load_btn').classList.remove('d-none');
+        // Check if we need to show the button based on initial load
+        const loadButton = document.querySelector('.s_ajax_load_btn');
+        if (loadButton) {
+            if (this.product_count < this.ppg) {
+                // If initial products are less than ppg, no more products to load
+                loadButton.classList.add('d-none');
+            } else {
+                loadButton.classList.remove('d-none');
+            }
         }
+    },
+
+    _extractProductId: function (productEl) {
+        // Try multiple methods to extract product ID
+        // Method 1: data-product-id attribute
+        let productId = productEl.querySelector('[data-product-id]')?.getAttribute('data-product-id');
+        if (productId) return productId;
+        
+        // Method 2: Extract from product link href
+        const productLink = productEl.querySelector('a[href*="/product/"], a[href*="/shop/product/"]');
+        if (productLink) {
+            const href = productLink.getAttribute('href') || productLink.href;
+            // Try to match product ID from URL patterns like /product/123 or /product/product-name-123
+            const match = href.match(/(?:product|shop\/product)[\/-](\d+)/);
+            if (match && match[1]) {
+                return match[1];
+            }
+            // Also check for form action with product ID
+            const form = productEl.closest('form') || productEl.querySelector('form');
+            if (form && form.action) {
+                const formMatch = form.action.match(/product[\/-](\d+)/);
+                if (formMatch && formMatch[1]) {
+                    return formMatch[1];
+                }
+            }
+        }
+        
+        // Method 3: Check form data-product attributes
+        const form = productEl.querySelector('form.oe_product_cart');
+        if (form) {
+            productId = form.getAttribute('data-product-id') || 
+                       form.getAttribute('data-product-template-id');
+            if (productId) return productId;
+        }
+        
+        return null;
     },
 
     _onClickLazyLoad: function (ev) {
@@ -51,11 +103,41 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
             if (data) {
                 const new_product_grid = document.createElement('div');
                 new_product_grid.innerHTML = data.data_grid;
-                for (let node of new_product_grid.querySelectorAll('.oe_product')) {
-                    this.product_grid.appendChild(node);
+                const loadButton = document.querySelector('.s_ajax_load_btn');
+                let newProductsAdded = 0;
+                
+                // Store total count from first response
+                if (data.total_count !== undefined) {
+                    this.total_count = data.total_count;
                 }
-                if (data.count < this.ppg) {
-                    document.querySelector('.s_ajax_load_btn').classList.add('d-none');
+                
+                for (let node of new_product_grid.querySelectorAll('.oe_product')) {
+                    // Check for duplicate products by product ID
+                    const productId = this._extractProductId(node);
+                    
+                    // Only add if not already loaded
+                    if (!productId || !this.loaded_product_ids.has(productId)) {
+                        this.product_grid.appendChild(node);
+                        if (productId) {
+                            this.loaded_product_ids.add(productId);
+                        }
+                        newProductsAdded++;
+                    }
+                }
+                
+                // Update product count
+                this.product_count = this.product_grid.querySelectorAll('.oe_product').length;
+                
+                // Hide button if:
+                // 1. No new products were added (all were duplicates)
+                // 2. Returned count is less than ppg (last page)
+                // 3. Total count is known and we've loaded all products
+                const shouldHide = newProductsAdded === 0 || 
+                    data.count < this.ppg || 
+                    (this.total_count !== null && this.product_count >= this.total_count);
+                
+                if (shouldHide && loadButton) {
+                    loadButton.classList.add('d-none');
                 }
             }
         });

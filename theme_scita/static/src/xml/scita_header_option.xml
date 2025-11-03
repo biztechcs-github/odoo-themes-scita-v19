@@ -435,7 +435,6 @@
                     actionParam="{
                         views: ['theme_scita.default_pager'],
                         previewClass: 'o_wsale_previewing_default_pager',
-                        templateId: 'theme_scita.default_pager',
                         placeBefore: '#products_grid .o_wsale_products_grid_table_wrapper',
                         placeExcludeRootClosest: '#o_wsale_container',
                     }"
@@ -450,7 +449,6 @@
                     actionParam="{
                         views: ['theme_scita.lazy_load_button'],
                         previewClass: 'o_wsale_previewing_lazy_button',
-                        templateId: 'theme_scita.lazy_load_button',
                         placeBefore: '#products_grid .o_wsale_products_grid_table_wrapper',
                         placeExcludeRootClosest: '#o_wsale_container',
                     }"

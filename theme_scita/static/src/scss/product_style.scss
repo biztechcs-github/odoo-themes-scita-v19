@@ -1910,10 +1910,16 @@
 		}
 	}
 	.o_website_offcanvas{
-		#o_wsale_offcanvas_content{
-			height: calc(100dvh - 108px);
-		}
+		display: flex;
+		flex-direction: column;
+		
+		// Search container styling
 		.offcanvas-body{
+			&.flex-grow-0 {
+				padding: 1rem;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+				overflow: visible !important; // For autocomplete dropdown
+			}
 			.btn{
 				padding: 6px 16px;
 				width: 100%;
@@ -1922,6 +1928,19 @@
 				margin: 0 !important;
 			}
 		}
+
+		.offcanvas-body {
+			.o_searchbar_form {
+				.input-group {
+					.oe_search_button {
+						width: auto;
+					}
+				}
+			}
+		}
+		
+		// Filter content area - use flex-grow-1 and overflow-auto as per Odoo 19
+		// No custom styling needed - Odoo's flex-grow-1 class handles the height
 	}
 }
 .products_header.btn-toolbar {
@@ -2037,6 +2056,12 @@
 		.o_wsale_product_information {
 			.o_wsale_product_sub {
 				flex-direction: column;
+			}
+			.scita_attribute_select {
+				top: -68px !important;
+				li:not(.scita_attribute_li) a {
+					    text-decoration: unset !important;
+				}
 			}
 		}
 	}
