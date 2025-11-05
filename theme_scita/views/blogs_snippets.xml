@@ -8,16 +8,13 @@
                 <div class="block-title">
                     <h3 class="fancy">Blog post slider</h3>
                 </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog1.png" alt="Blog Snippet" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
-    <!-- <template id="theme_scita_blog_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="theme_scita_blog_custom_snippet" data-selector=".scita_blog_slider" data-snippet-option-id="theme_scita_blog_custom_snippet">
-                <we-button class="dropdown-item scita_blog_slider" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
+
     <template id="theme_scita_blog_slider_view" name="Blog Snippet">
         <div class="container">
             <div class='row sct_top_row'>
@@ -92,16 +89,13 @@
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog2.png" alt="Blog Snippet" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
-    <!-- <template id="blog_2_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="blog_2_custom_snippet" data-selector=".blog_2_custom" data-snippet-option-id="blog_2_custom_snippet">
-                <we-button class="dropdown-item blog_2_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
+
     <template id="scita_blog_2_slider_view" name="Blog Snippet 2">
         <div class="container">
             <div class="row">
@@ -153,16 +147,12 @@
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Snippet" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
-    <!-- <template id="blog_5_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom" data-snippet-option-id="blog_5_custom_snippet">
-                <we-button class="dropdown-item blog_5_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
     <template id="scita_blog_5_slider_view" name="Blog Snippet 5">
         <div class="container">
             <div class="row">
@@ -225,16 +215,12 @@
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Snippet" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
-    <!-- <template id="blog_4_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="blog_4_custom_snippet" data-selector=".blog_4_custom" data-snippet-option-id="blog_4_custom_snippet">
-                <we-button class="dropdown-item blog_4_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
     <template id="scita_blog_4_slider_view" name="Blog Snippet 8">
         <div class="container">
             <div class='row sct_top_row'>

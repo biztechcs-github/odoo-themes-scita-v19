@@ -22,7 +22,7 @@ publicWidget.registry.BulkPriceButtonWidget = publicWidget.Widget.extend({
         const $parent = $btn.closest('.js_product');
         const $qtyInput = $parent.find('input[name="add_qty"]');
         $qtyInput.val(qty).trigger('change');
-        const $priceEl = $parent.find('.oe_currency_value');
+        const $priceEl = $parent.find('.oe_price');
             if ($priceEl.length) {
                 $priceEl.text(price.toFixed(2));
             }  
