@@ -255,7 +255,7 @@
                                     <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                                         <a class="btn btn-xs o_add_compare" role="button" title="Compare"
                                         t-att-data-product-product-id="product.product_variant_ids[0].id"
-                                        data-action="o_comparelist">
+                                        data-action="scita_comparelist">
                                             <span class="fa fa-exchange"/>
                                         </a>
                                     </t>
@@ -658,7 +658,7 @@
                                                     <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                                                         <a class="btn btn-xs o_add_compare" role="button" title="Compare"
                                                         t-att-data-product-product-id="product.product_variant_ids[0].id"
-                                                        data-action="o_comparelist">
+                                                        data-action="scita_comparelist">
                                                             <span class="fa fa fa-exchange"/>
                                                         </a>
                                                     </t>
@@ -979,7 +979,7 @@
                                                                             <a class="btn btn-xs o_add_compare" role="button"
                                                                             title="Compare"
                                                                             t-att-data-product-product-id="slide.product_variant_ids[0].id"
-                                                                            data-action="o_comparelist">
+                                                                            data-action="scita_comparelist">
                                                                                 <span class="fa fa-exchange fa-fw o_not-animable"/>
                                                                             </a>
                                                                         </t>
@@ -1145,7 +1145,7 @@
                         <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                             <a class="btn btn-xs o_add_compare" title="Compare"
                                t-att-data-product-product-id="product.product_variant_ids[0].id"
-                               data-action="o_comparelist">
+                               data-action="scita_comparelist">
                                 <span class="fa fa-exchange"/>
                             </a>
                         </t>

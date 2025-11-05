@@ -234,7 +234,7 @@
                                                                                     <span class="lni lni-eye"/>
                                                                                 </button>
                                                                                 <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
-                                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist">
+                                                                                    <a class="btn btn-xs o_add_compare" role="button" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="scita_comparelist">
                                                                                         <span class="fa fa-exchange"></span>
                                                                                     </a>
                                                                                 </t>
