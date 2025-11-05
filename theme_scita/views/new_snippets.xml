@@ -172,6 +172,9 @@
                 <div class="block-title">
                     <h2 class="fancy">Deal of the day</h2>
                 </div>
+                 <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/dealofday.png" alt="Category Slider" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
