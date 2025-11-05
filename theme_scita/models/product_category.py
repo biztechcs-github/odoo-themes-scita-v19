@@ -85,7 +85,7 @@ class ProductTemplate(models.Model):
         'similar_product_id',
         string='Similar Products'
     )
-    website_hide_price = fields.Boolean(string="Hide prices on website")
+    website_hide_price = fields.Boolean(string="Enabling Request a Quote for Individual Products")
     website_hide_price_message = fields.Text(
         string="Hidden price message",
         help="When the price is hidden on the website we can give the customer"
