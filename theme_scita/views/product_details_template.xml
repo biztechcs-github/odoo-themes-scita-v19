@@ -68,7 +68,7 @@
             <div class='sct-other-desciption'></div>
         </xpath>
     </template>
-    <template id="theme_scita_price" inherit_id="website_sale.cta_wrapper" name="Product Details Add to Cart">
+    <template id="theme_scita_price" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Product Details Add to Cart">
          <xpath expr="//div[hasclass('sct-price-option')]" position="before">
             <t t-call="website_sale.product_price" />
          </xpath>
