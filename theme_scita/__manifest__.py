@@ -138,7 +138,7 @@ publish unpublish product
         'views/hide_price_configurations.xml',
     ],
     'support': 'support@appjetty.com',
-    'live_test_url': 'https://theme-scita-v18.appjetty.com/',
+    'live_test_url': 'https://theme-scita-v19.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
