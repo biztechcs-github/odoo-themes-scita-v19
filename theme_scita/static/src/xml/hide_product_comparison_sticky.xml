@@ -15,4 +15,9 @@
             </small>
         </xpath>
     </t>
+    <t t-inherit="website_sale_comparison.ProductComparisonBottomBar" t-inherit-mode="extension">
+        <xpath expr="//div[@name='comparison_bottom_bar']" position="attributes">
+            <attribute name="t-if">state.products.size and (typeof window !== 'undefined' and window.location.pathname !== '/')</attribute>
+        </xpath>
+    </t>
 </templates>

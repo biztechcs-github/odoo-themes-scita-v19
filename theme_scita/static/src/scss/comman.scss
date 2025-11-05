@@ -2989,4 +2989,42 @@ common search for categories and products (22/05/2025)
 	}
 }
 
+// ============================================
+// Mobile View - Hide Compare Icon/Button
+// ============================================
+@media (max-width: 767px) {
+	// Hide compare button on product cards in shop/listing pages
+	.o_add_compare,
+	.o_add_compare_dyn {
+		display: none !important;
+	}
+	
+	// Hide compare icon in header
+	.o_wsale_my_compare {
+		display: none !important;
+	}
+	
+	// Hide compare icon in PWA mobile bottom navigation
+	.ab-mob-view .ab-compare,
+	.ab-compare {
+		display: none !important;
+	}
+	
+	// Hide compare placeholder as well
+	.o_add_compare_placeholder {
+		display: none !important;
+	}
+}
 
+
+
+// compare popup design css start 
+.compare_popup_header {
+	background-color: $primary !important;
+	.compare_btn {
+		background-color: $primary !important;
+		&:hover {
+			background-color: rgba($primary, 0.6) !important; 
+		}
+	}
+}

@@ -15,7 +15,8 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
         this.product_grid = document.querySelector('#o_wsale_products_grid');
         this.ppg = parseInt(this.product_grid?.getAttribute('data-ppg'));
         this.product_count = this.product_grid?.querySelectorAll('.oe_product').length;
-        this.offset = 0;
+        // Initialize offset to the number of products already loaded on the page
+        this.offset = this.product_count;
         this.loaded_product_ids = new Set();
         this.total_count = null; // Will be set from first API response
         // Track already loaded product IDs to prevent duplicates
@@ -78,7 +79,8 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
     },
 
     _onClickLazyLoad: function (ev) {
-        this.offset += this.ppg;
+        // Use current product count as offset (already tracks loaded products)
+        this.offset = this.product_count;
 
         let category = $(".selected_filters .selected_category").attr("data-index") || 0;
         let attributes = $(".selected_filters .attributes .attrib_list").attr("data-list") || null;

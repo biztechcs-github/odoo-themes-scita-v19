@@ -531,7 +531,7 @@ class ScitaSliderSettings(http.Controller):
     # **********************   snippets new added end  ***************
     @http.route(['/retial/product_multi_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
     def retail_multi_get_dynamic_slider(self, **post):
-        context, pool = dict(request.context), request.env
+        context, pool = dict(request.env.context), request.env
         if post.get('slider-type'):
             slider_header = request.env['multi.slider.config'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -539,7 +539,7 @@ class ScitaSliderSettings(http.Controller):
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
                 pricelist = current_website._get_current_pricelist()
-                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
             else:
                 pricelist = pool.get('product.pricelist').browse(
                     context['pricelist'])
@@ -711,7 +711,7 @@ class ScitaSliderSettings(http.Controller):
             if not context.get('pricelist'):
                 current_website = request.website.get_current_website()
                 pricelist = current_website.get_pricelist_available()
-                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
             else:
                 pricelist_ids = context['pricelist']
                 if isinstance(pricelist_ids, list):
@@ -743,7 +743,7 @@ class ScitaSliderSettings(http.Controller):
 
     @http.route(['/product/product_snippet_data_two'], type='jsonrpc', auth='public', website=True)
     def product_snippet_data_two(self, **post):
-        context, pool = dict(request.context), request.env
+        context, pool = dict(request.env.context), request.env
         if post.get('slider-type'):
             slider_header = request.env['product.snippet.configuration'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -751,7 +751,7 @@ class ScitaSliderSettings(http.Controller):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
                 pricelist = current_website._get_current_pricelist()
-                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
             else:
                 pricelist = pool.get('product.pricelist').browse(
                     context['pricelist'])
@@ -1259,7 +1259,7 @@ class ScitaShop(WebsiteSale):
 
     @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
     def config_cat_product(self, **post):
-        context, pool = dict(request.context), request.env
+        context, pool = dict(request.env.context), request.env
         if post.get('slider-type'):
             slider_header = request.env['product.category.img.slider.config'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -1267,7 +1267,7 @@ class ScitaShop(WebsiteSale):
                 # pricelist = request.website.get_current_pricelist()
                 current_website = request.website.get_current_website()
                 pricelist = current_website.get_pricelist_available()
-                context = dict(request.context, pricelist=pricelist.ids[0] if pricelist else 1)
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
             else:
                 pricelist = pool.get('product.pricelist').browse(
                     context['pricelist'])

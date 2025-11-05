@@ -6,53 +6,53 @@
         <xpath expr="//snippets[@id='snippet_groups']" position='inside'>
             <!-- Theme Scita Groups -->
             <t snippet-group="scita_about_us" t-snippet="website.s_snippet_group" string="About Us Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us2.png"/>
             <t snippet-group="scita_banner" t-snippet="website.s_snippet_group" string="Banner Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-banner.png"/>
             <t snippet-group="scita_blog" t-snippet="website.s_snippet_group" string="Blog Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Blogs-1.svg"/>
             <t snippet-group="scita_testimonial" t-snippet="website.s_snippet_group" string="Testimonial Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-4.svg"/>
             <t snippet-group="scita_brand" t-snippet="website.s_snippet_group" string="Brand Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Trending-brand-1.svg"/>
             <t snippet-group="scita_service" t-snippet="website.s_snippet_group" string="Service Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Services-Offered.svg"/>
             <t snippet-group="scita_contact" t-snippet="website.s_snippet_group" string="Contact Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Contact_us_3.png"/>
             <t snippet-group="scita_team" t-snippet="website.s_snippet_group" string="Team Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-1.svg"/>
             <t snippet-group="scita_portfolio" t-snippet="website.s_snippet_group" string="Portfolio Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Portfolio_2.png"/>
             <t snippet-group="scita_pricing" t-snippet="website.s_snippet_group" string="Pricing Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/pricing-1.svg"/>
             <t snippet-group="scita_case_study" t-snippet="website.s_snippet_group" string="Case Study Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_1.svg"/>
             <t snippet-group="scita_client" t-snippet="website.s_snippet_group" string="Client Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/client-1.svg"/>
             <t snippet-group="scita_category" t-snippet="website.s_snippet_group" string="Category Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-4.svg"/>
             <t snippet-group="scita_deal_days" t-snippet="website.s_snippet_group" string="Deal of the Day Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_3.png"/>
             <t snippet-group="scita_google_map" t-snippet="website.s_snippet_group" string="Google Map Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-2.png"/>
             <t snippet-group="scita_how_it_works" t-snippet="website.s_snippet_group" string="How It Works Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/How_it_works_variant_4.png"/>
             <t snippet-group="scita_multi_product" t-snippet="website.s_snippet_group" string="Multi Product Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-deal-of-day.png"/>
             <t snippet-group="scita_newsletter" t-snippet="website.s_snippet_group" string="Newsletter Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
             <t snippet-group="scita_statistics" t-snippet="website.s_snippet_group" string="Statistics Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Statastics-1.svg"/>
             <t snippet-group="scita_timeline" t-snippet="website.s_snippet_group" string="Timeline Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
             <t snippet-group="scita_trust_icon" t-snippet="website.s_snippet_group" string="Trust Icons Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
             <t snippet-group="scita_accordion" t-snippet="website.s_snippet_group" string="Accordion Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/FAQ.svg"/>
             <t snippet-group="scita_content" t-snippet="website.s_snippet_group" string="Content Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
             <t snippet-group="scita_promo_banner" t-snippet="website.s_snippet_group" string="Promo Banner Snippets"
-                t-thumbnail="/theme_scita/static/src/img/scita_small_logo.png"/>
+                t-thumbnail="/theme_scita/static/src/img/snippet_icon/hero-image-snippet.png"/>
         </xpath>
         
         <!-- Add Theme Scita snippets to snippet_structure with specific groups -->

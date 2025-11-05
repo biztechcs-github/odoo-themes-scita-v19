@@ -132,7 +132,7 @@
     
     <template id="shop_page_request_for_quote" inherit_id="website_sale.products"
               name="Product Request Quote">
-        <xpath expr="//div[@id='o_wsale_pager']" position="after">
+        <xpath expr="//div[@id='oe_structure_website_sale_products_2']" position="after">
             <t t-call="theme_scita.request_for_quote_modal"/>
         </xpath>
     </template>

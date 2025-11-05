@@ -145,6 +145,15 @@
                         <span class="name-text">Categories</span>
                     </button>
                 </div>
+                <div t-att-class="'ab-icons ab-compare active' if request.httprequest.path == '/shop/compare' else 'ab-icons ab-compare' ">
+                    <button class="btn btn-link" type="button" aria-label="Compare">
+                        <a class="compare_link redirect-compare-page" href="/shop/compare">
+                            <i class="fa fa-exchange" style="font-size: 24px;"></i>
+                            <span class="name-text">Compare</span>
+                            <span class="compare_quantity badge position-absolute rounded-pill bg-primary d-none" data-compare-count="0" style="top: 5px; right: 15px; font-size: 9px; min-width: 16px; height: 16px; line-height: 16px; padding: 0 3px;">0</span>
+                        </a>
+                    </button>
+                </div>
                 <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
                     <button class="btn btn-link" type="button" aria-label="Bag">
                         <a class="redirect-cart-page" href="/shop/cart">

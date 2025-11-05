@@ -141,6 +141,26 @@
                     }
                 }
             }
+
+            #o_main_nav {
+                .menu_right {
+                    ul {
+                        li.o_wsale_my_compare {
+                            margin: 0;
+                            margin-right: -5px;
+                            margin-top: 5px;
+                            .compare_quantity {
+                                right: 0 !important;
+                            }
+                            &:hover {
+                                i {
+                                    color: #202020 !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -198,6 +218,13 @@
                                         background: $light-color !important;
                                         color: $black !important;
                                         border-color: $light-color !important;
+                                    }
+                                }
+                                 &.o_wsale_my_compare {
+                                    a {
+                                        i {
+                                                filter: contrast(0) brightness(1.4);
+                                        }
                                     }
                                 }
                             }
@@ -838,6 +865,10 @@
             #o_main_nav {
                 .menu_right {
                     li {
+                        &.o_wsale_my_compare {
+                                margin-right: 0;
+                        margin-top: 5px;
+                        }
                         a {
                             .my_cart_quantity {
                                 @include min992 {
@@ -1287,6 +1318,15 @@
                                 background-color: $body-color !important;
                                 color: $white !important;
                             }
+                        }
+                    }
+                }
+            }
+            .menu_right {
+                ul {
+                    li {
+                        &.o_wsale_my_compare {
+                            margin-left: -14px;
                         }
                     }
                 }
@@ -3613,6 +3653,7 @@
                                 li {
                                     +li {
                                         margin-left: 20px;
+                                        margin-right: 0;
                                     }
 
                                     a {
@@ -5740,6 +5781,100 @@ header {
                                 padding: 1rem !important;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Compare Icon Styles
+.o_wsale_my_compare {
+    @include flex-wrap-common;
+    @include justify-align-content;
+    
+    .compare_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        i.fa-exchange {
+            color: $dark-color;
+        }
+        
+        .compare_quantity {
+            font-size: 11px;
+            min-width: 18px;
+            height: 18px;
+            line-height: 18px;
+            padding: 0 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    
+    &:hover {
+        .compare_link i.fa-exchange {
+            color: $primary;
+        }
+    }
+}
+
+// Ensure compare icon has proper spacing and alignment with cart/wishlist icons
+.menu_right, .h-cart, .sct-cart-list {
+    .o_wsale_my_compare {
+        margin-right: 10px;
+        
+        .compare_link {
+            width: 35px;
+            height: 35px;
+            
+            @include min992 {
+                padding: 0 !important;
+                line-height: 1;
+            }
+        }
+    }
+}
+
+// Mobile PWA compare icon styles
+.ab-mob-view {
+    .ab-compare {
+        .btn-link {
+            a {
+                position: relative;
+                
+                i.fa-exchange {
+                    fill: #929292;
+                    color: #929292;
+                }
+                
+                .compare_quantity {
+                    font-size: 9px;
+                }
+            }
+        }
+        
+        &.active {
+            .btn-link {
+                background-color: rgba($primary, 0.1);
+                
+                a {
+                    i.fa-exchange {
+                        color: $primary;
+                    }
+                    
+                    .name-text {
+                        color: $primary;
                     }
                 }
             }

@@ -176,6 +176,23 @@
             </li>
         </t>
     </template>
+
+    <!-- Header Compare Link Template -->
+    <template id="header_compare_link" name="Header Compare Link">
+        <t t-nocache="The number of products in compare is dynamic, this rendering cannot be cached."
+           t-nocache-_icon="_icon"
+           t-nocache-_badge_class="_badge_class"
+           t-nocache-_item_class="_item_class"
+           t-nocache-_link_class="_link_class">
+            <t t-set="show_compare" t-value="website.has_ecommerce_access() and website.is_view_active('website_sale_comparison.add_to_compare')"/>
+            <li t-attf-class="nav-items-icon o_wsale_my_compare #{not show_compare and 'd-none'} #{_item_class}">
+                <a href="/shop/compare" class="nav-toggle-btn compare_link btn p-0 rounded-circle position-relative" aria-label="Compare Products">
+                    <i t-if="_icon" class="fa fa-exchange fa-lg" style="font-size: 20px;"></i>
+                    <sup class="compare_quantity badge position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill bg-primary d-none" data-compare-count="0">0</sup>
+                </a>
+            </li>
+        </t>
+    </template>
     <template active="False" id="option_header_1" inherit_id="website.layout" name="Header option 1">
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
@@ -234,6 +251,11 @@
                         </t>
                         <div class="menu_right">
                             <ul class="list-inline">
+                                <t t-call="theme_scita.header_compare_link">
+                                    <t t-set="_icon" t-value="True"/>
+                                    <t t-set="_item_class" t-value="''"/>
+                                    <t t-set="_link_class" t-value="'top-link-compare'"/>
+                                </t>
                                 <t t-call="theme_scita.header_cart_link_sidebar">
                                     <t t-set="_icon" t-value="True"/>
                                     <t t-set="_item_class" t-value="''"/>
@@ -336,6 +358,11 @@
                                 <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
                                 <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
+                            <t t-call="theme_scita.header_compare_link">
+                                <t t-set="_icon" t-value="True"/>
+                                <t t-set="_item_class" t-value="''"/>
+                                <t t-set="_link_class" t-value="'top-link-compare'"/>
+                            </t>
                             <t t-call="theme_scita.header_cart_link_sidebar">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_item_class" t-value="''"/>
@@ -437,6 +464,12 @@
                                             <t t-set="_icon" t-value="true"/>
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
                                             <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                        </t>
+                                        <t t-call="theme_scita.header_compare_link">
+                                            <t t-set="_icon" t-value="True"/>
+                                            <t t-set="_item_class" t-value="''"/>
+                                            <t t-set="_link_class" t-value="'top-link-compare o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                            <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                                         </t>
                                         <t t-call="theme_scita.header_cart_link_sidebar">
                                             <t t-set="_icon" t-value="True"/>
@@ -552,6 +585,11 @@
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
                                             <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                         </t>
+                                        <t t-call="theme_scita.header_compare_link">
+                                            <t t-set="_icon" t-value="True"/>
+                                            <t t-set="_item_class" t-value="''"/>
+                                            <t t-set="_link_class" t-value="'top-link-compare'"/>
+                                        </t>
                                         <t t-call="theme_scita.header_cart_link_sidebar">
                                             <t t-set="_icon" t-value="True"/>
                                             <t t-set="_item_class" t-value="''"/>
@@ -666,6 +704,11 @@
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_link_class" t-value="'btn position-relative rounded-pill p-1 text-reset'"/>
                                 <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                            </t>
+                            <t t-call="theme_scita.header_compare_link">
+                                <t t-set="_icon" t-value="True"/>
+                                <t t-set="_item_class" t-value="''"/>
+                                <t t-set="_link_class" t-value="'top-link-compare'"/>
                             </t>
                             <t t-call="theme_scita.header_cart_link_sidebar">
                                 <t t-set="_icon" t-value="True"/>

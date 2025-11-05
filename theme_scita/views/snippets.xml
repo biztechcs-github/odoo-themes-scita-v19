@@ -300,35 +300,148 @@
                 </div>
             </form>
     </template>
+    <!-- Dynamic Snippet Template (Odoo 19 Structure) -->
     <template id="sct_product_snippet_1" name="Multi Product Snippet 1">
-        <section class="sct_product_snippet_1" data-multi-cat-slider-type="" contentEditable="false"
-                 data-disp="multi_product">
-            <div class="container">
-                <div class="row our-config-products">
-                    <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 id="snippet-title" class="section-title style1">
-                                <span>Product Configuration</span>
-                            </h4>
+        <t t-call="website.s_dynamic_snippet_template">
+            <t t-set="snippet_name" t-value="'sct_product_snippet_1'"/>
+            <t t-set="snippet_classes" t-value="'sct_product_snippet_1'"/>
+            <t t-set="container_classes" t-value="'container'"/>
+            <t t-set="content_classes" t-value="'sct-snippet-full'"/>
+            <t t-set="main_page_url" t-value="'/shop'"/>
+            <t t-call="theme_scita.sct_product_snippet_1_preview_data"/>
+        </t>
+    </template>
+
+    <!-- Preview Data Template for Editor -->
+    <template id="sct_product_snippet_1_preview_data" name="Multi Product Snippet 1 Preview Data">
+        <div class="carousel slide s_dialog_preview">
+            <div class="carousel-inner row w-100 mx-auto">
+                <div role="option" class="carousel-item active" style="min-height: 357.875px;">
+                    <div class="row">
+                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
+                            <div class="cs-product bg-transparent w-100 card border-0">
+                                <div class="pwp-img">
+                                    <a class="o_carousel_product_img_link stretched-link" href="#">
+                                        <img class="front card-img-top" loading="lazy" 
+                                             src="/theme_scita/static/src/img/shues.png" 
+                                             alt="Product Preview"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title h6">Product Name</h3>
+                                        <div class="pink-box price-rating-wrapper">
+                                            <p class="price">
+                                                <b>
+                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
+                                                        <span class="oe_currency_value">99.00</span>
+                                                    </span>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
+                            <div class="cs-product bg-transparent w-100 card border-0">
+                                <div class="pwp-img">
+                                    <a class="o_carousel_product_img_link stretched-link" href="#">
+                                        <img class="front card-img-top" loading="lazy" 
+                                             src="/theme_scita/static/src/img/shues.png" 
+                                             alt="Product Preview"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title h6">Product Name</h3>
+                                        <div class="pink-box price-rating-wrapper">
+                                            <p class="price">
+                                                <b>
+                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
+                                                        <span class="oe_currency_value">99.00</span>
+                                                    </span>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
+                            <div class="cs-product bg-transparent w-100 card border-0">
+                                <div class="pwp-img">
+                                    <a class="o_carousel_product_img_link stretched-link" href="#">
+                                        <img class="front card-img-top" loading="lazy" 
+                                             src="/theme_scita/static/src/img/shues.png" 
+                                             alt="Product Preview"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title h6">Product Name</h3>
+                                        <div class="pink-box price-rating-wrapper">
+                                            <p class="price">
+                                                <b>
+                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
+                                                        <span class="oe_currency_value">99.00</span>
+                                                    </span>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
+                            <div class="cs-product bg-transparent w-100 card border-0">
+                                <div class="pwp-img">
+                                    <a class="o_carousel_product_img_link stretched-link" href="#">
+                                        <img class="front card-img-top" loading="lazy" 
+                                             src="/theme_scita/static/src/img/shues.png" 
+                                             alt="Product Preview"/>
+                                    </a>
+                                </div>
+                                <div class="pwd-desc">
+                                    <div class="pwp-info">
+                                        <h3 class="pwpi-title h6">Product Name</h3>
+                                        <div class="pink-box price-rating-wrapper">
+                                            <p class="price">
+                                                <b>
+                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
+                                                        <span class="oe_currency_value">99.00</span>
+                                                    </span>
+                                                </b>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </template>
+
+    <!-- Product Display Template (Content rendered inside dynamic_snippet_template) -->
     <template id="sct_product_snippet_1_view" name="Multi Product Snippet Configuration 1">
+        <t t-set="products" t-value="products if products else []"/>
+        <t t-set="slider_header" t-value="slider_header or None"/>
         <div class='sct-snippet-full'>
             <div class="container">
                 <div class="row top">
                     <div class="content col-md-12">
                         <h2 class="section-title" t-if="not slider_header">Featured Products</h2>
-                        <h2 class="section-title " t-if="slider_header">
+                        <h2 class="section-title" t-if="slider_header">
                             <t t-out="slider_header.name"/>
                         </h2>
                     </div>
                 </div>
                 <div class="row bottom-row content">
-                    <t t-foreach="products" t-as="product">
+                    <t t-if="products and len(products) > 0">
+                        <t t-foreach="products" t-as="product">
+                            <t t-if="product">
                         <t t-set="combination_info"
                            t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
                         <div class="col-md-4 col-lg-3 col-6 grid_product">
@@ -565,6 +678,15 @@
                             
                                 </div>
                             </form>
+                        </div>
+                            </t>
+                        </t>
+                    </t>
+                    <t t-else="">
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <p>No products configured. Please configure products in the snippet options.</p>
+                            </div>
                         </div>
                     </t>
                 </div>

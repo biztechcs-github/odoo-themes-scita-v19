@@ -82,8 +82,8 @@ publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
     _bindDelegatedEvents() {
         const self = this;
 
-        // Open cart sidebar
-        $('body').off('click', '.nav-toggle-btn').on('click', '.nav-toggle-btn', async function(e) {
+        // Open cart sidebar (exclude compare links)
+        $('body').off('click', '.nav-toggle-btn:not(.compare_link)').on('click', '.nav-toggle-btn:not(.compare_link)', async function(e) {
             e.preventDefault();
             $('#cstm-nav-menu-toggle').removeClass("o_hidden");
             $('body').addClass('show-scita-cstm-menu');
