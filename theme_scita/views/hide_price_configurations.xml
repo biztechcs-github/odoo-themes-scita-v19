@@ -21,10 +21,9 @@
     </template> -->
            
     <!-- Request Quote or Login to See Price logic -->
-    <template id="shop_hide_product_price" inherit_id="website_sale.products_item">
-
-        <!-- Hide price block when hidden by any condition -->
-        <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="attributes">
+    <template id="shop_price_hide_product_price" inherit_id="website_sale.products_item">
+        <!-- Hide price block for shop page when hidden by any condition -->
+        <xpath expr="//div[hasclass('product_price')]" position="attributes">
             <attribute name="t-if">
                 website 
                 and website.website_show_price
@@ -34,7 +33,7 @@
         </xpath>
 
         <!-- Replace price block with buttons -->
-        <xpath expr="//div[hasclass('o_wsale_product_sub')]" position="after">
+        <xpath expr="//div[hasclass('product_price')]" position="after">
             <t t-if="website and (
                 (not website.website_show_price)
                 or product.website_hide_price
@@ -45,24 +44,81 @@
                 <t t-if="website.login_see_price and request.env.user._is_public()">
                     
                     <a t-attf-href="/web/login"
-                    class="btn btn-outline-primary mt-2">
+                    class="btn btn-outline-primary mt-2 login-price-btn">
                         Login to see price
                     </a>
                 </t>
 
                 <!-- Case 2: Price hidden (Request Quote) -->
                 <t t-else="">
-                    <a role="button"
-                    id="request_for_quote_button"
-                    data-bs-toggle="modal"
-                    data-bs-target="#cfp_pop_up"
-                    t-att-data-product_id="product.id"
-                    href="#"
-                    class="btn btn-primary mt-2">
-                        Request Quote
+                    <div class="o_wsale_product_request_quote">
+                        <a role="button"
+                        id="request_for_quote_button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#cfp_pop_up"
+                        t-att-data-product_id="product.id"
+                        href="#"
+                        class="btn btn-primary mt-2">
+                            Request Quote
+                        </a>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="shop_button_hide_product_price" inherit_id="website_sale.products_item">
+
+        <!-- Hide button block for shop page when hidden by any condition -->
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="attributes">
+            <attribute name="t-if">
+                website 
+                and website.website_show_price
+                and not product.website_hide_price
+                and not (website.login_see_price and request.env.user._is_public())
+            </attribute>
+        </xpath>
+
+        <!-- Replace price block with buttons -->
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="after">
+            <t t-if="website and (
+                (not website.website_show_price)
+                or product.website_hide_price
+                or (website.login_see_price and request.env.user._is_public())
+            )">
+
+                <!-- Case 1: User is public and must log in -->
+                <t t-if="website.login_see_price and request.env.user._is_public()">
+                    
+                    <a t-attf-href="/web/login"
+                    class="btn btn-outline-primary mt-2 login-price-btn">
+                        Login to see price
                     </a>
                 </t>
             </t>
+        </xpath>
+    </template>
+
+    <template id="shop_button_hide_product_price" inherit_id="website_sale.products_item">
+
+        <!-- Hide button block for shop page when hidden by any condition -->
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="attributes">
+            <attribute name="t-if">
+                website 
+                and website.website_show_price
+                and not product.website_hide_price
+                and not (website.login_see_price and request.env.user._is_public())
+            </attribute>
+        </xpath>
+
+        <!-- Replace price block with buttons -->
+        <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="after">
+            <t t-if="website and (
+                (not website.website_show_price)
+                or product.website_hide_price
+                or (website.login_see_price and request.env.user._is_public())
+            )" />
+
         </xpath>
     </template>
 
@@ -81,7 +137,7 @@
                 <t t-if="website.login_see_price and request.env.user._is_public()">
                     
                     <a t-attf-href="/web/login"
-                    class="btn btn-outline-primary mt-2">
+                    class="btn btn-outline-primary mt-2 login-price-btn">
                         Login to see price
                     </a>
                 </t>
@@ -167,7 +223,7 @@
                 <t t-if="website.login_see_price and request.env.user._is_public()">
                     
                     <a t-attf-href="/web/login"
-                    class="btn btn-outline-primary mt-2">
+                    class="btn btn-outline-primary mt-2 login-price-btn">
                         Login to see price
                     </a>
                 </t>
@@ -212,19 +268,26 @@
             and not (website.login_see_price and request.env.user._is_public())
         </attribute>
     </xpath>
+    <xpath expr="//div[hasclass('sct-hover-info')]" position="attributes">
+        <attribute name="t-if">
+            website and website.website_show_price 
+            and not slide.website_hide_price
+            and not (website.login_see_price and request.env.user._is_public())
+        </attribute>
+    </xpath>
 
     <!-- Show Login or Quote Button Based on Conditions -->
     <xpath expr="//div[hasclass('ajax_cart_template')]" position="after">
         <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (slide.website_hide_price or not website.website_show_price)">
+            <t t-elif="(slide.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -251,36 +314,26 @@
             and not (website.login_see_price and request.env.user._is_public())
         </attribute>
     </xpath>
+    <xpath expr="//div[hasclass('sct-hover-info')]" position="attributes">
+        <attribute name="t-if">
+            website and website.website_show_price 
+            and not product.website_hide_price
+            and not (website.login_see_price and request.env.user._is_public())
+        </attribute>
+    </xpath>
 
-    <!-- Add Login/Quote -->
-    <!-- <xpath expr="//div[hasclass('ajax_cart_template')]" position="after">
-        <t t-if="website and (
-            product.website_hide_price
-            or (website.login_see_price and request.env.user._is_public())
-        )">
-            <t t-if="website.login_see_price and request.env.user._is_public()">
-                
-                <a t-attf-href="/web/login" 
-                   class="btn btn-outline-primary">Login to see price</a>
-            </t>
-            <t t-else="">
-                <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up" 
-                   class="btn btn-primary">Request Quote</a>
-            </t>
-        </t>
-    </xpath> -->
         <!-- Show Login or Quote Button Based on Conditions -->
     <xpath expr="//div[hasclass('ajax_cart_template')]" position="after">
         <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (product.website_hide_price or not website.website_show_price)">
+            <t t-elif="(product.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -304,14 +357,14 @@
     <xpath expr="//p[hasclass('price')]" position="after">
         <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (product.website_hide_price or not website.website_show_price)">
+            <t t-elif="(product.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -331,7 +384,7 @@
             and not (website.login_see_price and request.env.user._is_public())
         </attribute>
     </xpath>
-    <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="attributes">
+    <xpath expr="//div[hasclass('sct-hover-info')]" position="attributes">
         <attribute name="t-if">
             website and website.website_show_price 
             and not deal_product.website_hide_price
@@ -339,17 +392,17 @@
         </attribute>
     </xpath>
 
-    <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="after">
+    <xpath expr="//div[hasclass('pwp-info')]" position="after">
          <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (deal_product.website_hide_price or not website.website_show_price)">
+            <t t-elif="(deal_product.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -369,7 +422,7 @@
             and not (website.login_see_price and request.env.user._is_public())
         </attribute>
     </xpath>
-    <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="attributes">
+    <xpath expr="//div[hasclass('sct-hover-info')]" position="attributes">
         <attribute name="t-if">
             website and website.website_show_price 
             and not product.website_hide_price
@@ -377,17 +430,17 @@
         </attribute>
     </xpath>
 
-    <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="after">
+    <xpath expr="//div[hasclass('pwp-info')]" position="after">
        <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (product.website_hide_price or not website.website_show_price)">
+            <t t-elif="(product.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -407,7 +460,7 @@
             and not (website.login_see_price and request.env.user._is_public())
         </attribute>
     </xpath>
-    <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="attributes">
+    <xpath expr="//div[hasclass('sct-hover-info')]" position="attributes">
         <attribute name="t-if">
             website and website.website_show_price 
             and not product.website_hide_price
@@ -415,17 +468,17 @@
         </attribute>
     </xpath>
 
-    <xpath expr="//button[hasclass('cart_view_sct_btn')]" position="after">
+    <xpath expr="//div[hasclass('pwp-info')]" position="after">
         <t t-if="website">
             <!-- CASE 1: Public user -->
-            <t t-if="request.env.user._is_public()">
+            <t t-if="request.env.user._is_public() and website.login_see_price">
                 <a t-attf-href="/web/login"
-                class="btn btn-outline-primary">
+                class="btn btn-outline-primary login-price-btn">
                 Login to see price
                 </a>
             </t>
             <!-- CASE 3 & 4: Logged-in user but price hidden -->
-            <t t-elif="not request.env.user._is_public() and (product.website_hide_price or not website.website_show_price)">
+            <t t-elif="(product.website_hide_price or not website.website_show_price)">
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
                 class="btn btn-primary">
                 Request Quote
@@ -473,7 +526,7 @@
             <t t-if="website.login_see_price and request.env.user._is_public()">
                 
                 <a t-attf-href="/web/login"
-                   class="btn btn-outline-primary btn_cta mt-2">
+                   class="btn btn-outline-primary btn_cta mt-2 login-price-btn">
                     Login to see price
                 </a>
             </t>
@@ -535,7 +588,7 @@
             <t t-if="website.login_see_price and request.env.user._is_public()">
                 <t t-set="redirect_url" t-value="request.httprequest.path"/>
                 <a t-attf-href="/web/login?redirect={{ redirect_url }}"
-                   class="btn btn-outline-primary btn_cta mt-2">
+                   class="btn btn-outline-primary btn_cta mt-2 login-price-btn">
                     Login to see price
                 </a>
             </t>

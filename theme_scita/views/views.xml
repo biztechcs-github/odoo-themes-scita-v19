@@ -252,7 +252,7 @@
                 </setting>
                 <setting
                     id="website_sale_hide_price"
-                    help="Hide prices at website level"
+                    help="Enables a “Request a Quote” option for website. This feature allows users to submit quote requests directly, streamlining the inquiry and pricing process."
                 >
                     <field name="website_hide_price" />
                 </setting>
