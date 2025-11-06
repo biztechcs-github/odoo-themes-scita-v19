@@ -651,7 +651,7 @@
                                                     <span class="add_to_cart_text">Add to cart</span>
                                                 </button>
                                                 <div class='sct-feature-wrap'>
-                                                    <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn"
+                                                    <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn"
                                                             title="Quick View" t-att-data-id="product.id">
                                                         <span class="lni lni-eye"/>
                                                     </button>
