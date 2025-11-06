@@ -4,6 +4,9 @@
         <section class="google_map_v1" data-map=""  data-disp='google_map_snippet'>
             <div class="map_container">
                 <span>Google Map Address</span>
+            </div>
+            <div class="category-slider-placeholder">
+                <img src="/theme_scita/static/src/img/GoogleMap.png" alt="Category Slider" class="img-fluid"/>
             </div>           
         </section>
     </template>

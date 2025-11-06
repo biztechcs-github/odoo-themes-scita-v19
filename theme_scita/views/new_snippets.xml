@@ -9,9 +9,12 @@
                 <div class="row our-categories">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h4 id="snippet-title" class="section-title style1">
-                                <span>Multi Deals Slider</span>
-                            </h4>
+                            <h2 id="snippet-title" class="section-title style1">
+                                <span>Deal Seller Multi Product</span>
+                            </h2>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/MultiDealsSlider.png" alt="Category Slider" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>

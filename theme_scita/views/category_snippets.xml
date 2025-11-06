@@ -7,6 +7,9 @@
                 <div class="block-title">
                     <h3 class="fancy">Category Snippet</h3>
                 </div>
+                 <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/cat3.png" alt="Category Slider" class="img-fluid"/>
+                </div>
             </div>
         </section>
     </template>
@@ -155,6 +158,9 @@
                         <h3 class="section-title style1" id="snippet-title">
                             <span>Category</span>
                         </h3>
+                         <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/cat3.png" alt="Category Slider" class="img-fluid"/>
+                        </div>
                     </div>
                 </div>
             </div>

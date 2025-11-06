@@ -704,6 +704,9 @@
                             <h4 id="snippet-title" class="section-title style1">
                                 <span>Image Category Slider</span>
                             </h4>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Category Slider" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1179,6 +1182,9 @@
                             <h4 id="snippet-title" class="section-title style1">
                                 <span>Multi Product Slider</span>
                             </h4>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/TreandingProduct.png" alt="Category Slider" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>
