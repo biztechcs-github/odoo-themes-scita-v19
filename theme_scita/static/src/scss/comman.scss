@@ -3021,10 +3021,13 @@ common search for categories and products (22/05/2025)
 // compare popup design css start 
 .compare_popup_header {
 	background-color: $primary !important;
-	.compare_btn {
-		background-color: $primary !important;
-		&:hover {
-			background-color: rgba($primary, 0.6) !important; 
-		}
+}
+.compare_btn {
+	background-color: $primary !important;
+	&:hover {
+		background-color: rgba($primary, 0.6) !important; 
 	}
+}
+.timer-bar {
+	background-color: $primary !important;
 }
