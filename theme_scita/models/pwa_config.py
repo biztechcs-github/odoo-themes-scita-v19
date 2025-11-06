@@ -38,7 +38,7 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
     login_see_price = fields.Boolean(
-        string="Login to see price",
+        string="Hiding Price and Disabling Cart for Public Users",
         related="website_id.login_see_price",
         readonly=False,
     )
