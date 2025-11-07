@@ -684,6 +684,9 @@
 
         .o_footer_copyright{
             background-color: transparent;
+            .container {
+                border-top: 0;
+            }
         }
 
         .title-20{
