@@ -200,10 +200,10 @@
            <div class="container">
                 <div class="row sct_banner_row">
                     <section class="col-md-6 col-lg-9 banner_slider s_carousel_wrapper">
-                        <div id="carouselExampleIndicators" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
+                        <div id="carouselExampleIndicatorsItMain" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
                             <ol class="carousel-indicators">
-                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carouselExampleIndicatorsItMain" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carouselExampleIndicatorsItMain" data-bs-slide-to="1"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active" data-name="Slide">
@@ -219,7 +219,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item active" data-name="Slide">
+                                <div class="carousel-item" data-name="Slide">
                                     <div class="row align-items-center">
                                         <div class="slider-content carousel-content col-lg-7">
                                             <p class="text-uppercase title-18 text-tag">Highest Quality</p>
@@ -234,11 +234,11 @@
                                 </div>
                             </div>
                             <!-- Controls -->
-                            <a class="carousel-control-prev o_not_editable" contenteditable="false" href="#carouselExampleIndicators" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
+                            <a class="carousel-control-prev o_not_editable" contenteditable="false" href="#carouselExampleIndicatorsItMain" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
                                 <span class="carousel-control-prev-icon"/>
                                 <span class="visually-hidden">Previous</span>
                             </a>
-                            <a class="carousel-control-next o_not_editable" contenteditable="false" href="#carouselExampleIndicators" data-bs-slide="next" role="img" aria-label="Next" title="Next">
+                            <a class="carousel-control-next o_not_editable" contenteditable="false" href="#carouselExampleIndicatorsItMain" data-bs-slide="next" role="img" aria-label="Next" title="Next">
                                 <span class="carousel-control-next-icon"/>
                                 <span class="visually-hidden">Next</span>
                             </a>

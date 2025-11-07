@@ -124,14 +124,14 @@
                 or (website.login_see_price and request.env.user._is_public())
             )">
 
-                <!-- Case 1: User is public and must log in -->
+                <!-- Case 1: User is public and must log in
                 <t t-if="website.login_see_price and request.env.user._is_public()">
                     
                     <a t-attf-href="/web/login"
                     class="btn btn-outline-primary mt-2 login-price-btn">
                         Login to see price
                     </a>
-                </t>
+                </t> -->
             </t>
         </xpath>
     </template>

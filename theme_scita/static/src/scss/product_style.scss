@@ -3201,7 +3201,13 @@
 								flex: 0 0 100%;
 								max-width: 100%;
 								margin: 20px 0 0;
-
+								#request_for_quote_button {
+									margin: 0px 0 25px !important;
+    								border-radius: 50px;
+									&:hover, &:focus {
+										color: $primary !important;
+									}
+								}
 								.sct_zip_div{
 									display: flex;
 									flex-wrap: wrap;
@@ -3526,6 +3532,16 @@
 		}
 	}
 }
+.sct-cst-pro-page{
+	&.modal-open:has(#cfp_pop_up.show) {
+		#product_details {
+			z-index: 1024;
+		}
+		header#top {
+			z-index: 1;
+		}
+	}
+}
 
 #products_grid{
 	.oe_product{
@@ -3565,6 +3581,8 @@
 		}
 	}
 }
+
+
 
 .o_wsale_layout_list{
 	.oe_product{

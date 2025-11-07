@@ -203,6 +203,7 @@ publish unpublish product
         'website.assets_wysiwyg': [
             # 'theme_scita/static/src/js/new_scita_editor.js',
             '/theme_scita/static/src/xml/**/*',
+           'theme_scita/static/src/js/timer_editor.js',
         ],
         'website.assets_editor': [
         ],
@@ -210,7 +211,6 @@ publish unpublish product
             'theme_scita/static/src/js/scita_block_tab_patch.js',
         ],
         'website.website_builder_assets': [
-           'theme_scita/static/src/js/timer_editor.js',
           'theme_scita/static/src/xml/scita_header_option.xml',
           'theme_scita/static/src/xml/scita_footer_option.xml',
             # 'theme_scita/static/src/xml/scita_editor_option.xml',
