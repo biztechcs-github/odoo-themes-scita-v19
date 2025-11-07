@@ -81,7 +81,6 @@ publicWidget.registry.ComparePopupNotification = publicWidget.Widget.extend({
 
     _onCompareCountEvent(event) {
         // Handle custom event - no need to update again as it's already updated
-        console.log('Compare count updated:', event.detail);
     },
 
     // =============== Main Add-to-Compare Logic ===============

@@ -295,10 +295,12 @@
                 </t>
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(slide.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
+                    <div class="o_wsale_product_request_quote">
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
+                        class="btn btn-primary" id="request_for_quote_button">
+                        Request Quote
+                        </a>
+                    </div>
                 </t>
             </t>
         </xpath>
@@ -334,10 +336,12 @@
                 </t>
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
+                    <div class="o_wsale_product_request_quote">
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
+                        class="btn btn-primary" id="request_for_quote_button">
+                        Request Quote
+                        </a>
+                    </div>
                 </t>
             </t>
         </xpath>
@@ -352,25 +356,6 @@
                 and not product.website_hide_price
                 and not (website.login_see_price and request.env.user._is_public())
             </attribute>
-        </xpath>
-
-        <xpath expr="//p[hasclass('price')]" position="after">
-            <t t-if="website">
-                <!-- CASE 1: Public user -->
-                <t t-if="request.env.user._is_public() and website.login_see_price">
-                    <a t-attf-href="/web/login"
-                    class="btn btn-outline-primary login-price-btn">
-                    Login to see price
-                    </a>
-                </t>
-                <!-- CASE 3 & 4: Logged-in user but price hidden -->
-                <t t-elif="(product.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
-                </t>
-            </t>
         </xpath>
     </template>
 
@@ -403,10 +388,12 @@
                 </t>
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(deal_product.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
+                    <div class="o_wsale_product_request_quote">
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
+                        class="btn btn-primary" id="request_for_quote_button">
+                        Request Quote
+                        </a>
+                    </div>
                 </t>
             </t>
         </xpath>
@@ -441,10 +428,12 @@
                 </t>
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
+                    <div class="o_wsale_product_request_quote">
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
+                        class="btn btn-primary" id="request_for_quote_button">
+                        Request Quote
+                        </a>
+                    </div>
                 </t>
             </t>
         </xpath>
@@ -479,10 +468,12 @@
                 </t>
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
-                    <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                    class="btn btn-primary">
-                    Request Quote
-                    </a>
+                    <div class="o_wsale_product_request_quote">
+                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
+                        class="btn btn-primary" id="request_for_quote_button">
+                        Request Quote
+                        </a>
+                    </div>
                 </t>
             </t>
         </xpath>

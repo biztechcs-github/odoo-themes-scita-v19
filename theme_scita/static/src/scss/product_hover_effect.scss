@@ -602,9 +602,40 @@ span[name="hidden_ptavs_count"] {
                     .cst_category-slider-section, .tab-content{
                         .cat_list, .owl-item{
                             .cs-product{
+                                overflow: hidden;
                                 .pwd-desc{
                                     .pwp-info{
                                         text-align: center;
+                                          padding-bottom: 10px;
+                                    }
+                                    .o_wsale_product_request_quote {
+                                        text-align: center;
+                                        margin-bottom: 10px;
+                                        margin-top: 15px;
+                                        @media (min-width:768px) and (max-width:992px) {
+                                            width: 100% ;
+                                        }
+                                        #request_for_quote_button {
+                                            transition: all 0.3s ease-in;
+                                            top: unset;
+                                            border-color: $primary;
+                                            color: $primary;
+                                            background-color: $white;
+                                            margin: auto;
+                                            width: fit-content;
+                                            @include min992 {
+                                                position: absolute;
+                                                opacity: 0;
+                                                left: 0;
+                                                right: 0;
+                                                
+                                                bottom: -50px;
+                                            }
+                                            &:hover {
+                                                color: $white;
+                                                background-color: $primary;
+                                            }
+                                        }
                                     }
                                 }
                                 .sct-hover-info{
@@ -709,6 +740,11 @@ span[name="hidden_ptavs_count"] {
                                             }
                                         }
                                     }
+                                    .o_wsale_product_request_quote #request_for_quote_button {
+                                        bottom: 2px;
+                                        opacity: 1;
+                                        transition: all 0.3s ease-in;
+                                    }
                                 }
                             }
                         }
@@ -804,15 +840,46 @@ span[name="hidden_ptavs_count"] {
             .deal_day_bottom_inner, .owl-item, .grid_product{
                 .cs-product{
                     position: relative;
-
+                    overflow: hidden;
                     .pwd-desc{
                         overflow: visible;
                         position: static;
                         
                         .pwp-info{
+                            padding-bottom: 10px;
                             background: $light-color;
                             @include transition(all, 0.3s, ease-in);
                         }
+
+                         .o_wsale_product_request_quote {
+                             text-align: center;
+                            margin-bottom: 10px;
+                            margin-top: 15px;
+                            @media (min-width:768px) and (max-width:992px) {
+                                width: 100% ;
+                            }
+                            #request_for_quote_button {
+                                transition: all 0.3s ease-in;
+                                top: unset;
+                                border-color: $primary;
+                                color: $primary;
+                                background-color: $white;
+                                margin: auto;
+                                width: fit-content;
+                                @include min992 {
+                                    position: absolute;
+                                    opacity: 0;
+                                    left: 0;
+                                    right: 0;
+                                    
+                                    bottom: -50px;
+                                }
+                                &:hover {
+                                    color: $white;
+                                    background-color: $primary;
+                                }
+                            }
+                         }
 
                         .sct-hover-info{
                             padding-bottom: 5px;
@@ -958,11 +1025,22 @@ span[name="hidden_ptavs_count"] {
                                     }
                                 }
                             }
+                            .o_wsale_product_request_quote #request_for_quote_button {
+                                bottom: 2px;
+                                opacity: 1;
+                                transition: all 0.3s ease-in;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+    .s_custom_img_category_slider .cst_btm_row .cst_sct_right_side .cst_category-slider-section .cat_list#cat_list_3 .cs-cat {
+        overflow: hidden;
+    }
+    .fashion_multi_category_slider .fashion_featured_product_1 .latest-news-section .owl-item form {
+        height: 100%;
     }
 }
 @else if o-website-value('prod-hover-style') == 'prod_hover_style_2' {
@@ -1576,6 +1654,36 @@ span[name="hidden_ptavs_count"] {
                                 .pwd-desc{
                                     .pwp-info{
                                         text-align: center;
+                                        padding-bottom: 15px;
+                                    }
+                                    .o_wsale_product_request_quote {
+                                        text-align: center;
+                                        margin-bottom: 10px;
+                                        margin-top: 15px;
+                                        @media (min-width:768px) and (max-width:992px) {
+                                            width: 100% ;
+                                        }
+                                        #request_for_quote_button {
+                                            transition: all 0.3s ease-in;
+                                            top: unset;
+                                            border-color: $primary;
+                                            color: $primary;
+                                            background-color: $white;
+                                            margin: auto;
+                                            width: fit-content;
+                                            @include min992 {
+                                                position: absolute;
+                                                opacity: 0;
+                                                left: 0;
+                                                right: 0;
+                                                
+                                                bottom: -50px;
+                                            }
+                                            &:hover {
+                                                color: $white;
+                                                background-color: $primary;
+                                            }
+                                        }
                                     }
                                 }
                                 .sct-hover-info{
@@ -1681,6 +1789,11 @@ span[name="hidden_ptavs_count"] {
                                             }
                                         }
                                     }
+                                    .o_wsale_product_request_quote #request_for_quote_button {
+                                        bottom: 2px;
+                                        opacity: 1;
+                                        transition: all 0.3s ease-in;
+                                    }
                                 }
                             }
                         }
@@ -1780,8 +1893,37 @@ span[name="hidden_ptavs_count"] {
                     .pwd-desc{
                         overflow: visible;
                         position: static;
-                        
+                        .o_wsale_product_request_quote {
+                            text-align: center;
+                            margin-bottom: 10px;
+                            margin-top: 15px;
+                            @media (min-width:768px) and (max-width:992px) {
+                                width: 100% ;
+                            }
+                            #request_for_quote_button {
+                                transition: all 0.3s ease-in;
+                                top: unset;
+                                border-color: $primary;
+                                color: $primary;
+                                background-color: $white;
+                                margin: auto;
+                                width: fit-content;
+                                @include min992 {
+                                    position: absolute;
+                                    opacity: 0;
+                                    left: 0;
+                                    right: 0;
+                                    
+                                    bottom: -50px;
+                                }
+                                &:hover {
+                                    color: $white;
+                                    background-color: $primary;
+                                }
+                            }
+                        }
                         .pwp-info{
+                            padding-bottom: 15px;
                             background: $light-color;
                             @include transition(all, 0.3s, ease-in);
                         }
@@ -1911,6 +2053,11 @@ span[name="hidden_ptavs_count"] {
 
                     &:hover{
                         .pwd-desc{
+                            .o_wsale_product_request_quote #request_for_quote_button {
+                                        bottom: 2px;
+                                        opacity: 1;
+                                        transition: all 0.3s ease-in;
+                                    }
                             .pwp-info{
                                 transform: translateY(-35px);
                             }
@@ -1935,6 +2082,9 @@ span[name="hidden_ptavs_count"] {
             }
         }
     }
+    .fashion_multi_category_slider .fashion_featured_product_1 .latest-news-section .owl-item form {
+        height: 100%;
+    }
 }
 @else if o-website-value('prod-hover-style') == 'prod_hover_style_3' {
     #products_grid{
@@ -1946,25 +2096,25 @@ span[name="hidden_ptavs_count"] {
                     @media (max-width: 1199px){
                         padding-bottom: 37px !important;
                     }
-
                     .o_wsale_product_request_quote{
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         flex-wrap: wrap;
                         align-content: center;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
                         margin: auto;
-                        opacity: 0;
                         margin-left: -100%;
                         background: rgba(18, 52, 191, 0.12);
                         transition: all 0.5s ease;
                         gap: 0 !important;
-
+                        @include min992 {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            opacity: 0;
+                        }
                         .btn#request_for_quote_button{
                             border-radius: 6px;
                             min-height: auto;
@@ -1985,6 +2135,11 @@ span[name="hidden_ptavs_count"] {
                                 border-color: $primary;
                                 color: $primary;
                             }
+                        }
+                    }
+                    .o_wsale_product_action_row {
+                        @media (max-width:1024px) {
+                            display: none;
                         }
                     }
                     .o_wsale_product_information_text{
@@ -2366,6 +2521,22 @@ span[name="hidden_ptavs_count"] {
                         }
                     }
                 }
+                .o_wsale_product_information {
+                    .o_wsale_product_sub {
+                        .o_wsale_product_request_quote {
+                            #request_for_quote_button {
+                                position: absolute;
+                                bottom: unset;
+                                top: -45px;
+                                left: unset;
+                                right: 18px;
+                                @media (max-width:1024px) {
+                                    top: -35px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
             &:hover{
                 .o_wsale_product_grid_wrapper{
@@ -2506,6 +2677,7 @@ span[name="hidden_ptavs_count"] {
             }
         }
     }
+    
     .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
         .product_category_scita, .fashion_featured_product_1{
             .cs-product{
@@ -2888,7 +3060,7 @@ span[name="hidden_ptavs_count"] {
                 .o_wsale_product_information{
                     transition: all 0.3s ease-in;
                     padding: 10px !important;
-
+                    
                     @media (min-width: 992px) {
                         padding: 10px 15px !important;
                     }
@@ -2898,15 +3070,17 @@ span[name="hidden_ptavs_count"] {
                     }
     
                     .o_wsale_product_request_quote{
-                        position: absolute;
-                        left: 0;
-                        right: 0;
-                        top: auto;
                         overflow: visible;
                         bottom: 100%;
                         transition: all 0.3s ease-in;
-                        opacity: 0;
                         margin-bottom: 6px;
+                        @include min992 {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: auto;
+                            opacity: 0;
+                        }
 
                         .btn#request_for_quote_button{
                             border-radius: 6px;
@@ -3112,6 +3286,21 @@ span[name="hidden_ptavs_count"] {
                         }
                         #threshold_message_scita_out_of_stock{
                             margin-right: auto !important;
+                        }
+                    }
+                }
+                .o_wsale_product_information {
+                    .o_wsale_product_sub {
+                        .o_wsale_product_request_quote {
+                            #request_for_quote_button {
+                                position: absolute;
+                                bottom: unset;
+                                top: -75px;
+                                left: 20px;
+                                right: 20px;
+                                width: fit-content;
+                                margin: 0 auto;
+                            }
                         }
                     }
                 }

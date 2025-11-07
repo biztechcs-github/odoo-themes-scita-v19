@@ -73,14 +73,13 @@ patch(BlockTab.prototype, {
         // Create a dedicated category for Theme Scita if we found snippets
         if (allScitaSnippets.length > 0) {
             this.snippetModel.snippetThemeScita = allScitaSnippets;
-            console.log(`Theme Scita: Organized ${allScitaSnippets.length} snippets into hierarchical groups`);
         }
 
         // Log snippet model structure for debugging
-        console.log('Theme Scita hierarchical snippet model initialized:', {
-            totalCategories: Object.keys(this.snippetModel).length,
-            scitaSnippets: allScitaSnippets.length,
-            subGroups: scitaGroups.length
-        });
+        // console.log('Theme Scita hierarchical snippet model initialized:', {
+        //     totalCategories: Object.keys(this.snippetModel).length,
+        //     scitaSnippets: allScitaSnippets.length,
+        //     subGroups: scitaGroups.length
+        // });
     }
 });
