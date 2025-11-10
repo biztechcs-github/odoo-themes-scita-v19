@@ -1558,7 +1558,7 @@
                 .delivery_icon,
                 .top-link-checkout,
                 .o_navlink_background_hover,
-                .account_icon {
+                .account_icon, .compare_link {
                     background-color: lighten($dark-grey-color, 59%);
                     border-radius: 50px;
                     width: 35px;
@@ -1566,7 +1566,7 @@
                     @include flex-wrap-common;
                     @include justify-align-content;
                     margin-right: 10px;
-
+                    line-height: 1;
                     @include min992 {
                         width: 42px;
                         height: 42px;
@@ -1598,7 +1598,7 @@
                     }
 
                     .my_cart_quantity,
-                    .my_wish_quantity {
+                    .my_wish_quantity, .compare_quantity {
                         font-size: 9px !important;
                         font-weight: normal !important;
                         width: 17px !important;
@@ -1609,7 +1609,13 @@
                         @include align-content;
                         @include content-cn;
                         border: 0 !important;
+                        line-height: 1;
                     }
+                }
+
+                .compare_link {
+                    margin-right:0;
+                    margin-left: 14px;
                 }
 
                 .account_icon {
@@ -1689,7 +1695,7 @@
                                 }
                             }
 
-                            &.o_wsale_my_cart {
+                            &.o_wsale_my_cart, &.o_wsale_my_compare {
                                 @include flex-wrap-common;
                                 @include justify-align-content;
 
@@ -2169,10 +2175,11 @@
                             display: inline-block;
                         }
                     }
-                }
+                }  
+                display: none;
 
                 .o_wsale_my_wish,
-                .o_wsale_my_cart {
+                .o_wsale_my_cart, .o_wsale_my_compare  {
                     background-color: lighten($dark-grey-color, 59%);
                     border-radius: 50px;
                     width: 35px;
@@ -2180,7 +2187,7 @@
                     @include flex-wrap-common;
                     @include justify-align-content;
                     margin-right: 10px;
-
+                    line-height: 1;
                     &:hover {
                         background-color: lighten($dark-grey-color, 54%);
                     }
@@ -2201,7 +2208,7 @@
                     }
 
                     .my_cart_quantity,
-                    .my_wish_quantity {
+                    .my_wish_quantity , .compare_quantity{
                         font-size: 9px;
                         font-weight: normal;
                         width: 17px;
@@ -2215,6 +2222,7 @@
                         @include flex;
                         @include align-content;
                         @include content-cn;
+                        line-height: 1;
                     }
                 }
 
@@ -2729,7 +2737,7 @@
                 .delivery_icon,
                 .top-link-checkout,
                 .o_navlink_background_hover,
-                .account_icon {
+                .account_icon, .compare_link {
                     width: 40px;
                     height: 40px;
                     margin-right: 10px;
@@ -2737,7 +2745,7 @@
                     @include content-cn;
                     @include align-content;
                     border-radius: 50px;
-
+                    line-height: 1;
                     &:hover {
                         background-color: lighten($dark-grey-color, 59%);
                     }
@@ -2759,7 +2767,7 @@
                     }
 
                     .my_cart_quantity,
-                    .my_wish_quantity {
+                    .my_wish_quantity, .compare_quantity {
                         font-size: 9px !important;
                         line-height: 10px !important;
                         font-weight: normal !important;
@@ -2771,6 +2779,7 @@
                         @include flex;
                         @include align-content;
                         @include content-cn;
+                        line-height: 1 !important;
                     }
 
                     .my_cart_quantity,
@@ -2851,7 +2860,7 @@
                     ul {
                         li {
 
-                            &.o_wsale_my_cart {
+                            &.o_wsale_my_cart , &.o_wsale_my_compare{
                                 @include flex-wrap-common;
                                 @include justify-align-content;
 
@@ -3334,13 +3343,13 @@
                 }
 
                 .o_wsale_my_wish,
-                .o_wsale_my_cart {
+                .o_wsale_my_cart , .o_wsale_my_compare {
                     width: 35px;
                     height: 35px;
                     @include flex-wrap-common;
                     @include justify-align-content;
                     margin-right: 10px;
-
+                    line-height: 1;
                     &:hover {
                         background-color: lighten($dark-grey-color, 54%);
                     }
@@ -3361,7 +3370,7 @@
                     }
 
                     .my_cart_quantity,
-                    .my_wish_quantity {
+                    .my_wish_quantity , .compare_quantity{
                         font-size: 9px;
                         font-weight: normal;
                         width: 17px;
@@ -3376,6 +3385,7 @@
                         @include flex;
                         @include align-content;
                         @include content-cn;
+                        line-height: 1;
                     }
                 }
 
@@ -3832,6 +3842,10 @@
             }
         }
     }
+}
+
+.o_wsale_my_compare:hover .compare_link i.fa-exchange {
+    color: inherit !important;
 }
 
 // default header css
@@ -4917,7 +4931,7 @@ header {
                     position: relative;
 
                     .my_wish_quantity,
-                    .my_cart_quantity {
+                    .my_cart_quantity, .compare_quantity, .compare_quantity {
                         background-color: $secondary !important;
                         border-color: $secondary !important;
                         color: $light-color !important;
@@ -4932,6 +4946,7 @@ header {
                         right: 0 !important;
                         position: absolute;
                         border-radius: 50px;
+                        line-height: 1;
                     }
 
                     .my_cart_quantity {
@@ -5787,6 +5802,9 @@ header {
         }
     }
 }
+header #o_main_nav .scita_top_menu > .nav-item.o_extra_menu_items{
+    position: relative; 
+}
 
 // Compare Icon Styles
 .o_wsale_my_compare {
@@ -5876,6 +5894,31 @@ header {
                     .name-text {
                         color: $primary;
                     }
+                }
+            }
+        }
+    }
+}
+
+.oe_website_sale.o_wsale_comparison_page {
+    #o_comparelist_table {
+        .bg-light {
+            background: #dcdcdc !important;
+                padding: 0 !important;
+        }
+        h6.d-table.position-sticky.start-0.mb-0 {
+            background: #dcdcdc !important;
+            display: block;
+            width: 100%;
+            padding: 16px 8px;
+        }
+        ul {
+            li {
+                .small.text-muted {
+                    width: 100%;
+                }
+                .o_product_tags {
+                    width: 100%;
                 }
             }
         }

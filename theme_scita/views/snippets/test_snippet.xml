@@ -269,11 +269,11 @@
             <t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" string="Multi Category" group="scita_multi_product">
                 <keywords>deal, multi, category, fashion</keywords>
             </t>
-            <t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" string="Deal Seller Multi Product" group="scita_multi_product">
-                <keywords>deal, seller, multi, product</keywords>
-            </t>
             <t t-snippet="theme_scita.theme_scita_trending_products_snippet" string="Trending Products" group="scita_multi_product">
                 <keywords>product, snippet, trending</keywords>
+            </t>
+            <t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" string="Deal Multi Product Slider" group="scita_multi_product">
+                <keywords>deal, seller, multi, product, custom</keywords>
             </t>
             
             <!-- Newsletter Snippets -->

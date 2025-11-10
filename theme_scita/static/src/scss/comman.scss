@@ -186,15 +186,15 @@ header{
 				@include transition(all, 0.5s, ease);
 				font-size: $head-label;
 			}
-			&.o_extra_menu_items {
-				&:hover{
-					> .dropdown-menu {
-						@media (min-width: 768px){
-							display: none !important;
-						}
-					}
-				}
-			}
+			// &.o_extra_menu_items {
+			// 	&:hover{
+			// 		> .dropdown-menu {
+			// 			@media (min-width: 768px){
+			// 				display: none !important;
+			// 			}
+			// 		}
+			// 	}
+			// }
 			&.dropdown {
 				&:hover{
 					.dropdown-menu {
@@ -3021,10 +3021,36 @@ common search for categories and products (22/05/2025)
 // compare popup design css start 
 .compare_popup_header {
 	background-color: $primary !important;
-	.compare_btn {
-		background-color: $primary !important;
-		&:hover {
-			background-color: rgba($primary, 0.6) !important; 
+}
+.compare_btn {
+	background-color: $primary !important;
+	&:hover {
+		background-color: rgba($primary, 0.6) !important; 
+	}
+}
+.timer-bar {
+	background-color: $primary !important;
+}
+#product_detail {
+	#product_details {
+		.js_product #request_modal_close.btn-primary:hover {
+			&:hover {
+				color: $primary !important;
+			}
 		}
 	}
+}
+.oe_product_cart .o_wsale_product_information .o_wsale_product_sub {
+	gap: 20px 0 !important;
+}
+.quickview-modal#shop_quick_view_modal .modal-dialog .quick_view_main_wrap .sct_product_detail#product_details .js_main_product #request_for_quote_button{
+	margin: 15px 0 !important;
+	:hover {
+		color: $primary !important;
+		
+	}
+}
+.sct-cst-pro-page #wrapwrap .o_wsale_product_page .oe_website_sale #product_details .js_product #add_to_cart_wrap .sct-other-desciption .login-price-btn {
+    margin-bottom: 20px;
+    margin-top: 0 !important;
 }

@@ -138,7 +138,7 @@ publish unpublish product
         'views/hide_price_configurations.xml',
     ],
     'support': 'support@appjetty.com',
-    'live_test_url': 'https://theme-scita-w2p-v19.appjetty.com',
+    'live_test_url': 'https://theme-scita-furniture-v19.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
@@ -202,8 +202,8 @@ publish unpublish product
         ],
         'website.assets_wysiwyg': [
             # 'theme_scita/static/src/js/new_scita_editor.js',
-            'theme_scita/static/src/js/timer_editor.js',
             '/theme_scita/static/src/xml/**/*',
+           'theme_scita/static/src/js/timer_editor.js',
         ],
         'website.assets_editor': [
         ],
@@ -224,6 +224,9 @@ publish unpublish product
             'theme_scita/static/src/js/snippet/dynamicVideoSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dealSellerMultiProductSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/dealOfTheDaySnippetPlugin.js',
+            'theme_scita/static/src/js/snippet/dealOfDayBanner1Plugin.js',
+            'theme_scita/static/src/js/snippet/dealOfDayBanner3Plugin.js',
+            'theme_scita/static/src/js/snippet/dealOfDayBanner5Plugin.js',
             'theme_scita/static/src/js/snippet/brandsSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/sctProductSnippet1Plugin.js',
             'theme_scita/static/src/js/snippet/trendingProductsModifyPlugin.js',

@@ -2,7 +2,7 @@
 <odoo>
 	<!--  Retail Offer Snippet -->
     <template id="retial_deal_of_day_banner_snippet_1" name="Deal of the Day Snippet 1">
-        <section class="retial_deal_of_day_banner_snippet_1" data-disp="deal_days">
+        <section class="retial_deal_of_day_banner_snippet_1" data-disp="deal_days" contentEditable="false">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_row">
                     <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper">
@@ -24,7 +24,9 @@
                             <div class="sct_timer_inner">
                                 <div class="sct_deal_text"><span class="sct_per o_default_snippet_text">40%</span> Off</div>
                                 <p class="sct_sub_title">Discover the best selling products of T90 stores.</p>
-                                <div class="timer_counter_div"></div>
+                                <div class="timer_counter_div">
+                                    <div class="js_counter_timer" data-date="nan" data-msg="Sale is expired"></div>
+                                </div>
                             </div>
                         </div>
                         <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
@@ -58,7 +60,7 @@
     </template>
      <!-- Fashion deal of the day -->
     <template id="deal_of_day_banner_3" name="Deal of the Day Snippet 4">
-        <section class="deal_of_day_banner_3 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4');" data-disp="deal_days">
+        <section class="deal_of_day_banner_3 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4');" data-disp="deal_days" contentEditable="false">
             <div class="container">
                 <div class='row'>
                     <div class="col-lg-6 col-md-8 sct_text_left">
@@ -69,7 +71,9 @@
 	                                Discover the best selling products of T90 stores. All the products are listed weekly in store, helping customers capture products are best sellers.
 	                            </p>
 	                        </div>
-	                        <div class="timer_counter_div"></div>
+	                        <div class="timer_counter_div">
+	                            <div class="js_counter_timer" data-date="nan" data-msg="Sale is expired"></div>
+	                        </div>
 	                        <div class='sct_deal_btn'>
 	                            <a href="/shop" class="btn btn-primary scita_cstm_btn ">Shop Now</a>
 	                        </div>
@@ -80,7 +84,7 @@
         </section>
     </template>
     <template id="deal_of_day_banner_5" name="Deal of the Day Snippet 5">
-        <section class="deal_of_day_banner_5" data-disp="deal_days">
+        <section class="deal_of_day_banner_5" data-disp="deal_days" contentEditable="false">
             <div class="container">
                 <div class='row deals_day'>
                     <div class="col-md-6 sct_img_box">
@@ -92,7 +96,9 @@
                         <div class='sct_text_content'>
                             <h2 class="sct_title">Deal of the day</h2>
                         </div>
-                        <div class="timer_counter_div"></div>
+                        <div class="timer_counter_div">
+                            <div class="js_counter_timer" data-date="nan" data-msg="Sale is expired"></div>
+                        </div>
                         <div class='sct_button'>
                             <a href="/deals-of-the-day" class="btn btn-primary">Shop Now</a>
                         </div>

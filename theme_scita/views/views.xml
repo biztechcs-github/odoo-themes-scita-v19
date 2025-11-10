@@ -246,7 +246,7 @@
             <block id="website_payment_block" position="inside">
                 <setting
                     id="website_login_see_price"
-                    help="Login to see prices"
+                    help="This feature hides product prices and disables the shopping cart for users who are not logged in."
                 >
                     <field name="login_see_price" />
                 </setting>
