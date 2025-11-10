@@ -614,8 +614,13 @@ body #wrapwrap{
 
                 @media (min-width: 768px){
                     padding: 60px 30px;
-					display: flex;
-					align-items: center;
+
+					&.active,
+					&.carousel-item-next,
+					&.carousel-item-prev {
+						display: flex;
+						align-items: center;
+					}
                 }
                 @media (min-width: 1024px){
                     padding: 70px 50px;
@@ -9099,8 +9104,7 @@ body #wrapwrap{
 						align-self: stretch;
 						@include flex;
 						@include flex-column;
-
-						form{
+						form {
 							height: 100%;
 						}
 						.cs-img {

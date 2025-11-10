@@ -15,4 +15,4 @@ class ResPartnerInherit(models.Model):
     def _on_change_add_to_slider(self):
         self.is_published = True
 
-    website_show_price = fields.Boolean(string="Show prices on website", default=True)
+    website_show_price = fields.Boolean(string="Displaying Prices on Website", default=True)

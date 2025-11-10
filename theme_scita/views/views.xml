@@ -246,13 +246,13 @@
             <block id="website_payment_block" position="inside">
                 <setting
                     id="website_login_see_price"
-                    help="Login to see prices"
+                    help="This feature hides product prices and disables the shopping cart for users who are not logged in."
                 >
                     <field name="login_see_price" />
                 </setting>
                 <setting
                     id="website_sale_hide_price"
-                    help="Hide prices at website level"
+                    help="Enables a “Request a Quote” option for website. This feature allows users to submit quote requests directly, streamlining the inquiry and pricing process."
                 >
                     <field name="website_hide_price" />
                 </setting>

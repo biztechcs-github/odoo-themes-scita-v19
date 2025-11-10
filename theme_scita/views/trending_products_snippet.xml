@@ -12,6 +12,9 @@
                                         <h2 class="section-title style1">
                                             Trending Products
                                         </h2>
+                                        <div class="category-slider-placeholder">
+                                            <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Category Slider" class="img-fluid"/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

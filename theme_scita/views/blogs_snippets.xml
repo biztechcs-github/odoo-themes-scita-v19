@@ -148,7 +148,7 @@
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Snippet" class="img-fluid"/>
                 </div>
             </div>
         </section>
@@ -216,7 +216,7 @@
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Snippet" class="img-fluid"/>
                 </div>
             </div>
         </section>

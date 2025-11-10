@@ -29,7 +29,7 @@ class ResConfigSettings(models.TransientModel):
     pwa_app_icon_512 = fields.Binary(related='website_id.pwa_app_icon_512', readonly=False)
 
     website_hide_price = fields.Boolean(
-        string="Hide prices on website",
+        string="Enabling Request a Quote for Website",
         related="website_id.website_hide_price",
         readonly=False,
     )
@@ -38,7 +38,7 @@ class ResConfigSettings(models.TransientModel):
         readonly=False,
     )
     login_see_price = fields.Boolean(
-        string="Login to see price",
+        string="Hiding Price and Disabling Cart for Public Users",
         related="website_id.login_see_price",
         readonly=False,
     )

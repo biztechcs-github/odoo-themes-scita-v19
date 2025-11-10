@@ -13,9 +13,7 @@ options.registry.ImageHotspot = options.Class.extend({
         this._super(...arguments);
         this.imageHotspot()
     },
-    imageHotspot: function (previewMode, widgetValue) {
-        console.log("innnnnnnnnn");
-        
+    imageHotspot: function (previewMode, widgetValue) {        
         if (widgetValue == 'on' && previewMode === false) {
             this.$target[0].parentElement.style.position = "relative";
             const target = this.$target[0].parentElement;
