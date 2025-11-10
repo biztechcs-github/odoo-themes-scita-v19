@@ -186,15 +186,15 @@ header{
 				@include transition(all, 0.5s, ease);
 				font-size: $head-label;
 			}
-			&.o_extra_menu_items {
-				&:hover{
-					> .dropdown-menu {
-						@media (min-width: 768px){
-							display: none !important;
-						}
-					}
-				}
-			}
+			// &.o_extra_menu_items {
+			// 	&:hover{
+			// 		> .dropdown-menu {
+			// 			@media (min-width: 768px){
+			// 				display: none !important;
+			// 			}
+			// 		}
+			// 	}
+			// }
 			&.dropdown {
 				&:hover{
 					.dropdown-menu {

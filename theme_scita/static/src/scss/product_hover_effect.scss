@@ -2583,6 +2583,19 @@ span[name="hidden_ptavs_count"] {
                                 border-right: 0;
                             }
 
+                            &.login-price-btn{
+                                top: -50px;
+                                position: absolute;
+                                width: 100%;
+                                height: auto;
+                                border-radius: 20px;
+                                border: 1px solid darken($primary, 20%);
+
+                                &:hover{
+                                    color: darken($primary, 20%);
+                                    background: $light-color;
+                                }
+                            }
                             &.o_add_compare{
                                 display: none;
 

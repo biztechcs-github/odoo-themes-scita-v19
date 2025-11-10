@@ -3127,6 +3127,10 @@
 												background-color: $secondary;
 												color: $light-color;
 												line-height: 21px;
+												display: flex !important;
+												align-items: center;
+												justify-content: center;
+												gap: 2px;
 												
 												@media (min-width: 768px) {
 													padding-right: 35px !important;
@@ -3138,6 +3142,9 @@
 													color: $secondary;
 												}
 
+												&::after{
+													margin-top: -2px;
+												}
 												.lni{
 													margin-right: 3px;
 													vertical-align: middle;

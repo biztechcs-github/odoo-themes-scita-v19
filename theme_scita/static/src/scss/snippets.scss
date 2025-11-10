@@ -9099,6 +9099,10 @@ body #wrapwrap{
 						align-self: stretch;
 						@include flex;
 						@include flex-column;
+
+						form{
+							height: 100%;
+						}
 						.cs-img {
 							height: 170px;
 							text-align: center;
@@ -11812,11 +11816,6 @@ body #wrapwrap{
                             }
                         }
                     }
-					// .pink-box{
-					// 	.js_main_product{
-					// 		display: none;
-					// 	}
-					// }
                 }
                 .price-rating-wrapper{
                     @include flex;
