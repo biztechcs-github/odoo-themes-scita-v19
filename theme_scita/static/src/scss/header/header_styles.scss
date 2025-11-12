@@ -5924,3 +5924,62 @@ header #o_main_nav .scita_top_menu > .nav-item.o_extra_menu_items{
         }
     }
 }
+
+header #o_main_nav .menu_right ul li + li.o_no_autohide_item {
+    flex-wrap: wrap;
+}
+#cfp_pop_up {
+    padding: 0 20px;
+    .modal-dialog.modal-content {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 25px;
+    @include min992 {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    form {
+        hr {
+                margin: 30px 0;
+        }
+    }
+    table {
+        width: 100% !important;
+        tbody {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            @include min992 {
+                grid-template-columns: 1fr 1fr;
+            }
+            tr {
+                height: auto;
+                td {
+                    width: 100% !important;
+                    display: block;
+                }
+            }
+        }
+       
+    }
+    //  button#send_btn {
+    //         &:hover {
+    //             color: $primary
+    //         }
+    //     }
+    }
+    #request_modal_close {
+            margin-left: 15px;
+            border-color: $primary;
+            color: $primary;
+            &:hover {
+                background-color: $primary;
+                color: $white;
+            }
+    }
+    // button#send_btn {
+    //     &:hover {
+    //         color: $white;
+    //     }
+    // }
+}

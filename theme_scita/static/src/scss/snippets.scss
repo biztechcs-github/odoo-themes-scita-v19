@@ -11761,7 +11761,9 @@ body #wrapwrap{
 
     .grid_product{
 		margin-bottom: 20px;
-		
+		form {
+			height: 100%;
+		}
 		@include min992{
 			margin-bottom: 30px;
 		}
@@ -12186,6 +12188,17 @@ body #wrapwrap{
 						opacity: 1;
 						visibility: visible;
 						height: auto;
+					}
+					.owl-stage {
+						display: flex;
+						.owl-item {
+							form {
+								height: 100%;
+								.cs-product {
+									height: 100%;
+								}
+							}
+						}
 					}
 				}
 				@include min992{
