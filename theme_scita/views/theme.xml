@@ -1301,7 +1301,7 @@
                 <div class="modal-body">
                     <div class="row quick">
                         <t t-set="combination" t-value="product._get_first_possible_combination()"/>
-                        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty)"/>
+                        <t t-set="combination_info" t-value="product.with_context(website_sale_stock_get_quantity=True)._get_combination_info(combination, add_qty=add_qty)"/>
                         <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
 
                         <t t-set="additional_title" t-value="product.name"/>
@@ -1373,24 +1373,25 @@
                                                     </div>
                                                 </t> -->
                                                 <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
-                                                <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto">
-                                                <!-- Quantity update start-->
-                                                   <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
-                                                    <button type="button" class="btn btn-link js_quantity_minus" aria-label="Remove one" title="Remove one">
-                                                        <i class="oi oi-minus"></i>
-                                                    </button>
+                                                <t t-set="show_add_to_cart" t-value="not combination_info['prevent_zero_price_sale'] and (combination_info.get('allow_out_of_stock_order', True) or combination_info.get('free_qty', 0) &gt; 0)"/>
+                                                <div id="add_to_cart_wrap" t-attf-class="{{'d-inline-flex' if show_add_to_cart else 'd-none'}} align-items-center mb-2 me-auto">
+                                                    <!-- Quantity update start-->
+                                                    <div t-attf-class="css_quantity input-group {{'d-inline-flex' if show_add_to_cart else 'd-none'}} me-2 mb-2 align-middle" contenteditable="false">
+                                                        <button type="button" class="btn btn-link js_quantity_minus" aria-label="Remove one" title="Remove one">
+                                                            <i class="oi oi-minus"></i>
+                                                        </button>
 
-                                                    <input type="text"
-                                                        class="js_quantity form-control quantity text-center"
-                                                        name="add_qty"
-                                                        data-min="1"
-                                                        value="1"/>
+                                                        <input type="text"
+                                                            class="js_quantity form-control quantity text-center"
+                                                            name="add_qty"
+                                                            data-min="1"
+                                                            value="1"/>
 
-                                                    <button type="button" class="btn btn-link js_quantity_plus" aria-label="Add one" title="Add one">
-                                                        <i class="oi oi-plus"></i>
-                                                    </button>
-                                                </div>
-                                            <!-- **Quantity update end** -->
+                                                        <button type="button" class="btn btn-link js_quantity_plus" aria-label="Add one" title="Add one">
+                                                            <i class="oi oi-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                    <!-- **Quantity update end** -->
                                                     <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
                                                         <i class="icon-basket me-2"/> 
                                                         Add to cart
@@ -1410,16 +1411,11 @@
                                                         </button>
                                                     </t>
                                                 </div>
-                                                <div id="contact_us_wrapper"
-                                                     t-attf-class="{{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
-                                                    <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
-                                                        <div class="container">
-                                                            <a t-att-href="website.contact_us_button_url"
-                                                               class="btn btn-primary btn_cta">Contact Us
-                                                            </a>
-                                                        </div>
-                                                    </section>
-                                                </div>
+                                          <div id="contact_us_wrapper"
+                                                t-attf-class="{{'d-flex justify-content-center align-items-center flex-column text-center border rounded bg-light' if not show_add_to_cart else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
+                                                    Out of Stock
+                                            </div>
+
                                                 <t t-if="is_view_active('website_sale.product_tags')" t-call="website_sale.product_tags">
                                                     <t t-set="all_product_tags" t-value="product_variant.all_product_tag_ids"/>
                                                 </t>
@@ -1455,7 +1451,7 @@
     </template>
     <!--  Quick view  popup End -->
     <template id='shop_cart_view_modal'>
-        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty)"/>
+        <t t-set="combination_info" t-value="product.with_context(website_sale_stock_get_quantity=True)._get_combination_info(combination, add_qty=add_qty)"/>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
