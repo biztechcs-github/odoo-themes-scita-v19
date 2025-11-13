@@ -3062,3 +3062,11 @@ common search for categories and products (22/05/2025)
     margin-bottom: 20px;
     margin-top: 0 !important;
 }
+
+.brand-card {
+    img {
+        aspect-ratio: 1 / 1;
+        object-fit: scale-down;
+        padding: 5px;
+    }
+}
