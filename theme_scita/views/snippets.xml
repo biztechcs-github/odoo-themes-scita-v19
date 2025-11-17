@@ -705,7 +705,7 @@
                                 <span>Image Category Slider</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Category Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
