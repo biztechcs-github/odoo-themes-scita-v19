@@ -3,7 +3,7 @@
 
     <!-- It Blog Slider Snippet -->
     <template id="theme_scita_blog_custom_snippet" name="Blog Snippet 1">
-        <section id="theme_scita_custom_blog_snippet" class="blog scita_blog_slider" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
+        <section id="theme_scita_custom_blog_snippet" class="blog scita_blog_slider" contentEditable="false" data-blog-slider-id="" data-blog-slider-type="" data-name="Blog Snippet 1" data-disp="blog">
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">Blog post slider</h3>
@@ -84,7 +84,7 @@
 
     <!-- Blog 1 sliders -->
     <template id="blog_2_custom_snippet" name="Blog Slider 1">
-        <section id="blog_custom_2_snippet" class="blog blog_2_custom" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
+        <section id="blog_custom_2_snippet" class="blog blog_2_custom" contentEditable="false" data-blog-slider-id="" data-blog-slider-type="" data-name="Blog Slider 1" data-disp="blog">
             <div class="container">
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>
@@ -142,7 +142,7 @@
 
     <!-- Blog 3 sliders -->
     <template id="blog_5_custom_snippet" name="Blog Slider 2">
-        <section id="blog_custom_5_snippet" class="blog blog_5_custom" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
+        <section id="blog_custom_5_snippet" class="blog blog_5_custom" contentEditable="false" data-blog-slider-id="" data-blog-slider-type="" data-name="Blog Slider 2" data-disp="blog">
             <div class="container">
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>
@@ -210,7 +210,7 @@
 
     <!-- Blog 4 snippet -->
     <template id="blog_4_custom_snippet" name="Blog Snippet 2">
-        <section id="blog_custom_4_snippet" class="blog blog_4_custom" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
+        <section id="blog_custom_4_snippet" class="blog blog_4_custom" contentEditable="false" data-blog-slider-id="" data-blog-slider-type="" data-name="Blog Snippet 2" data-disp="blog">
             <div class="container">
                 <div class="block-title">
                     <h2 class="fancy">Blog post slider</h2>

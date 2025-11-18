@@ -302,127 +302,25 @@
     </template>
     <!-- Dynamic Snippet Template (Odoo 19 Structure) -->
     <template id="sct_product_snippet_1" name="Multi Product Snippet 1">
-        <t t-call="website.s_dynamic_snippet_template">
-            <t t-set="snippet_name" t-value="'sct_product_snippet_1'"/>
-            <t t-set="snippet_classes" t-value="'sct_product_snippet_1'"/>
-            <t t-set="container_classes" t-value="'container'"/>
-            <t t-set="content_classes" t-value="'sct-snippet-full'"/>
-            <t t-set="main_page_url" t-value="'/shop'"/>
-            <t t-call="theme_scita.sct_product_snippet_1_preview_data"/>
-        </t>
-    </template>
-
-    <!-- Preview Data Template for Editor -->
-    <template id="sct_product_snippet_1_preview_data" name="Multi Product Snippet 1 Preview Data">
-        <div class="carousel slide s_dialog_preview">
-            <div class="carousel-inner row w-100 mx-auto">
-                <div role="option" class="carousel-item active" style="min-height: 357.875px;">
-                    <div class="row">
-                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
-                            <div class="cs-product bg-transparent w-100 card border-0">
-                                <div class="pwp-img">
-                                    <a class="o_carousel_product_img_link stretched-link" href="#">
-                                        <img class="front card-img-top" loading="lazy" 
-                                             src="/theme_scita/static/src/img/shues.png" 
-                                             alt="Product Preview"/>
-                                    </a>
-                                </div>
-                                <div class="pwd-desc">
-                                    <div class="pwp-info">
-                                        <h3 class="pwpi-title h6">Product Name</h3>
-                                        <div class="pink-box price-rating-wrapper">
-                                            <p class="price">
-                                                <b>
-                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
-                                                        <span class="oe_currency_value">99.00</span>
-                                                    </span>
-                                                </b>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
-                            <div class="cs-product bg-transparent w-100 card border-0">
-                                <div class="pwp-img">
-                                    <a class="o_carousel_product_img_link stretched-link" href="#">
-                                        <img class="front card-img-top" loading="lazy" 
-                                             src="/theme_scita/static/src/img/shues.png" 
-                                             alt="Product Preview"/>
-                                    </a>
-                                </div>
-                                <div class="pwd-desc">
-                                    <div class="pwp-info">
-                                        <h3 class="pwpi-title h6">Product Name</h3>
-                                        <div class="pink-box price-rating-wrapper">
-                                            <p class="price">
-                                                <b>
-                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
-                                                        <span class="oe_currency_value">99.00</span>
-                                                    </span>
-                                                </b>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
-                            <div class="cs-product bg-transparent w-100 card border-0">
-                                <div class="pwp-img">
-                                    <a class="o_carousel_product_img_link stretched-link" href="#">
-                                        <img class="front card-img-top" loading="lazy" 
-                                             src="/theme_scita/static/src/img/shues.png" 
-                                             alt="Product Preview"/>
-                                    </a>
-                                </div>
-                                <div class="pwd-desc">
-                                    <div class="pwp-info">
-                                        <h3 class="pwpi-title h6">Product Name</h3>
-                                        <div class="pink-box price-rating-wrapper">
-                                            <p class="price">
-                                                <b>
-                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
-                                                        <span class="oe_currency_value">99.00</span>
-                                                    </span>
-                                                </b>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-grow-0 flex-shrink-0 col-md-3 col-lg-3">
-                            <div class="cs-product bg-transparent w-100 card border-0">
-                                <div class="pwp-img">
-                                    <a class="o_carousel_product_img_link stretched-link" href="#">
-                                        <img class="front card-img-top" loading="lazy" 
-                                             src="/theme_scita/static/src/img/shues.png" 
-                                             alt="Product Preview"/>
-                                    </a>
-                                </div>
-                                <div class="pwd-desc">
-                                    <div class="pwp-info">
-                                        <h3 class="pwpi-title h6">Product Name</h3>
-                                        <div class="pink-box price-rating-wrapper">
-                                            <p class="price">
-                                                <b>
-                                                    <span class="fw-bold" name="product_price" data-oe-type="monetary">
-                                                        <span class="oe_currency_value">99.00</span>
-                                                    </span>
-                                                </b>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+        <section class="sct_product_snippet_1" data-multi-cat-slider-type="" contentEditable="false"
+                 data-disp="multi_product">
+            <div class="container">
+                <div class="row our-config-products">
+                    <div class="col-md-12">
+                        <div class="title-block">
+                            <h4 id="snippet-title" class="section-title style1">
+                                <span>Product Configuration</span>
+                            </h4>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </template>
+
 
     <!-- Product Display Template (Content rendered inside dynamic_snippet_template) -->
     <template id="sct_product_snippet_1_view" name="Multi Product Snippet Configuration 1">
@@ -696,7 +594,7 @@
 
     <template id="product_category_img_slider_config" name="Dynamic Product/Category Snippet">
         <section class="multi_product_and_category_slider s_custom_img_category_slider" data-multi-cat-slider-type=""
-                 contentEditable="false" data-disp='category_snippet' data-disp1="multi_product">
+                 contentEditable="false" data-name="Dynamic Product/Category Snippet" data-disp='category_snippet' data-disp1="multi_product">
             <div class="container">
                 <div class="row our-config-products cst_top_row">
                     <div class="col-md-12 cst_flex_base">

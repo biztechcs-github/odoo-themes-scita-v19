@@ -47,15 +47,18 @@ async function openCategorySliderModal(snippetEl) {
         snippetEl.setAttribute("data-multi-cat-slider-type", sliderTypeSelect.value);
         snippetEl.setAttribute("data-multi-cat-slider-id", "multi-cat-myowl" + sliderTypeSelect.value);
 
-        // Replace snippet content
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row our-categories">
-                    <div class="col-md-12">
+                <div class="row our-config-products cst_top_row">
+                    <div class="col-md-12 cst_flex_base">
                         <div class="title-block">
-                            <h4 class="section-title style1">
+                            <h4 id="snippet-title" class="section-title style1">
                                 <span>${_t(type)}</span>
                             </h4>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>

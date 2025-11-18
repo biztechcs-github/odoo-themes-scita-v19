@@ -74,16 +74,14 @@ async function openDealOfTheDayModal(snippetEl) {
 
         const type = selectEl.selectedOptions[0]?.text || _t("Deal Of The Day");
 
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row our-categories">
-                    <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 class="section-title style1">
-                                <span>${type}</span>
-                            </h4>
-                        </div>
-                    </div>
+                <div class="block-title">
+                    <h2 class="fancy">${type}</h2>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/dealofday.png" alt="Deal of the Day" class="img-fluid"/>
                 </div>
             </div>
         `;

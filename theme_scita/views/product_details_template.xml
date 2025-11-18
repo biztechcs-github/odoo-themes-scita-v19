@@ -457,7 +457,7 @@ Wishlist
             </t>
         </xpath>
     </template>
-    <template id="remove_empty_price_section"
+    <template id="theme_scita_remove_empty_price_section"
             inherit_id="website_sale.product"
             name="Remove Empty Price Section in Product Page">
 

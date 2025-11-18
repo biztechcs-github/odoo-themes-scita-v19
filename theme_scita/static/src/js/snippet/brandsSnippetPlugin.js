@@ -187,14 +187,21 @@ async function openBrandSliderModal(snippetEl, { template, defaultLabel }) {
         snippetEl.setAttribute("data-brand-config-type", sliderTypeSelect.value);
         snippetEl.setAttribute("data-brand-config-id", sliderTypeSelect.value);
 
+        // Determine which placeholder image to use based on snippet class
+        const placeholderImg = snippetEl.classList.contains("box_brand_slider") 
+            ? "/theme_scita/static/src/img/Brand2.png" 
+            : "/theme_scita/static/src/img/brand1.png";
+
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row oe_our_slider">
+                <div class="row our-brands">
                     <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 class="section-title style1">
-                                <span>${_t(selectedOption)}</span>
-                            </h4>
+                        <h3 class="section-title style1" id="snippet-title">
+                            <span>${_t(selectedOption)}</span>
+                        </h3>
+                        <div class="category-slider-placeholder">
+                            <img src="${placeholderImg}" alt="Category Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>

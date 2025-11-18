@@ -170,7 +170,7 @@
     </template>
     <template id="deal_of_day_banner_6" name="Multi Deal Product Snippet 1">
         <section id="theme_scita_custom_deal_of_the_day" class="oe_deal_of_the_day s_theme_scita_deal_of_the_day"
-                 contentEditable="false" data-deal-snippet-id="" data-disp="multi_product" data-disp1="deal_days">
+                 contentEditable="false" data-deal-snippet-id="" data-name="Deal of the Day" data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="block-title">
                     <h2 class="fancy">Deal of the day</h2>

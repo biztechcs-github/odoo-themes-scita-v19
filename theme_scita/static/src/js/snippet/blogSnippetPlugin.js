@@ -171,17 +171,21 @@ async function openBlogSliderModal(snippetEl, parentPlugin) {
     const cancelBtn = modalEl.querySelector("#cancel");
     const submitBtn = modalEl.querySelector("#blog_sub_data");
 
-    rpc("/theme_scita/blog_get_options", {}).then((res) => {
-        [...sliderTypeSelect.querySelectorAll("option")].forEach((opt) => {
-            if (opt.value !== "0") opt.remove();
-        });
-        res.forEach((opt) => {
-            const option = document.createElement("option");
-            option.value = opt.id;
-            option.textContent = opt.name;
-            sliderTypeSelect.appendChild(option);
-        });
+    // Fetch blog options
+    const res = await rpc("/theme_scita/blog_get_options", {});
+    sliderTypeSelect.innerHTML = "";
+    res.forEach((item) => {
+        const opt = document.createElement("option");
+        opt.value = item.id;
+        opt.textContent = item.name;
+        sliderTypeSelect.appendChild(opt);
     });
+
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-blog-slider-type");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
 
     submitBtn?.addEventListener("click", () => {
         const selectedOption =
@@ -195,10 +199,15 @@ async function openBlogSliderModal(snippetEl, parentPlugin) {
             "data-blog-slider-id",
             "blog-myowl" + sliderTypeSelect.value
         );
+
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">${typeText}</h3>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog1.png" alt="Blog Slider" class="img-fluid"/>
                 </div>
             </div>
         `;
@@ -207,7 +216,6 @@ async function openBlogSliderModal(snippetEl, parentPlugin) {
 
     cancelBtn?.addEventListener("click", () => {
         myModal.hide();
-        parentPlugin?.getParent()?._onRemoveClick(new Event("click"));
     });
 
     modalEl.addEventListener("hidden.bs.modal", () => {
@@ -224,7 +232,7 @@ class BlogSliderSnippetPlugin extends Plugin {
     };
     async onSnippetDropped({ snippetEl }) {
         if (!snippetEl.classList.contains("scita_blog_slider")) return;
-        snippetEl.classList.remove("o_hidden");
+        snippetEl.classList.remove("hidden");
         snippetEl.innerHTML = "";
         openBlogSliderModal(snippetEl, this);
     }
@@ -278,17 +286,21 @@ async function openBlog4CustomModal(snippetEl, parentPlugin) {
     const cancelBtn = modalEl.querySelector("#cancel");
     const submitBtn = modalEl.querySelector("#blog_sub_data");
 
-    rpc("/theme_scita/blog_get_options", {}).then((res) => {
-        [...sliderTypeSelect.querySelectorAll("option")].forEach((opt) => {
-            if (opt.value !== "0") opt.remove();
-        });
-        res.forEach((opt) => {
-            const option = document.createElement("option");
-            option.value = opt.id;
-            option.textContent = opt.name;
-            sliderTypeSelect.appendChild(option);
-        });
+    // Fetch blog options
+    const res = await rpc("/theme_scita/blog_get_options", {});
+    sliderTypeSelect.innerHTML = "";
+    res.forEach((item) => {
+        const opt = document.createElement("option");
+        opt.value = item.id;
+        opt.textContent = item.name;
+        sliderTypeSelect.appendChild(opt);
     });
+
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-blog-slider-type");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
 
     submitBtn?.addEventListener("click", () => {
         const selectedOption =
@@ -302,10 +314,15 @@ async function openBlog4CustomModal(snippetEl, parentPlugin) {
             "data-blog-slider-id",
             "blog-myowl" + sliderTypeSelect.value
         );
+
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
-                    <h3 class="fancy">${typeText}</h3>
+                    <h2 class="fancy">${typeText}</h2>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Slider" class="img-fluid"/>
                 </div>
             </div>
         `;
@@ -314,7 +331,6 @@ async function openBlog4CustomModal(snippetEl, parentPlugin) {
 
     cancelBtn?.addEventListener("click", () => {
         myModal.hide();
-        parentPlugin?.getParent()?._onRemoveClick(new Event("click"));
     });
 
     modalEl.addEventListener("hidden.bs.modal", () => {
@@ -331,7 +347,7 @@ class Blog4CustomSnippetPlugin extends Plugin {
     };
     async onSnippetDropped({ snippetEl }) {
         if (!snippetEl.classList.contains("blog_4_custom")) return;
-        snippetEl.classList.remove("o_hidden");
+        snippetEl.classList.remove("hidden");
         snippetEl.innerHTML = "";
         openBlog4CustomModal(snippetEl, this);
     }
@@ -385,17 +401,21 @@ async function openBlog2CustomModal(snippetEl, parentPlugin) {
     const cancelBtn = modalEl.querySelector("#cancel");
     const submitBtn = modalEl.querySelector("#blog_sub_data");
 
-    rpc("/theme_scita/blog_get_options", {}).then((res) => {
-        [...sliderTypeSelect.querySelectorAll("option")].forEach((opt) => {
-            if (opt.value !== "0") opt.remove();
-        });
-        res.forEach((opt) => {
-            const option = document.createElement("option");
-            option.value = opt.id;
-            option.textContent = opt.name;
-            sliderTypeSelect.appendChild(option);
-        });
+    // Fetch blog options
+    const res = await rpc("/theme_scita/blog_get_options", {});
+    sliderTypeSelect.innerHTML = "";
+    res.forEach((item) => {
+        const opt = document.createElement("option");
+        opt.value = item.id;
+        opt.textContent = item.name;
+        sliderTypeSelect.appendChild(opt);
     });
+
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-blog-slider-type");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
 
     submitBtn?.addEventListener("click", () => {
         const selectedOption =
@@ -409,10 +429,15 @@ async function openBlog2CustomModal(snippetEl, parentPlugin) {
             "data-blog-slider-id",
             "blog-myowl" + sliderTypeSelect.value
         );
+
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
-                    <h3 class="fancy">${typeText}</h3>
+                    <h2 class="fancy">${typeText}</h2>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog2.png" alt="Blog Slider" class="img-fluid"/>
                 </div>
             </div>
         `;
@@ -421,7 +446,6 @@ async function openBlog2CustomModal(snippetEl, parentPlugin) {
 
     cancelBtn?.addEventListener("click", () => {
         myModal.hide();
-        parentPlugin?.getParent()?._onRemoveClick(new Event("click"));
     });
 
     modalEl.addEventListener("hidden.bs.modal", () => {
@@ -438,7 +462,7 @@ class Blog2CustomSnippetPlugin extends Plugin {
     };
     async onSnippetDropped({ snippetEl }) {
         if (!snippetEl.classList.contains("blog_2_custom")) return;
-        snippetEl.classList.remove("o_hidden");
+        snippetEl.classList.remove("hidden");
         snippetEl.innerHTML = "";
         openBlog2CustomModal(snippetEl, this);
     }
@@ -492,17 +516,21 @@ async function openBlog5CustomModal(snippetEl, parentPlugin) {
     const cancelBtn = modalEl.querySelector("#cancel");
     const submitBtn = modalEl.querySelector("#blog_sub_data");
 
-    rpc("/theme_scita/blog_get_options", {}).then((res) => {
-        [...sliderTypeSelect.querySelectorAll("option")].forEach((opt) => {
-            if (opt.value !== "0") opt.remove();
-        });
-        res.forEach((opt) => {
-            const option = document.createElement("option");
-            option.value = opt.id;
-            option.textContent = opt.name;
-            sliderTypeSelect.appendChild(option);
-        });
+    // Fetch blog options
+    const res = await rpc("/theme_scita/blog_get_options", {});
+    sliderTypeSelect.innerHTML = "";
+    res.forEach((item) => {
+        const opt = document.createElement("option");
+        opt.value = item.id;
+        opt.textContent = item.name;
+        sliderTypeSelect.appendChild(opt);
     });
+
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-blog-slider-type");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
 
     submitBtn?.addEventListener("click", () => {
         const selectedOption =
@@ -516,10 +544,15 @@ async function openBlog5CustomModal(snippetEl, parentPlugin) {
             "data-blog-slider-id",
             "blog-myowl" + sliderTypeSelect.value
         );
+
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">${typeText}</h3>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Slider" class="img-fluid"/>
                 </div>
             </div>
         `;
@@ -528,7 +561,6 @@ async function openBlog5CustomModal(snippetEl, parentPlugin) {
 
     cancelBtn?.addEventListener("click", () => {
         myModal.hide();
-        parentPlugin?.getParent()?._onRemoveClick(new Event("click"));
     });
 
     modalEl.addEventListener("hidden.bs.modal", () => {
@@ -545,7 +577,7 @@ class Blog5CustomSnippetPlugin extends Plugin {
     };
     async onSnippetDropped({ snippetEl }) {
         if (!snippetEl.classList.contains("blog_5_custom")) return;
-        snippetEl.classList.remove("o_hidden");
+        snippetEl.classList.remove("hidden");
         snippetEl.innerHTML = "";
         openBlog5CustomModal(snippetEl, this);
     }

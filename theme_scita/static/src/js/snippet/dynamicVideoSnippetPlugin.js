@@ -30,15 +30,16 @@ async function openVideoBannerModal(snippetEl) {
         const videoUrl = videoUrlInput.value;
         snippetEl.setAttribute("data-video-url", videoUrl);
 
-        // Replace snippet content
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row our-brands">
+                <div class="row sct-video-row">
                     <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 class="section-title style1">
-                                <span>${_t("Video Banner")}</span>
-                            </h4>
+                        <h3 class="section-title style1" id="snippet-title">
+                            <span>${_t("Video Banner")}</span>
+                        </h3>
+                        <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Video Banner" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
