@@ -610,30 +610,30 @@ span[name="hidden_ptavs_count"] {
                                     }
                                     .o_wsale_product_request_quote {
                                         text-align: center;
-                                        margin-bottom: 10px;
-                                        margin-top: 15px;
                                         @media (min-width:768px) and (max-width:992px) {
                                             width: 100% ;
                                         }
                                         #request_for_quote_button {
                                             transition: all 0.3s ease-in;
                                             top: unset;
-                                            border-color: $primary;
-                                            color: $primary;
-                                            background-color: $white;
                                             margin: auto;
                                             width: fit-content;
+                                            margin-top: 15px;
+                                            margin-bottom: 15px;
+                                            border: 1px solid $primary;
+                                            color: $primary;
                                             @include min992 {
                                                 position: absolute;
                                                 opacity: 0;
                                                 left: 0;
                                                 right: 0;
-                                                
                                                 bottom: -50px;
-                                            }
-                                            &:hover {
                                                 color: $white;
                                                 background-color: $primary;
+                                            }
+                                            &:hover {
+                                                color: $primary;
+                                                background-color: $white;
                                             }
                                         }
                                     }
@@ -853,20 +853,37 @@ span[name="hidden_ptavs_count"] {
 
                          .o_wsale_product_request_quote {
                              text-align: center;
-                            margin-bottom: 10px;
-                            margin-top: 15px;
+                           
                             @media (min-width:768px) and (max-width:992px) {
                                 width: 100% ;
                             }
                             #request_for_quote_button {
                                 transition: all 0.3s ease-in;
                                 top: unset;
-                                border-color: $primary;
-                                color: $primary;
-                                background-color: $white;
                                 margin: auto;
                                 width: fit-content;
-                                    transform: unset !important;
+                                transform: unset !important;
+                                margin-top: 15px;
+                                color: $primary;
+                                border: 1px solid $primary;
+                                @include min992{
+                                    margin: 0 auto;
+                                    box-shadow: none;
+                                    background: $primary;
+                                    padding: 5px 10px;
+                                    font-size: 14px;
+                                    min-width: 90px;
+                                    color: $white;
+                                    bottom: 0;
+                                    top: auto;
+                                    right: 50%;
+                                    transform: translate(50%, 10px);
+
+                                    &:hover{
+                                        background: $white;
+                                        color: $primary;
+                                    }
+                                }
                                 @include min992 {
                                     position: absolute;
                                     opacity: 0;
@@ -876,8 +893,8 @@ span[name="hidden_ptavs_count"] {
                                     bottom: -50px;
                                 }
                                 &:hover {
-                                    color: $white;
-                                    background-color: $primary;
+                                    color: $primary;
+                                    background-color: $white;
                                 }
                             }
                          }
@@ -909,7 +926,7 @@ span[name="hidden_ptavs_count"] {
                             .btn{
                                 background: $light-color;
                                 box-shadow: rgba($black, 0.2) 0px 0px 4px;
-                                padding: 6px 16px;
+                                padding: 6px;
                                 line-height: 1;
                                 display: flex;
                                 align-items: center;
@@ -1657,30 +1674,31 @@ span[name="hidden_ptavs_count"] {
                                     }
                                     .o_wsale_product_request_quote {
                                         text-align: center;
-                                        margin-bottom: 10px;
-                                        margin-top: 15px;
                                         @media (min-width:768px) and (max-width:992px) {
                                             width: 100% ;
                                         }
                                         #request_for_quote_button {
                                             transition: all 0.3s ease-in;
                                             top: unset;
-                                            border-color: $primary;
+                                            border: 1px solid $primary;
                                             color: $primary;
                                             background-color: $white;
                                             margin: auto;
                                             width: fit-content;
+                                            margin-top: 15px;
+                                            margin-bottom: 15px;
                                             @include min992 {
                                                 position: absolute;
                                                 opacity: 0;
                                                 left: 0;
                                                 right: 0;
-                                                
                                                 bottom: -50px;
-                                            }
-                                            &:hover {
                                                 color: $white;
                                                 background-color: $primary;
+                                            }
+                                            &:hover {
+                                                color: $primary;
+                                                background-color: $white
                                             }
                                         }
                                     }
@@ -1750,7 +1768,9 @@ span[name="hidden_ptavs_count"] {
             
                                             @include min768{
                                                 display: flex;
+                                                font-size: 16px;
                                             }
+                                            
                                         }
                                     }
                                     .btn[role="button"]{
@@ -1894,31 +1914,31 @@ span[name="hidden_ptavs_count"] {
                         position: static;
                         .o_wsale_product_request_quote {
                             text-align: center;
-                            margin-bottom: 10px;
-                            margin-top: 15px;
                             @media (min-width:768px) and (max-width:992px) {
                                 width: 100% ;
                             }
                             #request_for_quote_button {
                                 transition: all 0.3s ease-in;
                                 top: unset;
-                                border-color: $primary;
+                                border: 1px solid $primary;
                                 color: $primary;
                                 background-color: $white;
                                 margin: auto;
                                 width: fit-content;
-                                    transform: unset !important;
+                                transform: unset !important;
+                                margin-top: 15px;
                                 @include min992 {
                                     position: absolute;
                                     opacity: 0;
                                     left: 0;
                                     right: 0;
-                                    
+                                    color: $white;
+                                    background-color: $primary;
                                     bottom: -50px;
                                 }
                                 &:hover {
-                                    color: $white;
-                                    background-color: $primary;
+                                    color: $primary;
+                                    background-color: $white;
                                 }
                             }
                         }
@@ -1955,7 +1975,7 @@ span[name="hidden_ptavs_count"] {
                             .btn{
                                 background: $light-color;
                                 box-shadow: rgba($black, 0.2) 0px 0px 4px;
-                                padding: 6px 16px;
+                                padding: 6px;
                                 line-height: 1;
                                 display: flex;
                                 align-items: center;
@@ -2695,21 +2715,18 @@ span[name="hidden_ptavs_count"] {
                 }
                 .o_wsale_product_request_quote {
                     text-align: center;
-                    @media (max-width:1200px) {
-                                margin-bottom: 10px;
-                                margin-top: 15px;
-                            }
                     @media (min-width:768px) and (max-width:992px) {
                         width: 100% ;
                     }
                     #request_for_quote_button {
                         transition: all 0.3s ease-in;
                         top: unset;
-                        border-color: $primary;
+                        border:1px solid $primary;
                         color: $primary;
                         background-color: $white;
                         width: fit-content;
                         transform: unset !important;
+                        margin-top: 15px;
                         @include min992 {
                             position: absolute;
                             opacity: 0;
@@ -2717,10 +2734,12 @@ span[name="hidden_ptavs_count"] {
                             right: 10px;
                             bottom: 100%;
                             border-radius: 5px;
-                        }
-                        &:hover {
                             color: $white;
                             background-color: $primary;
+                        }
+                        &:hover {
+                            color: $primary;
+                            background-color: $white;
                         }
                     }
                 }
@@ -2803,7 +2822,7 @@ span[name="hidden_ptavs_count"] {
 
                                 @include min768{
                                     display: flex;
-                                    font-size: 18px;
+                                    font-size: 16px;
                                 }
                             }
                             &.cart_view_sct_btn{
@@ -2976,25 +2995,22 @@ span[name="hidden_ptavs_count"] {
                             @media (min-width:768px) and (max-width:992px) {
                                 width: 100% ;
                             }
-                            @media (max-width:1200px) {
-                                margin-bottom: 10px;
-                                margin-top: 15px;
-                            }
                             #request_for_quote_button {
                                 transition: all 0.3s ease-in;
                                 top: unset;
-                                border-color: $primary;
+                                border: 1px solid $primary;
                                 color: $primary;
                                 background-color: $white;
                                 width: fit-content;
-                                    transform: unset !important;
-                                    @media (max-width:767px) {
-                                            flex: unset;
-                                        max-width: 100%;
-                                        font-size: 14px;
-                                        border: 1px solid;
-                                        border-radius: 4px;
-                                    }
+                                margin-top: 15px;
+                                transform: unset !important;
+                                @media (max-width:767px) {
+                                    flex: unset;
+                                    max-width: 100%;
+                                    font-size: 14px;
+                                    border: 1px solid;
+                                    border-radius: 4px;
+                                }
                                 @include min992 {
                                     position: absolute;
                                     opacity: 0;
@@ -3002,10 +3018,12 @@ span[name="hidden_ptavs_count"] {
                                     right: 10px;
                                     bottom: 100%;
                                     border-radius: 5px;
-                                }
-                                &:hover {
                                     color: $white;
                                     background-color: $primary;
+                                }
+                                &:hover {
+                                    color: $primary;
+                                    background-color: $white;
                                 }
                             }
                         }
@@ -3499,6 +3517,9 @@ span[name="hidden_ptavs_count"] {
             }
         }
     }
+     .fashion_multi_category_slider .fashion_featured_product_1 .latest-news-section .owl-item form {
+        height: 100%;
+    }
     .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
         .product_category_scita, .fashion_featured_product_1{
             .cs-product{
@@ -3508,31 +3529,30 @@ span[name="hidden_ptavs_count"] {
                     @media (min-width:768px) and (max-width:992px) {
                         width: 100% ;
                     }
-                    @media (max-width:1200px) {
-                            margin-bottom: 10px;
-                            margin-top: 15px;
-                        }
                     #request_for_quote_button {
                         transition: all 0.3s ease-in;
                         top: unset;
-                        border-color: $primary;
+                        border:1px solid $primary;
                         color: $primary;
                         background-color: $white;
                         margin: auto;
                         width: fit-content;
-                            transform: unset !important;
+                        transform: unset !important;
+                        margin-top: 15px;
                         @include min992 {
                             position: absolute;
                             opacity: 0;
                             left: 0;
                             right: 0;
-                                    bottom: unset;
+                            bottom: unset;
                             top: 70px;
+                             color: $white;
+                            background-color: $primary;
 
                         }
                         &:hover {
-                            color: $white;
-                            background-color: $primary;
+                            color: $primary;
+                            background-color: $white
                         }
                     }
                 }
@@ -3605,6 +3625,7 @@ span[name="hidden_ptavs_count"] {
 
                                 @include min768{
                                     display: flex;
+                                    font-size: 16px;
                                 }
                             }
                             &.cart_view_sct_btn{
@@ -3846,19 +3867,16 @@ span[name="hidden_ptavs_count"] {
                         @media (min-width:768px) and (max-width:992px) {
                             width: 100% ;
                         }
-                        @media (max-width:1200px) {
-                            margin-bottom: 10px;
-                            margin-top: 15px;
-                        }
                         #request_for_quote_button {
                             transition: all 0.3s ease-in;
                             top: unset;
-                            border-color: $primary;
+                            border:1px solid $primary;
                             color: $primary;
                             background-color: $white;
                             margin: auto;
                             width: fit-content;
                                 transform: unset !important;
+                                margin-top: 15px;
                             @include min992 {
                                 position: absolute;
                                 opacity: 0;
@@ -3866,10 +3884,12 @@ span[name="hidden_ptavs_count"] {
                                 right: 0;
                                 top: -90px;
                                 bottom: unset;
-                            }
-                            &:hover {
                                 color: $white;
                                 background-color: $primary;
+                            }
+                            &:hover {
+                                color: $primary;
+                                background-color: $white;
                             }
                         }
                     }
@@ -3891,6 +3911,7 @@ span[name="hidden_ptavs_count"] {
         }
     }
 }
+
 @else if o-website-value('prod-hover-style') == 'prod_hover_style_5' {
     #products_grid{
         .oe_product{
@@ -4574,31 +4595,31 @@ span[name="hidden_ptavs_count"] {
                 }
                 .o_wsale_product_request_quote {
                     text-align: center;
-                    margin-bottom: 10px;
-                    margin-top: 15px;
                     @media (min-width:768px) and (max-width:992px) {
                         width: 100% ;
                     }
                     #request_for_quote_button {
                         transition: all 0.3s ease-in;
                         top: unset;
-                        border-color: $primary;
+                        border: 1px solid $primary;
                         color: $primary;
                         background-color: $white;
                         margin: auto;
                         width: fit-content;
                             transform: unset !important;
+                            margin-bottom: 15px;
                         @include min992 {
                             position: absolute;
                             opacity: 0;
                             left: 0;
                             right: 0;
-                            
+                             color: $white;
+                            background-color: $primary;
                             bottom: -50px;
                         }
                         &:hover {
-                            color: $white;
-                            background-color: $primary;
+                            color: $primary;
+                            background-color: $white;
                         }
                     }
                 }
@@ -4814,24 +4835,24 @@ span[name="hidden_ptavs_count"] {
                     }
                     .o_wsale_product_request_quote {
                         text-align: center;
-                        margin-bottom: 10px;
-                        margin-top: 15px;
+                        margin-right: auto;
+                       
                         @media (min-width:768px) and (max-width:992px) {
                             width: 100% ;
                         }
                         #request_for_quote_button {
                             transition: all 0.3s ease-in;
                             top: unset;
-                            border-color: $primary;
+                            border: 1px solid $primary;
                             color: $primary;
                             background-color: $white;
                             margin: auto;
                             width: fit-content;
-                                transform: unset !important;
-                                font-size: 16px;
-                                line-height: 24px;
-                                padding: 6px 16px;
-                                height: auto;
+                            transform: unset !important;
+                            font-size: 15px !important;
+                            line-height: 24px;
+                            padding: 6px 16px;
+                            height: auto;
                             @include min992 {
                                 position: absolute;
                                 opacity: 0;
@@ -4839,10 +4860,12 @@ span[name="hidden_ptavs_count"] {
                                 right: 0;
                                 top: -50px;
                                 bottom: unset;
-                            }
-                            &:hover {
                                 color: $white;
                                 background-color: $primary;
+                            }
+                            &:hover {
+                                color: $primary;
+                                background-color: $white
                             }
                         }
                     }
@@ -4872,7 +4895,25 @@ span[name="hidden_ptavs_count"] {
             }
         }
     }
-
+    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day {
+     .deal_day_wrap, .tab_content_inner, .content{
+        .deal_day_bottom_inner, .owl-item, .grid_product {
+            .cs-product{
+                .o_wsale_product_request_quote {
+                    position: relative;
+                        top: -5px;
+                        #request_for_quote_button {
+                            position: relative;
+                            top: unset;
+                        }
+                }
+            }
+        }
+     }   
+    }
+      .fashion_multi_category_slider .fashion_featured_product_1 .latest-news-section .owl-item form {
+        height: 100%;
+    }
 }
 
 @else {
@@ -5544,6 +5585,7 @@ span[name="hidden_ptavs_count"] {
             
                                             @include min768{
                                                 display: flex;
+                                                font-size: 16px;
                                             }
                                         }
                                     }
@@ -5851,6 +5893,10 @@ span[name="hidden_ptavs_count"] {
 .oe_deal_of_the_day.s_theme_scita_deal_of_the_day .deal_day_wrap .deal_day_bottom_inner {
     form {
         height: 100%;
+        .cs-product {
+            height: 100%;
+            overflow: hidden;
+        }
     }
     .cs-product .pwd-desc .sct-hover-info .btn.login-price-btn {
         position: relative !important;
@@ -5963,5 +6009,14 @@ span[name="hidden_ptavs_count"] {
                     max-width: 100% !important;
                     top: 0;
                 }
+    }
+}
+
+#request_for_quote_button {
+    font-size: 14px !important;
+    @media (max-width:992px) {
+        padding: 5px 8px !important;
+        margin-bottom: 10px !important;
+        margin-top: 10px !important;
     }
 }

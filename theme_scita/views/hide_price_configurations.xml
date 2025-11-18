@@ -297,7 +297,7 @@
                 <t t-elif="(slide.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn btn-primary" id="request_for_quote_button">
+                        class="btn" id="request_for_quote_button">
                         Request Quote
                         </a>
                     </div>
@@ -338,7 +338,7 @@
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn btn-primary" id="request_for_quote_button">
+                        class="btn" id="request_for_quote_button">
                         Request Quote
                         </a>
                     </div>
@@ -369,7 +369,7 @@
                 and not (website.login_see_price and request.env.user._is_public())
             </attribute>
         </xpath>
-        <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="attributes">
+        <xpath expr="//button[hasclass('cart_view_sct_btn', 'js_add_cart')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
                 and not deal_product.website_hide_price
@@ -377,7 +377,7 @@
             </attribute>
         </xpath>
 
-        <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="after">
+        <xpath expr="//button[hasclass('cart_view_sct_btn', 'js_add_cart')]" position="after">
             <t t-if="website">
                 <!-- CASE 1: Public user -->
                 <t t-if="request.env.user._is_public() and website.login_see_price">
@@ -390,7 +390,7 @@
                 <t t-elif="(deal_product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn btn-primary" id="request_for_quote_button">
+                        class="btn" id="request_for_quote_button">
                         Request Quote
                         </a>
                     </div>
@@ -430,7 +430,7 @@
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn btn-primary" id="request_for_quote_button">
+                        class="btn" id="request_for_quote_button">
                         Request Quote
                         </a>
                     </div>
@@ -449,7 +449,7 @@
                 and not (website.login_see_price and request.env.user._is_public())
             </attribute>
         </xpath>
-        <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="attributes">
+        <xpath expr="//button[hasclass('cart_view_sct_btn', 'js_add_cart')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
                 and not product.website_hide_price
@@ -457,7 +457,7 @@
             </attribute>
         </xpath>
 
-        <xpath expr="//button[hasclass('cart_view_sct_btn', 's_add_to_cart_btn')]" position="attributes">
+        <xpath expr="//div[hasclass('ajax_cart_template')]" position="after">
             <t t-if="website">
                 <!-- CASE 1: Public user -->
                 <t t-if="request.env.user._is_public() and website.login_see_price">
@@ -470,7 +470,7 @@
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn btn-primary" id="request_for_quote_button">
+                        class="btn" id="request_for_quote_button">
                         Request Quote
                         </a>
                     </div>
@@ -530,7 +530,7 @@
                     data-bs-target="#cfp_pop_up"
                     href="#"
                     t-att-data-product_id="product.id"
-                    class="btn btn-primary btn_cta mt-2">
+                    class="btn btn_cta mt-2">
                         Request Quote
                     </a>
                 </t>
