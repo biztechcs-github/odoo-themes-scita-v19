@@ -368,6 +368,7 @@
                     color: $dark-color;
                     font-size: $head-label;
                     @include transition(all, 0.5s, ease);
+                    font-size: 12px;
 
                     .fa {
                         margin-right: 5px;
