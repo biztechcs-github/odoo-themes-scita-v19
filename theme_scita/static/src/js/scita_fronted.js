@@ -233,23 +233,75 @@ $(document).ready(function(){
             "click .js_add_cart_json": "_onClickUpdateQty",
             'click .cart_view_sct_btn': 'cartViewData',
         },
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has fashion product slider content)
+            var hasRenderedContent = self.$target.find('.fashion_featured_product_1, .fashion_cro, .owl-carousel, .cs-product, .pwp-img, .lns-inner, .latest-news-section').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var slider_type = self.$target.attr('data-multi-cat-slider-type');
+                var multi_cat_name = _t("Multi Product Slider");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.find('.title-block h2, .title-block h4, h2.section-title, h4.section-title, .section-title');
+                if ($existingTitle.length) {
+                    multi_cat_name = $existingTitle.text().trim() || multi_cat_name;
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="container">
+                        <div class="row our-categories">
+                            <div class="col-md-12">
+                                <div class="title-block">
+                                    <h4 id="snippet-title" class="section-title style1"><span>${multi_cat_name}</span></h4>
+                                </div>
+                                <div class="category-slider-placeholder">
+                                    <img src="/theme_scita/static/src/img/feature-product.png" alt="Multi Product Slider" class="img-fluid"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                
+                // Restore attributes
+                if (slider_type) {
+                    self.$target.attr('data-multi-cat-slider-type', slider_type);
+                }
+            }
+        },
+        
         start: function() {
             var self = this;
             if (this.editableMode) {
-                var $multi_cat_slider = $('#wrapwrap').find('.fashion_multi_category_slider');
-                var multi_cat_name = _t("Multi Product Slider")
-                $multi_cat_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row our-categories">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 id="snippet-title" class="section-title style1"><span>'+ multi_cat_name+'</span></h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
@@ -259,7 +311,7 @@ $(document).ready(function(){
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
-                        $(".fashion_multi_category_slider").removeClass('hidden');
+                        $(".fashion_multi_category_slider").removeClass('o_hidden');
                         var sct_rtl = false;
                         if ($('#wrapwrap').hasClass('o_rtl')) {
                             sct_rtl = true;
@@ -473,6 +525,15 @@ $(document).ready(function(){
             } else {
                 console.warn("Image element or source is missing.");
             }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
     // // for box brand slider 
@@ -1182,13 +1243,63 @@ $(document).ready(function(){
     publicWidget.registry.it_our_team = publicWidget.Widget.extend({ 
         selector: ".our_team_1",
         disabledInEditableMode: false,
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has team slider content)
+            var hasRenderedContent = self.$target.find('.sct_team_slider, .owl-carousel, .myourteam, .image-container, .v-3-image-container, .v-5-image-container').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var titleText = _t("Our Awesome Team");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.closest('section').find('.section-title');
+                if ($existingTitle.length) {
+                    var title = $existingTitle.text().trim();
+                    if (title) {
+                        titleText = title;
+                    }
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="category-slider-placeholder">
+                        <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                    </div>
+                `);
+            }
+        },
+        
         start: function() {
             var self = this;
             if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#it_our_team');
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 rpc("/biztech_emp_data_one/employee_data", {}).then(function(data) {
@@ -1227,21 +1338,78 @@ $(document).ready(function(){
                     });
                 })
             }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
     // animation.registry.our_team_varient_3 = animation.Class.extend({
     publicWidget.registry.our_team_varient_3 = publicWidget.Widget.extend({ 
         selector: ".our_team_3",
         disabledInEditableMode: false,
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has team slider content)
+            var hasRenderedContent = self.$target.find('.sct_team_slider, .owl-carousel, .v_3_myourteam, .v-3-image-container').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var titleText = _t("Our Team");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.closest('section').find('.section-title');
+                if ($existingTitle.length) {
+                    var title = $existingTitle.text().trim();
+                    if (title) {
+                        titleText = title;
+                    }
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="category-slider-placeholder">
+                        <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                    </div>
+                `);
+            }
+        },
+        
         start: function() {
             var self = this;
             if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_3');
-
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 rpc("/biztech_emp_data_three/employee_data", {}).then(function(data) {
@@ -1280,21 +1448,78 @@ $(document).ready(function(){
                     });
                 })
             }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
     // animation.registry.our_team_varient_5 = animation.Class.extend({
     publicWidget.registry.our_team_varient_5 = publicWidget.Widget.extend({ 
         selector: ".our_team_5",
         disabledInEditableMode: false,
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has team slider content)
+            var hasRenderedContent = self.$target.find('.sct_team_slider, .owl-carousel, .v_5_myourteam, .v-5-image-container').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var titleText = _t("Meet Our Team");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.closest('section').find('.section-title');
+                if ($existingTitle.length) {
+                    var title = $existingTitle.text().trim();
+                    if (title) {
+                        titleText = title;
+                    }
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="category-slider-placeholder">
+                        <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                    </div>
+                `);
+            }
+        },
+        
         start: function() {
             var self = this;
             if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_5');
-
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 rpc("/biztech_emp_data_five/employee_data", {}).then(function(data) {
@@ -1333,6 +1558,15 @@ $(document).ready(function(){
                     });
                 })
             }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
 
@@ -1693,17 +1927,6 @@ $(document).ready(function(){
                         });
                         this._observer = observer;
                     }
-                    
-                    // Also listen for code view toggle events - restore BEFORE editor reads content
-                    this._codeViewHandler = function(e) {
-                        // Restore immediately before the editor reads the content
-                        self._restorePlaceholder();
-                        // Also restore after a tiny delay to ensure it happens
-                        setTimeout(function() {
-                            self._restorePlaceholder();
-                        }, 5);
-                    };
-                    $(document).on('click', '.o_codeview_btn', this._codeViewHandler);
                 }
                 if (!this.editableMode) {
                     rpc("/product_category_img_slider", {
@@ -1906,32 +2129,84 @@ $(document).ready(function(){
                 "click .js_add_cart_json": "_onClickUpdateQty",
                 'click .cart_view_sct_btn': 'cartViewData',
             },
+            
+            _restorePlaceholder: function() {
+                var self = this;
+                // Check if this is rendered content (has product content)
+                var hasRenderedContent = self.$target.find('.sct-snippet-full, .grid_product, .cs-product, .pwp-img, .pwd-desc').length > 0;
+                var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+                
+                // Only restore if we have rendered content and no placeholder
+                if (hasRenderedContent && !hasPlaceholder) {
+                    var slider_type = self.$target.attr('data-multi-cat-slider-type');
+                    var slider_id = self.$target.attr('data-multi-cat-slider-id');
+                    var titleText = _t("Product Configuration");
+                    
+                    // Get title from rendered content if exists
+                    var $existingTitle = self.$target.find('.section-title, h2.section-title, h4.section-title');
+                    if ($existingTitle.length) {
+                        var title = $existingTitle.first().text().trim();
+                        if (title) {
+                            titleText = title;
+                        }
+                    }
+                    
+                    // Restore placeholder structure
+                    self.$target.html(`
+                        <div class="container">
+                            <div class="row our-config-products">
+                                <div class="col-md-12">
+                                    <div class="title-block">
+                                        <h4 id="snippet-title" class="section-title style1">
+                                            <span>${titleText}</span>
+                                        </h4>
+                                        <div class="category-slider-placeholder">
+                                            <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                    
+                    // Restore attributes
+                    if (slider_type) {
+                        self.$target.attr('data-multi-cat-slider-type', slider_type);
+                    }
+                    if (slider_id) {
+                        self.$target.attr('data-multi-cat-slider-id', slider_id);
+                    }
+                }
+            },
+            
             start: function() {
                 var self = this;
                 if (this.editableMode) {
-                    // In editor mode, show placeholder or preview
-                    var $multi_cat_slider = $('#wrapwrap').find('.sct_product_snippet_1');
-                    var multi_cat_name = _t("Multi Product");
+                    // Restore placeholder when in editable mode
+                    self._restorePlaceholder();
                     
-                    // For Odoo 19 dynamic snippet structure
-                    var $dynamicContent = $multi_cat_slider.find('.dynamic_snippet_template');
-                    if ($dynamicContent.length) {
-                        // Dynamic snippet structure - content will be loaded via AJAX
-                        return;
+                    // Also listen for when body gets editor_enable class (editable mode enabled)
+                    var checkEditableMode = function() {
+                        if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                            self._restorePlaceholder();
+                        }
+                    };
+                    
+                    // Check immediately
+                    setTimeout(checkEditableMode, 100);
+                    
+                    // Also check when DOM changes (in case editable mode is enabled later)
+                    if (typeof MutationObserver !== 'undefined') {
+                        var observer = new MutationObserver(function(mutations) {
+                            checkEditableMode();
+                        });
+                        observer.observe(document.body, {
+                            attributes: true,
+                            attributeFilter: ['class'],
+                            subtree: true
+                        });
+                        this._observer = observer;
                     }
-                    
-                    // Legacy structure
-                    $multi_cat_slider.each(function(){
-                        $(this).empty().append('<div class="container">\
-                                                    <div class="row our-categories">\
-                                                        <div class="col-md-12">\
-                                                            <div class="title-block">\
-                                                                <h4 id="snippet-title" class="section-title style1"><span>'+ multi_cat_name+'</span></h4>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>')
-                    });
                 }
                 if (!this.editableMode) {
                     // Get slider type from data attribute or custom template data
@@ -2144,6 +2419,15 @@ $(document).ready(function(){
                 console.warn("Image element or source is missing.");
             }
         },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
+        },
     });
     
     // // Dynamic Video banner js start
@@ -2343,29 +2627,81 @@ $(document).ready(function(){
             "click .js_add_cart_json": "_onClickUpdateQty",
             'click .cart_view_sct_btn': 'cartViewData',
         },
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has trending products content)
+            var hasRenderedContent = self.$target.find('.trending_products_categories, .trend_prod_tab, #product_slider, .owl-carousel, .cs-product, .retail_trending_products, .latest-trendy-section, .lns-inner').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var slider_id = self.$target.attr('data-cat-slider-id');
+                var trending_name = _t("Trending Products");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.find('.title-block h2, h2.section-title, .section-title');
+                if ($existingTitle.length) {
+                    trending_name = $existingTitle.text().trim() || trending_name;
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="retail_trending_products">
+                        <div class="container">
+                            <div class="lns-inner latest-trendy-section">
+                                <div class="row">
+                                    <div class="lns-post">
+                                        <div class="psb-inner">
+                                            <div class="title-block">
+                                                <h2 class="section-title style1">${trending_name}</h2>
+                                            </div>
+                                            <div class="category-slider-placeholder">
+                                                <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Trending Products" class="img-fluid"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                
+                // Restore attributes
+                if (slider_id) {
+                    self.$target.attr('data-cat-slider-id', slider_id);
+                }
+            }
+        },
+        
         start: function(){
             var self = this;
             if (this.editableMode) {
-                self.$target.each(function(){
-                    $(this).empty().append('<div class="retail_trending_products">\
-                                                <div class="container">\
-                                                    <div class="lns-inner latest-trendy-section">\
-                                                        <div class="row">\
-                                                            <div class="lns-post">\
-                                                                <div class="psb-inner">\
-                                                                    <div class="title-block ">\
-                                                                        <h2 class="section-title style1">\
-                                                                            Trending Products\
-                                                                        </h2>\
-                                                                    </div>\
-                                                                </div>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>');
-                });
-
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
@@ -2611,6 +2947,15 @@ $(document).ready(function(){
                 console.warn("Image element or source is missing.");
             }
         },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
+        }
     });
     // Dynamic Trending Products Snippet End
 // });

@@ -11,27 +11,85 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
 
         selector: ".deal_multi_product_slider",
         disabledInEditableMode: false,
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has deal seller content)
+            var hasRenderedContent = self.$target.find('.deal-wrapper, .deal-inner, .product-slider, .deal-slider, .best-seller-row, .owl-carousel').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var slider_type = self.$target.attr('data-multi-cat-slider-type');
+                var deal_type = self.$target.attr('data-multi-deal-of-day-type');
+                var titleText = _t("Deal Seller Multi Product Snippet");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.find('.section-title-wrapper h2, h2.section-title, .title-block h2');
+                if ($existingTitle.length) {
+                    var title = $existingTitle.first().text().trim();
+                    if (title) {
+                        titleText = title;
+                    }
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="container">
+                        <div class="row our-categories">
+                            <div class="col-md-12">
+                                <div class="title-block">
+                                    <h2 id="snippet-title" class="section-title style1">
+                                        <span>${titleText}</span>
+                                    </h2>
+                                    <div class="category-slider-placeholder">
+                                        <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `);
+                
+                // Restore attributes
+                if (slider_type) {
+                    self.$target.attr('data-multi-cat-slider-type', slider_type);
+                }
+                if (deal_type) {
+                    self.$target.attr('data-multi-deal-of-day-type', deal_type);
+                }
+            }
+        },
+        
         start: function() {
             var self = this;
             this.redrow();
             if (this.editableMode) {
-                var $multi_cat_slider = $('#wrapwrap').find('.deal_multi_product_slider');
-                var multi_cat_name = _t("Multi Deals Slider")
-
-                // _.each($multi_cat_slider, function (single){
-                // $multi_cat_slider.each(function(){
-                $multi_cat_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row our-categories">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 id="snippet-title" class="section-title style1"><span>'+ multi_cat_name+'</span></h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 var slider_deals = self.$target.attr('data-multi-deal-of-day-type');
@@ -183,6 +241,15 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
                         }
                         , 1000);
                    }      
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
 // animation.registry.oe_category_slider = animation.Class.extend({

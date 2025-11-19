@@ -32,13 +32,20 @@ async function openTrendingProductsModal(snippetEl) {
         sliderTypeSelect.appendChild(option);
     });
 
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-cat-slider-id");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
+
     // Submit
     submitBtn.addEventListener("click", () => {
-        const selectedOption =
-            sliderTypeSelect.selectedOptions[0]?.text || _t("Trending Products");
+        const selectedOpt = sliderTypeSelect.options[sliderTypeSelect.selectedIndex];
+        const type = selectedOpt && selectedOpt.value !== "0" ? selectedOpt.text : _t("Trending Products");
 
         snippetEl.setAttribute("data-cat-slider-id", sliderTypeSelect.value);
-
+        
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="retail_trending_products">
                 <div class="container">
@@ -47,7 +54,10 @@ async function openTrendingProductsModal(snippetEl) {
                             <div class="lns-post">
                                 <div class="psb-inner">
                                     <div class="title-block">
-                                        <h2 class="section-title style1">${_t(selectedOption)}</h2>
+                                        <h2 class="section-title style1">${_t(type)}</h2>
+                                    </div>
+                                    <div class="category-slider-placeholder">
+                                        <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Trending Products" class="img-fluid"/>
                                     </div>
                                 </div>
                             </div>
@@ -60,9 +70,8 @@ async function openTrendingProductsModal(snippetEl) {
         myModal.hide();
     });
 
-    // Cancel (remove snippet if freshly dropped)
+    // Cancel handler
     cancelBtn?.addEventListener("click", () => {
-        snippetEl.remove();
         myModal.hide();
     });
 
@@ -88,11 +97,10 @@ class TrendingProductsSnippetPlugin extends Plugin {
         if (!snippetEl.classList.contains("theme_scita_trending_products")) {
             return;
         }
-
         snippetEl.classList.remove("o_hidden");
-        snippetEl.querySelector(".theme_scita_trending_products")?.replaceChildren();
+        snippetEl.innerHTML = "";
 
-        // Open modal immediately when dropped
+        // open modal once after drop
         openTrendingProductsModal(snippetEl);
     }
 }
@@ -103,26 +111,9 @@ registry.category("website-plugins").add(
 );
 
 // --------------------------------------------------
-// Modify Button Plugin
+// Modify Button Action
 // --------------------------------------------------
-class TrendingProductsModifyPlugin extends Plugin {
-    static id = "trendingProductsModify";
-    static dependencies = ["history", "media"];
-    selector = ".theme_scita_trending_products";
-
-    resources = {
-        builder_options: {
-            template: "theme_scita_trending_products_option", // your XML options template id
-            selector: ".theme_scita_trending_products",
-        },
-        so_content_addition_selector: [".theme_scita_trending_products"],
-        builder_actions: {
-            TrendingModifyAction,
-        },
-    };
-}
-
-export class TrendingModifyAction extends BuilderAction {
+export class TrendingProductsModifyBtnAction extends BuilderAction {
     static id = "trending_products_modifyBtn";
 
     apply({ editingElement, params: { mainParam } }) {
@@ -131,9 +122,29 @@ export class TrendingModifyAction extends BuilderAction {
         }
     }
 
-    isApplied({ editingElement }) {
-        return editingElement.dataset.catSliderId !== undefined;
+    isApplied() {
+        return false;
     }
+}
+
+// --------------------------------------------------
+// Register Modify Button Plugin
+// --------------------------------------------------
+class TrendingProductsModifyPlugin extends Plugin {
+    static id = "trendingProductsModifyPlugin";
+    static dependencies = [];
+    selector = ".theme_scita_trending_products";
+
+    resources = {
+        builder_options: {
+            template: "theme_scita_trending_products_option",
+            selector: ".theme_scita_trending_products",
+        },
+        so_content_addition_selector: [".theme_scita_trending_products"],
+        builder_actions: {
+            TrendingProductsModifyBtnAction,
+        },
+    };
 }
 
 registry.category("website-plugins").add(

@@ -57,7 +57,7 @@ async function openDealMultiProductModal(snippetEl) {
         snippetEl.setAttribute("data-multi-deal-of-day-type", $sliderDeals.value);
         snippetEl.setAttribute("data-multi-cat-dealer-id", "multi-cat-myowl" + $sliderDeals.value);
 
-        // Replace inner content
+        // Use the original placeholder template structure to maintain consistency
         let type = $sliderDeals.options[$sliderDeals.selectedIndex]?.text || _t("Multi Product Deal Slider");
 
         snippetEl.innerHTML = `
@@ -65,9 +65,12 @@ async function openDealMultiProductModal(snippetEl) {
                 <div class="row our-categories">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h4 class="section-title style1">
+                            <h2 id="snippet-title" class="section-title style1">
                                 <span>${_t(type)}</span>
-                            </h4>
+                            </h2>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>

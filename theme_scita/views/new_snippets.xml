@@ -4,7 +4,7 @@
 
     <template id="deal_seller_multi_product_custom_snippet" name="Multi Deal Product Slider 1">
         <section class="deal_multi_product_slider" data-multi-cat-slider-type="" data-multi-deal-of-day-type=""
-                 contentEditable="false" data-disp="multi_product" data-disp1="deal_days">
+                 contentEditable="false" data-name="Multi Deal Product Slider 1" data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="row our-categories">
                     <div class="col-md-12">
@@ -13,7 +13,7 @@
                                 <span>Deal Seller Multi Product Snippet</span>
                             </h2>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="multi deal slider" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
@@ -21,16 +21,6 @@
             </div>
         </section>
     </template>
-    <!-- <template id="deal_seller_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="deal_seller_multi_product_custom_snippet" data-selector=".deal_multi_product_slider"
-                 data-snippet-option-id="deal_seller_multi_product_custom_snippet" data-drop-in=".timer_counter_div">
-                <we-button class="dropdown-item deal_multi_product_slider" data-no-preview="true" tabindex="-1" href="#"
-                           data-multi_category_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template> -->
 
     <template id="multi_deal_seller_slider_view" name="Deal Seller Product Snippet">
         <div class="container">
@@ -181,15 +171,7 @@
             </div>
         </section>
     </template>
-    <!-- <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="oe_deal_of_the_day" data-selector=".oe_deal_of_the_day">
-                <we-button class="dropdown-item oe_deal_of_the_day" tabindex="-1" href="#"
-                           data-set_deal_of_the_day_products="">Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template> -->
+
     <template id="theme_scita_deal_of_the_day_view" name="Deal of the day 6">
         <div class="container">
             <div class="deal_day_wrap">

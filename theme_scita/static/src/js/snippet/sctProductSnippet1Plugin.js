@@ -40,14 +40,18 @@ async function openDynamicProductModal(snippetEl) {
         snippetEl.setAttribute("data-multi-cat-slider-type", sliderTypeSelect.value);
         snippetEl.setAttribute("data-multi-cat-slider-id", "multi-cat-myowl" + sliderTypeSelect.value);
 
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row our-categories">
+                <div class="row our-config-products">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h4 class="section-title style1">
+                            <h4 id="snippet-title" class="section-title style1">
                                 <span>${_t(selectedOption)}</span>
                             </h4>
+                            <div class="category-slider-placeholder">
+                                <img src="/theme_scita/static/src/img/feature-product.png" alt="Product Snippet" class="img-fluid"/>
+                            </div>
                         </div>
                     </div>
                 </div>

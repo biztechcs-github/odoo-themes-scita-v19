@@ -303,7 +303,7 @@
     <!-- Dynamic Snippet Template (Odoo 19 Structure) -->
     <template id="sct_product_snippet_1" name="Multi Product Snippet 1">
         <section class="sct_product_snippet_1" data-multi-cat-slider-type="" contentEditable="false"
-                 data-disp="multi_product">
+                 data-name="Multi Product Snippet 1" data-disp="multi_product">
             <div class="container">
                 <div class="row our-config-products">
                     <div class="col-md-12">
@@ -312,7 +312,7 @@
                                 <span>Product Configuration</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
@@ -1490,41 +1490,4 @@
             </div>
         </section>
     </template>
-
-    <!-- Service industry End -->
-    <!-- snippets list  -->
-
-    <!-- <template id="scita_snippets_animation_effect_option" name="Animaion Effect Option"
-              inherit_id="website.snippet_options">
-        <xpath expr="." position="inside">
-            <div id="main_snippets_animation_effect" data-selector="img" data-js="animaion_effect">
-                <we-select string="Image Transition Effect">
-                    <we-button data-select-class="none_effect">Remove Effect</we-button>
-                    <we-button data-select-class="sct_img_effect1">Effect 1</we-button>
-                    <we-button data-select-class="sct_img_effect2">Effect 2</we-button>
-                    <we-button data-select-class="sct_img_effect3">Effect 3</we-button>  
-                    <we-button data-select-class="sct_img_effect4">Effect 4</we-button>
-                    <we-button data-select-class="sct_img_effect5">Effect 5</we-button>
-                </we-select>
-            </div>
-        </xpath>
-    </template> -->
-    <!-- <template id="snippet_options" inherit_id="website.snippet_options"
-              name="scroll snippet options">
-        <xpath expr="." position="inside">
-            <div data-js="SaleLazyLoad" data-page-options="true"
-                 groups="website.group_website_designer"
-                 data-selector="main:has(.o_wsale_products_page)" data-no-check="true"
-                 data-target="#products_grid .o_wsale_products_grid_table_wrapper">
-                <we-select string="Product Loader Options" data-no-preview="true" data-reload="/">
-                    <we-button data-customize-website-views="theme_scita.default_pager">
-                        Default
-                    </we-button>
-                    <we-button data-customize-website-views="theme_scita.lazy_load_button">
-                        Button
-                    </we-button>
-                </we-select>
-            </div>
-        </xpath>
-    </template> -->
 </odoo>
