@@ -1218,14 +1218,63 @@ $(document).ready(function(){
     publicWidget.registry.third_client_slider_snippet = publicWidget.Widget.extend({ 
         selector: ".testimonial-client-slider",
         disabledInEditableMode: false,
+        
+        _restorePlaceholder: function() {
+            var self = this;
+            // Check if this is rendered content (has client content)
+            var hasRenderedContent = self.$target.find('.sct_client_wrap, .sct_client_box, .sct_client_not').length > 0;
+            var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            
+            // Only restore if we have rendered content and no placeholder
+            if (hasRenderedContent && !hasPlaceholder) {
+                var titleText = _t("Our Partners");
+                
+                // Get title from rendered content if exists
+                var $existingTitle = self.$target.closest('section').find('.sct_test_title');
+                if ($existingTitle.length) {
+                    var title = $existingTitle.text().trim();
+                    if (title && title !== "Testimonials") {
+                        titleText = title;
+                    }
+                }
+                
+                // Restore placeholder structure
+                self.$target.html(`
+                    <div class="category-slider-placeholder">
+                        <img src="/theme_scita/static/src/img/client.jpeg" alt="Client Slider" class="img-fluid"/>
+                    </div>
+                `);
+            }
+        },
+        
         start: function() {
             var self = this;
             if (this.editableMode) {
-                var $client_slider = $('#wrapwrap').find('#our_partner_testimonial');
-                var client_name = _t("Our Partners")
-                $client_slider.each(function(){
-                    $(this).empty().append('')
-                });
+                // Restore placeholder when in editable mode
+                self._restorePlaceholder();
+                
+                // Also listen for when body gets editor_enable class (editable mode enabled)
+                var checkEditableMode = function() {
+                    if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                        self._restorePlaceholder();
+                    }
+                };
+                
+                // Check immediately
+                setTimeout(checkEditableMode, 100);
+                
+                // Also check when DOM changes (in case editable mode is enabled later)
+                if (typeof MutationObserver !== 'undefined') {
+                    var observer = new MutationObserver(function(mutations) {
+                        checkEditableMode();
+                    });
+                    observer.observe(document.body, {
+                        attributes: true,
+                        attributeFilter: ['class'],
+                        subtree: true
+                    });
+                    this._observer = observer;
+                }
             }
             if (!this.editableMode) {
                 rpc("/theme_scita/third_get_clients_dynamically_slider", {}).then(function(data) {
@@ -1235,6 +1284,15 @@ $(document).ready(function(){
                     }
                 });
             }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
         }
     });
     
@@ -1836,23 +1894,20 @@ $(document).ready(function(){
             
             _restorePlaceholder: function() {
                 var self = this;
-                // Always check - don't skip if placeholder exists, because it might be wrong structure
+                // self.$target is the section element itself (selector: .multi_product_and_category_slider)
+                // Check if this is rendered content (has rendered product/category content)
+                var hasRenderedContent = self.$target.find('.product_category_scita, .cst_category-slider-section, .cat_list, .cst_sct_left_side, .cst_sct_right_side, .cs-cat, .pwd-desc, .pwp-info, .cs-product').length > 0;
                 var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
                 
-                // Check if this is rendered content (has product_category_scita or cst_category-slider-section or cat_list)
-                var hasRenderedContent = self.$target.find('.product_category_scita, .cst_category-slider-section, .cstm-seprator, .cat_list, .cst_sct_left_side, .cst_sct_right_side, .pwd-desc, .pwp-info, .cs-product').length > 0;
-                
-                // Check if the structure matches the placeholder structure exactly
-                var hasCorrectPlaceholderStructure = self.$target.find('.our-config-products.cst_top_row .cst_flex_base .title-block .category-slider-placeholder').length > 0;
-                
-                // Restore if: we have rendered content OR we don't have correct placeholder structure
-                if (hasRenderedContent || !hasCorrectPlaceholderStructure) {
+                // In editable mode, always restore placeholder if we have rendered content
+                // This ensures the HTML editor sees the placeholder, not the full rendered content
+                if (hasRenderedContent && (this.editableMode || $('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable'))) {
                     var slider_type = self.$target.attr('data-multi-cat-slider-type');
                     var slider_id = self.$target.attr('data-multi-cat-slider-id');
-                    var titleText = _t("Image Category Slider");
+                    var titleText = _t("Product Slider");
                     
-                    // Get title from rendered content if exists - check multiple possible locations
-                    var $existingTitle = self.$target.find('.cst_flex_base h2, .section-title.style1, .title-block h4, h2.section-title, h4.section-title');
+                    // Get title from rendered content if exists
+                    var $existingTitle = self.$target.find('.section-title, h2.section-title, h4.section-title');
                     if ($existingTitle.length) {
                         var title = $existingTitle.first().text().trim();
                         if (title) {
@@ -1860,7 +1915,7 @@ $(document).ready(function(){
                         }
                     }
                     
-                    // Restore placeholder structure
+                    // Restore placeholder structure - replace the entire section content
                     self.$target.html(`
                         <div class="container">
                             <div class="row our-config-products cst_top_row">
@@ -1870,7 +1925,7 @@ $(document).ready(function(){
                                             <span>${titleText}</span>
                                         </h4>
                                         <div class="category-slider-placeholder">
-                                            <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
+                                            <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Slider" class="img-fluid"/>
                                         </div>
                                     </div>
                                 </div>
@@ -1894,35 +1949,48 @@ $(document).ready(function(){
                     // Restore placeholder immediately when in editable mode
                     self._restorePlaceholder();
                     
-                    // Also restore on multiple intervals to catch any timing issues
-                    var restoreIntervals = [50, 100, 200, 500];
-                    restoreIntervals.forEach(function(delay) {
-                        setTimeout(function() {
-                            self._restorePlaceholder();
-                        }, delay);
-                    });
-                    
-                    // Listen for when body gets editor_enable class (editable mode enabled)
+                    // Also listen for when body gets editor_enable class (editable mode enabled)
                     var checkEditableMode = function() {
-                        if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable') || self.editableMode) {
+                        if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                            // Restore placeholder immediately when editor is enabled
                             self._restorePlaceholder();
                         }
                     };
                     
-                    // Check immediately and repeatedly
+                    // Check immediately and multiple times to catch timing issues
+                    setTimeout(function() { self._restorePlaceholder(); }, 0);
                     setTimeout(checkEditableMode, 10);
+                    setTimeout(function() { self._restorePlaceholder(); }, 50);
                     setTimeout(checkEditableMode, 50);
+                    setTimeout(function() { self._restorePlaceholder(); }, 100);
                     setTimeout(checkEditableMode, 100);
+                    setTimeout(function() { self._restorePlaceholder(); }, 200);
+                    setTimeout(checkEditableMode, 200);
+                    
+                    // Listen for HTML editor button click (use capture phase to fire early)
+                    var codeViewHandler = function(e) {
+                        // Restore placeholder synchronously before HTML editor reads content
+                        self._restorePlaceholder();
+                    };
+                    // Use capture phase to ensure we fire before other handlers
+                    document.addEventListener('click', function(e) {
+                        if (e.target && (e.target.classList.contains('o_codeview_btn') || e.target.closest('.o_codeview_btn'))) {
+                            codeViewHandler(e);
+                        }
+                    }, true); // true = capture phase
+                    this._codeViewHandler = codeViewHandler;
                     
                     // Also check when DOM changes (in case editable mode is enabled later)
                     if (typeof MutationObserver !== 'undefined') {
                         var observer = new MutationObserver(function(mutations) {
-                            // Always restore on any change when in editable mode
-                            self._restorePlaceholder();
+                            // Check if editor_enable class was added
+                            if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                                self._restorePlaceholder();
+                            }
                         });
-                        observer.observe(self.$target[0], {
+                        observer.observe(document.body, {
                             attributes: true,
-                            childList: true,
+                            attributeFilter: ['class'],
                             subtree: true
                         });
                         this._observer = observer;
@@ -2111,7 +2179,8 @@ $(document).ready(function(){
                 }
                 // Clean up code view button listener
                 if (this._codeViewHandler) {
-                    $(document).off('click', '.o_codeview_btn', this._codeViewHandler);
+                    // Note: We can't easily remove capture phase listeners, but this is okay
+                    // as the widget will be destroyed when leaving editable mode
                     this._codeViewHandler = null;
                 }
                 return this._super.apply(this, arguments);
