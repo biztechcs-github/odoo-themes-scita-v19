@@ -439,24 +439,7 @@ $(document).ready(function(){
                 });
             },
 
-            _showCartNotification(callService, props, options = {}) {
-                // Show the notification about the cart
-                if (props.lines) {
-                    callService("cartNotificationService", "add", _t("Item(s) added to your cart"), {
-                        lines: props.lines,
-                        currency_id: props.currency_id,
-                        ...options,
-                    });
-                }
-                if (props.warning) {
-                    callService("cartNotificationService", "add", _t("Warning"), {
-                        warning: props.warning,
-                        ...options,
-                    });
-                }
-            },
             
-
             _updateCartIcon: function (cartQuantity) {
                 browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
             
@@ -2860,25 +2843,7 @@ $(document).ready(function(){
                 }).catch((err) => {
                     // Silent error handling
                 });
-            },
-
-            _showCartNotification(callService, props, options = {}) {
-                // Show the notification about the cart
-                if (props.lines) {
-                    callService("cartNotificationService", "add", _t("Item(s) added to your cart"), {
-                        lines: props.lines,
-                        currency_id: props.currency_id,
-                        ...options,
-                    });
-                }
-                if (props.warning) {
-                    callService("cartNotificationService", "add", _t("Warning"), {
-                        warning: props.warning,
-                        ...options,
-                    });
-                }
-            },
-            
+            }, 
 
             _updateCartIcon: function (cartQuantity) {
                 browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);

@@ -65,12 +65,12 @@ async function openDealMultiProductModal(snippetEl) {
                 <div class="row our-categories">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h2 id="snippet-title" class="section-title style1">
+                            <h4 id="snippet-title" class="section-title style1">
                                 <span>${_t(type)}</span>
-                            </h2>
-                            <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
-                            </div>
+                            </h4>
+                        </div>
+                        <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
