@@ -785,6 +785,60 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
+    @http.route(['/product_column_five_two'], type='jsonrpc', auth='public', website=True)
+    def get_product_column_five_two(self, **post):
+        context, pool = dict(request.context), request.env
+        if post.get('slider-type'):
+            slider_header = request.env['product.snippet.configuration.two'].sudo().search([
+                ('id', '=', int(post.get('slider-type')))
+            ])
+            if not slider_header:
+                return {'html': ''}
+
+            if not context.get('pricelist'):
+                current_website = request.website.get_current_website()
+                pricelist = current_website.get_pricelist_available()
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
+            else:
+                pricelist_ids = context['pricelist']
+                if isinstance(pricelist_ids, list):
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids[0])
+                else:
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids)
+
+            # Ensure singleton here as well
+            pricelist = pricelist[0] if pricelist and len(pricelist) > 1 else pricelist
+
+            context.update({'pricelist': pricelist.id})
+            from_currency = pool['res.users'].sudo().browse(
+                SUPERUSER_ID).company_id.currency_id
+            to_currency = pricelist.currency_id
+
+            def compute_currency(price):
+                return pool['res.currency']._convert(
+                    price, from_currency, to_currency, fields.Date.today())
+
+            values = {
+                'slider_details': slider_header,
+                'slider_header': slider_header,
+                'compute_currency': compute_currency,
+                'products': slider_header.collection_of_products
+            }
+            website = request.env['website'].get_current_website()
+            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
+            html = IrQweb._render("theme_scita.sct_product_snippet_2_view", values)
+            return {'html': html}
+
+    @http.route(['/theme_scita/product_configuration_two'], type='jsonrpc', auth="public", website=True)
+    def snippet_get_product_configuration_two(self):
+        slider_options = []
+        option = request.env['product.snippet.configuration.two'].sudo().search(
+            [('active', '=', True)], order="name asc")
+        for record in option:
+            slider_options.append({'id': record.id,
+                                   'name': record.name})
+        return slider_options
+
     @http.route(['/deals-of-the-day'], type="http", auth="public", website=True)
     def products(self, **post):
         product = request.env['product.template'].search(

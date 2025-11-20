@@ -2481,6 +2481,300 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         },
     });
+
+    // Snippet 2 Widget - Replica of sct_product_snippet_1 with separate backend
+    publicWidget.registry.sct_product_snippet_2 = publicWidget.Widget.extend({ 
+            selector: ".sct_product_snippet_2",
+            disabledInEditableMode: false,
+            events: {
+                "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
+                "mouseleave .css_attribute_color": "_onMouseLeave",
+                "click .js_add_cart": "_onClickAddToCart",
+                "click .js_add_cart_json": "_onClickUpdateQty",
+                'click .cart_view_sct_btn': 'cartViewData',
+            },
+            
+            _restorePlaceholder: function() {
+                var self = this;
+                // Check if this is rendered content (has product content)
+                var hasRenderedContent = self.$target.find('.sct-snippet-full, .grid_product, .cs-product, .pwp-img, .pwd-desc').length > 0;
+                var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+                
+                // Only restore if we have rendered content and no placeholder
+                if (hasRenderedContent && !hasPlaceholder) {
+                    var slider_type = self.$target.attr('data-multi-cat-slider-type');
+                    var slider_id = self.$target.attr('data-multi-cat-slider-id');
+                    var titleText = _t("Product Configuration");
+                    
+                    // Get title from rendered content if exists
+                    var $existingTitle = self.$target.find('.section-title, h2.section-title, h4.section-title');
+                    if ($existingTitle.length) {
+                        var title = $existingTitle.first().text().trim();
+                        if (title) {
+                            titleText = title;
+                        }
+                    }
+                    
+                    // Restore placeholder structure
+                    self.$target.html(`
+                        <div class="container">
+                            <div class="row our-config-products">
+                                <div class="col-md-12">
+                                    <div class="title-block">
+                                        <h4 id="snippet-title" class="section-title style1">
+                                            <span>${titleText}</span>
+                                        </h4>
+                                        <div class="category-slider-placeholder">
+                                            <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                    
+                    // Restore attributes
+                    if (slider_type) {
+                        self.$target.attr('data-multi-cat-slider-type', slider_type);
+                    }
+                    if (slider_id) {
+                        self.$target.attr('data-multi-cat-slider-id', slider_id);
+                    }
+                }
+            },
+            
+            start: function() {
+                var self = this;
+                if (this.editableMode) {
+                    // Restore placeholder when in editable mode
+                    self._restorePlaceholder();
+                    
+                    // Also listen for when body gets editor_enable class (editable mode enabled)
+                    var checkEditableMode = function() {
+                        if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                            self._restorePlaceholder();
+                        }
+                    };
+                    
+                    // Check immediately
+                    setTimeout(checkEditableMode, 100);
+                    
+                    // Also check when DOM changes (in case editable mode is enabled later)
+                    if (typeof MutationObserver !== 'undefined') {
+                        var observer = new MutationObserver(function(mutations) {
+                            checkEditableMode();
+                        });
+                        observer.observe(document.body, {
+                            attributes: true,
+                            attributeFilter: ['class'],
+                            subtree: true
+                        });
+                        this._observer = observer;
+                    }
+                }
+                if (!this.editableMode) {
+                    // Get slider type from data attribute or custom template data
+                    var slider_type = self.$target.attr('data-multi-cat-slider-type') || 
+                                    self.$target.attr('data-custom-template-data') || '';
+                    
+                    // Try to parse custom_template_data if it's JSON
+                    if (!slider_type && self.$target.attr('data-custom-template-data')) {
+                        try {
+                            var customData = JSON.parse(self.$target.attr('data-custom-template-data'));
+                            slider_type = customData['slider-type'] || customData.slider_type || '';
+                        } catch(e) {
+                            // Not JSON, use as-is
+                        }
+                    }
+                    
+                    if (slider_type) {
+                        // Use rpc for Odoo 19 compatible route
+                        rpc("/product_column_five_two", {
+                            'slider-type': slider_type,
+                        }).then(function(response) {
+                            if (response && response.html) {
+                                // Odoo 19 format - response has html property
+                                var html = response.html;
+                                self._injectContent(html);
+                            } else if (response && typeof response === 'string') {
+                                // Legacy format - direct HTML string
+                                self._injectContent(response);
+                            } else if (response) {
+                                // Fallback
+                                self._injectContent(response);
+                            }
+                        }).catch(function(error) {
+                            console.error('Error loading product snippet 2 data:', error);
+                        });
+                    }
+                }
+            },
+            _injectContent: function(html) {
+                var self = this;
+                // For Odoo 19 dynamic snippet structure
+                var $dynamicContent = self.$target.find('.dynamic_snippet_template');
+                if ($dynamicContent.length) {
+                    $dynamicContent.html(html);
+                    self.$target.removeClass('o_dynamic_snippet_empty');
+                } else {
+                    // Legacy structure - replace entire content
+                    self.$target.empty();
+                    self.$target.append(html);
+                }
+                
+                $(".sct_product_snippet_2").removeClass('hidden');
+                setTimeout(function(){
+                    var $imgLinks = $('.sct_product_snippet_2 .cs-product .pwp-img a');
+                    if ($imgLinks.length) {
+                        var divWidth = $imgLinks.first().width(); 
+                        $imgLinks.height(divWidth);
+                    }
+                }, 400);
+            },
+            cartViewData: function (ev) {
+                    const element = ev.currentTarget;
+                    const product_id = $(element).attr('data-id');
+                    rpc('/theme_scita/shop/cart_view', { product_id }).then(function (data) {
+                        $("#shop_cart_view_modal").html(data).modal("show");
+                    });
+                },
+            
+                // 🛒 ADD TO CART BUTTON (main "Add" button)
+                _onClickAddToCart: function (ev) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                
+                    const $btn = $(ev.currentTarget);
+                    const $cartWrapper = $btn.closest(".ajax_cart_template");
+                    const $qtyInput = $cartWrapper.find("input.quantity");
+                    
+                    const $productIDInput = $cartWrapper.find("input[name='product_id']");
+                    const productID = parseInt($productIDInput.val()); 
+                    const productTemplateID = parseInt($btn.data("templateId"));
+                    const addQuantity = parseInt($qtyInput.val()) || 1;
+                
+                    const self = this;
+                    
+                    // Strategy: Use custom endpoint to get cart lines for this product
+                    rpc("/shop/cart/get_lines", {
+                        product_id: productID
+                    }).then((cartLines) => {
+                        // Check if product already exists in cart
+                        const existingLine = cartLines.length > 0 ? cartLines[0] : null;
+                        
+                        if (existingLine) {
+                            const newQuantity = existingLine.quantity + addQuantity;
+                            
+                            // Update existing line with new total quantity
+                            return rpc("/shop/cart/update", {
+                                line_id: existingLine.line_id,
+                                product_id: productID,
+                                quantity: newQuantity
+                            });
+                        } else {
+                            // Product doesn't exist, add it
+                            return rpc("/shop/cart/add", {
+                                product_id: productID,
+                                product_template_id: productTemplateID,
+                                quantity: addQuantity,
+                            });
+                        }
+                    }).then((data) => {
+                        if (data.cart_quantity) {
+                            self._updateCartIcon(data.cart_quantity);
+                        }
+                        
+                        if (data.notification_info) {
+                            self._showCartNotification(self.call.bind(self), data.notification_info);
+                        }
+                        
+                        if (data.quantity && data.tracking_info) {
+                            self._trackProducts(data.tracking_info);
+                        }
+                        
+                    }).catch((err) => {
+                        // Silent error handling
+                    });
+                },
+
+                _updateCartIcon: function (cartQuantity) {
+                    browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
+                
+                    // Update mobile and desktop cart quantities
+                    const cartQuantityElements = document.querySelectorAll('.my_cart_quantity, .o_wsale_my_cart_quantity');
+                    for (const cartQuantityElement of cartQuantityElements) {
+                        if (cartQuantity === 0) {
+                            cartQuantityElement.classList.add('d-none');
+                        } else {
+                            const cartIconElement = document.querySelector('li.o_wsale_my_cart');
+                            if (cartIconElement) {
+                                cartIconElement.classList.remove('d-none');
+                            }
+                            cartQuantityElement.classList.remove('d-none');
+                            cartQuantityElement.classList.add('o_mycart_zoom_animation');
+                
+                            setTimeout(() => {
+                                cartQuantityElement.textContent = cartQuantity;
+                                cartQuantityElement.classList.remove('o_mycart_zoom_animation');
+                            }, 300);
+                        }
+                    }
+                },
+
+                _trackProducts(trackingInfo) {
+                    document.querySelector('.oe_website_sale').dispatchEvent(
+                        new CustomEvent('add_to_cart_event', {'detail': trackingInfo})
+                    );
+                },
+
+                _onClickUpdateQty: function (ev) {
+                    ev.preventDefault();
+                    const $btn = $(ev.currentTarget);
+                    const $qtyInput = $btn.closest('.input-group').find('input.quantity');
+                
+                    let qty = parseInt($qtyInput.val()) || 1;
+                    qty += $btn.attr('aria-label') === 'Remove one' ? -1 : 1;
+                
+                    if (qty < 1) qty = 1;
+                    $qtyInput.val(qty).trigger('change');
+                },
+
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('.cs-product');
+            const $img = $product.find('img').first();            
+            this.image= $img;
+        
+            this.defaultSrc = $img.attr('data-default-img-src');        
+            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            
+            if (previewSrc) {
+                this._updateImgSrc(previewSrc, $img);
+                $swatch.addClass("active");
+            }
+        },
+        
+        _onMouseLeave: function () {
+             this._updateImgSrc(this.defaultSrc,this.image);
+        },
+        
+        _updateImgSrc: function (src, $img) {        
+            if ($img && src) {
+                $img.attr('src', src);
+            } else {
+                console.warn("Image element or source is missing.");
+            }
+        },
+        
+        destroy: function() {
+            // Clean up observer if it exists
+            if (this._observer) {
+                this._observer.disconnect();
+                this._observer = null;
+            }
+            return this._super.apply(this, arguments);
+        },
+    });
     
     // // Dynamic Video banner js start
     // animation.registry.dynamic_video_banner = animation.Class.extend({

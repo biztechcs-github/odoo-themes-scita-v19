@@ -230,6 +230,7 @@ publish unpublish product
             'theme_scita/static/src/js/snippet/dealOfDayBanner5Plugin.js',
             'theme_scita/static/src/js/snippet/brandsSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/sctProductSnippet1Plugin.js',
+            'theme_scita/static/src/js/snippet/sctProductSnippet2Plugin.js',
             'theme_scita/static/src/js/snippet/trendingProductsModifyPlugin.js',
             'theme_scita/static/src/js/snippet/googleMapSnippetPlugin.js',
             'theme_scita/static/src/js/snippet/blogSnippetPlugin.js',

@@ -273,6 +273,32 @@
             </div>
         </div>
     </t>
+    <t t-name="theme_scita.scita_dynamic_product_snippet_configuration_two">
+        <div aria-hidden="true" aria-labelledby="myModalLabel2" t-attf-class="modal#{technical ? ' o_technical_modal' : ''}#{fullscreen ? ' o_modal_full': ''}" contenteditable="False" role="dialog" style="z-index:1050">
+            <div class="modal-dialog">
+                <div class="modal-content" id="s_media_block_modal_two">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Product Image Snippet Configuration</h4>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body" contenteditable="false">
+                        <form class="form-horizontal" role="form">
+                            <div class="row">
+                                <label class="col-sm-3 control-label" for="slider_type_two">Type</label>
+                                <div class="form-group col-sm-9">
+                                    <select class="form-control" id="slider_type_two" name="slider_type_two"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-bs-dismiss="modal" id="cancel_two">Cancel</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" id="snippnet_submit_two">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
     <t t-name="theme_scita.video_banner_block">
         <div aria-hidden="true" aria-labelledby="myModalLabel" backdrop="false" t-attf-class="modal#{technical ? ' o_technical_modal' : ''}#{fullscreen ? ' o_modal_full': ''}" contenteditable="False" role="dialog" style="z-index:1050">
             <div class="modal-dialog">

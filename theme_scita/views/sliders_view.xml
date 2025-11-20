@@ -552,5 +552,51 @@
     </record>
 
     <menuitem action="action_product_snippet_configuration" id="product_snippet_configuration" name="Product Snippet Configuration" parent="theme_scita.scita_menu_slider_config" sequence="80"/>
-    <!-- Product snippet configuration end -->    
+    <!-- Product snippet configuration end -->
+    
+    <!-- Product snippet configuration two start -->
+    <record id="view_product_snippet_configuration_two_form_view" model="ir.ui.view">
+        <field name="name">product.snippet.configuration.two.form</field>
+        <field name="model">product.snippet.configuration.two</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+             <form string="Product Image Snippet Configuration">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sub_title"/>
+                        <field name="active"/>
+                        <field name="collection_of_products" widget="many2many_tags"/>
+                    </group>
+                    <group string="Banner Configuration">
+                        <field name="banner_image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_product_snippet_configuration_two_list_view" model="ir.ui.view">
+        <field name="name">product.snippet.configuration.two.list</field>
+        <field name="model">product.snippet.configuration.two</field>
+        <field name="arch" type="xml">
+            <list string="Product Image Snippet Configuration">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_product_snippet_configuration_two" model="ir.actions.act_window">
+        <field name="name">Product Image Snippet Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.snippet.configuration.two</field>
+        <field name="view_mode">list,form</field>
+        <field eval="False" name="view_id"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click to select a Product.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_product_snippet_configuration_two" id="product_snippet_configuration_two" name="Product Image Snippet Configuration" parent="theme_scita.scita_menu_slider_config" sequence="81"/>
+    <!-- Product snippet configuration two end -->    
 </odoo>

@@ -179,3 +179,18 @@ class ProductSnippetConfiguration(models.Model):
                                               'prod_id',
                                               required=True,
                                               string="Collection Of Products", domain="[('is_published', '=', True)]")
+
+
+class ProductSnippetConfigurationTwo(models.Model):
+    _name = 'product.snippet.configuration.two'
+    _description = "Add Multiple Product In Snippet Two"
+
+    name = fields.Char(string='Name', default="Trending", required=True)
+    sub_title = fields.Char(string="Sub Title", default="Lorem Ipsum is simply dummy text.", )
+    active = fields.Boolean(
+        string="Active", default=True)
+    collection_of_products = fields.Many2many('product.template', 'product_configuration_two_rel', 'slider_id',
+                                              'prod_id',
+                                              required=True,
+                                              string="Collection Of Products", domain="[('is_published', '=', True)]")
+    banner_image = fields.Binary(string="Banner Image", help="Image to display on the left side of the snippet")
