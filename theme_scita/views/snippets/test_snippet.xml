@@ -222,9 +222,6 @@
             <t t-snippet="theme_scita.s_theme_scita_category_slider" string="Category Slider" group="scita_category">
                 <keywords>category, categories, slider, carousel</keywords>
             </t>
-            <t t-snippet="theme_scita.product_category_img_slider_config" string="Product Category Slider" group="scita_category">
-                <keywords>category, product, categories, slider</keywords>
-            </t>
             
             <!-- Deal Days Snippets -->
             <t t-snippet="theme_scita.deal_of_day_banner_5" string="Deal of Day Banner" group="scita_deal_days">

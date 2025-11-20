@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-<t t-name="product_category_img_slider_config_option">
-        <div data-js="multi_product_and_category_slider" data-selector=".multi_product_and_category_slider">
-            <BuilderButtonGroup>
-                <BuilderButton 
-                    action="'product_category_modifyBtn'" 
-                    title.translate="Modify" 
-                    icon="'fa fa-edit'" 
-                    actionParam="'open'">
-                    Modify
-                </BuilderButton>
-            </BuilderButtonGroup>
-        </div>
-    </t>
-    <t t-name="theme_scita_category_slider_3_option">
+<t t-name="theme_scita_category_slider_3_option">
         <div data-js="cat_slider_3" data-selector=".cat_slider_3">
             <BuilderButtonGroup>
                 <BuilderButton 
@@ -194,7 +181,6 @@
                 action="'googleMapModifyBtn'" 
                 title.translate="Map Options" 
                 icon="'fa fa-edit'" 
-                data-map=""
                 actionParam="'open'">
                 Map Options
             </BuilderButton>
@@ -207,7 +193,6 @@
             <BuilderButton 
                 action="'googleMapContentModifyBtn'" 
                 title.translate="Map Options" 
-                data-map_section=""
                 icon="'fa fa-edit'" 
                 actionParam="'open'">
                 Map Options
@@ -280,13 +265,7 @@
         </BuilderButtonGroup>
     </div>
 </t>
-    <!-- <template id="blog_5_custom_snippet_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom" data-snippet-option-id="blog_5_custom_snippet">
-                <we-button class="dropdown-item blog_5_custom" tabindex="-1" href="#" data-theme_scita_blog_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
+
 <t t-name="blog_5_custom_snippet_option">
     <div data-js="blog_5_custom_snippet" data-selector=".blog_5_custom">
         <BuilderButtonGroup>

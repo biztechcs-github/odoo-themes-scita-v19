@@ -264,8 +264,7 @@
     <!-- ========================================================= -->
 
     <!-- 🧩 Product Category Slider -->
-    <template id="product_category_snippet_price" inherit_id="theme_scita.product_category_img_slider_config_view">
-        <!-- Hide Price -->
+    <!-- <template id="product_category_snippet_price" inherit_id="theme_scita.product_category_img_slider_config_view">
         <xpath expr="//p[hasclass('price')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
@@ -274,7 +273,6 @@
             </attribute>
         </xpath>
 
-        <!-- Hide Add to Cart -->
         <xpath expr="//div[hasclass('ajax_cart_template')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
@@ -283,17 +281,14 @@
             </attribute>
         </xpath>
 
-        <!-- Show Login or Quote Button Based on Conditions -->
         <xpath expr="//div[hasclass('ajax_cart_template')]" position="after">
             <t t-if="website">
-                <!-- CASE 1: Public user -->
                 <t t-if="request.env.user._is_public() and website.login_see_price">
                     <a t-attf-href="/web/login"
                     class="btn btn-outline-primary login-price-btn">
                     Login to see price
                     </a>
                 </t>
-                <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(slide.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
                         <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
@@ -304,7 +299,7 @@
                 </t>
             </t>
         </xpath>
-    </template>
+    </template> -->
 
 
     <!-- 🧩 Fashion Multi Category Slider -->
@@ -601,6 +596,4 @@
         </xpath>
 
     </template>
-
-
 </odoo>

@@ -124,7 +124,6 @@ publish unpublish product
         'views/my_account_changes.xml',
         'views/new_snippets.xml',
         'views/shop_page_attribute.xml',
-        # 'views/theme_cusomization.xml',
         'views/bulk_buy_product_discount.xml',
         'views/snippets/snippets.xml',  
         'views/snippets/test_snippet.xml',
@@ -198,10 +197,8 @@ publish unpublish product
              'theme_scita/static/src/scss/product_hover_effect.scss'), 
             'https://unpkg.com/feather-icons/dist/feather.min.js',              
             'theme_scita/static/src/xml/hide_product_comparison_sticky.xml',
-            # 'theme_scita/static/src/js/carousel_product_card_override.js'
         ],
         'website.assets_wysiwyg': [
-            # 'theme_scita/static/src/js/new_scita_editor.js',
             '/theme_scita/static/src/xml/**/*',
            'theme_scita/static/src/js/timer_editor.js',
         ],
@@ -214,9 +211,6 @@ publish unpublish product
           'theme_scita/static/src/xml/scita_header_option.xml',
           'theme_scita/static/src/xml/scita_footer_option.xml',
           'theme_scita/static/src/xml/snippet_modify.xml',
-            # 'theme_scita/static/src/xml/scita_editor_option.xml',
-            # 'theme_scita/static/src/js/fashion_plugin.js',
-            'theme_scita/static/src/js/product_category.js',
             'theme_scita/static/src/js/category_slider.js',
             'theme_scita/static/src/js/category_slider2.js',
             'theme_scita/static/src/js/category_slider3.js',

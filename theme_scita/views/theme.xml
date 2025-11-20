@@ -69,9 +69,6 @@
         <xpath expr="//t[contains(@t-if, 'select')]//t[@t-foreach='a.value_ids']" position="attributes">
             <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
         </xpath>
-        <!-- <xpath expr="//t[contains(@t-if, 'radio')]//t[@t-foreach='a.value_ids']" position="attributes">
-            <attribute name="t-if">category and v in category.attributes_ids_values or not category</attribute>
-        </xpath> -->
     </template>
 
     <template id="biztech_website_product_brands" inherit_id="website_sale.products_attributes">
@@ -91,32 +88,6 @@
         <xpath expr="//div[@id='o_wsale_offcanvas_content']/t[@t-call='website_sale.product_attribute_filters_form']" position="after">
             <div class="accordion-item">
                 <t t-set="brands" t-value="website.get_product_brands(category)"/>
-                <!-- <t t-if="brands">
-                    <h2 id="o_wsale_offcanvas_brand_header" class="accordion-header mb-0">
-                        <button class="o_wsale_offcanvas_title accordion-button border-top rounded-0 collapsed"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#o_wsale_offcanvas_brands"
-                                aria-expanded="false"
-                                aria-controls="o_wsale_offcanvas_brands">
-                                <b>Brands</b>
-                        </button>
-                    </h2>
-                    <div id="o_wsale_offcanvas_brands"
-                        class="accordion-collapse collapse"
-                        aria-labelledby="o_wsale_offcanvas_brand_header">
-                        <div class="accordion-body pt-0">
-                            <div class="list-group list-group-flush">
-                                <div t-foreach="brands" t-as="a" class="list-group-item border-0 ps-0 pb-0">
-                                    <div class="form-check mb-1">
-                                        <input name="brand" t-attf-class="form-check-input brand_{{a.id}}" t-att-checked="'checked' if a.id in brand_set else None" t-attf-id="checkbox_brand_#{a.id}" t-att-value="a.id" type="checkbox"/>
-                                        <label class="form-check-label fw-normal" t-attf-for="checkbox_brand_#{a.id}" t-field="a.name"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </t> -->
             </div>
         </xpath>
         <xpath expr="//t[@t-call='website_sale.product_attribute_filters_form']" position="before">
@@ -1215,26 +1186,12 @@
         <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="attributes">
             <attribute name="class" add="ms-2" separator=" "/>
         </xpath>
-        <!-- Option: Replace Odoo 19 icon with FontAwesome icon (uncomment if needed) -->
-        <!-- <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']/i[@class='oi oi-settings-adjust']" position="attributes">
-            <attribute name="class" separator=" " add="fa fa-sliders" remove="oi oi-settings-adjust"/>
-        </xpath> -->
     </template>
     
     <template id="products_rating" inherit_id="website_sale.products_item">
         <xpath expr="//div[hasclass('o_wsale_product_sub','justify-content-between', 'gap-2')]" position="attributes">            
             <attribute name='class' add="justify-content-center" remove="justify-content-between" separator=" "/> 
         </xpath>
-        <!-- <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
-            <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
-                <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
-            </ul>
-        </xpath> -->
-         <!-- <xpath expr="//div[hasclass('o_wsale_product_information','flex-grow-1', 'flex-shrink-1')]" position="attributes">
-            <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
-            <attribute name='id'>sct_add_to_cart_hover</attribute>
-        </xpath> -->
     </template>
     <template id="scita_address_row" inherit_id="website_sale.address_list" name='Scita Row Address'>
         <xpath expr="//div" position="attributes">
@@ -1339,39 +1296,18 @@
                                                     <t t-call="website_sale.product_price"/>
                                                     <small t-if="combination_info['base_unit_price']"
                                                            class="ms-1 text-muted o_base_unit_price_wrapper d-none" groups="website_sale.group_show_uom_price">
-                                                        <!-- <t t-call='website_sale.base_unit_price'/> -->
                                                     </small>
                                                 </div>
                                                 <t t-placeholder="select">
                                                     <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
                                                     <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
                                                     <input t-if="product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="product.public_categ_ids.ids[0]" />
-                                                    <!-- <t t-call="website_sale.variants">..
-                                                        <t t-set="ul_class" t-valuef="flex-column" />
-                                                        <t t-set="parent_combination" t-value="None" />
-                                                    </t> -->
                                                     <t t-call="website_sale.variants">
                                                         <t t-set="ul_class" t-valuef="flex-column" />
                                                         <t t-set="parent_combination" t-value="None" />
                                                         <t t-set="combination" t-value="combination_info['combination']"/>
                                                     </t>
                                                 </t>
-                                                <!-- <t name="variant_info">
-                                                    <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="product_variant.id"/>
-                                                    <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="product.id"/>
-                                                    <input t-if="product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="product.public_categ_ids.ids[0]"/>
-                                                    <input type="hidden" name="product_type" t-att-value="product.type"/>
-                                                    <divt-attf-class="o_wsale_product_details_content_section o_wsale_product_details_content_section_attributes mb-4 {{not (product.valid_product_template_attribute_line_ids or product._has_multiple_uoms()) and 'd-none' or ''}}">
-                                                        <t t-call="website_sale.variants">
-                                                            <t t-set="ul_class" t-valuef="flex-column" />
-                                                            <t t-set="parent_combination" t-value="None" />
-                                                            <t
-                                                                t-set="combination"
-                                                                t-value="combination_info['combination']"
-                                                            />
-                                                        </t>
-                                                    </div>
-                                                </t> -->
                                                 <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
                                                 <t t-set="show_add_to_cart" t-value="not combination_info['prevent_zero_price_sale'] and (combination_info.get('allow_out_of_stock_order', True) or combination_info.get('free_qty', 0) &gt; 0)"/>
                                                 <div id="add_to_cart_wrap" t-attf-class="{{'d-inline-flex' if show_add_to_cart else 'd-none'}} align-items-center mb-2 me-auto">
@@ -1488,15 +1424,6 @@
             <div class="timer_counter_div"></div>
         </xpath>
     </template>
-    <!-- <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.product_add_to_wishlist">
-        <xpath expr="//span[hasclass('fa','fa-heart')]" position="attributes">
-            <attribute name='class'> lni lni-heart</attribute>
-        </xpath>
-        <xpath expr="//button[contains(@t-attf-class, 'btn') and contains(@t-attf-class, 'o_add_wishlist')]" position="attributes">
-            <attribute name="class">btn btn-xs o_add_wishlist</attribute>
-        </xpath>
-    </template> -->
-
     <template id="inherit_add_to_compare" inherit_id="website_sale_comparison.add_to_compare">
         <xpath expr="//button[hasclass('btn', 'o_add_compare')]" position="attributes">
             <attribute name="class">btn btn-xs o_add_compare</attribute>
@@ -1553,11 +1480,6 @@
             <attribute name="t-attf-class" add="def_mega_menu" separator=" "/>
         </xpath>
     </template>
-    <!-- <template id="scita_products_item_enable_add_cart" inherit_id="website_sale.products_item" name="Scita Add To Cart Enable" active='False'>
-        <xpath expr="//div[@id='sct_add_to_cart_hover']" position="attributes">
-            <attribute name='class' remove="sct_not_add_to_cart" separator=" "/>
-        </xpath>
-    </template> -->
     <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
         <xpath expr="//a" position="after">
         <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>

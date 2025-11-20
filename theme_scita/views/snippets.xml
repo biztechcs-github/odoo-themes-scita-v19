@@ -321,7 +321,6 @@
         </section>
     </template>
 
-
     <!-- Product Display Template (Content rendered inside dynamic_snippet_template) -->
     <template id="sct_product_snippet_1_view" name="Multi Product Snippet Configuration 1">
         <t t-set="products" t-value="products if products else []"/>
@@ -592,26 +591,7 @@
         </div>
     </template>
 
-    <template id="product_category_img_slider_config" name="Dynamic Product/Category Snippet">
-        <section class="multi_product_and_category_slider s_custom_img_category_slider" data-multi-cat-slider-type=""
-                 contentEditable="false" data-name="Dynamic Product/Category Snippet" data-disp='category_snippet' data-disp1="multi_product">
-            <div class="container">
-                <div class="row our-config-products cst_top_row">
-                    <div class="col-md-12 cst_flex_base">
-                        <div class="title-block">
-                            <h4 id="snippet-title" class="section-title style1">
-                                <span>Image Category Slider</span>
-                            </h4>
-                            <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-    <template id="product_category_img_slider_config_view" name="Product And category Slider">
+    <template id="timer_snippet_body" name="Timer">
         <div class='product_category_scita'>
             <div class="container">
                 <div class='row cst_top_row'>
@@ -1365,9 +1345,6 @@
     </template>
 
     <!-- Fashion banner End -->
-    <!-- IT Start -->
-
-
     <!-- html builder -->
     <template id="html_builder_snippet" name="HTML Builder Snippet">
         <section class="html_builder_new" data-multi-cat-slider-type="" contentEditable="false"

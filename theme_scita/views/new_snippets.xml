@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-
     <template id="deal_seller_multi_product_custom_snippet" name="Multi Deal Product Slider 1">
         <section class="deal_multi_product_slider" data-multi-cat-slider-type="" data-multi-deal-of-day-type=""
                  contentEditable="false" data-name="Multi Deal Product Slider 1" data-disp="multi_product" data-disp1="deal_days">
@@ -171,7 +169,6 @@
             </div>
         </section>
     </template>
-
     <template id="theme_scita_deal_of_the_day_view" name="Deal of the day 6">
         <div class="container">
             <div class="deal_day_wrap">

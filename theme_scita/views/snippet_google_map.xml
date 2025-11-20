@@ -19,9 +19,6 @@
                         <div class="map_data_container">
                             <span>Google Map Address</span>
                         </div>  
-                        <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/GoogleMap1.png" alt="Category Slider" class="img-fluid"/>
-                        </div>   
                     </div>
                     <div class="col-md-5 sct_map_info">
                         <h2 class='section-title'>A Section Subtitle</h2>
@@ -35,19 +32,4 @@
             </div>
         </section>
     </template>
-
-    <!-- <template id="s_google_map_option" inherit_id="website.snippet_options">
-        <xpath expr="." position="inside">
-            <div data-js="s_google_map" data-selector="section.google_map_v1">
-                <we-button data-map="" data-no-preview="true">
-                    <i class="fa fa-fw fa-cog"/>Map Options
-                </we-button>
-            </div>
-            <div data-js="s_google_map_content" data-selector="section.google_map_v2">
-                <we-button data-map_section="" data-no-preview="true">
-                    <i class="fa fa-fw fa-cog"/>Map Options
-                </we-button>
-            </div>
-        </xpath>
-    </template> -->
 </odoo>

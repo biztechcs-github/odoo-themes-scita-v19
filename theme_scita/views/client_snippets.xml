@@ -116,7 +116,6 @@
             <div class='col-md-12' t-if="not client_details">
                 <div class="sct_client_not">
                     <div class="block-title">
-                        <!-- <h3 class="fancy">Our partners</h3> -->
                         <p class='sct_simple_class'>No clients added . For configuring, please goto admin section Sales menu than goto Customers and select the customer/client open that specific record and you will see a checkbox 'Add to client slider' enable that option and that record will be visible.</p>
                     </div>
                 </div>

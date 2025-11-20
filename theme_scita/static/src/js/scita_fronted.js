@@ -20,7 +20,7 @@ $(document).ready(function(){
     });
    
 });
-    // animation.registry.oe_cat_slider = animation.Class.extend({
+    // Start
     publicWidget.registry.oe_cat_slider = publicWidget.Widget.extend({
 
         selector: ".oe_cat_slider",
@@ -114,9 +114,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
+    // End
 
     // Image Hotspot start
-    // animation.registry.oe_img_hotspot = animation.Class.extend({
     publicWidget.registry.oe_img_hotspot = publicWidget.Widget.extend({
 
         selector: ".oe_img_hotspot",
@@ -150,9 +150,9 @@ $(document).ready(function(){
             }
         }
     });
+    //End
 
-    //end
-    // animation.registry.theme_scita_product_slider = animation.Class.extend({
+    // Start
     publicWidget.registry.theme_scita_product_slider = publicWidget.Widget.extend({ 
         selector: ".oe_prod_slider",
         disabledInEditableMode: false,
@@ -221,7 +221,9 @@ $(document).ready(function(){
             }
         }
     });
-    // animation.registry.fashion_multi_cat_custom_snippet = animation.Class.extend({
+    //End
+
+    // Start
     publicWidget.registry.fashion_multi_cat_custom_snippet = publicWidget.Widget.extend({ 
 
         selector: ".fashion_multi_category_slider",
@@ -351,9 +353,7 @@ $(document).ready(function(){
                                 },
                             });
                         });
-                        // $(document).on('change', 'input[name="add_qty"]', function(ev){
-                        //     WebsiteSale._onChangeAddQuantity(ev);
-                        // });
+                       
                         $(document).on('click', '.dropdown-plus', function(ev){
                                 ev.stopPropagation();
                                 ev.stopImmediatePropagation();
@@ -536,8 +536,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // // for box brand slider 
-    // animation.registry.brands_box_slider_4 = animation.Class.extend({
+    //End
+
+    // Start
     publicWidget.registry.brands_box_slider_4 = publicWidget.Widget.extend({ 
         selector: ".box_brand_slider",
         disabledInEditableMode: false,
@@ -669,8 +670,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // // for brand slider 
-    // animation.registry.it_prod_brands = animation.Class.extend({
+    //End
+
+    // Start
     publicWidget.registry.it_prod_brands = publicWidget.Widget.extend({ 
         selector: ".it_brand_slider",
         disabledInEditableMode: false,
@@ -771,8 +773,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // for blog snippets/sliders
-    // animation.registry.theme_scita_blog_custom_snippet = animation.Class.extend({
+    //End 
+
+    // Start
     publicWidget.registry.theme_scita_blog_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".scita_blog_slider",
         disabledInEditableMode: false,
@@ -865,7 +868,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.blog_2_custom_snippet = animation.Class.extend({
+    // End
+
+    // Start
     publicWidget.registry.blog_2_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_2_custom",
         disabledInEditableMode: false,
@@ -992,7 +997,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.blog_4_custom_snippet = animation.Class.extend({
+    // End
+    
+    // Start
     publicWidget.registry.blog_4_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_4_custom",
         disabledInEditableMode: false,
@@ -1085,7 +1092,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.blog_5_custom_snippet = animation.Class.extend({
+    // End
+
+    // Start
     publicWidget.registry.blog_5_custom_snippet = publicWidget.Widget.extend({ 
         selector: ".blog_5_custom",
         disabledInEditableMode: false,
@@ -1212,9 +1221,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
+    // End
     
-    // Client sliders 2
-    // animation.registry.third_client_slider_snippet = animation.Class.extend({
+    // Client sliders 2 Start
     publicWidget.registry.third_client_slider_snippet = publicWidget.Widget.extend({ 
         selector: ".testimonial-client-slider",
         disabledInEditableMode: false,
@@ -1295,9 +1304,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
+    // Client sliders 2 End
     
-    // Our Team
-    // animation.registry.it_our_team = animation.Class.extend({
+    // Our Team Start
     publicWidget.registry.it_our_team = publicWidget.Widget.extend({ 
         selector: ".our_team_1",
         disabledInEditableMode: false,
@@ -1407,7 +1416,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.our_team_varient_3 = animation.Class.extend({
+    // Our Team End
+
+    // Start
     publicWidget.registry.our_team_varient_3 = publicWidget.Widget.extend({ 
         selector: ".our_team_3",
         disabledInEditableMode: false,
@@ -1517,7 +1528,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.our_team_varient_5 = animation.Class.extend({
+    // End
+
+    // Start
     publicWidget.registry.our_team_varient_5 = publicWidget.Widget.extend({ 
         selector: ".our_team_5",
         disabledInEditableMode: false,
@@ -1627,8 +1640,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
+    // End
 
-    // animation.registry.cat_slider_3 = animation.Class.extend({
+    // Start
     publicWidget.registry.cat_slider_3 = publicWidget.Widget.extend({ 
         selector: ".cat_slider_3",
         disabledInEditableMode: false,
@@ -1753,7 +1767,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // animation.registry.cat_slider_4 = animation.Class.extend({
+    // End
+
+    // Start
     publicWidget.registry.cat_slider_4 = publicWidget.Widget.extend({ 
         selector: ".cat_slider_4",
         disabledInEditableMode: false,
@@ -1878,316 +1894,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-    // // brand and product/category snippet end
+    // End
 
-    publicWidget.registry.product_category_img_slider_config = publicWidget.Widget.extend({
-            selector: ".multi_product_and_category_slider",
-            disabledInEditableMode: false,
-        
-            events: {
-                "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
-                "mouseleave .css_attribute_color": "_onMouseLeave",
-                "click .js_add_cart": "_onClickAddToCart",
-                "click .js_add_cart_json": "_onClickUpdateQty",
-                'click .cart_view_sct_btn': 'cartViewData',
-            },
-            
-            _restorePlaceholder: function() {
-                var self = this;
-                // self.$target is the section element itself (selector: .multi_product_and_category_slider)
-                // Check if this is rendered content (has rendered product/category content)
-                var hasRenderedContent = self.$target.find('.product_category_scita, .cst_category-slider-section, .cat_list, .cst_sct_left_side, .cst_sct_right_side, .cs-cat, .pwd-desc, .pwp-info, .cs-product').length > 0;
-                var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
-                
-                // In editable mode, always restore placeholder if we have rendered content
-                // This ensures the HTML editor sees the placeholder, not the full rendered content
-                if (hasRenderedContent && (this.editableMode || $('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable'))) {
-                    var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                    var slider_id = self.$target.attr('data-multi-cat-slider-id');
-                    var titleText = _t("Product Slider");
-                    
-                    // Get title from rendered content if exists
-                    var $existingTitle = self.$target.find('.section-title, h2.section-title, h4.section-title');
-                    if ($existingTitle.length) {
-                        var title = $existingTitle.first().text().trim();
-                        if (title) {
-                            titleText = title;
-                        }
-                    }
-                    
-                    // Restore placeholder structure - replace the entire section content
-                    self.$target.html(`
-                        <div class="container">
-                            <div class="row our-config-products cst_top_row">
-                                <div class="col-md-12 cst_flex_base">
-                                    <div class="title-block">
-                                        <h4 id="snippet-title" class="section-title style1">
-                                            <span>${titleText}</span>
-                                        </h4>
-                                        <div class="category-slider-placeholder">
-                                            <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Slider" class="img-fluid"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `);
-                    
-                    // Restore attributes
-                    if (slider_type) {
-                        self.$target.attr('data-multi-cat-slider-type', slider_type);
-                    }
-                    if (slider_id) {
-                        self.$target.attr('data-multi-cat-slider-id', slider_id);
-                    }
-                }
-            },
-        
-            start: function () {
-                const self = this;
-                if (this.editableMode) {
-                    // Restore placeholder immediately when in editable mode
-                    self._restorePlaceholder();
-                    
-                    // Also listen for when body gets editor_enable class (editable mode enabled)
-                    var checkEditableMode = function() {
-                        if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
-                            // Restore placeholder immediately when editor is enabled
-                            self._restorePlaceholder();
-                        }
-                    };
-                    
-                    // Check immediately and multiple times to catch timing issues
-                    setTimeout(function() { self._restorePlaceholder(); }, 0);
-                    setTimeout(checkEditableMode, 10);
-                    setTimeout(function() { self._restorePlaceholder(); }, 50);
-                    setTimeout(checkEditableMode, 50);
-                    setTimeout(function() { self._restorePlaceholder(); }, 100);
-                    setTimeout(checkEditableMode, 100);
-                    setTimeout(function() { self._restorePlaceholder(); }, 200);
-                    setTimeout(checkEditableMode, 200);
-                    
-                    // Listen for HTML editor button click (use capture phase to fire early)
-                    var codeViewHandler = function(e) {
-                        // Restore placeholder synchronously before HTML editor reads content
-                        self._restorePlaceholder();
-                    };
-                    // Use capture phase to ensure we fire before other handlers
-                    document.addEventListener('click', function(e) {
-                        if (e.target && (e.target.classList.contains('o_codeview_btn') || e.target.closest('.o_codeview_btn'))) {
-                            codeViewHandler(e);
-                        }
-                    }, true); // true = capture phase
-                    this._codeViewHandler = codeViewHandler;
-                    
-                    // Also check when DOM changes (in case editable mode is enabled later)
-                    if (typeof MutationObserver !== 'undefined') {
-                        var observer = new MutationObserver(function(mutations) {
-                            // Check if editor_enable class was added
-                            if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
-                                self._restorePlaceholder();
-                            }
-                        });
-                        observer.observe(document.body, {
-                            attributes: true,
-                            attributeFilter: ['class'],
-                            subtree: true
-                        });
-                        this._observer = observer;
-                    }
-                }
-                if (!this.editableMode) {
-                    rpc("/product_category_img_slider", {
-                        "slider-type": self.$target.attr("data-multi-cat-slider-type") || "",
-                    }).then(function (data) {
-                        if (data) {
-                            // 1. Convert the HTML string into a jQuery object
-                            const $newContent = $(data); 
-                            
-                            // 2. Clear the target and append the new content
-                            self.$target.empty().append($newContent);
-                            $(".multi_product_and_category_slider").removeClass("hidden");
-
-                            // 3. 🔑 CRITICAL STEP: Trigger an event to rebind all public widgets
-                            // This tells Odoo to scan the newly added HTML ($newContent) 
-                            // and initialize any widgets (like cart buttons) found inside.
-                            self.trigger_up('widgets_start_request', { 
-                                $target: $newContent 
-                            });
-
-                        }
-                    }).catch((err) => console.error("Slider load failed:", err));
-                }
-            },
-
-            cartViewData: function (ev) {
-                const element = ev.currentTarget;
-                const product_id = $(element).attr('data-id');
-                rpc('/theme_scita/shop/cart_view', { product_id }).then(function (data) {
-                    $("#shop_cart_view_modal").html(data).modal("show");
-                });
-            },
-        
-            // 🛒 ADD TO CART BUTTON (main "Add" button)
-            _onClickAddToCart: function (ev) {
-                ev.preventDefault();
-                ev.stopPropagation();
-            
-                const $btn = $(ev.currentTarget);
-                const $cartWrapper = $btn.closest(".ajax_cart_template");
-                const $qtyInput = $cartWrapper.find("input.quantity");
-                
-                const $productIDInput = $cartWrapper.find("input[name='product_id']");
-                const productID = parseInt($productIDInput.val()); 
-                const productTemplateID = parseInt($btn.data("templateId"));
-                const addQuantity = parseInt($qtyInput.val()) || 1;
-            
-                const self = this;
-                
-                // Strategy: Use custom endpoint to get cart lines for this product
-                rpc("/shop/cart/get_lines", {
-                    product_id: productID
-                }).then((cartLines) => {
-                    // Check if product already exists in cart
-                    const existingLine = cartLines.length > 0 ? cartLines[0] : null;
-                    
-                    if (existingLine) {
-                        const newQuantity = existingLine.quantity + addQuantity;
-                        
-                        // Update existing line with new total quantity
-                        return rpc("/shop/cart/update", {
-                            line_id: existingLine.line_id,
-                            product_id: productID,
-                            quantity: newQuantity
-                        });
-                    } else {
-                        // Product doesn't exist, add it
-                        return rpc("/shop/cart/add", {
-                            product_id: productID,
-                            product_template_id: productTemplateID,
-                            quantity: addQuantity,
-                        });
-                    }
-                }).then((data) => {
-                    if (data.cart_quantity) {
-                        self._updateCartIcon(data.cart_quantity);
-                    }
-                    
-                    if (data.notification_info) {
-                        self._showCartNotification(self.call.bind(self), data.notification_info);
-                    }
-                    
-                    if (data.quantity && data.tracking_info) {
-                        self._trackProducts(data.tracking_info);
-                    }
-                    
-                }).catch((err) => {
-                    // Silent error handling
-                });
-            },
-
-            _showCartNotification(callService, props, options = {}) {
-                // Show the notification about the cart
-                if (props.lines) {
-                    callService("cartNotificationService", "add", _t("Item(s) added to your cart"), {
-                        lines: props.lines,
-                        currency_id: props.currency_id,
-                        ...options,
-                    });
-                }
-                if (props.warning) {
-                    callService("cartNotificationService", "add", _t("Warning"), {
-                        warning: props.warning,
-                        ...options,
-                    });
-                }
-            },
-            
-            _updateCartIcon: function (cartQuantity) {
-                browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
-            
-                // Update mobile and desktop cart quantities
-                const cartQuantityElements = document.querySelectorAll('.my_cart_quantity, .o_wsale_my_cart_quantity');
-                for (const cartQuantityElement of cartQuantityElements) {
-                    if (cartQuantity === 0) {
-                        cartQuantityElement.classList.add('d-none');
-                    } else {
-                        const cartIconElement = document.querySelector('li.o_wsale_my_cart');
-                        if (cartIconElement) {
-                            cartIconElement.classList.remove('d-none');
-                        }
-                        cartQuantityElement.classList.remove('d-none');
-                        cartQuantityElement.classList.add('o_mycart_zoom_animation');
-            
-                        setTimeout(() => {
-                            cartQuantityElement.textContent = cartQuantity;
-                            cartQuantityElement.classList.remove('o_mycart_zoom_animation');
-                        }, 300);
-                    }
-                }
-            },
-
-            _trackProducts(trackingInfo) {
-                document.querySelector('.oe_website_sale').dispatchEvent(
-                    new CustomEvent('add_to_cart_event', {'detail': trackingInfo})
-                );
-            },
-
-            _onClickUpdateQty: function (ev) {
-                ev.preventDefault();
-                const $btn = $(ev.currentTarget);
-                const $qtyInput = $btn.closest('.input-group').find('input.quantity');
-            
-                let qty = parseInt($qtyInput.val()) || 1;
-                qty += $btn.attr('aria-label') === 'Remove one' ? -1 : 1;
-            
-                if (qty < 1) qty = 1;
-                $qtyInput.val(qty).trigger('change');
-            },
-        
-            // 🎨 SWATCH HOVER PREVIEW
-            _onMouseEnterSwatch: function (ev) {
-                const $swatch = $(ev.currentTarget);
-                const $product = $swatch.closest('.cs-product');
-                const $img = $product.find('img').first();
-        
-                this.image = $img;
-                this.defaultSrc = $img.attr('data-default-img-src');
-                const previewSrc = $swatch.find('label').data('previewImgSrc');
-        
-                if (previewSrc) {
-                    this._updateImgSrc(previewSrc, $img);
-                    $swatch.addClass("active");
-                }
-            },
-        
-            _onMouseLeave: function () {
-                this._updateImgSrc(this.defaultSrc, this.image);
-            },
-        
-            _updateImgSrc: function (src, $img) {
-                if ($img && src) {
-                    $img.attr('src', src);
-                }
-            },
-            
-            destroy: function() {
-                // Clean up observer if it exists
-                if (this._observer) {
-                    this._observer.disconnect();
-                    this._observer = null;
-                }
-                // Clean up code view button listener
-                if (this._codeViewHandler) {
-                    // Note: We can't easily remove capture phase listeners, but this is okay
-                    // as the widget will be destroyed when leaving editable mode
-                    this._codeViewHandler = null;
-                }
-                return this._super.apply(this, arguments);
-            }
-        });   
-    
-    // animation.registry.sct_product_snippet_1 = animation.Class.extend({
+    // Start
     publicWidget.registry.sct_product_snippet_1 = publicWidget.Widget.extend({ 
             selector: ".sct_product_snippet_1",
             disabledInEditableMode: false,
@@ -2402,24 +2111,6 @@ $(document).ready(function(){
                     });
                 },
 
-                // _showCartNotification(callService, props, options = {}) {
-                //     // Show the notification about the cart
-                //     if (props.lines) {
-                //         callService("cartNotificationService", "add", _t("Item(s) added to your cart"), {
-                //             lines: props.lines,
-                //             currency_id: props.currency_id,
-                //             ...options,
-                //         });
-                //     }
-                //     if (props.warning) {
-                //         callService("cartNotificationService", "add", _t("Warning"), {
-                //             warning: props.warning,
-                //             ...options,
-                //         });
-                //     }
-                // },
-                
-
                 _updateCartIcon: function (cartQuantity) {
                     browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
                 
@@ -2498,9 +2189,9 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         },
     });
-    
-    // // Dynamic Video banner js start
-    // animation.registry.dynamic_video_banner = animation.Class.extend({
+    // End
+
+    // Dynamic Video banner js start
     publicWidget.registry.dynamic_video_banner = publicWidget.Widget.extend({ 
         selector: ".dynamic_video_banner",
         disabledInEditableMode: false,
@@ -2598,10 +2289,10 @@ $(document).ready(function(){
             return this._super.apply(this, arguments);
         }
     });
-//     Dynamic Video banner js End
-        // Dynamic Top Dealers Snippet Start
-        // animation.registry.dynamic_top_dealers = animation.Class.extend({
-        publicWidget.registry.dynamic_top_dealers = publicWidget.Widget.extend({ 
+    // Dynamic Video banner js End
+
+    // Dynamic Top Dealers Snippet Start
+    publicWidget.registry.dynamic_top_dealers = publicWidget.Widget.extend({ 
             selector: ".oe_top_dealers_section",
             disabledInEditableMode: false,
             
@@ -2682,10 +2373,10 @@ $(document).ready(function(){
                 }
                 return this._super.apply(this, arguments);
             },
-        });
+    });
     // Dynamic Top Dealers Snippet End
-        // Dynamic Trending Products Snippet Start
-    // animation.registry.dynamic_trending_products = animation.Class.extend({
+    
+    // Dynamic Trending Products Snippet Start
     publicWidget.registry.dynamic_trending_products = publicWidget.Widget.extend({ 
         selector: ".oe_trending_products_section",
         disabledInEditableMode: false,
@@ -3027,4 +2718,3 @@ $(document).ready(function(){
         }
     });
     // Dynamic Trending Products Snippet End
-// });
