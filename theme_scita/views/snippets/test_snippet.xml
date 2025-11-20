@@ -260,6 +260,9 @@
             <t t-snippet="theme_scita.sct_product_snippet_1" string="Product Snippet 1" group="scita_multi_product">
                 <keywords>product, snippet, showcase</keywords>
             </t>
+            <t t-snippet="theme_scita.sct_product_snippet_2" string="Product Image Snippet Configuration" group="scita_multi_product">
+                <keywords>product, snippet, showcase, replica, image</keywords>
+            </t>
             <t t-snippet="theme_scita.deal_of_day_banner_6" string="Deal of Day Banner" group="scita_multi_product">
                 <keywords>deal, discount, offer, day, banner</keywords>
             </t>

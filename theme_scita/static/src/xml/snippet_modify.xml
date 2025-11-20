@@ -58,7 +58,7 @@
     <div data-js="fashion_multi_cat_custom_snippet">
         <BuilderButtonGroup>
             <BuilderButton 
-                action="'fashion_multi_cat_modifyBtn'" 
+                action="'fashion_modifyBtn'" 
                 title.translate="Modify" 
                 icon="'fa fa-edit'" 
                 actionParam="'open'">
@@ -151,6 +151,20 @@
         <BuilderButtonGroup>
             <BuilderButton 
                 action="'sctProductModifyBtn'" 
+                title.translate="Modify" 
+                icon="'fa fa-edit'" 
+                actionParam="'open'">
+                Modify
+            </BuilderButton>
+        </BuilderButtonGroup>
+    </div>
+</t>
+
+<t t-name="sct_product_snippet_2_option">
+    <div data-js="sct_product_snippet_2" data-selector=".sct_product_snippet_2">
+        <BuilderButtonGroup>
+            <BuilderButton 
+                action="'sctProductModifyBtn2'" 
                 title.translate="Modify" 
                 icon="'fa fa-edit'" 
                 actionParam="'open'">

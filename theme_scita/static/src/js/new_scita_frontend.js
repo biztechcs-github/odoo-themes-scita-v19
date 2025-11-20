@@ -17,15 +17,16 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
             // Check if this is rendered content (has deal seller content)
             var hasRenderedContent = self.$target.find('.deal-wrapper, .deal-inner, .product-slider, .deal-slider, .best-seller-row, .owl-carousel').length > 0;
             var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
+            var hasContent = self.$target.find('.container, .title-block, .section-title').length > 0;
             
-            // Only restore if we have rendered content and no placeholder
-            if (hasRenderedContent && !hasPlaceholder) {
+            // Restore if: (has rendered content and no placeholder) OR (no content at all and no placeholder)
+            if ((hasRenderedContent && !hasPlaceholder) || (!hasContent && !hasPlaceholder)) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
                 var deal_type = self.$target.attr('data-multi-deal-of-day-type');
                 var titleText = _t("Deal Seller Multi Product Snippet");
                 
                 // Get title from rendered content if exists
-                var $existingTitle = self.$target.find('.section-title-wrapper h2, h2.section-title, .title-block h2');
+                var $existingTitle = self.$target.find('.section-title-wrapper h2, h2.section-title, h4.section-title, .title-block h2, .title-block h4');
                 if ($existingTitle.length) {
                     var title = $existingTitle.first().text().trim();
                     if (title) {
@@ -33,18 +34,18 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
                     }
                 }
                 
-                // Restore placeholder structure
+                // Restore placeholder structure (matching fashion snippet structure)
                 self.$target.html(`
                     <div class="container">
                         <div class="row our-categories">
                             <div class="col-md-12">
                                 <div class="title-block">
-                                    <h2 id="snippet-title" class="section-title style1">
+                                    <h4 id="snippet-title" class="section-title style1">
                                         <span>${titleText}</span>
-                                    </h2>
-                                    <div class="category-slider-placeholder">
-                                        <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
-                                    </div>
+                                    </h4>
+                                </div>
+                                <div class="category-slider-placeholder">
+                                    <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +64,8 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
         
         start: function() {
             var self = this;
-            this.redrow();
             if (this.editableMode) {
+                // Don't call redrow() in editable mode - it clears the content
                 // Restore placeholder when in editable mode
                 self._restorePlaceholder();
                 
@@ -90,8 +91,9 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
                     });
                     this._observer = observer;
                 }
-            }
-            if (!this.editableMode) {
+            } else {
+                // Only call redrow() when not in editable mode
+                this.redrow();
                 var slider_deals = self.$target.attr('data-multi-deal-of-day-type');
                 rpc("/deal/product_multi_get_dynamic_seller", {
                     'slider-deal': self.$target.attr('data-multi-deal-of-day-type') || '',
@@ -561,24 +563,6 @@ publicWidget.registry.oe_deal_of_the_day = publicWidget.Widget.extend({
                     // Silent error handling
                 });
             },
-
-            _showCartNotification(callService, props, options = {}) {
-                // Show the notification about the cart
-                if (props.lines) {
-                    callService("cartNotificationService", "add", _t("Item(s) added to your cart"), {
-                        lines: props.lines,
-                        currency_id: props.currency_id,
-                        ...options,
-                    });
-                }
-                if (props.warning) {
-                    callService("cartNotificationService", "add", _t("Warning"), {
-                        warning: props.warning,
-                        ...options,
-                    });
-                }
-            },
-            
 
             _updateCartIcon: function (cartQuantity) {
                 browser.sessionStorage.setItem('website_sale_cart_quantity', cartQuantity);
