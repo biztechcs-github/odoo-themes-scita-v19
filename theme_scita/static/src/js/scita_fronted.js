@@ -2216,7 +2216,7 @@ $(document).ready(function(){
                                             <span>${titleText}</span>
                                         </h4>
                                         <div class="category-slider-placeholder">
-                                            <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
+                                            <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Snippet" class="img-fluid"/>
                                         </div>
                                     </div>
                                 </div>
@@ -2420,11 +2420,44 @@ $(document).ready(function(){
 
                 _onClickUpdateQty: function (ev) {
                     ev.preventDefault();
+                    ev.stopPropagation(); // Prevent global handler from interfering
                     const $btn = $(ev.currentTarget);
-                    const $qtyInput = $btn.closest('.input-group').find('input.quantity');
+                    
+                    // Check if button is inside .dropdown-plus (initial plus icon)
+                    const $clickedElement = $btn.closest('.js_add_cart_json');
+                    const $dropdownPlus = $clickedElement.closest('.dropdown-plus');
+                    
+                    if ($dropdownPlus.length) {
+                        // Check if this is the initial plus icon (not the one inside quantity field)
+                        const hasAriaLabel = $clickedElement.attr('aria-label');
+                        if (!hasAriaLabel) {
+                            // This is the initial plus icon - show the quantity field
+                            const $qtyContainer = $dropdownPlus.next('.dropdown-plus-out');
+                            if ($qtyContainer.length && $qtyContainer.hasClass('o_hidden')) {
+                                $qtyContainer.removeClass('o_hidden');
+                                // Set initial quantity to 1 if not set
+                                const $qtyInput = $qtyContainer.find('input.quantity');
+                                if ($qtyInput.length && !$qtyInput.val()) {
+                                    $qtyInput.val(1);
+                                }
+                                return; // Don't update quantity on first click, just show the field
+                            }
+                        }
+                    }
+                    
+                    // Normal quantity update logic (for plus/minus buttons inside quantity field)
+                    const $cartWrapper = $btn.closest('.ajax_cart_template, .cart_wrapper');
+                    const $qtyInput = $cartWrapper.length 
+                        ? $cartWrapper.find('input.quantity')
+                        : $btn.closest('.input-group').find('input.quantity');
+                
+                    if (!$qtyInput.length) {
+                        return; // Quantity input not found
+                    }
                 
                     let qty = parseInt($qtyInput.val()) || 1;
-                    qty += $btn.attr('aria-label') === 'Remove one' ? -1 : 1;
+                    const ariaLabel = $clickedElement.attr('aria-label');
+                    qty += ariaLabel === 'Remove one' ? -1 : 1;
                 
                     if (qty < 1) qty = 1;
                     $qtyInput.val(qty).trigger('change');

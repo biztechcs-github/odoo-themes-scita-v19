@@ -50,7 +50,7 @@ async function openDynamicProductModal2(snippetEl) {
                                 <span>${_t(selectedOption)}</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/feature-product.png" alt="Product Snippet" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Snippet" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
