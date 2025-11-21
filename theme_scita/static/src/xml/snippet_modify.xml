@@ -58,7 +58,7 @@
     <div data-js="fashion_multi_cat_custom_snippet">
         <BuilderButtonGroup>
             <BuilderButton 
-                action="'fashion_modifyBtn'" 
+                action="'fashion_multi_cat_modifyBtn'" 
                 title.translate="Modify" 
                 icon="'fa fa-edit'" 
                 actionParam="'open'">

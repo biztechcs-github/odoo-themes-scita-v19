@@ -603,7 +603,7 @@
                                 <span>Product Configuration</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Snippet" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
@@ -858,8 +858,6 @@
                                                     </a>
                                                 </t>
                                         </div>
-                                    </div>
-                        </div>
                         <div class='cart_wrapper add_cart_div ajax_cart_template'>
                                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                 <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
@@ -867,7 +865,7 @@
                                     ADD
                                 </button>
                                 <div class="input-group-append dropdown-plus">
-                                    <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                    <span class="btn btn-link float_left" title="Add">
                                         <i class="fa fa-plus"/>
                                     </span>
                                 </div>
@@ -884,6 +882,8 @@
                                         <i class="oi oi-plus"/>
                                     </a>
                                 </div>
+                        </div>
+                                    </div>
                         </div>
                             
                             </form>
