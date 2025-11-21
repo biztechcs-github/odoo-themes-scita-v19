@@ -96,7 +96,7 @@
                             </div>
                             <div class='d-flex flex-wrap testimonial-client-slider' id='our_partner_testimonial'>
                                 <div class="category-slider-placeholder">
-                                    <img src="/theme_scita/static/src/img/client.jpeg" alt="Client Slider" class="img-fluid"/>
+                                    <img src="/theme_scita/static/src/img/third_client_slider.png" alt="Client Slider" class="img-fluid"/>
                                 </div>
                             </div>
                         </div>

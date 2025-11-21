@@ -1233,7 +1233,7 @@ $(document).ready(function(){
                 // Restore placeholder structure
                 self.$target.html(`
                     <div class="category-slider-placeholder">
-                        <img src="/theme_scita/static/src/img/client.jpeg" alt="Client Slider" class="img-fluid"/>
+                        <img src="/theme_scita/static/src/img/third_client_slider.png" alt="Client Slider" class="img-fluid"/>
                     </div>
                 `);
             }
