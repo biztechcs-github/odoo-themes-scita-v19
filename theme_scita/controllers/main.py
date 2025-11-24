@@ -644,25 +644,6 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/custom_pro_get_dynamic_slider'], type='jsonrpc', auth='public', website=True)
-    def custom_pro_get_dynamic_slider(self, **post):
-        if post.get('slider-type'):
-            slider_header = request.env['product.category.img.slider.config'].sudo().search(
-                [('id', '=', int(post.get('slider-type')))])
-            values = {
-                'slider_header': slider_header
-            }
-            if slider_header.prod_cat_type == 'product':
-                values.update(
-                    {'slider_details': slider_header.collections_product})
-            if slider_header.prod_cat_type == 'category':
-                values.update(
-                    {'slider_details': slider_header.collections_category})
-            values.update({'slider_type': slider_header.prod_cat_type})
-            website = request.env['website'].get_current_website()
-            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
-            return IrQweb._render("theme_scita.custom_scita_cat_slider_view", values)
-
     @http.route(['/theme_scita/custom_get_brand_slider'], type='jsonrpc', auth='public', website=True)
     def custom_get_brand_slider(self, **post):
         keep = QueryURL('/theme_scita/custom_get_brand_slider', brand_id=[])
@@ -676,16 +657,6 @@ class ScitaSliderSettings(http.Controller):
         website = request.env['website'].get_current_website()
         IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
         return IrQweb._render("theme_scita.custom_scita_brand_slider_view", values)
-
-    @http.route(['/theme_scita/pro_get_options'], type='jsonrpc', auth="public", website=True)
-    def get_slider_options(self):
-        slider_options = []
-        option = request.env['product.category.img.slider.config'].sudo().search(
-            [('active', '=', True)], order="name asc")
-        for record in option:
-            slider_options.append({'id': record.id,
-                                   'name': record.name})
-        return slider_options
 
     # Zipcode delivery status
     @http.route(['/shop/zipcode'], type='jsonrpc', auth="public", website=True)
@@ -779,6 +750,60 @@ class ScitaSliderSettings(http.Controller):
     def snippet_get_product_configuration(self):
         slider_options = []
         option = request.env['product.snippet.configuration'].sudo().search(
+            [('active', '=', True)], order="name asc")
+        for record in option:
+            slider_options.append({'id': record.id,
+                                   'name': record.name})
+        return slider_options
+
+    @http.route(['/product_column_five_two'], type='jsonrpc', auth='public', website=True)
+    def get_product_column_five_two(self, **post):
+        context, pool = dict(request.context), request.env
+        if post.get('slider-type'):
+            slider_header = request.env['product.snippet.configuration.two'].sudo().search([
+                ('id', '=', int(post.get('slider-type')))
+            ])
+            if not slider_header:
+                return {'html': ''}
+
+            if not context.get('pricelist'):
+                current_website = request.website.get_current_website()
+                pricelist = current_website.get_pricelist_available()
+                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
+            else:
+                pricelist_ids = context['pricelist']
+                if isinstance(pricelist_ids, list):
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids[0])
+                else:
+                    pricelist = pool['product.pricelist'].browse(pricelist_ids)
+
+            # Ensure singleton here as well
+            pricelist = pricelist[0] if pricelist and len(pricelist) > 1 else pricelist
+
+            context.update({'pricelist': pricelist.id})
+            from_currency = pool['res.users'].sudo().browse(
+                SUPERUSER_ID).company_id.currency_id
+            to_currency = pricelist.currency_id
+
+            def compute_currency(price):
+                return pool['res.currency']._convert(
+                    price, from_currency, to_currency, fields.Date.today())
+
+            values = {
+                'slider_details': slider_header,
+                'slider_header': slider_header,
+                'compute_currency': compute_currency,
+                'products': slider_header.collection_of_products
+            }
+            website = request.env['website'].get_current_website()
+            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
+            html = IrQweb._render("theme_scita.sct_product_snippet_2_view", values)
+            return {'html': html}
+
+    @http.route(['/theme_scita/product_configuration_two'], type='jsonrpc', auth="public", website=True)
+    def snippet_get_product_configuration_two(self):
+        slider_options = []
+        option = request.env['product.snippet.configuration.two'].sudo().search(
             [('active', '=', True)], order="name asc")
         for record in option:
             slider_options.append({'id': record.id,
@@ -1256,53 +1281,6 @@ class ScitaShop(WebsiteSale):
         if kw['prod_id']:
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
-
-    @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
-    def config_cat_product(self, **post):
-        context, pool = dict(request.env.context), request.env
-        if post.get('slider-type'):
-            slider_header = request.env['product.category.img.slider.config'].sudo().search(
-                [('id', '=', int(post.get('slider-type')))])
-            if not context.get('pricelist'):
-                # pricelist = request.website.get_current_pricelist()
-                current_website = request.website.get_current_website()
-                pricelist = current_website.get_pricelist_available()
-                context = dict(request.env.context, pricelist=pricelist.ids[0] if pricelist else 1)
-            else:
-                pricelist = pool.get('product.pricelist').browse(
-                    context['pricelist'])
-                context.update({'pricelist': pricelist.id})
-                from_currency = pool['res.users'].sudo().browse(
-                    SUPERUSER_ID).company_id.currency_id
-                to_currency = pricelist.currency_id
-
-            def compute_currency(price):
-                return pool['res.currency']._convert(
-                    price, from_currency, to_currency, fields.Date.today())
-
-            values = {
-                'slider_header': slider_header,
-                'compute_currency': compute_currency,
-            }
-            if slider_header.prod_cat_type == 'product':
-                values.update({'slider_details': slider_header.collections_product})
-            if slider_header.prod_cat_type == 'category':
-                values.update({'slider_details': slider_header.collections_category})
-            website = request.env['website'].get_current_website()
-            values.update({'slider_type': slider_header.prod_cat_type, 'website': website})
-            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
-            return IrQweb._render("theme_scita.product_category_img_slider_config_view", values)
-        return False
-
-    @http.route(['/theme_scita/product_category_slider'], type='jsonrpc', auth="public", website=True)
-    def get_product_category(self):
-        slider_options = []
-        option = request.env['product.category.img.slider.config'].sudo().search(
-            [('active', '=', True)], order="name asc")
-        for record in option:
-            slider_options.append({'id': record.id,
-                                   'name': record.name})
-        return slider_options
 
     @http.route(['/theme_scita/get_current_wishlist'], type='jsonrpc', auth="public", website=True)
     def get_current_wishlist(self):

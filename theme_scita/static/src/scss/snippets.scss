@@ -9025,7 +9025,7 @@ body #wrapwrap{
 }
 /*Html Snippet builder end*/
 /*brand and product/category snippet 2*/
-.s_custom_img_category_slider {
+.s_custom_img_category_slider, .sct_product_snippet_2 {
 	padding: 50px 0;
 	@include min992{
 		padding: 60px 0;
@@ -12590,3 +12590,238 @@ body #wrapwrap{
 .s_countdown{
 	display: none;
 }
+
+// sct_product_snippet_2 css start here
+.sct_product_snippet_2 {
+	.sct-snippet-full {
+		.bottom-row {
+			.cst_sct_left_side {
+				display: none;
+				@include min768 {
+					width: 22%;
+					display: block;
+				}
+				.sct-product-banner {
+					.banner-image {
+						text-align: center;
+					}
+				}
+			}
+			.cst_sct_right_side {
+				@include min768 {
+					width: 78%;
+				}
+				.row {
+					border: 1px solid #EBE9EE;
+				}
+				.grid_product {
+					padding: 0;
+					position: relative;
+					form {
+						height: 100%;
+						.cs-product {
+							height: 100%;
+							display: flex;
+    						flex-direction: column;
+							.pwp-img {
+								height: 170px;
+								text-align: center;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								overflow: hidden;
+								@include min992 {
+									height: 155px;
+								}
+								@include min1200 {
+									height: 140px;
+								}
+								@include min1440 {
+									height: 150px;
+								}
+								@include min1600 {
+									height: 180px;
+								}
+								a {
+									display: flex;
+									align-items: center;
+									height: 100% !important;
+									img {
+										transition: all 0.5s 
+										ease;
+											-webkit-transition: all 0.5s 
+										ease;
+											-moz-transition: all 0.5s ease;
+											-o-transition: all 0.5s ease;
+											max-height: 100%;
+											object-fit: scale-down;
+											margin: 0 auto;
+									}
+								}
+							}
+							.pwd-desc {
+								overflow: visible;
+								display: flex;
+								flex-direction: column;
+								flex-direction: column;
+								position: static;
+								flex-grow: 1;
+								
+								.pwp-info {
+									padding: 10px 0 5px;
+									margin-bottom: 10px;
+									@include min1024 {
+										padding: 15px 0 5px;
+									}
+									position: relative;
+    								background-color: $white;
+									transition: all 0.3s 
+									ease-in;
+									.sct_cat_content{ 
+										.pwpi-title {
+											color: #202020;
+											margin-bottom: 7px;
+											margin-top: 10px;
+											@include min992 {
+												margin-top: 20px;
+											}
+										}
+									}
+									.price {
+										margin-bottom: 0;
+									}
+								}
+								.pink-box.price-rating-wrapper {
+									.ratings {
+										.fa {
+											color: #F0B419;
+										}
+									}
+								}
+								.add_cart_div {
+									margin-top: auto;
+									position: relative;
+									.cart_view_sct_btn {
+										background-color: #F0F0F0;
+										border-radius: 40px;
+										position: relative;
+										transition: all 0.5s ease;
+										border: 1px solid transparent;
+										padding: 3px 8px;
+										min-height: 35px;
+										font-weight: bold;
+										width: 100%;
+										display: flex;
+										justify-content: center;
+										align-items: center;
+										font-size: 14px;
+										text-transform: capitalize;
+										@include min992 {
+											font-size: 16px;
+											min-height: 38px;
+										}
+									}
+									.dropdown-plus {
+										background: #ffffff;
+										border-radius: 50px;
+										transition: all 0.5s 
+									ease;
+										-webkit-transition: all 0.5s 
+									ease;
+										-moz-transition: all 0.5s ease;
+										-o-transition: all 0.5s ease;
+										position: absolute;
+										right: 4px;
+										top: 2px;
+										.btn {
+											padding: 5px;
+											width: 30px;
+											height: 30px;
+											display: flex;
+											align-items: center;
+											justify-content: center;
+											border: 0;
+											border-radius: 50%;
+											@include min992 {
+												width: 33px;
+        										height: 33px;
+											}
+										}
+									}
+									.css_quantity {
+										background-color: #F0F0F0;
+									    border-radius: 40px;
+									    position: absolute;
+									    top: 0;
+									    right: 0;
+									    max-width: 100%;
+									    padding: 3px;
+									    transition: all 0.5s ease;
+									    transform: translateY(-45px);
+									    display: flex;
+									    flex-wrap: wrap;
+									    align-items: stretch;
+									    margin-right: 0 !important;
+        								justify-content: space-between;
+										@include min768 {
+											max-width: 60%;
+											width: 100%;
+										}
+										input {
+											font-size: 14px;
+											background-color: transparent;
+    										border: 0;
+    										padding: 0;
+    										line-height: 1;
+											@include min992 {
+												font-size: 16px;
+											}
+										}
+										.btn-link {
+											background: #ffffff;
+										    border: 1px solid transparent;
+										    border-radius: 50px !important;
+										    width: 28px;
+										    height: 28px;
+										    display: flex;
+										    align-items: center;
+										    justify-content: center;
+										    padding: 3px;
+											@include min992 {
+												width: 30px;
+        										height: 30px;
+											}
+										}
+									}
+								}
+
+							}
+							&:hover {
+								.pwd-desc {
+									.cart_wrapper.add_cart_div {
+										.btn {
+											background-color: $white;
+    										border-color: $primary;
+										}
+										.dropdown-plus {
+											background-color: #F0F0F0;
+											border-radius: 50%;
+											border:0;
+											.btn {
+												background-color: #F0F0F0;
+												border-radius: 50%;
+												border:0;
+											}
+										}
+									}
+								}
+								
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// sct_product_snippet_2 css end here

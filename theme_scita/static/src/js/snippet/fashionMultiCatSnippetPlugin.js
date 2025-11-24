@@ -33,24 +33,35 @@ async function openMultiCategorySliderModal(snippetEl) {
         sliderTypeSelect.appendChild(option);
     });
 
+    // Pre-fill if exists
+    const currentType = snippetEl.getAttribute("data-multi-cat-slider-type");
+    if (currentType) {
+        sliderTypeSelect.value = currentType;
+    }
+
     // Handle submit
     submitBtn.addEventListener("click", () => {
-        const selectedOption =
-            sliderTypeSelect.selectedOptions[0]?.text || _t("Multi Product Slider");
+        const selectedOpt = sliderTypeSelect.options[sliderTypeSelect.selectedIndex];
+        const type = selectedOpt ? selectedOpt.text : _t("Multi Product Slider");
 
         snippetEl.setAttribute("data-multi-cat-slider-type", sliderTypeSelect.value);
         snippetEl.setAttribute(
             "data-multi-cat-slider-id",
             `multi-cat-myowl${sliderTypeSelect.value}`
         );
+        
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="row our-categories">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h4 class="section-title style1">
-                                <span>${_t(selectedOption)}</span>
+                            <h4 id="snippet-title" class="section-title style1">
+                                <span>${_t(type)}</span>
                             </h4>
+                        </div>
+                        <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/feature-product.png" alt="Multi Product Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
@@ -87,11 +98,10 @@ class FashionMultiCatCustomSnippetPlugin extends Plugin {
         if (!snippetEl.classList.contains("fashion_multi_category_slider")) {
             return;
         }
+        snippetEl.classList.remove("o_hidden");
+        snippetEl.innerHTML = "";
 
-        snippetEl.classList.remove("hidden");
-        snippetEl.querySelector(".owl-carousel")?.replaceChildren();
-
-        // Open modal
+        // open modal once after drop
         openMultiCategorySliderModal(snippetEl);
     }
 }
@@ -102,11 +112,28 @@ registry.category("website-plugins").add(
 );
 
 // ---------------------------------------------
-// Modify Button Plugin
+// Modify Button Action
 // ---------------------------------------------
-class FashionMultiCatSnippetPlugin extends Plugin {
-    static id = "fashionMultiCatSnippet";
-    static dependencies = ["history", "media"];
+export class FashionMultiCatModifyBtnAction extends BuilderAction {
+    static id = "fashion_multi_cat_modifyBtn";
+
+    apply({ editingElement, params: { mainParam } }) {
+        if (mainParam === "open") {
+            openMultiCategorySliderModal(editingElement);
+        }
+    }
+
+    isApplied() {
+        return false;
+    }
+}
+
+// ---------------------------------------------
+// Register Modify Button Plugin
+// ---------------------------------------------
+class FashionMultiCatSnippetModifyPlugin extends Plugin {
+    static id = "fashionMultiCatSnippetModifyPlugin";
+    static dependencies = [];
     selector = ".fashion_multi_category_slider";
 
     resources = {
@@ -116,27 +143,12 @@ class FashionMultiCatSnippetPlugin extends Plugin {
         },
         so_content_addition_selector: [".fashion_multi_category_slider"],
         builder_actions: {
-            ModifyBtnAction,
+            FashionMultiCatModifyBtnAction,
         },
     };
 }
 
-export class ModifyBtnAction extends BuilderAction {
-    static id = "fashion_modifyBtn";
-
-    apply({ editingElement, params: { mainParam } }) {
-        if (mainParam === "open") {
-            // Instead of alert, open same modal logic
-            openMultiCategorySliderModal(editingElement);
-        }
-    }
-
-    isApplied({ editingElement }) {
-        return editingElement.dataset.modified === "true";
-    }
-}
-
 registry.category("website-plugins").add(
-    FashionMultiCatSnippetPlugin.id,
-    FashionMultiCatSnippetPlugin
+    FashionMultiCatSnippetModifyPlugin.id,
+    FashionMultiCatSnippetModifyPlugin
 );

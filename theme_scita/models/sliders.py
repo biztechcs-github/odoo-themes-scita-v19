@@ -139,34 +139,6 @@ class BrandSnippetConfiguration(models.Model):
                                           'brand_id', 'slider_id', string="Collections of Brand", required=True)
 
 
-class ProductCategorySlider(models.Model):
-    _name = 'product.category.img.slider.config'
-    _description = 'product category image Slider'
-
-    name = fields.Char(string="Slider name", default='Trend',
-                       help="""Slider title to be displayed""",
-                       required=True, translate=True)
-    img_banner = fields.Binary(string="Image banner desktop",
-                               help="""Image banner""")
-    img_banner_mobile = fields.Binary(string="Image banner mobile",
-                                      help="""Image banner Mobile""")
-    img_link = fields.Char(string="Image Url", default='#',
-                           help="""Image Url""")
-    links = fields.Text(string="Links",
-                        help="""Image banner""")
-    active = fields.Boolean(string="Active", default=True)
-    no_of_column = fields.Selection([('3', '3'), ('4', '4'), ('5', '5')], string="No of column",
-                                    default='3',
-                                    help="No of product display in slider.")
-    prod_cat_type = fields.Selection([('product', 'Product'), ('category', 'Category')],
-                                     string="Type of slider", default='product', required=True,
-                                     help="Select product or category for whom you want to show a slider.")
-    collections_product = fields.Many2many('product.template', 'scita_product_slider_rel', 'slider_id',
-                                           'prod_id', string="Collections of product")
-    collections_category = fields.Many2many('product.public.category', 'scita_category_slider_rel',
-                                            'slider_id', 'cat_id', string="Collections of category")
-
-
 class ProductSnippetConfiguration(models.Model):
     _name = 'product.snippet.configuration'
     _description = "Add Multiple Product In Snippet"
@@ -179,3 +151,17 @@ class ProductSnippetConfiguration(models.Model):
                                               'prod_id',
                                               required=True,
                                               string="Collection Of Products", domain="[('is_published', '=', True)]")
+
+
+class ProductSnippetConfigurationTwo(models.Model):
+    _name = 'product.snippet.configuration.two'
+    _description = "Add Multiple Product In Snippet Two"
+
+    name = fields.Char(string='Name', default="Trending", required=True)
+    active = fields.Boolean(
+        string="Active", default=True)
+    collection_of_products = fields.Many2many('product.template', 'product_configuration_two_rel', 'slider_id',
+                                              'prod_id',
+                                              required=True,
+                                              string="Collection Of Products", domain="[('is_published', '=', True)]")
+    banner_image = fields.Binary(string="Banner Image", help="Image to display on the left side of the snippet")

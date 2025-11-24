@@ -46,11 +46,14 @@ async function openCategorySliderModal(snippetEl) {
 
         snippetEl.setAttribute("data-cat-slider-id", sliderTypeSelect.value);
 
-        // Replace snippet content
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">${_t(type)}</h3>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/cat_slide_1.jpeg" alt="Category Slider" class="img-fluid"/>
                 </div>
             </div>
         `;

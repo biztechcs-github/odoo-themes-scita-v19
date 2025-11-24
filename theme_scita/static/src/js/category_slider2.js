@@ -45,11 +45,14 @@ async function openCategorySliderModal(snippetEl) {
         const selectedOpt = sliderTypeSelect.options[sliderTypeSelect.selectedIndex];
         const typeText = selectedOpt ? selectedOpt.text : _t("Category Slider");
 
-        // Replace snippet content
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">${_t(typeText)}</h3>
+                </div>
+                <div class="category-slider-placeholder">
+                    <img src="/theme_scita/static/src/img/cat_slide_2.png" alt="Category Slider" class="img-fluid"/>
                 </div>
             </div>
         `;

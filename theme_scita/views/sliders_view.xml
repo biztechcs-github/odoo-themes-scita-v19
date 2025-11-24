@@ -341,26 +341,9 @@
                                 <field name="color_code" widget='color'/>
                                 <field name="font_color_code" widget='color'/>
                             </group>
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style4' and position == 'left'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' invisible="style == 'False' and style == 'style1' and style == 'style3' and style == 'style4' and position == 'left'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' invisible="style == 'False' and style == 'style2' and style == 'style1' and style == 'style4' and position == 'left'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style1' and position == 'left'"/>
-
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style4' and position == 'right'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' invisible="style == 'False' and style == 'style1' and style == 'style3' and style == 'style4' and position == 'right'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' invisible="style == 'False' and style == 'style2' and style == 'style1' and style == 'style4' and position == 'right'"/>
-
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' style="style == 'False' style == 'style2' style == 'style3' style == 'style1' and position == 'right'"/> -->
-                            
                         </group>
                     </sheet>
-                </form>
+               </form>
             </field>
         </record>
 
@@ -463,54 +446,6 @@
               action="brand_snippet_config_action"
               parent="theme_scita.scita_menu_slider_config"
               sequence="80"/>
-    <!-- product -->
-    <record id="pro_cat_img_slider_form_view" model="ir.ui.view">
-        <field name="name">category.img.slider.form</field>
-        <field name="model">product.category.img.slider.config</field>
-        <field name="mode">primary</field>
-        <field name="arch" type="xml">
-            <form string="Product Category Image Snippet">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="active"/>
-                        <field name="no_of_column"/>
-                        <field name="img_banner" options="{'preview_image':'img_banner','size': [64, 64]}" widget="image"/>
-                        <field name="img_banner_mobile" options="{'preview_image':'img_banner_mobile','size': [64, 64]}" widget="image"/>
-                        <field name="img_link"/>
-                        <field name="links" widget='html'/>
-                        <field name="prod_cat_type"/>
-                        <!-- <field name="collections_product" attrs="{'invisible': [('prod_cat_type', '=', 'category')], 'required': [('prod_cat_type', '=', 'product')]}" widget="many2many_tags"/> -->
-                        <field name="collections_product" invisible="prod_cat_type == 'category'" required="prod_cat_type == 'product'" widget="many2many_tags"/>
-                        <!-- <field name="collections_category" attrs="{'invisible': [('prod_cat_type', '=', 'product')], 'required': [('prod_cat_type', '=', 'category')]}" widget="many2many_tags"/> -->
-                        <field name="collections_category" invisible="prod_cat_type == 'product'" required="prod_cat_type == 'category'" widget="many2many_tags"/>
-
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-    <record id="pro_cat_img_slider_list_view" model="ir.ui.view">
-        <field name="name">product.category.slider.list.view</field>
-        <field name="model">product.category.img.slider.config</field>
-        <field name="arch" type="xml">
-            <list string="Product Category Image Snippet">
-                <field name="name"/>
-            </list>
-        </field>
-    </record>
-    <record id="pro_cat_img_slider_action" model="ir.actions.act_window">
-        <field name="name">Product Category Image Snippet</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">product.category.img.slider.config</field>
-        <field name="view_mode">list,form</field>
-        <field eval="False" name="view_id"/>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Click to define a new slider.
-            </p>
-        </field>
-    </record>
-    <menuitem action="pro_cat_img_slider_action" id="pro_cat_img_slider_menu" name="Product Category Image Snippet Configuration" parent="theme_scita.scita_menu_slider_config" sequence="79"/>
     <!-- Product snippet configuration start -->
     <record id="view_product_snippet_configuration_form_view" model="ir.ui.view">
         <field name="name">product.snippet.configuration.form</field>
@@ -552,5 +487,50 @@
     </record>
 
     <menuitem action="action_product_snippet_configuration" id="product_snippet_configuration" name="Product Snippet Configuration" parent="theme_scita.scita_menu_slider_config" sequence="80"/>
-    <!-- Product snippet configuration end -->    
+    <!-- Product snippet configuration end -->
+    
+    <!-- Product snippet configuration two start -->
+    <record id="view_product_snippet_configuration_two_form_view" model="ir.ui.view">
+        <field name="name">product.snippet.configuration.two.form</field>
+        <field name="model">product.snippet.configuration.two</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+             <form string="Product Image Snippet Configuration">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="collection_of_products" widget="many2many_tags"/>
+                    </group>
+                    <group string="Banner Configuration">
+                        <field name="banner_image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_product_snippet_configuration_two_list_view" model="ir.ui.view">
+        <field name="name">product.snippet.configuration.two.list</field>
+        <field name="model">product.snippet.configuration.two</field>
+        <field name="arch" type="xml">
+            <list string="Product Image Snippet Configuration">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_product_snippet_configuration_two" model="ir.actions.act_window">
+        <field name="name">Product Image Snippet Configuration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.snippet.configuration.two</field>
+        <field name="view_mode">list,form</field>
+        <field eval="False" name="view_id"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click to select a Product.
+            </p>
+        </field>
+    </record>
+
+    <menuitem action="action_product_snippet_configuration_two" id="product_snippet_configuration_two" name="Product Image Snippet Configuration" parent="theme_scita.scita_menu_slider_config" sequence="81"/>
+    <!-- Product snippet configuration two end -->    
 </odoo>

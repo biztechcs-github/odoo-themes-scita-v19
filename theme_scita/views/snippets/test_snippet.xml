@@ -222,9 +222,6 @@
             <t t-snippet="theme_scita.s_theme_scita_category_slider" string="Category Slider" group="scita_category">
                 <keywords>category, categories, slider, carousel</keywords>
             </t>
-            <t t-snippet="theme_scita.product_category_img_slider_config" string="Product Category Slider" group="scita_category">
-                <keywords>category, product, categories, slider</keywords>
-            </t>
             
             <!-- Deal Days Snippets -->
             <t t-snippet="theme_scita.deal_of_day_banner_5" string="Deal of Day Banner" group="scita_deal_days">
@@ -262,6 +259,9 @@
             <!-- Multi Product Snippets -->
             <t t-snippet="theme_scita.sct_product_snippet_1" string="Product Snippet 1" group="scita_multi_product">
                 <keywords>product, snippet, showcase</keywords>
+            </t>
+            <t t-snippet="theme_scita.sct_product_snippet_2" string="Product Image Snippet Configuration" group="scita_multi_product">
+                <keywords>product, snippet, showcase, replica, image</keywords>
             </t>
             <t t-snippet="theme_scita.deal_of_day_banner_6" string="Deal of Day Banner" group="scita_multi_product">
                 <keywords>deal, discount, offer, day, banner</keywords>

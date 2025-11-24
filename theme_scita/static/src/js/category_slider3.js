@@ -48,14 +48,16 @@ async function openCategorySliderModal(snippetEl) {
         snippetEl.setAttribute("data-category-config-id", sliderTypeSelect.value);
         snippetEl.setAttribute("data-category-color", colorInput.value);
 
+        // Use the original placeholder template structure to maintain consistency
         snippetEl.innerHTML = `
             <div class="container">
-                <div class="row oe_our_slider">
+                <div class="row our-category">
                     <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 class="section-title style1">
-                                <span>${_t(typeText)}</span>
-                            </h4>
+                        <h3 class="section-title style1" id="snippet-title">
+                            <span>${_t(typeText)}</span>
+                        </h3>
+                        <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/cat_slide_3.png" alt="Category Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>

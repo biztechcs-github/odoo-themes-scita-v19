@@ -8,13 +8,13 @@
                         <div class="row">
                             <div class="lns-post">
                                 <div class="psb-inner">
-                                    <div class="title-block ">
+                                    <div class="title-block">
                                         <h2 class="section-title style1">
                                             Trending Products
                                         </h2>
-                                        <div class="category-slider-placeholder">
-                                            <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Category Slider" class="img-fluid"/>
-                                        </div>
+                                    </div>
+                                    <div class="category-slider-placeholder">
+                                        <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Trending Products" class="img-fluid"/>
                                     </div>
                                 </div>
                             </div>
@@ -24,13 +24,7 @@
             </div>
         </section>
     </template>
-    <!-- <template id="theme_scita_trending_products_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="theme_scita_trending_products" data-selector=".theme_scita_trending_products" data-snippet-option-id="theme_scita_trending_products_snippet">
-                <we-button class="dropdown-item theme_scita_trending_products" tabindex="-1" href="#" data-trending_products="">Modify</we-button>
-            </div>
-        </xpath>
-    </template> -->
+
     <template id="theme_scita_trending_products_view" name="Trending Products">
         <div class="container">
             <div class="lns-inner latest-trendy-section">

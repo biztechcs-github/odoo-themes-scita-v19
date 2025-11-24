@@ -1,36 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
-
     <template id="deal_seller_multi_product_custom_snippet" name="Multi Deal Product Slider 1">
         <section class="deal_multi_product_slider" data-multi-cat-slider-type="" data-multi-deal-of-day-type=""
-                 contentEditable="false" data-disp="multi_product" data-disp1="deal_days">
+                 contentEditable="false" data-name="Multi Deal Product Slider 1" data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="row our-categories">
                     <div class="col-md-12">
                         <div class="title-block">
-                            <h2 id="snippet-title" class="section-title style1">
+                            <h4 id="snippet-title" class="section-title style1">
                                 <span>Deal Seller Multi Product Snippet</span>
-                            </h2>
-                            <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
-                            </div>
+                            </h4>
+                        </div>
+                        <div class="category-slider-placeholder">
+                            <img src="/theme_scita/static/src/img/multi_deal_slide.jpg" alt="multi deal slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </template>
-    <!-- <template id="deal_seller_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="deal_seller_multi_product_custom_snippet" data-selector=".deal_multi_product_slider"
-                 data-snippet-option-id="deal_seller_multi_product_custom_snippet" data-drop-in=".timer_counter_div">
-                <we-button class="dropdown-item deal_multi_product_slider" data-no-preview="true" tabindex="-1" href="#"
-                           data-multi_category_slider="">Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template> -->
 
     <template id="multi_deal_seller_slider_view" name="Deal Seller Product Snippet">
         <div class="container">
@@ -170,26 +158,17 @@
     </template>
     <template id="deal_of_day_banner_6" name="Multi Deal Product Snippet 1">
         <section id="theme_scita_custom_deal_of_the_day" class="oe_deal_of_the_day s_theme_scita_deal_of_the_day"
-                 contentEditable="false" data-deal-snippet-id="" data-disp="multi_product" data-disp1="deal_days">
+                 contentEditable="false" data-deal-snippet-id="" data-name="Deal of the Day" data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="block-title">
                     <h2 class="fancy">Deal of the day</h2>
                 </div>
                  <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/dealofday.png" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/dealofday.jpg" alt="Category Slider" class="img-fluid"/>
                 </div>
             </div>
         </section>
     </template>
-    <!-- <template id="theme_scita_deal_of_the_day_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="oe_deal_of_the_day" data-selector=".oe_deal_of_the_day">
-                <we-button class="dropdown-item oe_deal_of_the_day" tabindex="-1" href="#"
-                           data-set_deal_of_the_day_products="">Modify
-                </we-button>
-            </div>
-        </xpath>
-    </template> -->
     <template id="theme_scita_deal_of_the_day_view" name="Deal of the day 6">
         <div class="container">
             <div class="deal_day_wrap">
