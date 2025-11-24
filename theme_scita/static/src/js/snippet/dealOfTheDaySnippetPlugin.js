@@ -81,7 +81,7 @@ async function openDealOfTheDayModal(snippetEl) {
                     <h2 class="fancy">${type}</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/dealofday.png" alt="Deal of the Day" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/dealofday.jpg" alt="Deal of the Day" class="img-fluid"/>
                 </div>
             </div>
         `;

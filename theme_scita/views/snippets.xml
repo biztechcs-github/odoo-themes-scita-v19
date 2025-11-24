@@ -603,7 +603,7 @@
                                 <span>Product Configuration</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Snippet" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.jpg" alt="Product Snippet" class="img-fluid"/>
                             </div>
                         </div>
                     </div>
@@ -916,7 +916,7 @@
                                 <span>Image Category Slider</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Category Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.jpg" alt="Category Slider" class="img-fluid"/>
                             </div>
                         </div>
                     </div>

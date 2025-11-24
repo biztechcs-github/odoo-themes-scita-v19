@@ -2216,7 +2216,7 @@ $(document).ready(function(){
                                             <span>${titleText}</span>
                                         </h4>
                                         <div class="category-slider-placeholder">
-                                            <img src="/theme_scita/static/src/img/img_cat_slider.png" alt="Product Snippet" class="img-fluid"/>
+                                            <img src="/theme_scita/static/src/img/img_cat_slider.jpg" alt="Product Snippet" class="img-fluid"/>
                                         </div>
                                     </div>
                                 </div>

@@ -45,7 +45,7 @@ publicWidget.registry.deal_seller_multi_product_custom_snippet = publicWidget.Wi
                                     </h4>
                                 </div>
                                 <div class="category-slider-placeholder">
-                                    <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
+                                    <img src="/theme_scita/static/src/img/multi_deal_slide.jpg" alt="Category Slider" class="img-fluid"/>
                                 </div>
                             </div>
                         </div>
@@ -438,7 +438,7 @@ publicWidget.registry.oe_deal_of_the_day = publicWidget.Widget.extend({
                         <h2 class="fancy">${deal_name}</h2>
                     </div>
                     <div class="category-slider-placeholder">
-                        <img src="/theme_scita/static/src/img/dealofday.png" alt="Deal of the Day" class="img-fluid"/>
+                        <img src="/theme_scita/static/src/img/dealofday.jpg" alt="Deal of the Day" class="img-fluid"/>
                     </div>
                 </div>
             `);

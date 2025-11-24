@@ -70,7 +70,7 @@ async function openDealMultiProductModal(snippetEl) {
                             </h4>
                         </div>
                         <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/multi_deal_slide.jpeg" alt="Category Slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/multi_deal_slide.jpg" alt="Category Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>
