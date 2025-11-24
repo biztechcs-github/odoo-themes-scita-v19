@@ -183,6 +183,7 @@ publish unpublish product
             'theme_scita/static/src/js/lazy_load_button.js',
             'theme_scita/static/src/js/pwa_implementation.js',
             'theme_scita/static/src/js/quick_view.js',
+            'theme_scita/static/src/js/request_quote.js',
             'theme_scita/static/src/js/mobile_view.js',
             'theme_scita/static/src/js/snippet_preview.js',
             'theme_scita/static/src/js/feather_init.js',

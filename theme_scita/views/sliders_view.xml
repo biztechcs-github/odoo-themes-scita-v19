@@ -499,7 +499,6 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="sub_title"/>
                         <field name="active"/>
                         <field name="collection_of_products" widget="many2many_tags"/>
                     </group>

@@ -32,6 +32,11 @@ async function openDynamicProductModal(snippetEl) {
         sliderTypeSelect.appendChild(option);
     });
 
+    // Pre-fill if already configured
+    if (snippetEl.dataset.multiCatSliderType) {
+        sliderTypeSelect.value = snippetEl.dataset.multiCatSliderType;
+    }
+
     // Handle submit
     submitBtn.addEventListener("click", () => {
         const selectedOption =
@@ -40,7 +45,7 @@ async function openDynamicProductModal(snippetEl) {
         snippetEl.setAttribute("data-multi-cat-slider-type", sliderTypeSelect.value);
         snippetEl.setAttribute("data-multi-cat-slider-id", "multi-cat-myowl" + sliderTypeSelect.value);
 
-        // Use the original placeholder template structure to maintain consistency
+        // Use the original placeholder template structure to maintain consistency (like brand snippet)
         snippetEl.innerHTML = `
             <div class="container">
                 <div class="row our-config-products">

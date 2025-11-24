@@ -1893,12 +1893,18 @@ $(document).ready(function(){
             
             _restorePlaceholder: function() {
                 var self = this;
+                // Only restore placeholder in editable mode (like brand snippet)
+                if (!this.editableMode) {
+                    return;
+                }
+                
                 // Check if this is rendered content (has product content)
                 var hasRenderedContent = self.$target.find('.sct-snippet-full, .grid_product, .cs-product, .pwp-img, .pwd-desc').length > 0;
                 var hasPlaceholder = self.$target.find('.category-slider-placeholder').length > 0;
                 
-                // Only restore if we have rendered content and no placeholder
-                if (hasRenderedContent && !hasPlaceholder) {
+                // In editable mode, always restore placeholder if we have rendered content
+                // This ensures the HTML editor sees the placeholder, not the full rendered content (like brand snippet)
+                if (hasRenderedContent) {
                     var slider_type = self.$target.attr('data-multi-cat-slider-type');
                     var slider_id = self.$target.attr('data-multi-cat-slider-id');
                     var titleText = _t("Product Configuration");
@@ -1912,7 +1918,7 @@ $(document).ready(function(){
                         }
                     }
                     
-                    // Restore placeholder structure
+                    // Restore placeholder structure (exact match to template structure like brand snippet)
                     self.$target.html(`
                         <div class="container">
                             <div class="row our-config-products">
@@ -1943,23 +1949,32 @@ $(document).ready(function(){
             start: function() {
                 var self = this;
                 if (this.editableMode) {
-                    // Restore placeholder when in editable mode
+                    // Restore placeholder immediately when in editable mode (like brand snippet)
                     self._restorePlaceholder();
                     
                     // Also listen for when body gets editor_enable class (editable mode enabled)
                     var checkEditableMode = function() {
                         if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                            // Restore placeholder immediately when editor is enabled (like brand snippet)
                             self._restorePlaceholder();
                         }
                     };
                     
-                    // Check immediately
+                    // Check immediately and multiple times to catch timing issues (like brand snippet)
+                    setTimeout(function() { self._restorePlaceholder(); }, 0);
+                    setTimeout(checkEditableMode, 10);
+                    setTimeout(function() { self._restorePlaceholder(); }, 50);
+                    setTimeout(checkEditableMode, 50);
+                    setTimeout(function() { self._restorePlaceholder(); }, 100);
                     setTimeout(checkEditableMode, 100);
                     
                     // Also check when DOM changes (in case editable mode is enabled later)
                     if (typeof MutationObserver !== 'undefined') {
                         var observer = new MutationObserver(function(mutations) {
-                            checkEditableMode();
+                            // Check if editor_enable class was added
+                            if ($('body').hasClass('editor_enable') || $('#wrapwrap').hasClass('editor_enable')) {
+                                self._restorePlaceholder();
+                            }
                         });
                         observer.observe(document.body, {
                             attributes: true,
@@ -2164,7 +2179,7 @@ $(document).ready(function(){
         },
         
         destroy: function() {
-            // Clean up observer if it exists
+            // Clean up observer if it exists (like brand snippet)
             if (this._observer) {
                 this._observer.disconnect();
                 this._observer = null;
@@ -2431,16 +2446,18 @@ $(document).ready(function(){
                         // Check if this is the initial plus icon (not the one inside quantity field)
                         const hasAriaLabel = $clickedElement.attr('aria-label');
                         if (!hasAriaLabel) {
-                            // This is the initial plus icon - show the quantity field
+                            // This is the initial plus icon - toggle the quantity field
                             const $qtyContainer = $dropdownPlus.next('.dropdown-plus-out');
-                            if ($qtyContainer.length && $qtyContainer.hasClass('o_hidden')) {
-                                $qtyContainer.removeClass('o_hidden');
-                                // Set initial quantity to 1 if not set
+                            if ($qtyContainer.length) {
                                 const $qtyInput = $qtyContainer.find('input.quantity');
-                                if ($qtyInput.length && !$qtyInput.val()) {
+                                const isHidden = $qtyContainer.hasClass('o_hidden');
+                                $qtyContainer.toggleClass('o_hidden', !isHidden);
+
+                                if (isHidden && $qtyInput.length && !$qtyInput.val()) {
+                                    // Set initial quantity to 1 when showing the field for the first time
                                     $qtyInput.val(1);
                                 }
-                                return; // Don't update quantity on first click, just show the field
+                                return; // Toggle only; do not update qty
                             }
                         }
                     }

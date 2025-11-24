@@ -46,7 +46,7 @@
         </xpath>
         
         <!-- 🧱 Hide 'Add to Cart' button when price is hidden -->
-        <xpath expr="//button[hasclass('o_wish_add')]" position="attributes">
+        <xpath expr="//div[hasclass('o_wsale_product_action_row')]" position="attributes">
             <attribute name="t-if">
                 website 
                 and website.website_show_price 
@@ -263,12 +263,12 @@
     <!-- 🔒 Universal "Hide or Login to See Price" logic for Scita snippet -->
     <!-- ========================================================= -->
 
-    <!-- 🧩 Product Category Slider -->
-    <!-- <template id="product_category_snippet_price" inherit_id="theme_scita.product_category_img_slider_config_view">
+    <!-- 🧩 Product image snippet -->
+    <template id="product_image_snippet_price" inherit_id="theme_scita.sct_product_snippet_2_view">
         <xpath expr="//p[hasclass('price')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
-                and not slide.website_hide_price
+                and not product.website_hide_price
                 and not (website.login_see_price and request.env.user._is_public())
             </attribute>
         </xpath>
@@ -276,7 +276,7 @@
         <xpath expr="//div[hasclass('ajax_cart_template')]" position="attributes">
             <attribute name="t-if">
                 website and website.website_show_price 
-                and not slide.website_hide_price
+                and not product.website_hide_price
                 and not (website.login_see_price and request.env.user._is_public())
             </attribute>
         </xpath>
@@ -289,17 +289,21 @@
                     Login to see price
                     </a>
                 </t>
-                <t t-elif="(slide.website_hide_price or not website.website_show_price)">
+                <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
-                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn" id="request_for_quote_button">
-                        Request Quote
+                        <a href="#" role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#cfp_pop_up"
+                            t-att-data-product-id="product.id"
+                            id="request_for_quote_button"
+                            class="btn request_for_quote_button">
+                                Request Quote
                         </a>
                     </div>
                 </t>
             </t>
         </xpath>
-    </template> -->
+    </template>
 
 
     <!-- 🧩 Fashion Multi Category Slider -->
@@ -332,9 +336,13 @@
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
-                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn" id="request_for_quote_button">
-                        Request Quote
+                        <a href="#" role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#cfp_pop_up"
+                            t-att-data-product-id="product.id"
+                            id="request_for_quote_button"
+                            class="btn request_for_quote_button">
+                                Request Quote
                         </a>
                     </div>
                 </t>
@@ -384,9 +392,13 @@
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(deal_product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
-                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn" id="request_for_quote_button">
-                        Request Quote
+                         <a href="#" role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#cfp_pop_up"
+                            t-att-data-product-id="deal_product.id"
+                            id="request_for_quote_button"
+                            class="btn request_for_quote_button">
+                                Request Quote
                         </a>
                     </div>
                 </t>
@@ -424,9 +436,13 @@
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
-                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn" id="request_for_quote_button">
-                        Request Quote
+                         <a href="#" role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#cfp_pop_up"
+                            t-att-data-product-id="product.id"
+                            id="request_for_quote_button"
+                            class="btn request_for_quote_button">
+                                Request Quote
                         </a>
                     </div>
                 </t>
@@ -464,9 +480,13 @@
                 <!-- CASE 3 & 4: Logged-in user but price hidden -->
                 <t t-elif="(product.website_hide_price or not website.website_show_price)">
                     <div class="o_wsale_product_request_quote">
-                        <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#cfp_pop_up"
-                        class="btn" id="request_for_quote_button">
-                        Request Quote
+                         <a href="#" role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#cfp_pop_up"
+                            t-att-data-product-id="product.id"
+                            id="request_for_quote_button"
+                            class="btn request_for_quote_button">
+                                Request Quote
                         </a>
                     </div>
                 </t>

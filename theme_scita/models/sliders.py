@@ -158,7 +158,6 @@ class ProductSnippetConfigurationTwo(models.Model):
     _description = "Add Multiple Product In Snippet Two"
 
     name = fields.Char(string='Name', default="Trending", required=True)
-    sub_title = fields.Char(string="Sub Title", default="Lorem Ipsum is simply dummy text.", )
     active = fields.Boolean(
         string="Active", default=True)
     collection_of_products = fields.Many2many('product.template', 'product_configuration_two_rel', 'slider_id',
