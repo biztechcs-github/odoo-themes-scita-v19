@@ -1262,6 +1262,7 @@
                         <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
 
                         <t t-set="additional_title" t-value="product.name"/>
+                        <t t-set="is_quick_view" t-value="True"/>
                         <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale quick_view_main_wrap">
                             <section id="product_detail" t-attf-class="container py-4 px-0 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}">
                                 <div class="row m-0" id="product_detail_main" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
@@ -1274,14 +1275,14 @@
                                         <!-- <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1> -->
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
                                        
-                                        <div t-field="product.description_ecommerce" class="oe_structure"
-                                placeholder="A detailed, formatted description to promote your product on this page. Use '/' to discover more features."/>
                                         <form t-if="product._is_add_to_cart_possible()">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
                                             <div class="js_product js_main_product mb-3">
                                                <h1 class="product_detail_name">
                                                     <t t-esc="product_variant.display_name"/>
                                                 </h1>
+                                        <div t-field="product.description_ecommerce" class="oe_structure"
+                                          placeholder="A detailed, formatted description to promote your product on this page. Use '/' to discover more features."/>
                                                  <t t-if="is_view_active('theme_scita.theme_scita_rating')">
                                                     <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
                                                         <t t-call="portal_rating.rating_widget_stars_static">
@@ -1348,8 +1349,20 @@
                                                     </t>
                                                 </div>
                                           <div id="contact_us_wrapper"
-                                                t-attf-class="{{'d-flex justify-content-center align-items-center flex-column text-center border rounded bg-light' if not show_add_to_cart else 'd-none'}} oe_structure oe_structure_solo #{_div_classes}">
-                                                    Out of Stock
+                                                t-attf-class="d-flex oe_structure oe_structure_solo #{_div_classes} {{'d-flex' if combination_info['prevent_zero_price_sale'] else 'd-none'}}">
+                                                <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+                                                    <div class="container">
+                                                        <a t-att-href="(website.contact_us_button_url or '') + '?subject=' + combination_info['display_name']"
+                                                           t-att-data-url="website.contact_us_button_url"
+                                                           class="btn btn-primary btn_cta">
+                                                            Contact Us
+                                                        </a>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                            <div id="product_unavailable"
+                                                t-attf-class="{{'d-flex justify-content-center align-items-center flex-column text-center border rounded bg-light' if not show_add_to_cart and not combination_info['prevent_zero_price_sale'] else 'd-none'}}">
+                                                Out of Stock
                                             </div>
 
                                                 <t t-if="is_view_active('website_sale.product_tags')" t-call="website_sale.product_tags">
