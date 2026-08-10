@@ -1,0 +1,176 @@
+name: bespoke-discovery
+version: 1
+description: >
+  Discovery-first flow for bespoke/custom client projects.
+  Lifecycle: wireframe → proposal/SOW → design → specs → tasks.
+  The proposal doubles as the Scope of Work sent to the customer.
+  Use when scope must be agreed externally before any code is written.
+artifacts:
+  - id: wireframe
+    generates: wireframe.md
+    description: Wireframe analysis and customer sign-off record
+    template: wireframe.md
+    instruction: >
+      Produce the wireframe analysis before the SOW is written.
+
+      For bespoke projects, the wireframe is the primary discovery output —
+      it forms the basis of the commercial proposal and the customer's
+      first sign-off gate.
+
+      Sections:
+
+      - **Wireframe Status**: Is the wireframe reviewed with the customer?
+        Note: "Pending customer sign-off", "Signed off by <name> on <date>",
+        or "Pending tech feasibility glance". Do not proceed to proposal until
+        signed off.
+
+      - **Screen Inventory**: Table listing every screen visible in the wireframe:
+        screen ID, screen name, user type, capability it belongs to.
+
+      - **Customer Feedback Log**: Brief notes from customer/stakeholder review
+        sessions — what changed, what was accepted. This is the change log for
+        the wireframe iteration.
+
+      - **Scenario Mapping**: For each key screen, one sentence describing the
+        observable outcome. These become Gherkin THEN clauses.
+
+      - **Tech Feasibility Notes**: Any concerns raised during the ~15-minute
+        tech feasibility glance. Minor concerns are noted here; blockers delay
+        customer presentation.
+
+      - **Open Questions**: Ambiguities to resolve before the SOW is written.
+
+      The wireframe MUST be signed off by the customer before proposal/SOW is
+      written. The spec MUST NOT be written before the wireframe is locked.
+    requires: []
+
+  - id: proposal
+    generates: proposal.md
+    description: Proposal / Scope of Work — doubles as the customer commercial document
+    template: proposal.md
+    instruction: >
+      Write the proposal document after the wireframe is signed off.
+      This document serves as both the internal proposal AND the
+      Scope of Work (SOW) shared with the customer.
+
+      Sections:
+
+      - **Project Summary**: One paragraph — what the customer commissioned
+        and what the outcome will be.
+
+      - **Why**: The customer's business problem or opportunity.
+
+      - **Scope — In**: Bulleted list of everything included, tied to wireframe
+        screen IDs (sc1, sc2…). Be specific — vague scope breeds disputes.
+
+      - **Scope — Out**: Explicitly list what is NOT included in this engagement.
+        Omitting this is the #1 cause of scope creep on fixed-price work.
+
+      - **Capabilities**: Kebab-case names for each feature being built.
+        Each becomes a `specs/<name>/spec.md`.
+
+      - **Deliverables**: What the customer receives at the end.
+
+      - **Acceptance Criteria (customer-facing)**: Plain-English statements the
+        customer will use to judge completion. These must align with the Gherkin
+        scenarios in the spec phase — they are the same criteria in two formats.
+
+      - **Rough Estimates**: Feature-level estimates for quoting. Mark as
+        rough — re-estimate at Ready gate after speccing.
+
+      - **Wireframe Reference**: File name and sign-off status.
+
+      > **Commercial gate:** customer commercial sign-off on this SOW is required
+      > before the project proceeds to design and spec. Archive the signed version.
+    requires:
+      - wireframe
+
+  - id: design
+    generates: design.md
+    description: Technical design covering architecture for the scoped deliverable
+    template: design.md
+    instruction: >
+      Write the technical design for the bespoke project scope.
+
+      For bespoke work, the design is internal — the customer never sees it.
+      It exists to prevent underquoting and to surface integration complexity
+      before a single line of code is written.
+
+      Sections:
+
+      - **Architecture Overview**: System layers, integration points,
+        third-party dependencies.
+
+      - **Integration Points**: APIs, webhooks, or data sources the project
+        connects to. Include auth method, data format, and any known constraints.
+
+      - **Data Model**: Core entities and key fields. Note anything that must
+        match or extend the customer's existing data structures.
+
+      - **Decisions**: Technical choices with rationale. Flag anything that
+        affects timeline or cost.
+
+      - **Risk Register**: Known unknowns that could blow the estimate.
+        For each: likelihood, impact, and mitigation. These are the change-request
+        triggers — document them now.
+
+      - **Change Request Triggers**: Specific scenarios that would constitute
+        out-of-scope work and require a formal change request. Agree these
+        up front to protect the engagement.
+    requires:
+      - proposal
+
+  - id: specs
+    generates: specs/**/*.md
+    description: Gherkin specs that double as customer UAT acceptance tests
+    template: spec.md
+    instruction: >
+      Write spec files with Gherkin scenarios that serve two purposes:
+      1. Drive the implementation (agent reads these during apply).
+      2. Function as the UAT acceptance tests the customer signs off on delivery.
+
+      Rules:
+      - Each scenario MUST be readable by the customer (no internal jargon).
+      - THEN steps must describe outcomes the customer can observe and test.
+      - Each scenario MUST map to a customer-facing acceptance criterion in
+        the SOW (proposal.md "Acceptance Criteria" section).
+      - Reference wireframe screen IDs in scenario names where applicable.
+      - If the customer approved different behaviour than what the wireframe shows,
+        note the discrepancy and use the customer-approved version.
+    requires:
+      - proposal
+      - design
+
+  - id: tasks
+    generates: tasks.md
+    description: Implementation tasks ordered for delivery sprint by sprint
+    template: tasks.md
+    instruction: >
+      Create the task list for the bespoke delivery.
+
+      Group tasks by deliverable / sprint alignment, not just by technical layer.
+      The customer cares about what ships when.
+
+      Rules:
+      - Every SOW capability MUST have a task group.
+      - Every Gherkin scenario MUST have a matching automated test task.
+      - Include a task to run the full test suite against each spec before
+        marking that capability complete.
+      - Flag any tasks that depend on external input (customer data, third-party
+        API credentials, client sign-off) — these are schedule risks.
+      - The final task group MUST be "Verification — Definition of Done" including:
+        all tests green, build passing, CI green, customer UAT checklist ready.
+      - Do NOT mark a test task complete unless the test actually exists and passes.
+    requires:
+      - specs
+      - design
+
+apply:
+  requires:
+    - tasks
+  tracks: tasks.md
+  instruction: |
+    Read proposal.md (SOW) and engineering-guidelines.md (repo root) before starting.
+    Implement in SOW scope order. After each capability: run build and tests.
+    If a runtime error occurs: fix it, append one line to engineering-guidelines.md.
+    Flag any scope-creep risk immediately rather than absorbing it silently.

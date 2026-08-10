@@ -1,0 +1,261 @@
+# =============================================================================
+# OpenSpec Project Configuration
+# =============================================================================
+# SWITCHING SCHEMAS:
+#   1. Comment out the entire active block below (schema: + rules:)
+#   2. Uncomment the block for the schema you want
+#   3. Restart Claude Code to reload config
+# =============================================================================
+
+context: |
+  Tech stack: Odoo 19 addon module (Python/Odoo ORM backend, QWeb/XML views, SCSS, JavaScript frontend) — Theme Scita, a multipurpose eCommerce/CMS website theme
+  Language: Python (models/controllers), XML/QWeb (views/templates), SCSS (styles), JavaScript (frontend widgets)
+  App root: theme_scita/
+  Naming: snake_case Python files, functions and fields; dot-separated snake_case Odoo model names (e.g. banner.image, image.hotspot); PascalCase Python model classes
+  Commits: loose type-prefix style, inconsistent casing/brackets (e.g. [FIX]:, [ADD]:, fix:, Add:) — not strict conventional commits
+  Domain: Odoo eCommerce/CMS website theme (snippets, banners, sliders, deals, product comparison, PWA, quote requests) for Odoo 19, built by AppJetty
+  Dev server: not configured (no .claude/launch.json found in repo)
+  Runtime gate: not configured — depends on the Odoo dev server host/port once .claude/launch.json is set up (module install/upgrade succeeds + zero console errors on affected pages)
+
+# =============================================================================
+# ACTIVE SCHEMA  (only one schema: block may be active at a time)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# minimalist  |  Community  |  specs → tasks
+# Spec-first, no proposal or design. Use for small, well-scoped changes.
+# -----------------------------------------------------------------------------
+schema: minimalist
+# rules:
+#   specs:
+#     - Must use gherkin-authoring skill
+
+
+# =============================================================================
+# AVAILABLE SCHEMAS  (uncomment one block to activate, comment out the above)
+# =============================================================================
+
+# # -----------------------------------------------------------------------------
+# # spec-driven  |  Vendor built-in  |  proposal → specs + design → tasks
+# # Standard workhorse. No ADR step. Use when no durable arch decisions expected.
+# # -----------------------------------------------------------------------------
+# schema: spec-driven
+# # rules:
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+
+# # -----------------------------------------------------------------------------
+# # intent-driven  |  Project custom  |  proposal → specs + design → adr → tasks
+# # Full workflow: Gherkin specs, grill-me interview, C4 diagrams, ADR tracking.
+# # Best for: feature work where requirements need clarifying before coding.
+# # -----------------------------------------------------------------------------
+# schema: intent-driven
+# rules:
+#   proposal:
+#     - Before writing the proposal, search the full codebase for every instance of
+#       the affected component, pattern, data field, route, or shared UI element.
+#       Populate the "Impact Scope" table in proposal.md with every affected location.
+#       The proposal is incomplete if any location is missing.
+#     - Must use grill-me skill
+#     - Must use adversarial-authoring skill
+#     - Verify all domain and technical terms against glossary/business.md and
+#       glossary/technical.md. Use the exact term defined there; do not introduce synonyms.
+#     - >-
+#       WIREFRAME (UI work only): If a wireframe file or path is provided by the user,
+#       read it in full before writing the proposal. The proposal must include a
+#       "Wireframe Reference" line naming the file and confirm the wireframe is
+#       signed off. Do not start the proposal without a signed-off wireframe for
+#       any change that introduces or modifies a visible screen or user interaction.
+#   specs:
+#     - Must use gherkin-authoring skill
+#     - Verify all domain and technical terms against glossary/business.md and
+#       glossary/technical.md before writing scenarios.
+#     - >-
+#       WIREFRAME (UI work only): If a wireframe was provided for this change,
+#       every scenario that covers a visible screen or interaction MUST reference
+#       the wireframe screen ID it covers (e.g. sc1, sc2). A scenario with no
+#       screen reference for a UI change is incomplete.
+#   design:
+#     - Must use c4-diagrams skill
+#     - Must use security-review skill
+#     - Security Considerations section is required in design.md
+#     - >-
+#       WIREFRAME (UI work only): If a wireframe was provided, include a
+#       "Wireframe Deviations" section — state "None" if the implementation
+#       follows the wireframe exactly.
+#   adr:
+#     - Must use architectural-decision-records skill
+#   tasks:
+#     - Read engineering-guidelines.md (repo root) at the start of every apply session.
+#     - After implementing each task group, run the build and all tests. Do not proceed
+#       to the next task group until the build is clean and all tests pass.
+#     - >-
+#       If a runtime error occurs during apply: fix it, then append ONE line to
+#       engineering-guidelines.md in the format:
+#       "Pattern: <what caused it> → Fix: <what prevents it>".
+#     - Every acceptance-criteria scenario in the specs MUST have a matching automated
+#       test task.
+#     - The task list MUST end with a "Verification — Definition of Done" group
+#       requiring all tests green and the build passing before verifying or archiving.
+#     - Do NOT mark a verification/test task complete unless the test actually exists
+#       and passes. A ticked box with no test is a failed gate, not a pass.
+#     - Production code MUST NOT contain TODO, FIXME, mock, or placeholder markers.
+#       Verify scans for these and treats any match as a CRITICAL failure blocking archive.
+#     - If the change includes Gherkin scenarios (.feature files), include a step-definition
+#       implementation task for each scenario file before any implementation tasks. Scenarios
+#       without matching step definitions are documentation only — not executable tests.
+
+# # -----------------------------------------------------------------------------
+# # behaviour-driven  |  Community  |  proposal → specs → design → tasks (BDD gates)
+# # Enforces feature extraction → failing acceptance tests → implementation slices.
+# # Use when Cucumber/SpecFlow acceptance tests are a hard requirement.
+# # -----------------------------------------------------------------------------
+# schema: behaviour-driven
+# # rules:
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+
+# # -----------------------------------------------------------------------------
+# # event-driven  |  Community  |  event-storming → modeling → specs → design → asyncapi → tasks
+# # For event-driven / message-driven systems. Requires asyncapi CLI.
+# # -----------------------------------------------------------------------------
+# schema: event-driven
+# # rules:
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+
+# # -----------------------------------------------------------------------------
+# # spec-driven-with-adr  |  Community  |  proposal → specs + design → adr → tasks
+# # Same as spec-driven but adds a permanent ADR step for architectural decisions.
+# # Use when changes introduce durable architectural commitments.
+# # -----------------------------------------------------------------------------
+# schema: spec-driven-with-adr
+# # rules:
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+# #   adr:
+# #     - Must use architectural-decision-records skill
+
+# # -----------------------------------------------------------------------------
+# # spec-driven-ui  |  Project custom  |  wireframe → proposal → design → specs → tasks
+# # Wireframe-first flow for any user-facing screen, interaction, or visible flow.
+# # Spec is written against the signed-off wireframe — not before it.
+# # Best for: internal product features that have a UI component.
+# # -----------------------------------------------------------------------------
+# schema: spec-driven-ui
+# # rules:
+# #   wireframe:
+# #     - Wireframe MUST be signed off by the BA and stakeholder before proposal is written.
+# #     - Add a ~15-minute tech feasibility glance for any custom client wireframe.
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #     - The Impact Scope table is MANDATORY — search for every controller, view,
+# #       partial, shared component, and route this change touches.
+# #     - Verify all domain and technical terms against glossary/business.md.
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #     - Every scenario MUST reference the wireframe screen ID it covers (sc1, sc2...).
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+# #     - Wireframe Deviations section is required — state "None" if there are none.
+
+# # -----------------------------------------------------------------------------
+# # greenfield-bootstrap  |  Project custom  |  scaffold → specs → design → tasks
+# # Scaffold-first flow for brand-new projects with no existing codebase.
+# # Locks in tech stack and project structure before writing any code.
+# # Best for: starting a new application or service from scratch.
+# # -----------------------------------------------------------------------------
+# schema: greenfield-bootstrap
+# # rules:
+# #   scaffold:
+# #     - Must use adversarial-authoring skill
+# #     - Tech stack decisions MUST include rationale and rejected alternatives
+# #       for each layer (frontend, backend, database, auth, hosting, CI/CD, testing).
+# #     - Domain concepts listed here become the seed for glossary/business.md.
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+# #   tasks:
+# #     - Tasks MUST be ordered: init → bootstrap → database → auth → capabilities → verification.
+
+# # -----------------------------------------------------------------------------
+# # bespoke-discovery  |  Project custom  |  wireframe → proposal/SOW → design → specs → tasks
+# # Discovery-first flow for bespoke/custom client projects.
+# # Proposal doubles as the SOW — customer signs off before any code is written.
+# # Best for: new client engagements where scope must be externally agreed.
+# # -----------------------------------------------------------------------------
+# schema: bespoke-discovery
+# # rules:
+# #   wireframe:
+# #     - Wireframe MUST be signed off by the customer before the SOW is written.
+# #     - Add a tech feasibility glance before presenting the wireframe to the customer.
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #     - Scope — Out section is REQUIRED. Omitting it is the #1 cause of scope creep.
+# #     - Acceptance Criteria must align with Gherkin scenarios (same criteria, two formats).
+# #     - Verify all domain and technical terms against glossary/business.md.
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #     - Every scenario MUST be readable by the customer (no internal jargon).
+# #     - Every scenario MUST map to a customer-facing acceptance criterion in the SOW.
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+# #     - Risk Register and Change Request Triggers sections are required.
+# #   tasks:
+# #     - Group tasks by deliverable / sprint, not just technical layer.
+# #     - Flag tasks that depend on external input (customer data, API credentials).
+# #     - The Verification DoD group MUST include customer UAT checklist readiness.
+
+# # -----------------------------------------------------------------------------
+# # bespoke-proposal  |  Project custom  |  proposal/SOW → design → specs → tasks
+# # Lighter bespoke flow for client projects where scope is already well-understood.
+# # No wireframe or discovery phase — use when the brief is clear up front.
+# # Best for: client projects with a clear, agreed brief and minimal UI uncertainty.
+# # -----------------------------------------------------------------------------
+# schema: bespoke-proposal
+# # rules:
+# #   proposal:
+# #     - Must use adversarial-authoring skill
+# #     - Scope — Out section is REQUIRED.
+# #     - Acceptance Criteria must align with Gherkin scenarios.
+# #     - Verify all domain and technical terms against glossary/business.md.
+# #   specs:
+# #     - Must use gherkin-authoring skill
+# #     - Every scenario MUST be readable by the customer.
+# #     - Every scenario MUST map to a customer-facing acceptance criterion in the SOW.
+# #   design:
+# #     - Must use adversarial-authoring skill
+# #     - Must use security-review skill
+# #     - Security Considerations section is required in design.md
+# #     - Risk Register and Change Request Triggers sections are required.
+# #   tasks:
+# #     - Flag tasks that depend on external input.

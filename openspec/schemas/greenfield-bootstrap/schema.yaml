@@ -1,0 +1,136 @@
+name: greenfield-bootstrap
+version: 1
+description: >
+  Greenfield project bootstrap — scaffold-first flow for new projects with no existing codebase.
+  Lifecycle: scaffold → specs → design → tasks.
+  Use when starting a brand-new application or service from scratch.
+artifacts:
+  - id: scaffold
+    generates: scaffold.md
+    description: Tech stack decisions, project structure, and initial scaffold plan
+    template: scaffold.md
+    instruction: >
+      Create the scaffold document that establishes WHAT we are building and HOW it will be structured.
+
+      This is the greenfield equivalent of a proposal. It locks in the tech stack and
+      project layout before any code is written.
+
+      Sections:
+
+      - **Project Purpose**: One paragraph. What does this application do? Who uses it?
+
+      - **Tech Stack Decisions**: Table of chosen technologies with rationale.
+        For each layer (frontend, backend, database, auth, hosting, CI/CD, testing) state:
+        the chosen technology, why it was chosen, and what was considered and rejected.
+
+      - **Project Structure**: Directory tree showing top-level folders and their purpose.
+        Include entry points, config files, test directories, and deployment assets.
+
+      - **Key Domain Concepts**: 3-10 core domain entities or concepts the system will model.
+        Name them using the project's ubiquitous language. These become the glossary seed.
+
+      - **Capabilities to Build**: Bulleted list of top-level features. Each becomes a capability
+        in the specs phase (kebab-case name). Order by build priority.
+
+      - **Non-Goals**: What this project explicitly will NOT do in its first version.
+
+      - **Open Questions**: Decisions not yet made that will be resolved during specs or design.
+
+      Keep it to 2-3 pages. This drives the spec and task phases — be precise about capability names.
+    requires: []
+
+  - id: specs
+    generates: specs/**/*.md
+    description: OpenSpec Markdown specs with Gherkin-style behaviour scenarios
+    template: spec.md
+    instruction: >
+      Create OpenSpec Markdown spec files that define WHAT the system should do.
+      One spec file per capability listed in scaffold.md's "Capabilities to Build" section.
+
+      File path: specs/<capability>/spec.md (use the kebab-case name from scaffold.md).
+
+      Since this is greenfield, all requirements are ADDED — use ## ADDED Requirements throughout.
+
+      Requirements:
+      - Each requirement MUST use `### Requirement: <name>`.
+      - Each scenario MUST use `#### Scenario: <name>`.
+      - Every requirement MUST have at least one scenario with GIVEN / WHEN / THEN steps.
+      - Write observable outcomes in THEN steps. Avoid implementation details.
+
+      Cover the happy path and at least one error or edge-case scenario per requirement.
+      Reference the Key Domain Concepts from scaffold.md for consistent naming.
+    requires:
+      - scaffold
+
+  - id: design
+    generates: design.md
+    description: Technical design document covering architecture and implementation approach
+    template: design.md
+    instruction: >
+      Create the design document that explains HOW to implement the application.
+
+      Sections:
+
+      - **Architecture Overview**: High-level description of the system's layers and how they interact.
+        Include a simple text diagram if helpful.
+
+      - **Data Model**: Core entities, their key fields, and relationships.
+        Include any database schema decisions (naming conventions, indexing strategy, migrations approach).
+
+      - **API / Interface Contracts**: Key routes, endpoints, or interface boundaries.
+        For web apps: primary URL routes and the controller/handler responsible for each.
+
+      - **Auth & Security**: How the system handles authentication and authorisation.
+        Include session strategy, role model, and any security constraints.
+
+      - **Key Decisions**: Choices made here that differ from the tech stack defaults.
+        Each decision: what was decided, why, what alternatives were considered.
+
+      - **Risks / Trade-offs**: Known limitations at greenfield stage.
+
+      - **Bootstrap Sequence**: Ordered steps to get from zero to a running skeleton
+        (e.g., init project → add ORM → create first migration → scaffold first controller).
+
+      This design feeds directly into the tasks phase — the bootstrap sequence becomes task groups.
+    requires:
+      - scaffold
+      - specs
+
+  - id: tasks
+    generates: tasks.md
+    description: Implementation checklist ordered from project init to first working feature
+    template: tasks.md
+    instruction: >
+      Create the task list that takes the project from zero to a working application.
+
+      IMPORTANT: Follow checkbox format exactly. Use `- [ ] X.Y Task description`.
+
+      Ordering — greenfield tasks must follow this top-level sequence:
+      1. Project initialisation (repo, tooling, CI skeleton)
+      2. Tech stack bootstrap (framework init, package install, first run)
+      3. Database and data model setup (schema, migrations, seed data)
+      4. Auth / security scaffold
+      5. One capability at a time, ordered by dependency (core domain first)
+      6. Integration and smoke tests for each capability as it is built
+      7. Verification — Definition of Done (all tests green, app runs end-to-end)
+
+      Rules:
+      - Every capability in scaffold.md MUST have a matching task group.
+      - Every spec scenario MUST have a corresponding test task.
+      - The final task group MUST be "Verification — Definition of Done".
+      - Do NOT mark a test task complete unless the test actually exists and passes.
+
+      Reference design.md bootstrap sequence for the early task groups.
+    requires:
+      - specs
+      - design
+
+apply:
+  requires:
+    - tasks
+  tracks: tasks.md
+  instruction: |
+    Read scaffold.md, design.md, and engineering-guidelines.md (repo root if it exists).
+    Work through pending tasks in order — greenfield tasks are sequentially dependent.
+    After each task group, run the build and all tests before proceeding.
+    Mark tasks complete as you go. Pause if you hit blockers or need clarification.
