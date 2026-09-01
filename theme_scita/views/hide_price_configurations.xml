@@ -3,35 +3,42 @@
     <!-- Hide Add To Cart Button and quantity selector if not website_show_price -->    
     <template id="product_details" inherit_id="website_sale_wishlist.product_wishlist">
         
-        <!-- 🧩 Add Request Quote / Login button before price in wishlist -->
-        <xpath expr="//div[hasclass('container', 'oe_website_sale')]//div[hasclass('align-middle', 'o_wish_price')]" position="before">
+        <!-- 🧩 Request Quote / Login button, in the wishlist card's action row.
+
+             It used to be inserted above the price, which left it on a line of
+             its own while the quick-view button sat in the action row below it -
+             so a hidden-price card broke the button baseline that every other
+             card in the row shares. Dropped in after the (hidden) Add to Cart
+             row instead, it becomes a flex item of .o_wsale_product_btn and
+             takes the place Add to Cart would have occupied. No wrapper div and
+             no mt-2: the row owns the spacing, and o_wsale_product_btn_primary
+             is what gives it Add to Cart's shrink behaviour. -->
+        <xpath expr="//div[hasclass('o_wsale_product_action_row')]" position="after">
             <t t-if="website and (
                 (not website.website_show_price)
                 or wish.product_id.website_hide_price
                 or (website.login_see_price and request.env.user._is_public())
             )">
-                <div class="align-middle text-center">
-                    <!-- Case 1: User not logged in and login_see_price is enabled -->
-                    <t t-if="website.login_see_price and request.env.user._is_public()">
-                        <a t-attf-href="/web/login"
-                           class="btn btn-outline-primary mt-2 login-price-btn">
-                            Login to see price
-                        </a>
-                    </t>
-                    
-                    <!-- Case 2: Price hidden (Request Quote) -->
-                    <t t-else="">
-                        <a role="button"
-                           id="request_for_quote_button"
-                           data-bs-toggle="modal"
-                           data-bs-target="#cfp_pop_up"
-                           href="#"
-                           t-att-data-product_id="wish.product_id.id"
-                           class="btn btn-primary mt-2">
-                            Request Quote
-                        </a>
-                    </t>
-                </div>
+                <!-- Case 1: User not logged in and login_see_price is enabled -->
+                <t t-if="website.login_see_price and request.env.user._is_public()">
+                    <a t-attf-href="/web/login"
+                       class="o_wsale_product_btn_primary btn btn-outline-primary login-price-btn">
+                        Login to see price
+                    </a>
+                </t>
+
+                <!-- Case 2: Price hidden (Request Quote) -->
+                <t t-else="">
+                    <a role="button"
+                       id="request_for_quote_button"
+                       data-bs-toggle="modal"
+                       data-bs-target="#cfp_pop_up"
+                       href="#"
+                       t-att-data-product_id="wish.product_id.id"
+                       class="o_wsale_product_btn_primary btn btn-primary">
+                        Request Quote
+                    </a>
+                </t>
             </t>
         </xpath>
         

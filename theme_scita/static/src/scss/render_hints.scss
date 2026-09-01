@@ -1,0 +1,58 @@
+// Rendering hints for the parts of a page that are not on screen yet.
+//
+// /shop ships 20 product cards and a four-column footer in one document -
+// 2,671 DOM nodes, of which four cards and none of the footer are above the
+// fold on a 412px viewport. The browser still styles, lays out and paints all
+// of it before it can show anything, and that work is not small: 538-683ms of
+// Style & Layout on the 21 Aug 2026 mobile runs, sitting directly in front of
+// the largest contentful paint.
+//
+// content-visibility: auto lets the browser skip that work for a subtree until
+// it is close to the viewport, then do it just in time. contain-intrinsic-size
+// is what makes it safe: it supplies a placeholder size so the scrollbar and
+// the position of everything below stay correct, instead of the page
+// collapsing and jumping as content is skipped. Both are ignored by browsers
+// that do not support them, so the worst case is today's behaviour.
+//
+// The sizes below are measured, not guessed, and they matter - a wrong value
+// is a layout shift, which is the one metric this theme cannot afford to lose
+// (see the CLS notes in __manifest__.py). Re-measure them if the card layout
+// or the footer content changes.
+
+// A product card measured 273-288px tall across the grid on a 412px viewport
+// and 232px on desktop; `auto` for the inline axis keeps the grid column
+// sizing untouched, so only the height is being predicted.
+$o-scita-product-card-height: 288px;
+
+// Skip from the third row down. The first four cards are what a fold-height
+// viewport can actually show, and one of them is the LCP element - excluding
+// them means the hint can never delay the paint it is meant to help.
+#products_grid .oe_product:nth-child(n+5) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto $o-scita-product-card-height;
+}
+
+// The footer is four columns of links plus a copyright bar - 1,031px tall on
+// mobile, and below the fold on every page this theme serves.
+footer#bottom .s_text_block {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1031px;
+}
+
+// Stop the product cards being painted flat before the grid has been laid out.
+//
+// Chrome paints a frame in which every .o_wsale_product_grid_wrapper is 2px
+// tall, then the real layout lands and each card jumps to its full height,
+// taking every row below it with it - 0.083 CLS on /shop, reproducible in a
+// plain puppeteer run. It is not caused by the images, the async stylesheet or
+// any script: blocking each of those in turn leaves it untouched.
+//
+// A floor on the card height gives that first frame something close to the
+// right geometry. 200px is deliberately below the smallest card measured on
+// any page or breakpoint (219px mobile, 226px tablet, 320px desktop, across
+// /shop, a filtered grid and a search result), so it can never stretch a card
+// that would otherwise be shorter - it only stops the collapse. Raise it only
+// with fresh measurements from every layout the site uses.
+#products_grid .oe_product .o_wsale_product_grid_wrapper {
+    min-height: 200px;
+}

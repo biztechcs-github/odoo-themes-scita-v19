@@ -14,7 +14,7 @@
                                         </h2>
                                     </div>
                                     <div class="category-slider-placeholder">
-                                        <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Trending Products" class="img-fluid"/>
+                                        <img src="/theme_scita/static/src/img/TreandingProduct1.png" alt="Trending Products" class="img-fluid" loading="lazy" width="1590" height="629"/>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                                                                                 <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                                                             </div>
                                                                         <a t-att-href="'/shop/product/%s' % slug(product)">
-                                                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920')" t-att-data-default-img-src="website.image_url(product, 'image_1920')"/>    
+                                                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" loading="lazy" t-att-src="website.image_url(product, 'image_1920')" t-att-data-default-img-src="website.image_url(product, 'image_1920')"/>    
                                                                         </a>
                                                                     </div>
                                                                     <div class="pwd-desc">

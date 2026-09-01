@@ -54,31 +54,19 @@ class ScitaBulkVariantController(WebsiteSaleVariantController):
         pricelist = request.pricelist
 
         if pricelist and product_template_id:
-            tmpl_id = int(product_template_id)
-            # Use the server-resolved variant ID, not the stale one from the JS hidden input
-            variant_id = combination_info.get('product_id')
+            template = request.env['product.template'].browse(int(product_template_id))
+            # Use the server-resolved variant, not the stale one from the JS hidden input
+            variant = request.env['product.product'].browse(combination_info.get('product_id'))
+            bulk_prices = template._scita_bulk_price_rules(pricelist, variant)
 
-            rules = pricelist.item_ids.filtered(
-                lambda r: r.product_tmpl_id.id == tmpl_id
-                and r.min_quantity and r.min_quantity >= 2
-                and (not r.product_id or (variant_id and r.product_id.id == variant_id))
-            )
-
-            for rule in rules.sorted(key=lambda r: r.min_quantity):
-                bulk_prices.append({
-                    'min_quantity': int(rule.min_quantity),
-                    'fixed_price': rule.fixed_price,
-                })
-
-            # Override combination.price with the correct bulk price when qty qualifies.
-            # Odoo's own pricelist computation may not always resolve correctly for
-            # variant-specific rules; we guarantee the right price here.
+            # Override combination.price with the tier the quantity reaches, so
+            # the price next to the buttons can never contradict them.
             if bulk_prices and add_qty:
-                add_qty_int = int(float(add_qty))
-                matching = [bp for bp in bulk_prices if bp['min_quantity'] <= add_qty_int]
-                if matching:
-                    best = max(matching, key=lambda bp: bp['min_quantity'])
-                    combination_info['price'] = best['fixed_price']
+                bulk_price = request.env['product.template']._scita_bulk_price_for_qty(
+                    bulk_prices, int(float(add_qty))
+                )
+                if bulk_price is not None:
+                    combination_info['price'] = bulk_price
 
         combination_info['bulk_prices'] = bulk_prices
         return combination_info
@@ -146,23 +134,7 @@ class ScitaBulkConfiguratorController(WebsiteSaleProductConfiguratorController):
         if not pricelist:
             return None
 
-        rules = pricelist.item_ids.filtered(
-            lambda r: r.product_tmpl_id.id == tmpl_id
-            and r.min_quantity and r.min_quantity >= 2
-            and (not r.product_id or (variant_id and r.product_id.id == variant_id))
-        )
-
-        if not rules:
-            return None
-
-        matching = [
-            (int(r.min_quantity), r.fixed_price)
-            for r in rules
-            if int(r.min_quantity) <= quantity
-        ]
-
-        if not matching:
-            return None
-
-        _, best_price = max(matching, key=lambda x: x[0])
-        return best_price
+        template = request.env['product.template'].browse(tmpl_id)
+        variant = request.env['product.product'].browse(variant_id) if variant_id else None
+        bulk_rules = template._scita_bulk_price_rules(pricelist, variant)
+        return request.env['product.template']._scita_bulk_price_for_qty(bulk_rules, quantity)

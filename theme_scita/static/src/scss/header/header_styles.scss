@@ -1,3 +1,18 @@
+// Reserve a fixed logo box so the header's height doesn't depend on when the
+// (site-configurable) logo image finishes loading - avoids a page-wide
+// layout shift of everything below the header.
+.navbar-brand.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.sct-footer-logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
 // scita pwa menu design
 .ab-mob-view {
     position: fixed;
@@ -1500,7 +1515,7 @@
                     max-width: 460px;
                 }
 
-                @include min1340 {
+                @include min1440 {
                     max-width: 680px;
                 }
             }
@@ -1551,7 +1566,7 @@
                     max-width: calc(88% - 484px);
                 }
 
-                @include min1340 {
+                @include min1440 {
                     flex: 0 0 calc(88% - 704px);
                     max-width: calc(88% - 704px);
                 }

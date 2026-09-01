@@ -1,0 +1,49 @@
+// Tell Odoo that Poppins needs no downloading - the theme ships it.
+//
+// website/static/src/scss/website.scss opens with a loop over the active font
+// aliases that writes one import at-rule per distinct font source:
+//
+//     @if $-url             -> an import of https://fonts.googleapis.com/css?family=...
+//     @else if $-attachment -> an import of /web/content/<id>/google-font-<name>
+//
+// Whether a font has a 'url' or an 'attachment' comes from the *database*:
+// 'google-fonts' and 'google-local-fonts' in the website's user_values.scss.
+// Either way the result is an import at-rule buried in the middle of the 1.5MB
+// render-blocking frontend bundle - the browser cannot even discover the font
+// stylesheet until that bundle has downloaded and parsed, and cannot request
+// the woff2 files until the stylesheet in turn arrives. Lighthouse measured
+// 348ms of render-blocking time for the 1.3KB file on 21 Aug 2026.
+//
+// static/src/css/poppins.css declares the faces directly instead, from a file
+// that is already in the bundle. So the only thing left to do is stop Odoo
+// emitting an import for a font that is already there: drop the two keys the
+// loop above branches on, and both branches fall through silently.
+//
+// This has to run after website/static/src/scss/secondary_variables.scss -
+// which is where the 'google-fonts' / 'google-local-fonts' loops write those
+// keys - and before website/static/src/scss/website.scss, which reads them.
+// The manifest positions it with ('before', '.../website.scss', ...) for
+// exactly that reason; it is not a free-standing file and must not be moved.
+//
+// Only Poppins is touched. Every other entry in scita_fonts.scss keeps its
+// 'url', so a site that switches the body font in the website editor still
+// gets that font from Google exactly as before - it just stops being the
+// theme's default that pays for it.
+//
+// Side effect worth knowing: this makes the theme independent of the two
+// database settings rather than overriding them. Turning "host fonts locally"
+// on or off in Website > Configuration now changes nothing for Poppins, and a
+// fresh install with no configuration at all renders identically.
+
+$-scita-shipped-fonts: ('Poppins');
+
+@each $-font-name in $-scita-shipped-fonts {
+    @if map-has-key($o-theme-font-configs, $-font-name) {
+        $-config: map-get($o-theme-font-configs, $-font-name);
+        $-config: map-remove($-config, 'url', 'attachment');
+        $o-theme-font-configs: map-merge(
+            $o-theme-font-configs,
+            ($-font-name: $-config)
+        ) !global;
+    }
+}

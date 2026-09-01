@@ -109,9 +109,9 @@
                                 t-out="product.product_style_tag_id.name"/>
                         </div>
                         <a t-att-href="'/shop/product/%s' % slug(product)">
-                            <img class="front" t-att-alt="product.name" t-att-title="product.name"
-                                t-att-src="website.image_url(product, 'image_1920','314x385')"
-                                t-att-data-default-img-src="website.image_url(product, 'image_1920','314x385')"/>
+                            <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy"
+                                t-att-src="website.image_url(product, 'image_1920','220x270')"
+                                t-att-data-default-img-src="website.image_url(product, 'image_1920','220x270')"/>
                         </a>
                     </div>
                     <div class="pwd-desc">
@@ -312,7 +312,7 @@
                                 <span>Product Configuration</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/sct-product-snippet.png" alt="Product Snippet" class="img-fluid" width="1206" height="506"/>
                             </div>
                         </div>
                     </div>
@@ -394,9 +394,9 @@
                                                 t-out="product.product_style_tag_id.name"/>
                                         </div>
                                         <a t-att-href="'/shop/product/%s' % slug(product)">
-                                            <img class="front" t-att-alt="product.name" t-att-title="product.name"
-                                                t-att-src="website.image_url(product, 'image_1920','314x385')"
-                                                t-att-data-default-img-src="website.image_url(product, 'image_1920','314x385')"/>
+                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy"
+                                                t-att-src="website.image_url(product, 'image_1920','220x270')"
+                                                t-att-data-default-img-src="website.image_url(product, 'image_1920','220x270')"/>
                                         </a>
                                     </div>
                                     <div class="pwd-desc">
@@ -603,7 +603,7 @@
                                 <span>Product Configuration</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/img_cat_slider.jpg" alt="Product Snippet" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/img_cat_slider.jpg" alt="Product Snippet" class="img-fluid" width="1351" height="790"/>
                             </div>
                         </div>
                     </div>
@@ -699,9 +699,9 @@
                                                 t-out="product.product_style_tag_id.name"/>
                                         </div>
                                         <a t-att-href="'/shop/product/%s' % slug(product)">
-                                            <img class="front" t-att-alt="product.name" t-att-title="product.name"
-                                                t-att-src="website.image_url(product, 'image_1920','314x385')"
-                                                t-att-data-default-img-src="website.image_url(product, 'image_1920','314x385')"/>
+                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy"
+                                                t-att-src="website.image_url(product, 'image_1920','220x270')"
+                                                t-att-data-default-img-src="website.image_url(product, 'image_1920','220x270')"/>
                                         </a>
                                     </div>
                                     <div class="pwd-desc">
@@ -970,8 +970,8 @@
                           t-out="product.product_style_tag_id.name"/>
                 </div>
                 <a t-att-href="'/shop/product/%s' % slug(product)">
-                    <img class="front" t-att-alt="product.name" t-att-title="product.name"
-                         t-att-src="website.image_url(product, 'image_1920','314x385')"/>
+                    <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy"
+                         t-att-src="website.image_url(product, 'image_1920','220x270')"/>
                 </a>
             </div>
             <div class="pwd-desc">
@@ -1059,7 +1059,7 @@
                                 <span>Multi Product Slider</span>
                             </h4>
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/feature-product.png" alt="Category Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/feature-product.webp" alt="Category Slider" class="img-fluid" width="430" height="158"/>
                             </div>
                         </div>
                     </div>
@@ -1374,7 +1374,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 sct_loc_info">
                         <section class="sct_contact_info d-flex flex-column">
                             <div class="sct_contact_heading d-flex align-items-center">
-                                <img src="/theme_scita/static/src/img/india.png" alt="India" title="India"/>
+                                <img src="/theme_scita/static/src/img/india.png" alt="India" title="India" width="105" height="63"/>
                                 <h3 class='sct_title'>
                                     India - Bengaluru
                                 </h3>
@@ -1395,7 +1395,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 sct_loc_info">
                         <section class="sct_contact_info d-flex flex-column">
                             <div class="sct_contact_heading d-flex align-items-center">
-                                <img src="/theme_scita/static/src/img/uk.png" alt="uk" title="uk"/>
+                                <img src="/theme_scita/static/src/img/uk.png" alt="uk" title="uk" width="105" height="63"/>
                                 <h3 class='sct_title'>UK - London</h3>
                             </div>
                             <div class="sct_simple_text d-flex flex-column flex-grow-1">
@@ -1418,7 +1418,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 sct_loc_info">
                         <section class="sct_contact_info d-flex flex-column">
                             <div class="sct_contact_heading d-flex align-items-center">
-                                <img src="/theme_scita/static/src/img/france.png" alt="france" title="france"/>
+                                <img src="/theme_scita/static/src/img/france.png" alt="france" title="france" width="105" height="63"/>
                                 <h3 class='sct_title'>France - Paris</h3>
                             </div>
                             <div class="sct_simple_text d-flex flex-column flex-grow-1">
@@ -1441,7 +1441,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 sct_loc_info">
                         <section class="sct_contact_info d-flex flex-column">
                             <div class="sct_contact_heading d-flex align-items-center">
-                                <img src="/theme_scita/static/src/img/canada.png" alt="canada" title="canada"/>
+                                <img src="/theme_scita/static/src/img/canada.png" alt="canada" title="canada" width="105" height="63"/>
                                 <h3 class='sct_title'>Canada - Toronto</h3>
                             </div>
                             <div class="sct_simple_text d-flex flex-column flex-grow-1">

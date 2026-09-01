@@ -3,7 +3,7 @@
     <template id="scita_header_all_category_style" name="Scita All Categories Style">
         <div class="category_dropdown dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" id="allCategory" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="/web/image/theme_scita.sct_menu_burger" alt="All Categories">
+                    <img src="/web/image/theme_scita.sct_menu_burger" width="18" height="14" alt="All Categories">
                     </img>
                     All Categories
                 </a>
@@ -58,12 +58,12 @@
 
     <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
-            <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" height="21" fetchpriority="high" loading="eager" alt="Cart"/>
+            <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" width="20" height="21" fetchpriority="high" loading="eager" alt="Cart"/>
         </xpath>
     </template>
     <template id="scita_header_wishlist_link" name="Scita Header Wishlist" inherit_id="website_sale_wishlist.header_wishlist_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
-            <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" height="20" fetchpriority="high" loading="eager" alt="Wishlist"/>
+            <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" width="23" height="20" fetchpriority="high" loading="eager" alt="Wishlist"/>
         </xpath>
     </template>
     <template id="scita_header_search_box_icon" name="Scita Header Search Box" inherit_id="website.header_search_box" active='False'>
@@ -170,7 +170,7 @@
             <li t-attf-class="#{_item_class} divider d-none"/>
             <li t-attf-class="nav-items-icon o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">
                 <button type="button" class="nav-toggle-btn account_icon btn p-0 rounded-circle position-relative">
-                    <img t-if="_icon" class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" alt="Cart"/>
+                    <img t-if="_icon" class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" width="20" height="21" alt="Cart"/>
                     <sup t-attf-class="my_cart_quantity badge position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill bg-primary #{_badge_class} #{'d-none' if (website_sale_cart_quantity == 0) else ''}" t-esc="website_sale_cart_quantity" t-att-data-order-id="request.session.get('sale_order_id', '')"/>
                 </button>
             </li>

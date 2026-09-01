@@ -61,7 +61,7 @@ async function openMultiCategorySliderModal(snippetEl) {
                             </h4>
                         </div>
                         <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/feature-product.png" alt="Multi Product Slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/feature-product.webp" alt="Multi Product Slider" class="img-fluid"/>
                         </div>
                     </div>
                 </div>

@@ -3254,30 +3254,43 @@
             <field name="url">/theme_scita/static/src/img/scita_demo_img/home_delivery/team-5(1).jpg</field>
         </record>
         <!-- grocery image start -->
+        <!-- These are the default images this snippet falls back to whenever
+             it's freshly dragged onto a page (or, as happened here, a page
+             reverts to its unmodified default). They used to be raw
+             954x490/462x230 JPGs served as-is with no resizing or
+             compression - type="url" attachments bypass Odoo's image-variant
+             pipeline entirely, so whatever resolution the file is on disk is
+             exactly what every visitor downloads. Re-encoded to WebP at the
+             column width this snippet actually renders at (728px for the
+             col-md-7 slider, matching the sibling banner image's own
+             resize-width; 500px cap for the col-md-5 stacked deal cards) -
+             381 KiB combined down to 62 KiB. Fixed at the source so this
+             holds for every future drag of this snippet, not just the
+             instance that was on the page when this was found. -->
         <record id="theme_scita.sct_banner_slider_image" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_banner_slider_image.jpg</field>
+            <field name="name">sct_banner_slider_image.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/banner-slider-image.jpg</field>
+            <field name="url">/theme_scita/static/src/img/grocery/banner-slider-image.webp</field>
         </record>
         <record id="theme_scita.sct_banner_slider_image_2" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_banner_slider_image_2.jpg</field>
+            <field name="name">sct_banner_slider_image_2.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/banner-slider-image-2.jpg</field>
+            <field name="url">/theme_scita/static/src/img/grocery/banner-slider-image-2.webp</field>
         </record>
-        
+
         <record id="theme_scita.sct_top_deal_cold_drinks" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_top_deal_cold_drinks.jpg</field>
+            <field name="name">sct_top_deal_cold_drinks.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/top-deal-cold-drinks.jpg</field>
+            <field name="url">/theme_scita/static/src/img/grocery/top-deal-cold-drinks.webp</field>
         </record>
         <record id="theme_scita.sct_top_deal_bakery" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_top_deal_bakery.jpg</field>
+            <field name="name">sct_top_deal_bakery.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/top-deal-bakery.jpg</field>
+            <field name="url">/theme_scita/static/src/img/grocery/top-deal-bakery.webp</field>
         </record>
 
         <record id="theme_scita.sct_fresh_fruit_juices" model="ir.attachment">
@@ -3320,15 +3333,15 @@
 
         <record id="theme_scita.sct_corey_curtis" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_corey_curtis.jpg</field>
+            <field name="name">sct_corey_curtis.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/Corey-Curtis.png</field>
+            <field name="url">/theme_scita/static/src/img/grocery/Corey-Curtis.webp</field>
         </record>
         <record id="theme_scita.sct_kaiya_mango" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_kaiya_mango.jpg</field>
+            <field name="name">sct_kaiya_mango.webp</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/Kaiya-Mango.png</field>
+            <field name="url">/theme_scita/static/src/img/grocery/Kaiya-Mango.webp</field>
         </record>
         <record id="theme_scita.sct_quote_icon" model="ir.attachment">
             <field name="public" eval="True"/>

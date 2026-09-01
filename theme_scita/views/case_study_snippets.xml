@@ -14,7 +14,7 @@
                     <div class='col-md-6 col-lg-4'>
                         <div class='sct_base_class'>
                             <div class='sct_left_side'>
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img'/>
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img' width="500" height="500"/>
                             </div>
                             <div class='sct_right_side text-center'>
                                 <h3 class='sct_title'>DEN LEONARDI</h3>
@@ -28,7 +28,7 @@
                     <div class='col-md-6 col-lg-4'>
                         <div class='sct_base_class'>
                             <div class='sct_left_side'>
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img'/>
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img' width="500" height="500"/>
                             </div>
                             <div class='sct_right_side text-center'>
                                 <h3 class='sct_title'>DEN LEONARDI</h3>
@@ -42,7 +42,7 @@
                     <div class='col-md-6 col-lg-4'>
                         <div class='sct_base_class'>
                             <div class='sct_left_side'>
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img'/>
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='person img' width="500" height="500"/>
                             </div>
                             <div class='sct_right_side text-center'>
                                 <h3 class='sct_title'>DEN LEONARDI</h3>
@@ -72,7 +72,7 @@
                         <div class='case_study_box'>
                             <div class='sct_above'>
                                 <div class='sct_case_icon'>
-                                     <img src="/theme_scita/static/src/img/it/case_icon_1.png" class="img img-fluid" alt='case study icon'/>
+                                     <img src="/theme_scita/static/src/img/it/case_icon_1.png" class="img img-fluid" alt='case study icon' width="512" height="512"/>
                                 </div>
                             </div>
                             <div class='sct_below'>
@@ -88,7 +88,7 @@
                         <div class='case_study_box'>
                             <div class='sct_above'>
                                 <div class='sct_case_icon'>
-                                     <img src="/theme_scita/static/src/img/it/case_icon_2.png" class="img img-fluid" alt='case study icon'/>
+                                     <img src="/theme_scita/static/src/img/it/case_icon_2.png" class="img img-fluid" alt='case study icon' width="512" height="512"/>
                                 </div>
                             </div>
                             <div class='sct_below'>
@@ -104,7 +104,7 @@
                         <div class='case_study_box'>
                             <div class='sct_above'>
                                 <div class='sct_case_icon'>
-                                     <img src="/theme_scita/static/src/img/it/case_icon_3.png" class="img img-fluid" alt='case study icon'/>
+                                     <img src="/theme_scita/static/src/img/it/case_icon_3.png" class="img img-fluid" alt='case study icon' width="512" height="512"/>
                                 </div>
                             </div>
                             <div class='sct_below'>
@@ -120,7 +120,7 @@
                         <div class='case_study_box'>
                             <div class='sct_above'>
                                 <div class='sct_case_icon'>
-                                     <img src="/theme_scita/static/src/img/it/case_icon_4.png" class="img img-fluid" alt='case study icon'/>
+                                     <img src="/theme_scita/static/src/img/it/case_icon_4.png" class="img img-fluid" alt='case study icon' width="512" height="512"/>
                                 </div>
                             </div>
                             <div class='sct_below'>

@@ -189,7 +189,7 @@ async function openBrandSliderModal(snippetEl, { template, defaultLabel }) {
 
         // Determine which placeholder image to use based on snippet class
         const placeholderImg = snippetEl.classList.contains("box_brand_slider") 
-            ? "/theme_scita/static/src/img/Brand2.png" 
+            ? "/theme_scita/static/src/img/Brand2.webp" 
             : "/theme_scita/static/src/img/brand1.png";
 
         // Use the original placeholder template structure to maintain consistency

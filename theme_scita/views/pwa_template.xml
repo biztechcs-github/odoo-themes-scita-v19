@@ -43,6 +43,9 @@
           self.clients.claim();
         });
         self.addEventListener('fetch', function(ev) {
+        if (!ev.request.url.startsWith('http')) {
+            return;
+        }
         ev.respondWith(
             fetch(ev.request) 
             .then(function(res) {
@@ -121,13 +124,16 @@
     <template id="pwa_mobile_device_popup" inherit_id="web.frontend_layout" name='Mobile Device PWA Popup'>
          <xpath expr="//div[@id='wrapwrap']/main" position="inside">
             <t t-set='website_obj' t-value="request.env['website']" />
-            <t t-set='current_website_obj' t-value="website_obj.sudo().get_current_website()" />  
+            <t t-set='current_website_obj' t-value="website_obj.sudo().get_current_website()" />
+            <t t-if='current_website_obj.is_app_pwa'>
+                <t t-call-assets="theme_scita.assets_pwa" t-js="true" t-css="false" defer_load="true"/>
+            </t>
             <div class="mobile-deive-popup" t-if='current_website_obj.is_app_pwa'>
                 <img t-att-src="request.env['website'].image_url(current_website_obj, 'pwa_app_icon_512', '50x50')" class='img pwa-icon-img'/>
                 <p>
                     <button type="button" class='sct_pwa_iphone_close float-right'>X
                     </button>
-                    To install this Web App in your ISO device press<img src="/theme_scita/static/src/img/PWA/mobile_icon.png" class='pwa-small-img'/> and then Add to Home Screen.
+                    To install this Web App in your ISO device press<img src="/theme_scita/static/src/img/PWA/mobile_icon.png" class='pwa-small-img' width="735" height="735"/> and then Add to Home Screen.
                 </p>
             </div>
         </xpath>

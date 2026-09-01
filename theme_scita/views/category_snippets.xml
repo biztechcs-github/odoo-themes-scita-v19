@@ -8,7 +8,7 @@
                     <h3 class="fancy">Category Snippet</h3>
                 </div>
                  <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/cat_slide_4.png" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/cat_slide_4.png" alt="Category Slider" class="img-fluid" width="1156" height="714"/>
                 </div>
             </div>
         </section>
@@ -51,7 +51,7 @@
                     <h3 class="fancy">Category Slider</h3>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/cat_slide_1.jpeg" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/cat_slide_1.webp" alt="Category Slider" class="img-fluid" width="430" height="116"/>
                 </div>
             </div>
         </section>
@@ -95,7 +95,7 @@
                     <h3 class="fancy">Category Slider</h3>
                 </div>
                  <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/cat_slide_2.png" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/cat_slide_2.png" alt="Category Slider" class="img-fluid" width="1383" height="384"/>
                 </div>
             </div>
         </section>
@@ -123,7 +123,7 @@
                                     <p class="pwpi-title">
                                         <t t-esc="slide.name"/>
                                     </p>
-                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" width="12" height="12" alt='Blog Link'/>
                                 </div>
                             </a>
                         </div>
@@ -141,7 +141,7 @@
                             <span>Category</span>
                         </h3>
                          <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/cat_slide_3.png" alt="Category Slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/cat_slide_3.png" alt="Category Slider" class="img-fluid" width="1342" height="376"/>
                         </div>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                             <div class="item">
                                 <a t-attf-href="/shop/category/#{ category.id }">
                                     <div class="category-logo d-flex align-items-center justify-content-center">
-                                         <img t-att-src="website.image_url(category, 'image_1920','210x88')" t-att-title="category.name" t-att-alt="category.name"/>
+                                         <img t-att-src="website.image_url(category, 'image_1920','210x88')" width="210" height="88" t-att-title="category.name" t-att-alt="category.name"/>
                                     </div>
                                     <div class="category-title">
                                         <p class="text-center" t-esc="category.name"></p>

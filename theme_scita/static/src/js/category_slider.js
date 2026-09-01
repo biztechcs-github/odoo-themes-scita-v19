@@ -53,7 +53,7 @@ async function openCategorySliderModal(snippetEl) {
                     <h3 class="fancy">${_t(type)}</h3>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/cat_slide_1.jpeg" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/cat_slide_1.webp" alt="Category Slider" class="img-fluid"/>
                 </div>
             </div>
         `;

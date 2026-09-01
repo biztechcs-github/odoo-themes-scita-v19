@@ -1686,9 +1686,14 @@ class ScitaShop(WebsiteSale):
         # If no attributes, set to False (not empty list) for template compatibility
         attrib_values = attrib_values_list if attrib_values_list else False
 
+        grouped_attributes_values = request.env['product.attribute.value'].browse(
+            attribute_value_ids
+        ).sorted().grouped('attribute_id')
+
         # Values to render partial grid
         values = {
             'search': fuzzy_search_term or search,
+            'auto_assign_ribbons': self.env['product.ribbon'].sudo().search([('assign', '!=', 'manual')]),
             'ribbon': self.env['product.ribbon'].sudo().search([('assign', '!=', 'manual')]),
             'original_search': fuzzy_search_term and search,
             'order': post.get('order', ''),
@@ -1710,6 +1715,7 @@ class ScitaShop(WebsiteSale):
             'layout_mode': layout_mode,
             'get_product_prices': lambda product: products_prices[product.id],
             'float_round': float_round,
+            'grouped_attributes_values': grouped_attributes_values,
             'previewed_attribute_values': lazy(
                 lambda: products._get_previewed_attribute_values(category, product_query_params),
             ),
@@ -1821,7 +1827,16 @@ class PWASupport(http.Controller):
                 "theme_color": theme_color,
             },
         )
-        return request.make_response(content, [("Content-Type", mimetype)])
+        # The <link rel="manifest"> in website.layout means every page view
+        # re-requests this. It is cheap server-side (~6ms) but it is still a
+        # whole extra request on the document's critical path, and on a
+        # throttled mobile connection Lighthouse measured it queuing for ~2s.
+        # The contents only change when the PWA settings or the app icon
+        # change, so let the browser keep it for a day.
+        return request.make_response(content, [
+            ("Content-Type", mimetype),
+            ("Cache-Control", "public, max-age=86400"),
+        ])
 
     @http.route("/theme_scita/pwa/offline", type="http", auth="public", website=True)
     def pwa_offline_page(self):

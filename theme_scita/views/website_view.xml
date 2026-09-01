@@ -115,4 +115,301 @@
             <field name="view_mode">list,form</field>
             <field name="context">{'search_default_my_websites':1}</field>
         </record>
+
+        <!-- Preconnect to the Google Fonts origins, but only when some font on
+             this site is still actually fetched from there.
+
+             Odoo's website.layout emits the gstatic preconnect unconditionally.
+             On a default install of this theme that is now dead weight: the body
+             font (Poppins) ships inside the module - see
+             static/src/css/poppins.css and static/src/scss/font_source_override.scss
+             - so nothing is requested cross-origin and Lighthouse flags the
+             unused connection setup.
+
+             It is not always dead weight, which is why this is a condition and
+             not a deletion: every other font in scita_fonts.scss still carries a
+             Google url, so an admin who switches the body font in the website
+             editor does reach fonts.googleapis.com, and then the handshake is
+             worth starting early. website._scita_uses_remote_google_fonts reads
+             the same setting the SCSS does and answers exactly that question.
+
+             This file previously dropped the preconnect unconditionally, on the
+             assumption that every site running the theme had "host fonts
+             locally" switched on. That is a per-database setting, and it was
+             off: the compiled bundle still carried
+             `@import url("https://fonts.googleapis.com/css?family=Poppins:...")`
+             while the preconnect that would have covered it was being removed.
+             The 20 Aug 2026 mobile run shows the damage - "no origins were
+             preconnected", the font stylesheet at 830ms and three woff2 files at
+             ~650-750ms each. Shipping the font removes the question entirely;
+             this condition only covers what is left.
+
+             fonts.googleapis.com is listed alongside gstatic because the two are
+             separate origins: the stylesheet comes from the first, the woff2
+             files from the second, and the second cannot be reached until the
+             first has been parsed. -->
+        <template id="theme_scita_fonts_preconnect" inherit_id="website.layout" name="Google Fonts Preconnect">
+            <xpath expr="//link[@rel='preconnect'][@href='https://fonts.gstatic.com/']" position="replace">
+                <t t-if="website and website._scita_uses_remote_google_fonts()">
+                    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
+                </t>
+            </xpath>
+        </template>
+
+        <!-- Keep this preload. It is tempting to drop it: a preload is fetched at
+             High priority, so Lineicons (67 KB) and Odoo's fontawesome (78 KB)
+             do compete with the 18.8 KB LCP image on a throttled connection.
+             Measured on 3007scita, dropping both made things worse, not better -
+             FCP went 2.76s -> 3.60s across three runs - because the icon fonts
+             use font-display: block, so first paint waits for them either way.
+             Preloading is what stops that wait being long. If the preloads are
+             ever removed, font-display must go back to swap in the same change. -->
+        <!-- Odoo preloads the full 77KB fontawesome-webfont.woff2 in
+             web.frontend_layout. That is High-priority bandwidth taken from
+             the 14KB LCP hero image, and static/src/css/fontawesome-subset.css
+             now serves the glyphs this theme uses from a 4.6KB file instead,
+             so preload that rather than the original. The full file is still
+             reachable through core's own un-ranged @font-face if a page uses a
+             glyph outside the subset - see that CSS file for the mechanism. -->
+        <template id="theme_scita_preload_fontawesome_subset" inherit_id="web.frontend_layout" name="Preload FontAwesome Subset">
+            <xpath expr="//link[@rel='preload'][contains(@href, 'fontawesome-webfont')]" position="replace">
+                <link rel="preload" href="/theme_scita/static/src/fonts/fontawesome-subset.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+            </xpath>
+        </template>
+
+        <template id="theme_scita_preload_icon_font" inherit_id="website.layout" name="Preload Icon Font">
+            <xpath expr="//head" position="inside">
+                <!-- The 1.2KB subset, not the 66KB full file: a preload is
+                     High priority, so what is preloaded here is taken out of
+                     the same budget the LCP hero image needs. Every other
+                     Lineicon still resolves through the complementary
+                     unicode-range in line-icons-deferred.css. -->
+                <link rel="preload" href="/theme_scita/static/src/fonts/Lineicons-subset.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+            </xpath>
+        </template>
+
+        <!-- Non-blocking load for the product-slider styles. media="print" keeps
+             the stylesheet off the critical path, then it is promoted to
+             media="all" as soon as it has downloaded. Safe because everything it
+             styles arrives after load anyway (RPC-injected sliders, quick-view
+             modal), so there is nothing on screen for it to restyle - and the
+             href filter means we only ever promote our own sheet, never a real
+             print stylesheet belonging to Odoo or another module. -->
+        <!-- Start the LCP image downloading straight away instead of after the
+             stylesheet clears the connection. See website._scita_lcp_preload_href
+             for why this is derived from the page's own markup. -->
+        <template id="theme_scita_preload_lcp_image" inherit_id="website.layout" name="Preload LCP Image">
+            <xpath expr="//head" position="inside">
+                <t t-set="scita_lcp_href" t-value="website._scita_lcp_preload_href(main_object) if website else False"/>
+                <link t-if="scita_lcp_href" rel="preload" as="image" t-att-href="scita_lcp_href" fetchpriority="high"/>
+            </xpath>
+        </template>
+
+        <!-- Get the body font onto the wire in the first round trip.
+
+             The faces are declared in static/src/css/poppins.css, which lives in
+             the 1.5MB render-blocking bundle, so without this the browser cannot
+             discover the woff2 files until that bundle has parsed. font-display
+             is swap, so what it does in the meantime is lay the page out in the
+             fallback font and reflow it afterwards - measured as 0.331 CLS on
+             /shop, which is worth more Lighthouse points than any byte-size win
+             left on the page. Preloading the two faces the layout is actually
+             measured in makes the swap happen before first paint instead.
+
+             See website._scita_font_preload_hrefs for why only two. -->
+        <template id="theme_scita_preload_google_font" inherit_id="website.layout" name="Preload Body Font">
+            <xpath expr="//head" position="inside">
+                <t t-foreach="website._scita_font_preload_hrefs() if website else []" t-as="scita_font_href">
+                    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" t-att-href="scita_font_href"/>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="theme_scita_async_snippet_css" inherit_id="website.layout" name="Async Snippet Product CSS">
+            <xpath expr="//head" position="inside">
+                <t t-call-assets="theme_scita.assets_snippet_product_css" t-js="false" t-css="true" media="print"/>
+                <script type="text/javascript">
+                    (function () {
+                        var sel = 'link[rel="stylesheet"][media="print"][href*="assets_snippet_product_css"]';
+                        Array.prototype.forEach.call(document.querySelectorAll(sel), function (link) {
+                            if (link.sheet) {
+                                link.media = 'all';
+                            } else {
+                                link.addEventListener('load', function () { link.media = 'all'; });
+                            }
+                        });
+                    })();
+                </script>
+            </xpath>
+        </template>
+
+        <!-- Hold Odoo's lazy JS bundle back until the main thread is idle.
+
+             web.assets_frontend_lazy is 616 KiB gzipped here (2.7 MB parsed)
+             and 59% of it is never called on this page - it is the single
+             most expensive thing on /shop by a wide margin. Odoo already
+             defers it to window.load (see
+             web/static/src/legacy/js/public/lazyloader.js), but "load" fires
+             while the browser is still finishing the first meaningful paint,
+             so its 210ms of parse plus 520ms of evaluation land straight on
+             top of the LCP paint. Measured on the 21 Aug 2026 mobile run:
+             blocking that one URL moved LCP 7.9s -> 4.3s, TBT 291ms -> 125ms
+             and Speed Index 4.3s -> 3.4s, worth ~15 Lighthouse points.
+
+             So: swallow the real load event, and re-dispatch it once the
+             browser reports an idle moment (or after 2s, whichever comes
+             first). Everything Odoo hangs off window.load then runs exactly
+             as before, just after the page has had its chance to paint.
+
+             This listener is registered from an inline script in <head>, so
+             it is the *first* window load listener on the page; that is what
+             lets stopImmediatePropagation hold the others back. The re-
+             dispatched event passes straight through on the second pass.
+
+             The user-visible cost is that the lazy JS becomes interactive up
+             to ~2s later on a cold, throttled load. Odoo's own lazyloader
+             already covers that window: it blocks clicks on buttons and
+             forms and replays them once the JS is in (waitLazy /
+             waitForLazyAndRetrigger in the file above), and that mechanism is
+             untouched here - it keys off the scripts finishing, not off the
+             load event.
+
+             requestIdleCallback is required rather than polyfilled: without
+             it (Safari < 16.4) the page keeps Odoo's stock behaviour, which
+             is correct, just slower. -->
+        <template id="theme_scita_idle_lazy_assets" inherit_id="website.layout" name="Defer Lazy JS To Idle">
+            <xpath expr="//head" position="inside">
+                <script type="text/javascript">
+                    (function () {
+                        if (typeof window.requestIdleCallback !== 'function') {
+                            return;
+                        }
+                        var released = false;
+                        function release() {
+                            released = true;
+                            window.dispatchEvent(new Event('load'));
+                        }
+                        window.addEventListener('load', function (ev) {
+                            if (released) {
+                                return;
+                            }
+                            ev.stopImmediatePropagation();
+                            // Two frames before even asking for idle. An idle
+                            // callback on its own is not enough: "idle" can be
+                            // true while the largest image is still waiting to
+                            // be painted, and then the bundle's 445ms task
+                            // queues in front of that paint. Measured over 7
+                            // runs, that is the whole difference between an LCP
+                            // element render delay of 54ms and one of 907ms.
+                            // rAF callbacks run before a paint, so scheduling
+                            // one inside another guarantees a frame has gone
+                            // out before we hand the thread over.
+                            window.requestAnimationFrame(function () {
+                                window.requestAnimationFrame(function () {
+                                    window.requestIdleCallback(release, {timeout: 2000});
+                                });
+                            });
+                        });
+                    })();
+                </script>
+            </xpath>
+        </template>
+
+        <!-- Read the rating through sudo in the dynamic product snippet.
+
+             website_sale.dynamic_filter_template_product_product_products_item
+             sets `rating_avg` from `record.rating_avg` with no sudo, and the
+             record it is given is a product.product. The public user has no
+             read access to that field on the variant model, so the call raises
+             AccessError and the whole snippet fails - every product page shows
+             "RPC_ERROR: Odoo Server Error" in the console and the recommended-
+             products carousel renders empty.
+
+             Odoo does this correctly everywhere else: both
+             website_sale/views/product_tile_templates.xml and
+             website_sale/views/templates.xml read the same field as
+             `product.sudo().rating_avg`. Only the dynamic-snippet copy of the
+             markup is missing it, which is why it only breaks on the pages
+             that use a product snippet. rating_count gets the same treatment -
+             it is the same mixin on the same record and only escapes the error
+             today because it is read after the line that raises.
+
+             Ratings are public information on this site (they are shown under
+             every product), so sudo is disclosing nothing that the page does
+             not already display. Drop this template if a future Odoo release
+             fixes the upstream markup. -->
+        <template id="theme_scita_dynamic_snippet_rating_access" inherit_id="website_sale.dynamic_filter_template_product_product_products_item" name="Dynamic Product Snippet Rating Access">
+            <xpath expr="//t[@t-set='rating_avg']" position="attributes">
+                <attribute name="t-value">record.sudo().rating_avg</attribute>
+            </xpath>
+            <xpath expr="//t[@t-set='rating_count']" position="attributes">
+                <attribute name="t-value">record.sudo().rating_count</attribute>
+            </xpath>
+        </template>
+
+        <!-- Put the product-page body class in the HTML instead of adding it
+             from JavaScript.
+
+             static/src/js/product_details.js does
+             `$("body").addClass("sct-cst-pro-page")` once the page is
+             interactive, and comman.scss / product_style.scss hang a lot of
+             layout off that class - among other things it cancels the negative
+             gutters on #product_detail_main. So the browser lays the page out
+             once without it and again with it, and everything in the product
+             column jumps 30px narrower while the section moves 16px down.
+
+             Measured on the 21 Aug 2026 mobile run of /shop/iphone-16-295:
+             CLS 0.295, of which 0.2947 is this single reflow. Blocking
+             web.assets_frontend_lazy entirely takes the page to 0.0001, which
+             is what identified it - no image, stylesheet or font is involved.
+             At 0.295 the page scores 9.5 of the 25 CLS points; at 0.083 (what
+             the rest of the theme now measures) it scores 23.3.
+
+             Setting it here means the class is present in the first byte of
+             HTML, so there is only ever one layout. The addClass in the JS is
+             left alone: it becomes a no-op on this page, and it still covers
+             any page that renders #product_detail through a different
+             template. -->
+        <template id="theme_scita_product_page_body_class" inherit_id="website_sale.product" name="Product Page Body Class">
+            <xpath expr="//t[@t-call='website.layout']/t[@t-set='additional_title']" position="before">
+                <t t-set="body_classname" t-value="'sct-cst-pro-page'"/>
+            </xpath>
+        </template>
+
+        <template id="theme_scita_brand_promotion_fixed_size" inherit_id="web.brand_promotion_message" name="Brand Promotion Badge Fixed Size">
+            <xpath expr="//img[@src='/web/static/img/odoo_logo_tiny.png']" position="attributes">
+                <attribute name="style">width: 49.6px; height: 16px; vertical-align: baseline;</attribute>
+            </xpath>
+        </template>
+
+        <!-- Serve product-card thumbnails at a thumbnail resolution.
+
+             website_sale.products_item asks for `image_1024` on both the
+             primary and the hover/secondary image. A product card is 232px
+             wide on desktop and 157px on Lighthouse's 412px mobile viewport,
+             so image_1024 is 3-6x more pixels than any of them can show. On
+             the 20 Aug 2026 mobile run that was the "Improve image delivery"
+             audit: 61.1 KiB shipped, 54.5 KiB of it wasted, and the worst
+             offender *is* the LCP element - so the wasted bytes are paid for
+             twice, once in transfer and once in LCP.
+
+             image_512 would be a no-op here: the source images are 500x455,
+             so Odoo's 512 variant returns the original unchanged. image_256
+             (256x233) is the first size that actually shrinks anything while
+             still covering the 232px desktop card at 1x and the 157px mobile
+             card at 1.6x.
+
+             Kept as a `preview_image` swap rather than a hand-written <img>
+             with srcset: t-field keeps the website builder's image handling
+             on these tiles intact, which raw markup would lose. -->
+        <template id="theme_scita_product_tile_thumbnails" inherit_id="website_sale.products_item" name="Product Tile Thumbnail Size">
+            <xpath expr="//span[contains(@class, 'oe_product_image_img_wrapper_primary')]" position="attributes">
+                <attribute name="t-options">{'widget': 'image', 'preview_image': 'image_256', 'class': 'oe_product_image_img h-100 w-100'}</attribute>
+            </xpath>
+            <xpath expr="//span[contains(@class, 'oe_product_image_img_wrapper_secondary')]" position="attributes">
+                <attribute name="t-options">{'widget': 'image', 'preview_image': 'image_256', 'class': 'oe_product_image_img_secondary h-100 w-100'}</attribute>
+            </xpath>
+        </template>
+
 </odoo>

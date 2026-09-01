@@ -42,7 +42,7 @@
 									                                <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
 									                            </div>
 		                                                        <a t-att-href="'/shop/product/%s' % slug(product)">
-		                                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
+		                                                            <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy" t-att-src="website.image_url(product, 'image_1920','220x270')"/>
 		                                                        </a>
 		                                                    </div>
 		                                                    <div class="pwd-desc">

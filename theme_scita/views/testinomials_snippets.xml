@@ -22,7 +22,7 @@
                                                 <div class="testimonial_block_inner">
                                                   <div class="sct_left_side test_image">
                                                       <div class="test-icon-wrapper">
-                                                        <img src="/web/image/theme_scita.sct_corey_curtis" class="img img-fluid" alt="Corey Curtis" title="Corey Curtis"/>
+                                                        <img src="/web/image/theme_scita.sct_corey_curtis" width="75" height="75" class="img img-fluid" alt="Corey Curtis" title="Corey Curtis"/>
                                                       </div>
                                                       <div class="test-title-rating">
                                                         <h4 class="sct_pers_name o_default_snippet_text title-20">Corey Curtis</h4>
@@ -62,7 +62,7 @@
                                                          </p>
                                                      </div>
                                                      <div class="quote-icon">
-                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote"/>
+                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote" width="30" height="30"/>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -71,7 +71,7 @@
                                                 <div class="testimonial_block_inner">
                                                   <div class="sct_left_side test_image">
                                                     <div class="test-icon-wrapper">
-                                                        <img src="/web/image/theme_scita.sct_kaiya_mango" class="img img-fluid" alt="Kaiya Mango" title="Kaiya Mango" />
+                                                        <img src="/web/image/theme_scita.sct_kaiya_mango" width="75" height="75" class="img img-fluid" alt="Kaiya Mango" title="Kaiya Mango" />
                                                       </div>
                                                       <div class="test-title-rating">
                                                         <h4 class="sct_pers_name o_default_snippet_text title-20">Kaiya Mango</h4>
@@ -111,7 +111,7 @@
                                                          </p>
                                                       </div>
                                                       <div class="quote-icon">
-                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote"/>
+                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote" width="30" height="30"/>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -124,7 +124,7 @@
                                                 <div class="testimonial_block_inner">
                                                   <div class="sct_left_side test_image">
                                                       <div class="test-icon-wrapper">
-                                                        <img src="/web/image/theme_scita.sct_corey_curtis" class="img img-fluid" alt="Corey Curtis" title="Corey Curtis" />
+                                                        <img src="/web/image/theme_scita.sct_corey_curtis" width="75" height="75" class="img img-fluid" alt="Corey Curtis" title="Corey Curtis" />
                                                       </div>
                                                       <div class="test-title-rating">
                                                         <h4 class="sct_pers_name o_default_snippet_text title-20">Corey Curtis</h4>
@@ -164,7 +164,7 @@
                                                          </p>
                                                      </div>
                                                      <div class="quote-icon">
-                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote"/>
+                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote" width="30" height="30"/>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -173,7 +173,7 @@
                                                 <div class="testimonial_block_inner">
                                                   <div class="sct_left_side test_image">
                                                     <div class="test-icon-wrapper">
-                                                        <img src="/web/image/theme_scita.sct_kaiya_mango" class="img img-fluid" alt="Kaiya Mango" title="Kaiya Mango" />
+                                                        <img src="/web/image/theme_scita.sct_kaiya_mango" width="75" height="75" class="img img-fluid" alt="Kaiya Mango" title="Kaiya Mango" />
                                                       </div>
                                                       <div class="test-title-rating">
                                                         <h4 class="sct_pers_name o_default_snippet_text title-20">Kaiya Mango</h4>
@@ -213,7 +213,7 @@
                                                          </p>
                                                       </div>
                                                       <div class="quote-icon">
-                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote"/>
+                                                        <img src="/web/image/theme_scita.sct_quote_icon" alt="quote" title="quote" width="30" height="30"/>
                                                      </div>
                                                   </div>
                                                 </div>
@@ -243,7 +243,7 @@
             <div class="container">
                 <div class="row s_nb_column_fixed client_happy_slide">
                     <div class="col-lg-6 d-none d-lg-block client_left_side">
-                        <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>                    
+                        <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company" width="500" height="500"/>                    
                     </div>
                     <div class="col-lg-6 client_right_side">
                         <div class="sct_health_title">
@@ -267,7 +267,7 @@
                                                     </div>
                                                     <div class="sct_below">
                                                         <div class="sct_left_side">
-                                                            <img src="/web/image/theme_scita.sct_kaiya_mango" class="img img-fluid" alt="Emily Peterson" title="Emily Peterson" loading="lazy" />
+                                                            <img src="/web/image/theme_scita.sct_kaiya_mango" width="75" height="75" class="img img-fluid" alt="Emily Peterson" title="Emily Peterson" loading="lazy" />
                                                         </div>
                                                         <div class="sct_right_side">
                                                             <h4 class="sct_pers_name o_default_snippet_text">Emily Peterson</h4>
@@ -293,7 +293,7 @@
                                                     </div>
                                                     <div class="sct_below">
                                                         <div class="sct_left_side">
-                                                            <img src="/web/image/theme_scita.sct_kaiya_mango" class="img img-fluid" alt="Emily Peterson" title="Emily Peterson" loading="lazy" />
+                                                            <img src="/web/image/theme_scita.sct_kaiya_mango" width="75" height="75" class="img img-fluid" alt="Emily Peterson" title="Emily Peterson" loading="lazy" />
                                                         </div>
                                                         <div class="sct_right_side">
                                                             <h4 class="sct_pers_name o_default_snippet_text">Emily Peterson</h4>
