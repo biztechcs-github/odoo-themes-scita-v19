@@ -113,6 +113,11 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
                     this.total_count = data.total_count;
                 }
                 
+                // Bind the injected cards to the frontend, otherwise add to cart,
+                // wishlist and compare stay inert on the loaded products.
+                const interactions = this.bindService('public.interactions');
+                const addedNodes = [];
+
                 for (let node of new_product_grid.querySelectorAll('.oe_product')) {
                     // Check for duplicate products by product ID
                     const productId = this._extractProductId(node);
@@ -120,6 +125,8 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
                     // Only add if not already loaded
                     if (!productId || !this.loaded_product_ids.has(productId)) {
                         this.product_grid.appendChild(node);
+                        interactions.startInteractions(node);
+                        addedNodes.push(node);
                         if (productId) {
                             this.loaded_product_ids.add(productId);
                         }
@@ -127,6 +134,17 @@ publicWidget.registry.LazyLoadButton = publicWidget.Widget.extend({
                     }
                 }
                 
+                // Interactions rooted above the grid (add to cart lives on the
+                // .oe_website_sale root) bind their listeners per node, so they
+                // have to rescan for the cards that were just appended.
+                if (addedNodes.length) {
+                    for (const interaction of interactions.interactions) {
+                        if (interaction.el?.contains(this.product_grid)) {
+                            interaction.refreshNodes();
+                        }
+                    }
+                }
+
                 // Update product count
                 this.product_count = this.product_grid.querySelectorAll('.oe_product').length;
                 

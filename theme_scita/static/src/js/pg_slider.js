@@ -1,9 +1,7 @@
 /** @odoo-module **/
 import publicWidget from "@web/legacy/js/public/public_widget";
 
-odoo.define('theme_scita.pg_slider',[], function(require) {
-    'use strict';
-        publicWidget.registry.CustomCategoryCarousel = publicWidget.Widget.extend({
+publicWidget.registry.CustomCategoryCarousel = publicWidget.Widget.extend({
             selector: '#pg_carousel_category',
             start: function () {
                 this.$el.owlCarousel({
@@ -272,7 +270,6 @@ odoo.define('theme_scita.pg_slider',[], function(require) {
                 });
             }
         });
-});;
 
 
 

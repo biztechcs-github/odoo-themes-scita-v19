@@ -13,7 +13,7 @@
             </div>
             <div class='container our_team_1' id="it_our_team">
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid" width="500" height="500"/>
                 </div>
             </div>
         </section>
@@ -67,7 +67,7 @@
                     <div class='col-md-12'>
                         <div class="sct_team_slider our_team_3" id="our_team_varient_3">
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid" width="500" height="500"/>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     <div class='col-md-12'>
                         <div class="sct_team_slider our_team_5" id="our_team_varient_5">
                             <div class="category-slider-placeholder">
-                                <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid"/>
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" alt="Our Team Slider" class="img-fluid" width="500" height="500"/>
                             </div>
                         </div>
                     </div>

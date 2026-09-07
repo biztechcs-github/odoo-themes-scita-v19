@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Asset removals that cannot be expressed in __manifest__.py.
+
+        A ('remove', ...) directive in a manifest only removes paths that were
+        already in the list when that manifest was processed, and this module is
+        a *theme*: Odoo reads theme manifests before regular ones, so a removal
+        written there runs before html_builder has even added the file and
+        silently does nothing (verified - the built bundle still contained every
+        rule).
+
+        ir.asset records with a sequence of 16 or more are applied after every
+        manifest in the graph (odoo/addons/base/models/ir_asset.py:196), which
+        is the only place a theme can subtract from a core bundle. theme.ir.asset
+        is the theme-module form of the same record; Odoo copies it into a real
+        ir.asset per website on install.
+    -->
+
+    <!--
+        DO NOT re-add a removal of html_builder/static/src/scss/background.scss.
+
+        It looks like free money - 58 KiB of minified CSS for 252 decorative
+        background shapes that no page on this site uses - and the removal
+        itself works: with the record in place, ir.asset._get_asset_paths no
+        longer lists the file. But website/static/src/scss/website.scss does
+        `@extend %o-we-background-layer-parent`, and that placeholder is defined
+        in background.scss. Take the file out and the whole web.assets_frontend
+        bundle fails to compile with "The target selector was not found", and
+        Odoo quietly serves the previously generated bundle instead - which is
+        why two earlier attempts appeared to do nothing at all rather than
+        failing loudly. Clearing the asset cache is what finally surfaced it:
+        the frontend stylesheet became a 15 KB error message.
+
+        Any future removal from web.assets_frontend has to be checked the same
+        way - clear /web/assets/ attachments, rebuild, and confirm the bundle is
+        still ~1.5 MB and not a css_error_message.
+    -->
+
+</odoo>

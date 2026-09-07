@@ -127,6 +127,24 @@ patch(WebsiteSale.prototype, {
     VariantMixin._onChangeCombination(ev, $parent, combinationInfo);
   },
 
+  // The reviews are displayed in the description tabs instead of the base
+  // collapsible section, which the theme removes, so the base handler would
+  // build a Collapse on a missing element.
+  onClickReviewsLink(ev) {
+    const reviewsTabEl = document.querySelector(
+      '#description_reviews_tabs a[href="#reviews"]'
+    );
+    if (!reviewsTabEl) {
+      if (document.querySelector("#o_product_page_reviews_content")) {
+        return super.onClickReviewsLink(...arguments);
+      }
+      return;
+    }
+    ev.preventDefault();
+    Tab.getOrCreateInstance(reviewsTabEl).show();
+    reviewsTabEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  },
+
   async _onClickSubmit(ev, forceSubmit) {
     const $target = $(ev.currentTarget);
     if (

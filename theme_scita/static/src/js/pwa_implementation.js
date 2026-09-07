@@ -1,4 +1,7 @@
-odoo.define('theme_scita.pwa_implementation_frontend_js',[], function(require) {
+/** @odoo-module **/
+import lazyloader from "@web/legacy/js/public/lazyloader";
+
+lazyloader.allScriptsLoaded.then(function () {
     'use strict';
     const isIos = () => {
       const userAgent = window.navigator.userAgent.toLowerCase();

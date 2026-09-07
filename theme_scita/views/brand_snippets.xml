@@ -10,7 +10,7 @@
                             <span>Brands</span>
                         </h3>
                          <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/brand1.png" alt="Category Slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/brand1.png" alt="Category Slider" class="img-fluid" width="1743" height="286"/>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <div class="col-6 col-md-4 col-lg-2">
                                 <a t-attf-href="/shop/brands?brand=#{ brand.id }" class='it_brand_border'>
                                     <div class="brand-logo text-center">
-                                        <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" class="img img-fluid" t-att-title="brand.name"/>
+                                        <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" width="210" height="88" class="img img-fluid" t-att-title="brand.name"/>
                                     </div>
                                 </a>
                             </div>
@@ -59,25 +59,25 @@
                 <div class="row s_nb_column_fixed sct_brand_row">
                     <div class="col-md-4 col-sm-4 sct_brand_box">
                         <div class="sct_back_img">
-                            <img src="/theme_scita/static/src/img/fashion/brand-1.jpg" class="img img-fluid" alt='Background image'/>
+                            <img src="/theme_scita/static/src/img/fashion/brand-1.jpg" class="img img-fluid" alt='Background image' width="628" height="387"/>
                             <div class="sct_middle_img">
-                                <img src="/theme_scita/static/src/img/fashion/brand-obj-1.png" class="img img-fluid" alt='Offer Banner'/>
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-1.png" class="img img-fluid" alt='Offer Banner' width="625" height="122"/>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 sct_brand_box">
                         <div class="sct_back_img">
-                            <img src="/theme_scita/static/src/img/fashion/brand-2.jpg" class="img img-fluid" alt='Background image'/>
+                            <img src="/theme_scita/static/src/img/fashion/brand-2.jpg" class="img img-fluid" alt='Background image' width="628" height="387"/>
                             <div class="sct_middle_img">
-                                <img src="/theme_scita/static/src/img/fashion/brand-obj-2.png" class="img img-fluid" alt='Offer Banner'/>
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-2.png" class="img img-fluid" alt='Offer Banner' width="625" height="122"/>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 sct_brand_box">
                         <div class="sct_back_img">
-                            <img src="/theme_scita/static/src/img/fashion/brand-3.jpg" class="img img-fluid" alt='Background image'/>
+                            <img src="/theme_scita/static/src/img/fashion/brand-3.jpg" class="img img-fluid" alt='Background image' width="628" height="387"/>
                             <div class="sct_middle_img">
-                                <img src="/theme_scita/static/src/img/fashion/brand-obj-3.png" class="img img-fluid" alt='Offer Banner'/>
+                                <img src="/theme_scita/static/src/img/fashion/brand-obj-3.png" class="img img-fluid" alt='Offer Banner' width="625" height="122"/>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                             <span>Brands</span>
                         </h3>
                          <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/Brand2.png" alt="Category Slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/Brand2.webp" alt="Category Slider" class="img-fluid" width="430" height="114"/>
                         </div>
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                                     <a t-attf-href="/shop/brands?brand=#{ brand.id }">
                                         <div class="sct_brand_box text-center">
                                             <div class="brand-logo-box">
-                                                <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" class="img img-fluid" t-att-title="brand.name"/>
+                                                <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" width="210" height="88" class="img img-fluid" t-att-title="brand.name"/>
                                             </div>
                                         </div>
                                     </a>

@@ -4,19 +4,11 @@
   src: url('/theme_scita/static/src/fonts/odoo_ui_icons.woff2') format('woff2'), url('/theme_scita/static/src/fonts/odoo_ui_icons.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap !important;
+  /* Icon font - see the note in fonts/line-icons.css for why this is block. */
+  font-display: block !important;
 }
 
 .o_theme_customize_color_theme {background:$primary !important;}
-/*color picker*/
-/*admin snippet styling*/
-#scita_snippets {
-	.o_panel_header {
-		span {
-			margin-right: 10px;
-		}
-	}
-}
 body .modal.o_technical_modal .modal-content .modal-header {
 	background-color: #fcfcfc;
 }
@@ -69,6 +61,12 @@ ul{
     filter: unset;
 }
 a.dropdown-item {
+	white-space: nowrap !important;
+}
+// Top-level header menu items must not wrap: the blanket `a` rule above would
+// break each label onto its own line, which also stops the overflow ("+") menu
+// from collapsing extra items. Dropdown/megamenu contents keep wrapping.
+header .scita_top_menu > .nav-item > .nav-link {
 	white-space: nowrap !important;
 }
 img {
@@ -768,35 +766,6 @@ header{
 		}
 	}
 }
-/*blog page end*/
-
-/*cutomizer css*/
-a#theme_customize {
-	position: fixed;
-	right: 0;
-	top: 100px;
-	background: $dark-color;
-	width: 50px;
-	height: 50px;
-	color: transparent;
-	overflow: hidden;
-	&:before{
-		position:absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		font-size: 24px;
-		color: $light-color;
-		font-family: 'themify';
-		content: "\e60f";
-		line-height: 50px;
-		animation-name: spin-cst;
-		animation-duration: 5000ms;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-	}
-}
 @keyframes spin-cst {
     from {
         -webkit-transform:rotate(0deg);
@@ -882,68 +851,6 @@ body {
 			}
 			.modal-footer {
 				display: none;
-			}
-		}
-	}
-}
-/*cutomizer css end*/
-/*404page*/
-.main_404 {
-	text-align: center;
-	padding: 100px 0 50px;
-	@media (max-width: 1439px){
-		padding: 70px 0 50px;
-	}
-	@media (max-width: 1023px){
-		padding: 50px 0 50px;
-	}
-	.section-404 {
-		margin-top: 30px;
-	}
-	.content-404 {
-		margin-bottom: 15px;
-		.sct_label {
-			padding: 10px;
-			background-color: $dark-color;
-			border-radius: 8px;
-			margin-bottom: 0;
-			color: $light-color;
-			font-weight: normal;
-			font-size: 22px;
-		}
-	}
-	.not-found-message {
-		max-width: 900px;
-		margin: auto;
-		font-size: 18px;
-		font-weight: bold;
-		margin-bottom: 15px;
-	}
-	.try-pages {
-		max-width: 520px;
-		margin: auto;
-		font-size: 18px;
-		font-weight: normal;
-		margin-bottom: 0;
-		.links {
-			display: block;
-			text-align: center;
-			margin-top: 10px;
-			font-size: 0;
-			a {
-				display: inline-block;
-				vertical-align: middle;
-				color: $primary;
-				padding: 0 10px;
-				font-weight: bold;
-				font-size: 16px;
-				position: relative;
-				+ a {
-					border-left: 1px solid fade-out($dark-color, 0.7);
-				}
-				&:hover{
-					color:$dark-color;
-				}
 			}
 		}
 	}
@@ -1214,34 +1121,6 @@ body .fashion_main_banner_slider .carousel-control .carousel-control-next-icon:b
 			padding: 5px 5px;
 			font-size: 13px;
 			line-height: normal;
-		}
-	}
-}
-/*optional product cart popup end*/
-
-/*editor view snippet style*/
-#scita_snippets {
-	.o_panel_header {
-		@include flexwrap;
-		.scita_snippet_sort {
-			flex: 0 0 90%;
-			max-width: 90%;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			padding: 5px;
-			border: none;
-			font-weight: bold;
-			background: #84f4ff;
-		}
-	}
-	.o_panel_body {
-		.oe_snippet {
-			float: none !important;
-			display: inline-block;
-			vertical-align: top;
-			&:nth-child(2n + 1) {
-				clear: unset !important;
-			}
 		}
 	}
 }
@@ -1660,31 +1539,37 @@ body.editor_enable {
 			    -webkit-animation-iteration-count: infinite;
 			    animation-iteration-count: infinite;
 			    opacity: 0;
+			    will-change: transform, opacity;
 		    }
+		    // Runs infinitely for as long as a style4 badge is on screen, so
+		    // animating `left` (Lighthouse: "Avoid non-composited animations")
+		    // forces layout+paint every frame. transform is GPU-composited and
+		    // skips both; offsets below are left-value minus the -9px base so
+		    // the visual path is unchanged.
 		    @keyframes inf_tag {
 			    0% {
 			        opacity: 0;
-			        left: -15px;
+			        transform: translateX(-6px) skewX(-25deg);
 			    }
 			    20% {
 			        opacity: .3;
-			        left: 0;
+			        transform: translateX(9px) skewX(-25deg);
 			    }
 			    30% {
 			        opacity: .45;
-			        left: 5px;
+			        transform: translateX(14px) skewX(-25deg);
 			    }
 			    50% {
 			        opacity: .45;
-			        left: 25px;
+			        transform: translateX(34px) skewX(-25deg);
 			    }
 			    80% {
 			        opacity: .45;
-			        left: 42px;
+			        transform: translateX(51px) skewX(-25deg);
 			    }
 			    100% {
 			        opacity: 0;
-			        left: 44px;
+			        transform: translateX(53px) skewX(-25deg);
 			    }
 			}
 		}
@@ -1994,32 +1879,6 @@ body{
 	.js_cart_lines{
 		text-align: center;
     	font-size: 18px;
-	}
-}
-/*color option for customizer disable start */
-.snippet-option-ThemeColors{
-	we-row{
-		display: none !important;
-	}
-	we-select[data-color="o-cc1-link"]{
-		display: none !important;
-	}
-	we-select[data-color="o-cc2-link"]{
-		display: none !important;
-	}
-	we-select[data-color="o-cc3-link"]{
-		display: none !important;
-	}
-	we-select[data-color="o-cc4-link"]{
-		display: none !important;
-	}
-	we-select[data-color="o-cc5-link"]{
-		display: none !important;
-	}
-	.o_we_cc_preview_wrapper{
-		span.o_we_color_combination_btn_btn{
-			display:none !important;
-		}
 	}
 }
 /*color option for customizer disable end */

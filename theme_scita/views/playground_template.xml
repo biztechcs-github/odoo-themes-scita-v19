@@ -1,6 +1,7 @@
 <odoo>
     <template id="playground_template" name="Playground Page">
         <t t-call="website.layout">
+            <t t-call-assets="theme_scita.assets_playground" t-js="true" t-css="true" defer_load="true"/>
             <div class="playground_wrapper my-5">
                 <div class="container-fluid">
                     <div class="playground_inner_wrap">

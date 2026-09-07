@@ -4,7 +4,7 @@
         <xpath expr="//t[@t-call='http_routing.404']" position="replace">
             <t t-call='website.layout'>
                 <div class='main_404'>
-                    <img src="/theme_scita/static/src/img/404-bg.jpg" alt="Page not found" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/404-bg.jpg" alt="Page not found" class="img-fluid" width="1915" height="464"/>
                     <div class="container">
                         <div class="row section-404 well">
                             <div class="col-md-12 text-center">
@@ -1231,6 +1231,9 @@
     </template>
     <!--  <attribute name='class' add="hub-fot-belt-text" remove="text-sm-start" separator=" "/> -->
     <template id="scita_cart_page_checkout_layout" inherit_id="website_sale.checkout_layout" name='Checkout Layout Class'>
+        <xpath expr="//div[@id='wrap']" position="before">
+            <t t-call-assets="theme_scita.assets_checkout" t-js="false" t-css="true"/>
+        </xpath>
         <xpath expr='//div[hasclass("offset-xxl-1", "col-lg-5", "col-xxl-4")]' position='attributes'>
              <attribute name='class'  remove="offset-xxl-1" separator=" "/>
         </xpath>
@@ -1409,7 +1412,7 @@
                         </button>
                         <div class='sct-left-m-side'>
                             <a t-att-href="'/shop/product/%s' % slug(product)">
-                                <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
+                                <img class="front" t-att-alt="product.name" t-att-title="product.name" width="220" height="270" loading="lazy" t-att-src="website.image_url(product, 'image_1920','220x270')"/>
                             </a>
                         </div>
                         <div class='sct-right-m-side'>

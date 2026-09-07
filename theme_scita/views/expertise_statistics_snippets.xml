@@ -116,7 +116,7 @@
                 <div class="row sct_btm_row">
                     <div class='col-lg-4'>
 							<div class='progress-img'>
-								<img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid mx-auto" alt="Digital Marketing"/>
+								<img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid mx-auto" alt="Digital Marketing" width="500" height="500"/>
 	                    	</div>
 						
                     </div>

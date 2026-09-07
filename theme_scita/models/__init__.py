@@ -15,3 +15,7 @@ from . import top_dealers_snippet
 from . import trending_products_snippet
 from . import image_hotspot
 from . import quote
+from . import ir_qweb
+from . import gzip_middleware
+from . import product_template
+from . import product_pricelist_item

@@ -7,29 +7,28 @@
         </xpath> -->
         <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
         <t t-set="pricelist" t-value="(website_sale_order and website_sale_order.pricelist_id) or request.pricelist"/>
-        <t t-if="pricelist">
-            <!-- Bulk tiers: rules for this template/variant with min_quantity >= 2 -->
-            <t t-set="rules" t-value="pricelist.item_ids.filtered(lambda r: r.product_tmpl_id.id == product.id and r.min_quantity and r.min_quantity >= 2 and (not r.product_id or r.product_id.id == product_variant.id))"/>
+        <!-- Tiers of the displayed variant only; same helper as the
+             get_combination_info RPC that refreshes them on variant change. -->
+        <t t-set="bulk_rules" t-value="product._scita_bulk_price_rules(pricelist, product_variant)"/>
 
-            <!-- Always render container so JS can show/hide on variant change -->
-            <div id="o_bulk_price_section" t-attf-class="{{'d-none' if not rules else ''}}">
-                <h5 class="mt-3 mb-2">Big savings with bulk buys</h5>
-                <div class="d-flex flex-wrap gap-2 o_bulk_price_wrapper" t-if="not (product.website_hide_price or website.website_hide_price)">
-                    <t t-foreach="rules.sorted(key=lambda r: r.min_quantity)" t-as="rule">
-                        <a class="btn btn-outline-primary o_bulk_price_btn"
-                           t-att-qty="int(rule.min_quantity)"
-                           t-att-price="rule.fixed_price"
-                           href="#">
-                            <span class="buy-tag">Buy
-                            <t t-out="int(rule.min_quantity)"/></span>
-                            at
-                            <span class="buy-price"><t t-out="'%.2f' % rule.fixed_price"/></span>
-                            / Unit
-                        </a>
-                    </t>
-                </div>
+        <!-- Always render the container so JS can show/hide it on variant change -->
+        <div id="o_bulk_price_section" t-attf-class="{{'d-none' if not bulk_rules else ''}}">
+            <h5 class="mt-3 mb-2">Big savings with bulk buys</h5>
+            <div class="d-flex flex-wrap gap-2 o_bulk_price_wrapper" t-if="not (product.website_hide_price or website.website_hide_price)">
+                <t t-foreach="bulk_rules" t-as="rule">
+                    <a class="btn btn-outline-primary o_bulk_price_btn"
+                       t-att-qty="rule['min_quantity']"
+                       t-att-price="rule['fixed_price']"
+                       href="#">
+                        <span class="buy-tag">Buy
+                        <t t-out="rule['min_quantity']"/></span>
+                        at
+                        <span class="buy-price"><t t-out="'%.2f' % rule['fixed_price']"/></span>
+                        / Unit
+                    </a>
+                </t>
             </div>
-        </t>
+        </div>
         </xpath>
     </template>
 </odoo>

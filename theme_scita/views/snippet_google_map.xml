@@ -6,7 +6,7 @@
                 <span>Google Map Address</span>
             </div>
             <div class="category-slider-placeholder">
-                <img src="/theme_scita/static/src/img/GoogleMap1.png" alt="Category Slider" class="img-fluid"/>
+                <img src="/theme_scita/static/src/img/GoogleMap1.png" alt="Category Slider" class="img-fluid" width="621" height="426"/>
             </div>           
         </section>
     </template>

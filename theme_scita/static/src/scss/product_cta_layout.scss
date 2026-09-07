@@ -1,0 +1,152 @@
+// Product page call-to-action layout (>= md)
+// ------------------------------------------
+// One price row, then quantity + Add to Cart + Buy now on a single line, then
+// wishlist and compare underneath - instead of website_sale's stacked, boxed
+// arrangement.
+//
+// Price, quantity, button, wishlist and compare each sit at a different depth
+// of the markup, so the wrappers in between are flattened with
+// `display: contents` and every item is then placed with `order` in the flex
+// row that #o_wsale_cta_wrapper already is.
+//
+// Selectors start at #wrapwrap on purpose: the per-page rules in
+// product_style.scss reach three ids, and these have to win over them.
+// #product_detail also keeps the quick-view modal out: it renders its own
+// #product_details / #o_wsale_cta_wrapper outside that section.
+
+@media (min-width: 768px) {
+    #wrapwrap #product_detail #product_details #o_wsale_cta_wrapper {
+        // the row is shrink-to-fit (.w-lg-auto), which leaves the buttons
+        // fighting over ~400px; take the whole column instead
+        width: 100% !important;
+
+        // website_sale boxes the wrapper as soon as a .product_price sits
+        // inside it (_onChangeCombination adds these classes at runtime).
+        &.o_wsale_cta_wrapper_boxed {
+            padding: 0 !important;
+            border: 0 !important;
+            // 26rem is what squeezes the buttons: it is meant for the boxed
+            // layout, which this is not
+            max-width: none !important;
+        }
+
+        // flatten the wrappers so their contents join this flex row.
+        // #add_to_cart_wrap needs !important: website_sale toggles the
+        // .d-inline-flex utility on it from JS.
+        #add_to_cart_wrap {
+            display: contents !important;
+
+            .sct-main-price-description,
+            .sct-price-option {
+                display: contents;
+            }
+
+            .css_quantity {
+                order: -2 !important; // beats Bootstrap's .order-first
+                margin: 0 !important;
+                flex: 0 0 auto;
+            }
+
+            // Add to Cart and Buy now share the row with the quantity picker.
+            // flex-basis 0 is what keeps them there: sized from what is left of
+            // the row they can never be wide enough to wrap onto their own line,
+            // whatever the column width or the label length.
+            .sct-add-to-cart-mob,
+            .o_we_buy_now {
+                flex: 1 1 0;
+                max-width: max-content; // grow no further than the label needs
+                width: auto !important; // .w-100 comes from website_sale
+                // no stray margins: they offset the buttons from the quantity
+                // picker even though the row is centred
+                margin: 0 !important;
+                align-self: center;
+            }
+
+            .sct-add-to-cart-mob {
+                order: -1;
+                display: inline-flex;
+            }
+
+            .o_we_buy_now {
+                order: 0;
+            }
+
+            // same height, one line, and room to shrink for both buttons
+            .sct-add-to-cart-mob > .btn,
+            .o_we_buy_now {
+                display: flex !important;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 28px !important;
+                font-size: 16px !important;
+                line-height: 1.5;
+                // !important: the theme forces white-space: normal on buttons
+                white-space: nowrap !important;
+            }
+
+            .sct-add-to-cart-mob > .btn {
+                flex: 1 1 auto;
+            }
+
+            .o_add_wishlist,
+            .o_add_wishlist_dyn,
+            .o_add_compare,
+            .o_add_compare_dyn {
+                order: 2;
+                flex: 0 0 auto;
+                max-width: none;
+            }
+
+            .sct-other-desciption {
+                order: 3;
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding-top: 20px;
+                border-top: 1px solid #dee2e6;
+            }
+        }
+
+        .sct-pdp-price {
+            order: -3;
+            flex: 0 0 100%;
+
+            .product_price {
+                margin-bottom: 0;
+            }
+        }
+
+        // "Buy now", when that website option is enabled.
+        // !important: the block carries Bootstrap's .w-100 utility.
+        #product_option_block {
+            order: 0;
+            flex: 0 0 auto;
+            width: auto !important;
+        }
+
+        // line break: everything after it wraps onto the next row
+        &::before {
+            content: "";
+            order: 1;
+            flex: 0 0 100%;
+            height: 0;
+        }
+    }
+}
+
+// Below md the CTA stays stacked; only put "Buy now" back where it belongs.
+@media (max-width: 767.98px) {
+    #wrapwrap #product_detail #product_details #o_wsale_cta_wrapper #add_to_cart_wrap {
+        .sct-main-price-description {
+            order: 0;
+        }
+
+        .o_we_buy_now {
+            order: 1;
+        }
+
+        .sct-other-desciption {
+            order: 2;
+        }
+    }
+}

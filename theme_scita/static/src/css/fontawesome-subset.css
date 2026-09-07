@@ -1,0 +1,31 @@
+/* Serve a 4.6KB subset of FontAwesome instead of the 77KB original.
+ *
+ * Odoo preloads fontawesome-webfont.woff2 in web.frontend_layout, so all 77KB
+ * of it is fetched at High priority - on the applied-throttling mobile run of
+ * 17 Aug 2026 that was 5.5x the size of the 14KB LCP hero image it competes
+ * with, and the hero showed 891ms of "load duration" as a result. Subsetting
+ * Lineicons the same way (66KB -> 1.2KB) moved FCP 3.3s -> 2.9s and LCP
+ * 3.4s -> 3.0s, so the same treatment is applied here.
+ *
+ * How this stays safe for arbitrary content: this @font-face declares the same
+ * 'FontAwesome' family as core's, but scoped with a unicode-range covering
+ * only the glyphs this theme's pages actually render (measured across /,
+ * /shop, a product page and /cart) plus the icons Odoo's frontend and the
+ * website builder use most. It is declared *after* core's face - theme assets
+ * come later in web.assets_frontend - so for a glyph inside the range this
+ * subset wins. For any glyph outside it, core's un-ranged face is the only
+ * match and the full file downloads exactly as before. Worst case for a page
+ * using an uncommon icon is therefore today's behaviour plus 4.6KB, and no
+ * icon can ever go missing.
+ *
+ * Regenerate with pyftsubset if the icon set used in the theme changes; the
+ * unicode-range below must be kept in sync with the glyphs in the file.
+ */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('/theme_scita/static/src/fonts/fontawesome-subset.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+  unicode-range: U+F002, U+F004-F007, U+F00C-F00E, U+F017, U+F019, U+F01E, U+F021, U+F024, U+F041, U+F044, U+F053-F054, U+F057-F058, U+F067-F068, U+F06A, U+F06E, U+F071, U+F077-F078, U+F07A, U+F082, U+F095, U+F099-F09B, U+F09E, U+F0C9, U+F0D7-F0DA, U+F0E0-F0E2, U+F0EC, U+F0F3, U+F104-F108, U+F110, U+F129, U+F130, U+F16A, U+F16D, U+F2ED, U+F3C5;
+}

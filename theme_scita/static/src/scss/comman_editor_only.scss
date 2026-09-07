@@ -1,0 +1,167 @@
+/* Editor-UI-only styles (theme customize panel, snippet manager sidebar) and
+   the 404 error page. Never needed for a public visitor on a normal page load -
+   moved off the critical path, loaded async. Extracted from comman.scss 17 Aug 2026. */
+
+
+/*color picker*/
+/*admin snippet styling*/
+#scita_snippets {
+	.o_panel_header {
+		span {
+			margin-right: 10px;
+		}
+	}
+}
+
+
+/*blog page end*/
+
+/*cutomizer css*/
+a#theme_customize {
+	position: fixed;
+	right: 0;
+	top: 100px;
+	background: $dark-color;
+	width: 50px;
+	height: 50px;
+	color: transparent;
+	overflow: hidden;
+	&:before{
+		position:absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		font-size: 24px;
+		color: $light-color;
+		font-family: 'themify';
+		content: "\e60f";
+		line-height: 50px;
+		animation-name: spin-cst;
+		animation-duration: 5000ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+}
+
+
+/*cutomizer css end*/
+/*404page*/
+.main_404 {
+	text-align: center;
+	padding: 100px 0 50px;
+	@media (max-width: 1439px){
+		padding: 70px 0 50px;
+	}
+	@media (max-width: 1023px){
+		padding: 50px 0 50px;
+	}
+	.section-404 {
+		margin-top: 30px;
+	}
+	.content-404 {
+		margin-bottom: 15px;
+		.sct_label {
+			padding: 10px;
+			background-color: $dark-color;
+			border-radius: 8px;
+			margin-bottom: 0;
+			color: $light-color;
+			font-weight: normal;
+			font-size: 22px;
+		}
+	}
+	.not-found-message {
+		max-width: 900px;
+		margin: auto;
+		font-size: 18px;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	.try-pages {
+		max-width: 520px;
+		margin: auto;
+		font-size: 18px;
+		font-weight: normal;
+		margin-bottom: 0;
+		.links {
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			font-size: 0;
+			a {
+				display: inline-block;
+				vertical-align: middle;
+				color: $primary;
+				padding: 0 10px;
+				font-weight: bold;
+				font-size: 16px;
+				position: relative;
+				+ a {
+					border-left: 1px solid fade-out($dark-color, 0.7);
+				}
+				&:hover{
+					color:$dark-color;
+				}
+			}
+		}
+	}
+}
+
+
+/*optional product cart popup end*/
+
+/*editor view snippet style*/
+#scita_snippets {
+	.o_panel_header {
+		@include flexwrap;
+		.scita_snippet_sort {
+			flex: 0 0 90%;
+			max-width: 90%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			padding: 5px;
+			border: none;
+			font-weight: bold;
+			background: #84f4ff;
+		}
+	}
+	.o_panel_body {
+		.oe_snippet {
+			float: none !important;
+			display: inline-block;
+			vertical-align: top;
+			&:nth-child(2n + 1) {
+				clear: unset !important;
+			}
+		}
+	}
+}
+
+
+/*color option for customizer disable start */
+.snippet-option-ThemeColors{
+	we-row{
+		display: none !important;
+	}
+	we-select[data-color="o-cc1-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc2-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc3-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc4-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc5-link"]{
+		display: none !important;
+	}
+	.o_we_cc_preview_wrapper{
+		span.o_we_color_combination_btn_btn{
+			display:none !important;
+		}
+	}
+}

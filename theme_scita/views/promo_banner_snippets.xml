@@ -90,22 +90,22 @@
                 <div class='row s_nb_column_fixed'>
                     <div class='col-md-3 col-12 sct_adv_block'>
                         <div class='sct_img_box'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon' width="500" height="500"/>
                         </div>
                     </div>
                     <div class='col-md-3 col-12 sct_adv_block'>
                         <div class='sct_img_box'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon' width="500" height="500"/>
                         </div>
                     </div>
                     <div class='col-md-3 col-12 sct_adv_block'>
                         <div class='sct_img_box'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon' width="500" height="500"/>
                         </div>
                     </div>
                     <div class='col-md-3 col-12 sct_adv_block'>
                         <div class='sct_img_box'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt='web icon' width="500" height="500"/>
                         </div>
                     </div>
                     
@@ -162,12 +162,12 @@
                 <div class="row">
                     <div class='col-md-6 sct_promo_img_div'>
                         <a href='#'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner"/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner" width="500" height="500"/>
                         </a>
                     </div>
                     <div class='col-md-6 sct_promo_img_div'>
                         <a href='#'>
-                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner"/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner" width="500" height="500"/>
                         </a>
                     </div>
                 </div>

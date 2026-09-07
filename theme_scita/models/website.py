@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of AppJetty. See LICENSE file for full copyright and licensing details.
 
+import re
+
 import werkzeug
 from lxml import etree
 from odoo import models, api, fields
@@ -309,3 +311,158 @@ class website(models.Model):
                 not rec.website_hide_price
                 and request.env.user.partner_id.website_show_price
             )
+
+
+
+    # A CSS background is the worst case for LCP: the browser cannot even ask
+    # for it until the stylesheet has parsed and the element has been laid out.
+    # On the electronics demo that put the hero banner's discovery 2.06s into
+    # the load. <img> is cheaper to discover but still waits behind the
+    # stylesheet. Whichever of the two appears first in the page's own markup
+    # is the top of the page, so that is the one worth a preload hint.
+    # Odoo-stored images (website-editable fields like
+    # theme_scita.sct_banner_slider_image) are served as /web/image/<model>.
+    # <field>, with no file extension at all - only static theme assets under
+    # /theme_scita/static/... end in .png/.jpg/etc. Matching only the
+    # extension form (as this used to) silently misses every dynamic hero
+    # image and falls through to whatever static <img> happens to appear
+    # first in the arch instead - on this site that was a 430x116 category-
+    # slider thumbnail nowhere near the real hero, wasting the one preload
+    # slot on the wrong 4KB image while the real ~200KB hero got none.
+    _SCITA_URL_BODY = r'/(?:web/image/[^"\'()&\s]+|[^"\'()&\s]+\.(?:png|jpe?g|webp|gif))'
+    _SCITA_BG_IMAGE_RE = re.compile(
+        r'background-image:\s*url\(\s*(?:&#34;|&quot;|["\'])?'
+        r'(' + _SCITA_URL_BODY + r')'
+    )
+    _SCITA_IMG_TAG_RE = re.compile(r'<img\b[^>]*?>')
+    _SCITA_IMG_SRC_RE = re.compile(r'\ssrc="(' + _SCITA_URL_BODY + r')"')
+    _SCITA_IMG_WIDTH_RE = re.compile(r'\swidth="(\d+)"')
+
+    def _scita_lcp_preload_href(self, main_object):
+        """URL of the page's likely LCP image, or False.
+
+        Only literal, same-origin URLs are considered - t-att-src is evaluated
+        too late to be useful here, and guessing would risk preloading
+        something the page never requests. Any failure returns False: a
+        performance hint must never be able to break a page.
+        """
+        try:
+            self.ensure_one()
+            if main_object is None or 'arch' not in getattr(main_object, '_fields', {}):
+                return False
+            arch = main_object.sudo().arch
+            if not arch:
+                return False
+
+            candidates = []
+            background = self._SCITA_BG_IMAGE_RE.search(arch)
+            if background:
+                candidates.append((background.start(), background.group(1)))
+
+            for tag in self._SCITA_IMG_TAG_RE.finditer(arch):
+                markup = tag.group(0)
+                src = self._SCITA_IMG_SRC_RE.search(markup)
+                if not src:
+                    # .svg is deliberately excluded: in this theme they are
+                    # arrows and other chrome, never the LCP element.
+                    continue
+                declared = self._SCITA_IMG_WIDTH_RE.search(markup)
+                if declared and int(declared.group(1)) < 200:
+                    continue
+                candidates.append((tag.start(), src.group(1)))
+                break
+
+            href = min(candidates)[1] if candidates else False
+            # Recorded so ir_qweb's eager-image hook (models/ir_qweb.py) can
+            # tell whether this request already has a definitive LCP answer.
+            # Without this, that hook falls back to "first <img> in rendered
+            # document order" - wrong whenever the real LCP is a CSS
+            # background (as on the homepage hero), where it ends up
+            # eager-loading + fetchpriority=high'ing an unrelated first
+            # <img> instead, stealing bandwidth from the actual LCP resource
+            # on the throttled connection.
+            request._scita_lcp_href = href
+            return href
+        except Exception:  # noqa: BLE001
+            return False
+    # The upright latin faces of the body font, which is shipped with the
+    # theme (static/src/css/poppins.css). Text laid out in the fallback font
+    # and then re-laid-out in the real one is a layout shift, and on this
+    # theme a large one - 0.331 CLS on /shop on the 21 Aug 2026 mobile run,
+    # 16 Lighthouse points, more than any byte-size win available on the
+    # page. Google's stylesheets hard-code font-display: swap and Odoo stores
+    # them verbatim, so the only way to avoid the reflow is for the font to
+    # be there before first paint.
+    #
+    # Only these two: a preload is fetched at High priority, out of the same
+    # budget as the LCP image. Italic and the 300 weight are used sparsely
+    # enough that preloading them would cost more than the shift they save,
+    # and latin-ext is not reachable at all from English content.
+    _SCITA_FONT_PRELOAD_HREFS = (
+        '/theme_scita/static/src/fonts/poppins/poppins-400-latin.woff2',
+        '/theme_scita/static/src/fonts/poppins/poppins-700-latin.woff2',
+    )
+
+    # Fonts this module ships the woff2 files for. Kept in sync with
+    # static/src/css/poppins.css and the list in
+    # static/src/scss/font_source_override.scss, which is what actually stops
+    # Odoo emitting an @import for them.
+    _SCITA_SHIPPED_FONTS = ('Poppins',)
+
+    _SCITA_GOOGLE_FONTS_RE = re.compile(r"'google-fonts':\s*\(([^)]*)\)")
+    _SCITA_LOCAL_FONTS_RE = re.compile(r"'google-local-fonts':\s*\(([^)]*)\)")
+    _SCITA_FONT_NAME_RE = re.compile(r"'([^']+)'")
+
+    def _scita_font_preload_hrefs(self):
+        """woff2 URLs to preload. Static: the theme ships these files."""
+        return list(self._SCITA_FONT_PRELOAD_HREFS)
+
+    def _scita_uses_remote_google_fonts(self):
+        """True when some font on this site is still fetched from Google.
+
+        Decides whether the fonts.googleapis.com / fonts.gstatic.com
+        preconnects are worth emitting. Odoo's website.layout emits the
+        gstatic one unconditionally; this theme replaces it (see
+        theme_scita_fonts_preconnect) because on a default install the answer
+        is now no - the body font is shipped in this module, so nothing is
+        fetched cross-origin and a preconnect to an origin that is never
+        contacted is pure connection setup that Lighthouse flags.
+
+        It can still be yes: an admin who picks a different font in the
+        website editor puts it in 'google-fonts', and every font in
+        scita_fonts.scss other than the shipped ones carries a Google 'url'.
+        So read the same setting the SCSS reads and subtract the two cases
+        that never reach Google - the fonts this module ships, and the ones
+        the database has downloaded into an attachment ("host fonts locally").
+
+        Any failure returns False: emitting no preconnect costs one handshake
+        on a font that may not even be used, while a wrong True costs one on
+        every page load.
+        """
+        try:
+            self.ensure_one()
+            attachment = self.env['ir.attachment'].sudo().search([
+                ('url', '=', self._SCITA_USER_VALUES_URL),
+                ('website_id', 'in', (self.id, False)),
+            ], order='website_id desc', limit=1)
+            if not attachment:
+                return False
+            values = (attachment.raw or b'').decode('utf-8')
+
+            def _names(regex):
+                match = regex.search(values)
+                if not match:
+                    return set()
+                return set(self._SCITA_FONT_NAME_RE.findall(match.group(1)))
+
+            remote = _names(self._SCITA_GOOGLE_FONTS_RE)
+            remote -= _names(self._SCITA_LOCAL_FONTS_RE)
+            remote -= set(self._SCITA_SHIPPED_FONTS)
+            return bool(remote)
+        except Exception:  # noqa: BLE001
+            return False
+
+    _SCITA_USER_VALUES_URL = (
+        '/_custom/web.assets_frontend'
+        '/website/static/src/scss/options/user_values.scss'
+    )

@@ -60,7 +60,10 @@
             <div class='sct-main-price-description'>
                 <div class='sct-price-option' t-if="not combination_info['prevent_zero_price_sale'] and (not request.env.user._is_public() and website.add_to_cart or not website.add_to_cart)">
                     <div class="sct-add-to-cart-mob">
-                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#">
+                        <!-- t-attf-class, not class: website_sale.cta_wrapper_large ("Large"
+                             purchase style) adds btn-lg through t-attf-class, which replaces a
+                             static class attribute instead of merging with it. -->
+                        <a role="button" id="add_to_cart" t-attf-class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#">
                             <i class="lni lni-cart-1"></i> Add to Cart</a>
                     </div>
                 </div>
@@ -70,10 +73,13 @@
     </template>
     <template id="theme_scita_price" inherit_id="theme_scita.theme_scita_product_details_add_to_cart" name="Product Details Price (non-boxed CTA only)">
         <!-- Boxed purchase style already shows price in the CTA header (with "Price" label). -->
-        <xpath expr="//div[hasclass('sct-price-option')]" position="before">
-            <t t-if="website and not website.is_view_active('website_sale.cta_wrapper_boxed')">
+        <!-- Own full-width row above the quantity picker and the buttons,
+             not next to them: see product_cta_layout.scss. -->
+        <xpath expr="//div[@id='add_to_cart_wrap']" position="before">
+            <div class="sct-pdp-price w-100"
+                 t-if="website and not website.is_view_active('website_sale.cta_wrapper_boxed')">
                 <t t-call="website_sale.product_price"/>
-            </t>
+            </div>
         </xpath>
     </template>
 

@@ -12,7 +12,7 @@
                             </h4>
                         </div>
                         <div class="category-slider-placeholder">
-                            <img src="/theme_scita/static/src/img/multi_deal_slide.jpg" alt="multi deal slider" class="img-fluid"/>
+                            <img src="/theme_scita/static/src/img/multi_deal_slide.webp" alt="multi deal slider" class="img-fluid" width="430" height="208" loading="lazy"/>
                         </div>
                     </div>
                 </div>
@@ -58,6 +58,7 @@
                                                     <div class="image">
                                                         <img class="img img-fluid" t-att-alt="product.name"
                                                              t-att-title="product.name"
+                                                             width="85" height="85" loading="lazy"
                                                              t-att-src="website.image_url(product, 'image_1920','85x85')"/>
                                                     </div>
                                                     <div class="disc">
@@ -135,7 +136,10 @@
                                 <div class="item">
                                     <a t-att-href='banner.page_link'>
                                         <img class="img img-fluid" t-att-alt="banner.name" t-att-title="banner.name"
-                                             t-att-src="website.image_url(banner, 'image_1920','895x833')"/>
+                                             width="895" height="833" loading="lazy"
+                                             t-att-src="website.image_url(banner, 'image_1920','895x833')"
+                                             t-attf-srcset="#{website.image_url(banner, 'image_1920', '450x420')} 450w, #{website.image_url(banner, 'image_1920', '895x833')} 895w"
+                                             sizes="(max-width: 991px) 450px, 895px"/>
                                     </a>
                                 </div>
                             </t>
@@ -164,7 +168,7 @@
                     <h2 class="fancy">Deal of the day</h2>
                 </div>
                  <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/dealofday.jpg" alt="Category Slider" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/dealofday.jpg" alt="Category Slider" class="img-fluid" loading="lazy" width="1642" height="666"/>
                 </div>
             </div>
         </section>
@@ -203,6 +207,7 @@
                                         <a t-att-href="deal_product.website_url">
                                             <img class="img img-fluid" t-att-alt="deal_product.name"
                                                     t-att-title="deal_product.name"
+                                                    loading="lazy"
                                                     t-att-src="'/web/image/product.template/%s/image_1920' % deal_product.id"
                                                 />
                                         </a>

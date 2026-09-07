@@ -3,6 +3,123 @@ span[name="hidden_ptavs_count"] {
     display: none !important;
 }
 
+// Optically centre the Lineicons glyphs in the product-card hover buttons.
+//
+// The buttons are already `display:flex; align-items:center`, and the icon's
+// own box *is* centred (measured: 16x16 box, dead centre of the 35x32 button).
+// The glyph ink inside that box is not: Lineicons draws these glyphs in the
+// upper part of the em square, so the ink lands 3.75px high in a 16px box.
+// Next to it the wishlist heart - which comes from core website_sale_wishlist
+// as a FontAwesome `.fa` glyph, and *is* ink-centred - so the row reads as
+// misaligned: cart and eye sit high, heart sits centred.
+//
+// line-height cannot fix this. The icon is a flex item, so changing its
+// line-height resizes the box and moves the glyph with it - the ink stays the
+// same distance off centre (verified at line-height 0, 0.5, 1, 1.2: all
+// -3.75px). Only a positional nudge moves the ink, so shift it down by the
+// measured font constant. `position:relative` rather than `transform` so no
+// stacking context or containing block is created on top of the hover
+// animations that already transform these buttons.
+//
+// 0.22em measured against the em box at the 16px size these buttons use:
+// -3.75px before, +0.25px after. Holds within ~1px up to 28px.
+// If the icon font is ever swapped, re-measure this value.
+$scita-lineicon-ink-offset: 0.22em;
+
+.o_wsale_product_btn .btn > .lni {
+    position: relative;
+    top: $scita-lineicon-ink-offset;
+}
+
+// Wishlist card fixes. The grid renders each card through
+// `website_sale.products_item`, so `.o_wsale_product_btn` ends up holding three
+// buttons: core's "Add to Cart", core's compare toggle, and the theme's Quick
+// View eye (added by `theme_scita.quick_view_option`).
+// `.o_wsale_product_action_row` between them is `display:contents`, so all three
+// are flex items of the same row.
+#o_comparelist_table {
+
+    // Give the cards a real height back, so a row of them can share one.
+    //
+    // Core puts `content-visibility: auto` on `.oe_product_cart`
+    // (website_sale/static/src/scss/product_tile.scss) with no
+    // `contain-intrinsic-size` to go with it. Size containment then measures
+    // every card as 0px tall and the grid rows collapse with them - measured
+    // `grid-template-rows: 0px 0px` on a 7-item wishlist, with the table itself
+    // 32px tall, which is just the row gap. The content still paints, it simply
+    // overflows a zero-height box, so nothing stretches to a common height and
+    // each action row lands wherever that card's title and description leave it.
+    //
+    // A wishlist holds a handful of items, so skipping their rendering buys
+    // nothing; /shop keeps the hint, this grid opts out. Measured after: rows
+    // 504px and 483px, and every action row in a row of cards on one baseline.
+    .oe_product_cart {
+        content-visibility: visible;
+    }
+
+    // The card is a flex column, so let its lower half absorb the height the
+    // cards no longer differ by, and the buttons settle at the bottom of it.
+    .o_wsale_product_sub {
+        flex: 1 1 auto;
+    }
+
+    // Keep the three action buttons inside the card.
+    //
+    // Measured on a wishlist card (grid column 209px wide): 142 + 8 + 48 + 8 +
+    // 44 = 250px of buttons in a 209px row, `flex-wrap:nowrap` and nothing
+    // shrinkable - so the eye button ran from 333 to 378 while the card ended
+    // at 336. It hung 42px past the card edge and read as cut off.
+    //
+    // Shop cards are wide enough for the same three buttons, so this is scoped
+    // to the wishlist grid only. `flex-wrap` stays `nowrap` on purpose: flexbox
+    // breaks lines *before* it applies flex-shrink, so allowing a wrap makes the
+    // browser drop the eye onto a second row rather than shrink anything - the
+    // opposite of what we want.
+    //
+    // Measured after: 133.2 primary + 6 + 32 compare + 6 + 32 eye = 209.2,
+    // exactly the card, nothing past the edge, and 3.3px still spare inside the
+    // primary.
+    .o_wsale_product_btn {
+        margin-top: auto;
+        flex-wrap: nowrap;
+        gap: 6px;
+
+        .o_wsale_product_btn_primary {
+            flex: 1 1 auto;
+            min-width: 0;
+            padding-left: 6px;
+            padding-right: 6px;
+
+            // The trailing chevron is an 8x8 rotated-border `::after`, and the
+            // button is `display:flex` - so the chevron is a flex item like any
+            // other and shrank along with everything else, collapsing to a 2px
+            // stub jammed against the label. Pin it and the cart glyph so the
+            // label is the only thing that can give.
+            > i,
+            &::after {
+                flex: 0 0 auto;
+            }
+        }
+
+        // Square them off at a width that fits, rather than trimming padding:
+        // the compare glyph is 20.6px and the eye 16.6px, so equal padding
+        // would leave the two buttons visibly different sizes.
+        // `justify-content` centres the compare button (it is `d-inline-flex`),
+        // `text-align` the quick-view one (it is block) - both measured dead
+        // centre.
+        .o_add_to_compare,
+        .quick_view_sct_btn {
+            flex: 0 0 auto;
+            width: 32px;
+            min-width: 32px;
+            padding-left: 0;
+            padding-right: 0;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+
 @if o-website-value('prod-hover-style') == 'prod_hover_style_1' {
     #products_grid{
         .oe_product{

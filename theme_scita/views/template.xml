@@ -30,18 +30,28 @@
                                t-value="(td_product['x'] &gt;= td_product['y'] * 2)"/>
                             <t t-set="col_is_custom_portrait"
                                t-value="not col_is_stretched and (col_height &gt; td_product['x'])"/>
+                            <t t-set="product" t-value="td_product['product']"/>
+                            <t t-set="template_price_vals" t-value="get_product_prices(product)"/>
+                            <t t-set="ribbon"
+                               t-value="product._get_ribbon(
+                                   price_vals=template_price_vals,
+                                   auto_assign_ribbons=auto_assign_ribbons,
+                                   variant=product_variants[product],
+                               )"/>
                             <div
                                     t-attf-class="oe_product"
                                     t-attf-style="--o-wsale-products-grid-product-col-height: {{col_height}};"
-                                    t-att-data-ribbon-id="td_product['ribbon'].id"
+                                    t-att-data-ribbon-id="ribbon.id"
                                     t-att-data-colspan="td_product['x'] != 1 and td_product['x']"
                                     t-att-data-rowspan="td_product['y'] != 1 and td_product['y']"
                                     t-att-data-name="product_block_name"
                             >
                                 <div t-attf-class="o_wsale_product_grid_wrapper position-relative h-100 o_wsale_product_grid_wrapper_#{td_product['x']}_#{td_product['y']}">
                                     <t t-call="website_sale.products_item">
-                                        <t t-set="product"
-                                           t-value="td_product['product']"/>
+                                        <t t-set="design_field"
+                                           t-value="website.shop_opt_products_design_classes"/>
+                                        <t t-set="product_href"
+                                           t-value="product._get_product_url(category, product_query_params, grouped_attributes_values)"/>
                                     </t>
                                 </div>
                             </div>

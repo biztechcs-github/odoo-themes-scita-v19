@@ -216,7 +216,7 @@
                                                         <h3 class='sct_title'>Design</h3>
                                                         <div class="row">
                                                             <div class="col-md-6">
-                                                                <img src="/theme_scita/static/src/img/it/about-obj.jpg" title="about" alt="about" />                                                        
+                                                                <img src="/theme_scita/static/src/img/it/about-obj.jpg" title="about" alt="about" width="486" height="305"/>                                                        
                                                             </div>
                                                             <div class="col-md-6 mt-3 mt-md-0">
                                                                 <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

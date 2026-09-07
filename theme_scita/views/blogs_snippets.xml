@@ -9,7 +9,7 @@
                     <h3 class="fancy">Blog post slider</h3>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog1.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog1.png" alt="Blog Snippet" class="img-fluid" width="1616" height="658"/>
                 </div>
             </div>
         </section>
@@ -57,7 +57,7 @@
                                                 <div class="col-4 blog_link text-end">
                                                     <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img read_link' t-if="slide.cover_properties">
                                                         <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class="read_link arrow_link">
-                                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                                            <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" width="12" height="12" alt='Blog Link'/>
                                                         </a>
                                                     </a>
                                                 </div>
@@ -90,7 +90,7 @@
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog2.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog2.png" alt="Blog Snippet" class="img-fluid" width="1838" height="586"/>
                 </div>
             </div>
         </section>
@@ -148,7 +148,7 @@
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog4.png" alt="Blog Snippet" class="img-fluid" width="1834" height="304"/>
                 </div>
             </div>
         </section>
@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="col-4 blog_link text-end">
                                             <div class="arrow_link">
-                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                                <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" width="12" height="12" alt='Blog Link'/>
                                             </div>
                                         </div>
                                     </div>
@@ -216,7 +216,7 @@
                     <h2 class="fancy">Blog post slider</h2>
                 </div>
                 <div class="category-slider-placeholder">
-                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Snippet" class="img-fluid"/>
+                    <img src="/theme_scita/static/src/img/blog3.png" alt="Blog Snippet" class="img-fluid" width="1839" height="643"/>
                 </div>
             </div>
         </section>
